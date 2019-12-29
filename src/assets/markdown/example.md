@@ -1,3 +1,6 @@
+
+<!--- Comment Title -->
+
 # Title of Post
 This is an example of a markdown file.  
 
