@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
+import ReactMarkdown from 'react-markdown/with-html';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const filePaths = importAll(require.context('./markdown', true, /\.md$/));
+
+class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      files: null,
+      filePaths: filePaths
+    };
+  }
+
+  componentDidMount() {
+
+  }
+
+  getMarkdowns = async () => {
+    let i = 0;
+    let markdowns = [];
+    for (i; i<this.state.filePaths.length; i++) {
+      const response = await fetch(this.state.filePaths[i]);
+      const text = await response.text();
+      markdowns.push(text.items[0]);
+    }
+    // this.setState( {files: markdowns});
+    return markdowns;
+  }
+
+  
+
+  render() {
+
+    console.log(this.state.files);
+
+    // let posts = [];
+    // for (let i=0; i<this.state.files.length; i++) {
+    //   // let post = <ReactMarkdown source=${this.state.files[i]} escapeHtml={false} className="App" />;
+    //   posts.push(<ReactMarkdown source={this.state.files[i]} escapeHtml={false} className="App" />);
+    // }
+
+    return (
+      <div></div>
+    );
+  }
 }
 
 export default App;
