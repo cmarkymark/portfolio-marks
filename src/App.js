@@ -18,36 +18,37 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-
-  }
-
-  getMarkdowns = async () => {
-    let i = 0;
-    let markdowns = [];
-    for (i; i<this.state.filePaths.length; i++) {
-      const response = await fetch(this.state.filePaths[i]);
-      const text = await response.text();
-      markdowns.push(text.items[0]);
+  async componentDidMount() {
+    try {
+      let i = 0;
+      let markdowns = [];
+      for (i; i<this.state.filePaths.length; i++) {
+        const response = await fetch(this.state.filePaths[i]);
+        const text = await response.text();
+        markdowns.push(text);
+      }
+      this.setState({ files: markdowns});
+    } catch (error) {
+      console.log(error);
     }
-    // this.setState( {files: markdowns});
-    return markdowns;
   }
-
-  
 
   render() {
+    // console.log(this.state.files);
+    let posts = [];
+    if (this.state.files !== null) {
+      for (let i=0; i<this.state.files.length; i++) {
+        // let post = <ReactMarkdown source=${this.state.files[i]} escapeHtml={false} className="App" />;
+        posts.push(<ReactMarkdown source={this.state.files[i]} escapeHtml={false} className="App" />);
+      }
+    } else {
+      posts = '';
+    }
 
-    console.log(this.state.files);
 
-    // let posts = [];
-    // for (let i=0; i<this.state.files.length; i++) {
-    //   // let post = <ReactMarkdown source=${this.state.files[i]} escapeHtml={false} className="App" />;
-    //   posts.push(<ReactMarkdown source={this.state.files[i]} escapeHtml={false} className="App" />);
-    // }
 
     return (
-      <div></div>
+      <div>{posts}</div>
     );
   }
 }
