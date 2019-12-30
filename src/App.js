@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown/with-html';
+import Header from './components/header/Header.js';
+import Navigation from './components/navigation/Navigation.js';
+import Footer from './components/footer/Footer.js'
 import './App.css';
 
 function importAll(r) {
@@ -63,9 +66,18 @@ class App extends React.Component {
 
 
     return (
-      <div>{posts}</div>
+      <div className="App">
+        <main>
+          <Header/>
+          <Navigation/>
+          <div>
+            {posts}
+          </div>
+          <Footer/>
+        </main>
+      </div>
     );
-  }
-}
+  };
+};
 
 export default App;
