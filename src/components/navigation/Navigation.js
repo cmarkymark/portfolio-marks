@@ -3,21 +3,21 @@ import './Navigation.css';
 
 class Navigation extends React.Component {
 
-  constructor() {
-    super();
-
-  }
+  // constructor(props) {
+  //   super(props);
+  //
+  // }
 
   componentDidMount() {
 
   }
 
   render() {
-
+    console.log(this.props);
     return (
-      <navigation>
+      <nav id="navigation">
         navigation
-      </navigation>
+      </nav>
     );
   };
 };

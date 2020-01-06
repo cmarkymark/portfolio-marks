@@ -13,13 +13,37 @@ const filePaths = importAll(
   require.context('./assets/markdown', true, /\.md$/)
 );
 
+const fascinationPaths = importAll(
+  require.context('./assets/markdown/fascination', true, /\.md$/)
+);
+
+const researchPaths = importAll(
+  require.context('./assets/markdown/research', true, /\.md$/)
+);
+
+const teachingPaths = importAll(
+  require.context('./assets/markdown/teaching', true, /\.md$/)
+);
+
 class App extends React.Component {
 
   constructor() {
     super();
     this.state = {
+      filePaths: filePaths,
       files: null,
-      filePaths: filePaths
+      fascination: {
+        filePaths: fascinationPaths,
+        files: null
+      },
+      research: {
+        filePaths: researchPaths,
+        files: null
+      },
+      teaching: {
+        filePaths: teachingPaths,
+        files: null
+      }
     };
   }
 
@@ -47,31 +71,29 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.files);
-    let posts = [];
-    if (this.state.files !== null) {
-      for (let i=0; i<this.state.files.length; i++) {
-        posts.push(
-          <ReactMarkdown
-            source={this.state.files[i].text}
-            key={this.state.files[i].title}
-            escapeHtml={false}
-            className="App"
-          />);
-      }
-    } else {
-      posts = '';
-    }
-
-
+    console.log(this.state);
+    // let posts = [];
+    // if (this.state.files !== null) {
+    //   for (let i=0; i<this.state.files.length; i++) {
+    //     posts.push(
+    //       <ReactMarkdown
+    //         source={this.state.files[i].text}
+    //         key={this.state.files[i].title}
+    //         escapeHtml={false}
+    //         className="App"
+    //       />);
+    //   }
+    // } else {
+    //   posts = '';
+    // }
 
     return (
       <div className="App">
         <main>
           <Header/>
-          <Navigation/>
+          <Navigation props={this.state.files}/>
           <div>
-            {posts}
+
           </div>
           <Footer/>
         </main>

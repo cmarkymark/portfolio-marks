@@ -7,7 +7,13 @@ const Footer = ({footer}) => {
       <div>
         <p>Charles Marks</p>
         <p>Some footer material</p>
-        <p>Such a great way to fill the bottom of this page</p>
+        <p>A React.js skeleton created by <a
+          href="https://github.com/philipLutz"
+          target="_blank"
+          rel="noopener noreferrer">
+          Philip Lutz
+          </a>
+        </p>
       </div>
     </footer>
   );
