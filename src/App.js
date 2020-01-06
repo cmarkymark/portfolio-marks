@@ -9,10 +9,6 @@ function importAll(r) {
   return r.keys().map(r);
 }
 
-const filePaths = importAll(
-  require.context('./assets/markdown', true, /\.md$/)
-);
-
 const fascinationPaths = importAll(
   require.context('./assets/markdown/fascination', true, /\.md$/)
 );
@@ -30,45 +26,44 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      filePaths: filePaths,
-      files: null,
       fascination: {
-        filePaths: fascinationPaths,
-        files: null
+        filePaths: fascinationPaths
       },
       research: {
-        filePaths: researchPaths,
-        files: null
+        filePaths: researchPaths
       },
       teaching: {
-        filePaths: teachingPaths,
-        files: null
+        filePaths: teachingPaths
       }
     };
   }
 
   async componentDidMount() {
+    const fields = Object.keys(this.state);
     try {
       let i = 0;
-      let markdowns = [];
-      for (i; i<this.state.filePaths.length; i++) {
-        let fileObject = {
-          title: null,
-          text: null
-        };
-        const response = await fetch(this.state.filePaths[i]);
-        fileObject.text = await response.text();
-        fileObject.title = fileObject.text.match(/<!---[\w\s\S]+?-->/);
-        fileObject.title = fileObject.title[0].substring(
-          6, fileObject.title[0].length - 4
-        );
-        markdowns.push(fileObject);
+      for (i; i < fields.length; i++) {
+        let j = 0;
+        let markdowns = [];
+        for (j; j<this.state[fields[i]].filePaths.length; j++) {
+          let fileObject = {
+            title: null,
+            text: null
+          };
+          const response = await fetch(this.state[fields[i]].filePaths[j]);
+          fileObject.text = await response.text();
+          fileObject.title = fileObject.text.match(/<!---[\w\s\S]+?-->/);
+          fileObject.title = fileObject.title[0].substring(
+            6, fileObject.title[0].length - 4
+          );
+          markdowns.push(fileObject);
+        }
+        this.setState({ [fields[i]]: markdowns });
       }
-      this.setState({ files: markdowns});
-    } catch (error) {
-      console.log(error);
+    } catch(error) {
+        console.log(error);
+      }
     }
-  }
 
   render() {
     console.log(this.state);
