@@ -1,8 +1,13 @@
 import React from 'react';
+import {Route, withRouter}    from 'react-router-dom';
 import ReactMarkdown from 'react-markdown/with-html';
 import Header from './components/header/Header.js';
 import Navigation from './components/navigation/Navigation.js';
-import Footer from './components/footer/Footer.js'
+import About from './components/about/About.js';
+import Landing from './components/landing/Landing.js';
+import Markdown from './components/markdown/Markdown.js';
+import Fascination from './components/fascination/Fascination.js';
+import Footer from './components/footer/Footer.js';
 import './App.css';
 
 function importAll(r) {
@@ -39,18 +44,18 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const fields = Object.keys(this.state);
+    const keys = Object.keys(this.state);
     try {
       let i = 0;
-      for (i; i < fields.length; i++) {
+      for (i; i < keys.length; i++) {
         let j = 0;
         let markdowns = [];
-        for (j; j<this.state[fields[i]].filePaths.length; j++) {
+        for (j; j<this.state[keys[i]].filePaths.length; j++) {
           let fileObject = {
             title: null,
             text: null
           };
-          const response = await fetch(this.state[fields[i]].filePaths[j]);
+          const response = await fetch(this.state[keys[i]].filePaths[j]);
           fileObject.text = await response.text();
           fileObject.title = fileObject.text.match(/<!---[\w\s\S]+?-->/);
           fileObject.title = fileObject.title[0].substring(
@@ -58,7 +63,7 @@ class App extends React.Component {
           );
           markdowns.push(fileObject);
         }
-        this.setState({ [fields[i]]: markdowns });
+        this.setState({ [keys[i]]: markdowns });
       }
     } catch(error) {
         console.log(error);
@@ -66,7 +71,31 @@ class App extends React.Component {
     }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
+    const keys = Object.keys(this.state);
+
+    let allPostRoutes = [];
+    if (
+      !this.state.fascination.filePaths &&
+      !this.state.research.filePaths &&
+      !this.state.teaching.filePaths)
+    {
+      for (let i = 0; i < keys.length; i++) {
+        for (let j=0; j<this.state[keys[i]].length; j++) {
+          // console.log(this.state[keys[i]][j]);
+          let path = this.state[keys[i]][j].title.replace(/\s/g , "-");
+          allPostRoutes.push(
+            <Route
+              exact path={path}
+              key={this.state[keys[i]][j].title}
+              render={(props) => <Markdown {...this.state[keys[i]][j]} />}
+            />
+          );
+
+        }
+      }
+    }
+    console.log(allPostRoutes);
     // let posts = [];
     // if (this.state.files !== null) {
     //   for (let i=0; i<this.state.files.length; i++) {
@@ -86,9 +115,15 @@ class App extends React.Component {
       <div className="App">
         <main>
           <Header/>
-          <Navigation props={this.state.files}/>
+          <Navigation props={this.state}/>
           <div>
-
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/about" component={About} />
+            <Route
+              exact path='/fascination'
+              render={(props) => <Fascination {...this.state.fascination} />}
+            />
+            {allPostRoutes}
           </div>
           <Footer/>
         </main>
