@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown/with-html';
 import './Markdown.css';
 
 const Markdown = (props) => {
-  console.log(props);
   return (
     <div id={props.title}>
       <ReactMarkdown
@@ -11,7 +10,7 @@ const Markdown = (props) => {
         key={props.title}
         escapeHtml={false}
         className="markdown"
-      />);
+      />
     </div>
   );
 };

@@ -1,27 +1,26 @@
 import React from 'react';
-import {Route, withRouter}    from 'react-router-dom';
-import ReactMarkdown from 'react-markdown/with-html';
+import { Route } from 'react-router-dom';
 import Header from './components/header/Header.js';
 import Navigation from './components/navigation/Navigation.js';
 import About from './components/about/About.js';
 import Landing from './components/landing/Landing.js';
 import Markdown from './components/markdown/Markdown.js';
 import Fascination from './components/fascination/Fascination.js';
+import Research from './components/research/Research.js';
+import Teaching from './components/teaching/Teaching.js';
 import Footer from './components/footer/Footer.js';
 import './App.css';
 
+// Import markdown files
 function importAll(r) {
   return r.keys().map(r);
 }
-
 const fascinationPaths = importAll(
   require.context('./assets/markdown/fascination', true, /\.md$/)
 );
-
 const researchPaths = importAll(
   require.context('./assets/markdown/research', true, /\.md$/)
 );
-
 const teachingPaths = importAll(
   require.context('./assets/markdown/teaching', true, /\.md$/)
 );
@@ -43,6 +42,7 @@ class App extends React.Component {
     };
   }
 
+  // Once App has mounted, markdown files are loaded to state.
   async componentDidMount() {
     const keys = Object.keys(this.state);
     try {
@@ -71,9 +71,8 @@ class App extends React.Component {
     }
 
   render() {
-    // console.log(this.state);
+    // Create router path to specific markdown pages based on title
     const keys = Object.keys(this.state);
-
     let allPostRoutes = [];
     if (
       !this.state.fascination.filePaths &&
@@ -82,8 +81,7 @@ class App extends React.Component {
     {
       for (let i = 0; i < keys.length; i++) {
         for (let j=0; j<this.state[keys[i]].length; j++) {
-          // console.log(this.state[keys[i]][j]);
-          let path = this.state[keys[i]][j].title.replace(/\s/g , "-");
+          let path = "/" + this.state[keys[i]][j].title.replace(/\s/g , "-");
           allPostRoutes.push(
             <Route
               exact path={path}
@@ -91,25 +89,9 @@ class App extends React.Component {
               render={(props) => <Markdown {...this.state[keys[i]][j]} />}
             />
           );
-
         }
       }
     }
-    console.log(allPostRoutes);
-    // let posts = [];
-    // if (this.state.files !== null) {
-    //   for (let i=0; i<this.state.files.length; i++) {
-    //     posts.push(
-    //       <ReactMarkdown
-    //         source={this.state.files[i].text}
-    //         key={this.state.files[i].title}
-    //         escapeHtml={false}
-    //         className="App"
-    //       />);
-    //   }
-    // } else {
-    //   posts = '';
-    // }
 
     return (
       <div className="App">
@@ -122,6 +104,14 @@ class App extends React.Component {
             <Route
               exact path='/fascination'
               render={(props) => <Fascination {...this.state.fascination} />}
+            />
+            <Route
+              exact path='/research'
+              render={(props) => <Research {...this.state.research} />}
+            />
+            <Route
+              exact path='/teaching'
+              render={(props) => <Teaching {...this.state.teaching} />}
             />
             {allPostRoutes}
           </div>
