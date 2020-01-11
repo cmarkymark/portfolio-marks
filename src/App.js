@@ -92,26 +92,27 @@ class App extends React.Component {
         }
       }
     }
-
+    // After all markdowns have been loaded and read, you can check state.
+    // console.log(this.state);
     return (
       <div className="App">
         <main>
           <Header/>
-          <Navigation props={this.state}/>
-          <div>
+          <Navigation {...this.state} />
+          <div id="content">
             <Route exact path="/" component={Landing} />
             <Route exact path="/about" component={About} />
             <Route
               exact path='/fascination'
-              render={(props) => <Fascination {...this.state.fascination} />}
+              render={() => <Fascination {...this.state.fascination} />}
             />
             <Route
               exact path='/research'
-              render={(props) => <Research {...this.state.research} />}
+              render={() => <Research {...this.state.research} />}
             />
             <Route
               exact path='/teaching'
-              render={(props) => <Teaching {...this.state.teaching} />}
+              render={() => <Teaching {...this.state.teaching} />}
             />
             {allPostRoutes}
           </div>
