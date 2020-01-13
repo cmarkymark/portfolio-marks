@@ -1,4 +1,4 @@
-<!--- Resume --->
+<!--- Résumé --->
 
 ## Charles Marks, MPH
 
