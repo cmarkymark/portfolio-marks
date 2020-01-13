@@ -12,6 +12,10 @@
   
 }
 
-a:link {
+#content a:link {
   color: blue;
+}
+
+#navigation a:link {
+  color: black;
 }
