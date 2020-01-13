@@ -5,7 +5,7 @@
     justify-content: space-evenly
 }
 
-a #navigation {
+#navigation a {
   color: black;
   text-decoration: none;
 }
