@@ -70,6 +70,8 @@ Espinosa, S., Fondevila, G, **Marks, C.**, Exploiring the Motivations for Non-Co
 
 **Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., A Call Cross-Disciplinary Call to Action: Early Detection of Drug-Use Associated Public-Health Outbreaks in the United States. For Submission to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
+**Marks, C**,..., Borquez, A., Predicting Synthetic Opioid Overdose Outbreaks: A Statistical Modeling Analysis
+
 ## Conference Procedings
 
 **Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction or early detection of drug-use associated public-health outbreaks in the United States: a narrative review. For Submission to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
