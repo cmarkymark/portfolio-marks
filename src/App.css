@@ -11,3 +11,7 @@
   text-align: center;
   
 }
+
+#content a:link {
+  color: blue;
+}
