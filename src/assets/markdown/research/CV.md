@@ -14,7 +14,7 @@ Studies primarily focused in theoretical computer science, with a particular foc
 
 Focus was on health promotion and education with a particular interest in the application of critical social theories to address health inequities.
 
-Thesis : [Substance Criminalization, Mass Incarceration, & Disenfranchisement](https://cmarkymark.github.io/papers/Substance%20Criminalization%2C%20Mass%20Incarceration%2C%20%26%20Disenfranchisement.pdf)
+Thesis : [Substance Criminalization, Mass Incarceration, & Disenfranchisement](charliemarks.com/PDF/Masters_Thesis.pdf)
 
 ### San Diego State University & University of California San Diego '21, PhD
 
