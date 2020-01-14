@@ -1,14 +1,6 @@
 
-<!--- Fascination Title 1 -->
+<!--- Banjo -->
 
-# Title of Post
-This is an example of a markdown file.  
-
-## Section of Post
-Fascination Title 1.
-
-### HTML
-<br>
-<div>
-  <p>Now here I snuck in some HTML</p>
-</div>
+<body>    
+    <iframe style="max-width: 480px" width="100%" height="360" src="http://www.youtube.com/user/UCclj_lCXtWwSowzXT-cIHBw" frameborder="0" allowfullscreen></iframe>
+</body> 
