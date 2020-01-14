@@ -1,6 +1,4 @@
 
 <!--- Banjo -->
 
-<body>    
-    <iframe style="max-width: 480px" width="100%" height="360" src="http://www.youtube.com/user/clj_lCXtWwSowzXT-cIHBw" frameborder="0" allowfullscreen></iframe>
-</body> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLcuTOh7wTTtU_DhGRb0rN-CPydvk16lGK" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
