@@ -78,6 +78,8 @@ Espinosa, S., Fondevila, G, **Marks, C.**, Exploiring the Motivations for Non-Co
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. For Submission to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
+Rammohan, I., Jain, S., Sun, S., Milloy, MJ, DeBeck, K., Hayashi, K., Strathdee, S., Gonzalez-Zuniga, P., **Marks, C.**, Werb, D., Polydrug use patterns and the provision of injection initiation assistance in Vancouver, Canada and Tijuana, Mexico: A latent profile analysis. For Submission to 2020 NIDA International Forum in Hollywood, Florida
+
 Meyers, S., Jain, S., Sun, X., **Marks, C.**, Milloy, MJ, DeBeck, K., Hayashi, K., Strathdee, S., Werb, D., Gender and time to the provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. For Submission to 2020 NIDA International Forum in Hollywood, Florida
 
 Johnson, D., **Marks, C**., Nobles, A., Leas, E., Strathdee, S., Ayers, J., Borquez, A., Trends in Internet Search Behavior for Substance Use Treatment: A Measure of Health Seeking Behavior.  Submitted to The College on Problems of Drug Dependence Annuall Scientific Meeting 2020 in Hollywood, Florida
