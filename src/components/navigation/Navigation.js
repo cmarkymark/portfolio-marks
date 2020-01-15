@@ -6,9 +6,10 @@ const Navigation = (props) => {
   return (
     <nav id="navigation">
       <Dropdown heading={"Home"} />
+      <Dropdown heading={"Fascination"} drop={props.fascination} />
       <Dropdown heading={"Research"} drop={props.research} />
       <Dropdown heading={"Teaching"} drop={props.teaching} />
-      <Dropdown heading={"Extracurriculars"} drop={props.fascination} />
+      <Dropdown heading={"About"} />
     </nav>
   );
 };
