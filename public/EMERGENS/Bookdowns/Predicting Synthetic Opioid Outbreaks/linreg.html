@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> What Is In This Book?</a></li>
 <li class="chapter" data-level="2" data-path="dataprep.html"><a href="dataprep.html"><i class="fa fa-check"></i><b>2</b> Data Preparation</a><ul>
 <li class="chapter" data-level="2.1" data-path="dataprep.html"><a href="dataprep.html#cdc-wonder-data"><i class="fa fa-check"></i><b>2.1</b> CDC Wonder Data</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="dataprep.html"><a href="dataprep.html#upload-the-data"><i class="fa fa-check"></i><b>2.1.1</b> Upload the Data</a></li>
+<li class="chapter" data-level="2.1.1" data-path="dataprep.html"><a href="dataprep.html#upload-the-datas"><i class="fa fa-check"></i><b>2.1.1</b> Upload the Datas</a></li>
 <li class="chapter" data-level="2.1.2" data-path="dataprep.html"><a href="dataprep.html#imputing-missing-data"><i class="fa fa-check"></i><b>2.1.2</b> Imputing Missing Data</a></li>
 <li class="chapter" data-level="2.1.3" data-path="dataprep.html"><a href="dataprep.html#calculating-crude-rates"><i class="fa fa-check"></i><b>2.1.3</b> Calculating Crude Rates</a></li>
 </ul></li>
@@ -210,205 +210,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="imputation-and-transformation" class="section level2">
 <h2><span class="header-section-number">4.2</span> Imputation and Transformation</h2>
 <p>For some of our potential variables, we want to impute some missing values. For a few, as well, such as population density, we also want to log transform them.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co">#df$log_average_pill_count_per_100000[df$log_average_pill_count_per_100000 == -Inf | is.na(df$log_average_pill_count_per_100000)] &lt;- median(df$log_average_pill_count_per_100000, na.rm = T)</span></a>
-<a class="sourceLine" id="cb14-2" title="2">df<span class="op">$</span>unemployment_rate[<span class="kw">is.na</span>(df<span class="op">$</span>unemployment_rate)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>unemployment_rate, <span class="dt">na.rm =</span> T)</a>
-<a class="sourceLine" id="cb14-3" title="3"></a>
-<a class="sourceLine" id="cb14-4" title="4">df<span class="op">$</span>median_household_income[<span class="kw">is.na</span>(df<span class="op">$</span>median_household_income)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>median_household_income, <span class="dt">na.rm =</span> T)</a>
-<a class="sourceLine" id="cb14-5" title="5">df<span class="op">$</span>median_household_income &lt;-<span class="st"> </span><span class="kw">log</span>(df<span class="op">$</span>median_household_income)</a>
-<a class="sourceLine" id="cb14-6" title="6">df<span class="op">$</span>proportion_poverty[<span class="kw">is.na</span>(df<span class="op">$</span>proportion_poverty)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>proportion_poverty, <span class="dt">na.rm=</span>T)</a>
-<a class="sourceLine" id="cb14-7" title="7">df<span class="op">$</span>proportion_uninsured[<span class="kw">is.na</span>(df<span class="op">$</span>proportion_uninsured)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>proportion_uninsured, <span class="dt">na.rm =</span> T)</a>
-<a class="sourceLine" id="cb14-8" title="8">df<span class="op">$</span>proportion_homeowners_35perc_income[<span class="kw">is.na</span>(df<span class="op">$</span>proportion_homeowners_35perc_income)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>proportion_homeowners_35perc_income, <span class="dt">na.rm =</span> T)</a>
-<a class="sourceLine" id="cb14-9" title="9">df<span class="op">$</span>proportion_high_school_or_greater[<span class="kw">is.na</span>(df<span class="op">$</span>proportion_high_school_or_greater)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>proportion_high_school_or_greater, <span class="dt">na.rm =</span> T)</a>
-<a class="sourceLine" id="cb14-10" title="10">df<span class="op">$</span>proportion_white[<span class="kw">is.na</span>(df<span class="op">$</span>proportion_white)] &lt;-<span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>proportion_white, <span class="dt">na.rm =</span> T)</a>
-<a class="sourceLine" id="cb14-11" title="11"></a>
-<a class="sourceLine" id="cb14-12" title="12">df<span class="op">$</span>population_density &lt;-<span class="st"> </span><span class="kw">log</span>(df<span class="op">$</span>population_density)</a>
-<a class="sourceLine" id="cb14-13" title="13"></a>
-<a class="sourceLine" id="cb14-14" title="14">df<span class="op">$</span>population_density[df<span class="op">$</span>population_density <span class="op">==</span><span class="st"> </span><span class="op">-</span><span class="ot">Inf</span> <span class="op">|</span><span class="st"> </span><span class="kw">is.na</span>(df<span class="op">$</span>population_density)] &lt;-<span class="st"> </span><span class="kw">median</span>(df<span class="op">$</span>population_density, <span class="dt">na.rm =</span> T)</a></code></pre></div>
 </div>
 <div id="neighboring-counties" class="section level2">
 <h2><span class="header-section-number">4.3</span> Neighboring Counties</h2>
 <p>We also want to generate a few additional variables that articulate the impact of synthetic opioid on neighboring counties. While we previously generated gravity variables, these are a function of both a county’s death rate and their neighbors. We want to generate variable(s) which simply articulate neighboring county rates. Here we create two new variables, one which measures the highest synthetic opioid overdose death rate of a county’s neighbors (continuous) and a second variable which measures (T/F) if any of a county’s neighbors exceed a certain threshold.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">threshold &lt;-<span class="st"> </span><span class="dv">10</span></a>
-<a class="sourceLine" id="cb15-2" title="2">df_counties &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;Data/county_adjacency.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>, <span class="dt">header =</span> F)</a>
-<a class="sourceLine" id="cb15-3" title="3"></a>
-<a class="sourceLine" id="cb15-4" title="4">cnty &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb15-5" title="5"></a>
-<a class="sourceLine" id="cb15-6" title="6">df<span class="op">$</span>neighbor_synthetic_outbreak &lt;-<span class="st"> </span>F</a>
-<a class="sourceLine" id="cb15-7" title="7">df<span class="op">$</span>neighbor_highest_synthetic_opioid_death_rate &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb15-8" title="8"></a>
-<a class="sourceLine" id="cb15-9" title="9"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(df_counties)){</a>
-<a class="sourceLine" id="cb15-10" title="10">  </a>
-<a class="sourceLine" id="cb15-11" title="11">  <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.na</span>(df_counties<span class="op">$</span>V2[i])){</a>
-<a class="sourceLine" id="cb15-12" title="12">    cnty &lt;-<span class="st"> </span>df_counties<span class="op">$</span>V2[i]</a>
-<a class="sourceLine" id="cb15-13" title="13">  }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb15-14" title="14">    df_counties<span class="op">$</span>V2[i] &lt;-<span class="st"> </span>cnty</a>
-<a class="sourceLine" id="cb15-15" title="15">  }</a>
-<a class="sourceLine" id="cb15-16" title="16">  </a>
-<a class="sourceLine" id="cb15-17" title="17">}</a>
-<a class="sourceLine" id="cb15-18" title="18"></a>
-<a class="sourceLine" id="cb15-19" title="19"></a>
-<a class="sourceLine" id="cb15-20" title="20"><span class="cf">for</span>(fips <span class="cf">in</span> <span class="kw">unique</span>(df_counties<span class="op">$</span>V2)){</a>
-<a class="sourceLine" id="cb15-21" title="21">  </a>
-<a class="sourceLine" id="cb15-22" title="22">  neighbors &lt;-<span class="st"> </span>df_counties[df_counties<span class="op">$</span>V2 <span class="op">==</span><span class="st"> </span>fips,][<span class="op">-</span><span class="dv">1</span>,]</a>
-<a class="sourceLine" id="cb15-23" title="23">  </a>
-<a class="sourceLine" id="cb15-24" title="24">  </a>
-<a class="sourceLine" id="cb15-25" title="25">  <span class="cf">for</span>(year <span class="cf">in</span> <span class="dv">2010</span><span class="op">:</span><span class="dv">2017</span>){</a>
-<a class="sourceLine" id="cb15-26" title="26">    highest &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb15-27" title="27">    <span class="cf">for</span>(fips_neighbor <span class="cf">in</span> <span class="kw">unique</span>(neighbors<span class="op">$</span>V4)){</a>
-<a class="sourceLine" id="cb15-28" title="28">      </a>
-<a class="sourceLine" id="cb15-29" title="29">      <span class="cf">if</span>(<span class="kw">length</span>(df<span class="op">$</span>synthetic_opioid_crude_death_rate[df<span class="op">$</span>year <span class="op">==</span><span class="st"> </span>year <span class="op">&amp;</span><span class="st"> </span>df<span class="op">$</span>county_code <span class="op">==</span><span class="st"> </span>fips_neighbor]) <span class="op">&amp;&amp;</span><span class="st"> </span>df<span class="op">$</span>synthetic_opioid_crude_death_rate[df<span class="op">$</span>year <span class="op">==</span><span class="st"> </span>year <span class="op">&amp;</span><span class="st"> </span>df<span class="op">$</span>county_code <span class="op">==</span><span class="st"> </span>fips_neighbor] <span class="op">&gt;</span><span class="st"> </span>highest){</a>
-<a class="sourceLine" id="cb15-30" title="30">        highest &lt;-<span class="st"> </span>df<span class="op">$</span>synthetic_opioid_crude_death_rate[df<span class="op">$</span>year <span class="op">==</span><span class="st"> </span>year <span class="op">&amp;</span><span class="st"> </span>df<span class="op">$</span>county_code <span class="op">==</span><span class="st"> </span>fips_neighbor]</a>
-<a class="sourceLine" id="cb15-31" title="31">      }</a>
-<a class="sourceLine" id="cb15-32" title="32">      </a>
-<a class="sourceLine" id="cb15-33" title="33">    }</a>
-<a class="sourceLine" id="cb15-34" title="34">    df<span class="op">$</span>neighbor_highest_synthetic_opioid_death_rate[df<span class="op">$</span>county_code <span class="op">==</span><span class="st"> </span>fips <span class="op">&amp;</span><span class="st"> </span>df<span class="op">$</span>year <span class="op">==</span><span class="st"> </span>year] &lt;-<span class="st"> </span>highest</a>
-<a class="sourceLine" id="cb15-35" title="35">  }</a>
-<a class="sourceLine" id="cb15-36" title="36">  </a>
-<a class="sourceLine" id="cb15-37" title="37">}</a>
-<a class="sourceLine" id="cb15-38" title="38"></a>
-<a class="sourceLine" id="cb15-39" title="39">df<span class="op">$</span>neighbor_synthetic_outbreak[df<span class="op">$</span>neighbor_highest_synthetic_opioid_death_rate <span class="op">&gt;=</span><span class="st"> </span>threshold] &lt;-<span class="st"> </span>T</a></code></pre></div>
 </div>
 <div id="a-simple-regression-model" class="section level2">
 <h2><span class="header-section-number">4.4</span> A Simple Regression Model</h2>
 <div id="defining-our-initial-regression-equation" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Defining Our Initial Regression Equation</h3>
 <p>To begin, we start with a very simple model. We presume that the previous years synthetic opioid death rate will be highly predictive of the next year. We imagine that annual changes will be a function of time (as the epidemic has spread, the dynamics of the epidemic have changed) as well as the proximity of the epidemic. As such, we have included both year (continuous) and whether a neighbor had a death rate of 10 or more the previous year (T/F) as interaction terms.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">func &lt;-<span class="st"> </span>next_year_synthetic_opioid_death_rate <span class="op">~</span><span class="st"> </span>(synthetic_opioid_crude_death_rate</a>
-<a class="sourceLine" id="cb16-2" title="2">                                                 )<span class="op">*</span>(year <span class="op">+</span><span class="st"> </span>neighbor_synthetic_outbreak)</a></code></pre></div>
 </div>
 <div id="running-the-model-and-predicting" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Running the Model and Predicting</h3>
 <p>So, first we need our training data. Essentially, our goal is to see if we can use 2016 county-level data to predict 2017 synthetic opioid death rates. So our training data will be all data prior to this. We will train a linear regression model on this data. Then we will use the model on the 2016 dataset to predict 2017 synthetic death rate.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co">#subset the training model</span></a>
-<a class="sourceLine" id="cb17-2" title="2">train_data &lt;-<span class="st"> </span>df[df<span class="op">$</span>year <span class="op">&lt;</span><span class="st"> </span><span class="dv">2016</span>,]</a>
-<a class="sourceLine" id="cb17-3" title="3"></a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="co">#train the model</span></a>
-<a class="sourceLine" id="cb17-5" title="5">model &lt;-<span class="st"> </span><span class="kw">lm</span>(func, train_data)</a>
-<a class="sourceLine" id="cb17-6" title="6"></a>
-<a class="sourceLine" id="cb17-7" title="7"><span class="co">#subset the test data</span></a>
-<a class="sourceLine" id="cb17-8" title="8">test_data &lt;-<span class="st"> </span>df[df<span class="op">$</span>year <span class="op">==</span><span class="st"> </span><span class="dv">2016</span>,]</a>
-<a class="sourceLine" id="cb17-9" title="9"></a>
-<a class="sourceLine" id="cb17-10" title="10"><span class="co">#predict 2017 death rates</span></a>
-<a class="sourceLine" id="cb17-11" title="11">test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate &lt;-<span class="st"> </span><span class="kw">predict</span>(model, test_data)</a></code></pre></div>
 </div>
 <div id="evaluating-model-performance" class="section level3">
 <h3><span class="header-section-number">4.4.3</span> Evaluating Model Performance</h3>
 <div id="continuous-metrics" class="section level4">
 <h4><span class="header-section-number">4.4.3.1</span> Continuous Metrics</h4>
 <p>First, we want to see how well the model did at predicting the 2017 synthetic opioid crude deat rate. Here we present a series of metrics which reflect on the performance.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co">## some counties in Alaska did not have enough data to make predictions so they are excluded using this line of code</span></a>
-<a class="sourceLine" id="cb18-2" title="2">test_data &lt;-<span class="st"> </span>test_data[<span class="op">!</span><span class="kw">is.na</span>(test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate),]</a>
-<a class="sourceLine" id="cb18-3" title="3"></a>
-<a class="sourceLine" id="cb18-4" title="4"></a>
-<a class="sourceLine" id="cb18-5" title="5"><span class="co">## MAE</span></a>
-<a class="sourceLine" id="cb18-6" title="6">            </a>
-<a class="sourceLine" id="cb18-7" title="7">            sum &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb18-8" title="8">            </a>
-<a class="sourceLine" id="cb18-9" title="9">            <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data))</a>
-<a class="sourceLine" id="cb18-10" title="10">            {</a>
-<a class="sourceLine" id="cb18-11" title="11">                sum &lt;-<span class="st"> </span>sum <span class="op">+</span><span class="st"> </span><span class="kw">abs</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate[i])</a>
-<a class="sourceLine" id="cb18-12" title="12">            }</a>
-<a class="sourceLine" id="cb18-13" title="13">            </a>
-<a class="sourceLine" id="cb18-14" title="14">            MAE &lt;-<span class="st"> </span>sum<span class="op">/</span><span class="kw">nrow</span>(test_data)</a>
-<a class="sourceLine" id="cb18-15" title="15">            </a>
-<a class="sourceLine" id="cb18-16" title="16">            </a>
-<a class="sourceLine" id="cb18-17" title="17">            <span class="co">## RMSE</span></a>
-<a class="sourceLine" id="cb18-18" title="18">            </a>
-<a class="sourceLine" id="cb18-19" title="19">            sum &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb18-20" title="20">            </a>
-<a class="sourceLine" id="cb18-21" title="21">            <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data))</a>
-<a class="sourceLine" id="cb18-22" title="22">            {</a>
-<a class="sourceLine" id="cb18-23" title="23">                sum &lt;-<span class="st"> </span>sum <span class="op">+</span><span class="st"> </span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate[i])<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb18-24" title="24">            }</a>
-<a class="sourceLine" id="cb18-25" title="25">            </a>
-<a class="sourceLine" id="cb18-26" title="26">            sum &lt;-<span class="st"> </span>sum<span class="op">/</span><span class="kw">nrow</span>(test_data)</a>
-<a class="sourceLine" id="cb18-27" title="27">            RMSE &lt;-<span class="st"> </span><span class="kw">sqrt</span>(sum)</a>
-<a class="sourceLine" id="cb18-28" title="28">            </a>
-<a class="sourceLine" id="cb18-29" title="29">            <span class="co">## R squared</span></a>
-<a class="sourceLine" id="cb18-30" title="30">            </a>
-<a class="sourceLine" id="cb18-31" title="31">            mean_outcome &lt;-<span class="st"> </span><span class="kw">sum</span>(test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate)<span class="op">/</span><span class="kw">nrow</span>(test_data)</a>
-<a class="sourceLine" id="cb18-32" title="32">            </a>
-<a class="sourceLine" id="cb18-33" title="33">            ss_tot &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb18-34" title="34">            ss_res &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb18-35" title="35">            </a>
-<a class="sourceLine" id="cb18-36" title="36">            <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data))</a>
-<a class="sourceLine" id="cb18-37" title="37">            {</a>
-<a class="sourceLine" id="cb18-38" title="38">                ss_tot &lt;-<span class="st"> </span>ss_tot <span class="op">+</span><span class="st"> </span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>mean_outcome)<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb18-39" title="39">                </a>
-<a class="sourceLine" id="cb18-40" title="40">                ss_res &lt;-<span class="st"> </span>ss_res <span class="op">+</span><span class="st"> </span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate[i])<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb18-41" title="41">            }</a>
-<a class="sourceLine" id="cb18-42" title="42">            </a>
-<a class="sourceLine" id="cb18-43" title="43">            r_squared &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(ss_res<span class="op">/</span>ss_tot)</a>
-<a class="sourceLine" id="cb18-44" title="44">            </a>
-<a class="sourceLine" id="cb18-45" title="45">            pearsons &lt;-<span class="st"> </span><span class="kw">cor</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate, test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate)</a>
-<a class="sourceLine" id="cb18-46" title="46">            spearman &lt;-<span class="st"> </span><span class="kw">cor</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate, test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</a>
-<a class="sourceLine" id="cb18-47" title="47">            </a>
-<a class="sourceLine" id="cb18-48" title="48">            test_data<span class="op">$</span>pred_diff &lt;-<span class="st"> </span><span class="kw">abs</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate)</a>
-<a class="sourceLine" id="cb18-49" title="49">            </a>
-<a class="sourceLine" id="cb18-50" title="50">            titles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;R Squared&quot;</span>,<span class="st">&quot;RMSE&quot;</span>,<span class="st">&quot;MAE&quot;</span>,<span class="st">&quot;Pearson&#39;s R&quot;</span>,<span class="st">&quot;Spearman&#39;s rho&quot;</span>)</a>
-<a class="sourceLine" id="cb18-51" title="51">            cont_metrics &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(r_squared, RMSE, MAE, pearsons, spearman), <span class="dt">nrow =</span> <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb18-52" title="52">            <span class="kw">colnames</span>(cont_metrics) &lt;-<span class="st"> </span>titles</a>
-<a class="sourceLine" id="cb18-53" title="53">            </a>
-<a class="sourceLine" id="cb18-54" title="54">            cont_metrics</a></code></pre></div>
+<pre><code>##   R Squared     RMSE      MAE Pearson&#39;s R Spearman&#39;s rho
+## 1 0.6449826 4.979847 2.446574   0.8278455      0.9015019</code></pre>
+<p><img src="Cox_Reg_files/figure-html/map%20performance%20continuous-1.png" width="672" /><img src="Cox_Reg_files/figure-html/map%20performance%20continuous-2.png" width="672" /></p>
 </div>
 <div id="categorical-metrics" class="section level4">
 <h4><span class="header-section-number">4.4.3.2</span> Categorical Metrics</h4>
 <p>We predicted a continuous outcome, but it is of interest to simply ask if our model correctly identified counties whose death rate exceeded a certain threshold. For example, it may be of interest to see how well our model identified counties whose deeath rate exceeded 10 per 100,000. The following code calculates this, identifying true positives, true negatives, false positives, false negatives, and accompanying statistics of accuracy.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">test_data<span class="op">$</span>actual_outbreak &lt;-<span class="st"> </span>F</a>
-<a class="sourceLine" id="cb19-2" title="2">test_data<span class="op">$</span>actual_outbreak[test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>] &lt;-<span class="st"> </span>T</a>
-<a class="sourceLine" id="cb19-3" title="3">test_data<span class="op">$</span>predict_outbreak &lt;-<span class="st"> </span>F</a>
-<a class="sourceLine" id="cb19-4" title="4">test_data<span class="op">$</span>predict_outbreak[test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>] &lt;-<span class="st"> </span>T</a>
-<a class="sourceLine" id="cb19-5" title="5"></a>
-<a class="sourceLine" id="cb19-6" title="6">test_data<span class="op">$</span>final_evaluation &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb19-7" title="7"></a>
-<a class="sourceLine" id="cb19-8" title="8"><span class="kw">table</span>(test_data<span class="op">$</span>actual_outbreak, test_data<span class="op">$</span>predict_outbreak)</a>
-<a class="sourceLine" id="cb19-9" title="9"></a>
-<a class="sourceLine" id="cb19-10" title="10">true_pos &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb19-11" title="11">false_neg &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb19-12" title="12">true_neg &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb19-13" title="13">false_pos &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb19-14" title="14"></a>
-<a class="sourceLine" id="cb19-15" title="15"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data)){</a>
-<a class="sourceLine" id="cb19-16" title="16">  </a>
-<a class="sourceLine" id="cb19-17" title="17">  <span class="cf">if</span>(test_data<span class="op">$</span>actual_outbreak[i]){</a>
-<a class="sourceLine" id="cb19-18" title="18">    <span class="co">#if there is an outbreak</span></a>
-<a class="sourceLine" id="cb19-19" title="19">    <span class="cf">if</span>(test_data<span class="op">$</span>predict_outbreak[i]){</a>
-<a class="sourceLine" id="cb19-20" title="20">      <span class="co">## true positive</span></a>
-<a class="sourceLine" id="cb19-21" title="21">      </a>
-<a class="sourceLine" id="cb19-22" title="22">      true_pos &lt;-<span class="st"> </span>true_pos <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb19-23" title="23">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb19-24" title="24">      </a>
-<a class="sourceLine" id="cb19-25" title="25">    }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb19-26" title="26">      <span class="co">## false negative</span></a>
-<a class="sourceLine" id="cb19-27" title="27">      false_neg &lt;-<span class="st"> </span>false_neg <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb19-28" title="28">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb19-29" title="29">    }</a>
-<a class="sourceLine" id="cb19-30" title="30">    </a>
-<a class="sourceLine" id="cb19-31" title="31">  }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb19-32" title="32">    <span class="cf">if</span>(test_data<span class="op">$</span>predict_outbreak[i]){</a>
-<a class="sourceLine" id="cb19-33" title="33">      <span class="co">## false positive</span></a>
-<a class="sourceLine" id="cb19-34" title="34">      false_pos &lt;-<span class="st"> </span>false_pos <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb19-35" title="35">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb19-36" title="36">    }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb19-37" title="37">      <span class="co">## true_negative</span></a>
-<a class="sourceLine" id="cb19-38" title="38">      true_neg &lt;-<span class="st"> </span>true_neg <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb19-39" title="39">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb19-40" title="40">    }</a>
-<a class="sourceLine" id="cb19-41" title="41">  }</a>
-<a class="sourceLine" id="cb19-42" title="42">  </a>
-<a class="sourceLine" id="cb19-43" title="43">}</a>
-<a class="sourceLine" id="cb19-44" title="44"></a>
-<a class="sourceLine" id="cb19-45" title="45">positive_predicted_value &lt;-<span class="st"> </span>true_pos<span class="op">/</span>(true_pos <span class="op">+</span><span class="st"> </span>false_pos)</a>
-<a class="sourceLine" id="cb19-46" title="46">negative_predicted_value &lt;-<span class="st"> </span>true_neg<span class="op">/</span>(true_neg <span class="op">+</span><span class="st"> </span>false_neg)</a>
-<a class="sourceLine" id="cb19-47" title="47">sensitivity &lt;-<span class="st"> </span>true_pos<span class="op">/</span>(true_pos <span class="op">+</span><span class="st"> </span>false_neg)</a>
-<a class="sourceLine" id="cb19-48" title="48">specificity &lt;-<span class="st"> </span>true_neg<span class="op">/</span>(true_neg <span class="op">+</span><span class="st"> </span>false_pos)</a>
-<a class="sourceLine" id="cb19-49" title="49">accuracy &lt;-<span class="st"> </span>(true_pos <span class="op">+</span><span class="st"> </span>true_neg)<span class="op">/</span>(true_neg <span class="op">+</span><span class="st"> </span>true_pos <span class="op">+</span><span class="st"> </span>false_pos <span class="op">+</span><span class="st"> </span>false_neg)</a>
-<a class="sourceLine" id="cb19-50" title="50"></a>
-<a class="sourceLine" id="cb19-51" title="51">titles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;True Positives&quot;</span>,<span class="st">&quot;False Positives&quot;</span>,<span class="st">&quot;True Negatives&quot;</span>,<span class="st">&quot;False Negatives&quot;</span>,<span class="st">&quot;PPV&quot;</span>,<span class="st">&quot;NPV&quot;</span>, <span class="st">&quot;Senisitivity&quot;</span>,<span class="st">&quot;Specificity&quot;</span>,<span class="st">&quot;Accuracy&quot;</span>)</a>
-<a class="sourceLine" id="cb19-52" title="52">eval_table &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(true_pos, false_pos, true_neg, false_neg, positive_predicted_value, negative_predicted_value, sensitivity, specificity, accuracy),<span class="dt">nrow=</span><span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb19-53" title="53"><span class="kw">colnames</span>(eval_table) &lt;-<span class="st"> </span>titles</a>
-<a class="sourceLine" id="cb19-54" title="54"></a>
-<a class="sourceLine" id="cb19-55" title="55">eval_table </a></code></pre></div>
+<pre><code>##        
+##         FALSE TRUE
+##   FALSE  2330  422
+##   TRUE     35  355</code></pre>
+<pre><code>##   True Positives False Positives True Negatives False Negatives       PPV       NPV Senisitivity Specificity  Accuracy
+## 1            355             422           2330              35 0.4568855 0.9852008    0.9102564    0.846657 0.8545512</code></pre>
+<p><img src="Cox_Reg_files/figure-html/mapping-1.png" width="672" /></p>
 </div>
 </div>
 </div>
@@ -417,154 +252,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="defining-our-initial-regression-equation-1" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Defining Our Initial Regression Equation</h3>
 <p>Now, it is also of interest to see if including a series of covariates to our model may improve performance. For starters, we are just going to throw a bunch in and see. Then we will replicate what we did for the simple model.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">func &lt;-<span class="st"> </span>next_year_synthetic_opioid_death_rate <span class="op">~</span><span class="st"> </span>(synthetic_opioid_crude_death_rate <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="st">                                                   </span>heroin_crude_death_rate <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="st">                                                   </span>cocaine_crude_death_rate <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="st">                                                   </span>meth_crude_death_rate <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="st">                                                   </span>unemployment_rate <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-6" title="6"><span class="st">                                                   </span>proportion_poverty <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="st">                                                   </span>proportion_white <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="st">                                                   </span>proportion_high_school_or_greater <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-9" title="9"><span class="st">                                                   </span>hep_c_mortality_rate <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-10" title="10"><span class="st">                                                   </span>urbanicity <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-11" title="11"><span class="st">                                                   </span>population_density <span class="op">+</span></a>
-<a class="sourceLine" id="cb20-12" title="12"><span class="st">                                                   </span>road_access <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb20-13" title="13"><span class="st">                                                   </span>urgent_care</a>
-<a class="sourceLine" id="cb20-14" title="14">                                                 )<span class="op">*</span>(year <span class="op">+</span><span class="st"> </span>neighbor_synthetic_outbreak)</a></code></pre></div>
 </div>
 <div id="running-the-model-and-predicting-1" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> Running the Model and Predicting</h3>
 <p>So, first we need our training data. Essentially, our goal is to see if we can use 2016 county-level data to predict 2017 synthetic opioid death rates. So our training data will be all data prior to this. We will train a linear regression model on this data. Then we will use the model on the 2016 dataset to predict 2017 synthetic death rate.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="co">#subset the training model</span></a>
-<a class="sourceLine" id="cb21-2" title="2">train_data &lt;-<span class="st"> </span>df[df<span class="op">$</span>year <span class="op">&lt;</span><span class="st"> </span><span class="dv">2016</span>,]</a>
-<a class="sourceLine" id="cb21-3" title="3"></a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="co">#train the model</span></a>
-<a class="sourceLine" id="cb21-5" title="5">model &lt;-<span class="st"> </span><span class="kw">lm</span>(func, train_data)</a>
-<a class="sourceLine" id="cb21-6" title="6"></a>
-<a class="sourceLine" id="cb21-7" title="7"><span class="co">#subset the test data</span></a>
-<a class="sourceLine" id="cb21-8" title="8">test_data &lt;-<span class="st"> </span>df[df<span class="op">$</span>year <span class="op">==</span><span class="st"> </span><span class="dv">2016</span>,]</a>
-<a class="sourceLine" id="cb21-9" title="9"></a>
-<a class="sourceLine" id="cb21-10" title="10"><span class="co">#predict 2017 death rates</span></a>
-<a class="sourceLine" id="cb21-11" title="11">test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate &lt;-<span class="st"> </span><span class="kw">predict</span>(model, test_data)</a></code></pre></div>
 </div>
 <div id="evaluating-model-performance-1" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> Evaluating Model Performance</h3>
 <div id="continuous-metrics-1" class="section level4">
 <h4><span class="header-section-number">4.5.3.1</span> Continuous Metrics</h4>
 <p>First, we want to see how well the model did at predicting the 2017 synthetic opioid crude deat rate. Here we present a series of metrics which reflect on the performance.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="co">## some counties in Alaska did not have enough data to make predictions so they are excluded using this line of code</span></a>
-<a class="sourceLine" id="cb22-2" title="2">test_data &lt;-<span class="st"> </span>test_data[<span class="op">!</span><span class="kw">is.na</span>(test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate),]</a>
-<a class="sourceLine" id="cb22-3" title="3"></a>
-<a class="sourceLine" id="cb22-4" title="4"></a>
-<a class="sourceLine" id="cb22-5" title="5"><span class="co">## MAE</span></a>
-<a class="sourceLine" id="cb22-6" title="6">            </a>
-<a class="sourceLine" id="cb22-7" title="7">            sum &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb22-8" title="8">            </a>
-<a class="sourceLine" id="cb22-9" title="9">            <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data))</a>
-<a class="sourceLine" id="cb22-10" title="10">            {</a>
-<a class="sourceLine" id="cb22-11" title="11">                sum &lt;-<span class="st"> </span>sum <span class="op">+</span><span class="st"> </span><span class="kw">abs</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate[i])</a>
-<a class="sourceLine" id="cb22-12" title="12">            }</a>
-<a class="sourceLine" id="cb22-13" title="13">            </a>
-<a class="sourceLine" id="cb22-14" title="14">            MAE &lt;-<span class="st"> </span>sum<span class="op">/</span><span class="kw">nrow</span>(test_data)</a>
-<a class="sourceLine" id="cb22-15" title="15">            </a>
-<a class="sourceLine" id="cb22-16" title="16">            </a>
-<a class="sourceLine" id="cb22-17" title="17">            <span class="co">## RMSE</span></a>
-<a class="sourceLine" id="cb22-18" title="18">            </a>
-<a class="sourceLine" id="cb22-19" title="19">            sum &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb22-20" title="20">            </a>
-<a class="sourceLine" id="cb22-21" title="21">            <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data))</a>
-<a class="sourceLine" id="cb22-22" title="22">            {</a>
-<a class="sourceLine" id="cb22-23" title="23">                sum &lt;-<span class="st"> </span>sum <span class="op">+</span><span class="st"> </span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate[i])<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb22-24" title="24">            }</a>
-<a class="sourceLine" id="cb22-25" title="25">            </a>
-<a class="sourceLine" id="cb22-26" title="26">            sum &lt;-<span class="st"> </span>sum<span class="op">/</span><span class="kw">nrow</span>(test_data)</a>
-<a class="sourceLine" id="cb22-27" title="27">            RMSE &lt;-<span class="st"> </span><span class="kw">sqrt</span>(sum)</a>
-<a class="sourceLine" id="cb22-28" title="28">            </a>
-<a class="sourceLine" id="cb22-29" title="29">            <span class="co">## R squared</span></a>
-<a class="sourceLine" id="cb22-30" title="30">            </a>
-<a class="sourceLine" id="cb22-31" title="31">            mean_outcome &lt;-<span class="st"> </span><span class="kw">sum</span>(test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate)<span class="op">/</span><span class="kw">nrow</span>(test_data)</a>
-<a class="sourceLine" id="cb22-32" title="32">            </a>
-<a class="sourceLine" id="cb22-33" title="33">            ss_tot &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb22-34" title="34">            ss_res &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb22-35" title="35">            </a>
-<a class="sourceLine" id="cb22-36" title="36">            <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data))</a>
-<a class="sourceLine" id="cb22-37" title="37">            {</a>
-<a class="sourceLine" id="cb22-38" title="38">                ss_tot &lt;-<span class="st"> </span>ss_tot <span class="op">+</span><span class="st"> </span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>mean_outcome)<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb22-39" title="39">                </a>
-<a class="sourceLine" id="cb22-40" title="40">                ss_res &lt;-<span class="st"> </span>ss_res <span class="op">+</span><span class="st"> </span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate[i] <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate[i])<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb22-41" title="41">            }</a>
-<a class="sourceLine" id="cb22-42" title="42">            </a>
-<a class="sourceLine" id="cb22-43" title="43">            r_squared &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(ss_res<span class="op">/</span>ss_tot)</a>
-<a class="sourceLine" id="cb22-44" title="44">            </a>
-<a class="sourceLine" id="cb22-45" title="45">            pearsons &lt;-<span class="st"> </span><span class="kw">cor</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate, test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate)</a>
-<a class="sourceLine" id="cb22-46" title="46">            spearman &lt;-<span class="st"> </span><span class="kw">cor</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate, test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</a>
-<a class="sourceLine" id="cb22-47" title="47">            </a>
-<a class="sourceLine" id="cb22-48" title="48">            test_data<span class="op">$</span>pred_diff &lt;-<span class="st"> </span><span class="kw">abs</span>(test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate <span class="op">-</span><span class="st"> </span>test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate)</a>
-<a class="sourceLine" id="cb22-49" title="49">            </a>
-<a class="sourceLine" id="cb22-50" title="50">            titles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;R Squared&quot;</span>,<span class="st">&quot;RMSE&quot;</span>,<span class="st">&quot;MAE&quot;</span>,<span class="st">&quot;Pearson&#39;s R&quot;</span>,<span class="st">&quot;Spearman&#39;s rho&quot;</span>)</a>
-<a class="sourceLine" id="cb22-51" title="51">            cont_metrics &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(r_squared, RMSE, MAE, pearsons, spearman), <span class="dt">nrow =</span> <span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb22-52" title="52">            <span class="kw">colnames</span>(cont_metrics) &lt;-<span class="st"> </span>titles</a>
-<a class="sourceLine" id="cb22-53" title="53">            </a>
-<a class="sourceLine" id="cb22-54" title="54">            cont_metrics</a></code></pre></div>
+<pre><code>##   R Squared   RMSE      MAE Pearson&#39;s R Spearman&#39;s rho
+## 1 0.6854001 4.6387 2.005406    0.830342      0.9051792</code></pre>
+<p><img src="Cox_Reg_files/figure-html/map%20performance%20continuous2-1.png" width="672" /><img src="Cox_Reg_files/figure-html/map%20performance%20continuous2-2.png" width="672" /></p>
 </div>
 <div id="categorical-metrics-1" class="section level4">
 <h4><span class="header-section-number">4.5.3.2</span> Categorical Metrics</h4>
 <p>We predicted a continuous outcome, but it is of interest to simply ask if our model correctly identified counties whose death rate exceeded a certain threshold. For example, it may be of interest to see how well our model identified counties whose deeath rate exceeded 10 per 100,000. The following code calculates this, identifying true positives, true negatives, false positives, false negatives, and accompanying statistics of accuracy.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1">test_data<span class="op">$</span>actual_outbreak &lt;-<span class="st"> </span>F</a>
-<a class="sourceLine" id="cb23-2" title="2">test_data<span class="op">$</span>actual_outbreak[test_data<span class="op">$</span>next_year_synthetic_opioid_death_rate <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>] &lt;-<span class="st"> </span>T</a>
-<a class="sourceLine" id="cb23-3" title="3">test_data<span class="op">$</span>predict_outbreak &lt;-<span class="st"> </span>F</a>
-<a class="sourceLine" id="cb23-4" title="4">test_data<span class="op">$</span>predict_outbreak[test_data<span class="op">$</span>predicted_synthetic_opioid_death_rate <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>] &lt;-<span class="st"> </span>T</a>
-<a class="sourceLine" id="cb23-5" title="5"></a>
-<a class="sourceLine" id="cb23-6" title="6">test_data<span class="op">$</span>final_evaluation &lt;-<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb23-7" title="7"></a>
-<a class="sourceLine" id="cb23-8" title="8"><span class="kw">table</span>(test_data<span class="op">$</span>actual_outbreak, test_data<span class="op">$</span>predict_outbreak)</a>
-<a class="sourceLine" id="cb23-9" title="9"></a>
-<a class="sourceLine" id="cb23-10" title="10">true_pos &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb23-11" title="11">false_neg &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb23-12" title="12">true_neg &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb23-13" title="13">false_pos &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb23-14" title="14"></a>
-<a class="sourceLine" id="cb23-15" title="15"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(test_data)){</a>
-<a class="sourceLine" id="cb23-16" title="16">  </a>
-<a class="sourceLine" id="cb23-17" title="17">  <span class="cf">if</span>(test_data<span class="op">$</span>actual_outbreak[i]){</a>
-<a class="sourceLine" id="cb23-18" title="18">    <span class="co">#if there is an outbreak</span></a>
-<a class="sourceLine" id="cb23-19" title="19">    <span class="cf">if</span>(test_data<span class="op">$</span>predict_outbreak[i]){</a>
-<a class="sourceLine" id="cb23-20" title="20">      <span class="co">## true positive</span></a>
-<a class="sourceLine" id="cb23-21" title="21">      </a>
-<a class="sourceLine" id="cb23-22" title="22">      true_pos &lt;-<span class="st"> </span>true_pos <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb23-23" title="23">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb23-24" title="24">      </a>
-<a class="sourceLine" id="cb23-25" title="25">    }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb23-26" title="26">      <span class="co">## false negative</span></a>
-<a class="sourceLine" id="cb23-27" title="27">      false_neg &lt;-<span class="st"> </span>false_neg <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb23-28" title="28">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb23-29" title="29">    }</a>
-<a class="sourceLine" id="cb23-30" title="30">    </a>
-<a class="sourceLine" id="cb23-31" title="31">  }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb23-32" title="32">    <span class="cf">if</span>(test_data<span class="op">$</span>predict_outbreak[i]){</a>
-<a class="sourceLine" id="cb23-33" title="33">      <span class="co">## false positive</span></a>
-<a class="sourceLine" id="cb23-34" title="34">      false_pos &lt;-<span class="st"> </span>false_pos <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb23-35" title="35">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb23-36" title="36">    }<span class="cf">else</span>{</a>
-<a class="sourceLine" id="cb23-37" title="37">      <span class="co">## true_negative</span></a>
-<a class="sourceLine" id="cb23-38" title="38">      true_neg &lt;-<span class="st"> </span>true_neg <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb23-39" title="39">      test_data<span class="op">$</span>final_evaluation[i] &lt;-<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb23-40" title="40">    }</a>
-<a class="sourceLine" id="cb23-41" title="41">  }</a>
-<a class="sourceLine" id="cb23-42" title="42">  </a>
-<a class="sourceLine" id="cb23-43" title="43">}</a>
-<a class="sourceLine" id="cb23-44" title="44"></a>
-<a class="sourceLine" id="cb23-45" title="45">positive_predicted_value &lt;-<span class="st"> </span>true_pos<span class="op">/</span>(true_pos <span class="op">+</span><span class="st"> </span>false_pos)</a>
-<a class="sourceLine" id="cb23-46" title="46">negative_predicted_value &lt;-<span class="st"> </span>true_neg<span class="op">/</span>(true_neg <span class="op">+</span><span class="st"> </span>false_neg)</a>
-<a class="sourceLine" id="cb23-47" title="47">sensitivity &lt;-<span class="st"> </span>true_pos<span class="op">/</span>(true_pos <span class="op">+</span><span class="st"> </span>false_neg)</a>
-<a class="sourceLine" id="cb23-48" title="48">specificity &lt;-<span class="st"> </span>true_neg<span class="op">/</span>(true_neg <span class="op">+</span><span class="st"> </span>false_pos)</a>
-<a class="sourceLine" id="cb23-49" title="49">accuracy &lt;-<span class="st"> </span>(true_pos <span class="op">+</span><span class="st"> </span>true_neg)<span class="op">/</span>(true_neg <span class="op">+</span><span class="st"> </span>true_pos <span class="op">+</span><span class="st"> </span>false_pos <span class="op">+</span><span class="st"> </span>false_neg)</a>
-<a class="sourceLine" id="cb23-50" title="50"></a>
-<a class="sourceLine" id="cb23-51" title="51">titles &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;True Positives&quot;</span>,<span class="st">&quot;False Positives&quot;</span>,<span class="st">&quot;True Negatives&quot;</span>,<span class="st">&quot;False Negatives&quot;</span>,<span class="st">&quot;PPV&quot;</span>,<span class="st">&quot;NPV&quot;</span>, <span class="st">&quot;Senisitivity&quot;</span>,<span class="st">&quot;Specificity&quot;</span>,<span class="st">&quot;Accuracy&quot;</span>)</a>
-<a class="sourceLine" id="cb23-52" title="52">eval_table &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(true_pos, false_pos, true_neg, false_neg, positive_predicted_value, negative_predicted_value, sensitivity, specificity, accuracy),<span class="dt">nrow=</span><span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb23-53" title="53"><span class="kw">colnames</span>(eval_table) &lt;-<span class="st"> </span>titles</a>
-<a class="sourceLine" id="cb23-54" title="54"></a>
-<a class="sourceLine" id="cb23-55" title="55">eval_table </a></code></pre></div>
+<pre><code>##        
+##         FALSE TRUE
+##   FALSE  2544  208
+##   TRUE     40  350</code></pre>
+<pre><code>##   True Positives False Positives True Negatives False Negatives       PPV       NPV Senisitivity Specificity  Accuracy
+## 1            350             208           2544              40 0.6272401 0.9845201    0.8974359   0.9244186 0.9210694</code></pre>
+<p><img src="Cox_Reg_files/figure-html/mapping2-1.png" width="672" /></p>
 </div>
 </div>
 </div>
