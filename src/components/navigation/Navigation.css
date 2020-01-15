@@ -1,3 +1,11 @@
 #navigation {
-  margin: 3vw;
+    margin: 0 10%;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly
+}
+
+#navigation a {
+  color: black;
+  text-decoration: none;
 }

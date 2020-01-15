@@ -4,7 +4,7 @@ import './Landing.css';
 const Landing = ({landing}) => {
   return (
     <div id="landing">
-      Landing
+      This Website Is Currently Under Construction
     </div>
   );
 };
