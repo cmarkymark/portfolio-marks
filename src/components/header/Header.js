@@ -5,7 +5,8 @@ const Header = ({header}) => {
   return (
     <header>
       <div>
-      <h3> Charles Marks </h3>
+        <h1>Charles Marks</h1>
+        <p>monarch of this domain</p>
       </div>
     </header>
   );
