@@ -1,0 +1,723 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Linear Regression | Predicting Synthetic Opioid Outbreaks</title>
+  <meta name="description" content="This book contains the steps taken to build a predictive model to identify US counties at risk of a synthetic opioid outbreak" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Linear Regression | Predicting Synthetic Opioid Outbreaks" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the steps taken to build a predictive model to identify US counties at risk of a synthetic opioid outbreak" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Linear Regression | Predicting Synthetic Opioid Outbreaks" />
+  
+  <meta name="twitter:description" content="This book contains the steps taken to build a predictive model to identify US counties at risk of a synthetic opioid outbreak" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2020-01-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="map.html"/>
+<link rel="next" href="otherML.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> What Is In This Book?</a></li>
+<li class="chapter" data-level="2" data-path="dataprep.html"><a href="dataprep.html"><i class="fa fa-check"></i><b>2</b> Data Preparation</a><ul>
+<li class="chapter" data-level="2.1" data-path="dataprep.html"><a href="dataprep.html#cdc-wonder-data"><i class="fa fa-check"></i><b>2.1</b> CDC Wonder Data</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="dataprep.html"><a href="dataprep.html#upload-the-datas"><i class="fa fa-check"></i><b>2.1.1</b> Upload the Datas</a></li>
+<li class="chapter" data-level="2.1.2" data-path="dataprep.html"><a href="dataprep.html#imputing-missing-data"><i class="fa fa-check"></i><b>2.1.2</b> Imputing Missing Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="dataprep.html"><a href="dataprep.html#calculating-crude-rates"><i class="fa fa-check"></i><b>2.1.3</b> Calculating Crude Rates</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="dataprep.html"><a href="dataprep.html#american-community-survey"><i class="fa fa-check"></i><b>2.2</b> American Community Survey</a></li>
+<li class="chapter" data-level="2.3" data-path="dataprep.html"><a href="dataprep.html#additional-variables"><i class="fa fa-check"></i><b>2.3</b> Additional Variables</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="dataprep.html"><a href="dataprep.html#hepatitis-c-mortality-cdc-wonder"><i class="fa fa-check"></i><b>2.3.1</b> Hepatitis C Mortality (CDC Wonder)</a></li>
+<li class="chapter" data-level="2.3.2" data-path="dataprep.html"><a href="dataprep.html#urbanicity"><i class="fa fa-check"></i><b>2.3.2</b> Urbanicity</a></li>
+<li class="chapter" data-level="2.3.3" data-path="dataprep.html"><a href="dataprep.html#opioid-prescribing"><i class="fa fa-check"></i><b>2.3.3</b> Opioid Prescribing</a></li>
+<li class="chapter" data-level="2.3.4" data-path="dataprep.html"><a href="dataprep.html#population-density"><i class="fa fa-check"></i><b>2.3.4</b> Population Density</a></li>
+<li class="chapter" data-level="2.3.5" data-path="dataprep.html"><a href="dataprep.html#police-violence"><i class="fa fa-check"></i><b>2.3.5</b> Police Violence</a></li>
+<li class="chapter" data-level="2.3.6" data-path="dataprep.html"><a href="dataprep.html#road-access-urgent-care-facilities"><i class="fa fa-check"></i><b>2.3.6</b> Road Access &amp; Urgent Care Facilities</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="dataprep.html"><a href="dataprep.html#defining-outcomes"><i class="fa fa-check"></i><b>2.4</b> Defining Outcomes</a></li>
+<li class="chapter" data-level="2.5" data-path="dataprep.html"><a href="dataprep.html#neighboring-county-variables-including-gravity"><i class="fa fa-check"></i><b>2.5</b> Neighboring County Variables (including Gravity)</a></li>
+<li class="chapter" data-level="2.6" data-path="dataprep.html"><a href="dataprep.html#save-dataset"><i class="fa fa-check"></i><b>2.6</b> Save Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map.html"><a href="map.html"><i class="fa fa-check"></i><b>3</b> Mapping Variables</a><ul>
+<li class="chapter" data-level="3.1" data-path="map.html"><a href="map.html#synthetic-opioid-overdose"><i class="fa fa-check"></i><b>3.1</b> Synthetic Opioid Overdose</a></li>
+<li class="chapter" data-level="3.2" data-path="map.html"><a href="map.html#synthetic-opioid-overdose-gravity"><i class="fa fa-check"></i><b>3.2</b> Synthetic Opioid Overdose Gravity</a></li>
+<li class="chapter" data-level="3.3" data-path="map.html"><a href="map.html#heroin-overdose"><i class="fa fa-check"></i><b>3.3</b> Heroin Overdose</a></li>
+<li class="chapter" data-level="3.4" data-path="map.html"><a href="map.html#meth-overdose"><i class="fa fa-check"></i><b>3.4</b> Meth Overdose</a></li>
+<li class="chapter" data-level="3.5" data-path="map.html"><a href="map.html#cocaine-overdose"><i class="fa fa-check"></i><b>3.5</b> Cocaine Overdose</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="linreg.html"><a href="linreg.html"><i class="fa fa-check"></i><b>4</b> Linear Regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="linreg.html"><a href="linreg.html#in-this-section"><i class="fa fa-check"></i><b>4.1</b> In This Section</a></li>
+<li class="chapter" data-level="4.2" data-path="linreg.html"><a href="linreg.html#imputation-and-transformation"><i class="fa fa-check"></i><b>4.2</b> Imputation and Transformation</a></li>
+<li class="chapter" data-level="4.3" data-path="linreg.html"><a href="linreg.html#neighboring-counties"><i class="fa fa-check"></i><b>4.3</b> Neighboring Counties</a></li>
+<li class="chapter" data-level="4.4" data-path="linreg.html"><a href="linreg.html#a-simple-regression-model"><i class="fa fa-check"></i><b>4.4</b> A Simple Regression Model</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="linreg.html"><a href="linreg.html#defining-our-initial-regression-equation"><i class="fa fa-check"></i><b>4.4.1</b> Defining Our Initial Regression Equation</a></li>
+<li class="chapter" data-level="4.4.2" data-path="linreg.html"><a href="linreg.html#running-the-model-and-predicting"><i class="fa fa-check"></i><b>4.4.2</b> Running the Model and Predicting</a></li>
+<li class="chapter" data-level="4.4.3" data-path="linreg.html"><a href="linreg.html#evaluating-model-performance"><i class="fa fa-check"></i><b>4.4.3</b> Evaluating Model Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="linreg.html"><a href="linreg.html#a-multiple-regression-model"><i class="fa fa-check"></i><b>4.5</b> A Multiple Regression Model</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="linreg.html"><a href="linreg.html#defining-our-initial-regression-equation-1"><i class="fa fa-check"></i><b>4.5.1</b> Defining Our Initial Regression Equation</a></li>
+<li class="chapter" data-level="4.5.2" data-path="linreg.html"><a href="linreg.html#running-the-model-and-predicting-1"><i class="fa fa-check"></i><b>4.5.2</b> Running the Model and Predicting</a></li>
+<li class="chapter" data-level="4.5.3" data-path="linreg.html"><a href="linreg.html#evaluating-model-performance-1"><i class="fa fa-check"></i><b>4.5.3</b> Evaluating Model Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="linreg.html"><a href="linreg.html#in-conclusion"><i class="fa fa-check"></i><b>4.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="otherML.html"><a href="otherML.html"><i class="fa fa-check"></i><b>5</b> Other Regression Strategies</a><ul>
+<li class="chapter" data-level="5.1" data-path="otherML.html"><a href="otherML.html#random-forest"><i class="fa fa-check"></i><b>5.1</b> Random Forest</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="otherML.html"><a href="otherML.html#defining-our-initial-regression-equation-2"><i class="fa fa-check"></i><b>5.1.1</b> Defining Our Initial Regression Equation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="otherML.html"><a href="otherML.html#running-the-model-and-predicting-2"><i class="fa fa-check"></i><b>5.1.2</b> Running the Model and Predicting</a></li>
+<li class="chapter" data-level="5.1.3" data-path="otherML.html"><a href="otherML.html#evaluating-model-performance-2"><i class="fa fa-check"></i><b>5.1.3</b> Evaluating Model Performance</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Predicting Synthetic Opioid Outbreaks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linreg" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Linear Regression</h1>
+<div id="in-this-section" class="section level2">
+<h2><span class="header-section-number">4.1</span> In This Section</h2>
+<p>We want to see how effectively we can predict 2017 county-level synthetic opioid death rates using a simple linear regression approach.</p>
+</div>
+<div id="imputation-and-transformation" class="section level2">
+<h2><span class="header-section-number">4.2</span> Imputation and Transformation</h2>
+<p>For some of our potential variables, we want to impute some missing values. For a few, as well, such as population density, we also want to log transform them.</p>
+</div>
+<div id="neighboring-counties" class="section level2">
+<h2><span class="header-section-number">4.3</span> Neighboring Counties</h2>
+<p>We also want to generate a few additional variables that articulate the impact of synthetic opioid on neighboring counties. While we previously generated gravity variables, these are a function of both a county’s death rate and their neighbors. We want to generate variable(s) which simply articulate neighboring county rates. Here we create two new variables, one which measures the highest synthetic opioid overdose death rate of a county’s neighbors (continuous) and a second variable which measures (T/F) if any of a county’s neighbors exceed a certain threshold.</p>
+</div>
+<div id="a-simple-regression-model" class="section level2">
+<h2><span class="header-section-number">4.4</span> A Simple Regression Model</h2>
+<div id="defining-our-initial-regression-equation" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Defining Our Initial Regression Equation</h3>
+<p>To begin, we start with a very simple model. We presume that the previous years synthetic opioid death rate will be highly predictive of the next year. We imagine that annual changes will be a function of time (as the epidemic has spread, the dynamics of the epidemic have changed) as well as the proximity of the epidemic. As such, we have included both year (continuous) and whether a neighbor had a death rate of 10 or more the previous year (T/F) as interaction terms.</p>
+</div>
+<div id="running-the-model-and-predicting" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Running the Model and Predicting</h3>
+<p>So, first we need our training data. Essentially, our goal is to see if we can use 2016 county-level data to predict 2017 synthetic opioid death rates. So our training data will be all data prior to this. We will train a linear regression model on this data. Then we will use the model on the 2016 dataset to predict 2017 synthetic death rate.</p>
+</div>
+<div id="evaluating-model-performance" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Evaluating Model Performance</h3>
+<div id="continuous-metrics" class="section level4">
+<h4><span class="header-section-number">4.4.3.1</span> Continuous Metrics</h4>
+<p>First, we want to see how well the model did at predicting the 2017 synthetic opioid crude deat rate. Here we present a series of metrics which reflect on the performance.</p>
+<pre><code>##   R Squared     RMSE      MAE Pearson&#39;s R Spearman&#39;s rho
+## 1 0.6449826 4.979847 2.446574   0.8278455      0.9015019</code></pre>
+<p><img src="Cox_Reg_files/figure-html/map%20performance%20continuous-1.png" width="672" /><img src="Cox_Reg_files/figure-html/map%20performance%20continuous-2.png" width="672" /></p>
+</div>
+<div id="categorical-metrics" class="section level4">
+<h4><span class="header-section-number">4.4.3.2</span> Categorical Metrics</h4>
+<p>We predicted a continuous outcome, but it is of interest to simply ask if our model correctly identified counties whose death rate exceeded a certain threshold. For example, it may be of interest to see how well our model identified counties whose deeath rate exceeded 10 per 100,000. The following code calculates this, identifying true positives, true negatives, false positives, false negatives, and accompanying statistics of accuracy.</p>
+<pre><code>##        
+##         FALSE TRUE
+##   FALSE  2330  422
+##   TRUE     35  355</code></pre>
+<pre><code>##   True Positives False Positives True Negatives False Negatives       PPV       NPV Senisitivity Specificity  Accuracy
+## 1            355             422           2330              35 0.4568855 0.9852008    0.9102564    0.846657 0.8545512</code></pre>
+<p><img src="Cox_Reg_files/figure-html/mapping-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="a-multiple-regression-model" class="section level2">
+<h2><span class="header-section-number">4.5</span> A Multiple Regression Model</h2>
+<div id="defining-our-initial-regression-equation-1" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Defining Our Initial Regression Equation</h3>
+<p>Now, it is also of interest to see if including a series of covariates to our model may improve performance. For starters, we are just going to throw a bunch in and see. Then we will replicate what we did for the simple model.</p>
+</div>
+<div id="running-the-model-and-predicting-1" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Running the Model and Predicting</h3>
+<p>So, first we need our training data. Essentially, our goal is to see if we can use 2016 county-level data to predict 2017 synthetic opioid death rates. So our training data will be all data prior to this. We will train a linear regression model on this data. Then we will use the model on the 2016 dataset to predict 2017 synthetic death rate.</p>
+</div>
+<div id="evaluating-model-performance-1" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> Evaluating Model Performance</h3>
+<div id="continuous-metrics-1" class="section level4">
+<h4><span class="header-section-number">4.5.3.1</span> Continuous Metrics</h4>
+<p>First, we want to see how well the model did at predicting the 2017 synthetic opioid crude deat rate. Here we present a series of metrics which reflect on the performance.</p>
+<pre><code>##   R Squared   RMSE      MAE Pearson&#39;s R Spearman&#39;s rho
+## 1 0.6854001 4.6387 2.005406    0.830342      0.9051792</code></pre>
+<p><img src="Cox_Reg_files/figure-html/map%20performance%20continuous2-1.png" width="672" /><img src="Cox_Reg_files/figure-html/map%20performance%20continuous2-2.png" width="672" /></p>
+</div>
+<div id="categorical-metrics-1" class="section level4">
+<h4><span class="header-section-number">4.5.3.2</span> Categorical Metrics</h4>
+<p>We predicted a continuous outcome, but it is of interest to simply ask if our model correctly identified counties whose death rate exceeded a certain threshold. For example, it may be of interest to see how well our model identified counties whose deeath rate exceeded 10 per 100,000. The following code calculates this, identifying true positives, true negatives, false positives, false negatives, and accompanying statistics of accuracy.</p>
+<pre><code>##        
+##         FALSE TRUE
+##   FALSE  2544  208
+##   TRUE     40  350</code></pre>
+<pre><code>##   True Positives False Positives True Negatives False Negatives       PPV       NPV Senisitivity Specificity  Accuracy
+## 1            350             208           2544              40 0.6272401 0.9845201    0.8974359   0.9244186 0.9210694</code></pre>
+<p><img src="Cox_Reg_files/figure-html/mapping2-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="in-conclusion" class="section level2">
+<h2><span class="header-section-number">4.6</span> In Conclusion</h2>
+<p>We see (when looking at our categorical outcomes) that the simple model performs rather well! Identifying a majority of the actual locations where the synthetic opioid death rate was at higher levels. We see though, that when we incorporate covariates, the false positive count is cut in half, indicating much much better performance overall. As well, continuous metrics indicate the inclusion of covariates improves model performance.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="map.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="otherML.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Cox_Reg.pdf", "Cox_Reg.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Linear Regression | Predicting Synthetic Opioid Outbreaks</title>
+  <meta name="description" content="This book contains the steps taken to build a predictive model to identify US counties at risk of a synthetic opioid outbreak" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Linear Regression | Predicting Synthetic Opioid Outbreaks" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the steps taken to build a predictive model to identify US counties at risk of a synthetic opioid outbreak" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Linear Regression | Predicting Synthetic Opioid Outbreaks" />
+  
+  <meta name="twitter:description" content="This book contains the steps taken to build a predictive model to identify US counties at risk of a synthetic opioid outbreak" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2020-01-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="map.html"/>
+<link rel="next" href="otherML.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> What Is In This Book?</a></li>
+<li class="chapter" data-level="2" data-path="dataprep.html"><a href="dataprep.html"><i class="fa fa-check"></i><b>2</b> Data Preparation</a><ul>
+<li class="chapter" data-level="2.1" data-path="dataprep.html"><a href="dataprep.html#cdc-wonder-data"><i class="fa fa-check"></i><b>2.1</b> CDC Wonder Data</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="dataprep.html"><a href="dataprep.html#upload-the-datas"><i class="fa fa-check"></i><b>2.1.1</b> Upload the Datas</a></li>
+<li class="chapter" data-level="2.1.2" data-path="dataprep.html"><a href="dataprep.html#imputing-missing-data"><i class="fa fa-check"></i><b>2.1.2</b> Imputing Missing Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="dataprep.html"><a href="dataprep.html#calculating-crude-rates"><i class="fa fa-check"></i><b>2.1.3</b> Calculating Crude Rates</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="dataprep.html"><a href="dataprep.html#american-community-survey"><i class="fa fa-check"></i><b>2.2</b> American Community Survey</a></li>
+<li class="chapter" data-level="2.3" data-path="dataprep.html"><a href="dataprep.html#additional-variables"><i class="fa fa-check"></i><b>2.3</b> Additional Variables</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="dataprep.html"><a href="dataprep.html#hepatitis-c-mortality-cdc-wonder"><i class="fa fa-check"></i><b>2.3.1</b> Hepatitis C Mortality (CDC Wonder)</a></li>
+<li class="chapter" data-level="2.3.2" data-path="dataprep.html"><a href="dataprep.html#urbanicity"><i class="fa fa-check"></i><b>2.3.2</b> Urbanicity</a></li>
+<li class="chapter" data-level="2.3.3" data-path="dataprep.html"><a href="dataprep.html#opioid-prescribing"><i class="fa fa-check"></i><b>2.3.3</b> Opioid Prescribing</a></li>
+<li class="chapter" data-level="2.3.4" data-path="dataprep.html"><a href="dataprep.html#population-density"><i class="fa fa-check"></i><b>2.3.4</b> Population Density</a></li>
+<li class="chapter" data-level="2.3.5" data-path="dataprep.html"><a href="dataprep.html#police-violence"><i class="fa fa-check"></i><b>2.3.5</b> Police Violence</a></li>
+<li class="chapter" data-level="2.3.6" data-path="dataprep.html"><a href="dataprep.html#road-access-urgent-care-facilities"><i class="fa fa-check"></i><b>2.3.6</b> Road Access &amp; Urgent Care Facilities</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="dataprep.html"><a href="dataprep.html#defining-outcomes"><i class="fa fa-check"></i><b>2.4</b> Defining Outcomes</a></li>
+<li class="chapter" data-level="2.5" data-path="dataprep.html"><a href="dataprep.html#neighboring-county-variables-including-gravity"><i class="fa fa-check"></i><b>2.5</b> Neighboring County Variables (including Gravity)</a></li>
+<li class="chapter" data-level="2.6" data-path="dataprep.html"><a href="dataprep.html#save-dataset"><i class="fa fa-check"></i><b>2.6</b> Save Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map.html"><a href="map.html"><i class="fa fa-check"></i><b>3</b> Mapping Variables</a><ul>
+<li class="chapter" data-level="3.1" data-path="map.html"><a href="map.html#synthetic-opioid-overdose"><i class="fa fa-check"></i><b>3.1</b> Synthetic Opioid Overdose</a></li>
+<li class="chapter" data-level="3.2" data-path="map.html"><a href="map.html#synthetic-opioid-overdose-gravity"><i class="fa fa-check"></i><b>3.2</b> Synthetic Opioid Overdose Gravity</a></li>
+<li class="chapter" data-level="3.3" data-path="map.html"><a href="map.html#heroin-overdose"><i class="fa fa-check"></i><b>3.3</b> Heroin Overdose</a></li>
+<li class="chapter" data-level="3.4" data-path="map.html"><a href="map.html#meth-overdose"><i class="fa fa-check"></i><b>3.4</b> Meth Overdose</a></li>
+<li class="chapter" data-level="3.5" data-path="map.html"><a href="map.html#cocaine-overdose"><i class="fa fa-check"></i><b>3.5</b> Cocaine Overdose</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="linreg.html"><a href="linreg.html"><i class="fa fa-check"></i><b>4</b> Linear Regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="linreg.html"><a href="linreg.html#in-this-section"><i class="fa fa-check"></i><b>4.1</b> In This Section</a></li>
+<li class="chapter" data-level="4.2" data-path="linreg.html"><a href="linreg.html#imputation-and-transformation"><i class="fa fa-check"></i><b>4.2</b> Imputation and Transformation</a></li>
+<li class="chapter" data-level="4.3" data-path="linreg.html"><a href="linreg.html#neighboring-counties"><i class="fa fa-check"></i><b>4.3</b> Neighboring Counties</a></li>
+<li class="chapter" data-level="4.4" data-path="linreg.html"><a href="linreg.html#a-simple-regression-model"><i class="fa fa-check"></i><b>4.4</b> A Simple Regression Model</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="linreg.html"><a href="linreg.html#defining-our-initial-regression-equation"><i class="fa fa-check"></i><b>4.4.1</b> Defining Our Initial Regression Equation</a></li>
+<li class="chapter" data-level="4.4.2" data-path="linreg.html"><a href="linreg.html#running-the-model-and-predicting"><i class="fa fa-check"></i><b>4.4.2</b> Running the Model and Predicting</a></li>
+<li class="chapter" data-level="4.4.3" data-path="linreg.html"><a href="linreg.html#evaluating-model-performance"><i class="fa fa-check"></i><b>4.4.3</b> Evaluating Model Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="linreg.html"><a href="linreg.html#a-multiple-regression-model"><i class="fa fa-check"></i><b>4.5</b> A Multiple Regression Model</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="linreg.html"><a href="linreg.html#defining-our-initial-regression-equation-1"><i class="fa fa-check"></i><b>4.5.1</b> Defining Our Initial Regression Equation</a></li>
+<li class="chapter" data-level="4.5.2" data-path="linreg.html"><a href="linreg.html#running-the-model-and-predicting-1"><i class="fa fa-check"></i><b>4.5.2</b> Running the Model and Predicting</a></li>
+<li class="chapter" data-level="4.5.3" data-path="linreg.html"><a href="linreg.html#evaluating-model-performance-1"><i class="fa fa-check"></i><b>4.5.3</b> Evaluating Model Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="linreg.html"><a href="linreg.html#in-conclusion"><i class="fa fa-check"></i><b>4.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="otherML.html"><a href="otherML.html"><i class="fa fa-check"></i><b>5</b> Other Regression Strategies</a><ul>
+<li class="chapter" data-level="5.1" data-path="otherML.html"><a href="otherML.html#random-forest"><i class="fa fa-check"></i><b>5.1</b> Random Forest</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="otherML.html"><a href="otherML.html#defining-our-initial-regression-equation-2"><i class="fa fa-check"></i><b>5.1.1</b> Defining Our Initial Regression Equation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="otherML.html"><a href="otherML.html#running-the-model-and-predicting-2"><i class="fa fa-check"></i><b>5.1.2</b> Running the Model and Predicting</a></li>
+<li class="chapter" data-level="5.1.3" data-path="otherML.html"><a href="otherML.html#evaluating-model-performance-2"><i class="fa fa-check"></i><b>5.1.3</b> Evaluating Model Performance</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Predicting Synthetic Opioid Outbreaks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linreg" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Linear Regression</h1>
+<div id="in-this-section" class="section level2">
+<h2><span class="header-section-number">4.1</span> In This Section</h2>
+<p>We want to see how effectively we can predict 2017 county-level synthetic opioid death rates using a simple linear regression approach.</p>
+</div>
+<div id="imputation-and-transformation" class="section level2">
+<h2><span class="header-section-number">4.2</span> Imputation and Transformation</h2>
+<p>For some of our potential variables, we want to impute some missing values. For a few, as well, such as population density, we also want to log transform them.</p>
+</div>
+<div id="neighboring-counties" class="section level2">
+<h2><span class="header-section-number">4.3</span> Neighboring Counties</h2>
+<p>We also want to generate a few additional variables that articulate the impact of synthetic opioid on neighboring counties. While we previously generated gravity variables, these are a function of both a county’s death rate and their neighbors. We want to generate variable(s) which simply articulate neighboring county rates. Here we create two new variables, one which measures the highest synthetic opioid overdose death rate of a county’s neighbors (continuous) and a second variable which measures (T/F) if any of a county’s neighbors exceed a certain threshold.</p>
+</div>
+<div id="a-simple-regression-model" class="section level2">
+<h2><span class="header-section-number">4.4</span> A Simple Regression Model</h2>
+<div id="defining-our-initial-regression-equation" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Defining Our Initial Regression Equation</h3>
+<p>To begin, we start with a very simple model. We presume that the previous years synthetic opioid death rate will be highly predictive of the next year. We imagine that annual changes will be a function of time (as the epidemic has spread, the dynamics of the epidemic have changed) as well as the proximity of the epidemic. As such, we have included both year (continuous) and whether a neighbor had a death rate of 10 or more the previous year (T/F) as interaction terms.</p>
+</div>
+<div id="running-the-model-and-predicting" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Running the Model and Predicting</h3>
+<p>So, first we need our training data. Essentially, our goal is to see if we can use 2016 county-level data to predict 2017 synthetic opioid death rates. So our training data will be all data prior to this. We will train a linear regression model on this data. Then we will use the model on the 2016 dataset to predict 2017 synthetic death rate.</p>
+</div>
+<div id="evaluating-model-performance" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> Evaluating Model Performance</h3>
+<div id="continuous-metrics" class="section level4">
+<h4><span class="header-section-number">4.4.3.1</span> Continuous Metrics</h4>
+<p>First, we want to see how well the model did at predicting the 2017 synthetic opioid crude deat rate. Here we present a series of metrics which reflect on the performance.</p>
+<pre><code>##   R Squared     RMSE      MAE Pearson&#39;s R Spearman&#39;s rho
+## 1 0.6449826 4.979847 2.446574   0.8278455      0.9015019</code></pre>
+<p><img src="Cox_Reg_files/figure-html/map%20performance%20continuous-1.png" width="672" /><img src="Cox_Reg_files/figure-html/map%20performance%20continuous-2.png" width="672" /></p>
+</div>
+<div id="categorical-metrics" class="section level4">
+<h4><span class="header-section-number">4.4.3.2</span> Categorical Metrics</h4>
+<p>We predicted a continuous outcome, but it is of interest to simply ask if our model correctly identified counties whose death rate exceeded a certain threshold. For example, it may be of interest to see how well our model identified counties whose deeath rate exceeded 10 per 100,000. The following code calculates this, identifying true positives, true negatives, false positives, false negatives, and accompanying statistics of accuracy.</p>
+<pre><code>##        
+##         FALSE TRUE
+##   FALSE  2330  422
+##   TRUE     35  355</code></pre>
+<pre><code>##   True Positives False Positives True Negatives False Negatives       PPV       NPV Senisitivity Specificity  Accuracy
+## 1            355             422           2330              35 0.4568855 0.9852008    0.9102564    0.846657 0.8545512</code></pre>
+<p><img src="Cox_Reg_files/figure-html/mapping-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="a-multiple-regression-model" class="section level2">
+<h2><span class="header-section-number">4.5</span> A Multiple Regression Model</h2>
+<div id="defining-our-initial-regression-equation-1" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Defining Our Initial Regression Equation</h3>
+<p>Now, it is also of interest to see if including a series of covariates to our model may improve performance. For starters, we are just going to throw a bunch in and see. Then we will replicate what we did for the simple model.</p>
+</div>
+<div id="running-the-model-and-predicting-1" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Running the Model and Predicting</h3>
+<p>So, first we need our training data. Essentially, our goal is to see if we can use 2016 county-level data to predict 2017 synthetic opioid death rates. So our training data will be all data prior to this. We will train a linear regression model on this data. Then we will use the model on the 2016 dataset to predict 2017 synthetic death rate.</p>
+</div>
+<div id="evaluating-model-performance-1" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> Evaluating Model Performance</h3>
+<div id="continuous-metrics-1" class="section level4">
+<h4><span class="header-section-number">4.5.3.1</span> Continuous Metrics</h4>
+<p>First, we want to see how well the model did at predicting the 2017 synthetic opioid crude deat rate. Here we present a series of metrics which reflect on the performance.</p>
+<pre><code>##   R Squared   RMSE      MAE Pearson&#39;s R Spearman&#39;s rho
+## 1 0.6854001 4.6387 2.005406    0.830342      0.9051792</code></pre>
+<p><img src="Cox_Reg_files/figure-html/map%20performance%20continuous2-1.png" width="672" /><img src="Cox_Reg_files/figure-html/map%20performance%20continuous2-2.png" width="672" /></p>
+</div>
+<div id="categorical-metrics-1" class="section level4">
+<h4><span class="header-section-number">4.5.3.2</span> Categorical Metrics</h4>
+<p>We predicted a continuous outcome, but it is of interest to simply ask if our model correctly identified counties whose death rate exceeded a certain threshold. For example, it may be of interest to see how well our model identified counties whose deeath rate exceeded 10 per 100,000. The following code calculates this, identifying true positives, true negatives, false positives, false negatives, and accompanying statistics of accuracy.</p>
+<pre><code>##        
+##         FALSE TRUE
+##   FALSE  2544  208
+##   TRUE     40  350</code></pre>
+<pre><code>##   True Positives False Positives True Negatives False Negatives       PPV       NPV Senisitivity Specificity  Accuracy
+## 1            350             208           2544              40 0.6272401 0.9845201    0.8974359   0.9244186 0.9210694</code></pre>
+<p><img src="Cox_Reg_files/figure-html/mapping2-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="in-conclusion" class="section level2">
+<h2><span class="header-section-number">4.6</span> In Conclusion</h2>
+<p>We see (when looking at our categorical outcomes) that the simple model performs rather well! Identifying a majority of the actual locations where the synthetic opioid death rate was at higher levels. We see though, that when we incorporate covariates, the false positive count is cut in half, indicating much much better performance overall. As well, continuous metrics indicate the inclusion of covariates improves model performance.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="map.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="otherML.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Cox_Reg.pdf", "Cox_Reg.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
+>>>>>>> 96a2b07c4e47453d536b37aeb9eaf1906d39a782
