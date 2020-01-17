@@ -88,7 +88,7 @@ Johnson, D., **Marks, C**., Nobles, A., Leas, E., Strathdee, S., Ayers, J., Borq
 
 **Marks, C.**, Abramovitz, D., Donnelly, C., Ciccarone, D., Martin, N., Strathdee, S., Borquez, A., Predicting Counties At-Risk of a Synthetic Opioid Overdose Outbreak: A Statistical Modeling Approach.  Submitted to The College on Problems of Drug Dependence Annuall Scientific Meeting 2020 in Hollywood, Florida
 
-**Marks C.**, Jahangiri, A.,Machiani, S.G., [Iterative DBSCAN (I-DBSCAN) to Identify Aggressive Driving Behaviors within Unlabeled Real-World Driving Data](Publications/Conference Proceedings/Marks_Jahangiri_IEEE_Conference_2019.pdf) IEEE ITSC 2019, New Zealand 
+**Marks C.**, Jahangiri, A.,Machiani, S.G., [Iterative DBSCAN (I-DBSCAN) to Identify Aggressive Driving Behaviors within Unlabeled Real-World Driving Data](https://charliemarks.com/Publications/Conference%20Proceedings/Marks_Jahangiri_IEEE_Conference_2019.pdf) IEEE ITSC 2019, New Zealand 
 
 Magaña, V., **Marks, C.**, Baweja, H., Zúñiga, M.L. Cannabis Use and Adherence to Antiretrovirals Among HIV+ Latinos on the U.S.-Mexico Border. APHA Annual Meeting 2019, Philadelphia, PA, USA
 
