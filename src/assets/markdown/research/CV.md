@@ -78,7 +78,7 @@ Carrasco-Escobar G, **Marks C**, Carrasco-Hernandez R, Abramovitz D, Donnelly C,
 
 **Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction or early detection of drug-use associated public-health outbreaks in the United States: a narrative review. For Submission to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
-Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
+Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., [A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs](https://charliemarks.com/Publications/Conference%20Proceedings/Gicquelais%20ISSDP.pdf). Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
 Rammohan, I., Jain, S., Sun, S., Milloy, MJ, DeBeck, K., Hayashi, K., Strathdee, S., Gonzalez-Zuniga, P., **Marks, C.**, Werb, D., Polydrug use patterns and the provision of injection initiation assistance in Vancouver, Canada and Tijuana, Mexico: A latent profile analysis. For Submission to 2020 NIDA International Forum in Hollywood, Florida
 
