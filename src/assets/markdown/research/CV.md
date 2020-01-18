@@ -74,9 +74,11 @@ Espinosa, S., Fondevila, G, **Marks, C.**, Exploiring the Motivations for Non-Co
 
 ## Conference Procedings
 
-Carrasco-Escobar G, **Marks C**, Carrasco-Hernandez R, Abramovitz D, Donnelly C, Borquez A., Ascertaining the relative contribution of spatio-temporal effects to the synthetic opioid overdose epidemic in the United States. For Submission to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
+**Marks, C.**, Abramovitz, D., Donnelly, C., Martin, N., Strathdee, S., Borquez, A., [Predicting County-Level Synthetic Opioid Overdose Mortality Rates: Comparing Traditional Statistical and Machine Learning Modeling Approaches](https://charliemarks.com/Publications/Conference%20Proceedings/Final_ISSDP_Abstract.pdf).  Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
-**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction or early detection of drug-use associated public-health outbreaks in the United States: a narrative review. For Submission to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
+Carrasco-Escobar G, **Marks C**, Carrasco-Hernandez R, Abramovitz D, Donnelly C, Borquez A., Ascertaining the relative contribution of spatio-temporal effects to the synthetic opioid overdose epidemic in the United States. Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
+
+**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction or early detection of drug-use associated public-health outbreaks in the United States: a narrative review. Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., [A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs](https://charliemarks.com/Publications/Conference%20Proceedings/Gicquelais%20ISSDP.pdf). Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
