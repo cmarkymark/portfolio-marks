@@ -76,7 +76,7 @@ Espinosa, S., Fondevila, G, **Marks, C.**, Exploiring the Motivations for Non-Co
 
 **Marks, C.**, Abramovitz, D., Donnelly, C., Martin, N., Strathdee, S., Borquez, A., [Predicting County-Level Synthetic Opioid Overdose Mortality Rates: Comparing Traditional Statistical and Machine Learning Modeling Approaches](https://charliemarks.com/Publications/Conference%20Proceedings/Final_ISSDP_Abstract.pdf).  Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
-Carrasco-Escobar G, **Marks C**, Carrasco-Hernandez R, Abramovitz D, Donnelly C, Borquez A., Ascertaining the relative contribution of spatio-temporal effects to the synthetic opioid overdose epidemic in the United States. Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
+Carrasco-Escobar G, **Marks C**, Carrasco-Hernandez R, Abramovitz D, Donnelly C, Borquez A., [Ascertaining the relative contribution of spatio-temporal effects to the synthetic opioid overdose epidemic in the United States](https://charliemarks.com/Publications/Conference%20Proceedings/Gabriel_ISSDP_Abstract.pdf). Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
 **Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., [Methodological approaches for the prediction or early detection of drug-use associated public-health outbreaks in the United States: a narrative review.](https://charliemarks.com/Publications/Conference%20Proceedings/ISSDP_Review_Abstract.pdf) Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
@@ -86,9 +86,9 @@ Rammohan, I., Jain, S., Sun, S., Milloy, MJ, DeBeck, K., Hayashi, K., Strathdee,
 
 Meyers, S., Jain, S., Sun, X., **Marks, C.**, Milloy, MJ, DeBeck, K., Hayashi, K., Strathdee, S., Werb, D., Gender and time to the provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. For Submission to 2020 NIDA International Forum in Hollywood, Florida
 
-Johnson, D., **Marks, C**., Nobles, A., Leas, E., Strathdee, S., Ayers, J., Borquez, A., Trends in Internet Search Behavior for Substance Use Treatment: A Measure of Health Seeking Behavior.  Submitted to The College on Problems of Drug Dependence Annuall Scientific Meeting 2020 in Hollywood, Florida
+Johnson, D., **Marks, C**., Nobles, A., Leas, E., Strathdee, S., Ayers, J., Borquez, A., [Trends in Internet Search Behavior for Substance Use Treatment: A Measure of Health Seeking Behavior](https://charliemarks.com/Publications/Conference%20Proceedings/Johnson_CDPP_Abstract.pdf).  Submitted to The College on Problems of Drug Dependence Annuall Scientific Meeting 2020 in Hollywood, Florida
 
-**Marks, C.**, Abramovitz, D., Donnelly, C., Ciccarone, D., Martin, N., Strathdee, S., Borquez, A., Predicting Counties At-Risk of a Synthetic Opioid Overdose Outbreak: A Statistical Modeling Approach.  Submitted to The College on Problems of Drug Dependence Annuall Scientific Meeting 2020 in Hollywood, Florida
+**Marks, C.**, Abramovitz, D., Donnelly, C., Ciccarone, D., Martin, N., Strathdee, S., Borquez, A., [Predicting Counties At-Risk of a Synthetic Opioid Overdose Outbreak: A Statistical Modeling Approach](https://charliemarks.com/Publications/Conference%20Proceedings/Marks_CDPP_Abstract.pdf).  Submitted to The College on Problems of Drug Dependence Annuall Scientific Meeting 2020 in Hollywood, Florida
 
 **Marks C.**, Jahangiri, A.,Machiani, S.G., [Iterative DBSCAN (I-DBSCAN) to Identify Aggressive Driving Behaviors within Unlabeled Real-World Driving Data](https://charliemarks.com/Publications/Conference%20Proceedings/Marks_Jahangiri_IEEE_Conference_2019.pdf) IEEE ITSC 2019, New Zealand 
 
