@@ -1,14 +1,26 @@
 
-<!--- Teaching Title 1 -->
+<!--- SDSU SW-610 -->
 
-# Title of Post
-This is an example of a markdown file.  
+# SDSU SW-610
+## Computer Applications in Social Work
 
-## Section of Post
-Teaching Title 1.
+Here I provide course materials related to SDSU Social Work 610.  
 
-### HTML
-<br>
-<div>
-  <p>Now here I snuck in some HTML</p>
-</div>
+### Syllabus
+
+The syllabus is available for download [here]().
+
+### Assignments
+
+This class is made up of 5 assignments.  The handouts and necessary materials are available below.
+
+#### Assignment #1
+
+#### Assignment #2
+
+#### Assignment #3
+
+#### Assignment #4
+
+#### Assignment #5
+
