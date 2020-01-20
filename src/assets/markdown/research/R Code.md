@@ -11,9 +11,9 @@ For the first two years of my doctoral program I used a chromebook and had to do
 
 #### Baxter, S., Marks, C., Kuo, T., Ohno-Machado, L., Weinreb, R., Machine learning-based predictive modeling of surgical intervention in glaucoma using systemic data from electronic health records. American Journal of Ophtalmology. 2019 In Press DOI: 10.1016/j.ajo.2019.07.005
 
-The code is available as an rMarkdown file, but due to patient privacy, I am not permitted to provide the actual dataset.  Access the code by clicking [here](Code/Baxter_AJO_Final_Analysis.Rmd)
+The code is available as an rMarkdown file, but due to patient privacy, I am not permitted to provide the actual dataset.  Access the code by clicking [here](https://charliemarks.com/Publications/R%20Code/Baxter_AJO.Rmd)
 
 #### Marks, C., Borquez, A., Jain, S., Sun, X., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cepeda, J., Werb, D., Martin, N., Opioid agonist treatment scale-up and the initiation of injection drug use: a dynamic modeling analysis. PLOS Medicine. 2019 DOI: 10.1371/journal.pmed.1002973
 
-The code used to undertake this study is available [here](Code/Marks_PlosMED_Code.R).  The paper may be read in full to learn more about the methods and how the model was parameterized.
+The code used to undertake this study is available [here](https://charliemarks.com/Publications/R%20Code/Marks_PlosMed.R).  The paper may be read in full to learn more about the methods and how the model was parameterized.
 
