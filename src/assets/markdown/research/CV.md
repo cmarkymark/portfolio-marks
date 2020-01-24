@@ -62,7 +62,7 @@ Cummins, K., **Marks, C.**, Writing Results Without Significance Testing: Adopti
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. For Submission to Epidemiologic Reviews (by 1/31/20)
 
-**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Commonality and Heterogeneity Across Three North American Settings.  To be submitted January 2020 to The Lancet
+**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review (Submitted 1/24/20) at The Lancet
 
 **Marks, C.**, Machiani, S., Jahangiri, A., Identifying and Labelling Risk Driving: A Multi-Stage Process Using Real World Driving Data, For Submission to IEEE Transactions on Initelligents Transportation Systems, January 2020
 
