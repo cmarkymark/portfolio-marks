@@ -2,7 +2,7 @@
 
 ## Charles Marks, MPH
 
-I (they/them) am a doctoral student in the Interdisciplinary Research on Substance Use Joint Doctoral Program at San Diego State University and University of California, San Diego.  I apply a naturalist, critical social lens to addressing issues of health equity.  With a mathematics background, I also seek to apply statistics and modeling methods 
+I (they/them) am a doctoral student in the Interdisciplinary Research on Substance Use Joint Doctoral Program at San Diego State University and University of California, San Diego.  I apply a naturalist, critical social lens to addressing issues of health equity.  With a mathematics background, I also seek to apply data science, statistics, and mathematical modeling methods 
 
 ## Education
 
