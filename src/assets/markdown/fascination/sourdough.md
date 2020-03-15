@@ -50,7 +50,6 @@ This process is intended to take ~24 hours. If you skip step 1, your bread won't
 
 So the night before, you are going to start your dough.  You will need:
 
-<div align = "left"> 
 
 - 300 g of flour (~2 cups)
   - If you are using any whole wheat, this is when you will use it
@@ -58,7 +57,7 @@ So the night before, you are going to start your dough.  You will need:
 - About 100 g of sourdough starter
   - If you have a scale, I generally just throw in between 100 to 200 g of starter. This is about a "tennis ball" sized glob. It should cover the bottom of your bowl!
 
-</div>
+
   
 So, all we are going to do is mix these ingredients together in a bowl. You will cover the bowl, and leave it for over night! Below is a video showing these steps and explaining some additional information:
 
@@ -70,13 +69,11 @@ In the morning, grab your bowl and you should find your creation from the night 
 
 Now we are going to make our dough.  You are going to add the following to your fermented dough:
 
-<div align = "left"> 
 
 - 600 g of white flour (~4 cups)
 - 375 g of water (375 mL)
 - 20 g of salt (~1 tbsp)
 
-</div>
 
 **If you skipped step one**, you are going to mix all the ingredients from both step one and two:
 
