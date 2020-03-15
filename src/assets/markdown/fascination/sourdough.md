@@ -156,5 +156,5 @@ Here is what the inside of my bread looks like, for reference:
 If this is your first time making sourdough, it might not turn out just right, that's okay!! Just keep at it, read up on different methods. I hope this has helped you give it a shot!!
 
 
-</div>
+
 
