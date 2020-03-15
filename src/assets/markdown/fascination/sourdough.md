@@ -17,6 +17,7 @@ This recipe will make two small loaves of bread or one big loaf of bread.  The i
 
 
 <div class = "left">
+  
 - 900 g of flour (approximately 6 cups)
   - At least 600 g of unbleached white flour
   - The other 300 g can be whole wheat if you want, or white. 
@@ -48,10 +49,11 @@ The tools you will need:
 
 This process is intended to take ~24 hours. If you skip step 1, your bread won't be as sour but you can complete this process in 12 hours. Step 1 occurs the evening before and the remaining steps occur the next day. Overall, this recipe is generally pretty forgiving, so if you don't do the times exactly, eh, life happens.
 
-## Step 1: Getting Everything Started (Optional for Making **Sour** Bread)
+## Step 1: Getting Everything Started (Optional for Making Sour Bread)
 
 So the night before, you are going to start your dough.  You will need:
 
+<div class="left">
 
 - 300 g of flour (~2 cups)
   - If you are using any whole wheat, this is when you will use it
@@ -59,6 +61,7 @@ So the night before, you are going to start your dough.  You will need:
 - About 100 g of sourdough starter
   - If you don't have a scale, a glob that covers the bottom of your bowl should do
 
+</div>
 
 So, all we are going to do is mix these ingredients together in a bowl. You will cover the bowl, and leave it for over night! Below is a video showing these steps and explaining some additional information:
 
