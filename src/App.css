@@ -19,3 +19,7 @@
 #navigation a:link {
   color: black;
 }
+
+#left {
+ text-align: left; 
+}
