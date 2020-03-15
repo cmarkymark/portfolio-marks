@@ -3,7 +3,7 @@
 
 # Charlie's Sourdough (for) Starters Recipe
 
-<div align = "left"> 
+
 
 So, I was motivated to make this tutorial as the coronavirus has left many of us isolated at home -- giving us all time to spend in the kitchen. I feel like a situation like this has made it pretty clear how dependent we all are on society to have access to all of our basic needs. Making sourdough bread feels like one way to kind of have some control over food production and there are a bunch of health benefits compared to using an instant rise yeast -- all you need is flour, water, and salt (and your sourdough starter) and you can make some amazing ass bread.
 
@@ -15,7 +15,7 @@ So, before you make sourdough you do need a sourdough starter. There are many tu
 
 This recipe will make two small loaves of bread or one big loaf of bread.  The ingredients you will need are:
 
-
+<div align = "left"> 
 
 - 900 g of flour (approximately 6 cups)
   - At least 600 g of unbleached white flour
@@ -23,6 +23,8 @@ This recipe will make two small loaves of bread or one big loaf of bread.  The i
 - 675 g of water (675 mL)
 - 20 g of salt (~1 Tsp)
 - A Sourdough Starter
+
+</div>
 
 
 The tools you will need:
