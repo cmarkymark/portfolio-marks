@@ -58,6 +58,8 @@ So the night before, you are going to start your dough.  You will need:
   
 So, all we are going to do is mix these ingredients together in a bowl. You will cover the bowl, and leave it for over night! Below is a video showing these steps and explaining some additional information:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RdxoaFtZBuk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Step 2: Making Your Dough
 
 In the morning, grab your bowl and you should find your creation from the night before is a bit bubbly and maybe a little stinky -- depending on where you are, what kind of flour you used, etc, it's going to look different!
