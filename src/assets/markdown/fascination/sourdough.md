@@ -26,6 +26,8 @@ This recipe will make two small loaves of bread or one big loaf of bread.  The i
 
 The tools you will need:
 
+<div align = "left"> 
+
 - One big bowl to mix everything in and store your dough
 - A dough scraper (can be replaced with a bread knife or other rigid flat thing)
 - Either a scale or measuring cups and tablespoon
@@ -36,6 +38,8 @@ The tools you will need:
   - The perfect tin is like a banana bread loaf tin!
   - Can also be free-form (ie just placed a flat surface)
   - If you have a dutch oven that is also great!
+  
+  </div>
 
 This process is intended to take ~24 hours. If you skip step 1, your bread won't be as sour but you can complete this process in 12 hours. Step 1 occurs the evening before and the remaining steps occur the next day. Overall, this recipe is generally pretty forgiving, so if you don't do the times exactly, eh, life happens.
 
@@ -43,11 +47,15 @@ This process is intended to take ~24 hours. If you skip step 1, your bread won't
 
 So the night before, you are going to start your dough.  You will need:
 
+<div align = "left"> 
+
 - 300 g of flour (~2 cups)
   - If you are using any whole wheat, this is when you will use it
 - 300 g of luke-warm water (300 mL)
 - ~100 g of sourdough starter
   - If you have a scale, I generally just throw in between 100 to 200 g of starter. This is about a "tennis ball" sized glob. It should cover the bottom of your bowl!
+
+</div>
   
 So, all we are going to do is mix these ingredients together in a bowl. You will cover the bowl, and leave it for over night! Below is a video showing these steps and explaining some additional information:
 
@@ -57,16 +65,24 @@ In the morning, grab your bowl and you should find your creation from the night 
 
 Now we are going to make our dough.  You are going to add the following to your fermented dough:
 
+<div align = "left"> 
+
 - 600 g of white flour (~4 cups)
 - 375 g of water (375 mL)
 - 20 g of salt (~1 tbsp)
 
+</div>
+
 **If you skipped step one**, you are going to mix all the ingredients from both step one and two:
+
+<div align = "left"> 
 
 - 900 g of flour (~6 cups)
 - 675 g of luke-warm water (675 mL)
 - 20 g of salt (~1 tbsp)
 - ~100 g of sourdough starter
+
+</div>
 
 Once you have mixed everything and have your dough, you are going to let it sit for 1 - 4 hours. If you are in a super time crunch, you can wait ~20 minutes before continuing to step 3. This allows for the dough to autolyze, which is important for gluten formation.
 
