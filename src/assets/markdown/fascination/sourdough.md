@@ -50,14 +50,15 @@ This process is intended to take ~24 hours. If you skip step 1, your bread won't
 
 So the night before, you are going to start your dough.  You will need:
 
+<div align = "left"> 
 
 - 300 g of flour (~2 cups)
   - If you are using any whole wheat, this is when you will use it
 - 300 g of luke-warm water (300 mL)
 - About 100 g of sourdough starter
-  - If you have a scale, I generally just throw in between 100 to 200 g of starter. This is about a "tennis ball" sized glob. It should cover the bottom of your bowl!
+  - If you don't have a scale, a glob that covers the bottom of your bowl should do
 
-
+</div>  
   
 So, all we are going to do is mix these ingredients together in a bowl. You will cover the bowl, and leave it for over night! Below is a video showing these steps and explaining some additional information:
 
