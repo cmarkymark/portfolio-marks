@@ -15,22 +15,23 @@ So, before you make sourdough you do need a sourdough starter. There are many tu
 
 This recipe will make two small loaves of bread or one big loaf of bread.  The ingredients you will need are:
 
-<span style = "align: left"> 
 
+.left[
 - 900 g of flour (approximately 6 cups)
   - At least 600 g of unbleached white flour
   - The other 300 g can be whole wheat if you want, or white. 
 - 675 g of water (675 mL)
 - 20 g of salt (~1 Tsp)
 - A Sourdough Starter
+]
 
 </span>
 
 
 The tools you will need:
 
-<span style = "align: left"> 
 
+.left[
 - One big bowl to mix everything in and store your dough
 - A dough scraper (can be replaced with a bread knife or other rigid flat thing)
 - Either a scale or measuring cups and tablespoon
@@ -41,7 +42,7 @@ The tools you will need:
   - The perfect tin is like a banana bread loaf tin!
   - Can also be free-form (ie just placed a flat surface)
   - If you have a dutch oven that is also great!
-  
+]
 </span>
 
 This process is intended to take ~24 hours. If you skip step 1, your bread won't be as sour but you can complete this process in 12 hours. Step 1 occurs the evening before and the remaining steps occur the next day. Overall, this recipe is generally pretty forgiving, so if you don't do the times exactly, eh, life happens.
