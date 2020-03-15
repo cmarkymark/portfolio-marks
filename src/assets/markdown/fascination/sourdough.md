@@ -101,10 +101,19 @@ Below is a video showing how to stretch and fold:
 
 After you complete your stretch and folds, let it rise! This can be anywhere from 2 - 8 hours (depending on what time it is and what time you want to bake at). I often try to time this process up so that I let it rise until 5 or 6 PM so I can be baking around 8.
 
-Here is a before photo of my bread at the end of step 3:
+Here is a before photo of my bread at the end of step 3 (left) and after letting rise for about 4 hours (right):
+
+<div class="row">
+  <div class="column">
+    <img src="charliemarks.com/Pics/Dough_Before.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+   <img src="charliemarks.com/Pics/Dough_Before.jpg" alt="Snow" style="width:100%">
+  </div>
+</div>
 
 
-Here is an after photo of my bread after it has risen:
+
 
 
 Again, the amount of rise is dependent on a ton of factors, so don't worry if you didn't get the same amount of rise as me.
