@@ -105,10 +105,10 @@ Here is a before photo of my bread at the end of step 3 (left) and after letting
 
 <div class="row">
   <div class="column">
-    <img src="charliemarks.com/Pics/Dough_Before.jpg" alt="Snow" style="width:100%">
+    <img src="https://www.charliemarks.com/Pics/Dough_Before.jpg" alt="Snow" style="width:100%">
   </div>
   <div class="column">
-   <img src="charliemarks.com/Pics/Dough_Before.jpg" alt="Snow" style="width:100%">
+   <img src="https://www.charliemarks.com/Pics/Dough_Before.jpg" alt="Snow" style="width:100%">
   </div>
 </div>
 
