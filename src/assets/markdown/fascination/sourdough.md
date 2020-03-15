@@ -15,7 +15,7 @@ So, before you make sourdough you do need a sourdough starter. There are many tu
 
 This recipe will make two small loaves of bread or one big loaf of bread.  The ingredients you will need are:
 
-<div align = "left"> 
+<div class = "left"> 
 
 - 900 g of flour (approximately 6 cups)
   - At least 600 g of unbleached white flour
@@ -29,7 +29,7 @@ This recipe will make two small loaves of bread or one big loaf of bread.  The i
 
 The tools you will need:
 
-<div align = "left"> 
+<div class = "left"> 
 
 - One big bowl to mix everything in and store your dough
 - A dough scraper (can be replaced with a bread knife or other rigid flat thing)
@@ -50,7 +50,7 @@ This process is intended to take ~24 hours. If you skip step 1, your bread won't
 
 So the night before, you are going to start your dough.  You will need:
 
-<div align = "left"> 
+<div class = "left"> 
 
 - 300 g of flour (~2 cups)
   - If you are using any whole wheat, this is when you will use it
