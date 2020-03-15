@@ -105,12 +105,12 @@ After you complete your stretch and folds, let it rise! This can be anywhere fro
 
 Here is a before photo of my bread at the end of step 3 (left) and after letting rise for about 4 hours (right):
 
-<div class="row">
-  <div class="column" style="width:50%">
-    <img src="Pics/Dough_Before.jpg" alt="Before" >
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/Dough_Before.jpg" alt="Before" style="width:100%" >
   </div>
-  <div class="column" style="width:50%">
-   <img src="Pics/Dough_Before.jpg" alt="After" >
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/Dough_Before.jpg" alt="After" style="width:100%">
   </div>
 </div>
 
