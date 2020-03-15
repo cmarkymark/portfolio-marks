@@ -91,9 +91,11 @@ Below is a video showing these steps and explaining some additional information:
 
 ## Step 3: Stretch and Fold
 
-Next we are going to stretch and fold our bread. This is a **no knead** reciple, so at no point will we knead the dough. This is perhaps the trickiest part of the whole process and I think a video is most helpful (see below). You will need a flat surface (such as a counter or table) and your dough scraper (or bread knife or other flat tool). You will plop your dough onto the surface (**do not flour the surface**).  You will (rather aggressively) slide the scraper under one side of the dough, stretch it, and then fold it over itself. You will do this in all four directions (if you imagine your dough as kind of a square). After the four stretch and folds you will return it to the bowl. You will stretch and fold every 30 minutes for 2 hours (this is a total of 5 times). If you are in a time crunch you can do it every 15 minutes for an hour.
+Next we are going to stretch and fold our bread. This is a **no knead** reciple, so at no point will we knead the dough. This is perhaps the trickiest part of the whole process and I think a video is most helpful (see below). You will need a flat surface (such as a counter or table) and your dough scraper (or bread knife or other flat tool). You will plop your dough onto the surface (**do not flour the surface**).  You will (rather aggressively) slide the scraper under one side of the dough, stretch it, and then fold it over itself. You will rotate the dough 90 degrees using the bread scraper and repeat -- repeating this process until the dough doesn't really want to be folded, though 4 times is a safe number if you are unsure. After the last stretch and fold you will return it to the bowl. You will stretch and fold every 30 minutes for 2 hours (this is a total of 5 times). If you are in a time crunch you can do it every 15 minutes for an hour.
 
 Below is a video showing how to stretch and fold:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WVeboBXbQdQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Step 4: Let it Rise
 
