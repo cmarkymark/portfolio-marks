@@ -80,14 +80,13 @@ Now we are going to make our dough.  You are going to add the following to your 
 
 **If you skipped step one**, you are going to mix all the ingredients from both step one and two:
 
-<div align = "left"> 
+
 
 - 900 g of flour (~6 cups)
 - 675 g of luke-warm water (675 mL)
 - 20 g of salt (~1 tbsp)
 - About 100 g of sourdough starter
 
-</div>
 
 Once you have mixed everything and have your dough, you are going to let it sit for 1 - 4 hours. If you are in a super time crunch, you can wait ~20 minutes before continuing to step 3. This allows for the dough to autolyze, which is important for gluten formation.
 
