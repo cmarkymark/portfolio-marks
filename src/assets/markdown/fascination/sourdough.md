@@ -1,5 +1,5 @@
 
-<!--- Sourdough (for) Starters -->
+<!--- Sourdough for Starters -->
 
 # Charlie's Sourdough (for) Starters Recipe
 
