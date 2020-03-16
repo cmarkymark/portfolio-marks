@@ -148,9 +148,11 @@ The video below documents this set of steps:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6LLStUBseYI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Set a timer for 20 minutes. Once the timer goes off, remove the water from the oven and let the oven sit slightly ajar for like 15 seconds to let the steam out. Be careful, if your water has not fully evaporated it is boiling water. If you get it on your oven mitt, this will scald you. Dump the water so no one accidentally gets burned -- metal cools a lot faster than water does (I think). If you used lids, then remove the lids at this point. At this point, your bread should have risen but will likely be light pasty color still. Here is what mine looked like:
+Set a timer for 20 minutes. Once the timer goes off, remove the water from the oven and let the oven sit slightly ajar for like 15 seconds to let the steam out. Be careful, if your water has not fully evaporated it is boiling water. If you get it on your oven mitt, this will scald you. Dump the water so no one accidentally gets burned -- metal cools a lot faster than water does (I think). If you used lids, then remove the lids at this point. At this point, your bread should have risen but will likely be light pasty color still. 
 
-Set a timer for another 20 minutes. After 20 minutes you should be all done! Take a look. If the outside is still a light color (ie there is no dark brown), you can leave it in another 5 minutes or so. Take the bread out of the oven. Here is what mine looked like:
+Set a timer for another 20 minutes. After 20 minutes you should be all done! Take a look. If the outside is still a light color (ie there is no dark brown), you can leave it in another 5 minutes or so. Take the bread out of the oven. 
+
+
 
 ## Step 7: LET IT COOL OFF!!!!
 
@@ -160,9 +162,18 @@ The bread is not done cooking! The residual heat is cooking the inside of the br
 
 You did it!
 
-Here is what the inside of my bread looks like, for reference:
+Here is what my bread looks like, for reference:
 
-If this is your first time making sourdough, it might not turn out just right, that's okay!! Just keep at it, read up on different methods. I hope this has helped you give it a shot!!
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/Bread_Outside.jpg" alt="Outside" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/Bread_Inside.jpg" alt="Inside" style="width:100%">
+  </div>
+</div>
+
+If this is your first time making sourdough, it might not turn out just right, that's okay!! Hell, things went pretty haywire for me and the end result is still a tasty loaf of bread! Just keep at it, read up on different methods. I hope this has helped you give it a shot!!
 
 
 
