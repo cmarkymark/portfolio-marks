@@ -6,13 +6,15 @@
 
 So, I was motivated to make this tutorial as the coronavirus has left many of us isolated at home -- giving us all time to spend in the kitchen. I feel like a situation like this has made it pretty clear how dependent we all are on society to have access to all of our basic needs. Making sourdough bread feels like one way to kind of have some control over food production and there are a bunch of health benefits compared to using an instant rise yeast -- all you need is flour, water, and salt (and your sourdough starter) and you can make some amazing ass bread.
 
+Edit: While making this bread for the tutorial, our van broke down and so a lot of our timing got off and we had to kind of take some steps I normally wouldn't want to. All of this is to say that, while this recipe should be viewed as a guide, you don't have to be perfect. If you aren't able to follow steps, if life gets in the way, you're still going to end up with some tasty bread!! I explain my general approach and throughout explain adjustments I made in order to deal with our hectic day!
+
 ## You Need A Sourdough Starter
 
 So, before you make sourdough you do need a sourdough starter. There are many tutorials of how you can make them at home, such as [here](https://www.theclevercarrot.com/2019/03/beginner-sourdough-starter-recipe/). This process takes around a week. If you do not want to wait out this process, look up a local bakery, go (or find someone who is able to go) to the bakery, purchase a sourdough starter (often they will just give it to you for free). Sourdough starter is a fermented mix of flour and water. It is constantly multiplying, so it is no sweat for a bakery to give you some -- they likely have a tub in the back with an every-expanding starter in it. While you are there, support and tip the local business, especially if this coronavirus business is going on. Food service workers are basically frontlines with this shit. I have often found that bakers are stoked you want a starter and even had one place request I bring them a loaf to share together!
 
 ## What You Need
 
-This recipe will make two small loaves of bread or one big loaf of bread.  The ingredients you will need are:
+This recipe will make either two small loaves of bread or one big loaf of bread. If you want to make less or more, just adjust the ingredients proportionally!! The ingredients you will need are:
 
 <div class="left">
 
@@ -39,10 +41,13 @@ The tools you will need:
   - The perfect tin is like a banana bread loaf tin!
   - Can also be free-form (ie just placed a flat surface)
   - If you have a dutch oven that is also great!
+- Something to boil water with
+- A tray to put the boiling water in
+- Probably an oven mitt
 
 </div>
 
-This process is intended to take ~24 hours. If you skip step 1, your bread won't be as sour but you can complete this process in 12 hours. Step 1 occurs the evening before and the remaining steps occur the next day. Overall, this recipe is generally pretty forgiving, so if you don't do the times exactly, eh, life happens.
+This process is intended to take ~24 hours -- due to our hectic day it took about 36 hours. If you skip step 1, your bread won't be as sour but you can complete this process in 12 hours. Step 1 occurs the evening before and the remaining steps occur the next day. Overall, this recipe is generally pretty forgiving, so if you don't do the times exactly, eh, life happens.
 
 ## Step 1: Getting Everything Started (Optional for Making Sour Bread)
 
@@ -105,7 +110,7 @@ Below is a video showing how to stretch and fold:
 
 After you complete your stretch and folds, let it rise! This can be anywhere from 2 - 8 hours (depending on what time it is and what time you want to bake at). I often try to time this process up so that I let it rise until 5 or 6 PM so I can be baking around 8.
 
-Here is a before photo of my bread at the end of step 3 (left) and after letting rise for about 4 hours (right):
+Here is a before photo of my bread at the end of step 3 (left) and after letting rise for about 4 hours (right). It is a cold rainy day and because of our car problems I only had about 4 hours to let it rise, but people gotta sleep so it's where we are at. Often my rise will fill the entire blue bowl (will update a photo another time I make it!):
 
 <div class="row" style="display: flex">
   <div class="column" style="width:50%; padding: 5px">
