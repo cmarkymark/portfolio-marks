@@ -110,25 +110,23 @@ Below is a video showing how to stretch and fold:
 
 After you complete your stretch and folds, let it rise! This can be anywhere from 2 - 8 hours (depending on what time it is and what time you want to bake at). I often try to time this process up so that I let it rise until 5 or 6 PM so I can be baking around 8.
 
-Here is a before photo of my bread at the end of step 3 (left) and after letting rise for about 4 hours (right). It is a cold rainy day and because of our car problems I only had about 4 hours to let it rise, but people gotta sleep so it's where we are at. Often my rise will fill the entire blue bowl (will update a photo another time I make it!):
+Here is a before photo of my bread at the end of step 3 (left) and after letting rise for about 4 hours (right). It is a cold rainy day and because of our car problems I only had about 4 hours to let it rise, but people gotta sleep so it's where we are at. Often my rise will fill the entire blue bowl (will update a photo another time I make it!). Notice though the large bubbles in the risen dough, while the dough could use more rise time, we can see that things are very literally bubbling!!:
 
 <div class="row" style="display: flex">
   <div class="column" style="width:50%; padding: 5px">
     <img src="Pics/Dough_Before.jpg" alt="Before" style="width:100%" >
   </div>
   <div class="column" style="width:50%; padding: 5px">
-   <img src="Pics/Dough_Before.jpg" alt="After" style="width:100%">
+   <img src="Pics/Dough_After.jpg" alt="After" style="width:100%">
   </div>
 </div>
 
-
-Again, the amount of rise is dependent on a ton of factors, so don't worry if you didn't get the same amount of rise as me.
 
 ## Step 5: One Big Loaf or Splitting Our Dough For Two Loaves and One Last Stretch and Fold
 
 At this point, your dough should be nice and airy. Take care not to squish your dough too much. We were really patient to get this air so we don't want to totally deflate it (but we are totally about to deflate a good amount and that is totally okay!).
 
-We were going to make two small loaves of bread (in case you want to share with friends or want nice sized pieces of toast!). For the video, due both to cold weather and some car troubles today, we had a little less rise than I wanted so I am only going to make one load. I would get the pans you are going to cook on and some parchment paper to place the dough on (or if you don't have it, tin foil can work).
+We were going to make two small loaves of bread (in case you want to share with friends or want nice sized pieces of toast!). For the video, due both to cold weather and some car troubles today, we had a little less rise than I wanted so I am only going to make one loaf. I would get the pans you are going to cook on and some parchment paper to place the dough on (or if you don't have it, tin foil can work).
 
 I usually do not pre-flour my surface for this step, but you can if you want. You will need a bag of flour handy though to complete this step.
 
