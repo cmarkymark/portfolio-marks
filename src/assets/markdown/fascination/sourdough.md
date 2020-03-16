@@ -119,19 +119,21 @@ Here is a before photo of my bread at the end of step 3 (left) and after letting
 
 Again, the amount of rise is dependent on a ton of factors, so don't worry if you didn't get the same amount of rise as me.
 
-## Step 5: Splitting Our Dough For Two Loaves and One Last Stretch and Fold
+## Step 5: One Big Loaf or Splitting Our Dough For Two Loaves and One Last Stretch and Fold
 
 At this point, your dough should be nice and airy. Take care not to squish your dough too much. We were really patient to get this air so we don't want to totally deflate it (but we are totally about to deflate a good amount and that is totally okay!).
 
-We are going to make two small loaves of bread (in case you want to share with friends or want nice sized pieces of toast!). I would get the pans you are going to cook on and some parchment paper to place the dough on (or if you don't have it, tin foil can work).
+We were going to make two small loaves of bread (in case you want to share with friends or want nice sized pieces of toast!). For the video, due both to cold weather and some car troubles today, we had a little less rise than I wanted so I am only going to make one load. I would get the pans you are going to cook on and some parchment paper to place the dough on (or if you don't have it, tin foil can work).
 
 I usually do not pre-flour my surface for this step, but you can if you want. You will need a bag of flour handy though to complete this step.
 
-First, you will dump your dough onto surface. Try tour best not to squish it! You will use your scraper or knife to split the dough in half. What I do is I start the cut and then use my hand to start pulling away one of the halves as I continue the cut (see the video below). The scraper or knife is a good tool for moving your dough across your surface.
+First, you will dump your dough onto surface. Try tour best not to squish it! If you make two loaves, you will use your scraper or knife to split the dough in half. What I do is I start the cut and then use my hand to start pulling away one of the halves as I continue the cut (see the video below). The scraper or knife is a good tool for moving your dough across your surface.
 
-You will repeat the following steps for each of your two halves. First, you are going to do one set of stretch and folds just like in Step 3 (ie four stretch and folds total). This is going to be our final dough ball, so we are going to flour it up. Start by sprinkling flour over the top of it. Spread that flour around so that it is not sticky to the touch. Next, to get the underside, sprinkle flour around the base of your dough ball and use your spreader or knife to push the flour under the dough ball (see video). Do this until the dough ball is not sticky. I don't recommend trying to pick the dough ball up with your hands. I would place the parchment paper down next to the dough ball and use your scraper to lift or skooch (sp?) your dough ball onto the middle of your parchment paper. Pick the dough up using the parchment paper and play it in/on the tray/tin you are using to bake. 
+You will repeat the following steps for each of your two halves, or once for your one big loaf. First, you are going to do one set of stretch and folds just like in Step 3 (ie four stretch and folds total). This is going to be our final dough ball, so we are going to flour it up. Start by sprinkling flour over the top of it. Spread that flour around so that it is not sticky to the touch. Next, to get the underside, sprinkle flour around the base of your dough ball and use your spreader or knife to push the flour under the dough ball (see video). Do this until the dough ball is not sticky. I don't recommend trying to pick the dough ball up with your hands. I would place the parchment paper down next to the dough ball and use your scraper to lift or skooch (sp?) your dough ball onto the middle of your parchment paper. Pick the dough up using the parchment paper and play it in/on the tray/tin you are using to bake. Here is a video of how to do this:
 
-We are now going to let it sit for 1 hour or so for its final rise!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E9pKKb2hgCs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Normally, we would let it sit for 1 hour or so for its final rise and then start baking. But, because of our car troubles today, it is currently about 10 PM and we don't want to stay away and so I am putting our dough in the fridge overnight and going to bake. In the morning you will want to take the dough out and give it time to get back to room temperature. While this isn't ideal, I wanted to show that even if things go haywire (like our day did today haha), we can take steps and still make great bread!!
 
 ## Step 6: Baking!
 
@@ -140,6 +142,8 @@ Start by preheating your oven to 500 degrees (we are going to eventually bake at
 Once your oven is hot turn it down to 450 degrees. Get ready to put your two loaves in the oven. Grab your loaves. Sprinkle some more flour over the top of your loaves.  Grab the sharpest knife you have and make some slits in the top of the bread (these slits give the bread room to expand). You can make your bread pretty by drawing various patterns with your splits. A nice X through the middle of a round loaf is a classic pattern or some diagonal hatches across a rectangular loaf can also be nice. Immediately after making the slits place the loaves into the oven! (If you are using lids instead of the steam oven, put the lids on before placing in the oven). 
 
 The video below documents this set of steps:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6LLStUBseYI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Set a timer for 20 minutes. Once the timer goes off, remove the water from the oven and let the oven sit slightly ajar for like 15 seconds to let the steam out. Be careful, if your water has not fully evaporated it is boiling water. If you get it on your oven mitt, this will scald you. Dump the water so no one accidentally gets burned -- metal cools a lot faster than water does (I think). If you used lids, then remove the lids at this point. At this point, your bread should have risen but will likely be light pasty color still. Here is what mine looked like:
 
