@@ -62,7 +62,7 @@ Cummins, K., **Marks, C.**, Writing Results Without Significance Testing: Adopti
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Submitted to Epidemiologic Reviews (1/31/20)
 
-**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review (Submitted 1/24/20) at The Lancet
+**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review at Addiction
 
 **Marks, C.**, Machiani, S., Jahangiri, A., Identifying and Labelling Risk Driving: A Multi-Stage Process Using Real World Driving Data, For Submission to IEEE Transactions on Initelligents Transportation Systems, January 2020
 
@@ -74,7 +74,7 @@ Espinosa, S., Fondevila, G, **Marks, C.**, Exploiring the Motivations for Non-Co
 
 ## Conference Procedings
 
-**Marks, C.**, Abramovitz, D., Donnelly, C., Martin, N., Strathdee, S., Borquez, A., [Predicting County-Level Synthetic Opioid Overdose Mortality Rates: Comparing Traditional Statistical and Machine Learning Modeling Approaches](https://charliemarks.com/Publications/Conference%20Proceedings/Final_ISSDP_Abstract.pdf).  Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
+**Marks, C.**, Abramovitz, D., Donnelly, C., Martin, N., Strathdee, S., Borquez, A., [Predicting County-Level Synthetic Opioid Overdose Mortality Rates: Comparing Traditional Statistical and Machine Learning Modeling Approaches](https://charliemarks.com/Publications/Conference%20Proceedings/Final_ISSDP_Abstract.pdf). The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
 Carrasco-Escobar G, **Marks C**, Carrasco-Hernandez R, Abramovitz D, Donnelly C, Borquez A., [Ascertaining the relative contribution of spatio-temporal effects to the synthetic opioid overdose epidemic in the United States](https://charliemarks.com/Publications/Conference%20Proceedings/Gabriel_ISSDP_Abstract.pdf). Submitted to The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
 
