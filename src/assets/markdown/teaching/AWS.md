@@ -57,3 +57,38 @@ Next you will have to do a phone verification, just enter your cell number, do t
    <img src="Pics/AWS7.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Finally, you will select the free plan (as showed below) and you have completed making your account!
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS8.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS9.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+### Applying For AWS Educator Grant
+
+In case you already had an account and are starting here, return to [aws.amazon.com] and click "Sign in to the Console". You will enter the email address you just signed up with (make sure the "Root User" tab is selected) and then you will be prompted to enter your password:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS10.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS11.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+Now you are on the Management Console. We need to get our account ID so go to the top right where your username is, a drop down will appear, please click on "My Account" (as displayed in the photo below). The first line of this next page will contain your account ID copy and save it for the Educator application:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS12.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS13.png" alt="After" style="width:100%">
+  </div>
+</div>
