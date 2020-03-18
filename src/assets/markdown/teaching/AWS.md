@@ -331,4 +331,24 @@ I am going to show how you can create a series of machines for your students. If
   </div>
 </div>
 
-Then, on the left sidebar you will click AMI under the Images header. You should see your image and the status should say "Pending". We need to wait for this to finish up. This can be another good time to take a break.
+Then, on the left sidebar you will click AMI under the Images header. You should see your image and the status should say "Pending". We need to wait for this to finish up. This can be another good time to take a break. Once its status is updated to available, you will make sure the blue square next to it is highlighted, go into the Actions drop down and click "Launch":
+
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS50.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS51.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+This will open up the EC2 Instance Launcher that we were in before! Just like before, hit Review and Launch. On the next screen hit "Launch": 
+
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS52.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS53.png" alt="After" style="width:100%">
+  </div>
+</div>
