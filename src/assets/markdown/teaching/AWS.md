@@ -262,3 +262,35 @@ Click the appropriate prompts to make your way through and it should automatical
     <img src="Pics/AWS38.png" alt="Before" style="width:100%" >
  </div>
 
+**Read this whole paragraph** before doing anything. We are going to download Google Chrome immediately, Internet Explorer can be a real pain due to security restrictions, so we will start by opening Internet Explorer. It will prompt about security setting, **please** hit the "Don't Use Recommended Settings" option, then hit ok:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS39.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS40.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+Next, just close Internet Explorer. We need to disable Enhanced Security in order to download Chrome and RStudio. Click on start in the bottom left and then hit the Server Manager button. Once this window is open, hit the "Local Server" button on the left sidebar:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS41.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS42.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+There is an option called IE Enhanced Security Configuration and there should be a blue "On" Next to that. Click that and then hit the corresponding buttons to turn it off!
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS43.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS44.png" alt="After" style="width:100%">
+  </div>
+</div>
