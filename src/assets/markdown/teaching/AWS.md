@@ -245,4 +245,20 @@ You will need to download the Microsoft Remote Desktop App from the Mac App Stor
 
 You will need to download an RDP Client. I highly recommend "Chrome RDP" which can be accessed [here](https://chrome.google.com/webstore/detail/chrome-rdp/cbkkbcmdlboombapidmoeolnmdacpkch?hl=en-US).
 
+**Next**, we are going to use our RDP Client to log into our virtual machine. (I am going to be displaying for a Windows computer) You should have copy-pasted the Public DNS, User name, and password. The first prompt will be for the Public DNS. Copy and paste that in. Then you will be prompted for a username and password. In windows it might try to use your login name for your actual PC, so just click Use a Different Account and then enter Administrator and paste in your password. Then hit ok!
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS36.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS37.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+Click the appropriate prompts to make your way through and it should automatically log you into your virtual machine. Give it a minute or so, as some configuration needs to occur. At this point, you should be in your virtual machine!
+
+<div class="column" style="width:100%; padding: 5px">
+    <img src="Pics/AWS38.png" alt="Before" style="width:100%" >
+ </div>
 
