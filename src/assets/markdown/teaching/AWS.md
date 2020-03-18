@@ -132,3 +132,14 @@ This next screen will let you choose your base image for your model. Please copy
    <img src="Pics/AWS19.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Next, we are going to be asked for an "Instance Type". It has pre-selected the only free option for us, so we are just going to hit the Review and Launch button. The instance type can always be changed. The instance type just determines the number of CPUs and amount of RAM you have. The more you have, the more it will cost. For now, we get one free virtual machine, so at this stage, we still have done nothing that will cost us anything. On the next screen you are just going to go to the bottom right and hit "Launch":
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS20.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS21.png" alt="After" style="width:100%">
+  </div>
+</div>
