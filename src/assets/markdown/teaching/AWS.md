@@ -167,3 +167,15 @@ On the next screen, click on the blue button in the bottom right corner to go to
    <img src="Pics/AWS25.png" alt="After" style="width:100%">
   </div>
 </div>
+
+I recommend naming this instance so that you know this is the original one. We are going to make a copy (eventually) for every student that needs it, so we will want actual names to know what is what. You can do so by click the little pencil in the name column, typing something in, and then hitting the little checkmark:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS26.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS27.png" alt="After" style="width:100%">
+  </div>
+</div>
+
