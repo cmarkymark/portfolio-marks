@@ -19,4 +19,13 @@ provide your students the virtual classroom that they need.
 
 ### Create Account (if you don't have one)
 
-Head to [aws.amazon.com](aws.amazon.com). In the top right, click "Sign In to the Console" and then on the next screen click "Create a new AWS Account. This is displayed in the photos below.
+Head to [aws.amazon.com](aws.amazon.com). In the top right, click "Sign In to the Console" and then on the next screen click "Create a new AWS Account. This is displayed in the photos below:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS1.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS2.png" alt="After" style="width:100%">
+  </div>
+</div>
