@@ -418,3 +418,7 @@ If you have multiple machines running, AWS will charge you. So when the course i
    <img src="Pics/AWS62.png" alt="After" style="width:100%">
   </div>
 </div>
+
+### I Hope This Helps
+
+If there are any issues with this tutorial, please feel free to email me at cmarks@sdsu.edu, so I can correct them. If you want to consult with me, you may also reach out to set this up as well, but I hope this tutorial alone can help you get through this process! All the best, Charlie
