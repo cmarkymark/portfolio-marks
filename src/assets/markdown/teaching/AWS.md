@@ -29,3 +29,14 @@ Head to [aws.amazon.com](aws.amazon.com). In the top right, click "Sign In to th
    <img src="Pics/AWS2.png" alt="After" style="width:100%">
   </div>
 </div>
+
+From here you are going to fill in your info to setup your account like so:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS3.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS4.png" alt="After" style="width:100%">
+  </div>
+</div>
