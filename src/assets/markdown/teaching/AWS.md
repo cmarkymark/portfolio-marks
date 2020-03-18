@@ -179,3 +179,45 @@ I recommend naming this instance so that you know this is the original one. We a
   </div>
 </div>
 
+Amazing! We have created our virtual machine!
+
+**If you ever need to return to this dashboard**, from the initial management console, you can hit the Services dropdown at the top of the screen and find "EC2" and it will take you here!
+
+### Setting Up Our Virtual Machine
+
+Okay, so we have created our virtual machine, but now we need to log into it and upload the software that our students are going to need. For this example, I am going to create a VM with RStudio uploaded onto it. Why might a student need a VM with RStudio? Perhaps they have a chromebook and cannot run RStudio, but a chromebook can access a virtual machine, so voila, a 150$ computer has just become a whole lot more useful (pro tip: if you are a student with a chromebook, you can just set this up for yourself and do your whole college/uni on a chromebook -- there are some cons tho that I won't dive into here).
+
+We need to log into our virtual machine to set it up. I will assume three potential options: 1) you are a Windows useer; 2) you are a Mac user; or 3) you are a chromebook user. 
+
+Before we worry about that though, we need to get our password and login info. In our EC2 dashboard, our virtual machine is selected (the blue square next to it is highlight -- if it isn't click it now). You are going to click on the Actions dropdown and then click "Get Windows Password":
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS28.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS29.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+This is what that Key Pair file was for, hit the "Choose File" button and upload your .pem file you downloaded earlier!
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS30.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS31.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+Next you will hit the "Decrypt Password" button and then, there ya go, you have your password. I recommend just saving this. This will also be your students passwords (this can be modified, but not in this tutorial). You are now receiving three important pieces of information, the Public DNS (this is the address through which you can access your machine), a user name (Administrator), and the password. I recommend copy-pasting this all into a word doc:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS32.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS33.png" alt="After" style="width:100%">
+  </div>
+</div>
