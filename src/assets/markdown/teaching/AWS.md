@@ -16,3 +16,7 @@ I will explain how to: 1) apply for an Amazon AWS Educator credit; 2) create a v
 and 3) create a copy of this virtual machine for every student that needs it. While this is straightforward, it can be really complicated
 to figure out if you have never done it before. I will walk you through these steps with a series of videos that I hope can help you
 provide your students the virtual classroom that they need.
+
+### Create Account (if you don't have one)
+
+Head to [aws.amazon.com](aws.amazon.com). In the top right, click "Sign In to the Console" and then on the next screen click "Create a new AWS Account. This is displayed in the photos below.
