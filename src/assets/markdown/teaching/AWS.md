@@ -320,4 +320,15 @@ I am going to show how you can create a series of machines for your students. If
  
  ### Making A Virtual for Your Student
  
- So, let's say our hypothetical student, Sally, has a chromebook and they need a virtual machine. So, first we have to make a copy of your machine with all the software downloaded on it. This copy is going to be called an image (or an AMI). 
+ So, let's say our hypothetical student, Sally, has a chromebook and they need a virtual machine. So, first we have to make a copy of your machine with all the software downloaded on it. This copy is going to be called an image (or an AMI). So, let us return to our EC2 dashboard. We are going to select our original machine, hit the actions dropdown and select "Create Image". Fill in a name and a description and then hit "Create Image":
+ 
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS48.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS49.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+Then, on the left sidebar you will click AMI under the Images header. You should see your image and the status should say "Pending". We need to wait for this to finish up. This can be another good time to take a break.
