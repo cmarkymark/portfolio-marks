@@ -313,3 +313,11 @@ For RStudio, I will first download R from cran.rstudio.com, by clicking Download
 <div class="column" style="width:100%; padding: 5px">
     <img src="Pics/AWS47.png" alt="Before" style="width:100%" >
  </div>
+ 
+ Once you have all your software downloaded, CONGRATS!! You have made your virtual machine and you are ready to make copies for each of your students who need one! You can go ahead and log out of your virtual machine.
+
+I am going to show how you can create a series of machines for your students. If you feel that your students are tech savvy enough to do it themselves, this can save money (for you), but overall, it might be really time intensive for them to replicate all of these steps and (in the current coronavirus situation), we don't have a lot of time to transition to online coursework.
+ 
+ ### Making A Virtual for Your Student
+ 
+ So, let's say our hypothetical student, Sally, has a chromebook and they need a virtual machine. So, first we have to make a copy of your machine with all the software downloaded on it. This copy is going to be called an image (or an AMI). 
