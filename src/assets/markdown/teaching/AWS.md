@@ -221,3 +221,28 @@ Next you will hit the "Decrypt Password" button and then, there ya go, you have 
    <img src="Pics/AWS33.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Now you need an RDP client to log into your virtual machine. Your students will also need this so please use this part of the tutorial as a resource for them as well!
+
+#### Windows Users
+
+Windows has a built in RDP client. Go to the command prompt, type in mstsc, hit enter, and the RDP client will pop up:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS34.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS35.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+#### Mac Users
+
+You will need to download the Microsoft Remote Desktop App from the Mac App Store. It can be accessed [here](https://apps.apple.com/us/app/microsoft-remote-desktop-10/id1295203466?mt=12)
+
+#### Chromebook Users 
+
+You will need to download an RDP Client. I highly recommend "Chrome RDP" which can be accessed [here](https://chrome.google.com/webstore/detail/chrome-rdp/cbkkbcmdlboombapidmoeolnmdacpkch?hl=en-US).
+
+
