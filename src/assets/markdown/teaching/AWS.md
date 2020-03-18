@@ -116,4 +116,19 @@ Please fill out the form that pops up. This is to confirm that you are indeed a 
  
  ### Creating the Initial Virtual Machine
  
+We are going to return the the AWS Management Console (can log in again if you need to through [aws.amazon.com](aws.amazon.com). Once there you may need to scroll down, there is a section called "Build a Solution" and you will click the "Launch a virtual machine" button:
+
+<div class="column" style="width:100%; padding: 5px">
+    <img src="Pics/AWS17.png" alt="Before" style="width:100%" >
+ </div>
  
+This next screen will let you choose your base image for your model. Please copy and paste "ami-0ce84304ef5b08a22" into the search bar, hit enter, and then select the Microsoft Windows Server 2019 Base model that should pop up:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS18.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS19.png" alt="After" style="width:100%">
+  </div>
+</div>
