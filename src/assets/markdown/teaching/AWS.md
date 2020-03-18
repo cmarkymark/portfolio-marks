@@ -352,3 +352,14 @@ This will open up the EC2 Instance Launcher that we were in before! Just like be
    <img src="Pics/AWS53.png" alt="After" style="width:100%">
   </div>
 </div>
+
+The key pair prompt from before is going to pop up. You can just use your key pair from before, so just select the "I acknowledge that I have access to the selected private key..." and then hit Launch Instance. Then on the next screen hit the "View Instances" button.
+
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS54.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS55.png" alt="After" style="width:100%">
+  </div>
+</div>
