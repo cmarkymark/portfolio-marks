@@ -103,3 +103,17 @@ Next, we are going to head to [awseducate.com](awseducate.com) in order to apply
    <img src="Pics/AWS15.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Please fill out the form that pops up. This is to confirm that you are indeed a teacher. See photo below for notes on filling in individual fields:
+
+<div class="column" style="width:100%; padding: 5px">
+    <img src="Pics/AWS16.png" alt="Before" style="width:100%" >
+ </div>
+ 
+ Upon completion of this step an email will be sent to your account. **You need to go and verify your email, so please go to your email and do that**
+ 
+ You will not immediately get your Educator credit, they have to approve it (can take several days or longer), so we are now going to continue on with actually building the virtual machines for our students!
+ 
+ ### Creating the Initial Virtual Machine
+ 
+ 
