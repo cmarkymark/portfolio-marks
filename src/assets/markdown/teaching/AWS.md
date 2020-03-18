@@ -294,3 +294,22 @@ There is an option called IE Enhanced Security Configuration and there should be
    <img src="Pics/AWS44.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Now you can re-open Internet Explorer and download Google Chrome. Go to chrome.google.com and hit the Download Chrome button. Hit Accept and Install and then hit the Run button!
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS45.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS46.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+Let this install. Now use Google Chrome to download whatever you need. It should open automatically. For this example, we are going to download RStudio. It is good to figure out exactly where to download whatever you are going to download on your personal computer and just type in that URL on the EC2, it isn't really designed for you to be surfing the internet (hence why they set it up with internet explorer's enhanced security).
+
+For RStudio, I will first download R from cran.rstudio.com, by clicking Download R for Windows. Then I will download RStudio from rstudio.com. (I won't detail these steps as this will be dependent on your needs, for example, if you need SPSS or matlab or something else). But check it out, here is RStudio running on my virtual machine:
+
+<div class="column" style="width:100%; padding: 5px">
+    <img src="Pics/AWS47.png" alt="Before" style="width:100%" >
+ </div>
