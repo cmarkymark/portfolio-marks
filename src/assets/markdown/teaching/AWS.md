@@ -40,3 +40,20 @@ From here you are going to fill in your info to setup your account like so:
    <img src="Pics/AWS4.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Next you will enter a credit card. Later we will choose for a free tier account, don't worry, we won't get charged. Amazon AWS provides one virtual machine (with 1 GB of RAM) for free. Since we are setting up multiple machines for our students, we will incur a fee but that is why we are going to apply for an AWS Educators credit! Additionaly, if your students are tech savvy, you could have them set this up themselves and it would likely be free, but we are in a pinch now going virtual with coronavirus, so let's press onward! So, enter your credit info:
+
+<div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS5.png" alt="Before" style="width:100%" >
+</div>
+
+Next you will have to do a phone verification, just enter your cell number, do the rather challenging text match I'm not a robot thing, and then enter the code, like so:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS6.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS7.png" alt="After" style="width:100%">
+  </div>
+</div>
