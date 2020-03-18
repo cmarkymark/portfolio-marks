@@ -143,3 +143,17 @@ Next, we are going to be asked for an "Instance Type". It has pre-selected the o
    <img src="Pics/AWS21.png" alt="After" style="width:100%">
   </div>
 </div>
+
+#### Getting a Key Pair: Very Important Step
+
+So, once you hit launch you will be prompted to select or create a key pair. This is essentially a privacy tool that will provide you the password to log into the virtual machine. **YOU CANNOT LOSE THIS** or you will have to start over. So, in the first drop down you will select "Create a new key pair" and in the "Key pair name" section you will name your file. You will then click the "Download Key Pair" button and you must keep track of this file!! Don't lose it. Once you download the Key Pair, click the Launch Instance button!
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS22.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS23.png" alt="After" style="width:100%">
+  </div>
+</div>
+
