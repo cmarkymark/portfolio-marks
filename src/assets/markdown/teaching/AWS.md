@@ -92,3 +92,14 @@ Now you are on the Management Console. We need to get our account ID so go to th
    <img src="Pics/AWS13.png" alt="After" style="width:100%">
   </div>
 </div>
+
+Next, we are going to head to [awseducate.com](awseducate.com) in order to apply for the educator grant. Click the Join AWS Educate button and then choose the Educator option, like so:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS14.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS15.png" alt="After" style="width:100%">
+  </div>
+</div>
