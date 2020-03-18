@@ -157,3 +157,13 @@ So, once you hit launch you will be prompted to select or create a key pair. Thi
   </div>
 </div>
 
+On the next screen, click on the blue button in the bottom right corner to go to your instances and that should take you to your EC2 managemanet portal. You should have one line there with a blank name, a long Instance ID, and whole bunch of information. We actually need to wait a few moments to let it initialize so this is a great time to take a coffee break or whatever. Maybe get up and stretch, idk. Here are pics for these steps:
+
+<div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS24.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS25.png" alt="After" style="width:100%">
+  </div>
+</div>
