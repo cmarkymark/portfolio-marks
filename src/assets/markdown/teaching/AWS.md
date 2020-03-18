@@ -363,3 +363,58 @@ The key pair prompt from before is going to pop up. You can just use your key pa
    <img src="Pics/AWS55.png" alt="After" style="width:100%">
   </div>
 </div>
+
+This will return you to your EC2 dashboard where you now have two machines. The original one (which you named so you can easily tell which one it is) and the new one. Since this machine is for Sally, go ahead and name is "Sally's Machine":
+
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS56.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS57.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+**You are all set!"** The only information that Sally needs to log in is: 1) The Public DNS, 2) the username, 3) the password, and 4) information on how to use an RDP client.
+
+To find the Public DNS for Sally, select their machine and hit Action's and then select "Connect". The Public DNS is there and so is their user name (which is just Administrator). Unlike before, we will not generate a password. The password is exactly same as for the orgiinal machine. So just share the same password as for the original. They cannot access the original because they do not have the Public DNS for the original:
+
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS58.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS59.png" alt="After" style="width:100%">
+  </div>
+</div>
+
+You will need to explain how to use an RDP Client to log into this machine and this will pretty much just depend on the OS they are running. I only have two students thus far needing this Virtual Machine option, since they use chrome books, so I am just going to do a Skype call with them and show them how to log in! This machine we just created is an exact copy of what we created before, so in this case it has Google Chrome, R, and RStudio downloaded on it!
+
+### Make as Many Virtual Machines as You Need
+
+You can rinse and repeat this process for every student who needs a virtual machine. We applied for the Educators Credit at the beginning, because this is not free, but this is way more cost-effective (especially with the Credit) than students purchasing new computers to run this software!
+
+### The Instance Isn't Able to Run the Software
+
+I am not going to go into this in this tutorial, but if the free tier EC2 virtual machine does not have enough memory or RAM to run the software you need, you can increase both of these (obviously it will cost more) through the portal.  [Here is a tutorial](https://www.cloudsqueeze.ai/how-to-change-an-aws-ec2-instance-type-a-step-by-step-guide/index.html) explaining how to do this.
+
+### Using Your Educator Credit
+
+From your EC2 dashboard (or wherever you are in the AWS console), click the services dropdown and find "Billing", click "Credits" on the left side bar and then put your credit Promo Code into the input box! 
+
+<div class="column" style="width:100%; padding: 5px">
+    <img src="Pics/AWS60.png" alt="Before" style="width:100%" >
+ </div>
+
+### Final Thing
+
+If you have multiple machines running, AWS will charge you. So when the course is over or if you know that students are not using them, you can pause and/or delete the machines! To pause the machine, select it in the EC2 dashboard, hit Actions -> Instance State -> Stop. Once it is stopped you can delete it by selecting Terminate from the same menu.
+
+ <div class="row" style="display: flex">
+  <div class="column" style="width:50%; padding: 5px">
+    <img src="Pics/AWS61.png" alt="Before" style="width:100%" >
+  </div>
+  <div class="column" style="width:50%; padding: 5px">
+   <img src="Pics/AWS62.png" alt="After" style="width:100%">
+  </div>
+</div>
