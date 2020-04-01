@@ -50,6 +50,8 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+Cummins, K., **Marks, C.**, Farewell to Bright-Line: A Guide to Reporting Quantitative Results Without the S-Word.  Tentatively Accepted. Frontiers in Psychology: Quantitative Psychology and Measurement Special Issue on New Developments in Statistical Methods and Psychometric Tools
+
 **Marks, C.**, Borquez, A., Jain, S., Sun, X., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cepeda, J., Werb, D., Martin, N., [Opioid agonist treatment scale-up and the initiation of injection drug use: a dynamic modeling analysis](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Plos_Med_Marks_2019.pdf). PLOS Medicine. 2019 [DOI: 10.1371/journal.pmed.1002973](https://doi.org/10.1371/journal.pmed.1002973)   
 
 Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine learning-based predictive modeling of surgical intervention in glaucoma using systemic data from electronic health records](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Ophthalmology_Baxter_2019.pdf). American Journal of Ophtalmology. 2019 [DOI: 10.1016/j.ajo.2019.07.005](https://doi.org/10.1016/j.ajo.2019.07.005)
@@ -57,8 +59,6 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 **Marks, C.**, Zúñiga, M.L., [Identifying Key Subpopulations Among HIV+ Latinos Receiving Care in San Diego-Tijuana & Assessing CAM Utilization and ARV Adherence: A Latent Class Analysis](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Frontiers_CAM_Manuscript.pdf). Frontiers in Public Health. 2019 DOI: [10.3389/fpubh.2019.00179](https://doi.org/10.3389/fpubh.2019.00179)
 
 ## Papers In Production and Under Review
-
-Cummins, K., **Marks, C.**, Writing Results Without Significance Testing: Adopting a NeoFisherian Evaluation Framework.  Under Review (Submitted 1/7/20) at Frontiers in Psychology: Quantitative Psychology and Measurement Special Issue on New Developments in Statistical Methods and Psychometric Tools
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Submitted to Epidemiologic Reviews (1/31/20)
 
