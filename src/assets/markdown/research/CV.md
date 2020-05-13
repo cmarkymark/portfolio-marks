@@ -50,7 +50,7 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
-Cummins, K., **Marks, C.**, (Farewell to Bright-Line: A Guide to Reporting Quantitative Results Without the S-Word.)[https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/farewell2brightline.pdf]  Front. Psychol. 11:815. doi: (10.3389/fpsyg.2020.00815)[https://doi.org/10.3389/fpsyg.2020.00815]
+Cummins, K., **Marks, C.**, [Farewell to Bright-Line: A Guide to Reporting Quantitative Results Without the S-Word.](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/farewell2brightline.pdf)  Front. Psychol. 11:815. doi: [10.3389/fpsyg.2020.00815](https://doi.org/10.3389/fpsyg.2020.00815)
 
 **Marks, C.**, Borquez, A., Jain, S., Sun, X., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cepeda, J., Werb, D., Martin, N., [Opioid agonist treatment scale-up and the initiation of injection drug use: a dynamic modeling analysis](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Plos_Med_Marks_2019.pdf). PLOS Medicine. 2019 [DOI: 10.1371/journal.pmed.1002973](https://doi.org/10.1371/journal.pmed.1002973)   
 
