@@ -22,6 +22,7 @@ Here are some tutorials:
 - Logistic Regression
 - Linear Regression
 - Poisson Regression
+- Zhou's Modified Poisson Regression
 - Negative Binomial Regression
 - Moderation: Including an Interaction Term in Your Model
 - Mediation: The Baron and Kenny Way
@@ -30,3 +31,17 @@ Here are some tutorials:
 ### Longitudinal Inferential Statistics
 
 - Repeated Measures Regression
+- Mixed Effects Regression
+- Cox Proportional Hazards Regression
+
+### Meta-Analytic Approaches
+
+
+
+### Machine Learning
+
+- The predict() function
+- k-fold cross validation
+- leave one out cross validation
+- Random Forest Model
+
