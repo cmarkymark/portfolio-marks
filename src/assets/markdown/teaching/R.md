@@ -1,4 +1,4 @@
-<!-- Applied R Tutorials for Social Scientists -->
+<!--- Applied R Tutorials for Social Scientists -->
 
 ## Applied R Tutorials for Social Scientists
 
