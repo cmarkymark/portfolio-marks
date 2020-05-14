@@ -22,7 +22,7 @@ Current doctoral student in the [Joint Doctoral Program in Interdisciplinary Res
 
 Advisor: Dan Werb
 
-Dissertation Committee Members: Dan Werb, Natasha Martin, Laramie Smith, Maria Luisa Zuniga, Lianne Urada, Salvador Espinosa
+Dissertation Committee Members: Dan Werb, Natasha Martin, Laramie Smith, Maria Luisa Zuniga, Jennifer Pearson, Salvador Espinosa
 
 ## Job Appointments
 
