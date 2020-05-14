@@ -15,7 +15,7 @@ Here are some tutorials:
 
 ### Descriptive Statistics
 
-- [Table One](charliemarks.com/R-Tutorials/CreateTableOne.html)
+- [Table One](R-Tutorials/CreateTableOne.html)
 
 ### Cross-Sectional Inferential Statistics
 
