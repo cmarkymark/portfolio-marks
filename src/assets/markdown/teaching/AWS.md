@@ -8,7 +8,9 @@ on their personal computers at home, so I created virtual machines (Amazon AWS E
 it up so all they have to do is enter their personal license and they are off to the races. This can be done for students who
 don't have a computer that runs the software needed for class, whether because their computers are old or because they have chosen
 a financially responsible option (such as a chromebook). As educators, this is a tool we can use, especially in a time of crisis, like 
-right now to help our students learn without burdening them.
+right now to help our students learn without burdening them. Students can also follow this tutorial and make their own virtual machine and run it for free!
+
+(Edit on 5/14/2020: While this solution worked -- I was able to create the virtual machines with SPSS for each of my students, due to having personal licenses with SPSS (as opposed to an enterprise licesense) SPSS would not run on these virtual machines. In the example below, I show how to set up machines with RStudio (which is free software). This solution likely will work best with free software options).
 
 ### What is in this tutorial?
 
