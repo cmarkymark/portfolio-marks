@@ -22,7 +22,7 @@ Here are some tutorials:
 - [Logistic Regression](R-Tutorials/LogisticRegression.html)
 - Linear Regression
 - Poisson Regression
-- Zhou's Modified Poisson Regression
+- [Zou's Modified Poisson Regression](R-Tutorials/ModifiedPoissonRegression.html)
 - Negative Binomial Regression
 - Moderation: Including an Interaction Term in Your Model
 - Mediation: The Baron and Kenny Way
