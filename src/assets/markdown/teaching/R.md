@@ -19,7 +19,7 @@ Here are some tutorials:
 
 ### Cross-Sectional Inferential Statistics
 
-- Logistic Regression
+- [Logistic Regression](R-Tutorials/LogisticRegression.html)
 - Linear Regression
 - Poisson Regression
 - Zhou's Modified Poisson Regression
