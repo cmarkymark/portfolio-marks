@@ -21,16 +21,7 @@ const Landing = ({landing}) => {
   
   Charles Marks (1/20/20)
   
-  
-  <div class="row" style={display: flex}>
-  <div class="column" style={width:50%; padding: 5px}>
-    <img src="Pics/Dough_Before.jpg" alt="Before" style={width:100%} >
-  </div>
-  <div class="column" style={width:50%; padding: 5px}>
-   <img src="Pics/Dough_After.jpg" alt="After" style={width:100%}>
-  </div>
-</div>
-  
+ 
     </div>
    
   );
