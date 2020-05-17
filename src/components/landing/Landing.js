@@ -23,10 +23,10 @@ const Landing = ({landing}) => {
   
   
   <div class="row">
-    <div class="column" style={{width:50%; padding: 5px}}>
+    <div class="column">
       Hello
     </div>
-    <div class="column" style={{width:50%; padding: 5px}}>
+    <div class="column">
        World
     </div>
   </div>
