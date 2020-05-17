@@ -20,6 +20,17 @@ const Landing = ({landing}) => {
   Feel free to reach out.  I can be reached by email at cmarks (at) sdsu.edu 
   
   Charles Marks (1/20/20)
+  
+  
+  <div class="row">
+    <div class="column" style="width:50%; padding: 5px">
+      Hello
+    </div>
+    <div class="column" style="width:50%; padding: 5px">
+       World
+    </div>
+  </div>
+  
     </div>
    
   );
