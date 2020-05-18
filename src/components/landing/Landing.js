@@ -21,6 +21,11 @@ const Landing = ({landing}) => {
   
   Charles Marks (1/20/20)
   
+  <div class="row">
+  <div class="column"> Hello </div>
+  <div class="column"> World </div>
+</div>
+  
  
     </div>
    
