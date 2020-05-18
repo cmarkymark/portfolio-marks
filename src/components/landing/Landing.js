@@ -5,25 +5,16 @@ const Landing = ({landing}) => {
   return (
    
     <div id="landing">
-    
-    <h2> About Me and This Site </h2>
-    
-      Hello!  I (they/them) am a current doctoral student at SDSU and UCSD.  This site is largely under construction at the moment, but
-  I am hosting it as a space to share, and reflect on my research and teaching work, as well as to share extracurriculars that have been 
-  a requisite component of my academia self-care routine.  
-
-  
-  Coming from both a social justice and a computer science background, I believe pretty firmly in open access, especially when it pertains both to knowledge
-  and the generation of knowledge.  On this site you will find resources related to my research as well as to the classes that I teach.
-  Hopefully, they can be of use to you in your own research, teaching, and education.
-
-  Feel free to reach out.  I can be reached by email at cmarks (at) sdsu.edu 
-  
-  Charles Marks (1/20/20)
-  
   <div class="row">
-  <div class="column"> Hello </div>
-  <div class="column"> World </div>
+  <div class="column"> 
+    Hello! I (they/them) am a doctoral student in the Joint Doctoral Program in Interdisciplinary Research on Substance Use at San Diego State
+    University and the University of California, San Diego. My dissertation research focuses on applying a trauma-informed lens to tobacco use
+    research, with the intention of generalizing this trauma-informed approach for substance use research more generally. 
+  </div>
+  <div class="column"> On this website you will find resources related to my research and teaching, as well as additional educational tools and 
+    some extracurriculars! Under research you can find information about my research work, including access to R code used to run published analyses. Under
+  teaching, there are tutorials (under construction) for running various statistical tests in R that are commonly used within the social sciences. 
+      </div>
 </div>
   
  
