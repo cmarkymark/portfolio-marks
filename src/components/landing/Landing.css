@@ -3,14 +3,14 @@
 }
 
 .column {
-  flex: 45%;
+  flex: 38%;
   text-align: justify;
 }
 
 .spacer {
-  flex: 10%
+  flex: 8%
 }
 
 .image {
-  width: 75%;
+  width: 100%;
 }
