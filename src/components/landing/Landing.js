@@ -12,7 +12,7 @@ const Landing = ({landing}) => {
     University and the University of California, San Diego. My dissertation research focuses on applying a trauma-informed lens to tobacco use
     research, with the intention of generalizing this trauma-informed approach for substance use research more generally. 
     <br/>
-      <!-- Do not change the code! -->
+      
 <a id="foxyform_embed_link_964315" href="http://www.foxyform.com/">foxyform</a>
 <script type="text/javascript">
 (function(d, t){
@@ -22,7 +22,7 @@ const Landing = ({landing}) => {
    s.parentNode.insertBefore(g, s);
 }(document, "script"));
 </script>
-<!-- Do not change the code! -->
+
     
      </div>
   <div class="spacer"></div>
