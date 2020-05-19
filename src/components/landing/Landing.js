@@ -12,16 +12,6 @@ const Landing = ({landing}) => {
     University and the University of California, San Diego. My dissertation research focuses on applying a trauma-informed lens to tobacco use
     research, with the intention of generalizing this trauma-informed approach for substance use research more generally. 
     <br/>
-      
-<a id="foxyform_embed_link_964315" href="http://www.foxyform.com/">foxyform</a>
-<script type="text/javascript">
-(function(d, t){
-   var g = d.createElement(t),
-       s = d.getElementsByTagName(t)[0];
-   g.src = "http://www.foxyform.com/js.php?id=964315&sec_hash=39c5efab212&width=350px";
-   s.parentNode.insertBefore(g, s);
-}(document, "script"));
-</script>
 
     
      </div>
