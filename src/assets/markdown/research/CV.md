@@ -119,6 +119,15 @@ Magaña, V., **Marks, C.**, Zúñiga, M.L., Exploratory Study of Stigma as a Pre
   <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
  </div>
 
+I have reviewed for the following journals and conferences:
+
+International Journal of Drug Policy
+
+International Journal of STD & AIDS
+
+IEEE International Conference on Intelligent Transportation Systems
+
+American Medical Informatics Association Annual Symposium
 
 
 
