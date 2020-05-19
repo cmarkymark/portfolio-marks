@@ -3,9 +3,13 @@
 }
 
 .column {
-  flex: 50%;
+  flex: 40%;
+}
+
+.spacer {
+  flex: 20%
 }
 
 .image {
-  width: 80%;
+  width: 75%;
 }
