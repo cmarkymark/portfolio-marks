@@ -102,15 +102,21 @@ Magaña, V., **Marks, C.**, Zúñiga, M.L., Exploratory Study of Stigma as a Pre
 
 ## Teaching
 
-### Fall 2019: TA for SW-610 Computer Applications in Social Work Practice @ SDSU
+#### Fall 2019: TA for SW-610 Computer Applications in Social Work Practice @ SDSU
 
-### Spring 2020: Lecturer for SW-610 Computer Applications in Social Work Practice @ SDSU
+#### Spring 2020: Lecturer for SW-610 Computer Applications in Social Work Practice @ SDSU
+
+SW-610 is a Master's level statsitics course for MSW students in the SDSU School of Social Work. 
+This course is an introduction to applying statistical methods in social work research.
+The course introduces SPSS and the students work in groups to produce a quantitative research project from a publiclly available data set.
+Teaching evaluations from this course are available [here](Teaching_Evaluations/SW610_Evaluation.pdf)
 
 ## Presentations, Lectures, & Event Participation
 
 **June 2018** International Consortium of Universities for Drug Demand Reduction, Doctoral Student Panel
 
 **March 2019** Guest Lecture: Mediation Analysis in R, SDSU-UCSD IRSU JDP (SDSU SW-881)
+Teaching Evaluations for this guest lecture are available [here](Teaching_Evaluations/Spring_2019_SDSU_Mediation_Analysis_Guest_Lecture.pdf)
 
 ## Peer-Review History
 
