@@ -8,7 +8,7 @@ const Landing = ({landing}) => {
   <div class="row">
     <div class ="spacer"> </div>
     <div class="column"> 
-    Hello! I (they/them) am a doctoral student in the Joint Doctoral Program in Interdisciplinary Research on Substance Use at San Diego State
+    Hello! I (they/them) am a doctoral candidate in the Joint Doctoral Program in Interdisciplinary Research on Substance Use at San Diego State
     University and the University of California, San Diego. My dissertation research focuses on applying a trauma-informed lens to tobacco use
     research, with the intention of generalizing this trauma-informed approach for substance use research more generally. 
     <br/>
