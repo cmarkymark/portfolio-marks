@@ -2,7 +2,7 @@
 
 ## Charles Marks, MPH
 
-I (they/them) am a doctoral student in the Interdisciplinary Research on Substance Use Joint Doctoral Program at San Diego State University and University of California, San Diego.  I apply a naturalist, critical social lens to addressing issues of health equity.  With a mathematics background, I also seek to apply data science, statistics, and mathematical modeling methods 
+I (they/them) am a doctoral candidate in the Interdisciplinary Research on Substance Use Joint Doctoral Program at San Diego State University and University of California, San Diego.  I apply a naturalist, critical social lens to addressing issues of health equity.  With a mathematics background, I also seek to apply data science, statistics, and mathematical modeling methods.
 
 ## Education
 
@@ -18,9 +18,11 @@ Thesis : [Substance Criminalization, Mass Incarceration, & Disenfranchisement](P
 
 ### San Diego State University & University of California San Diego '21, PhD
 
-Current doctoral student in the [Joint Doctoral Program in Interdisciplinary Research on Substance Use @ SDSU-UCSD](https://chhs.sdsu.edu/irsu/). 
+Current doctoral candidate in the [Joint Doctoral Program in Interdisciplinary Research on Substance Use @ SDSU-UCSD](https://chhs.sdsu.edu/irsu/). 
 
 Advisor: Dan Werb
+
+Dissertation Topic: Applying a Trauma-Informed Lens to Address Tobacco-Related Health Disparities
 
 Dissertation Committee Members: Dan Werb, Natasha Martin, Laramie Smith, Maria Luisa Zuniga, Jennifer Pearson, Salvador Espinosa
 
