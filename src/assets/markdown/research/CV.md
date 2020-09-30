@@ -135,6 +135,8 @@ International Journal of Drug Policy
 
 International Journal of STD & AIDS
 
+Harm Reduction Journal
+
 IEEE International Conference on Intelligent Transportation Systems
 
 American Medical Informatics Association Annual Symposium
