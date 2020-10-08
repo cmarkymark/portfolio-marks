@@ -52,7 +52,7 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
-Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Accepted by Epidemiologic Reviews (9/9/20)
+Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Epidemiologic Reviews. 2020 [DOI: 10.1093/epirev/mxaa008](https://doi.org/10.1093/epirev/mxaa008) 
 
 Cummins, K., **Marks, C.**, [Farewell to Bright-Line: A Guide to Reporting Quantitative Results Without the S-Word.](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/farewell2brightline.pdf)  Front. Psychol. 11:815. doi: [10.3389/fpsyg.2020.00815](https://doi.org/10.3389/fpsyg.2020.00815)
 
