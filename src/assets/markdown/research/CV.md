@@ -74,7 +74,7 @@ Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Co
 
 **Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. Under Review at The Lancet Public Health
 
-**Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, The Trauma-Informed Theory of Behavior
+**Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, The Trauma-Informed Theory of Behavior. Under Review at Social Science and Medicine
 
 **Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Under Review at Drug Alcohol and Dependence
 
