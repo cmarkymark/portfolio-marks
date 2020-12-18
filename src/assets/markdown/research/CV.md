@@ -78,6 +78,8 @@ Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Co
 
 **Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Under Review at Drug Alcohol and Dependence
 
+Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Addiction. Manuscript under review.
+
 ## Conference Procedings
 
 Weitensteiner, A., **Marks, C.**, Smith, LR., Urada, L., (2020, October 26-29). Young people experiencing homelessness: Comparing mental and physical health risk factors in LGBQ identifying and non-LGBQ unsheltered populations [Poster]. European Society for Paediatric Infectious Diseases, Rotterdam, Netherlands.  
