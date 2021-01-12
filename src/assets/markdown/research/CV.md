@@ -82,6 +82,8 @@ Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K.
 
 ## Conference Procedings
 
+**Marks, C.**, Pearson, J., Martin, N., Werb, D., Changes in income predict subsequent initiation and cessation of cigarette use but not e-cigarette use in the United States. The Society for Research on Nicotine & Tobacco Conference 2021 Annual Meeting
+
 Weitensteiner, A., **Marks, C.**, Smith, LR., Urada, L., (2020, October 26-29). Young people experiencing homelessness: Comparing mental and physical health risk factors in LGBQ identifying and non-LGBQ unsheltered populations [Poster]. European Society for Paediatric Infectious Diseases, Rotterdam, Netherlands.  
 
 **Marks, C.**, Abramovitz, D., Donnelly, C., Martin, N., Strathdee, S., Borquez, A., [Predicting County-Level Synthetic Opioid Overdose Mortality Rates: Comparing Traditional Statistical and Machine Learning Modeling Approaches](https://charliemarks.com/Publications/Conference%20Proceedings/Final_ISSDP_Abstract.pdf). The International Society for the Study of Drug Policy Conference 2020 in Aguascalientes, Mexico
