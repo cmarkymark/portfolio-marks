@@ -32,10 +32,6 @@ Dissertation Committee Members: Dan Werb, Natasha Martin, Laramie Smith, Maria L
 
 Worked in the department of Family Services doing data analysis and general program assistance.
 
-### Graduate Assistant: SDSU School of Social Work (2017 - Current)
-
-Primary responsibility as teaching assistant in the fall of 2019 and instructor of record in the Spring of 2020.  The course is Computer Applications in Social Work, a masters level course for social works students to learn statistical methods and the prepartion of original research using secondary data.
-
 ### Researcher: [PRIMER](https://primerstudy.com/our-team/) (2017 - Current)
 
 Doctoral researcher on the PRIMER study.  Responsibilities have included data analysis, manuscript production, and general assistance with other project tasks (website editing, grant assistance).
@@ -44,7 +40,11 @@ Doctoral researcher on the PRIMER study.  Responsibilities have included data an
 
 Project goal is to identify aggressive driving from unlabeled real-world driving data.  Utilized both unsupervised and supervised machine learning techniques to classify and label large datasets and developed tools for visualizing this data.  All analyses conducted in R on top of a PostGreSQL server.
 
-### Researcher: EMERGENS (2019 - Current)
+### Instructor: SDSU School of Social Work (2019 - 2020)
+
+Primary responsibility as teaching assistant in the fall of 2019 and instructor of record in the Spring of 2020.  The course is Computer Applications in Social Work, a masters level course for social works students to learn statistical methods and the prepartion of original research using secondary data.
+
+### Researcher: [EMERGENS](emergens-project.com) (2019 - Current)
 
 Doctoral researcher on the EMERGENS, bulding statistical models aimed at predicting counties within the United States at highest risk of experiencing a synthetic opioid (ie fentanyl) outbreak.
 
@@ -52,7 +52,7 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
-**Marks, C.**, Jahangiri, A., Machiani, SG, Identifying and Labeling Potentially Risky Driving: A Multi-Stage Process Using Real World Driving Data. Journal of Advanced Transportation, 2021 In Press
+**Marks, C.**, Jahangiri, A., Machiani, SG, Identifying and Labeling Potentially Risky Driving: A Multi-Stage Process Using Real World Driving Data. Journal of Advanced Transportation, 2021 DOI [10.1155/2021/8819094](https://doi.org/10.1155/2021/8819094)
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Epidemiologic Reviews. 2020 [DOI: 10.1093/epirev/mxaa008](https://doi.org/10.1093/epirev/mxaa008) 
 
@@ -66,19 +66,17 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 
 ## Papers In Production and Under Review
 
-**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review at The BMJ Open
+**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., A Call Cross-Disciplinary Call to Action: Early Detection of Drug-Use Associated Public-Health Outbreaks in the United States. Under Review @ Translational Research
 
-**Marks, C.**, Machiani, S., Jahangiri, A., Identifying and Labelling Risk Driving: A Multi-Stage Process Using Real World Driving Data, Under Review at Journal of Advanced Transportation
+**Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. Under Review @ The Lancet Public Health
 
-Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Compliance Behaviors among Young Cannabis Users in Mexico, Inbetween Journal Submissions
+**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review @ The BMJ Open
 
-**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., A Call Cross-Disciplinary Call to Action: Early Detection of Drug-Use Associated Public-Health Outbreaks in the United States. For Submission to Transactional Research Special Issue
+Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Compliance Behaviors among Young Cannabis Users in Mexico, Under Review @ The Journal of Cannabis Research
 
-**Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. Under Review at The Lancet Public Health
+**Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, The Trauma-Informed Theory of Behavior. Under Review @ Stress & Health
 
-**Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, The Trauma-Informed Theory of Behavior. Under Review at Stress & Health
-
-**Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Under Review at Drug Alcohol and Dependence
+**Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Under Review @ Drug Alcohol and Dependence
 
 Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Addiction. Manuscript under review.
 
@@ -116,14 +114,16 @@ Magaña, V., **Marks, C.**, Zúñiga, M.L., Exploratory Study of Stigma as a Pre
 
 ## Teaching
 
-#### Fall 2019: TA for SW-610 Computer Applications in Social Work Practice @ SDSU
-
 #### Spring 2020: Lecturer for SW-610 Computer Applications in Social Work Practice @ SDSU
 
 SW-610 is a Master's level statsitics course for MSW students in the SDSU School of Social Work. 
 This course is an introduction to applying statistical methods in social work research.
 The course introduces SPSS and the students work in groups to produce a quantitative research project from a publiclly available data set.
 Teaching evaluations from this course are available [here](Teaching_Evaluations/SW610_Evaluation.pdf)
+
+#### Fall 2019: TA for SW-610 Computer Applications in Social Work Practice @ SDSU
+
+#### 2012 - 2014: Teaching Assistant in the Oberlin College Computer Science Department
 
 ## Presentations, Lectures, & Event Participation
 
