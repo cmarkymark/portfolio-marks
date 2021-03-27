@@ -52,6 +52,8 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction of opioid use-related epidemics in the United States: a narrative review and cross-disciplinary call to action. In Press @ Translational Research
+
 **Marks, C.**, Jahangiri, A., Machiani, SG, Identifying and Labeling Potentially Risky Driving: A Multi-Stage Process Using Real World Driving Data. Journal of Advanced Transportation, 2021 DOI [10.1155/2021/8819094](https://doi.org/10.1155/2021/8819094)
 
 Gicquelais, R., Werb, D., **Marks, C.**, Ziegler, C., Mehta, S., Genberg, B., Schiem, A., A Systematic Review of Prevalence and Correlates of Providing and Receiving Assistance with the Transition to Injecting Drugs. Epidemiologic Reviews. 2020 [DOI: 10.1093/epirev/mxaa008](https://doi.org/10.1093/epirev/mxaa008) 
@@ -65,8 +67,6 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 **Marks, C.**, Zúñiga, M.L., [Identifying Key Subpopulations Among HIV+ Latinos Receiving Care in San Diego-Tijuana & Assessing CAM Utilization and ARV Adherence: A Latent Class Analysis](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Frontiers_CAM_Manuscript.pdf). Frontiers in Public Health. 2019 DOI: [10.3389/fpubh.2019.00179](https://doi.org/10.3389/fpubh.2019.00179)
 
 ## Papers In Production and Under Review
-
-**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., A Call Cross-Disciplinary Call to Action: Early Detection of Drug-Use Associated Public-Health Outbreaks in the United States. Under Review @ Translational Research
 
 **Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. Under Review @ The Lancet Public Health
 
