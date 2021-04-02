@@ -8,6 +8,8 @@ One of the realities of being a human is that something is going to kill us...id
 
 **Does prescribing Adderall (amphetamine) to youth potentiate methamphetamine/stimulant use as an adult? More broadly, does prescribing youth pharmaceutical drugs potentiate adult drug use?**
 
-** **
+**How do we appropriately contextualize the neurodevelopmental impacts of youth drug use compared to competing exposures? Story Problem Version: A teenager likes to smoke cannabis because it reduces anxiety. Their doctor mentioned to them that smoking cannabis can negatively impact their neurodevelopment...however, when they went home, they were on Google and found a meta-analysis which showed that anxiety during youth negatively impacts neurodevelopment as well. How do we as drug use researchers think through this?**
+
+
 
 
