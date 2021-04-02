@@ -1,4 +1,4 @@
-<!-- Open Questions -->
+<!--- Open Questions --->
 
 On this page, I wanted to document some broader research questions that I don't think the research community has effectively addressed.
 
