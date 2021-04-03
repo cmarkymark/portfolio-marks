@@ -52,7 +52,7 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
-**Marks, C**, Johnson, D., Carrasco, G., Carrasco-Hernandez, R., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction of opioid use-related epidemics in the United States: a narrative review and cross-disciplinary call to action. In Press @ Translational Research
+**Marks, C**, Carrasco, G., Carrasco-Hernandez, R., Johnson, D., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction of opioid use-related epidemics in the United States: a narrative review and cross-disciplinary call to action. Translational Research, 2021 DOI [10.1016/j.trsl.2021.03.018](https://doi.org/10.1016/j.trsl.2021.03.018)
 
 **Marks, C.**, Jahangiri, A., Machiani, SG, Identifying and Labeling Potentially Risky Driving: A Multi-Stage Process Using Real World Driving Data. Journal of Advanced Transportation, 2021 DOI [10.1155/2021/8819094](https://doi.org/10.1155/2021/8819094)
 
