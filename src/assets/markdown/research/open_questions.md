@@ -1,6 +1,6 @@
 <!--- Open Questions --->
 
-On this page, I wanted to document some broader research questions that I don't think the research community has effectively addressed. Further, I would be grateful if anybody would research these, so please, if you have done research on this topic I would to read it :)
+On this page, I wanted to document some broader research questions that I don't think the research community has effectively addressed or that I think aren't always adequately accounted for in research. Further, I would be grateful if anybody would research these, so please, if you have done research on this topic I would to read it :)
 
 **It is estimated that cigarettes kill 500,000 people every year (attributable deaths) and that overdoses result in around 50,000 - 75,000 deaths annually. How do we think through these values? How do we compare them? More broadly, how do we compare acute deaths (such as overdose) versus deaths as a result of long-term exposures (such as smoking attributable deaths)?**
 
@@ -17,6 +17,8 @@ One of the realities of being a human is that something is going to kill us...id
 - The gateway theory of drug use was based in demonizing drug use and placing moral blame for escalating drug use on the person. However, there appears to be a lack of acknowledgement that use of a given drug class will potentiate drug use of that same class. For example, we understand that prescription opioid use potentiates heroin use. However, it isn't widely accepted that e-cigarette use may potentiate cigarette use via nicotine depedence. Further, there is basically no research about the association between prescription stimulants (Adderall) and methamphetamine/cocaine use.
 
 **As drug use researchers, what is our responsibility to discuss our personal drug use? Frequently, we only hear about a person's drug use when shit hits the fan. Narratives of individuals finding a balance of drug use with other aspects of their life are rendered largely invisible, especially as we work our way up the career ladder and their is heightened undesirability/fear in revealing one's drug use. As such, what responsibility do we hold as drug use researchers in being open about our own drug use and how does our status as people who use (or don't use) drugs impact the validity of our work**
+
+
 
 
 
