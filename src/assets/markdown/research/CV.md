@@ -52,6 +52,8 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+**Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Ciccarone, D., Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. In Press @ The Lancet Public Health (4/6/21)
+
 **Marks, C**, Carrasco, G., Carrasco-Hernandez, R., Johnson, D., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction of opioid use-related epidemics in the United States: a narrative review and cross-disciplinary call to action. Translational Research, 2021 DOI [10.1016/j.trsl.2021.03.018](https://doi.org/10.1016/j.trsl.2021.03.018)
 
 **Marks, C.**, Jahangiri, A., Machiani, SG, Identifying and Labeling Potentially Risky Driving: A Multi-Stage Process Using Real World Driving Data. Journal of Advanced Transportation, 2021 DOI [10.1155/2021/8819094](https://doi.org/10.1155/2021/8819094)
@@ -68,7 +70,7 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 
 ## Papers In Production and Under Review
 
-**Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. Under Review @ The Lancet Public Health
+
 
 **Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review @ The BMJ Open
 
