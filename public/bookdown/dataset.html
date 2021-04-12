@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Generating the Initial Dataset | Aim #2: Mathematical Model</title>
+  <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Generating the Initial Dataset | Aim #2: Mathematical Model" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Generating the Initial Dataset | Aim #2: Mathematical Model" />
+  
+  <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2021-04-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="imputation.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> In This Book</a></li>
+<li class="chapter" data-level="2" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>2</b> Generating the Initial Dataset</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="dataset.html"><a href="dataset.html#participants"><i class="fa fa-check"></i><b>2.1</b> Participants</a></li>
+<li class="chapter" data-level="2.2" data-path="dataset.html"><a href="dataset.html#defining-variables-we-wish-to-capture"><i class="fa fa-check"></i><b>2.2</b> Defining Variables We Wish to Capture</a></li>
+<li class="chapter" data-level="2.3" data-path="dataset.html"><a href="dataset.html#loading-the-necessary-datasets"><i class="fa fa-check"></i><b>2.3</b> Loading the Necessary Datasets</a></li>
+<li class="chapter" data-level="2.4" data-path="dataset.html"><a href="dataset.html#iterating-through-the-datasets"><i class="fa fa-check"></i><b>2.4</b> Iterating Through the Datasets</a></li>
+<li class="chapter" data-level="2.5" data-path="dataset.html"><a href="dataset.html#factoring-the-data"><i class="fa fa-check"></i><b>2.5</b> Factoring the Data</a></li>
+<li class="chapter" data-level="2.6" data-path="dataset.html"><a href="dataset.html#adding-the-weights-and-replicate-weights-to-the-study"><i class="fa fa-check"></i><b>2.6</b> Adding the Weights and Replicate Weights to the Study</a></li>
+<li class="chapter" data-level="2.7" data-path="dataset.html"><a href="dataset.html#save-the-data-frame-for-future-use"><i class="fa fa-check"></i><b>2.7</b> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="imputation.html"><a href="imputation.html"><i class="fa fa-check"></i><b>3</b> Data Imputation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="imputation.html"><a href="imputation.html#loading-libraries-and-the-data"><i class="fa fa-check"></i><b>3.1</b> Loading Libraries and the Data</a></li>
+<li class="chapter" data-level="3.2" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-income"><i class="fa fa-check"></i><b>3.2</b> Heuristic Imputation of Income</a></li>
+<li class="chapter" data-level="3.3" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-former-cige-cig-use"><i class="fa fa-check"></i><b>3.3</b> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li class="chapter" data-level="3.4" data-path="imputation.html"><a href="imputation.html#imputation-with-mice"><i class="fa fa-check"></i><b>3.4</b> Imputation with <em>mice()</em></a></li>
+<li class="chapter" data-level="3.5" data-path="imputation.html"><a href="imputation.html#generating-some-additional-variables"><i class="fa fa-check"></i><b>3.5</b> Generating Some Additional Variables</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="imputation.html"><a href="imputation.html#cateogry-cigarette-and-e-cigarette-use"><i class="fa fa-check"></i><b>3.5.1</b> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li class="chapter" data-level="3.5.2" data-path="imputation.html"><a href="imputation.html#income-change-from-waves-1---2"><i class="fa fa-check"></i><b>3.5.2</b> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="imputation.html"><a href="imputation.html#output-the-imputed-dataset"><i class="fa fa-check"></i><b>3.6</b> Output the Imputed Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="paramset.html"><a href="paramset.html"><i class="fa fa-check"></i><b>4</b> Generate Parameter Set</a></li>
+<li class="chapter" data-level="5" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>5</b> ODE Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>5.1</b> Helper Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>6</b> Calibration</a></li>
+<li class="chapter" data-level="7" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>7</b> Initial Start State</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="start.html"><a href="start.html#stratifying-by-sex-and-age"><i class="fa fa-check"></i><b>7.1</b> Stratifying by Sex and Age</a></li>
+<li class="chapter" data-level="7.2" data-path="start.html"><a href="start.html#stratifying-the-population-by-income-level"><i class="fa fa-check"></i><b>7.2</b> Stratifying the Population by Income Level</a></li>
+<li class="chapter" data-level="7.3" data-path="start.html"><a href="start.html#distributing-cigarette-use"><i class="fa fa-check"></i><b>7.3</b> Distributing Cigarette Use</a></li>
+<li class="chapter" data-level="7.4" data-path="start.html"><a href="start.html#distributing-e-cigarette-use"><i class="fa fa-check"></i><b>7.4</b> Distributing E-Cigarette Use</a></li>
+<li class="chapter" data-level="7.5" data-path="start.html"><a href="start.html#outputting-states-to-confirm"><i class="fa fa-check"></i><b>7.5</b> Outputting States to Confirm</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aim #2: Mathematical Model</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataset" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Generating the Initial Dataset</h1>
+<p>In this Chapter, you will find the code that was used to generate the initial (unimputed) dataset for this study. Datasets from the Population Assessment of Tobacco and Health are available from INSERT URL and the names of the files in this chapter correspond to the files you would use from the public use files.</p>
+<div id="participants" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Participants</h2>
+<p>For this study, we wanted data for all participants who responded to the adult questionnaire at Waves 1 - 3 of the PATH Study. We began by loading in the Master document (0001) which has information for every participant and which surveys the responded to. As such, we loaded the dataset and only included individuals who responded to the adult questionaire at Waves 1 - 3. In total, 23,670 individuals were included in this data set.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="dataset.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the data</span></span>
+<span id="cb1-2"><a href="dataset.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;PATH Data/ICPSR_36498/DS0001/36498-0001-Data.rda&quot;</span>)</span>
+<span id="cb1-3"><a href="dataset.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="dataset.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Save with a name that is a bit easier to use</span></span>
+<span id="cb1-5"><a href="dataset.html#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> da36498<span class="fl">.0001</span></span>
+<span id="cb1-6"><a href="dataset.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="dataset.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Convert the ID value from a string to numeric -- this is to simplify records matching</span></span>
+<span id="cb1-8"><a href="dataset.html#cb1-8" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">substring</span>(data<span class="sc">$</span>PERSONID,<span class="dv">2</span>))</span>
+<span id="cb1-9"><a href="dataset.html#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="dataset.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Subset to only include individuals who responded to the first three waves adult questionnaire</span></span>
+<span id="cb1-11"><a href="dataset.html#cb1-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[data<span class="sc">$</span>WAVE1_INTERVIEW <span class="sc">==</span> <span class="st">&quot;(1) 1 = Adult&quot;</span> <span class="sc">&amp;</span></span>
+<span id="cb1-12"><a href="dataset.html#cb1-12" aria-hidden="true" tabindex="-1"></a>               data<span class="sc">$</span>WAVE2_INTERVIEW <span class="sc">==</span> <span class="st">&quot;(1) 1 = Adult&quot;</span> <span class="sc">&amp;</span></span>
+<span id="cb1-13"><a href="dataset.html#cb1-13" aria-hidden="true" tabindex="-1"></a>               data<span class="sc">$</span>WAVE3_INTERVIEW <span class="sc">==</span> <span class="st">&quot;(1) 1 = Adult&quot;</span>,]</span></code></pre></div>
+</div>
+<div id="defining-variables-we-wish-to-capture" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Defining Variables We Wish to Capture</h2>
+<p>Next, we define the variables we wish to capture in our dataset. We are going to need to go through datasets for each of the 1st 3 waves of the study, so we are going to use our “data” data.frame from the master file to store these variables and use as our working dataset. We want to capture:</p>
+<ul>
+<li>Age (@ each Wave)</li>
+<li>Sex (Note that it is coded as gender in the code – technically the measurement is for Sex tho)</li>
+<li>Race</li>
+<li>Hispanic Ethnicity</li>
+<li>Income (@ Waves 1 - 3)</li>
+<li>Current Cigarette Smoking Status (@ Waves 1 - 3)</li>
+<li>Former Cigarette Smoking Status (@ Waves 1 - 3)</li>
+<li>Current E-Cigarette Use Status (@ Waves 1 - 3)</li>
+<li>Former E-Cigarette Use Status (@ Waves 1 - 3)</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="dataset.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb2-2"><a href="dataset.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">### We are just going to add an income category for each participant</span></span>
+<span id="cb2-3"><a href="dataset.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb2-4"><a href="dataset.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="dataset.html#cb2-5" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>gender <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-6"><a href="dataset.html#cb2-6" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>race <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-7"><a href="dataset.html#cb2-7" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>hispanic <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-8"><a href="dataset.html#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="dataset.html#cb2-9" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_income <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-10"><a href="dataset.html#cb2-10" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_income <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-11"><a href="dataset.html#cb2-11" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_income <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-12"><a href="dataset.html#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="dataset.html#cb2-13" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_age <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-14"><a href="dataset.html#cb2-14" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_age <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-15"><a href="dataset.html#cb2-15" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_age <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-16"><a href="dataset.html#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="dataset.html#cb2-17" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-18"><a href="dataset.html#cb2-18" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-19"><a href="dataset.html#cb2-19" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-20"><a href="dataset.html#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="dataset.html#cb2-21" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_e_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-22"><a href="dataset.html#cb2-22" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_e_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-23"><a href="dataset.html#cb2-23" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_e_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-24"><a href="dataset.html#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="dataset.html#cb2-25" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_former_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-26"><a href="dataset.html#cb2-26" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_former_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-27"><a href="dataset.html#cb2-27" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_former_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-28"><a href="dataset.html#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="dataset.html#cb2-29" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_former_e_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-30"><a href="dataset.html#cb2-30" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_former_e_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-31"><a href="dataset.html#cb2-31" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_former_e_smoker <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+</div>
+<div id="loading-the-necessary-datasets" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Loading the Necessary Datasets</h2>
+<p>Next, we will load the datasets corresponding to the Waves 1 - 3 Adult Surveys</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="dataset.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;PATH Data/ICPSR_36498/DS1001/36498-1001-Data.rda&quot;</span>)          <span class="do">## Load the dataset</span></span>
+<span id="cb3-2"><a href="dataset.html#cb3-2" aria-hidden="true" tabindex="-1"></a>wave1_adult <span class="ot">&lt;-</span> da36498<span class="fl">.1001</span>                                       <span class="do">## Give it an easier name to work with</span></span>
+<span id="cb3-3"><a href="dataset.html#cb3-3" aria-hidden="true" tabindex="-1"></a>wave1_adult<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">substring</span>(wave1_adult<span class="sc">$</span>PERSONID,<span class="dv">2</span>))   <span class="do">## Convert the ID to a numeric value so can easily merge datapoints</span></span>
+<span id="cb3-4"><a href="dataset.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="dataset.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;PATH Data/ICPSR_36498/DS2001/36498-2001-Data.rda&quot;</span>)</span>
+<span id="cb3-6"><a href="dataset.html#cb3-6" aria-hidden="true" tabindex="-1"></a>wave2_adult <span class="ot">&lt;-</span> da36498<span class="fl">.2001</span></span>
+<span id="cb3-7"><a href="dataset.html#cb3-7" aria-hidden="true" tabindex="-1"></a>wave2_adult<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">substring</span>(wave2_adult<span class="sc">$</span>PERSONID,<span class="dv">2</span>))</span>
+<span id="cb3-8"><a href="dataset.html#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="dataset.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;PATH Data/ICPSR_36498/DS3001/36498-3001-Data.rda&quot;</span>)</span>
+<span id="cb3-10"><a href="dataset.html#cb3-10" aria-hidden="true" tabindex="-1"></a>wave3_adult <span class="ot">&lt;-</span> da36498<span class="fl">.3001</span></span>
+<span id="cb3-11"><a href="dataset.html#cb3-11" aria-hidden="true" tabindex="-1"></a>wave3_adult<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">substring</span>(wave3_adult<span class="sc">$</span>PERSONID,<span class="dv">2</span>))</span></code></pre></div>
+</div>
+<div id="iterating-through-the-datasets" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Iterating Through the Datasets</h2>
+<p>Next we will iterate through our master “data” data.frame and for each participant we will collect the needed information.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="dataset.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will loop through each participant in the master file</span></span>
+<span id="cb4-2"><a href="dataset.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We will collect each piece of information we need and merge into this dataset</span></span>
+<span id="cb4-3"><a href="dataset.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="dataset.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)){</span>
+<span id="cb4-5"><a href="dataset.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-6"><a href="dataset.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we get the participant ID for getting needed Data  </span></span>
+<span id="cb4-7"><a href="dataset.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  ID <span class="ot">&lt;-</span> data<span class="sc">$</span>ID[i]</span>
+<span id="cb4-8"><a href="dataset.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-9"><a href="dataset.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we go through the Wave 1 Dataset</span></span>
+<span id="cb4-10"><a href="dataset.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-11"><a href="dataset.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-12"><a href="dataset.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we extract age</span></span>
+<span id="cb4-13"><a href="dataset.html#cb4-13" aria-hidden="true" tabindex="-1"></a>  age <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_AGECAT7[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-14"><a href="dataset.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-15"><a href="dataset.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="do">## In the Path Study, the first several waves calculated age as a 7 category variable</span></span>
+<span id="cb4-16"><a href="dataset.html#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## In later waves they merged the 65-74 year old and 75+ category into a single 65+ category</span></span>
+<span id="cb4-17"><a href="dataset.html#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">## As such we need to take anyone whose age value == 7 (i.e 75+) and change the value to 6 (i.e. 65+)</span></span>
+<span id="cb4-18"><a href="dataset.html#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(age) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(age) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> age <span class="sc">==</span> <span class="dv">7</span>){ age <span class="ot">&lt;-</span> <span class="dv">6</span>}</span>
+<span id="cb4-19"><a href="dataset.html#cb4-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-20"><a href="dataset.html#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Then we save this value</span></span>
+<span id="cb4-21"><a href="dataset.html#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(age) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(age) <span class="sc">&gt;</span> <span class="dv">0</span>) { data<span class="sc">$</span>wave1_age[i] <span class="ot">&lt;-</span> age }</span>
+<span id="cb4-22"><a href="dataset.html#cb4-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-23"><a href="dataset.html#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture income</span></span>
+<span id="cb4-24"><a href="dataset.html#cb4-24" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave1_income[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_AM0030[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-25"><a href="dataset.html#cb4-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-26"><a href="dataset.html#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture gender</span></span>
+<span id="cb4-27"><a href="dataset.html#cb4-27" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>gender[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_SEX[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-28"><a href="dataset.html#cb4-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-29"><a href="dataset.html#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture race</span></span>
+<span id="cb4-30"><a href="dataset.html#cb4-30" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>race[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_RACECAT3[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-31"><a href="dataset.html#cb4-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-32"><a href="dataset.html#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture Hispanic Ethnicity</span></span>
+<span id="cb4-33"><a href="dataset.html#cb4-33" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>hispanic[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_HISP[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-34"><a href="dataset.html#cb4-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-35"><a href="dataset.html#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture Current Smoking Status</span></span>
+<span id="cb4-36"><a href="dataset.html#cb4-36" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave1_smoker[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_CUR_ESTD_CIGS[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-37"><a href="dataset.html#cb4-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-38"><a href="dataset.html#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture Former Smoking Status</span></span>
+<span id="cb4-39"><a href="dataset.html#cb4-39" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave1_former_smoker[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_FMR_ESTD_CIGS[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-40"><a href="dataset.html#cb4-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-41"><a href="dataset.html#cb4-41" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture Current E-Cigarette Use Status</span></span>
+<span id="cb4-42"><a href="dataset.html#cb4-42" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave1_e_smoker[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_CUR_ESTD_ECIG[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-43"><a href="dataset.html#cb4-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-44"><a href="dataset.html#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Capture Former E-Cigarette Use Status</span></span>
+<span id="cb4-45"><a href="dataset.html#cb4-45" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave1_former_e_smoker[i] <span class="ot">&lt;-</span> wave1_adult<span class="sc">$</span>R01R_A_FMR_ESTD_ECIG[wave1_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-46"><a href="dataset.html#cb4-46" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-47"><a href="dataset.html#cb4-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-48"><a href="dataset.html#cb4-48" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb4-49"><a href="dataset.html#cb4-49" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We repeat this process for Wave 2</span></span>
+<span id="cb4-50"><a href="dataset.html#cb4-50" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Comments are included to indicate differences from Wave 1 extraction</span></span>
+<span id="cb4-51"><a href="dataset.html#cb4-51" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb4-52"><a href="dataset.html#cb4-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-53"><a href="dataset.html#cb4-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-54"><a href="dataset.html#cb4-54" aria-hidden="true" tabindex="-1"></a>  age <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_AGECAT7[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-55"><a href="dataset.html#cb4-55" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(age) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(age) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> age <span class="sc">==</span> <span class="dv">7</span>){ age <span class="ot">&lt;-</span> <span class="dv">6</span>}</span>
+<span id="cb4-56"><a href="dataset.html#cb4-56" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(age) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(age) <span class="sc">&gt;</span> <span class="dv">0</span>) { data<span class="sc">$</span>wave2_age[i] <span class="ot">&lt;-</span> age }</span>
+<span id="cb4-57"><a href="dataset.html#cb4-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-58"><a href="dataset.html#cb4-58" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave2_income[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_AM0030[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-59"><a href="dataset.html#cb4-59" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-60"><a href="dataset.html#cb4-60" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We only need the gender/sex value for one wave</span></span>
+<span id="cb4-61"><a href="dataset.html#cb4-61" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This if statement instructs R to get the wave 2 gender if the wave 1 gender was missing</span></span>
+<span id="cb4-62"><a href="dataset.html#cb4-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(data<span class="sc">$</span>gender[i])){</span>
+<span id="cb4-63"><a href="dataset.html#cb4-63" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>gender[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_SEX[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-64"><a href="dataset.html#cb4-64" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-65"><a href="dataset.html#cb4-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-66"><a href="dataset.html#cb4-66" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We only need the race value for one wave</span></span>
+<span id="cb4-67"><a href="dataset.html#cb4-67" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This if statement instructs R to get the wave 2 race if the wave 1 race was missing</span></span>
+<span id="cb4-68"><a href="dataset.html#cb4-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(data<span class="sc">$</span>race[i])){</span>
+<span id="cb4-69"><a href="dataset.html#cb4-69" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>race[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_RACECAT3[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-70"><a href="dataset.html#cb4-70" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-71"><a href="dataset.html#cb4-71" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-72"><a href="dataset.html#cb4-72" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-73"><a href="dataset.html#cb4-73" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We only need the ethnicity value for one wave</span></span>
+<span id="cb4-74"><a href="dataset.html#cb4-74" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This if statement instructs R to get the wave 2 ethnicity if the wave 1 ethnicity was missing</span></span>
+<span id="cb4-75"><a href="dataset.html#cb4-75" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(data<span class="sc">$</span>hispanic[i])){</span>
+<span id="cb4-76"><a href="dataset.html#cb4-76" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>hispanic[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_HISP[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-77"><a href="dataset.html#cb4-77" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-78"><a href="dataset.html#cb4-78" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-79"><a href="dataset.html#cb4-79" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave2_smoker[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_CUR_ESTD_CIGS[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-80"><a href="dataset.html#cb4-80" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave2_former_smoker[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_FMR_ESTD_CIGS_REV[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-81"><a href="dataset.html#cb4-81" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-82"><a href="dataset.html#cb4-82" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave2_e_smoker[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_CUR_ESTD_ECIG[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-83"><a href="dataset.html#cb4-83" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave2_former_e_smoker[i] <span class="ot">&lt;-</span> wave2_adult<span class="sc">$</span>R02R_A_FMR_ESTD_ECIG[wave2_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-84"><a href="dataset.html#cb4-84" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-85"><a href="dataset.html#cb4-85" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-86"><a href="dataset.html#cb4-86" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we capture Wave 3</span></span>
+<span id="cb4-87"><a href="dataset.html#cb4-87" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-88"><a href="dataset.html#cb4-88" aria-hidden="true" tabindex="-1"></a>  age <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_AGECAT7[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-89"><a href="dataset.html#cb4-89" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(age) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(age) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> age <span class="sc">==</span> <span class="dv">7</span>){ age <span class="ot">&lt;-</span> <span class="dv">6</span>}</span>
+<span id="cb4-90"><a href="dataset.html#cb4-90" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(age) <span class="sc">&amp;&amp;</span> <span class="fu">length</span>(age) <span class="sc">&gt;</span> <span class="dv">0</span>) { data<span class="sc">$</span>wave3_age[i] <span class="ot">&lt;-</span> age }</span>
+<span id="cb4-91"><a href="dataset.html#cb4-91" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-92"><a href="dataset.html#cb4-92" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave3_income[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_AM0030[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-93"><a href="dataset.html#cb4-93" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(data<span class="sc">$</span>gender[i])){</span>
+<span id="cb4-94"><a href="dataset.html#cb4-94" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>gender[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_SEX[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-95"><a href="dataset.html#cb4-95" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-96"><a href="dataset.html#cb4-96" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(data<span class="sc">$</span>race[i])){</span>
+<span id="cb4-97"><a href="dataset.html#cb4-97" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>race[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_RACECAT3[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-98"><a href="dataset.html#cb4-98" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-99"><a href="dataset.html#cb4-99" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-100"><a href="dataset.html#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(data<span class="sc">$</span>hispanic[i])){</span>
+<span id="cb4-101"><a href="dataset.html#cb4-101" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>hispanic[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_HISP[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-102"><a href="dataset.html#cb4-102" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-103"><a href="dataset.html#cb4-103" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-104"><a href="dataset.html#cb4-104" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave3_smoker[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_CUR_ESTD_CIGS[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-105"><a href="dataset.html#cb4-105" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave3_former_smoker[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_FMR_ESTD_CIGS_REV[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-106"><a href="dataset.html#cb4-106" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-107"><a href="dataset.html#cb4-107" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave3_e_smoker[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_CUR_ESTD_EPRODS[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-108"><a href="dataset.html#cb4-108" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>wave3_former_e_smoker[i] <span class="ot">&lt;-</span> wave3_adult<span class="sc">$</span>R03R_A_FMR_ESTD_EPRODS_REV[wave3_adult<span class="sc">$</span>ID <span class="sc">==</span> ID]</span>
+<span id="cb4-109"><a href="dataset.html#cb4-109" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-110"><a href="dataset.html#cb4-110" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="factoring-the-data" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Factoring the Data</h2>
+<p>Next, we want to assign the numeric values of categorical variables (all the variables of interest are categorical) to the correct factor level.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="dataset.html#cb5-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_income <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave1_income, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$10k&quot;</span>,<span class="st">&quot;$10-25k&quot;</span>,<span class="st">&quot;$25-50k&quot;</span>,<span class="st">&quot;$50k-100k&quot;</span>,<span class="st">&quot;&gt;=$100k&quot;</span>))</span>
+<span id="cb5-2"><a href="dataset.html#cb5-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_income <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave2_income, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$10k&quot;</span>,<span class="st">&quot;$10-25k&quot;</span>,<span class="st">&quot;$25-50k&quot;</span>,<span class="st">&quot;$50k-100k&quot;</span>,<span class="st">&quot;&gt;=$100k&quot;</span>))</span>
+<span id="cb5-3"><a href="dataset.html#cb5-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_income <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave3_income, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$10k&quot;</span>,<span class="st">&quot;$10-25k&quot;</span>,<span class="st">&quot;$25-50k&quot;</span>,<span class="st">&quot;$50k-100k&quot;</span>,<span class="st">&quot;&gt;=$100k&quot;</span>))</span>
+<span id="cb5-4"><a href="dataset.html#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="dataset.html#cb5-5" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_age <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave1_age, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;18-24&quot;</span>,<span class="st">&quot;25-34&quot;</span>,<span class="st">&quot;35-44&quot;</span>,<span class="st">&quot;45-54&quot;</span>,<span class="st">&quot;55-64&quot;</span>,<span class="st">&quot;&gt;65&quot;</span>))</span>
+<span id="cb5-6"><a href="dataset.html#cb5-6" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_age <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave2_age, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;18-24&quot;</span>,<span class="st">&quot;25-34&quot;</span>,<span class="st">&quot;35-44&quot;</span>,<span class="st">&quot;45-54&quot;</span>,<span class="st">&quot;55-64&quot;</span>,<span class="st">&quot;&gt;65&quot;</span>))</span>
+<span id="cb5-7"><a href="dataset.html#cb5-7" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_age <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave3_age, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;18-24&quot;</span>,<span class="st">&quot;25-34&quot;</span>,<span class="st">&quot;35-44&quot;</span>,<span class="st">&quot;45-54&quot;</span>,<span class="st">&quot;55-64&quot;</span>,<span class="st">&quot;&gt;65&quot;</span>))</span>
+<span id="cb5-8"><a href="dataset.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="dataset.html#cb5-9" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb5-10"><a href="dataset.html#cb5-10" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>race <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>race, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>,<span class="st">&quot;Black&quot;</span>,<span class="st">&quot;Other&quot;</span>))</span>
+<span id="cb5-11"><a href="dataset.html#cb5-11" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>hispanic <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>hispanic, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Hispanic&quot;</span>,<span class="st">&quot;Not Hispanic&quot;</span>))</span>
+<span id="cb5-12"><a href="dataset.html#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="dataset.html#cb5-13" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave1_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-14"><a href="dataset.html#cb5-14" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_former_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave1_former_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-15"><a href="dataset.html#cb5-15" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_e_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave1_e_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-16"><a href="dataset.html#cb5-16" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave1_former_e_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave1_former_e_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-17"><a href="dataset.html#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="dataset.html#cb5-18" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave2_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-19"><a href="dataset.html#cb5-19" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_former_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave2_former_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-20"><a href="dataset.html#cb5-20" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_e_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave2_e_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-21"><a href="dataset.html#cb5-21" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave2_former_e_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave2_former_e_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-22"><a href="dataset.html#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="dataset.html#cb5-23" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave3_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-24"><a href="dataset.html#cb5-24" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_former_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave3_former_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-25"><a href="dataset.html#cb5-25" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_e_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave3_e_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span>
+<span id="cb5-26"><a href="dataset.html#cb5-26" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>wave3_former_e_smoker <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>wave3_former_e_smoker, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>))</span></code></pre></div>
+</div>
+<div id="adding-the-weights-and-replicate-weights-to-the-study" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Adding the Weights and Replicate Weights to the Study</h2>
+<p>The PATH Study is intended to be representative of the US population. They provide a set of weights and replicate weights which can be applied to the participants who responded to Waves 1 - 3 of the adult survey. For future analyses, these weights need to be saved with their participants.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="dataset.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the file with the Waves 1 - 3 longitduinal weights</span></span>
+<span id="cb6-2"><a href="dataset.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;PATH Data/ICPSR_36498/DS3101/36498-3101-Data.rda&quot;</span>)</span>
+<span id="cb6-3"><a href="dataset.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="dataset.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Provide an easy to use name</span></span>
+<span id="cb6-5"><a href="dataset.html#cb6-5" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> da36498<span class="fl">.3101</span></span>
+<span id="cb6-6"><a href="dataset.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="dataset.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Convert the ID value to numeric to allow data merging</span></span>
+<span id="cb6-8"><a href="dataset.html#cb6-8" aria-hidden="true" tabindex="-1"></a>weights<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">substring</span>(weights<span class="sc">$</span>PERSONID,<span class="dv">2</span>))</span>
+<span id="cb6-9"><a href="dataset.html#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="dataset.html#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">## We are going to remove columns 1 - 4 of this dataset because this information is not needed for our analyses</span></span>
+<span id="cb6-11"><a href="dataset.html#cb6-11" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> weights[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)]</span>
+<span id="cb6-12"><a href="dataset.html#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="dataset.html#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally we merge the weights into our master data data.frame by ID</span></span>
+<span id="cb6-14"><a href="dataset.html#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="do">## This essentially binds the columns of weights onto the data data.frame, matching rows up by ID</span></span>
+<span id="cb6-15"><a href="dataset.html#cb6-15" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">merge</span>(data,weights, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>))</span></code></pre></div>
+</div>
+<div id="save-the-data-frame-for-future-use" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Save the Data Frame for Future Use</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="dataset.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data, <span class="st">&quot;Data/PATH_Waves_1-3.csv&quot;</span>)</span></code></pre></div>
+<p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">[@R-bookdown]</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">[@xie2015]</span>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="imputation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

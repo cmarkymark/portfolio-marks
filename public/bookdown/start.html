@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Initial Start State | Aim #2: Mathematical Model</title>
+  <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Initial Start State | Aim #2: Mathematical Model" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Initial Start State | Aim #2: Mathematical Model" />
+  
+  <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2021-04-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="calibration.html"/>
+<link rel="next" href="ref.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> In This Book</a></li>
+<li class="chapter" data-level="2" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>2</b> Generating the Initial Dataset</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="dataset.html"><a href="dataset.html#participants"><i class="fa fa-check"></i><b>2.1</b> Participants</a></li>
+<li class="chapter" data-level="2.2" data-path="dataset.html"><a href="dataset.html#defining-variables-we-wish-to-capture"><i class="fa fa-check"></i><b>2.2</b> Defining Variables We Wish to Capture</a></li>
+<li class="chapter" data-level="2.3" data-path="dataset.html"><a href="dataset.html#loading-the-necessary-datasets"><i class="fa fa-check"></i><b>2.3</b> Loading the Necessary Datasets</a></li>
+<li class="chapter" data-level="2.4" data-path="dataset.html"><a href="dataset.html#iterating-through-the-datasets"><i class="fa fa-check"></i><b>2.4</b> Iterating Through the Datasets</a></li>
+<li class="chapter" data-level="2.5" data-path="dataset.html"><a href="dataset.html#factoring-the-data"><i class="fa fa-check"></i><b>2.5</b> Factoring the Data</a></li>
+<li class="chapter" data-level="2.6" data-path="dataset.html"><a href="dataset.html#adding-the-weights-and-replicate-weights-to-the-study"><i class="fa fa-check"></i><b>2.6</b> Adding the Weights and Replicate Weights to the Study</a></li>
+<li class="chapter" data-level="2.7" data-path="dataset.html"><a href="dataset.html#save-the-data-frame-for-future-use"><i class="fa fa-check"></i><b>2.7</b> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="imputation.html"><a href="imputation.html"><i class="fa fa-check"></i><b>3</b> Data Imputation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="imputation.html"><a href="imputation.html#loading-libraries-and-the-data"><i class="fa fa-check"></i><b>3.1</b> Loading Libraries and the Data</a></li>
+<li class="chapter" data-level="3.2" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-income"><i class="fa fa-check"></i><b>3.2</b> Heuristic Imputation of Income</a></li>
+<li class="chapter" data-level="3.3" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-former-cige-cig-use"><i class="fa fa-check"></i><b>3.3</b> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li class="chapter" data-level="3.4" data-path="imputation.html"><a href="imputation.html#imputation-with-mice"><i class="fa fa-check"></i><b>3.4</b> Imputation with <em>mice()</em></a></li>
+<li class="chapter" data-level="3.5" data-path="imputation.html"><a href="imputation.html#generating-some-additional-variables"><i class="fa fa-check"></i><b>3.5</b> Generating Some Additional Variables</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="imputation.html"><a href="imputation.html#cateogry-cigarette-and-e-cigarette-use"><i class="fa fa-check"></i><b>3.5.1</b> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li class="chapter" data-level="3.5.2" data-path="imputation.html"><a href="imputation.html#income-change-from-waves-1---2"><i class="fa fa-check"></i><b>3.5.2</b> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="imputation.html"><a href="imputation.html#output-the-imputed-dataset"><i class="fa fa-check"></i><b>3.6</b> Output the Imputed Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="paramset.html"><a href="paramset.html"><i class="fa fa-check"></i><b>4</b> Generate Parameter Set</a></li>
+<li class="chapter" data-level="5" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>5</b> ODE Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>5.1</b> Helper Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>6</b> Calibration</a></li>
+<li class="chapter" data-level="7" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>7</b> Initial Start State</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="start.html"><a href="start.html#stratifying-by-sex-and-age"><i class="fa fa-check"></i><b>7.1</b> Stratifying by Sex and Age</a></li>
+<li class="chapter" data-level="7.2" data-path="start.html"><a href="start.html#stratifying-the-population-by-income-level"><i class="fa fa-check"></i><b>7.2</b> Stratifying the Population by Income Level</a></li>
+<li class="chapter" data-level="7.3" data-path="start.html"><a href="start.html#distributing-cigarette-use"><i class="fa fa-check"></i><b>7.3</b> Distributing Cigarette Use</a></li>
+<li class="chapter" data-level="7.4" data-path="start.html"><a href="start.html#distributing-e-cigarette-use"><i class="fa fa-check"></i><b>7.4</b> Distributing E-Cigarette Use</a></li>
+<li class="chapter" data-level="7.5" data-path="start.html"><a href="start.html#outputting-states-to-confirm"><i class="fa fa-check"></i><b>7.5</b> Outputting States to Confirm</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aim #2: Mathematical Model</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="start" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Initial Start State</h1>
+<p>We need to initialize our model to be representative of the US population. While the PATH study is designed to be representative, it is not weighted to ensure the correct proporiton of former smokers and the correct income distribution is represented. In other words, the PATH dataset over-samples former smokers (under samples never smokers) and the weighting does not effectively account for this.</p>
+<p>Therefore to get our starting state, we need to generate a reasonable population distribution such that our model is simulating the adult US population. Note, this model is initialized to the year 2014.</p>
+<div id="stratifying-by-sex-and-age" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Stratifying by Sex and Age</h2>
+<p><a href="https://www.census.gov/data/tables/2014/demo/age-and-sex/2014-age-sex-composition.html" class="uri">https://www.census.gov/data/tables/2014/demo/age-and-sex/2014-age-sex-composition.html</a></p>
+<p>We can start by stratifying the population by sex and age. Table 1 at the link above provides us the data that we need to get these breakdowns. Analyzing the data, we see that the adult population in the US 2014 can be broken down as:</p>
+<ul>
+<li>18-24 Year Old
+<ul>
+<li>Male: 6.4%</li>
+<li>Female: 6.2%</li>
+</ul></li>
+<li>25-34
+<ul>
+<li>Male: 8.9%</li>
+<li>Female: 8.9%</li>
+</ul></li>
+<li>35-44
+<ul>
+<li>Male: 8.2%</li>
+<li>Female: 8.4%</li>
+</ul></li>
+<li>45-54
+<ul>
+<li>Male: 8.8%</li>
+<li>Female: 9.2%</li>
+</ul></li>
+<li>55-64
+<ul>
+<li>Male: 7.9%</li>
+<li>Female: 8.6%</li>
+</ul></li>
+<li>65+
+<ul>
+<li>Male: 8.2%</li>
+<li>Female: 10.3%</li>
+</ul></li>
+</ul>
+<p>Overall, this results in a population that is 51.6% female.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="start.html#cb1-1" aria-hidden="true" tabindex="-1"></a>toArray <span class="ot">&lt;-</span> <span class="cf">function</span>(vector, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">13</span>)){</span>
+<span id="cb1-2"><a href="start.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-3"><a href="start.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  array_structure <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="at">dim =</span> dim)</span>
+<span id="cb1-4"><a href="start.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="start.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">replace</span>(array_structure, <span class="cn">TRUE</span>, vector))</span>
+<span id="cb1-6"><a href="start.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="start.html#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="start.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="start.html#cb1-9" aria-hidden="true" tabindex="-1"></a>male_by_age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.064</span>, <span class="fl">0.089</span>, <span class="fl">0.082</span>, <span class="fl">0.088</span>, <span class="fl">0.079</span>, <span class="fl">0.082</span>)</span>
+<span id="cb1-10"><a href="start.html#cb1-10" aria-hidden="true" tabindex="-1"></a>female_by_age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.062</span>, <span class="fl">0.089</span>,<span class="fl">0.084</span>,<span class="fl">0.092</span>,<span class="fl">0.086</span>,<span class="fl">0.103</span>)</span>
+<span id="cb1-11"><a href="start.html#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="start.html#cb1-12" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">12</span>), <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>))</span>
+<span id="cb1-13"><a href="start.html#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="start.html#cb1-14" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">1</span>,] <span class="ot">&lt;-</span> male_by_age</span>
+<span id="cb1-15"><a href="start.html#cb1-15" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">2</span>,] <span class="ot">&lt;-</span> female_by_age</span></code></pre></div>
+</div>
+<div id="stratifying-the-population-by-income-level" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Stratifying the Population by Income Level</h2>
+<p><a href="https://www.census.gov/data/tables/time-series/demo/income-poverty/cps-hinc/hinc-01.2014.html" class="uri">https://www.census.gov/data/tables/time-series/demo/income-poverty/cps-hinc/hinc-01.2014.html</a></p>
+<p>By multiplying the distribution of household income by the average number of people in household of given income, we are able to estimate the distribution of income by person. Using data (link above) from 2014 Census table HINC-01, we are able to estimate the following income distribution:</p>
+<ul>
+<li>&lt;$10k: 5%</li>
+<li>$10-25k: 12%</li>
+<li>$25-50k: 21%</li>
+<li>$50-100k: 31%</li>
+<li>+$100k: 31%</li>
+</ul>
+<p>While income distributions are likely heterogenous across age group, household income is more complicated to capture than personal income. For example, an 19 year old in college might make 0 money and be in the &gt;$100k group. Similarly, a working 19 year old with no parental support may fall in the 10-25k range even though they are actually netting more personal income.</p>
+<p>Given challenges in figuring out differential income across age and sex, we have opted to assume a homogenous income distribution across age and sex.</p>
+<p>As well, our model has 13 income brackets because our model tries to capture the impact of income level changes. We initialize our start state with everyone in one of the 5 income stable groups.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="start.html#cb2-1" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> states</span>
+<span id="cb2-2"><a href="start.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="start.html#cb2-3" aria-hidden="true" tabindex="-1"></a>income_dist <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.12</span>,<span class="fl">0.21</span>,<span class="fl">0.31</span>,<span class="fl">0.31</span>)</span>
+<span id="cb2-4"><a href="start.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="start.html#cb2-5" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">156</span>), <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">13</span>))</span>
+<span id="cb2-6"><a href="start.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="start.html#cb2-7" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">1</span>,,<span class="dv">1</span>] <span class="ot">&lt;-</span> temp[<span class="dv">1</span>,]<span class="sc">*</span>income_dist[<span class="dv">1</span>]</span>
+<span id="cb2-8"><a href="start.html#cb2-8" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">1</span>,,<span class="dv">2</span>] <span class="ot">&lt;-</span> temp[<span class="dv">1</span>,]<span class="sc">*</span>income_dist[<span class="dv">2</span>]</span>
+<span id="cb2-9"><a href="start.html#cb2-9" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">1</span>,,<span class="dv">3</span>] <span class="ot">&lt;-</span> temp[<span class="dv">1</span>,]<span class="sc">*</span>income_dist[<span class="dv">3</span>]</span>
+<span id="cb2-10"><a href="start.html#cb2-10" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">1</span>,,<span class="dv">4</span>] <span class="ot">&lt;-</span> temp[<span class="dv">1</span>,]<span class="sc">*</span>income_dist[<span class="dv">4</span>]</span>
+<span id="cb2-11"><a href="start.html#cb2-11" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">1</span>,,<span class="dv">5</span>] <span class="ot">&lt;-</span> temp[<span class="dv">1</span>,]<span class="sc">*</span>income_dist[<span class="dv">5</span>]</span>
+<span id="cb2-12"><a href="start.html#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="start.html#cb2-13" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">2</span>,,<span class="dv">1</span>] <span class="ot">&lt;-</span> temp[<span class="dv">2</span>,]<span class="sc">*</span>income_dist[<span class="dv">1</span>]</span>
+<span id="cb2-14"><a href="start.html#cb2-14" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">2</span>,,<span class="dv">2</span>] <span class="ot">&lt;-</span> temp[<span class="dv">2</span>,]<span class="sc">*</span>income_dist[<span class="dv">2</span>]</span>
+<span id="cb2-15"><a href="start.html#cb2-15" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">2</span>,,<span class="dv">3</span>] <span class="ot">&lt;-</span> temp[<span class="dv">2</span>,]<span class="sc">*</span>income_dist[<span class="dv">3</span>]</span>
+<span id="cb2-16"><a href="start.html#cb2-16" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">2</span>,,<span class="dv">4</span>] <span class="ot">&lt;-</span> temp[<span class="dv">2</span>,]<span class="sc">*</span>income_dist[<span class="dv">4</span>]</span>
+<span id="cb2-17"><a href="start.html#cb2-17" aria-hidden="true" tabindex="-1"></a>states[<span class="dv">2</span>,,<span class="dv">5</span>] <span class="ot">&lt;-</span> temp[<span class="dv">2</span>,]<span class="sc">*</span>income_dist[<span class="dv">5</span>]</span></code></pre></div>
+</div>
+<div id="distributing-cigarette-use" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Distributing Cigarette Use</h2>
+<p>To initialize our starting cigarette levels, we will use CDC data.</p>
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/wr/mm6527a1.htm" class="uri">https://www.cdc.gov/mmwr/volumes/65/wr/mm6527a1.htm</a></p>
+<p>They estimate that in 2013-4, 17% of the population smoked cigarettes. 19.3% of males were current smokers and 15.7% of females were current smokers. This work, however, does not provide the same income distribution. Next they present the smoking prevalence by age, with 17% of those 18-24 smoking, 21.4% of those 25-44, 17.8% of those 45-64, and 7.9% of those 65+.</p>
+<p>The breakdown by income is not by the same categories and they report:</p>
+<ul>
+<li>&lt;$20k: 28.7% (27.1 - 30.4)</li>
+<li>20-50k: 21.7% (20.8 - 22.6)</li>
+<li>50-100k: 14.1% (13.4 - 14.9)</li>
+<li>+100k: 8.0% (7.3 - 8.7)</li>
+<li>Unspecified: 17.2% (16.4 - 18.1)</li>
+</ul>
+<p>However, we need to realign to match up with &lt;10k, 10-25, 25-50k. And we need these values to correspond with a 17% smoking prevalence. Given the dose response relationship, we hypothesize that the &lt;10k reasonably would have the highest proportion of cigarette use. Using the CDC prevalences, with a higher prevalence for &lt;$10k, results in a sample current smoking of 17%.</p>
+<ul>
+<li>&lt;$10k: 32.0%</li>
+<li>10-25k: 28.7%</li>
+<li>25-50k: 21.7%</li>
+<li>50-100k: 14.1%</li>
+<li>+100k: 8.0%</li>
+</ul>
+<p>For current cigarette smoking, CDC reports 21.9% of the population in 2014 was a former smoker, though determining income breakdown is challenging. We make the following assumptions in defining the number of former smokers:</p>
+<ol style="list-style-type: decimal">
+<li>that more men than women are former smokers because more men than women smoke</li>
+<li>that older age is has higher prevalence of cigarette smoking</li>
+<li>that higher incomes have higher prevalence of former smoking</li>
+</ol>
+<p>Further, a recent study (2018, <a href="https://www.cdc.gov/nchs/data/nhsr/nhsr145-508.pdf" class="uri">https://www.cdc.gov/nchs/data/nhsr/nhsr145-508.pdf</a>) estimated that for men over 65, 49.4% were former smokers and for women over 65, 30.6% were smokers. We assume slighlty diminished totals in 2014 (44% and 25%) and use these as baselines which we adjust based on age and income.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="start.html#cb3-1" aria-hidden="true" tabindex="-1"></a>cig_by_sex <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">193</span><span class="sc">/</span>.<span class="dv">17</span>,.<span class="dv">157</span><span class="sc">/</span>.<span class="dv">17</span>) <span class="do">## This is amultiplier, in which men are more likely than women to be smokers</span></span>
+<span id="cb3-2"><a href="start.html#cb3-2" aria-hidden="true" tabindex="-1"></a>cig_by_age <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">17</span><span class="sc">/</span>.<span class="dv">17</span>,.<span class="dv">214</span><span class="sc">/</span>.<span class="dv">17</span>,.<span class="dv">214</span><span class="sc">/</span>.<span class="dv">17</span>,.<span class="dv">178</span><span class="sc">/</span>.<span class="dv">17</span>,.<span class="dv">178</span><span class="sc">/</span>.<span class="dv">17</span>,.<span class="dv">079</span><span class="sc">/</span>.<span class="dv">17</span>) <span class="do">## multiplier for age </span></span>
+<span id="cb3-3"><a href="start.html#cb3-3" aria-hidden="true" tabindex="-1"></a>cig_by_income <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">32</span>,.<span class="dv">287</span>,.<span class="dv">217</span>,.<span class="dv">141</span>,.<span class="dv">08</span>) <span class="do">## Then we use the proportion across income</span></span>
+<span id="cb3-4"><a href="start.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="start.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#former_smoke_baseline &lt;- 0.209 ## Chosen to ensure we get the appropriate final distribution</span></span>
+<span id="cb3-6"><a href="start.html#cb3-6" aria-hidden="true" tabindex="-1"></a>former_by_sex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.46</span>,.<span class="dv">27</span>) <span class="do">## largely matches the cig_by_sex object</span></span>
+<span id="cb3-7"><a href="start.html#cb3-7" aria-hidden="true" tabindex="-1"></a>former_by_age <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">3</span>,.<span class="dv">4</span>,.<span class="dv">5</span>,.<span class="dv">6</span>,.<span class="dv">8</span>,<span class="dv">1</span>) <span class="do">## we assume this relationship isn&#39;t linear</span></span>
+<span id="cb3-8"><a href="start.html#cb3-8" aria-hidden="true" tabindex="-1"></a>former_by_income <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">4</span>, .<span class="dv">6</span>, .<span class="dv">8</span>,<span class="dv">1</span>,<span class="fl">1.2</span>) <span class="do">## consistent with literature about the association of income and cessation rates</span></span>
+<span id="cb3-9"><a href="start.html#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="start.html#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="start.html#cb3-11" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> states</span>
+<span id="cb3-12"><a href="start.html#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="start.html#cb3-13" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">156</span><span class="sc">*</span><span class="dv">3</span>), <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb3-14"><a href="start.html#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="start.html#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sex <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)){</span>
+<span id="cb3-16"><a href="start.html#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb3-17"><a href="start.html#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb3-18"><a href="start.html#cb3-18" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-19"><a href="start.html#cb3-19" aria-hidden="true" tabindex="-1"></a>      cell_total <span class="ot">&lt;-</span> temp[sex,age,income]</span>
+<span id="cb3-20"><a href="start.html#cb3-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-21"><a href="start.html#cb3-21" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-22"><a href="start.html#cb3-22" aria-hidden="true" tabindex="-1"></a>      current_cig <span class="ot">&lt;-</span> cell_total<span class="sc">*</span>cig_by_sex[sex]<span class="sc">*</span>cig_by_age[age]<span class="sc">*</span>cig_by_income[income]</span>
+<span id="cb3-23"><a href="start.html#cb3-23" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-24"><a href="start.html#cb3-24" aria-hidden="true" tabindex="-1"></a>      former_cig <span class="ot">&lt;-</span> cell_total<span class="sc">*</span>former_by_sex[sex]<span class="sc">*</span>former_by_age[age]<span class="sc">*</span>former_by_income[income]</span>
+<span id="cb3-25"><a href="start.html#cb3-25" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-26"><a href="start.html#cb3-26" aria-hidden="true" tabindex="-1"></a>      states[sex,age,<span class="dv">3</span>,income] <span class="ot">&lt;-</span> former_cig</span>
+<span id="cb3-27"><a href="start.html#cb3-27" aria-hidden="true" tabindex="-1"></a>      states[sex,age,<span class="dv">2</span>,income] <span class="ot">&lt;-</span> current_cig</span>
+<span id="cb3-28"><a href="start.html#cb3-28" aria-hidden="true" tabindex="-1"></a>      states[sex,age,<span class="dv">1</span>,income] <span class="ot">&lt;-</span> cell_total <span class="sc">-</span> current_cig <span class="sc">-</span> former_cig</span>
+<span id="cb3-29"><a href="start.html#cb3-29" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-30"><a href="start.html#cb3-30" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-31"><a href="start.html#cb3-31" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-32"><a href="start.html#cb3-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-33"><a href="start.html#cb3-33" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="distributing-e-cigarette-use" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Distributing E-Cigarette Use</h2>
+<p>Finally, we need to distribute e-cigarette use. In 2014, CDC estimates indicate that 3.3% of the population used e-cigarettes:</p>
+<ul>
+<li>4% of Males</li>
+<li>2.8% of Females</li>
+<li>Young People Much Higher Rates
+<ul>
+<li>18-24: 5.5%</li>
+<li>25-44: 4.4%</li>
+<li>45-64: 2.8%</li>
+<li>65+: 0.9%</li>
+</ul></li>
+<li>Income Dynamics Not as Pronounced
+<ul>
+<li>&lt;20k: 4%</li>
+<li>20-50k: 4.2%</li>
+<li>50-100k: 3.3%</li>
+<li>+100k: 2.3%</li>
+</ul></li>
+</ul>
+<p>CDC MMWR Report (<a href="https://www.cdc.gov/mmwr/volumes/65/wr/mm6542a7.htm" class="uri">https://www.cdc.gov/mmwr/volumes/65/wr/mm6542a7.htm</a>) shows that:</p>
+<ul>
+<li>58.5% of e-cigarette users were cigarette smokers</li>
+<li>29.8% were former smokers</li>
+<li>11.4% were never smokers</li>
+<li>98.7% of those &gt;45 were current or former cigarette smokers</li>
+<li>60% of those 18-24 were current or former cigarette smokers</li>
+</ul>
+<p>Full breakdown by age:</p>
+<ul>
+<li>18 - 24:
+<ul>
+<li>42% current cigarette</li>
+<li>18% former cigarette</li>
+<li>40% never cigarette</li>
+</ul></li>
+<li>25 - 44:
+<ul>
+<li>59% current cigarette</li>
+<li>31% former cigarette</li>
+<li>10% never cigarette</li>
+</ul></li>
+<li>45+
+<ul>
+<li>67% current</li>
+<li>32% former</li>
+<li>1% never</li>
+</ul></li>
+</ul>
+<p>We will use these values to distribute e-cigarette use across the compartments. Further, we will assume an equal number of former e-cigarette users for each sex,age,income,cigarette use combo given challenges in estimating this</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="start.html#cb4-1" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> states</span>
+<span id="cb4-2"><a href="start.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="start.html#cb4-3" aria-hidden="true" tabindex="-1"></a>ecig_sex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.04</span>, <span class="fl">0.028</span>)</span>
+<span id="cb4-4"><a href="start.html#cb4-4" aria-hidden="true" tabindex="-1"></a>ecig_age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.055</span>,<span class="fl">0.044</span>,<span class="fl">0.044</span>,<span class="fl">0.028</span>,<span class="fl">0.028</span>,<span class="fl">0.009</span>)<span class="sc">/</span>.<span class="dv">033</span></span>
+<span id="cb4-5"><a href="start.html#cb4-5" aria-hidden="true" tabindex="-1"></a>ecig_income <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.045</span>,<span class="fl">0.042</span>,<span class="fl">0.033</span>,<span class="fl">0.023</span>)<span class="sc">/</span>.<span class="dv">033</span></span>
+<span id="cb4-6"><a href="start.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="start.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="start.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb4-9"><a href="start.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## This is the proportion of e-smokers who are cigarette users</span></span>
+<span id="cb4-10"><a href="start.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## We need the proportion of cigarette smokers who are e_cig users</span></span>
+<span id="cb4-11"><a href="start.html#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="start.html#cb4-12" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="dv">0</span>)</span>
+<span id="cb4-13"><a href="start.html#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="start.html#cb4-14" aria-hidden="true" tabindex="-1"></a>age_cig_effect <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">3</span>))</span>
+<span id="cb4-15"><a href="start.html#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="start.html#cb4-16" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">4</span>,.<span class="dv">42</span>,.<span class="dv">18</span>)</span>
+<span id="cb4-17"><a href="start.html#cb4-17" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">2</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,.<span class="dv">59</span>,.<span class="dv">31</span>)</span>
+<span id="cb4-18"><a href="start.html#cb4-18" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">3</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,.<span class="dv">59</span>,.<span class="dv">31</span>)</span>
+<span id="cb4-19"><a href="start.html#cb4-19" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">4</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">01</span>,.<span class="dv">67</span>,.<span class="dv">32</span>)</span>
+<span id="cb4-20"><a href="start.html#cb4-20" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">5</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">01</span>,.<span class="dv">67</span>,.<span class="dv">32</span>)</span>
+<span id="cb4-21"><a href="start.html#cb4-21" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">6</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">01</span>,.<span class="dv">67</span>,.<span class="dv">32</span>)</span>
+<span id="cb4-22"><a href="start.html#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="start.html#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb4-24"><a href="start.html#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Ok so the values currently saved in age_cig_effect</span></span>
+<span id="cb4-25"><a href="start.html#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## are the proportion of e_cig users who also use cigs</span></span>
+<span id="cb4-26"><a href="start.html#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="do">## but we want the proportion of people at each cig level who are also e-cig users</span></span>
+<span id="cb4-27"><a href="start.html#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="do">## so we use the proportions available to use </span></span>
+<span id="cb4-28"><a href="start.html#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb4-29"><a href="start.html#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="do">## to get what we want we let x = the % of e-cig at cig level c and age a</span></span>
+<span id="cb4-30"><a href="start.html#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="do">## we let y  = % of people who use e-cigs at age a</span></span>
+<span id="cb4-31"><a href="start.html#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="do">## and we let z = % of people at cig level c</span></span>
+<span id="cb4-32"><a href="start.html#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="do">## we then can get our value by calculated x*y/z</span></span>
+<span id="cb4-33"><a href="start.html#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-34"><a href="start.html#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="start.html#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="start.html#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb4-37"><a href="start.html#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb4-38"><a href="start.html#cb4-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-39"><a href="start.html#cb4-39" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> ecig_age[age]<span class="sc">*</span>.<span class="dv">033</span></span>
+<span id="cb4-40"><a href="start.html#cb4-40" aria-hidden="true" tabindex="-1"></a>    z <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(temp[,age,cig,]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(temp[,age,,]))</span>
+<span id="cb4-41"><a href="start.html#cb4-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-42"><a href="start.html#cb4-42" aria-hidden="true" tabindex="-1"></a>    age_cig_effect[age,cig] <span class="ot">&lt;-</span> age_cig_effect[age,cig]<span class="sc">*</span>y<span class="sc">/</span>z</span>
+<span id="cb4-43"><a href="start.html#cb4-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-44"><a href="start.html#cb4-44" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-45"><a href="start.html#cb4-45" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-46"><a href="start.html#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="start.html#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>){</span>
+<span id="cb4-48"><a href="start.html#cb4-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb4-49"><a href="start.html#cb4-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb4-50"><a href="start.html#cb4-50" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb4-51"><a href="start.html#cb4-51" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-52"><a href="start.html#cb4-52" aria-hidden="true" tabindex="-1"></a>        cell_total <span class="ot">&lt;-</span> temp[sex,age,cig,income]</span>
+<span id="cb4-53"><a href="start.html#cb4-53" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-54"><a href="start.html#cb4-54" aria-hidden="true" tabindex="-1"></a>        e_cig <span class="ot">&lt;-</span> cell_total<span class="sc">*</span>age_cig_effect[age,cig]</span>
+<span id="cb4-55"><a href="start.html#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="start.html#cb4-56" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-57"><a href="start.html#cb4-57" aria-hidden="true" tabindex="-1"></a>        former_ecig <span class="ot">&lt;-</span> e_cig</span>
+<span id="cb4-58"><a href="start.html#cb4-58" aria-hidden="true" tabindex="-1"></a>        never_ecig <span class="ot">&lt;-</span>  cell_total <span class="sc">-</span> e_cig <span class="sc">-</span> former_ecig</span>
+<span id="cb4-59"><a href="start.html#cb4-59" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-60"><a href="start.html#cb4-60" aria-hidden="true" tabindex="-1"></a>        states[sex,age,cig,<span class="dv">1</span>,income] <span class="ot">&lt;-</span> never_ecig</span>
+<span id="cb4-61"><a href="start.html#cb4-61" aria-hidden="true" tabindex="-1"></a>        states[sex,age,cig,<span class="dv">2</span>,income] <span class="ot">&lt;-</span> e_cig</span>
+<span id="cb4-62"><a href="start.html#cb4-62" aria-hidden="true" tabindex="-1"></a>        states[sex,age,cig,<span class="dv">3</span>,income] <span class="ot">&lt;-</span> former_ecig</span>
+<span id="cb4-63"><a href="start.html#cb4-63" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-64"><a href="start.html#cb4-64" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-65"><a href="start.html#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="start.html#cb4-66" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-67"><a href="start.html#cb4-67" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb4-68"><a href="start.html#cb4-68" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-69"><a href="start.html#cb4-69" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-70"><a href="start.html#cb4-70" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="outputting-states-to-confirm" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Outputting States to Confirm</h2>
+<p>In the table below, we print out information about the initial starting state. We present this for the overall population and by age bracket. (For refernece, the table was printed using the kable() function in the knitr package)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="right">Overall</th>
+<th align="right">18 - 24</th>
+<th align="right">25 - 34</th>
+<th align="right">35 - 44</th>
+<th align="right">45 - 54</th>
+<th align="right">55 - 64</th>
+<th align="right">65+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Male</td>
+<td align="right">48.40</td>
+<td align="right">50.79</td>
+<td align="right">50.00</td>
+<td align="right">49.40</td>
+<td align="right">48.89</td>
+<td align="right">47.88</td>
+<td align="right">44.32</td>
+</tr>
+<tr class="even">
+<td align="left">Female</td>
+<td align="right">51.60</td>
+<td align="right">49.21</td>
+<td align="right">50.00</td>
+<td align="right">50.60</td>
+<td align="right">51.11</td>
+<td align="right">52.12</td>
+<td align="right">55.68</td>
+</tr>
+<tr class="odd">
+<td align="left">Cigarette Prevalence</td>
+<td align="right">17.00</td>
+<td align="right">16.96</td>
+<td align="right">21.32</td>
+<td align="right">21.29</td>
+<td align="right">17.69</td>
+<td align="right">17.66</td>
+<td align="right">7.78</td>
+</tr>
+<tr class="even">
+<td align="left">Former Cigarette Use Prevalence</td>
+<td align="right">20.95</td>
+<td align="right">10.36</td>
+<td align="right">13.75</td>
+<td align="right">17.14</td>
+<td align="right">20.51</td>
+<td align="right">27.20</td>
+<td align="right">33.37</td>
+</tr>
+<tr class="odd">
+<td align="left">E-Cigarette Prevalence</td>
+<td align="right">3.34</td>
+<td align="right">5.50</td>
+<td align="right">4.40</td>
+<td align="right">4.40</td>
+<td align="right">2.80</td>
+<td align="right">2.80</td>
+<td align="right">0.90</td>
+</tr>
+<tr class="even">
+<td align="left">Dual Use Prevalence</td>
+<td align="right">1.94</td>
+<td align="right">2.31</td>
+<td align="right">2.60</td>
+<td align="right">2.60</td>
+<td align="right">1.88</td>
+<td align="right">1.88</td>
+<td align="right">0.60</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;10k</td>
+<td align="right">5.00</td>
+<td align="right">5.00</td>
+<td align="right">5.00</td>
+<td align="right">5.00</td>
+<td align="right">5.00</td>
+<td align="right">5.00</td>
+<td align="right">5.00</td>
+</tr>
+<tr class="even">
+<td align="left">10-25k</td>
+<td align="right">12.00</td>
+<td align="right">12.00</td>
+<td align="right">12.00</td>
+<td align="right">12.00</td>
+<td align="right">12.00</td>
+<td align="right">12.00</td>
+<td align="right">12.00</td>
+</tr>
+<tr class="odd">
+<td align="left">25-50k</td>
+<td align="right">21.00</td>
+<td align="right">21.00</td>
+<td align="right">21.00</td>
+<td align="right">21.00</td>
+<td align="right">21.00</td>
+<td align="right">21.00</td>
+<td align="right">21.00</td>
+</tr>
+<tr class="even">
+<td align="left">50-100k</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+</tr>
+<tr class="odd">
+<td align="left">100k</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+<td align="right">31.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="calibration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ref.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

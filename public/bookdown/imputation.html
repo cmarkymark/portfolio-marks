@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Data Imputation | Aim #2: Mathematical Model</title>
+  <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Data Imputation | Aim #2: Mathematical Model" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Data Imputation | Aim #2: Mathematical Model" />
+  
+  <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2021-04-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dataset.html"/>
+<link rel="next" href="paramset.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> In This Book</a></li>
+<li class="chapter" data-level="2" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>2</b> Generating the Initial Dataset</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="dataset.html"><a href="dataset.html#participants"><i class="fa fa-check"></i><b>2.1</b> Participants</a></li>
+<li class="chapter" data-level="2.2" data-path="dataset.html"><a href="dataset.html#defining-variables-we-wish-to-capture"><i class="fa fa-check"></i><b>2.2</b> Defining Variables We Wish to Capture</a></li>
+<li class="chapter" data-level="2.3" data-path="dataset.html"><a href="dataset.html#loading-the-necessary-datasets"><i class="fa fa-check"></i><b>2.3</b> Loading the Necessary Datasets</a></li>
+<li class="chapter" data-level="2.4" data-path="dataset.html"><a href="dataset.html#iterating-through-the-datasets"><i class="fa fa-check"></i><b>2.4</b> Iterating Through the Datasets</a></li>
+<li class="chapter" data-level="2.5" data-path="dataset.html"><a href="dataset.html#factoring-the-data"><i class="fa fa-check"></i><b>2.5</b> Factoring the Data</a></li>
+<li class="chapter" data-level="2.6" data-path="dataset.html"><a href="dataset.html#adding-the-weights-and-replicate-weights-to-the-study"><i class="fa fa-check"></i><b>2.6</b> Adding the Weights and Replicate Weights to the Study</a></li>
+<li class="chapter" data-level="2.7" data-path="dataset.html"><a href="dataset.html#save-the-data-frame-for-future-use"><i class="fa fa-check"></i><b>2.7</b> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="imputation.html"><a href="imputation.html"><i class="fa fa-check"></i><b>3</b> Data Imputation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="imputation.html"><a href="imputation.html#loading-libraries-and-the-data"><i class="fa fa-check"></i><b>3.1</b> Loading Libraries and the Data</a></li>
+<li class="chapter" data-level="3.2" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-income"><i class="fa fa-check"></i><b>3.2</b> Heuristic Imputation of Income</a></li>
+<li class="chapter" data-level="3.3" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-former-cige-cig-use"><i class="fa fa-check"></i><b>3.3</b> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li class="chapter" data-level="3.4" data-path="imputation.html"><a href="imputation.html#imputation-with-mice"><i class="fa fa-check"></i><b>3.4</b> Imputation with <em>mice()</em></a></li>
+<li class="chapter" data-level="3.5" data-path="imputation.html"><a href="imputation.html#generating-some-additional-variables"><i class="fa fa-check"></i><b>3.5</b> Generating Some Additional Variables</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="imputation.html"><a href="imputation.html#cateogry-cigarette-and-e-cigarette-use"><i class="fa fa-check"></i><b>3.5.1</b> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li class="chapter" data-level="3.5.2" data-path="imputation.html"><a href="imputation.html#income-change-from-waves-1---2"><i class="fa fa-check"></i><b>3.5.2</b> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="imputation.html"><a href="imputation.html#output-the-imputed-dataset"><i class="fa fa-check"></i><b>3.6</b> Output the Imputed Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="paramset.html"><a href="paramset.html"><i class="fa fa-check"></i><b>4</b> Generate Parameter Set</a></li>
+<li class="chapter" data-level="5" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>5</b> ODE Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>5.1</b> Helper Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>6</b> Calibration</a></li>
+<li class="chapter" data-level="7" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>7</b> Initial Start State</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="start.html"><a href="start.html#stratifying-by-sex-and-age"><i class="fa fa-check"></i><b>7.1</b> Stratifying by Sex and Age</a></li>
+<li class="chapter" data-level="7.2" data-path="start.html"><a href="start.html#stratifying-the-population-by-income-level"><i class="fa fa-check"></i><b>7.2</b> Stratifying the Population by Income Level</a></li>
+<li class="chapter" data-level="7.3" data-path="start.html"><a href="start.html#distributing-cigarette-use"><i class="fa fa-check"></i><b>7.3</b> Distributing Cigarette Use</a></li>
+<li class="chapter" data-level="7.4" data-path="start.html"><a href="start.html#distributing-e-cigarette-use"><i class="fa fa-check"></i><b>7.4</b> Distributing E-Cigarette Use</a></li>
+<li class="chapter" data-level="7.5" data-path="start.html"><a href="start.html#outputting-states-to-confirm"><i class="fa fa-check"></i><b>7.5</b> Outputting States to Confirm</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aim #2: Mathematical Model</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="imputation" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Data Imputation</h1>
+<p>Next we need to impute missing data values. We shall do this in a two-step procedure.</p>
+<p>In the first step, we will undertake a heuristic imputation of former cigarette/e-cigarette use and for income. In this dataset, a majority of missing data is due to the former cig/e-cig variables and the income variables (about 1,000 missing of each at each Wave). We will describe these steps in greater detail below.</p>
+<div id="loading-libraries-and-the-data" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Loading Libraries and the Data</h2>
+<p>As part of our imputation, we will use the mice library in R. In addition, we need to load the dataset generated in the previous chapter.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="imputation.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the mice library</span></span>
+<span id="cb8-2"><a href="imputation.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## If you haven&#39;t downloaded it, you will need to install it</span></span>
+<span id="cb8-3"><a href="imputation.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mice)</span>
+<span id="cb8-4"><a href="imputation.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="imputation.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the dataset -- remove the first column as it will just be a numeric index</span></span>
+<span id="cb8-6"><a href="imputation.html#cb8-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/PATH_Waves_1-3.csv&quot;</span>, <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span></code></pre></div>
+</div>
+<div id="heuristic-imputation-of-income" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Heuristic Imputation of Income</h2>
+<p>First, we are going to undertake a heuristic imputation for missing income values. We are making the assumption that if we know a person’s income at Wave X, then this is the best guess for their missing income value at Wave Y. To the best of our ability, we want to avoid imputing based on relationships between the variables, as that may influence our regression and modeling results in unintended ways. In total, 391 participants had missing income data from all 3 waves which could not be imputed via this method.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="imputation.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Loop through each participant one at a time</span></span>
+<span id="cb9-2"><a href="imputation.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)){</span>
+<span id="cb9-3"><a href="imputation.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-4"><a href="imputation.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we extract the income level at each wave</span></span>
+<span id="cb9-5"><a href="imputation.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Missing data will show up as an NA</span></span>
+<span id="cb9-6"><a href="imputation.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  wave1_inc <span class="ot">&lt;-</span> data<span class="sc">$</span>wave1_income[i]</span>
+<span id="cb9-7"><a href="imputation.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  wave2_inc <span class="ot">&lt;-</span> data<span class="sc">$</span>wave2_income[i]</span>
+<span id="cb9-8"><a href="imputation.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  wave3_inc <span class="ot">&lt;-</span> data<span class="sc">$</span>wave3_income[i]</span>
+<span id="cb9-9"><a href="imputation.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-10"><a href="imputation.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If the Wave 1 data is missing:</span></span>
+<span id="cb9-11"><a href="imputation.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave1_inc)){</span>
+<span id="cb9-12"><a href="imputation.html#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="imputation.html#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="do">## First check if Wave 2 data is available, if so, set the Wave 1 value to equal Wave 2&#39;s</span></span>
+<span id="cb9-14"><a href="imputation.html#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_inc)){</span>
+<span id="cb9-15"><a href="imputation.html#cb9-15" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-16"><a href="imputation.html#cb9-16" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave1_income[i] <span class="ot">&lt;-</span> wave2_inc</span>
+<span id="cb9-17"><a href="imputation.html#cb9-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-18"><a href="imputation.html#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="do">## If the Wave 2 data is also missing, check Wave 3 and set Wave 1 equal to the Wave 3 value    </span></span>
+<span id="cb9-19"><a href="imputation.html#cb9-19" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave3_inc)){</span>
+<span id="cb9-20"><a href="imputation.html#cb9-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-21"><a href="imputation.html#cb9-21" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave1_income[i] <span class="ot">&lt;-</span> wave3_inc</span>
+<span id="cb9-22"><a href="imputation.html#cb9-22" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-23"><a href="imputation.html#cb9-23" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-24"><a href="imputation.html#cb9-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-25"><a href="imputation.html#cb9-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-26"><a href="imputation.html#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We shall repeat a similar process for Wave 2</span></span>
+<span id="cb9-27"><a href="imputation.html#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If Wave 2 income value is NA:</span></span>
+<span id="cb9-28"><a href="imputation.html#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave2_inc)){</span>
+<span id="cb9-29"><a href="imputation.html#cb9-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-30"><a href="imputation.html#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="do">## First we will check Wave 3</span></span>
+<span id="cb9-31"><a href="imputation.html#cb9-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave3_inc)){</span>
+<span id="cb9-32"><a href="imputation.html#cb9-32" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-33"><a href="imputation.html#cb9-33" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_income[i] <span class="ot">&lt;-</span> wave3_inc</span>
+<span id="cb9-34"><a href="imputation.html#cb9-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-35"><a href="imputation.html#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="do">## If the Wave 3 value is NA, then we will check the Wave 1 value    </span></span>
+<span id="cb9-36"><a href="imputation.html#cb9-36" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_inc)){</span>
+<span id="cb9-37"><a href="imputation.html#cb9-37" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-38"><a href="imputation.html#cb9-38" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_income[i] <span class="ot">&lt;-</span> wave1_inc</span>
+<span id="cb9-39"><a href="imputation.html#cb9-39" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-40"><a href="imputation.html#cb9-40" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-41"><a href="imputation.html#cb9-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-42"><a href="imputation.html#cb9-42" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-43"><a href="imputation.html#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we repeat this process for Wave 3</span></span>
+<span id="cb9-44"><a href="imputation.html#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If Wave 3 value is NA:</span></span>
+<span id="cb9-45"><a href="imputation.html#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave3_inc)){</span>
+<span id="cb9-46"><a href="imputation.html#cb9-46" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-47"><a href="imputation.html#cb9-47" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Check the Wave 2 value</span></span>
+<span id="cb9-48"><a href="imputation.html#cb9-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_inc)){</span>
+<span id="cb9-49"><a href="imputation.html#cb9-49" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-50"><a href="imputation.html#cb9-50" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_income[i] <span class="ot">&lt;-</span> wave2_inc</span>
+<span id="cb9-51"><a href="imputation.html#cb9-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-52"><a href="imputation.html#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Else if Wave 2 is also NA, we will check the Wave 1 value    </span></span>
+<span id="cb9-53"><a href="imputation.html#cb9-53" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_inc)){</span>
+<span id="cb9-54"><a href="imputation.html#cb9-54" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-55"><a href="imputation.html#cb9-55" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_income[i] <span class="ot">&lt;-</span> wave1_inc</span>
+<span id="cb9-56"><a href="imputation.html#cb9-56" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb9-57"><a href="imputation.html#cb9-57" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-58"><a href="imputation.html#cb9-58" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-59"><a href="imputation.html#cb9-59" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="heuristic-imputation-of-former-cige-cig-use" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Heuristic Imputation of Former Cig/E-Cig Use</h2>
+<p>The PATH Study computes former use based on a series of questions. The bar for concluding former use is higher than for concluding current use, as such they reported a greater number of missing former values than current. But, we can hope to derive best estimates for former values by looking at previous waves. We are only interested in imputing former status at Waves 2 and 3 (we don’t use Wave 1 values in our study). For example, someone who reports Current Use at Wave 1 but no Current Use at Wave 2, should be classified as a former smoker. We generated a series of rules for imputation to try to capture each of these potential imputation pathways when former use status was missing for a given Wave X (either Wave 2 or 3):</p>
+<ol style="list-style-type: decimal">
+<li>If an individual reports former smoking at Wave X - 1 and no current smoking at Wave X, then they are labeled as former smoking at Wave X</li>
+<li>If an individuals reports no former smoking at Wave X - 1 and no current smoking at Wave X, then they are labeled as no former smoking at Wave X</li>
+<li>If an individuals reports current smoking at Wave X, then they are labeled as no former smoking at Wave X (as they are current)</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="imputation.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will go through each participant one by one</span></span>
+<span id="cb10-2"><a href="imputation.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)){</span>
+<span id="cb10-3"><a href="imputation.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-4"><a href="imputation.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We want to extract needed information</span></span>
+<span id="cb10-5"><a href="imputation.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we extract current and former use status for cigarettes at Waves 1 - 3</span></span>
+<span id="cb10-6"><a href="imputation.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  wave1_current <span class="ot">&lt;-</span> data<span class="sc">$</span>wave1_smoker[i]</span>
+<span id="cb10-7"><a href="imputation.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  wave1_former <span class="ot">&lt;-</span> data<span class="sc">$</span>wave1_former_smoker[i]</span>
+<span id="cb10-8"><a href="imputation.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  wave2_current <span class="ot">&lt;-</span> data<span class="sc">$</span>wave2_smoker[i]</span>
+<span id="cb10-9"><a href="imputation.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  wave2_former <span class="ot">&lt;-</span> data<span class="sc">$</span>wave2_former_smoker[i]</span>
+<span id="cb10-10"><a href="imputation.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  wave3_current <span class="ot">&lt;-</span> data<span class="sc">$</span>wave3_smoker[i]</span>
+<span id="cb10-11"><a href="imputation.html#cb10-11" aria-hidden="true" tabindex="-1"></a>  wave3_former <span class="ot">&lt;-</span> data<span class="sc">$</span>wave3_former_smoker[i]</span>
+<span id="cb10-12"><a href="imputation.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-13"><a href="imputation.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Next we extract current and former e-cigarette use status at Waves 1 - 3</span></span>
+<span id="cb10-14"><a href="imputation.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  wave1_e_current <span class="ot">&lt;-</span> data<span class="sc">$</span>wave1_e_smoker[i]</span>
+<span id="cb10-15"><a href="imputation.html#cb10-15" aria-hidden="true" tabindex="-1"></a>  wave1_e_former <span class="ot">&lt;-</span> data<span class="sc">$</span>wave1_former_e_smoker[i]</span>
+<span id="cb10-16"><a href="imputation.html#cb10-16" aria-hidden="true" tabindex="-1"></a>  wave2_e_current <span class="ot">&lt;-</span> data<span class="sc">$</span>wave2_e_smoker[i]</span>
+<span id="cb10-17"><a href="imputation.html#cb10-17" aria-hidden="true" tabindex="-1"></a>  wave2_e_former <span class="ot">&lt;-</span> data<span class="sc">$</span>wave2_former_e_smoker[i]</span>
+<span id="cb10-18"><a href="imputation.html#cb10-18" aria-hidden="true" tabindex="-1"></a>  wave3_e_current <span class="ot">&lt;-</span> data<span class="sc">$</span>wave3_e_smoker[i]</span>
+<span id="cb10-19"><a href="imputation.html#cb10-19" aria-hidden="true" tabindex="-1"></a>  wave3_e_former <span class="ot">&lt;-</span> data<span class="sc">$</span>wave3_former_e_smoker[i]</span>
+<span id="cb10-20"><a href="imputation.html#cb10-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-21"><a href="imputation.html#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we will impute former cigarette use at Wave 2</span></span>
+<span id="cb10-22"><a href="imputation.html#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave2_former)){</span>
+<span id="cb10-23"><a href="imputation.html#cb10-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-24"><a href="imputation.html#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Scenario 1</span></span>
+<span id="cb10-25"><a href="imputation.html#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_current) <span class="sc">&amp;&amp;</span> wave1_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave2_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-26"><a href="imputation.html#cb10-26" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb10-27"><a href="imputation.html#cb10-27" aria-hidden="true" tabindex="-1"></a>      wave2_former <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb10-28"><a href="imputation.html#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Scenario 2  </span></span>
+<span id="cb10-29"><a href="imputation.html#cb10-29" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_current) <span class="sc">&amp;&amp;</span> wave1_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave2_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-30"><a href="imputation.html#cb10-30" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-31"><a href="imputation.html#cb10-31" aria-hidden="true" tabindex="-1"></a>      wave2_former <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-32"><a href="imputation.html#cb10-32" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Scenario 3.1  </span></span>
+<span id="cb10-33"><a href="imputation.html#cb10-33" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_current) <span class="sc">&amp;&amp;</span> wave1_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave2_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-34"><a href="imputation.html#cb10-34" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-35"><a href="imputation.html#cb10-35" aria-hidden="true" tabindex="-1"></a>      wave2_former <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-36"><a href="imputation.html#cb10-36" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Scenario 3.2  </span></span>
+<span id="cb10-37"><a href="imputation.html#cb10-37" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_current) <span class="sc">&amp;&amp;</span> wave1_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave2_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-38"><a href="imputation.html#cb10-38" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-39"><a href="imputation.html#cb10-39" aria-hidden="true" tabindex="-1"></a>      wave2_former <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-40"><a href="imputation.html#cb10-40" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-41"><a href="imputation.html#cb10-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-42"><a href="imputation.html#cb10-42" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-43"><a href="imputation.html#cb10-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-44"><a href="imputation.html#cb10-44" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Next we repeat the process for Wave 3</span></span>
+<span id="cb10-45"><a href="imputation.html#cb10-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave3_former)){</span>
+<span id="cb10-46"><a href="imputation.html#cb10-46" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-47"><a href="imputation.html#cb10-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_current) <span class="sc">&amp;&amp;</span> wave2_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave3_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-48"><a href="imputation.html#cb10-48" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb10-49"><a href="imputation.html#cb10-49" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_current) <span class="sc">&amp;&amp;</span> wave2_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave3_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-50"><a href="imputation.html#cb10-50" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-51"><a href="imputation.html#cb10-51" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_current) <span class="sc">&amp;&amp;</span> wave2_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave3_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-52"><a href="imputation.html#cb10-52" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-53"><a href="imputation.html#cb10-53" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_current) <span class="sc">&amp;&amp;</span> wave2_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave3_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-54"><a href="imputation.html#cb10-54" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-55"><a href="imputation.html#cb10-55" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-56"><a href="imputation.html#cb10-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-57"><a href="imputation.html#cb10-57" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-58"><a href="imputation.html#cb10-58" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-59"><a href="imputation.html#cb10-59" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We then, similarly, repeat this process for the e-cigarette values as well</span></span>
+<span id="cb10-60"><a href="imputation.html#cb10-60" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First, we impute for Wave 2</span></span>
+<span id="cb10-61"><a href="imputation.html#cb10-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave2_e_former)){</span>
+<span id="cb10-62"><a href="imputation.html#cb10-62" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-63"><a href="imputation.html#cb10-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_e_current) <span class="sc">&amp;&amp;</span> wave1_e_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave2_e_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-64"><a href="imputation.html#cb10-64" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb10-65"><a href="imputation.html#cb10-65" aria-hidden="true" tabindex="-1"></a>      wave2_e_former <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb10-66"><a href="imputation.html#cb10-66" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_e_current) <span class="sc">&amp;&amp;</span> wave1_e_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave2_e_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-67"><a href="imputation.html#cb10-67" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-68"><a href="imputation.html#cb10-68" aria-hidden="true" tabindex="-1"></a>      wave2_e_former <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-69"><a href="imputation.html#cb10-69" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_e_current) <span class="sc">&amp;&amp;</span> wave1_e_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave2_e_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-70"><a href="imputation.html#cb10-70" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-71"><a href="imputation.html#cb10-71" aria-hidden="true" tabindex="-1"></a>      wave2_e_former <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-72"><a href="imputation.html#cb10-72" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave1_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave2_e_current) <span class="sc">&amp;&amp;</span> wave1_e_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave2_e_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-73"><a href="imputation.html#cb10-73" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave2_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-74"><a href="imputation.html#cb10-74" aria-hidden="true" tabindex="-1"></a>      wave2_e_former <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-75"><a href="imputation.html#cb10-75" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-76"><a href="imputation.html#cb10-76" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-77"><a href="imputation.html#cb10-77" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-78"><a href="imputation.html#cb10-78" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-79"><a href="imputation.html#cb10-79" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Next we impute for Wave 3</span></span>
+<span id="cb10-80"><a href="imputation.html#cb10-80" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(wave3_e_former)){</span>
+<span id="cb10-81"><a href="imputation.html#cb10-81" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-82"><a href="imputation.html#cb10-82" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_e_current) <span class="sc">&amp;&amp;</span> wave2_e_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave3_e_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-83"><a href="imputation.html#cb10-83" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;Yes&quot;</span></span>
+<span id="cb10-84"><a href="imputation.html#cb10-84" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_e_current) <span class="sc">&amp;&amp;</span> wave2_e_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave3_e_current <span class="sc">==</span> <span class="st">&quot;No&quot;</span>){</span>
+<span id="cb10-85"><a href="imputation.html#cb10-85" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-86"><a href="imputation.html#cb10-86" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_e_current) <span class="sc">&amp;&amp;</span> wave2_e_former <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">&amp;&amp;</span> wave3_e_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-87"><a href="imputation.html#cb10-87" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-88"><a href="imputation.html#cb10-88" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.na</span>(wave2_e_former) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(wave3_e_current) <span class="sc">&amp;&amp;</span> wave2_e_former <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;&amp;</span> wave3_e_current <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){</span>
+<span id="cb10-89"><a href="imputation.html#cb10-89" aria-hidden="true" tabindex="-1"></a>      data<span class="sc">$</span>wave3_former_e_smoker[i] <span class="ot">&lt;-</span> <span class="st">&quot;No&quot;</span></span>
+<span id="cb10-90"><a href="imputation.html#cb10-90" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-91"><a href="imputation.html#cb10-91" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-92"><a href="imputation.html#cb10-92" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-93"><a href="imputation.html#cb10-93" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-94"><a href="imputation.html#cb10-94" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="imputation-with-mice" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Imputation with <em>mice()</em></h2>
+<p>Now that we have imputed many of the missing income and former use variables, we want to impute all the remaining missing values. We will use the mice (Multivariate Imputation by Chained Equations) package to do so. The mice package can be used to generate multiple imputed datasets. By doing so, we are able to run the analyses on each imputed dataset and then pool the results. This allows us to account for uncertainty introduced by the imputation process. We have opted to create 15 such imputed datasets.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="imputation.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we create a temporary data frame with just the variables we wish to impute</span></span>
+<span id="cb11-2"><a href="imputation.html#cb11-2" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> data[,<span class="fu">c</span>(<span class="st">&quot;wave2_age&quot;</span>,</span>
+<span id="cb11-3"><a href="imputation.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;gender&quot;</span>, <span class="st">&quot;race&quot;</span>,<span class="st">&quot;hispanic&quot;</span>,</span>
+<span id="cb11-4"><a href="imputation.html#cb11-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;wave1_income&quot;</span>,<span class="st">&quot;wave2_income&quot;</span>,<span class="st">&quot;wave3_income&quot;</span>,</span>
+<span id="cb11-5"><a href="imputation.html#cb11-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;wave2_smoker&quot;</span>,<span class="st">&quot;wave2_former_smoker&quot;</span>,</span>
+<span id="cb11-6"><a href="imputation.html#cb11-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;wave2_e_smoker&quot;</span>,<span class="st">&quot;wave2_former_e_smoker&quot;</span>,</span>
+<span id="cb11-7"><a href="imputation.html#cb11-7" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;wave3_smoker&quot;</span>,<span class="st">&quot;wave3_former_smoker&quot;</span>,</span>
+<span id="cb11-8"><a href="imputation.html#cb11-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;wave3_e_smoker&quot;</span>,<span class="st">&quot;wave3_former_e_smoker&quot;</span>)]</span>
+<span id="cb11-9"><a href="imputation.html#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="imputation.html#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="do">## While our variables are all categorical, some of them are ordered. It is important to let the mice() function know which categorical variables are ordered. We use the ordered function to do so.</span></span>
+<span id="cb11-11"><a href="imputation.html#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="imputation.html#cb11-12" aria-hidden="true" tabindex="-1"></a>temp<span class="sc">$</span>wave2_age <span class="ot">&lt;-</span> <span class="fu">ordered</span>(temp<span class="sc">$</span>wave2_age, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;18-24&quot;</span>,<span class="st">&quot;25-34&quot;</span>,<span class="st">&quot;35-44&quot;</span>,<span class="st">&quot;45-54&quot;</span>,<span class="st">&quot;55-64&quot;</span>,<span class="st">&quot;&gt;65&quot;</span>))</span>
+<span id="cb11-13"><a href="imputation.html#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="imputation.html#cb11-14" aria-hidden="true" tabindex="-1"></a>temp<span class="sc">$</span>wave1_income <span class="ot">&lt;-</span> <span class="fu">ordered</span>(temp<span class="sc">$</span>wave1_income, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$10k&quot;</span>,<span class="st">&quot;$10-25k&quot;</span>,<span class="st">&quot;$25-50k&quot;</span>,<span class="st">&quot;$50k-100k&quot;</span>,<span class="st">&quot;&gt;=$100k&quot;</span>))</span>
+<span id="cb11-15"><a href="imputation.html#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="imputation.html#cb11-16" aria-hidden="true" tabindex="-1"></a>temp<span class="sc">$</span>wave2_income <span class="ot">&lt;-</span> <span class="fu">ordered</span>(temp<span class="sc">$</span>wave2_income, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$10k&quot;</span>,<span class="st">&quot;$10-25k&quot;</span>,<span class="st">&quot;$25-50k&quot;</span>,<span class="st">&quot;$50k-100k&quot;</span>,<span class="st">&quot;&gt;=$100k&quot;</span>))</span>
+<span id="cb11-17"><a href="imputation.html#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="imputation.html#cb11-18" aria-hidden="true" tabindex="-1"></a>temp<span class="sc">$</span>wave3_income <span class="ot">&lt;-</span> <span class="fu">ordered</span>(temp<span class="sc">$</span>wave3_income, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$10k&quot;</span>,<span class="st">&quot;$10-25k&quot;</span>,<span class="st">&quot;$25-50k&quot;</span>,<span class="st">&quot;$50k-100k&quot;</span>,<span class="st">&quot;&gt;=$100k&quot;</span>))</span>
+<span id="cb11-19"><a href="imputation.html#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="imputation.html#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Once variables are in correct format, we run the mice function.</span></span>
+<span id="cb11-21"><a href="imputation.html#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="do">## We run it 15 times (m = 15)</span></span>
+<span id="cb11-22"><a href="imputation.html#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="do">## We set a seed as well so that the results are replicable</span></span>
+<span id="cb11-23"><a href="imputation.html#cb11-23" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">mice</span>(temp, <span class="at">m =</span> <span class="dv">15</span>, <span class="at">seed =</span> <span class="dv">123</span>)</span>
+<span id="cb11-24"><a href="imputation.html#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="imputation.html#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="do">## We then extract the results in long format</span></span>
+<span id="cb11-26"><a href="imputation.html#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="do">## The com dataset is thus 15 imputed datasets on top of each other</span></span>
+<span id="cb11-27"><a href="imputation.html#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="do">## The .imp variable for each observation corresponds to which imputation a given observation belongs to</span></span>
+<span id="cb11-28"><a href="imputation.html#cb11-28" aria-hidden="true" tabindex="-1"></a>com <span class="ot">&lt;-</span> <span class="fu">complete</span>(temp, <span class="at">action=</span><span class="st">&quot;long&quot;</span>)</span>
+<span id="cb11-29"><a href="imputation.html#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="imputation.html#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="do">## We then want to add the weights and replicate weights back to the dataset</span></span>
+<span id="cb11-31"><a href="imputation.html#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="do">## These weights are contained in columns 38 - 138 of the original dataset</span></span>
+<span id="cb11-32"><a href="imputation.html#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="do">## The com dataset is 15 times as long as the data data.frame </span></span>
+<span id="cb11-33"><a href="imputation.html#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="do">## The cbind function nicley repeats the weights, such that they are correctly applied to each imputed dataset</span></span>
+<span id="cb11-34"><a href="imputation.html#cb11-34" aria-hidden="true" tabindex="-1"></a>com <span class="ot">&lt;-</span> <span class="fu">cbind</span>(com, data[,<span class="fu">c</span>(<span class="dv">37</span><span class="sc">:</span><span class="dv">137</span>)])</span></code></pre></div>
+</div>
+<div id="generating-some-additional-variables" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Generating Some Additional Variables</h2>
+<div id="cateogry-cigarette-and-e-cigarette-use" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> 3-Cateogry Cigarette and E-Cigarette Use</h3>
+<p>For the purposes of our study objectives, we want to have 3 category variables for both cigarette and e_cigarette use at Wave 2.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="imputation.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create the variable for e-cigarette use</span></span>
+<span id="cb12-2"><a href="imputation.html#cb12-2" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb12-3"><a href="imputation.html#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="imputation.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Define never use as reporting neither current nor former use</span></span>
+<span id="cb12-5"><a href="imputation.html#cb12-5" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2[com<span class="sc">$</span>wave2_e_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_e_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb12-6"><a href="imputation.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="imputation.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Define current use as reporting current use</span></span>
+<span id="cb12-8"><a href="imputation.html#cb12-8" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2[com<span class="sc">$</span>wave2_e_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb12-9"><a href="imputation.html#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="imputation.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Define former use as reporting no current use and reporting former use</span></span>
+<span id="cb12-11"><a href="imputation.html#cb12-11" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2[com<span class="sc">$</span>wave2_e_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_e_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb12-12"><a href="imputation.html#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="imputation.html#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Then factor the variable so the numeric values are matched with appropriate label</span></span>
+<span id="cb12-14"><a href="imputation.html#cb12-14" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(com<span class="sc">$</span>e_cigarette_3cat_wave2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Never E-Cig&quot;</span>,<span class="st">&quot;Current E-Cig&quot;</span>,<span class="st">&quot;Former E-Cig&quot;</span>))</span>
+<span id="cb12-15"><a href="imputation.html#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="imputation.html#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Repeat variable creation process for cigarette use</span></span>
+<span id="cb12-17"><a href="imputation.html#cb12-17" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb12-18"><a href="imputation.html#cb12-18" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2[com<span class="sc">$</span>wave2_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb12-19"><a href="imputation.html#cb12-19" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2[com<span class="sc">$</span>wave2_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb12-20"><a href="imputation.html#cb12-20" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2[com<span class="sc">$</span>wave2_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb12-21"><a href="imputation.html#cb12-21" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(com<span class="sc">$</span>cigarette_3cat_wave2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Never Cig&quot;</span>,<span class="st">&quot;Current Cig&quot;</span>,<span class="st">&quot;Former Cig&quot;</span>))</span></code></pre></div>
+</div>
+<div id="income-change-from-waves-1---2" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Income Change from Waves 1 - 2</h3>
+<p>We also wish to capture changes in income from Waves 1 to 2. We capture the direction of the change, if such a change exists.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="imputation.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we create the new variable</span></span>
+<span id="cb13-2"><a href="imputation.html#cb13-2" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>income_change <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-3"><a href="imputation.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="imputation.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we go through each observation</span></span>
+<span id="cb13-5"><a href="imputation.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(com)){</span>
+<span id="cb13-6"><a href="imputation.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-7"><a href="imputation.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We extract the wave1 and wave 2 income level</span></span>
+<span id="cb13-8"><a href="imputation.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  wave1_income <span class="ot">&lt;-</span> com<span class="sc">$</span>wave1_income[i]</span>
+<span id="cb13-9"><a href="imputation.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  wave2_income <span class="ot">&lt;-</span> com<span class="sc">$</span>wave2_income[i]</span>
+<span id="cb13-10"><a href="imputation.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-11"><a href="imputation.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If wave 1 income == wave 2 income, then we label the observation with 0 == no change</span></span>
+<span id="cb13-12"><a href="imputation.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(wave1_income <span class="sc">==</span> wave2_income){</span>
+<span id="cb13-13"><a href="imputation.html#cb13-13" aria-hidden="true" tabindex="-1"></a>    com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="do">## no change</span></span>
+<span id="cb13-14"><a href="imputation.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-15"><a href="imputation.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Otherwise, there was a change </span></span>
+<span id="cb13-16"><a href="imputation.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If income at Wave 1 was the lowest possible &lt;10k, then their income increased (== 1)  </span></span>
+<span id="cb13-17"><a href="imputation.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;&lt;$10k&quot;</span>){</span>
+<span id="cb13-18"><a href="imputation.html#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="imputation.html#cb13-19" aria-hidden="true" tabindex="-1"></a>    com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-20"><a href="imputation.html#cb13-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-21"><a href="imputation.html#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Similarly, if their income was at the highest level at Wave 1, then it must&#39;ve gone down (== - 1)    </span></span>
+<span id="cb13-22"><a href="imputation.html#cb13-22" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;&gt;=$100k&quot;</span>){</span>
+<span id="cb13-23"><a href="imputation.html#cb13-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-24"><a href="imputation.html#cb13-24" aria-hidden="true" tabindex="-1"></a>    com<span class="sc">$</span>income_change[i] <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb13-25"><a href="imputation.html#cb13-25" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb13-26"><a href="imputation.html#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## For other income groups we just need to check if the wave 2 value was lower or higher</span></span>
+<span id="cb13-27"><a href="imputation.html#cb13-27" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;$10-25k&quot;</span>){</span>
+<span id="cb13-28"><a href="imputation.html#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## &lt;10k is the only income possible lower</span></span>
+<span id="cb13-29"><a href="imputation.html#cb13-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(wave2_income <span class="sc">==</span> <span class="st">&quot;&lt;$10k&quot;</span>){</span>
+<span id="cb13-30"><a href="imputation.html#cb13-30" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span> </span>
+<span id="cb13-31"><a href="imputation.html#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Since we have eliminated no change and decrease, income level must&#39;ve gone up  </span></span>
+<span id="cb13-32"><a href="imputation.html#cb13-32" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb13-33"><a href="imputation.html#cb13-33" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb13-34"><a href="imputation.html#cb13-34" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-35"><a href="imputation.html#cb13-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-36"><a href="imputation.html#cb13-36" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;$25-50k&quot;</span>){</span>
+<span id="cb13-37"><a href="imputation.html#cb13-37" aria-hidden="true" tabindex="-1"></a>    <span class="do">## First check if income went down</span></span>
+<span id="cb13-38"><a href="imputation.html#cb13-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(wave2_income <span class="sc">==</span> <span class="st">&quot;&lt;$10k&quot;</span> <span class="sc">||</span> wave2_income <span class="sc">==</span> <span class="st">&quot;$10-25k&quot;</span>){</span>
+<span id="cb13-39"><a href="imputation.html#cb13-39" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb13-40"><a href="imputation.html#cb13-40" aria-hidden="true" tabindex="-1"></a>    <span class="do">## If not, must&#39;ve increased  </span></span>
+<span id="cb13-41"><a href="imputation.html#cb13-41" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb13-42"><a href="imputation.html#cb13-42" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-43"><a href="imputation.html#cb13-43" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-44"><a href="imputation.html#cb13-44" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-45"><a href="imputation.html#cb13-45" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;$50-100k&quot;</span>){</span>
+<span id="cb13-46"><a href="imputation.html#cb13-46" aria-hidden="true" tabindex="-1"></a>    <span class="do">## &gt;100k is only possible increase value</span></span>
+<span id="cb13-47"><a href="imputation.html#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(wave2_income <span class="sc">==</span> <span class="st">&quot;&gt;=$100k&quot;</span>){</span>
+<span id="cb13-48"><a href="imputation.html#cb13-48" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-49"><a href="imputation.html#cb13-49" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Otherwise, must&#39;ve decreased  </span></span>
+<span id="cb13-50"><a href="imputation.html#cb13-50" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb13-51"><a href="imputation.html#cb13-51" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb13-52"><a href="imputation.html#cb13-52" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-53"><a href="imputation.html#cb13-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-54"><a href="imputation.html#cb13-54" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-55"><a href="imputation.html#cb13-55" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-56"><a href="imputation.html#cb13-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-57"><a href="imputation.html#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-58"><a href="imputation.html#cb13-58" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>income_change <span class="ot">&lt;-</span> <span class="fu">factor</span>(com<span class="sc">$</span>income_change, <span class="at">levels =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Decreased&quot;</span>,<span class="st">&quot;No Change&quot;</span>,<span class="st">&quot;Increased&quot;</span>))</span>
+<span id="cb13-59"><a href="imputation.html#cb13-59" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>income_change <span class="ot">&lt;-</span> <span class="fu">relevel</span>(com<span class="sc">$</span>income_change, <span class="at">ref =</span> <span class="st">&quot;No Change&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="output-the-imputed-dataset" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Output the Imputed Dataset</h2>
+<p>We now have our imputed dataset, with some generated variables that we need for our analyses. We will save it for later use!</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="imputation.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(com, <span class="fu">paste</span>(<span class="st">&quot;Data/Imputed_Dataset_&quot;</span>,<span class="fu">Sys.Date</span>(),<span class="st">&quot;.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paramset.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>
