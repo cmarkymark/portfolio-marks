@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="3.5 Generating Some Additional Variables | Aim #2: Mathematical Model" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+
+
+<meta name="author" content="Charles Marks" />
+
+<meta name="date" content="2021-04-12" />
+
+
+<meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation">
+
+<title>3.5 Generating Some Additional Variables | Aim #2: Mathematical Model</title>
+
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#in-this-book"><span class="toc-section-number">1</span> In This Book</a></li>
+<li><a href="2-dataset.html#dataset"><span class="toc-section-number">2</span> Generating the Initial Dataset</a>
+<ul>
+<li><a href="2-1-participants.html#participants"><span class="toc-section-number">2.1</span> Participants</a></li>
+<li><a href="2-2-defining-variables-we-wish-to-capture.html#defining-variables-we-wish-to-capture"><span class="toc-section-number">2.2</span> Defining Variables We Wish to Capture</a></li>
+<li><a href="2-3-loading-the-necessary-datasets.html#loading-the-necessary-datasets"><span class="toc-section-number">2.3</span> Loading the Necessary Datasets</a></li>
+<li><a href="2-4-iterating-through-the-datasets.html#iterating-through-the-datasets"><span class="toc-section-number">2.4</span> Iterating Through the Datasets</a></li>
+<li><a href="2-5-factoring-the-data.html#factoring-the-data"><span class="toc-section-number">2.5</span> Factoring the Data</a></li>
+<li><a href="2-6-adding-the-weights-and-replicate-weights-to-the-study.html#adding-the-weights-and-replicate-weights-to-the-study"><span class="toc-section-number">2.6</span> Adding the Weights and Replicate Weights to the Study</a></li>
+<li><a href="2-7-save-the-data-frame-for-future-use.html#save-the-data-frame-for-future-use"><span class="toc-section-number">2.7</span> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li><a href="3-imputation.html#imputation"><span class="toc-section-number">3</span> Data Imputation</a>
+<ul>
+<li><a href="3-1-loading-libraries-and-the-data.html#loading-libraries-and-the-data"><span class="toc-section-number">3.1</span> Loading Libraries and the Data</a></li>
+<li><a href="3-2-heuristic-imputation-of-income.html#heuristic-imputation-of-income"><span class="toc-section-number">3.2</span> Heuristic Imputation of Income</a></li>
+<li><a href="3-3-heuristic-imputation-of-former-cige-cig-use.html#heuristic-imputation-of-former-cige-cig-use"><span class="toc-section-number">3.3</span> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li><a href="3-4-imputation-with-mice.html#imputation-with-mice"><span class="toc-section-number">3.4</span> Imputation with <em>mice()</em></a></li>
+<li><a href="3-5-generating-some-additional-variables.html#generating-some-additional-variables"><span class="toc-section-number">3.5</span> Generating Some Additional Variables</a>
+<ul>
+<li><a href="3-5-generating-some-additional-variables.html#cateogry-cigarette-and-e-cigarette-use"><span class="toc-section-number">3.5.1</span> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li><a href="3-5-generating-some-additional-variables.html#income-change-from-waves-1---2"><span class="toc-section-number">3.5.2</span> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li><a href="3-6-output-the-imputed-dataset.html#output-the-imputed-dataset"><span class="toc-section-number">3.6</span> Output the Imputed Dataset</a></li>
+</ul></li>
+<li><a href="4-paramset.html#paramset"><span class="toc-section-number">4</span> Generate Parameter Set</a></li>
+<li><a href="5-ode.html#ode"><span class="toc-section-number">5</span> ODE Functions</a>
+<ul>
+<li><a href="5-1-helper-functions.html#helper-functions"><span class="toc-section-number">5.1</span> Helper Functions</a></li>
+</ul></li>
+<li><a href="6-calibration.html#calibration"><span class="toc-section-number">6</span> Calibration</a></li>
+<li><a href="7-start.html#start"><span class="toc-section-number">7</span> Initial Start State</a>
+<ul>
+<li><a href="7-1-stratifying-by-sex-and-age.html#stratifying-by-sex-and-age"><span class="toc-section-number">7.1</span> Stratifying by Sex and Age</a></li>
+<li><a href="7-2-stratifying-the-population-by-income-level.html#stratifying-the-population-by-income-level"><span class="toc-section-number">7.2</span> Stratifying the Population by Income Level</a></li>
+<li><a href="7-3-distributing-cigarette-use.html#distributing-cigarette-use"><span class="toc-section-number">7.3</span> Distributing Cigarette Use</a></li>
+<li><a href="7-4-distributing-e-cigarette-use.html#distributing-e-cigarette-use"><span class="toc-section-number">7.4</span> Distributing E-Cigarette Use</a></li>
+<li><a href="7-5-outputting-states-to-confirm.html#outputting-states-to-confirm"><span class="toc-section-number">7.5</span> Outputting States to Confirm</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="generating-some-additional-variables" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Generating Some Additional Variables</h2>
+<div id="cateogry-cigarette-and-e-cigarette-use" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> 3-Cateogry Cigarette and E-Cigarette Use</h3>
+<p>For the purposes of our study objectives, we want to have 3 category variables for both cigarette and e_cigarette use at Wave 2.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="3-5-generating-some-additional-variables.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create the variable for e-cigarette use</span></span>
+<span id="cb12-2"><a href="3-5-generating-some-additional-variables.html#cb12-2" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb12-3"><a href="3-5-generating-some-additional-variables.html#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="3-5-generating-some-additional-variables.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Define never use as reporting neither current nor former use</span></span>
+<span id="cb12-5"><a href="3-5-generating-some-additional-variables.html#cb12-5" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2[com<span class="sc">$</span>wave2_e_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_e_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb12-6"><a href="3-5-generating-some-additional-variables.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="3-5-generating-some-additional-variables.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Define current use as reporting current use</span></span>
+<span id="cb12-8"><a href="3-5-generating-some-additional-variables.html#cb12-8" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2[com<span class="sc">$</span>wave2_e_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb12-9"><a href="3-5-generating-some-additional-variables.html#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="3-5-generating-some-additional-variables.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Define former use as reporting no current use and reporting former use</span></span>
+<span id="cb12-11"><a href="3-5-generating-some-additional-variables.html#cb12-11" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2[com<span class="sc">$</span>wave2_e_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_e_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb12-12"><a href="3-5-generating-some-additional-variables.html#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="3-5-generating-some-additional-variables.html#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Then factor the variable so the numeric values are matched with appropriate label</span></span>
+<span id="cb12-14"><a href="3-5-generating-some-additional-variables.html#cb12-14" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>e_cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(com<span class="sc">$</span>e_cigarette_3cat_wave2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Never E-Cig&quot;</span>,<span class="st">&quot;Current E-Cig&quot;</span>,<span class="st">&quot;Former E-Cig&quot;</span>))</span>
+<span id="cb12-15"><a href="3-5-generating-some-additional-variables.html#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="3-5-generating-some-additional-variables.html#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Repeat variable creation process for cigarette use</span></span>
+<span id="cb12-17"><a href="3-5-generating-some-additional-variables.html#cb12-17" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb12-18"><a href="3-5-generating-some-additional-variables.html#cb12-18" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2[com<span class="sc">$</span>wave2_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb12-19"><a href="3-5-generating-some-additional-variables.html#cb12-19" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2[com<span class="sc">$</span>wave2_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb12-20"><a href="3-5-generating-some-additional-variables.html#cb12-20" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2[com<span class="sc">$</span>wave2_smoker <span class="sc">==</span> <span class="st">&quot;No&quot;</span> <span class="sc">&amp;</span> com<span class="sc">$</span>wave2_former_smoker <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb12-21"><a href="3-5-generating-some-additional-variables.html#cb12-21" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>cigarette_3cat_wave2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(com<span class="sc">$</span>cigarette_3cat_wave2, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Never Cig&quot;</span>,<span class="st">&quot;Current Cig&quot;</span>,<span class="st">&quot;Former Cig&quot;</span>))</span></code></pre></div>
+</div>
+<div id="income-change-from-waves-1---2" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Income Change from Waves 1 - 2</h3>
+<p>We also wish to capture changes in income from Waves 1 to 2. We capture the direction of the change, if such a change exists.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="3-5-generating-some-additional-variables.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we create the new variable</span></span>
+<span id="cb13-2"><a href="3-5-generating-some-additional-variables.html#cb13-2" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>income_change <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-3"><a href="3-5-generating-some-additional-variables.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="3-5-generating-some-additional-variables.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we go through each observation</span></span>
+<span id="cb13-5"><a href="3-5-generating-some-additional-variables.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(com)){</span>
+<span id="cb13-6"><a href="3-5-generating-some-additional-variables.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-7"><a href="3-5-generating-some-additional-variables.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We extract the wave1 and wave 2 income level</span></span>
+<span id="cb13-8"><a href="3-5-generating-some-additional-variables.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  wave1_income <span class="ot">&lt;-</span> com<span class="sc">$</span>wave1_income[i]</span>
+<span id="cb13-9"><a href="3-5-generating-some-additional-variables.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  wave2_income <span class="ot">&lt;-</span> com<span class="sc">$</span>wave2_income[i]</span>
+<span id="cb13-10"><a href="3-5-generating-some-additional-variables.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-11"><a href="3-5-generating-some-additional-variables.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If wave 1 income == wave 2 income, then we label the observation with 0 == no change</span></span>
+<span id="cb13-12"><a href="3-5-generating-some-additional-variables.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(wave1_income <span class="sc">==</span> wave2_income){</span>
+<span id="cb13-13"><a href="3-5-generating-some-additional-variables.html#cb13-13" aria-hidden="true" tabindex="-1"></a>    com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="do">## no change</span></span>
+<span id="cb13-14"><a href="3-5-generating-some-additional-variables.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-15"><a href="3-5-generating-some-additional-variables.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Otherwise, there was a change </span></span>
+<span id="cb13-16"><a href="3-5-generating-some-additional-variables.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## If income at Wave 1 was the lowest possible &lt;10k, then their income increased (== 1)  </span></span>
+<span id="cb13-17"><a href="3-5-generating-some-additional-variables.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;&lt;$10k&quot;</span>){</span>
+<span id="cb13-18"><a href="3-5-generating-some-additional-variables.html#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="3-5-generating-some-additional-variables.html#cb13-19" aria-hidden="true" tabindex="-1"></a>    com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-20"><a href="3-5-generating-some-additional-variables.html#cb13-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-21"><a href="3-5-generating-some-additional-variables.html#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Similarly, if their income was at the highest level at Wave 1, then it must&#39;ve gone down (== - 1)    </span></span>
+<span id="cb13-22"><a href="3-5-generating-some-additional-variables.html#cb13-22" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;&gt;=$100k&quot;</span>){</span>
+<span id="cb13-23"><a href="3-5-generating-some-additional-variables.html#cb13-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-24"><a href="3-5-generating-some-additional-variables.html#cb13-24" aria-hidden="true" tabindex="-1"></a>    com<span class="sc">$</span>income_change[i] <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb13-25"><a href="3-5-generating-some-additional-variables.html#cb13-25" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb13-26"><a href="3-5-generating-some-additional-variables.html#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## For other income groups we just need to check if the wave 2 value was lower or higher</span></span>
+<span id="cb13-27"><a href="3-5-generating-some-additional-variables.html#cb13-27" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;$10-25k&quot;</span>){</span>
+<span id="cb13-28"><a href="3-5-generating-some-additional-variables.html#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## &lt;10k is the only income possible lower</span></span>
+<span id="cb13-29"><a href="3-5-generating-some-additional-variables.html#cb13-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(wave2_income <span class="sc">==</span> <span class="st">&quot;&lt;$10k&quot;</span>){</span>
+<span id="cb13-30"><a href="3-5-generating-some-additional-variables.html#cb13-30" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span> </span>
+<span id="cb13-31"><a href="3-5-generating-some-additional-variables.html#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Since we have eliminated no change and decrease, income level must&#39;ve gone up  </span></span>
+<span id="cb13-32"><a href="3-5-generating-some-additional-variables.html#cb13-32" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb13-33"><a href="3-5-generating-some-additional-variables.html#cb13-33" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb13-34"><a href="3-5-generating-some-additional-variables.html#cb13-34" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-35"><a href="3-5-generating-some-additional-variables.html#cb13-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-36"><a href="3-5-generating-some-additional-variables.html#cb13-36" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;$25-50k&quot;</span>){</span>
+<span id="cb13-37"><a href="3-5-generating-some-additional-variables.html#cb13-37" aria-hidden="true" tabindex="-1"></a>    <span class="do">## First check if income went down</span></span>
+<span id="cb13-38"><a href="3-5-generating-some-additional-variables.html#cb13-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(wave2_income <span class="sc">==</span> <span class="st">&quot;&lt;$10k&quot;</span> <span class="sc">||</span> wave2_income <span class="sc">==</span> <span class="st">&quot;$10-25k&quot;</span>){</span>
+<span id="cb13-39"><a href="3-5-generating-some-additional-variables.html#cb13-39" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb13-40"><a href="3-5-generating-some-additional-variables.html#cb13-40" aria-hidden="true" tabindex="-1"></a>    <span class="do">## If not, must&#39;ve increased  </span></span>
+<span id="cb13-41"><a href="3-5-generating-some-additional-variables.html#cb13-41" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb13-42"><a href="3-5-generating-some-additional-variables.html#cb13-42" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-43"><a href="3-5-generating-some-additional-variables.html#cb13-43" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-44"><a href="3-5-generating-some-additional-variables.html#cb13-44" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-45"><a href="3-5-generating-some-additional-variables.html#cb13-45" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(wave1_income <span class="sc">==</span> <span class="st">&quot;$50-100k&quot;</span>){</span>
+<span id="cb13-46"><a href="3-5-generating-some-additional-variables.html#cb13-46" aria-hidden="true" tabindex="-1"></a>    <span class="do">## &gt;100k is only possible increase value</span></span>
+<span id="cb13-47"><a href="3-5-generating-some-additional-variables.html#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(wave2_income <span class="sc">==</span> <span class="st">&quot;&gt;=$100k&quot;</span>){</span>
+<span id="cb13-48"><a href="3-5-generating-some-additional-variables.html#cb13-48" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-49"><a href="3-5-generating-some-additional-variables.html#cb13-49" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Otherwise, must&#39;ve decreased  </span></span>
+<span id="cb13-50"><a href="3-5-generating-some-additional-variables.html#cb13-50" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb13-51"><a href="3-5-generating-some-additional-variables.html#cb13-51" aria-hidden="true" tabindex="-1"></a>      com<span class="sc">$</span>income_change[i] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb13-52"><a href="3-5-generating-some-additional-variables.html#cb13-52" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-53"><a href="3-5-generating-some-additional-variables.html#cb13-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-54"><a href="3-5-generating-some-additional-variables.html#cb13-54" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-55"><a href="3-5-generating-some-additional-variables.html#cb13-55" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-56"><a href="3-5-generating-some-additional-variables.html#cb13-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-57"><a href="3-5-generating-some-additional-variables.html#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-58"><a href="3-5-generating-some-additional-variables.html#cb13-58" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>income_change <span class="ot">&lt;-</span> <span class="fu">factor</span>(com<span class="sc">$</span>income_change, <span class="at">levels =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Decreased&quot;</span>,<span class="st">&quot;No Change&quot;</span>,<span class="st">&quot;Increased&quot;</span>))</span>
+<span id="cb13-59"><a href="3-5-generating-some-additional-variables.html#cb13-59" aria-hidden="true" tabindex="-1"></a>com<span class="sc">$</span>income_change <span class="ot">&lt;-</span> <span class="fu">relevel</span>(com<span class="sc">$</span>income_change, <span class="at">ref =</span> <span class="st">&quot;No Change&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="3-4-imputation-with-mice.html"><button class="btn btn-default">Previous</button></a>
+<a href="3-6-output-the-imputed-dataset.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

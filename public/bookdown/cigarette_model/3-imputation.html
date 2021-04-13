@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 3 Data Imputation | Aim #2: Mathematical Model" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+
+
+<meta name="author" content="Charles Marks" />
+
+<meta name="date" content="2021-04-12" />
+
+
+<meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation">
+
+<title>Chapter 3 Data Imputation | Aim #2: Mathematical Model</title>
+
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#in-this-book"><span class="toc-section-number">1</span> In This Book</a></li>
+<li><a href="2-dataset.html#dataset"><span class="toc-section-number">2</span> Generating the Initial Dataset</a>
+<ul>
+<li><a href="2-1-participants.html#participants"><span class="toc-section-number">2.1</span> Participants</a></li>
+<li><a href="2-2-defining-variables-we-wish-to-capture.html#defining-variables-we-wish-to-capture"><span class="toc-section-number">2.2</span> Defining Variables We Wish to Capture</a></li>
+<li><a href="2-3-loading-the-necessary-datasets.html#loading-the-necessary-datasets"><span class="toc-section-number">2.3</span> Loading the Necessary Datasets</a></li>
+<li><a href="2-4-iterating-through-the-datasets.html#iterating-through-the-datasets"><span class="toc-section-number">2.4</span> Iterating Through the Datasets</a></li>
+<li><a href="2-5-factoring-the-data.html#factoring-the-data"><span class="toc-section-number">2.5</span> Factoring the Data</a></li>
+<li><a href="2-6-adding-the-weights-and-replicate-weights-to-the-study.html#adding-the-weights-and-replicate-weights-to-the-study"><span class="toc-section-number">2.6</span> Adding the Weights and Replicate Weights to the Study</a></li>
+<li><a href="2-7-save-the-data-frame-for-future-use.html#save-the-data-frame-for-future-use"><span class="toc-section-number">2.7</span> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li><a href="3-imputation.html#imputation"><span class="toc-section-number">3</span> Data Imputation</a>
+<ul>
+<li><a href="3-1-loading-libraries-and-the-data.html#loading-libraries-and-the-data"><span class="toc-section-number">3.1</span> Loading Libraries and the Data</a></li>
+<li><a href="3-2-heuristic-imputation-of-income.html#heuristic-imputation-of-income"><span class="toc-section-number">3.2</span> Heuristic Imputation of Income</a></li>
+<li><a href="3-3-heuristic-imputation-of-former-cige-cig-use.html#heuristic-imputation-of-former-cige-cig-use"><span class="toc-section-number">3.3</span> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li><a href="3-4-imputation-with-mice.html#imputation-with-mice"><span class="toc-section-number">3.4</span> Imputation with <em>mice()</em></a></li>
+<li><a href="3-5-generating-some-additional-variables.html#generating-some-additional-variables"><span class="toc-section-number">3.5</span> Generating Some Additional Variables</a>
+<ul>
+<li><a href="3-5-generating-some-additional-variables.html#cateogry-cigarette-and-e-cigarette-use"><span class="toc-section-number">3.5.1</span> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li><a href="3-5-generating-some-additional-variables.html#income-change-from-waves-1---2"><span class="toc-section-number">3.5.2</span> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li><a href="3-6-output-the-imputed-dataset.html#output-the-imputed-dataset"><span class="toc-section-number">3.6</span> Output the Imputed Dataset</a></li>
+</ul></li>
+<li><a href="4-paramset.html#paramset"><span class="toc-section-number">4</span> Generate Parameter Set</a></li>
+<li><a href="5-ode.html#ode"><span class="toc-section-number">5</span> ODE Functions</a>
+<ul>
+<li><a href="5-1-helper-functions.html#helper-functions"><span class="toc-section-number">5.1</span> Helper Functions</a></li>
+</ul></li>
+<li><a href="6-calibration.html#calibration"><span class="toc-section-number">6</span> Calibration</a></li>
+<li><a href="7-start.html#start"><span class="toc-section-number">7</span> Initial Start State</a>
+<ul>
+<li><a href="7-1-stratifying-by-sex-and-age.html#stratifying-by-sex-and-age"><span class="toc-section-number">7.1</span> Stratifying by Sex and Age</a></li>
+<li><a href="7-2-stratifying-the-population-by-income-level.html#stratifying-the-population-by-income-level"><span class="toc-section-number">7.2</span> Stratifying the Population by Income Level</a></li>
+<li><a href="7-3-distributing-cigarette-use.html#distributing-cigarette-use"><span class="toc-section-number">7.3</span> Distributing Cigarette Use</a></li>
+<li><a href="7-4-distributing-e-cigarette-use.html#distributing-e-cigarette-use"><span class="toc-section-number">7.4</span> Distributing E-Cigarette Use</a></li>
+<li><a href="7-5-outputting-states-to-confirm.html#outputting-states-to-confirm"><span class="toc-section-number">7.5</span> Outputting States to Confirm</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="imputation" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Data Imputation</h1>
+<p>Next we need to impute missing data values. We shall do this in a two-step procedure.</p>
+<p>In the first step, we will undertake a heuristic imputation of former cigarette/e-cigarette use and for income. In this dataset, a majority of missing data is due to the former cig/e-cig variables and the income variables (about 1,000 missing of each at each Wave). We will describe these steps in greater detail below.</p>
+</div>
+<p style="text-align: center;">
+<a href="2-7-save-the-data-frame-for-future-use.html"><button class="btn btn-default">Previous</button></a>
+<a href="3-1-loading-libraries-and-the-data.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

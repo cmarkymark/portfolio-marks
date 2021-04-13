@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="7.4 Distributing E-Cigarette Use | Aim #2: Mathematical Model" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+
+
+<meta name="author" content="Charles Marks" />
+
+<meta name="date" content="2021-04-12" />
+
+
+<meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation">
+
+<title>7.4 Distributing E-Cigarette Use | Aim #2: Mathematical Model</title>
+
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#in-this-book"><span class="toc-section-number">1</span> In This Book</a></li>
+<li><a href="2-dataset.html#dataset"><span class="toc-section-number">2</span> Generating the Initial Dataset</a>
+<ul>
+<li><a href="2-1-participants.html#participants"><span class="toc-section-number">2.1</span> Participants</a></li>
+<li><a href="2-2-defining-variables-we-wish-to-capture.html#defining-variables-we-wish-to-capture"><span class="toc-section-number">2.2</span> Defining Variables We Wish to Capture</a></li>
+<li><a href="2-3-loading-the-necessary-datasets.html#loading-the-necessary-datasets"><span class="toc-section-number">2.3</span> Loading the Necessary Datasets</a></li>
+<li><a href="2-4-iterating-through-the-datasets.html#iterating-through-the-datasets"><span class="toc-section-number">2.4</span> Iterating Through the Datasets</a></li>
+<li><a href="2-5-factoring-the-data.html#factoring-the-data"><span class="toc-section-number">2.5</span> Factoring the Data</a></li>
+<li><a href="2-6-adding-the-weights-and-replicate-weights-to-the-study.html#adding-the-weights-and-replicate-weights-to-the-study"><span class="toc-section-number">2.6</span> Adding the Weights and Replicate Weights to the Study</a></li>
+<li><a href="2-7-save-the-data-frame-for-future-use.html#save-the-data-frame-for-future-use"><span class="toc-section-number">2.7</span> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li><a href="3-imputation.html#imputation"><span class="toc-section-number">3</span> Data Imputation</a>
+<ul>
+<li><a href="3-1-loading-libraries-and-the-data.html#loading-libraries-and-the-data"><span class="toc-section-number">3.1</span> Loading Libraries and the Data</a></li>
+<li><a href="3-2-heuristic-imputation-of-income.html#heuristic-imputation-of-income"><span class="toc-section-number">3.2</span> Heuristic Imputation of Income</a></li>
+<li><a href="3-3-heuristic-imputation-of-former-cige-cig-use.html#heuristic-imputation-of-former-cige-cig-use"><span class="toc-section-number">3.3</span> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li><a href="3-4-imputation-with-mice.html#imputation-with-mice"><span class="toc-section-number">3.4</span> Imputation with <em>mice()</em></a></li>
+<li><a href="3-5-generating-some-additional-variables.html#generating-some-additional-variables"><span class="toc-section-number">3.5</span> Generating Some Additional Variables</a>
+<ul>
+<li><a href="3-5-generating-some-additional-variables.html#cateogry-cigarette-and-e-cigarette-use"><span class="toc-section-number">3.5.1</span> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li><a href="3-5-generating-some-additional-variables.html#income-change-from-waves-1---2"><span class="toc-section-number">3.5.2</span> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li><a href="3-6-output-the-imputed-dataset.html#output-the-imputed-dataset"><span class="toc-section-number">3.6</span> Output the Imputed Dataset</a></li>
+</ul></li>
+<li><a href="4-paramset.html#paramset"><span class="toc-section-number">4</span> Generate Parameter Set</a></li>
+<li><a href="5-ode.html#ode"><span class="toc-section-number">5</span> ODE Functions</a>
+<ul>
+<li><a href="5-1-helper-functions.html#helper-functions"><span class="toc-section-number">5.1</span> Helper Functions</a></li>
+</ul></li>
+<li><a href="6-calibration.html#calibration"><span class="toc-section-number">6</span> Calibration</a></li>
+<li><a href="7-start.html#start"><span class="toc-section-number">7</span> Initial Start State</a>
+<ul>
+<li><a href="7-1-stratifying-by-sex-and-age.html#stratifying-by-sex-and-age"><span class="toc-section-number">7.1</span> Stratifying by Sex and Age</a></li>
+<li><a href="7-2-stratifying-the-population-by-income-level.html#stratifying-the-population-by-income-level"><span class="toc-section-number">7.2</span> Stratifying the Population by Income Level</a></li>
+<li><a href="7-3-distributing-cigarette-use.html#distributing-cigarette-use"><span class="toc-section-number">7.3</span> Distributing Cigarette Use</a></li>
+<li><a href="7-4-distributing-e-cigarette-use.html#distributing-e-cigarette-use"><span class="toc-section-number">7.4</span> Distributing E-Cigarette Use</a></li>
+<li><a href="7-5-outputting-states-to-confirm.html#outputting-states-to-confirm"><span class="toc-section-number">7.5</span> Outputting States to Confirm</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="distributing-e-cigarette-use" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Distributing E-Cigarette Use</h2>
+<p>Finally, we need to distribute e-cigarette use. In 2014, CDC estimates indicate that 3.3% of the population used e-cigarettes:</p>
+<ul>
+<li>4% of Males</li>
+<li>2.8% of Females</li>
+<li>Young People Much Higher Rates
+<ul>
+<li>18-24: 5.5%</li>
+<li>25-44: 4.4%</li>
+<li>45-64: 2.8%</li>
+<li>65+: 0.9%</li>
+</ul></li>
+<li>Income Dynamics Not as Pronounced
+<ul>
+<li>&lt;20k: 4%</li>
+<li>20-50k: 4.2%</li>
+<li>50-100k: 3.3%</li>
+<li>+100k: 2.3%</li>
+</ul></li>
+</ul>
+<p>CDC MMWR Report (<a href="https://www.cdc.gov/mmwr/volumes/65/wr/mm6542a7.htm" class="uri">https://www.cdc.gov/mmwr/volumes/65/wr/mm6542a7.htm</a>) shows that:</p>
+<ul>
+<li>58.5% of e-cigarette users were cigarette smokers</li>
+<li>29.8% were former smokers</li>
+<li>11.4% were never smokers</li>
+<li>98.7% of those &gt;45 were current or former cigarette smokers</li>
+<li>60% of those 18-24 were current or former cigarette smokers</li>
+</ul>
+<p>Full breakdown by age:</p>
+<ul>
+<li>18 - 24:
+<ul>
+<li>42% current cigarette</li>
+<li>18% former cigarette</li>
+<li>40% never cigarette</li>
+</ul></li>
+<li>25 - 44:
+<ul>
+<li>59% current cigarette</li>
+<li>31% former cigarette</li>
+<li>10% never cigarette</li>
+</ul></li>
+<li>45+
+<ul>
+<li>67% current</li>
+<li>32% former</li>
+<li>1% never</li>
+</ul></li>
+</ul>
+<p>We will use these values to distribute e-cigarette use across the compartments. Further, we will assume an equal number of former e-cigarette users for each sex,age,income,cigarette use combo given challenges in estimating this</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="7-4-distributing-e-cigarette-use.html#cb21-1" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> states</span>
+<span id="cb21-2"><a href="7-4-distributing-e-cigarette-use.html#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="7-4-distributing-e-cigarette-use.html#cb21-3" aria-hidden="true" tabindex="-1"></a>ecig_sex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.04</span>, <span class="fl">0.028</span>)</span>
+<span id="cb21-4"><a href="7-4-distributing-e-cigarette-use.html#cb21-4" aria-hidden="true" tabindex="-1"></a>ecig_age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.055</span>,<span class="fl">0.044</span>,<span class="fl">0.044</span>,<span class="fl">0.028</span>,<span class="fl">0.028</span>,<span class="fl">0.009</span>)<span class="sc">/</span>.<span class="dv">033</span></span>
+<span id="cb21-5"><a href="7-4-distributing-e-cigarette-use.html#cb21-5" aria-hidden="true" tabindex="-1"></a>ecig_income <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.045</span>,<span class="fl">0.042</span>,<span class="fl">0.033</span>,<span class="fl">0.023</span>)<span class="sc">/</span>.<span class="dv">033</span></span>
+<span id="cb21-6"><a href="7-4-distributing-e-cigarette-use.html#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="7-4-distributing-e-cigarette-use.html#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="7-4-distributing-e-cigarette-use.html#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb21-9"><a href="7-4-distributing-e-cigarette-use.html#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="do">## This is the proportion of e-smokers who are cigarette users</span></span>
+<span id="cb21-10"><a href="7-4-distributing-e-cigarette-use.html#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="do">## We need the proportion of cigarette smokers who are e_cig users</span></span>
+<span id="cb21-11"><a href="7-4-distributing-e-cigarette-use.html#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="7-4-distributing-e-cigarette-use.html#cb21-12" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="dv">0</span>)</span>
+<span id="cb21-13"><a href="7-4-distributing-e-cigarette-use.html#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="7-4-distributing-e-cigarette-use.html#cb21-14" aria-hidden="true" tabindex="-1"></a>age_cig_effect <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">3</span>))</span>
+<span id="cb21-15"><a href="7-4-distributing-e-cigarette-use.html#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="7-4-distributing-e-cigarette-use.html#cb21-16" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">4</span>,.<span class="dv">42</span>,.<span class="dv">18</span>)</span>
+<span id="cb21-17"><a href="7-4-distributing-e-cigarette-use.html#cb21-17" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">2</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,.<span class="dv">59</span>,.<span class="dv">31</span>)</span>
+<span id="cb21-18"><a href="7-4-distributing-e-cigarette-use.html#cb21-18" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">3</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,.<span class="dv">59</span>,.<span class="dv">31</span>)</span>
+<span id="cb21-19"><a href="7-4-distributing-e-cigarette-use.html#cb21-19" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">4</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">01</span>,.<span class="dv">67</span>,.<span class="dv">32</span>)</span>
+<span id="cb21-20"><a href="7-4-distributing-e-cigarette-use.html#cb21-20" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">5</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">01</span>,.<span class="dv">67</span>,.<span class="dv">32</span>)</span>
+<span id="cb21-21"><a href="7-4-distributing-e-cigarette-use.html#cb21-21" aria-hidden="true" tabindex="-1"></a>age_cig_effect[<span class="dv">6</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">01</span>,.<span class="dv">67</span>,.<span class="dv">32</span>)</span>
+<span id="cb21-22"><a href="7-4-distributing-e-cigarette-use.html#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-23"><a href="7-4-distributing-e-cigarette-use.html#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb21-24"><a href="7-4-distributing-e-cigarette-use.html#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Ok so the values currently saved in age_cig_effect</span></span>
+<span id="cb21-25"><a href="7-4-distributing-e-cigarette-use.html#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="do">## are the proportion of e_cig users who also use cigs</span></span>
+<span id="cb21-26"><a href="7-4-distributing-e-cigarette-use.html#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="do">## but we want the proportion of people at each cig level who are also e-cig users</span></span>
+<span id="cb21-27"><a href="7-4-distributing-e-cigarette-use.html#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="do">## so we use the proportions available to use </span></span>
+<span id="cb21-28"><a href="7-4-distributing-e-cigarette-use.html#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb21-29"><a href="7-4-distributing-e-cigarette-use.html#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="do">## to get what we want we let x = the % of e-cig at cig level c and age a</span></span>
+<span id="cb21-30"><a href="7-4-distributing-e-cigarette-use.html#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="do">## we let y  = % of people who use e-cigs at age a</span></span>
+<span id="cb21-31"><a href="7-4-distributing-e-cigarette-use.html#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="do">## and we let z = % of people at cig level c</span></span>
+<span id="cb21-32"><a href="7-4-distributing-e-cigarette-use.html#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="do">## we then can get our value by calculated x*y/z</span></span>
+<span id="cb21-33"><a href="7-4-distributing-e-cigarette-use.html#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb21-34"><a href="7-4-distributing-e-cigarette-use.html#cb21-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-35"><a href="7-4-distributing-e-cigarette-use.html#cb21-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-36"><a href="7-4-distributing-e-cigarette-use.html#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb21-37"><a href="7-4-distributing-e-cigarette-use.html#cb21-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb21-38"><a href="7-4-distributing-e-cigarette-use.html#cb21-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-39"><a href="7-4-distributing-e-cigarette-use.html#cb21-39" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> ecig_age[age]<span class="sc">*</span>.<span class="dv">033</span></span>
+<span id="cb21-40"><a href="7-4-distributing-e-cigarette-use.html#cb21-40" aria-hidden="true" tabindex="-1"></a>    z <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(temp[,age,cig,]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(temp[,age,,]))</span>
+<span id="cb21-41"><a href="7-4-distributing-e-cigarette-use.html#cb21-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-42"><a href="7-4-distributing-e-cigarette-use.html#cb21-42" aria-hidden="true" tabindex="-1"></a>    age_cig_effect[age,cig] <span class="ot">&lt;-</span> age_cig_effect[age,cig]<span class="sc">*</span>y<span class="sc">/</span>z</span>
+<span id="cb21-43"><a href="7-4-distributing-e-cigarette-use.html#cb21-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-44"><a href="7-4-distributing-e-cigarette-use.html#cb21-44" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-45"><a href="7-4-distributing-e-cigarette-use.html#cb21-45" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-46"><a href="7-4-distributing-e-cigarette-use.html#cb21-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-47"><a href="7-4-distributing-e-cigarette-use.html#cb21-47" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>){</span>
+<span id="cb21-48"><a href="7-4-distributing-e-cigarette-use.html#cb21-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb21-49"><a href="7-4-distributing-e-cigarette-use.html#cb21-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb21-50"><a href="7-4-distributing-e-cigarette-use.html#cb21-50" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb21-51"><a href="7-4-distributing-e-cigarette-use.html#cb21-51" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-52"><a href="7-4-distributing-e-cigarette-use.html#cb21-52" aria-hidden="true" tabindex="-1"></a>        cell_total <span class="ot">&lt;-</span> temp[sex,age,cig,income]</span>
+<span id="cb21-53"><a href="7-4-distributing-e-cigarette-use.html#cb21-53" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-54"><a href="7-4-distributing-e-cigarette-use.html#cb21-54" aria-hidden="true" tabindex="-1"></a>        e_cig <span class="ot">&lt;-</span> cell_total<span class="sc">*</span>age_cig_effect[age,cig]</span>
+<span id="cb21-55"><a href="7-4-distributing-e-cigarette-use.html#cb21-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-56"><a href="7-4-distributing-e-cigarette-use.html#cb21-56" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-57"><a href="7-4-distributing-e-cigarette-use.html#cb21-57" aria-hidden="true" tabindex="-1"></a>        former_ecig <span class="ot">&lt;-</span> e_cig</span>
+<span id="cb21-58"><a href="7-4-distributing-e-cigarette-use.html#cb21-58" aria-hidden="true" tabindex="-1"></a>        never_ecig <span class="ot">&lt;-</span>  cell_total <span class="sc">-</span> e_cig <span class="sc">-</span> former_ecig</span>
+<span id="cb21-59"><a href="7-4-distributing-e-cigarette-use.html#cb21-59" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-60"><a href="7-4-distributing-e-cigarette-use.html#cb21-60" aria-hidden="true" tabindex="-1"></a>        states[sex,age,cig,<span class="dv">1</span>,income] <span class="ot">&lt;-</span> never_ecig</span>
+<span id="cb21-61"><a href="7-4-distributing-e-cigarette-use.html#cb21-61" aria-hidden="true" tabindex="-1"></a>        states[sex,age,cig,<span class="dv">2</span>,income] <span class="ot">&lt;-</span> e_cig</span>
+<span id="cb21-62"><a href="7-4-distributing-e-cigarette-use.html#cb21-62" aria-hidden="true" tabindex="-1"></a>        states[sex,age,cig,<span class="dv">3</span>,income] <span class="ot">&lt;-</span> former_ecig</span>
+<span id="cb21-63"><a href="7-4-distributing-e-cigarette-use.html#cb21-63" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-64"><a href="7-4-distributing-e-cigarette-use.html#cb21-64" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-65"><a href="7-4-distributing-e-cigarette-use.html#cb21-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-66"><a href="7-4-distributing-e-cigarette-use.html#cb21-66" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb21-67"><a href="7-4-distributing-e-cigarette-use.html#cb21-67" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb21-68"><a href="7-4-distributing-e-cigarette-use.html#cb21-68" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-69"><a href="7-4-distributing-e-cigarette-use.html#cb21-69" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-70"><a href="7-4-distributing-e-cigarette-use.html#cb21-70" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<p style="text-align: center;">
+<a href="7-3-distributing-cigarette-use.html"><button class="btn btn-default">Previous</button></a>
+<a href="7-5-outputting-states-to-confirm.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
