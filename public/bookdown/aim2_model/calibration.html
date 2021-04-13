@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Calibration | Aim #2: Mathematical Model</title>
+  <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Calibration | Aim #2: Mathematical Model" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Calibration | Aim #2: Mathematical Model" />
+  
+  <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2021-04-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ode.html"/>
+<link rel="next" href="ref.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> In This Book</a></li>
+<li class="chapter" data-level="2" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>2</b> Generating the Initial Dataset</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="dataset.html"><a href="dataset.html#participants"><i class="fa fa-check"></i><b>2.1</b> Participants</a></li>
+<li class="chapter" data-level="2.2" data-path="dataset.html"><a href="dataset.html#defining-variables-we-wish-to-capture"><i class="fa fa-check"></i><b>2.2</b> Defining Variables We Wish to Capture</a></li>
+<li class="chapter" data-level="2.3" data-path="dataset.html"><a href="dataset.html#loading-the-necessary-datasets"><i class="fa fa-check"></i><b>2.3</b> Loading the Necessary Datasets</a></li>
+<li class="chapter" data-level="2.4" data-path="dataset.html"><a href="dataset.html#iterating-through-the-datasets"><i class="fa fa-check"></i><b>2.4</b> Iterating Through the Datasets</a></li>
+<li class="chapter" data-level="2.5" data-path="dataset.html"><a href="dataset.html#factoring-the-data"><i class="fa fa-check"></i><b>2.5</b> Factoring the Data</a></li>
+<li class="chapter" data-level="2.6" data-path="dataset.html"><a href="dataset.html#adding-the-weights-and-replicate-weights-to-the-study"><i class="fa fa-check"></i><b>2.6</b> Adding the Weights and Replicate Weights to the Study</a></li>
+<li class="chapter" data-level="2.7" data-path="dataset.html"><a href="dataset.html#save-the-data-frame-for-future-use"><i class="fa fa-check"></i><b>2.7</b> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="imputation.html"><a href="imputation.html"><i class="fa fa-check"></i><b>3</b> Data Imputation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="imputation.html"><a href="imputation.html#loading-libraries-and-the-data"><i class="fa fa-check"></i><b>3.1</b> Loading Libraries and the Data</a></li>
+<li class="chapter" data-level="3.2" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-income"><i class="fa fa-check"></i><b>3.2</b> Heuristic Imputation of Income</a></li>
+<li class="chapter" data-level="3.3" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-former-cige-cig-use"><i class="fa fa-check"></i><b>3.3</b> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li class="chapter" data-level="3.4" data-path="imputation.html"><a href="imputation.html#imputation-with-mice"><i class="fa fa-check"></i><b>3.4</b> Imputation with <em>mice()</em></a></li>
+<li class="chapter" data-level="3.5" data-path="imputation.html"><a href="imputation.html#generating-some-additional-variables"><i class="fa fa-check"></i><b>3.5</b> Generating Some Additional Variables</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="imputation.html"><a href="imputation.html#cateogry-cigarette-and-e-cigarette-use"><i class="fa fa-check"></i><b>3.5.1</b> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li class="chapter" data-level="3.5.2" data-path="imputation.html"><a href="imputation.html#income-change-from-waves-1---2"><i class="fa fa-check"></i><b>3.5.2</b> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="imputation.html"><a href="imputation.html#output-the-imputed-dataset"><i class="fa fa-check"></i><b>3.6</b> Output the Imputed Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="paramset.html"><a href="paramset.html"><i class="fa fa-check"></i><b>4</b> Generate Parameter Set</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="paramset.html"><a href="paramset.html#loading-necessary-packages-and-helper-functions"><i class="fa fa-check"></i><b>4.1</b> Loading Necessary Packages and Helper Functions</a></li>
+<li class="chapter" data-level="4.2" data-path="paramset.html"><a href="paramset.html#set-some-hyperparamets-to-customize-parameter-set"><i class="fa fa-check"></i><b>4.2</b> Set Some Hyperparamets to Customize Parameter Set</a></li>
+<li class="chapter" data-level="4.3" data-path="paramset.html"><a href="paramset.html#loading-our-dataset-and-defining-some-variables"><i class="fa fa-check"></i><b>4.3</b> Loading Our Dataset and Defining Some Variables</a></li>
+<li class="chapter" data-level="4.4" data-path="paramset.html"><a href="paramset.html#defining-absolute-age-specific-income-transition-totals"><i class="fa fa-check"></i><b>4.4</b> Defining Absolute Age-Specific Income Transition Totals</a></li>
+<li class="chapter" data-level="4.5" data-path="paramset.html"><a href="paramset.html#defining-cigarette-use-transitions"><i class="fa fa-check"></i><b>4.5</b> Defining Cigarette Use Transitions</a></li>
+<li class="chapter" data-level="4.6" data-path="paramset.html"><a href="paramset.html#defining-e-cigarette-transitions"><i class="fa fa-check"></i><b>4.6</b> Defining E-Cigarette Transitions</a></li>
+<li class="chapter" data-level="4.7" data-path="paramset.html"><a href="paramset.html#running-regression-analyses-to-extract-log-relative-risks"><i class="fa fa-check"></i><b>4.7</b> Running Regression Analyses to Extract Log-Relative Risks</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="paramset.html"><a href="paramset.html#defining-income-change-variable"><i class="fa fa-check"></i><b>4.7.1</b> Defining Income Change Variable</a></li>
+<li class="chapter" data-level="4.7.2" data-path="paramset.html"><a href="paramset.html#cigarette-initiation-model"><i class="fa fa-check"></i><b>4.7.2</b> Cigarette Initiation Model</a></li>
+<li class="chapter" data-level="4.7.3" data-path="paramset.html"><a href="paramset.html#cigarette-cessation-model"><i class="fa fa-check"></i><b>4.7.3</b> Cigarette Cessation Model</a></li>
+<li class="chapter" data-level="4.7.4" data-path="paramset.html"><a href="paramset.html#cigarette-re-instatement-model"><i class="fa fa-check"></i><b>4.7.4</b> Cigarette Re-Instatement Model</a></li>
+<li class="chapter" data-level="4.7.5" data-path="paramset.html"><a href="paramset.html#e-cigarette-initiation-model"><i class="fa fa-check"></i><b>4.7.5</b> E-Cigarette Initiation Model</a></li>
+<li class="chapter" data-level="4.7.6" data-path="paramset.html"><a href="paramset.html#e-cigarette-cessation-model"><i class="fa fa-check"></i><b>4.7.6</b> E-Cigarette Cessation Model</a></li>
+<li class="chapter" data-level="4.7.7" data-path="paramset.html"><a href="paramset.html#e-cigarette-reinstatement-model"><i class="fa fa-check"></i><b>4.7.7</b> E-Cigarette Reinstatement Model</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="paramset.html"><a href="paramset.html#drawing-our-parameter-set-samples"><i class="fa fa-check"></i><b>4.8</b> Drawing Our Parameter Set Samples</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="paramset.html"><a href="paramset.html#income-transitions-sample"><i class="fa fa-check"></i><b>4.8.1</b> Income Transitions Sample</a></li>
+<li class="chapter" data-level="4.8.2" data-path="paramset.html"><a href="paramset.html#cigarette-transitions-sample"><i class="fa fa-check"></i><b>4.8.2</b> Cigarette Transitions Sample</a></li>
+<li class="chapter" data-level="4.8.3" data-path="paramset.html"><a href="paramset.html#e-cigarette-transitions-sample"><i class="fa fa-check"></i><b>4.8.3</b> E-Cigarette Transitions Sample</a></li>
+<li class="chapter" data-level="4.8.4" data-path="paramset.html"><a href="paramset.html#sampling-relative-risks"><i class="fa fa-check"></i><b>4.8.4</b> Sampling Relative Risks</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="paramset.html"><a href="paramset.html#generating-the-final-parameter-set-sampling"><i class="fa fa-check"></i><b>4.9</b> Generating the Final Parameter Set Sampling</a></li>
+<li class="chapter" data-level="4.10" data-path="paramset.html"><a href="paramset.html#output-the-results"><i class="fa fa-check"></i><b>4.10</b> Output the Results</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>5</b> Initial Start State</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="start.html"><a href="start.html#stratifying-by-sex-and-age"><i class="fa fa-check"></i><b>5.1</b> Stratifying by Sex and Age</a></li>
+<li class="chapter" data-level="5.2" data-path="start.html"><a href="start.html#stratifying-the-population-by-income-level"><i class="fa fa-check"></i><b>5.2</b> Stratifying the Population by Income Level</a></li>
+<li class="chapter" data-level="5.3" data-path="start.html"><a href="start.html#distributing-cigarette-use"><i class="fa fa-check"></i><b>5.3</b> Distributing Cigarette Use</a></li>
+<li class="chapter" data-level="5.4" data-path="start.html"><a href="start.html#distributing-e-cigarette-use"><i class="fa fa-check"></i><b>5.4</b> Distributing E-Cigarette Use</a></li>
+<li class="chapter" data-level="5.5" data-path="start.html"><a href="start.html#saving-the-states"><i class="fa fa-check"></i><b>5.5</b> Saving the States</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>6</b> ODE Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>6.1</b> Helper Functions</a></li>
+<li class="chapter" data-level="6.2" data-path="ode.html"><a href="ode.html#ode-function"><i class="fa fa-check"></i><b>6.2</b> ODE Function</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>7</b> Calibration</a></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aim #2: Mathematical Model</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="calibration" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Calibration</h1>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="calibration.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb41-2"><a href="calibration.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(minpack.lm)</span>
+<span id="cb41-3"><a href="calibration.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb41-4"><a href="calibration.html#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb41-5"><a href="calibration.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(triangle)</span>
+<span id="cb41-6"><a href="calibration.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epiR)</span>
+<span id="cb41-7"><a href="calibration.html#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;ODE_functions.R&quot;</span>, <span class="at">local =</span> T)</span>
+<span id="cb41-8"><a href="calibration.html#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="calibration.html#cb41-9" aria-hidden="true" tabindex="-1"></a>calib_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x, parameters, states){</span>
+<span id="cb41-10"><a href="calibration.html#cb41-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-11"><a href="calibration.html#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&quot;ODE_functions.R&quot;</span>, <span class="at">local =</span> T)</span>
+<span id="cb41-12"><a href="calibration.html#cb41-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-13"><a href="calibration.html#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-14"><a href="calibration.html#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We are calibrating 3 specific values</span></span>
+<span id="cb41-15"><a href="calibration.html#cb41-15" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The growth rate to match population change over time</span></span>
+<span id="cb41-16"><a href="calibration.html#cb41-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The initiation/reinstatement multiplier to match cigarette prevalence over time</span></span>
+<span id="cb41-17"><a href="calibration.html#cb41-17" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The cessation multiplier to match former cigarette prevalence over time</span></span>
+<span id="cb41-18"><a href="calibration.html#cb41-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-19"><a href="calibration.html#cb41-19" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Population growth rate goals is a 0.5% acceleration in 2019</span></span>
+<span id="cb41-20"><a href="calibration.html#cb41-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Cigarette Use Target for 2019 is 14.0%</span></span>
+<span id="cb41-21"><a href="calibration.html#cb41-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Cigarette Use Target for 2018 is 20.9%</span></span>
+<span id="cb41-22"><a href="calibration.html#cb41-22" aria-hidden="true" tabindex="-1"></a>  <span class="do">## </span></span>
+<span id="cb41-23"><a href="calibration.html#cb41-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-24"><a href="calibration.html#cb41-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb41-25"><a href="calibration.html#cb41-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-26"><a href="calibration.html#cb41-26" aria-hidden="true" tabindex="-1"></a>  pop_growth_2019_target <span class="ot">&lt;-</span> <span class="fl">0.005</span></span>
+<span id="cb41-27"><a href="calibration.html#cb41-27" aria-hidden="true" tabindex="-1"></a>  cig_prev_2019_target <span class="ot">&lt;-</span> <span class="fl">0.14</span></span>
+<span id="cb41-28"><a href="calibration.html#cb41-28" aria-hidden="true" tabindex="-1"></a>  <span class="co">#former_cig_prev_2018_target &lt;- 0.209</span></span>
+<span id="cb41-29"><a href="calibration.html#cb41-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-30"><a href="calibration.html#cb41-30" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
+<span id="cb41-31"><a href="calibration.html#cb41-31" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> x[<span class="dv">2</span>]</span>
+<span id="cb41-32"><a href="calibration.html#cb41-32" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb41-33"><a href="calibration.html#cb41-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-34"><a href="calibration.html#cb41-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-35"><a href="calibration.html#cb41-35" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Define the states for the parallelization and for model entries</span></span>
+<span id="cb41-36"><a href="calibration.html#cb41-36" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-37"><a href="calibration.html#cb41-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-38"><a href="calibration.html#cb41-38" aria-hidden="true" tabindex="-1"></a>  states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(states)</span>
+<span id="cb41-39"><a href="calibration.html#cb41-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-40"><a href="calibration.html#cb41-40" aria-hidden="true" tabindex="-1"></a>  states_never_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-41"><a href="calibration.html#cb41-41" aria-hidden="true" tabindex="-1"></a>  states_never_smokers[,,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-42"><a href="calibration.html#cb41-42" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-43"><a href="calibration.html#cb41-43" aria-hidden="true" tabindex="-1"></a>  states_male_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb41-44"><a href="calibration.html#cb41-44" aria-hidden="true" tabindex="-1"></a>  states_female_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb41-45"><a href="calibration.html#cb41-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-46"><a href="calibration.html#cb41-46" aria-hidden="true" tabindex="-1"></a>  states_male_never_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-47"><a href="calibration.html#cb41-47" aria-hidden="true" tabindex="-1"></a>  states_female_never_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-48"><a href="calibration.html#cb41-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-49"><a href="calibration.html#cb41-49" aria-hidden="true" tabindex="-1"></a>  states_current_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-50"><a href="calibration.html#cb41-50" aria-hidden="true" tabindex="-1"></a>  states_current_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-51"><a href="calibration.html#cb41-51" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-52"><a href="calibration.html#cb41-52" aria-hidden="true" tabindex="-1"></a>  states_male_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb41-53"><a href="calibration.html#cb41-53" aria-hidden="true" tabindex="-1"></a>  states_female_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb41-54"><a href="calibration.html#cb41-54" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-55"><a href="calibration.html#cb41-55" aria-hidden="true" tabindex="-1"></a>  states_male_current_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-56"><a href="calibration.html#cb41-56" aria-hidden="true" tabindex="-1"></a>  states_female_current_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-57"><a href="calibration.html#cb41-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-58"><a href="calibration.html#cb41-58" aria-hidden="true" tabindex="-1"></a>  states_former_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-59"><a href="calibration.html#cb41-59" aria-hidden="true" tabindex="-1"></a>  states_former_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-60"><a href="calibration.html#cb41-60" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-61"><a href="calibration.html#cb41-61" aria-hidden="true" tabindex="-1"></a>  states_male_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb41-62"><a href="calibration.html#cb41-62" aria-hidden="true" tabindex="-1"></a>  states_female_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb41-63"><a href="calibration.html#cb41-63" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-64"><a href="calibration.html#cb41-64" aria-hidden="true" tabindex="-1"></a>  states_male_former_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-65"><a href="calibration.html#cb41-65" aria-hidden="true" tabindex="-1"></a>  states_female_former_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-66"><a href="calibration.html#cb41-66" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-67"><a href="calibration.html#cb41-67" aria-hidden="true" tabindex="-1"></a>  states_by_sex_never <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_never_smokers,states_female_never_smokers)</span>
+<span id="cb41-68"><a href="calibration.html#cb41-68" aria-hidden="true" tabindex="-1"></a>  states_by_sex_current <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_current_smokers,states_female_current_smokers)</span>
+<span id="cb41-69"><a href="calibration.html#cb41-69" aria-hidden="true" tabindex="-1"></a>  states_by_sex_former <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_former_smokers,states_female_former_smokers)</span>
+<span id="cb41-70"><a href="calibration.html#cb41-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-71"><a href="calibration.html#cb41-71" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb41-72"><a href="calibration.html#cb41-72" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb41-73"><a href="calibration.html#cb41-73" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb41-74"><a href="calibration.html#cb41-74" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-75"><a href="calibration.html#cb41-75" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> younglings_never_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_never_male))</span>
+<span id="cb41-76"><a href="calibration.html#cb41-76" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_male)</span>
+<span id="cb41-77"><a href="calibration.html#cb41-77" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-78"><a href="calibration.html#cb41-78" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> younglings_current_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_current_male))</span>
+<span id="cb41-79"><a href="calibration.html#cb41-79" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_male)</span>
+<span id="cb41-80"><a href="calibration.html#cb41-80" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-81"><a href="calibration.html#cb41-81" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> younglings_former_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_former_male))</span>
+<span id="cb41-82"><a href="calibration.html#cb41-82" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_male)</span>
+<span id="cb41-83"><a href="calibration.html#cb41-83" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-84"><a href="calibration.html#cb41-84" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb41-85"><a href="calibration.html#cb41-85" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb41-86"><a href="calibration.html#cb41-86" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb41-87"><a href="calibration.html#cb41-87" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-88"><a href="calibration.html#cb41-88" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> younglings_never_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_never_female))</span>
+<span id="cb41-89"><a href="calibration.html#cb41-89" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_female)</span>
+<span id="cb41-90"><a href="calibration.html#cb41-90" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-91"><a href="calibration.html#cb41-91" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> younglings_current_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_current_female))</span>
+<span id="cb41-92"><a href="calibration.html#cb41-92" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_female)</span>
+<span id="cb41-93"><a href="calibration.html#cb41-93" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-94"><a href="calibration.html#cb41-94" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> younglings_former_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_former_female))</span>
+<span id="cb41-95"><a href="calibration.html#cb41-95" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_female)</span>
+<span id="cb41-96"><a href="calibration.html#cb41-96" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-97"><a href="calibration.html#cb41-97" aria-hidden="true" tabindex="-1"></a>  younglings_never <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-98"><a href="calibration.html#cb41-98" aria-hidden="true" tabindex="-1"></a>  younglings_never[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_never_male</span>
+<span id="cb41-99"><a href="calibration.html#cb41-99" aria-hidden="true" tabindex="-1"></a>  younglings_never[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_never_female</span>
+<span id="cb41-100"><a href="calibration.html#cb41-100" aria-hidden="true" tabindex="-1"></a>  younglings_never <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never)</span>
+<span id="cb41-101"><a href="calibration.html#cb41-101" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-102"><a href="calibration.html#cb41-102" aria-hidden="true" tabindex="-1"></a>  younglings_current <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-103"><a href="calibration.html#cb41-103" aria-hidden="true" tabindex="-1"></a>  younglings_current[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_current_male</span>
+<span id="cb41-104"><a href="calibration.html#cb41-104" aria-hidden="true" tabindex="-1"></a>  younglings_current[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_current_female</span>
+<span id="cb41-105"><a href="calibration.html#cb41-105" aria-hidden="true" tabindex="-1"></a>  younglings_current <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current)</span>
+<span id="cb41-106"><a href="calibration.html#cb41-106" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-107"><a href="calibration.html#cb41-107" aria-hidden="true" tabindex="-1"></a>  younglings_former <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-108"><a href="calibration.html#cb41-108" aria-hidden="true" tabindex="-1"></a>  younglings_former[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_former_male</span>
+<span id="cb41-109"><a href="calibration.html#cb41-109" aria-hidden="true" tabindex="-1"></a>  younglings_former[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_former_female</span>
+<span id="cb41-110"><a href="calibration.html#cb41-110" aria-hidden="true" tabindex="-1"></a>  younglings_former <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former)</span>
+<span id="cb41-111"><a href="calibration.html#cb41-111" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-112"><a href="calibration.html#cb41-112" aria-hidden="true" tabindex="-1"></a>  youngling_mult_never <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb41-113"><a href="calibration.html#cb41-113" aria-hidden="true" tabindex="-1"></a>  youngling_mult_current <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb41-114"><a href="calibration.html#cb41-114" aria-hidden="true" tabindex="-1"></a>  youngling_mult_former <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb41-115"><a href="calibration.html#cb41-115" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-116"><a href="calibration.html#cb41-116" aria-hidden="true" tabindex="-1"></a>  <span class="co">#define time</span></span>
+<span id="cb41-117"><a href="calibration.html#cb41-117" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb41-118"><a href="calibration.html#cb41-118" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-119"><a href="calibration.html#cb41-119" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-120"><a href="calibration.html#cb41-120" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb41-121"><a href="calibration.html#cb41-121" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-122"><a href="calibration.html#cb41-122" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-123"><a href="calibration.html#cb41-123" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-124"><a href="calibration.html#cb41-124" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-125"><a href="calibration.html#cb41-125" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-126"><a href="calibration.html#cb41-126" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-127"><a href="calibration.html#cb41-127" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-128"><a href="calibration.html#cb41-128" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb41-129"><a href="calibration.html#cb41-129" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-130"><a href="calibration.html#cb41-130" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-131"><a href="calibration.html#cb41-131" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex,younglings_never,youngling_mult_never, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-132"><a href="calibration.html#cb41-132" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-133"><a href="calibration.html#cb41-133" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-134"><a href="calibration.html#cb41-134" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-135"><a href="calibration.html#cb41-135" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-136"><a href="calibration.html#cb41-136" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-137"><a href="calibration.html#cb41-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-138"><a href="calibration.html#cb41-138" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-139"><a href="calibration.html#cb41-139" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-140"><a href="calibration.html#cb41-140" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb41-141"><a href="calibration.html#cb41-141" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-142"><a href="calibration.html#cb41-142" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-143"><a href="calibration.html#cb41-143" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-144"><a href="calibration.html#cb41-144" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-145"><a href="calibration.html#cb41-145" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-146"><a href="calibration.html#cb41-146" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-147"><a href="calibration.html#cb41-147" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-148"><a href="calibration.html#cb41-148" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-149"><a href="calibration.html#cb41-149" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb41-150"><a href="calibration.html#cb41-150" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-151"><a href="calibration.html#cb41-151" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-152"><a href="calibration.html#cb41-152" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_current,youngling_mult_current, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-153"><a href="calibration.html#cb41-153" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-154"><a href="calibration.html#cb41-154" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-155"><a href="calibration.html#cb41-155" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-156"><a href="calibration.html#cb41-156" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-157"><a href="calibration.html#cb41-157" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-158"><a href="calibration.html#cb41-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-159"><a href="calibration.html#cb41-159" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-160"><a href="calibration.html#cb41-160" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-161"><a href="calibration.html#cb41-161" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb41-162"><a href="calibration.html#cb41-162" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-163"><a href="calibration.html#cb41-163" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-164"><a href="calibration.html#cb41-164" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-165"><a href="calibration.html#cb41-165" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-166"><a href="calibration.html#cb41-166" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-167"><a href="calibration.html#cb41-167" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-168"><a href="calibration.html#cb41-168" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-169"><a href="calibration.html#cb41-169" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-170"><a href="calibration.html#cb41-170" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb41-171"><a href="calibration.html#cb41-171" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-172"><a href="calibration.html#cb41-172" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-173"><a href="calibration.html#cb41-173" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_former,youngling_mult_former, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-174"><a href="calibration.html#cb41-174" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-175"><a href="calibration.html#cb41-175" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-176"><a href="calibration.html#cb41-176" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-177"><a href="calibration.html#cb41-177" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-178"><a href="calibration.html#cb41-178" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-179"><a href="calibration.html#cb41-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-180"><a href="calibration.html#cb41-180" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-181"><a href="calibration.html#cb41-181" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb41-182"><a href="calibration.html#cb41-182" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb41-183"><a href="calibration.html#cb41-183" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-184"><a href="calibration.html#cb41-184" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb41-185"><a href="calibration.html#cb41-185" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-186"><a href="calibration.html#cb41-186" aria-hidden="true" tabindex="-1"></a>  res_2018 <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">as.numeric</span>(result[result<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">4</span>,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">1405</span>)]))</span>
+<span id="cb41-187"><a href="calibration.html#cb41-187" aria-hidden="true" tabindex="-1"></a>  res_2019 <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">as.numeric</span>(result[result<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">5</span>,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">1405</span>)]))</span>
+<span id="cb41-188"><a href="calibration.html#cb41-188" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-189"><a href="calibration.html#cb41-189" aria-hidden="true" tabindex="-1"></a>  pop_growth_actual <span class="ot">&lt;-</span> (<span class="fu">sum</span>(<span class="fu">c</span>(res_2019)) <span class="sc">-</span> <span class="fu">sum</span>(<span class="fu">c</span>(res_2018)))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(res_2018))</span>
+<span id="cb41-190"><a href="calibration.html#cb41-190" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-191"><a href="calibration.html#cb41-191" aria-hidden="true" tabindex="-1"></a>  cig_prev_actual <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(res_2019[,,<span class="dv">2</span>,,]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(res_2019))</span>
+<span id="cb41-192"><a href="calibration.html#cb41-192" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-193"><a href="calibration.html#cb41-193" aria-hidden="true" tabindex="-1"></a>  former_cig_prev_actual <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(res_2018[,,<span class="dv">3</span>,,]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(res_2018)) </span>
+<span id="cb41-194"><a href="calibration.html#cb41-194" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-195"><a href="calibration.html#cb41-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Current Smoker Prevalence is: &quot;</span>, <span class="fu">round</span>(cig_prev_actual,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>,<span class="at">sep =</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb41-196"><a href="calibration.html#cb41-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Former Smoker Prevalence is: &quot;</span>, <span class="fu">round</span>(former_cig_prev_actual,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>,<span class="at">sep =</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb41-197"><a href="calibration.html#cb41-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Pop Growth is: &quot;</span>, <span class="fu">round</span>(pop_growth_actual,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>,<span class="at">sep =</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb41-198"><a href="calibration.html#cb41-198" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-199"><a href="calibration.html#cb41-199" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>((pop_growth_actual <span class="sc">-</span> pop_growth_2019_target), </span>
+<span id="cb41-200"><a href="calibration.html#cb41-200" aria-hidden="true" tabindex="-1"></a>  (cig_prev_actual <span class="sc">-</span> cig_prev_2019_target))</span>
+<span id="cb41-201"><a href="calibration.html#cb41-201" aria-hidden="true" tabindex="-1"></a>  <span class="co">#(former_cig_prev_actual - former_cig_prev_2018_target)^2)</span></span>
+<span id="cb41-202"><a href="calibration.html#cb41-202" aria-hidden="true" tabindex="-1"></a>  <span class="co">#print(formula)</span></span>
+<span id="cb41-203"><a href="calibration.html#cb41-203" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-204"><a href="calibration.html#cb41-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(formula)</span>
+<span id="cb41-205"><a href="calibration.html#cb41-205" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-206"><a href="calibration.html#cb41-206" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-207"><a href="calibration.html#cb41-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-208"><a href="calibration.html#cb41-208" aria-hidden="true" tabindex="-1"></a>calib_function_pop <span class="ot">&lt;-</span> <span class="cf">function</span>(x, parameters, states){</span>
+<span id="cb41-209"><a href="calibration.html#cb41-209" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-210"><a href="calibration.html#cb41-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&quot;ODE_functions.R&quot;</span>, <span class="at">local =</span> T)</span>
+<span id="cb41-211"><a href="calibration.html#cb41-211" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-212"><a href="calibration.html#cb41-212" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-213"><a href="calibration.html#cb41-213" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We are calibrating 3 specific values</span></span>
+<span id="cb41-214"><a href="calibration.html#cb41-214" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The growth rate to match population change over time</span></span>
+<span id="cb41-215"><a href="calibration.html#cb41-215" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The initiation/reinstatement multiplier to match cigarette prevalence over time</span></span>
+<span id="cb41-216"><a href="calibration.html#cb41-216" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The cessation multiplier to match former cigarette prevalence over time</span></span>
+<span id="cb41-217"><a href="calibration.html#cb41-217" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-218"><a href="calibration.html#cb41-218" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Population growth rate goals is a 0.5% acceleration in 2019</span></span>
+<span id="cb41-219"><a href="calibration.html#cb41-219" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Cigarette Use Target for 2019 is 14.0%</span></span>
+<span id="cb41-220"><a href="calibration.html#cb41-220" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Cigarette Use Target for 2018 is 20.9%</span></span>
+<span id="cb41-221"><a href="calibration.html#cb41-221" aria-hidden="true" tabindex="-1"></a>  <span class="do">## </span></span>
+<span id="cb41-222"><a href="calibration.html#cb41-222" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-223"><a href="calibration.html#cb41-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb41-224"><a href="calibration.html#cb41-224" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-225"><a href="calibration.html#cb41-225" aria-hidden="true" tabindex="-1"></a>  pop_growth_2019_target <span class="ot">&lt;-</span> <span class="fl">0.005</span></span>
+<span id="cb41-226"><a href="calibration.html#cb41-226" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cig_prev_2019_target &lt;- 0.14</span></span>
+<span id="cb41-227"><a href="calibration.html#cb41-227" aria-hidden="true" tabindex="-1"></a>  <span class="co">#former_cig_prev_2018_target &lt;- 0.209</span></span>
+<span id="cb41-228"><a href="calibration.html#cb41-228" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-229"><a href="calibration.html#cb41-229" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
+<span id="cb41-230"><a href="calibration.html#cb41-230" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb41-231"><a href="calibration.html#cb41-231" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb41-232"><a href="calibration.html#cb41-232" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-233"><a href="calibration.html#cb41-233" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-234"><a href="calibration.html#cb41-234" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Define the states for the parallelization and for model entries</span></span>
+<span id="cb41-235"><a href="calibration.html#cb41-235" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-236"><a href="calibration.html#cb41-236" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-237"><a href="calibration.html#cb41-237" aria-hidden="true" tabindex="-1"></a>  states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(states)</span>
+<span id="cb41-238"><a href="calibration.html#cb41-238" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-239"><a href="calibration.html#cb41-239" aria-hidden="true" tabindex="-1"></a>  states_never_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-240"><a href="calibration.html#cb41-240" aria-hidden="true" tabindex="-1"></a>  states_never_smokers[,,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-241"><a href="calibration.html#cb41-241" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-242"><a href="calibration.html#cb41-242" aria-hidden="true" tabindex="-1"></a>  states_male_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb41-243"><a href="calibration.html#cb41-243" aria-hidden="true" tabindex="-1"></a>  states_female_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb41-244"><a href="calibration.html#cb41-244" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-245"><a href="calibration.html#cb41-245" aria-hidden="true" tabindex="-1"></a>  states_male_never_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-246"><a href="calibration.html#cb41-246" aria-hidden="true" tabindex="-1"></a>  states_female_never_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-247"><a href="calibration.html#cb41-247" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-248"><a href="calibration.html#cb41-248" aria-hidden="true" tabindex="-1"></a>  states_current_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-249"><a href="calibration.html#cb41-249" aria-hidden="true" tabindex="-1"></a>  states_current_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-250"><a href="calibration.html#cb41-250" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-251"><a href="calibration.html#cb41-251" aria-hidden="true" tabindex="-1"></a>  states_male_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb41-252"><a href="calibration.html#cb41-252" aria-hidden="true" tabindex="-1"></a>  states_female_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb41-253"><a href="calibration.html#cb41-253" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-254"><a href="calibration.html#cb41-254" aria-hidden="true" tabindex="-1"></a>  states_male_current_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-255"><a href="calibration.html#cb41-255" aria-hidden="true" tabindex="-1"></a>  states_female_current_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-256"><a href="calibration.html#cb41-256" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-257"><a href="calibration.html#cb41-257" aria-hidden="true" tabindex="-1"></a>  states_former_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-258"><a href="calibration.html#cb41-258" aria-hidden="true" tabindex="-1"></a>  states_former_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-259"><a href="calibration.html#cb41-259" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-260"><a href="calibration.html#cb41-260" aria-hidden="true" tabindex="-1"></a>  states_male_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb41-261"><a href="calibration.html#cb41-261" aria-hidden="true" tabindex="-1"></a>  states_female_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb41-262"><a href="calibration.html#cb41-262" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-263"><a href="calibration.html#cb41-263" aria-hidden="true" tabindex="-1"></a>  states_male_former_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-264"><a href="calibration.html#cb41-264" aria-hidden="true" tabindex="-1"></a>  states_female_former_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-265"><a href="calibration.html#cb41-265" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-266"><a href="calibration.html#cb41-266" aria-hidden="true" tabindex="-1"></a>  states_by_sex_never <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_never_smokers,states_female_never_smokers)</span>
+<span id="cb41-267"><a href="calibration.html#cb41-267" aria-hidden="true" tabindex="-1"></a>  states_by_sex_current <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_current_smokers,states_female_current_smokers)</span>
+<span id="cb41-268"><a href="calibration.html#cb41-268" aria-hidden="true" tabindex="-1"></a>  states_by_sex_former <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_former_smokers,states_female_former_smokers)</span>
+<span id="cb41-269"><a href="calibration.html#cb41-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-270"><a href="calibration.html#cb41-270" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb41-271"><a href="calibration.html#cb41-271" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb41-272"><a href="calibration.html#cb41-272" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb41-273"><a href="calibration.html#cb41-273" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-274"><a href="calibration.html#cb41-274" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> younglings_never_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_never_male))</span>
+<span id="cb41-275"><a href="calibration.html#cb41-275" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_male)</span>
+<span id="cb41-276"><a href="calibration.html#cb41-276" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-277"><a href="calibration.html#cb41-277" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> younglings_current_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_current_male))</span>
+<span id="cb41-278"><a href="calibration.html#cb41-278" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_male)</span>
+<span id="cb41-279"><a href="calibration.html#cb41-279" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-280"><a href="calibration.html#cb41-280" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> younglings_former_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_former_male))</span>
+<span id="cb41-281"><a href="calibration.html#cb41-281" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_male)</span>
+<span id="cb41-282"><a href="calibration.html#cb41-282" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-283"><a href="calibration.html#cb41-283" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb41-284"><a href="calibration.html#cb41-284" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb41-285"><a href="calibration.html#cb41-285" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb41-286"><a href="calibration.html#cb41-286" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-287"><a href="calibration.html#cb41-287" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> younglings_never_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_never_female))</span>
+<span id="cb41-288"><a href="calibration.html#cb41-288" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_female)</span>
+<span id="cb41-289"><a href="calibration.html#cb41-289" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-290"><a href="calibration.html#cb41-290" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> younglings_current_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_current_female))</span>
+<span id="cb41-291"><a href="calibration.html#cb41-291" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_female)</span>
+<span id="cb41-292"><a href="calibration.html#cb41-292" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-293"><a href="calibration.html#cb41-293" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> younglings_former_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_former_female))</span>
+<span id="cb41-294"><a href="calibration.html#cb41-294" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_female)</span>
+<span id="cb41-295"><a href="calibration.html#cb41-295" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-296"><a href="calibration.html#cb41-296" aria-hidden="true" tabindex="-1"></a>  younglings_never <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-297"><a href="calibration.html#cb41-297" aria-hidden="true" tabindex="-1"></a>  younglings_never[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_never_male</span>
+<span id="cb41-298"><a href="calibration.html#cb41-298" aria-hidden="true" tabindex="-1"></a>  younglings_never[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_never_female</span>
+<span id="cb41-299"><a href="calibration.html#cb41-299" aria-hidden="true" tabindex="-1"></a>  younglings_never <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never)</span>
+<span id="cb41-300"><a href="calibration.html#cb41-300" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-301"><a href="calibration.html#cb41-301" aria-hidden="true" tabindex="-1"></a>  younglings_current <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-302"><a href="calibration.html#cb41-302" aria-hidden="true" tabindex="-1"></a>  younglings_current[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_current_male</span>
+<span id="cb41-303"><a href="calibration.html#cb41-303" aria-hidden="true" tabindex="-1"></a>  younglings_current[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_current_female</span>
+<span id="cb41-304"><a href="calibration.html#cb41-304" aria-hidden="true" tabindex="-1"></a>  younglings_current <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current)</span>
+<span id="cb41-305"><a href="calibration.html#cb41-305" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-306"><a href="calibration.html#cb41-306" aria-hidden="true" tabindex="-1"></a>  younglings_former <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-307"><a href="calibration.html#cb41-307" aria-hidden="true" tabindex="-1"></a>  younglings_former[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_former_male</span>
+<span id="cb41-308"><a href="calibration.html#cb41-308" aria-hidden="true" tabindex="-1"></a>  younglings_former[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_former_female</span>
+<span id="cb41-309"><a href="calibration.html#cb41-309" aria-hidden="true" tabindex="-1"></a>  younglings_former <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former)</span>
+<span id="cb41-310"><a href="calibration.html#cb41-310" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-311"><a href="calibration.html#cb41-311" aria-hidden="true" tabindex="-1"></a>  youngling_mult_never <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb41-312"><a href="calibration.html#cb41-312" aria-hidden="true" tabindex="-1"></a>  youngling_mult_current <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb41-313"><a href="calibration.html#cb41-313" aria-hidden="true" tabindex="-1"></a>  youngling_mult_former <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb41-314"><a href="calibration.html#cb41-314" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-315"><a href="calibration.html#cb41-315" aria-hidden="true" tabindex="-1"></a>  <span class="co">#define time</span></span>
+<span id="cb41-316"><a href="calibration.html#cb41-316" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb41-317"><a href="calibration.html#cb41-317" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-318"><a href="calibration.html#cb41-318" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-319"><a href="calibration.html#cb41-319" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb41-320"><a href="calibration.html#cb41-320" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-321"><a href="calibration.html#cb41-321" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-322"><a href="calibration.html#cb41-322" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-323"><a href="calibration.html#cb41-323" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-324"><a href="calibration.html#cb41-324" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-325"><a href="calibration.html#cb41-325" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-326"><a href="calibration.html#cb41-326" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-327"><a href="calibration.html#cb41-327" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb41-328"><a href="calibration.html#cb41-328" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-329"><a href="calibration.html#cb41-329" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-330"><a href="calibration.html#cb41-330" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex,younglings_never,youngling_mult_never, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-331"><a href="calibration.html#cb41-331" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-332"><a href="calibration.html#cb41-332" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-333"><a href="calibration.html#cb41-333" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-334"><a href="calibration.html#cb41-334" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-335"><a href="calibration.html#cb41-335" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-336"><a href="calibration.html#cb41-336" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-337"><a href="calibration.html#cb41-337" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-338"><a href="calibration.html#cb41-338" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-339"><a href="calibration.html#cb41-339" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb41-340"><a href="calibration.html#cb41-340" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-341"><a href="calibration.html#cb41-341" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-342"><a href="calibration.html#cb41-342" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-343"><a href="calibration.html#cb41-343" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-344"><a href="calibration.html#cb41-344" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-345"><a href="calibration.html#cb41-345" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-346"><a href="calibration.html#cb41-346" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-347"><a href="calibration.html#cb41-347" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-348"><a href="calibration.html#cb41-348" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb41-349"><a href="calibration.html#cb41-349" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-350"><a href="calibration.html#cb41-350" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-351"><a href="calibration.html#cb41-351" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_current,youngling_mult_current, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-352"><a href="calibration.html#cb41-352" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-353"><a href="calibration.html#cb41-353" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-354"><a href="calibration.html#cb41-354" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-355"><a href="calibration.html#cb41-355" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-356"><a href="calibration.html#cb41-356" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-357"><a href="calibration.html#cb41-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-358"><a href="calibration.html#cb41-358" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-359"><a href="calibration.html#cb41-359" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-360"><a href="calibration.html#cb41-360" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb41-361"><a href="calibration.html#cb41-361" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-362"><a href="calibration.html#cb41-362" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-363"><a href="calibration.html#cb41-363" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-364"><a href="calibration.html#cb41-364" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-365"><a href="calibration.html#cb41-365" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-366"><a href="calibration.html#cb41-366" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-367"><a href="calibration.html#cb41-367" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-368"><a href="calibration.html#cb41-368" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-369"><a href="calibration.html#cb41-369" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb41-370"><a href="calibration.html#cb41-370" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-371"><a href="calibration.html#cb41-371" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-372"><a href="calibration.html#cb41-372" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_former,youngling_mult_former, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-373"><a href="calibration.html#cb41-373" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-374"><a href="calibration.html#cb41-374" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-375"><a href="calibration.html#cb41-375" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-376"><a href="calibration.html#cb41-376" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-377"><a href="calibration.html#cb41-377" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-378"><a href="calibration.html#cb41-378" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-379"><a href="calibration.html#cb41-379" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-380"><a href="calibration.html#cb41-380" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb41-381"><a href="calibration.html#cb41-381" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb41-382"><a href="calibration.html#cb41-382" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-383"><a href="calibration.html#cb41-383" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb41-384"><a href="calibration.html#cb41-384" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-385"><a href="calibration.html#cb41-385" aria-hidden="true" tabindex="-1"></a>  res_2018 <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">as.numeric</span>(result[result<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">4</span>,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">1405</span>)]))</span>
+<span id="cb41-386"><a href="calibration.html#cb41-386" aria-hidden="true" tabindex="-1"></a>  res_2019 <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">as.numeric</span>(result[result<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">5</span>,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">1405</span>)]))</span>
+<span id="cb41-387"><a href="calibration.html#cb41-387" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-388"><a href="calibration.html#cb41-388" aria-hidden="true" tabindex="-1"></a>  pop_growth_actual <span class="ot">&lt;-</span> (<span class="fu">sum</span>(<span class="fu">c</span>(res_2019)) <span class="sc">-</span> <span class="fu">sum</span>(<span class="fu">c</span>(res_2018)))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(res_2018))</span>
+<span id="cb41-389"><a href="calibration.html#cb41-389" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-390"><a href="calibration.html#cb41-390" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cig_prev_actual &lt;- sum(c(res_2019[,,2,,]))/sum(c(res_2019))</span></span>
+<span id="cb41-391"><a href="calibration.html#cb41-391" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-392"><a href="calibration.html#cb41-392" aria-hidden="true" tabindex="-1"></a>  <span class="co">#former_cig_prev_actual &lt;- sum(c(res_2018[,,3,,]))/sum(c(res_2018)) </span></span>
+<span id="cb41-393"><a href="calibration.html#cb41-393" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-394"><a href="calibration.html#cb41-394" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(pop_growth_actual)</span>
+<span id="cb41-395"><a href="calibration.html#cb41-395" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-396"><a href="calibration.html#cb41-396" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>((pop_growth_actual <span class="sc">-</span> pop_growth_2019_target)) </span>
+<span id="cb41-397"><a href="calibration.html#cb41-397" aria-hidden="true" tabindex="-1"></a>               <span class="co">#(cig_prev_actual - cig_prev_2019_target)^2,</span></span>
+<span id="cb41-398"><a href="calibration.html#cb41-398" aria-hidden="true" tabindex="-1"></a>               <span class="co">#(former_cig_prev_actual - former_cig_prev_2018_target)^2)</span></span>
+<span id="cb41-399"><a href="calibration.html#cb41-399" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(formula)</span>
+<span id="cb41-400"><a href="calibration.html#cb41-400" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-401"><a href="calibration.html#cb41-401" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(formula)</span>
+<span id="cb41-402"><a href="calibration.html#cb41-402" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-403"><a href="calibration.html#cb41-403" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-404"><a href="calibration.html#cb41-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-405"><a href="calibration.html#cb41-405" aria-hidden="true" tabindex="-1"></a>calib_function_cig_init <span class="ot">&lt;-</span> <span class="cf">function</span>(x, parameters, states, growth_rate){</span>
+<span id="cb41-406"><a href="calibration.html#cb41-406" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-407"><a href="calibration.html#cb41-407" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&quot;ODE_functions.R&quot;</span>, <span class="at">local =</span> T)</span>
+<span id="cb41-408"><a href="calibration.html#cb41-408" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-409"><a href="calibration.html#cb41-409" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-410"><a href="calibration.html#cb41-410" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We are calibrating 3 specific values</span></span>
+<span id="cb41-411"><a href="calibration.html#cb41-411" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The growth rate to match population change over time</span></span>
+<span id="cb41-412"><a href="calibration.html#cb41-412" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The initiation/reinstatement multiplier to match cigarette prevalence over time</span></span>
+<span id="cb41-413"><a href="calibration.html#cb41-413" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The cessation multiplier to match former cigarette prevalence over time</span></span>
+<span id="cb41-414"><a href="calibration.html#cb41-414" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-415"><a href="calibration.html#cb41-415" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Population growth rate goals is a 0.5% acceleration in 2019</span></span>
+<span id="cb41-416"><a href="calibration.html#cb41-416" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Cigarette Use Target for 2019 is 14.0%</span></span>
+<span id="cb41-417"><a href="calibration.html#cb41-417" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Cigarette Use Target for 2018 is 20.9%</span></span>
+<span id="cb41-418"><a href="calibration.html#cb41-418" aria-hidden="true" tabindex="-1"></a>  <span class="do">## </span></span>
+<span id="cb41-419"><a href="calibration.html#cb41-419" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-420"><a href="calibration.html#cb41-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb41-421"><a href="calibration.html#cb41-421" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-422"><a href="calibration.html#cb41-422" aria-hidden="true" tabindex="-1"></a>  <span class="co">#pop_growth_2019_target &lt;- 0.005</span></span>
+<span id="cb41-423"><a href="calibration.html#cb41-423" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-424"><a href="calibration.html#cb41-424" aria-hidden="true" tabindex="-1"></a>  <span class="co">#never_smoker_target &lt;- 0.651</span></span>
+<span id="cb41-425"><a href="calibration.html#cb41-425" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-426"><a href="calibration.html#cb41-426" aria-hidden="true" tabindex="-1"></a>  cig_prev_2019_target <span class="ot">&lt;-</span> <span class="fl">0.14</span></span>
+<span id="cb41-427"><a href="calibration.html#cb41-427" aria-hidden="true" tabindex="-1"></a>  <span class="co">#former_cig_prev_2018_target &lt;- 0.209</span></span>
+<span id="cb41-428"><a href="calibration.html#cb41-428" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-429"><a href="calibration.html#cb41-429" aria-hidden="true" tabindex="-1"></a>  <span class="co">#growth_rate &lt;- growth_rate</span></span>
+<span id="cb41-430"><a href="calibration.html#cb41-430" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
+<span id="cb41-431"><a href="calibration.html#cb41-431" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb41-432"><a href="calibration.html#cb41-432" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-433"><a href="calibration.html#cb41-433" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-434"><a href="calibration.html#cb41-434" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Define the states for the parallelization and for model entries</span></span>
+<span id="cb41-435"><a href="calibration.html#cb41-435" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-436"><a href="calibration.html#cb41-436" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-437"><a href="calibration.html#cb41-437" aria-hidden="true" tabindex="-1"></a>  states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(states)</span>
+<span id="cb41-438"><a href="calibration.html#cb41-438" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-439"><a href="calibration.html#cb41-439" aria-hidden="true" tabindex="-1"></a>  states_never_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-440"><a href="calibration.html#cb41-440" aria-hidden="true" tabindex="-1"></a>  states_never_smokers[,,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-441"><a href="calibration.html#cb41-441" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-442"><a href="calibration.html#cb41-442" aria-hidden="true" tabindex="-1"></a>  states_male_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb41-443"><a href="calibration.html#cb41-443" aria-hidden="true" tabindex="-1"></a>  states_female_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb41-444"><a href="calibration.html#cb41-444" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-445"><a href="calibration.html#cb41-445" aria-hidden="true" tabindex="-1"></a>  states_male_never_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-446"><a href="calibration.html#cb41-446" aria-hidden="true" tabindex="-1"></a>  states_female_never_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-447"><a href="calibration.html#cb41-447" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-448"><a href="calibration.html#cb41-448" aria-hidden="true" tabindex="-1"></a>  states_current_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-449"><a href="calibration.html#cb41-449" aria-hidden="true" tabindex="-1"></a>  states_current_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-450"><a href="calibration.html#cb41-450" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-451"><a href="calibration.html#cb41-451" aria-hidden="true" tabindex="-1"></a>  states_male_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb41-452"><a href="calibration.html#cb41-452" aria-hidden="true" tabindex="-1"></a>  states_female_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb41-453"><a href="calibration.html#cb41-453" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-454"><a href="calibration.html#cb41-454" aria-hidden="true" tabindex="-1"></a>  states_male_current_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-455"><a href="calibration.html#cb41-455" aria-hidden="true" tabindex="-1"></a>  states_female_current_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-456"><a href="calibration.html#cb41-456" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-457"><a href="calibration.html#cb41-457" aria-hidden="true" tabindex="-1"></a>  states_former_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb41-458"><a href="calibration.html#cb41-458" aria-hidden="true" tabindex="-1"></a>  states_former_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-459"><a href="calibration.html#cb41-459" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-460"><a href="calibration.html#cb41-460" aria-hidden="true" tabindex="-1"></a>  states_male_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb41-461"><a href="calibration.html#cb41-461" aria-hidden="true" tabindex="-1"></a>  states_female_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb41-462"><a href="calibration.html#cb41-462" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-463"><a href="calibration.html#cb41-463" aria-hidden="true" tabindex="-1"></a>  states_male_former_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-464"><a href="calibration.html#cb41-464" aria-hidden="true" tabindex="-1"></a>  states_female_former_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb41-465"><a href="calibration.html#cb41-465" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-466"><a href="calibration.html#cb41-466" aria-hidden="true" tabindex="-1"></a>  states_by_sex_never <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_never_smokers,states_female_never_smokers)</span>
+<span id="cb41-467"><a href="calibration.html#cb41-467" aria-hidden="true" tabindex="-1"></a>  states_by_sex_current <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_current_smokers,states_female_current_smokers)</span>
+<span id="cb41-468"><a href="calibration.html#cb41-468" aria-hidden="true" tabindex="-1"></a>  states_by_sex_former <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_former_smokers,states_female_former_smokers)</span>
+<span id="cb41-469"><a href="calibration.html#cb41-469" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-470"><a href="calibration.html#cb41-470" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb41-471"><a href="calibration.html#cb41-471" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb41-472"><a href="calibration.html#cb41-472" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> states[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb41-473"><a href="calibration.html#cb41-473" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-474"><a href="calibration.html#cb41-474" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> younglings_never_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_never_male))</span>
+<span id="cb41-475"><a href="calibration.html#cb41-475" aria-hidden="true" tabindex="-1"></a>  younglings_never_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_male)</span>
+<span id="cb41-476"><a href="calibration.html#cb41-476" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-477"><a href="calibration.html#cb41-477" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> younglings_current_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_current_male))</span>
+<span id="cb41-478"><a href="calibration.html#cb41-478" aria-hidden="true" tabindex="-1"></a>  younglings_current_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_male)</span>
+<span id="cb41-479"><a href="calibration.html#cb41-479" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-480"><a href="calibration.html#cb41-480" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> younglings_former_male<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_former_male))</span>
+<span id="cb41-481"><a href="calibration.html#cb41-481" aria-hidden="true" tabindex="-1"></a>  younglings_former_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_male)</span>
+<span id="cb41-482"><a href="calibration.html#cb41-482" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-483"><a href="calibration.html#cb41-483" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb41-484"><a href="calibration.html#cb41-484" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb41-485"><a href="calibration.html#cb41-485" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> states[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb41-486"><a href="calibration.html#cb41-486" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-487"><a href="calibration.html#cb41-487" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> younglings_never_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_never_female))</span>
+<span id="cb41-488"><a href="calibration.html#cb41-488" aria-hidden="true" tabindex="-1"></a>  younglings_never_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_female)</span>
+<span id="cb41-489"><a href="calibration.html#cb41-489" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-490"><a href="calibration.html#cb41-490" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> younglings_current_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_current_female))</span>
+<span id="cb41-491"><a href="calibration.html#cb41-491" aria-hidden="true" tabindex="-1"></a>  younglings_current_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_female)</span>
+<span id="cb41-492"><a href="calibration.html#cb41-492" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-493"><a href="calibration.html#cb41-493" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> younglings_former_female<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">toVector</span>(younglings_former_female))</span>
+<span id="cb41-494"><a href="calibration.html#cb41-494" aria-hidden="true" tabindex="-1"></a>  younglings_former_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_female)</span>
+<span id="cb41-495"><a href="calibration.html#cb41-495" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-496"><a href="calibration.html#cb41-496" aria-hidden="true" tabindex="-1"></a>  younglings_never <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-497"><a href="calibration.html#cb41-497" aria-hidden="true" tabindex="-1"></a>  younglings_never[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_never_male</span>
+<span id="cb41-498"><a href="calibration.html#cb41-498" aria-hidden="true" tabindex="-1"></a>  younglings_never[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_never_female</span>
+<span id="cb41-499"><a href="calibration.html#cb41-499" aria-hidden="true" tabindex="-1"></a>  younglings_never <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never)</span>
+<span id="cb41-500"><a href="calibration.html#cb41-500" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-501"><a href="calibration.html#cb41-501" aria-hidden="true" tabindex="-1"></a>  younglings_current <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-502"><a href="calibration.html#cb41-502" aria-hidden="true" tabindex="-1"></a>  younglings_current[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_current_male</span>
+<span id="cb41-503"><a href="calibration.html#cb41-503" aria-hidden="true" tabindex="-1"></a>  younglings_current[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_current_female</span>
+<span id="cb41-504"><a href="calibration.html#cb41-504" aria-hidden="true" tabindex="-1"></a>  younglings_current <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current)</span>
+<span id="cb41-505"><a href="calibration.html#cb41-505" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-506"><a href="calibration.html#cb41-506" aria-hidden="true" tabindex="-1"></a>  younglings_former <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb41-507"><a href="calibration.html#cb41-507" aria-hidden="true" tabindex="-1"></a>  younglings_former[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_former_male</span>
+<span id="cb41-508"><a href="calibration.html#cb41-508" aria-hidden="true" tabindex="-1"></a>  younglings_former[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_former_female</span>
+<span id="cb41-509"><a href="calibration.html#cb41-509" aria-hidden="true" tabindex="-1"></a>  younglings_former <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former)</span>
+<span id="cb41-510"><a href="calibration.html#cb41-510" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-511"><a href="calibration.html#cb41-511" aria-hidden="true" tabindex="-1"></a>  youngling_mult_never <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb41-512"><a href="calibration.html#cb41-512" aria-hidden="true" tabindex="-1"></a>  youngling_mult_current <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb41-513"><a href="calibration.html#cb41-513" aria-hidden="true" tabindex="-1"></a>  youngling_mult_former <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb41-514"><a href="calibration.html#cb41-514" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-515"><a href="calibration.html#cb41-515" aria-hidden="true" tabindex="-1"></a>  <span class="co">#define time</span></span>
+<span id="cb41-516"><a href="calibration.html#cb41-516" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb41-517"><a href="calibration.html#cb41-517" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-518"><a href="calibration.html#cb41-518" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-519"><a href="calibration.html#cb41-519" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb41-520"><a href="calibration.html#cb41-520" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-521"><a href="calibration.html#cb41-521" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-522"><a href="calibration.html#cb41-522" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-523"><a href="calibration.html#cb41-523" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-524"><a href="calibration.html#cb41-524" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-525"><a href="calibration.html#cb41-525" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-526"><a href="calibration.html#cb41-526" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-527"><a href="calibration.html#cb41-527" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb41-528"><a href="calibration.html#cb41-528" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-529"><a href="calibration.html#cb41-529" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-530"><a href="calibration.html#cb41-530" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex,younglings_never,youngling_mult_never, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-531"><a href="calibration.html#cb41-531" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-532"><a href="calibration.html#cb41-532" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-533"><a href="calibration.html#cb41-533" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-534"><a href="calibration.html#cb41-534" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-535"><a href="calibration.html#cb41-535" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-536"><a href="calibration.html#cb41-536" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-537"><a href="calibration.html#cb41-537" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-538"><a href="calibration.html#cb41-538" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-539"><a href="calibration.html#cb41-539" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb41-540"><a href="calibration.html#cb41-540" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-541"><a href="calibration.html#cb41-541" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-542"><a href="calibration.html#cb41-542" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-543"><a href="calibration.html#cb41-543" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-544"><a href="calibration.html#cb41-544" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-545"><a href="calibration.html#cb41-545" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-546"><a href="calibration.html#cb41-546" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-547"><a href="calibration.html#cb41-547" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-548"><a href="calibration.html#cb41-548" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb41-549"><a href="calibration.html#cb41-549" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-550"><a href="calibration.html#cb41-550" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-551"><a href="calibration.html#cb41-551" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_current,youngling_mult_current, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-552"><a href="calibration.html#cb41-552" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-553"><a href="calibration.html#cb41-553" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-554"><a href="calibration.html#cb41-554" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-555"><a href="calibration.html#cb41-555" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-556"><a href="calibration.html#cb41-556" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-557"><a href="calibration.html#cb41-557" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-558"><a href="calibration.html#cb41-558" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-559"><a href="calibration.html#cb41-559" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-560"><a href="calibration.html#cb41-560" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb41-561"><a href="calibration.html#cb41-561" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb41-562"><a href="calibration.html#cb41-562" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-563"><a href="calibration.html#cb41-563" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb41-564"><a href="calibration.html#cb41-564" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb41-565"><a href="calibration.html#cb41-565" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb41-566"><a href="calibration.html#cb41-566" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-567"><a href="calibration.html#cb41-567" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb41-568"><a href="calibration.html#cb41-568" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-569"><a href="calibration.html#cb41-569" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb41-570"><a href="calibration.html#cb41-570" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb41-571"><a href="calibration.html#cb41-571" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> de_fun_beta2_sex_w_death_and_entries, </span>
+<span id="cb41-572"><a href="calibration.html#cb41-572" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_former,youngling_mult_former, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb41-573"><a href="calibration.html#cb41-573" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-574"><a href="calibration.html#cb41-574" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb41-575"><a href="calibration.html#cb41-575" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb41-576"><a href="calibration.html#cb41-576" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-577"><a href="calibration.html#cb41-577" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb41-578"><a href="calibration.html#cb41-578" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb41-579"><a href="calibration.html#cb41-579" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-580"><a href="calibration.html#cb41-580" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb41-581"><a href="calibration.html#cb41-581" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb41-582"><a href="calibration.html#cb41-582" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-583"><a href="calibration.html#cb41-583" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb41-584"><a href="calibration.html#cb41-584" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-585"><a href="calibration.html#cb41-585" aria-hidden="true" tabindex="-1"></a>  res_2018 <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">as.numeric</span>(result[result<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">4</span>,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">1405</span>)]))</span>
+<span id="cb41-586"><a href="calibration.html#cb41-586" aria-hidden="true" tabindex="-1"></a>  res_2019 <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="fu">as.numeric</span>(result[result<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">5</span>,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">1405</span>)]))</span>
+<span id="cb41-587"><a href="calibration.html#cb41-587" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-588"><a href="calibration.html#cb41-588" aria-hidden="true" tabindex="-1"></a>  <span class="co">#pop_growth_actual &lt;- (sum(c(res_2019)) - sum(c(res_2018)))/sum(c(res_2018))</span></span>
+<span id="cb41-589"><a href="calibration.html#cb41-589" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-590"><a href="calibration.html#cb41-590" aria-hidden="true" tabindex="-1"></a>  cig_prev_actual <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(res_2019[,,<span class="dv">2</span>,,]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(res_2019))</span>
+<span id="cb41-591"><a href="calibration.html#cb41-591" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-592"><a href="calibration.html#cb41-592" aria-hidden="true" tabindex="-1"></a>  former_cig_prev_actual <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">c</span>(res_2018[,,<span class="dv">3</span>,,]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">c</span>(res_2018)) </span>
+<span id="cb41-593"><a href="calibration.html#cb41-593" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-594"><a href="calibration.html#cb41-594" aria-hidden="true" tabindex="-1"></a>  <span class="co">#print(pop_growth_actual)</span></span>
+<span id="cb41-595"><a href="calibration.html#cb41-595" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-596"><a href="calibration.html#cb41-596" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Current Smoker Prevalence is: &quot;</span>, <span class="fu">round</span>(cig_prev_actual,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>,<span class="at">sep =</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb41-597"><a href="calibration.html#cb41-597" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Former Smoker Prevalence is: &quot;</span>, <span class="fu">round</span>(former_cig_prev_actual,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>,<span class="at">sep =</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb41-598"><a href="calibration.html#cb41-598" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>((cig_prev_actual <span class="sc">-</span> cig_prev_2019_target))</span>
+<span id="cb41-599"><a href="calibration.html#cb41-599" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-600"><a href="calibration.html#cb41-600" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(formula)</span>
+<span id="cb41-601"><a href="calibration.html#cb41-601" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-602"><a href="calibration.html#cb41-602" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(formula)</span>
+<span id="cb41-603"><a href="calibration.html#cb41-603" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-604"><a href="calibration.html#cb41-604" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-605"><a href="calibration.html#cb41-605" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb41-606"><a href="calibration.html#cb41-606" aria-hidden="true" tabindex="-1"></a><span class="do">## Start Code for Calibration</span></span>
+<span id="cb41-607"><a href="calibration.html#cb41-607" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
+<span id="cb41-608"><a href="calibration.html#cb41-608" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-609"><a href="calibration.html#cb41-609" aria-hidden="true" tabindex="-1"></a>parameter_set_number <span class="ot">&lt;-</span> <span class="st">&quot;Imputed_Data_1&quot;</span></span>
+<span id="cb41-610"><a href="calibration.html#cb41-610" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Parameter_Sets/Initial_States_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb41-611"><a href="calibration.html#cb41-611" aria-hidden="true" tabindex="-1"></a>parameter_set <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Parameter_Sets/Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb41-612"><a href="calibration.html#cb41-612" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-613"><a href="calibration.html#cb41-613" aria-hidden="true" tabindex="-1"></a>growth_rates <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb41-614"><a href="calibration.html#cb41-614" aria-hidden="true" tabindex="-1"></a>initiation_mods <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb41-615"><a href="calibration.html#cb41-615" aria-hidden="true" tabindex="-1"></a>cessation_mods <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb41-616"><a href="calibration.html#cb41-616" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-617"><a href="calibration.html#cb41-617" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sim_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameter_set)){</span>
+<span id="cb41-618"><a href="calibration.html#cb41-618" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-619"><a href="calibration.html#cb41-619" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(sim_number)</span>
+<span id="cb41-620"><a href="calibration.html#cb41-620" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-621"><a href="calibration.html#cb41-621" aria-hidden="true" tabindex="-1"></a>  parameters <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(parameter_set[sim_number,])</span>
+<span id="cb41-622"><a href="calibration.html#cb41-622" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-623"><a href="calibration.html#cb41-623" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>)</span>
+<span id="cb41-624"><a href="calibration.html#cb41-624" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-625"><a href="calibration.html#cb41-625" aria-hidden="true" tabindex="-1"></a>  <span class="do">## we also want to set lower and upper bounds for these variables</span></span>
+<span id="cb41-626"><a href="calibration.html#cb41-626" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">005</span>)</span>
+<span id="cb41-627"><a href="calibration.html#cb41-627" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">075</span>)</span>
+<span id="cb41-628"><a href="calibration.html#cb41-628" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-629"><a href="calibration.html#cb41-629" aria-hidden="true" tabindex="-1"></a>  <span class="do">## at this stage we can run the calibration function</span></span>
+<span id="cb41-630"><a href="calibration.html#cb41-630" aria-hidden="true" tabindex="-1"></a>  calibration_results <span class="ot">&lt;-</span> <span class="fu">nls.lm</span>(x0, </span>
+<span id="cb41-631"><a href="calibration.html#cb41-631" aria-hidden="true" tabindex="-1"></a>                              <span class="co">#  lower = lower, </span></span>
+<span id="cb41-632"><a href="calibration.html#cb41-632" aria-hidden="true" tabindex="-1"></a>                              <span class="co">#  upper = upper, </span></span>
+<span id="cb41-633"><a href="calibration.html#cb41-633" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fn =</span> calib_function_pop,</span>
+<span id="cb41-634"><a href="calibration.html#cb41-634" aria-hidden="true" tabindex="-1"></a>                                <span class="at">parameters =</span> parameters,</span>
+<span id="cb41-635"><a href="calibration.html#cb41-635" aria-hidden="true" tabindex="-1"></a>                                <span class="at">states =</span> states,</span>
+<span id="cb41-636"><a href="calibration.html#cb41-636" aria-hidden="true" tabindex="-1"></a>                                <span class="at">control =</span> <span class="fu">nls.lm.control</span>(<span class="at">nprint=</span><span class="dv">1</span>))</span>
+<span id="cb41-637"><a href="calibration.html#cb41-637" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-638"><a href="calibration.html#cb41-638" aria-hidden="true" tabindex="-1"></a>  gr <span class="ot">&lt;-</span> calibration_results<span class="sc">$</span>par[<span class="dv">1</span>]</span>
+<span id="cb41-639"><a href="calibration.html#cb41-639" aria-hidden="true" tabindex="-1"></a>  growth_rates <span class="ot">&lt;-</span> <span class="fu">c</span>(growth_rates, calibration_results<span class="sc">$</span>par[<span class="dv">1</span>])</span>
+<span id="cb41-640"><a href="calibration.html#cb41-640" aria-hidden="true" tabindex="-1"></a>  <span class="co">#initiation_mods &lt;- c(initiation_mods, calibration_results$par[2])</span></span>
+<span id="cb41-641"><a href="calibration.html#cb41-641" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cessation_mods &lt;- c(cessation_mods, calibration_results$par[3])</span></span>
+<span id="cb41-642"><a href="calibration.html#cb41-642" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-643"><a href="calibration.html#cb41-643" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.4</span>)</span>
+<span id="cb41-644"><a href="calibration.html#cb41-644" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.0001</span>)</span>
+<span id="cb41-645"><a href="calibration.html#cb41-645" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
+<span id="cb41-646"><a href="calibration.html#cb41-646" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-647"><a href="calibration.html#cb41-647" aria-hidden="true" tabindex="-1"></a>  calibration_results <span class="ot">&lt;-</span> <span class="fu">nls.lm</span>(x0,</span>
+<span id="cb41-648"><a href="calibration.html#cb41-648" aria-hidden="true" tabindex="-1"></a>                                <span class="at">lower =</span> lower,</span>
+<span id="cb41-649"><a href="calibration.html#cb41-649" aria-hidden="true" tabindex="-1"></a>                                <span class="at">upper =</span> upper,</span>
+<span id="cb41-650"><a href="calibration.html#cb41-650" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fn =</span> calib_function_cig_init,</span>
+<span id="cb41-651"><a href="calibration.html#cb41-651" aria-hidden="true" tabindex="-1"></a>                                <span class="at">parameters =</span> parameters,</span>
+<span id="cb41-652"><a href="calibration.html#cb41-652" aria-hidden="true" tabindex="-1"></a>                                <span class="at">states =</span> states,</span>
+<span id="cb41-653"><a href="calibration.html#cb41-653" aria-hidden="true" tabindex="-1"></a>                                <span class="at">growth_rate =</span> gr,</span>
+<span id="cb41-654"><a href="calibration.html#cb41-654" aria-hidden="true" tabindex="-1"></a>                                <span class="at">control =</span> <span class="fu">nls.lm.control</span>(<span class="at">nprint=</span><span class="dv">1</span>))</span>
+<span id="cb41-655"><a href="calibration.html#cb41-655" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-656"><a href="calibration.html#cb41-656" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-657"><a href="calibration.html#cb41-657" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.02</span>,<span class="fl">0.4</span>)</span>
+<span id="cb41-658"><a href="calibration.html#cb41-658" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.001</span>)</span>
+<span id="cb41-659"><a href="calibration.html#cb41-659" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>)</span>
+<span id="cb41-660"><a href="calibration.html#cb41-660" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-661"><a href="calibration.html#cb41-661" aria-hidden="true" tabindex="-1"></a>  calibration_results <span class="ot">&lt;-</span> <span class="fu">nls.lm</span>(x0,</span>
+<span id="cb41-662"><a href="calibration.html#cb41-662" aria-hidden="true" tabindex="-1"></a>                                <span class="at">lower =</span> lower,</span>
+<span id="cb41-663"><a href="calibration.html#cb41-663" aria-hidden="true" tabindex="-1"></a>                                <span class="at">upper =</span> upper,</span>
+<span id="cb41-664"><a href="calibration.html#cb41-664" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fn =</span> calib_function,</span>
+<span id="cb41-665"><a href="calibration.html#cb41-665" aria-hidden="true" tabindex="-1"></a>                                <span class="at">parameters =</span> parameters,</span>
+<span id="cb41-666"><a href="calibration.html#cb41-666" aria-hidden="true" tabindex="-1"></a>                                <span class="at">states =</span> states,</span>
+<span id="cb41-667"><a href="calibration.html#cb41-667" aria-hidden="true" tabindex="-1"></a>                             <span class="co">#   growth_rate = gr,</span></span>
+<span id="cb41-668"><a href="calibration.html#cb41-668" aria-hidden="true" tabindex="-1"></a>                                <span class="at">control =</span> <span class="fu">nls.lm.control</span>(<span class="at">nprint=</span><span class="dv">1</span>))</span>
+<span id="cb41-669"><a href="calibration.html#cb41-669" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-670"><a href="calibration.html#cb41-670" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ode.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ref.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

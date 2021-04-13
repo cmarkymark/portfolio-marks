@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Aim #2: Mathematical Model</title>
+  <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Aim #2: Mathematical Model" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Aim #2: Mathematical Model" />
+  
+  <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2021-04-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="dataset.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> In This Book</a></li>
+<li class="chapter" data-level="2" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>2</b> Generating the Initial Dataset</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="dataset.html"><a href="dataset.html#participants"><i class="fa fa-check"></i><b>2.1</b> Participants</a></li>
+<li class="chapter" data-level="2.2" data-path="dataset.html"><a href="dataset.html#defining-variables-we-wish-to-capture"><i class="fa fa-check"></i><b>2.2</b> Defining Variables We Wish to Capture</a></li>
+<li class="chapter" data-level="2.3" data-path="dataset.html"><a href="dataset.html#loading-the-necessary-datasets"><i class="fa fa-check"></i><b>2.3</b> Loading the Necessary Datasets</a></li>
+<li class="chapter" data-level="2.4" data-path="dataset.html"><a href="dataset.html#iterating-through-the-datasets"><i class="fa fa-check"></i><b>2.4</b> Iterating Through the Datasets</a></li>
+<li class="chapter" data-level="2.5" data-path="dataset.html"><a href="dataset.html#factoring-the-data"><i class="fa fa-check"></i><b>2.5</b> Factoring the Data</a></li>
+<li class="chapter" data-level="2.6" data-path="dataset.html"><a href="dataset.html#adding-the-weights-and-replicate-weights-to-the-study"><i class="fa fa-check"></i><b>2.6</b> Adding the Weights and Replicate Weights to the Study</a></li>
+<li class="chapter" data-level="2.7" data-path="dataset.html"><a href="dataset.html#save-the-data-frame-for-future-use"><i class="fa fa-check"></i><b>2.7</b> Save the Data Frame for Future Use</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="imputation.html"><a href="imputation.html"><i class="fa fa-check"></i><b>3</b> Data Imputation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="imputation.html"><a href="imputation.html#loading-libraries-and-the-data"><i class="fa fa-check"></i><b>3.1</b> Loading Libraries and the Data</a></li>
+<li class="chapter" data-level="3.2" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-income"><i class="fa fa-check"></i><b>3.2</b> Heuristic Imputation of Income</a></li>
+<li class="chapter" data-level="3.3" data-path="imputation.html"><a href="imputation.html#heuristic-imputation-of-former-cige-cig-use"><i class="fa fa-check"></i><b>3.3</b> Heuristic Imputation of Former Cig/E-Cig Use</a></li>
+<li class="chapter" data-level="3.4" data-path="imputation.html"><a href="imputation.html#imputation-with-mice"><i class="fa fa-check"></i><b>3.4</b> Imputation with <em>mice()</em></a></li>
+<li class="chapter" data-level="3.5" data-path="imputation.html"><a href="imputation.html#generating-some-additional-variables"><i class="fa fa-check"></i><b>3.5</b> Generating Some Additional Variables</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="imputation.html"><a href="imputation.html#cateogry-cigarette-and-e-cigarette-use"><i class="fa fa-check"></i><b>3.5.1</b> 3-Cateogry Cigarette and E-Cigarette Use</a></li>
+<li class="chapter" data-level="3.5.2" data-path="imputation.html"><a href="imputation.html#income-change-from-waves-1---2"><i class="fa fa-check"></i><b>3.5.2</b> Income Change from Waves 1 - 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="imputation.html"><a href="imputation.html#output-the-imputed-dataset"><i class="fa fa-check"></i><b>3.6</b> Output the Imputed Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="paramset.html"><a href="paramset.html"><i class="fa fa-check"></i><b>4</b> Generate Parameter Set</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="paramset.html"><a href="paramset.html#loading-necessary-packages-and-helper-functions"><i class="fa fa-check"></i><b>4.1</b> Loading Necessary Packages and Helper Functions</a></li>
+<li class="chapter" data-level="4.2" data-path="paramset.html"><a href="paramset.html#set-some-hyperparamets-to-customize-parameter-set"><i class="fa fa-check"></i><b>4.2</b> Set Some Hyperparamets to Customize Parameter Set</a></li>
+<li class="chapter" data-level="4.3" data-path="paramset.html"><a href="paramset.html#loading-our-dataset-and-defining-some-variables"><i class="fa fa-check"></i><b>4.3</b> Loading Our Dataset and Defining Some Variables</a></li>
+<li class="chapter" data-level="4.4" data-path="paramset.html"><a href="paramset.html#defining-absolute-age-specific-income-transition-totals"><i class="fa fa-check"></i><b>4.4</b> Defining Absolute Age-Specific Income Transition Totals</a></li>
+<li class="chapter" data-level="4.5" data-path="paramset.html"><a href="paramset.html#defining-cigarette-use-transitions"><i class="fa fa-check"></i><b>4.5</b> Defining Cigarette Use Transitions</a></li>
+<li class="chapter" data-level="4.6" data-path="paramset.html"><a href="paramset.html#defining-e-cigarette-transitions"><i class="fa fa-check"></i><b>4.6</b> Defining E-Cigarette Transitions</a></li>
+<li class="chapter" data-level="4.7" data-path="paramset.html"><a href="paramset.html#running-regression-analyses-to-extract-log-relative-risks"><i class="fa fa-check"></i><b>4.7</b> Running Regression Analyses to Extract Log-Relative Risks</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="paramset.html"><a href="paramset.html#defining-income-change-variable"><i class="fa fa-check"></i><b>4.7.1</b> Defining Income Change Variable</a></li>
+<li class="chapter" data-level="4.7.2" data-path="paramset.html"><a href="paramset.html#cigarette-initiation-model"><i class="fa fa-check"></i><b>4.7.2</b> Cigarette Initiation Model</a></li>
+<li class="chapter" data-level="4.7.3" data-path="paramset.html"><a href="paramset.html#cigarette-cessation-model"><i class="fa fa-check"></i><b>4.7.3</b> Cigarette Cessation Model</a></li>
+<li class="chapter" data-level="4.7.4" data-path="paramset.html"><a href="paramset.html#cigarette-re-instatement-model"><i class="fa fa-check"></i><b>4.7.4</b> Cigarette Re-Instatement Model</a></li>
+<li class="chapter" data-level="4.7.5" data-path="paramset.html"><a href="paramset.html#e-cigarette-initiation-model"><i class="fa fa-check"></i><b>4.7.5</b> E-Cigarette Initiation Model</a></li>
+<li class="chapter" data-level="4.7.6" data-path="paramset.html"><a href="paramset.html#e-cigarette-cessation-model"><i class="fa fa-check"></i><b>4.7.6</b> E-Cigarette Cessation Model</a></li>
+<li class="chapter" data-level="4.7.7" data-path="paramset.html"><a href="paramset.html#e-cigarette-reinstatement-model"><i class="fa fa-check"></i><b>4.7.7</b> E-Cigarette Reinstatement Model</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="paramset.html"><a href="paramset.html#drawing-our-parameter-set-samples"><i class="fa fa-check"></i><b>4.8</b> Drawing Our Parameter Set Samples</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="paramset.html"><a href="paramset.html#income-transitions-sample"><i class="fa fa-check"></i><b>4.8.1</b> Income Transitions Sample</a></li>
+<li class="chapter" data-level="4.8.2" data-path="paramset.html"><a href="paramset.html#cigarette-transitions-sample"><i class="fa fa-check"></i><b>4.8.2</b> Cigarette Transitions Sample</a></li>
+<li class="chapter" data-level="4.8.3" data-path="paramset.html"><a href="paramset.html#e-cigarette-transitions-sample"><i class="fa fa-check"></i><b>4.8.3</b> E-Cigarette Transitions Sample</a></li>
+<li class="chapter" data-level="4.8.4" data-path="paramset.html"><a href="paramset.html#sampling-relative-risks"><i class="fa fa-check"></i><b>4.8.4</b> Sampling Relative Risks</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="paramset.html"><a href="paramset.html#generating-the-final-parameter-set-sampling"><i class="fa fa-check"></i><b>4.9</b> Generating the Final Parameter Set Sampling</a></li>
+<li class="chapter" data-level="4.10" data-path="paramset.html"><a href="paramset.html#output-the-results"><i class="fa fa-check"></i><b>4.10</b> Output the Results</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="start.html"><a href="start.html"><i class="fa fa-check"></i><b>5</b> Initial Start State</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="start.html"><a href="start.html#stratifying-by-sex-and-age"><i class="fa fa-check"></i><b>5.1</b> Stratifying by Sex and Age</a></li>
+<li class="chapter" data-level="5.2" data-path="start.html"><a href="start.html#stratifying-the-population-by-income-level"><i class="fa fa-check"></i><b>5.2</b> Stratifying the Population by Income Level</a></li>
+<li class="chapter" data-level="5.3" data-path="start.html"><a href="start.html#distributing-cigarette-use"><i class="fa fa-check"></i><b>5.3</b> Distributing Cigarette Use</a></li>
+<li class="chapter" data-level="5.4" data-path="start.html"><a href="start.html#distributing-e-cigarette-use"><i class="fa fa-check"></i><b>5.4</b> Distributing E-Cigarette Use</a></li>
+<li class="chapter" data-level="5.5" data-path="start.html"><a href="start.html#saving-the-states"><i class="fa fa-check"></i><b>5.5</b> Saving the States</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>6</b> ODE Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>6.1</b> Helper Functions</a></li>
+<li class="chapter" data-level="6.2" data-path="ode.html"><a href="ode.html#ode-function"><i class="fa fa-check"></i><b>6.2</b> ODE Function</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>7</b> Calibration</a></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aim #2: Mathematical Model</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Aim #2: Mathematical Model</h1>
+<p class="author"><em>Charles Marks</em></p>
+<p class="date"><em>2021-04-13</em></p>
+</div>
+<div id="in-this-book" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> In This Book</h1>
+<p>In this book, you will find all the code necessary to replicate the findings from Aim #2 of Charles Marks’s dissertation. This document is intended to be shared as a supplement to both the dissertation and potential manuscripts which are built off of this work.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="dataset.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>
