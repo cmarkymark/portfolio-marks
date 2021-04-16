@@ -24,7 +24,7 @@
 <meta name="author" content="Charles Marks" />
 
 
-<meta name="date" content="2021-04-13" />
+<meta name="date" content="2021-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="libs/dygraphs-1.1.1/shapes.js"></script>
+<script src="libs/moment-2.8.4/moment.js"></script>
+<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 
 <style type="text/css">
@@ -192,11 +200,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>6</b> ODE Functions</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>6.1</b> Helper Functions</a></li>
-<li class="chapter" data-level="6.2" data-path="ode.html"><a href="ode.html#ode-function"><i class="fa fa-check"></i><b>6.2</b> ODE Function</a></li>
+<li class="chapter" data-level="6.1" data-path="ode.html"><a href="ode.html#ode-function"><i class="fa fa-check"></i><b>6.1</b> ODE Function</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>7</b> Calibration</a></li>
-<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="chapter" data-level="7" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>7</b> Calibration</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="calibration.html"><a href="calibration.html#load-the-necessary-libraries"><i class="fa fa-check"></i><b>7.1</b> Load the Necessary Libraries</a></li>
+<li class="chapter" data-level="7.2" data-path="calibration.html"><a href="calibration.html#define-our-calibration-function"><i class="fa fa-check"></i><b>7.2</b> Define Our Calibration Function</a></li>
+<li class="chapter" data-level="7.3" data-path="calibration.html"><a href="calibration.html#run-the-calibration"><i class="fa fa-check"></i><b>7.3</b> Run the Calibration</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> Run Primary Model and Income Scenario Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ref.html"><a href="ref.html#run-primary-model"><i class="fa fa-check"></i><b>8.1</b> Run Primary Model</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="ref.html"><a href="ref.html#load-the-needed-libraries-and-functions"><i class="fa fa-check"></i><b>8.1.1</b> Load the Needed Libraries and Functions</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ref.html"><a href="ref.html#initialize-the-start-state-and-entry-object"><i class="fa fa-check"></i><b>8.1.2</b> Initialize the Start State and Entry Object</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ref.html"><a href="ref.html#load-appropraite-parameters"><i class="fa fa-check"></i><b>8.1.3</b> Load Appropraite Parameters</a></li>
+<li class="chapter" data-level="8.1.4" data-path="ref.html"><a href="ref.html#actually-run-the-model"><i class="fa fa-check"></i><b>8.1.4</b> Actually Run the Model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ref.html"><a href="ref.html#run-high-income-scenario-analysis"><i class="fa fa-check"></i><b>8.2</b> Run High-Income Scenario Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>9</b> Results</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="results.html"><a href="results.html#load-data-we-need"><i class="fa fa-check"></i><b>9.1</b> Load Data We Need</a></li>
+<li class="chapter" data-level="9.2" data-path="results.html"><a href="results.html#calibration-confirmation"><i class="fa fa-check"></i><b>9.2</b> Calibration Confirmation</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="results.html"><a href="results.html#population-growth"><i class="fa fa-check"></i><b>9.2.1</b> Population Growth</a></li>
+<li class="chapter" data-level="9.2.2" data-path="results.html"><a href="results.html#cigarette-use"><i class="fa fa-check"></i><b>9.2.2</b> Cigarette Use</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="results.html"><a href="results.html#hi-income-scenario"><i class="fa fa-check"></i><b>9.3</b> Hi-Income Scenario</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="results.html"><a href="results.html#cigarette-use-prevalence"><i class="fa fa-check"></i><b>9.3.1</b> Cigarette Use Prevalence</a></li>
+<li class="chapter" data-level="9.3.2" data-path="results.html"><a href="results.html#population-attributable-fraction"><i class="fa fa-check"></i><b>9.3.2</b> Population Attributable Fraction</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>

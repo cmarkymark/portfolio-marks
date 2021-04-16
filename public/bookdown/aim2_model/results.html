@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Aim #2: Mathematical Model</title>
+  <title>Chapter 9 Results | Aim #2: Mathematical Model</title>
   <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Aim #2: Mathematical Model" />
+  <meta property="og:title" content="Chapter 9 Results | Aim #2: Mathematical Model" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Aim #2: Mathematical Model" />
+  <meta name="twitter:title" content="Chapter 9 Results | Aim #2: Mathematical Model" />
   
   <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="ref.html"/>
 
-<link rel="next" href="dataset.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -250,23 +250,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Aim #2: Mathematical Model</h1>
-<p class="author"><em>Charles Marks</em></p>
-<p class="date"><em>2021-04-16</em></p>
+<div id="results" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Results</h1>
+<p>Now that we have run the model and our primary scenario analyses, we want to look at the results.</p>
+<div id="load-data-we-need" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Load Data We Need</h2>
 </div>
-<div id="in-this-book" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> In This Book</h1>
-<p>In this book, you will find all the code necessary to replicate the findings from Aim #2 of Charles Marks’s dissertation. This document is intended to be shared as a supplement to both the dissertation and potential manuscripts which are built off of this work.</p>
+<div id="calibration-confirmation" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Calibration Confirmation</h2>
+<p>First, we want to make sure that our calibrations worked properly. We calibrated to ensure our model accurately reflected on population growth and changes in cigarette use prevalence. The plots below display the modeled data versus actual historical data to confirm calibrations.</p>
+<div id="population-growth" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Population Growth</h3>
+<div id="htmlwidget-0401ff38c68873279a0e" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0401ff38c68873279a0e">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60},"y":[]},"labels":["time","Population Change From Prior Year","actual_change"],"legend":"auto","retainDateWindow":false,"ylabel":"% Change in Population Size From Previous Year","customBars":true,"series":{"Population Change From Prior Year":{"axis":"y"},"actual_change":{"axis":"y"}}},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[0,1,2,3,4,5,6,7,8,9,10],[[null,null,null],[0.654541441860959,0.65990782951777,0.666715091198298],[0.617771015265249,0.620686329091012,0.625412732668883],[0.579198622391504,0.580848697718321,0.582900738260257],[0.539865981583065,0.540591069903558,0.541339284699381],[0.499999999964834,0.500000000021496,0.500000000071356],[0.458444370596691,0.459131200097803,0.459672892318459],[0.416778951135562,0.418054150914622,0.418934143723244],[0.375057011652415,0.376819681452667,0.37809557084486],[0.333305646974411,0.335453001249792,0.336983066861881],[0.291546947500519,0.293980538544998,0.29570385740072]],[[0.728,0.728,0.728],[0.731,0.731,0.731],[0.72,0.72,0.72],[0.63,0.63,0.63],[0.522,0.522,0.522],[0.474,0.474,0.474],[null,null,null],[null,null,null],[null,null,null],[null,null,null],[null,null,null]]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="cigarette-use" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Cigarette Use</h3>
+<div id="htmlwidget-3a8927a4cb16cf1df8b4" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3a8927a4cb16cf1df8b4">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60},"y":[]},"title":"Modeled Cigarette Prevalence Comparted to Historical Data","labels":["time","Primary","actual_ever"],"legend":"auto","retainDateWindow":false,"ylabel":"Cigarette Use Prevalence (%)","customBars":true,"series":{"Primary":{"axis":"y"},"actual_ever":{"axis":"y"}}},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[0,1,2,3,4,5,6,7,8,9,10],[[17.0036173432526,17.0036173432526,17.0036173432526],[15.5118450046089,15.6652074228087,15.8022640371938],[14.7248309289862,14.8829705063202,15.0317447207254],[14.3018772010635,14.4163366470125,14.5288354161564],[14.0879664280566,14.1449376751588,14.203459819849],[13.9999999998713,14.0000000000069,14.0000000001375],[13.8818186190603,13.9388824095011,13.9899645474537],[13.8233858477887,13.934791374862,14.0293714731772],[13.8085879602103,13.9701227537348,14.1005453907079],[13.8255378948804,14.0327390757327,14.1916758338323],[13.8657497226321,14.1144336006899,14.2955396589685]],[[17,17,17],[15.1,15.1,15.1],[15.1,15.1,15.1],[14,14,14],[13.7,13.7,13.7],[14,14,14],[null,null,null],[null,null,null],[null,null,null],[null,null,null],[null,null,null]]]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="hi-income-scenario" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Hi-Income Scenario</h2>
+<div id="cigarette-use-prevalence" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Cigarette Use Prevalence</h3>
+<div id="htmlwidget-43f691f27ea5a16d925e" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43f691f27ea5a16d925e">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60},"y":[]},"title":"Cigarette Prevalence in High-Income Scenario","labels":["time","Primary","High Income Scenario","actual_ever"],"legend":"auto","retainDateWindow":false,"ylabel":"Cigarette Use Prevalence (%)","customBars":true,"series":{"Primary":{"axis":"y"},"High Income Scenario":{"axis":"y"},"actual_ever":{"axis":"y"}}},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[0,1,2,3,4,5,6,7,8,9,10],[[17.0036173432526,17.0036173432526,17.0036173432526],[15.5118450046089,15.6652074228087,15.8022640371938],[14.7248309289862,14.8829705063202,15.0317447207254],[14.3018772010635,14.4163366470125,14.5288354161564],[14.0879664280566,14.1449376751588,14.203459819849],[13.9999999998713,14.0000000000069,14.0000000001375],[13.8818186190603,13.9388824095011,13.9899645474537],[13.8233858477887,13.934791374862,14.0293714731772],[13.8085879602103,13.9701227537348,14.1005453907079],[13.8255378948804,14.0327390757327,14.1916758338323],[13.8657497226321,14.1144336006899,14.2955396589685]],[[17.0036173432526,17.0036173432526,17.0036173432526],[13.1774294222988,14.3685435786621,15.0896831741344],[10.6933979487549,12.5452469636177,13.7177693867739],[9.06559210023441,11.2631909774164,12.7140256201576],[7.98565396702622,10.3443570754859,11.9608535981167],[7.26057296928819,9.67272077283128,11.3811597536391],[6.76683140159691,9.17137245494539,10.9520280006284],[6.42013445696532,8.78814401986687,10.6242488247165],[6.1362107323954,8.48837686987408,10.3527468213547],[5.92880124676853,8.24785799175235,10.1201669600416],[5.77481534030885,8.04974208326501,9.9151059782409]],[[17,17,17],[15.1,15.1,15.1],[15.1,15.1,15.1],[14,14,14],[13.7,13.7,13.7],[14,14,14],[null,null,null],[null,null,null],[null,null,null],[null,null,null],[null,null,null]]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="population-attributable-fraction" class="section level3" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Population Attributable Fraction</h3>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 
 </div>
+</div>
+</div>
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
+<a href="ref.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="dataset.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 References | Aim #2: Mathematical Model</title>
+  <title>Chapter 8 Run Primary Model and Income Scenario Analysis | Aim #2: Mathematical Model</title>
   <meta name="description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 References | Aim #2: Mathematical Model" />
+  <meta property="og:title" content="Chapter 8 Run Primary Model and Income Scenario Analysis | Aim #2: Mathematical Model" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 References | Aim #2: Mathematical Model" />
+  <meta name="twitter:title" content="Chapter 8 Run Primary Model and Income Scenario Analysis | Aim #2: Mathematical Model" />
   
   <meta name="twitter:description" content="This book contains the analyses for the mathematical model for Aim #2 of Charlie’s dissertation" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Charles Marks" />
 
 
-<meta name="date" content="2021-04-13" />
+<meta name="date" content="2021-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="calibration.html"/>
-
+<link rel="next" href="results.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,6 +51,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="libs/dygraphs-1.1.1/shapes.js"></script>
+<script src="libs/moment-2.8.4/moment.js"></script>
+<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 
 <style type="text/css">
@@ -192,11 +200,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="ode.html"><a href="ode.html"><i class="fa fa-check"></i><b>6</b> ODE Functions</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="ode.html"><a href="ode.html#helper-functions"><i class="fa fa-check"></i><b>6.1</b> Helper Functions</a></li>
-<li class="chapter" data-level="6.2" data-path="ode.html"><a href="ode.html#ode-function"><i class="fa fa-check"></i><b>6.2</b> ODE Function</a></li>
+<li class="chapter" data-level="6.1" data-path="ode.html"><a href="ode.html#ode-function"><i class="fa fa-check"></i><b>6.1</b> ODE Function</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>7</b> Calibration</a></li>
-<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="chapter" data-level="7" data-path="calibration.html"><a href="calibration.html"><i class="fa fa-check"></i><b>7</b> Calibration</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="calibration.html"><a href="calibration.html#load-the-necessary-libraries"><i class="fa fa-check"></i><b>7.1</b> Load the Necessary Libraries</a></li>
+<li class="chapter" data-level="7.2" data-path="calibration.html"><a href="calibration.html#define-our-calibration-function"><i class="fa fa-check"></i><b>7.2</b> Define Our Calibration Function</a></li>
+<li class="chapter" data-level="7.3" data-path="calibration.html"><a href="calibration.html#run-the-calibration"><i class="fa fa-check"></i><b>7.3</b> Run the Calibration</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> Run Primary Model and Income Scenario Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ref.html"><a href="ref.html#run-primary-model"><i class="fa fa-check"></i><b>8.1</b> Run Primary Model</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="ref.html"><a href="ref.html#load-the-needed-libraries-and-functions"><i class="fa fa-check"></i><b>8.1.1</b> Load the Needed Libraries and Functions</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ref.html"><a href="ref.html#initialize-the-start-state-and-entry-object"><i class="fa fa-check"></i><b>8.1.2</b> Initialize the Start State and Entry Object</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ref.html"><a href="ref.html#load-appropraite-parameters"><i class="fa fa-check"></i><b>8.1.3</b> Load Appropraite Parameters</a></li>
+<li class="chapter" data-level="8.1.4" data-path="ref.html"><a href="ref.html#actually-run-the-model"><i class="fa fa-check"></i><b>8.1.4</b> Actually Run the Model</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ref.html"><a href="ref.html#run-high-income-scenario-analysis"><i class="fa fa-check"></i><b>8.2</b> Run High-Income Scenario Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>9</b> Results</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="results.html"><a href="results.html#load-data-we-need"><i class="fa fa-check"></i><b>9.1</b> Load Data We Need</a></li>
+<li class="chapter" data-level="9.2" data-path="results.html"><a href="results.html#calibration-confirmation"><i class="fa fa-check"></i><b>9.2</b> Calibration Confirmation</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="results.html"><a href="results.html#population-growth"><i class="fa fa-check"></i><b>9.2.1</b> Population Growth</a></li>
+<li class="chapter" data-level="9.2.2" data-path="results.html"><a href="results.html#cigarette-use"><i class="fa fa-check"></i><b>9.2.2</b> Cigarette Use</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="results.html"><a href="results.html#hi-income-scenario"><i class="fa fa-check"></i><b>9.3</b> Hi-Income Scenario</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="results.html"><a href="results.html#cigarette-use-prevalence"><i class="fa fa-check"></i><b>9.3.1</b> Cigarette Use Prevalence</a></li>
+<li class="chapter" data-level="9.3.2" data-path="results.html"><a href="results.html#population-attributable-fraction"><i class="fa fa-check"></i><b>9.3.2</b> Population Attributable Fraction</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -215,23 +251,492 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="ref" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> References</h1>
+<h1><span class="header-section-number">Chapter 8</span> Run Primary Model and Income Scenario Analysis</h1>
+<p>Now that we have our calibrated parameter sets we can go forward with actually running our model. In this chapter, we run the model and our primary scenario analysis. First, we run the model with the parameters and states as currently developed to this point. Second, we will run the model, but we will set the income and income change RRs for everyone to be the value for the &gt;$100k, stable income compartment. In the next chapter, we will then compare the results of the two models in order to calculate a population attributable fraction for the impact of income on cigarette use prevalence.</p>
+<div id="run-primary-model" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Run Primary Model</h2>
+<div id="load-the-needed-libraries-and-functions" class="section level3" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Load the Needed Libraries and Functions</h3>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="ref.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb43-2"><a href="ref.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(minpack.lm)</span>
+<span id="cb43-3"><a href="ref.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb43-4"><a href="ref.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb43-5"><a href="ref.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(triangle)</span>
+<span id="cb43-6"><a href="ref.html#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epiR)</span>
+<span id="cb43-7"><a href="ref.html#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb43-8"><a href="ref.html#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreach)</span>
+<span id="cb43-9"><a href="ref.html#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;ODE_Function.R&quot;</span>, <span class="at">local =</span> T)</span></code></pre></div>
+</div>
+<div id="initialize-the-start-state-and-entry-object" class="section level3" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Initialize the Start State and Entry Object</h3>
+<p>First, we want to load in the model start state and initialize the entries into the model. Essentially, around 2014 the dynamics of youth tobacco use changed a lot. E-cigarettes became the dominant tobacco product for middle and high schoolers. While this model does not focus on youth use, we do want to account for this changing dynamic. To maintain population distribution of variables, our first step is to use the distribution of 18-24 year olds in the model at t = 0 to inform entries into the model. However, to account for the change in tobacco product use, we flipped the cigarette and e-cigarette use compartments in the model. To further explain, in our initial start state, among 18-24 year olds, 17% use cigarettes, 5.5% use e-cigarettes. However, recent estimates (2019) indicate that youth cigarette prevalence is around 5% and e-cigarette use prevalence is above 20%. As such, by flipping these compartments, entries into our model more accurately reflect historical data.</p>
+<p>Additionally, we must prep the states and entries object (younglings) for parallelization. We run the model in 6 separate sub-models, modeling the population of Never Smokers, Current Smokers, and Former Smokers at t = 0 separately and then modeling each of these separately by sex. We note here that model entries are included only for the cigarette x sex combination for that model. Meaning, all never smoker-male entries occur in the never smokers-male sub-model. We do this parallelization for 1) improving run-time and 2) so we can compare the impact of income on never smokers, current smokers, and former smokers. This may inform which aspects of cigarette transitions income most affects.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="ref.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the state</span></span>
+<span id="cb44-2"><a href="ref.html#cb44-2" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/Initial_State.csv&quot;</span>, <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb44-3"><a href="ref.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Convert to array</span></span>
+<span id="cb44-4"><a href="ref.html#cb44-4" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">toArray</span>(states)</span>
+<span id="cb44-5"><a href="ref.html#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="ref.html#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Prep the states for parallelization</span></span>
+<span id="cb44-7"><a href="ref.html#cb44-7" aria-hidden="true" tabindex="-1"></a>states_never_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb44-8"><a href="ref.html#cb44-8" aria-hidden="true" tabindex="-1"></a>states_never_smokers[,,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-9"><a href="ref.html#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-10"><a href="ref.html#cb44-10" aria-hidden="true" tabindex="-1"></a>states_male_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb44-11"><a href="ref.html#cb44-11" aria-hidden="true" tabindex="-1"></a>states_female_never_smokers <span class="ot">&lt;-</span> states_never_smokers</span>
+<span id="cb44-12"><a href="ref.html#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-13"><a href="ref.html#cb44-13" aria-hidden="true" tabindex="-1"></a>states_male_never_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-14"><a href="ref.html#cb44-14" aria-hidden="true" tabindex="-1"></a>states_female_never_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-15"><a href="ref.html#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-16"><a href="ref.html#cb44-16" aria-hidden="true" tabindex="-1"></a>states_current_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb44-17"><a href="ref.html#cb44-17" aria-hidden="true" tabindex="-1"></a>states_current_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-18"><a href="ref.html#cb44-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-19"><a href="ref.html#cb44-19" aria-hidden="true" tabindex="-1"></a>states_male_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb44-20"><a href="ref.html#cb44-20" aria-hidden="true" tabindex="-1"></a>states_female_current_smokers <span class="ot">&lt;-</span> states_current_smokers</span>
+<span id="cb44-21"><a href="ref.html#cb44-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-22"><a href="ref.html#cb44-22" aria-hidden="true" tabindex="-1"></a>states_male_current_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-23"><a href="ref.html#cb44-23" aria-hidden="true" tabindex="-1"></a>states_female_current_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-24"><a href="ref.html#cb44-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-25"><a href="ref.html#cb44-25" aria-hidden="true" tabindex="-1"></a>states_former_smokers <span class="ot">&lt;-</span> states</span>
+<span id="cb44-26"><a href="ref.html#cb44-26" aria-hidden="true" tabindex="-1"></a>states_former_smokers[,,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-27"><a href="ref.html#cb44-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-28"><a href="ref.html#cb44-28" aria-hidden="true" tabindex="-1"></a>states_male_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb44-29"><a href="ref.html#cb44-29" aria-hidden="true" tabindex="-1"></a>states_female_former_smokers <span class="ot">&lt;-</span> states_former_smokers</span>
+<span id="cb44-30"><a href="ref.html#cb44-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-31"><a href="ref.html#cb44-31" aria-hidden="true" tabindex="-1"></a>states_male_former_smokers[<span class="dv">2</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-32"><a href="ref.html#cb44-32" aria-hidden="true" tabindex="-1"></a>states_female_former_smokers[<span class="dv">1</span>,,,,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-33"><a href="ref.html#cb44-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-34"><a href="ref.html#cb44-34" aria-hidden="true" tabindex="-1"></a>states_by_sex_never <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_never_smokers,states_female_never_smokers)</span>
+<span id="cb44-35"><a href="ref.html#cb44-35" aria-hidden="true" tabindex="-1"></a>states_by_sex_current <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_current_smokers,states_female_current_smokers)</span>
+<span id="cb44-36"><a href="ref.html#cb44-36" aria-hidden="true" tabindex="-1"></a>states_by_sex_former <span class="ot">&lt;-</span> <span class="fu">list</span>(states_male_former_smokers,states_female_former_smokers)</span>
+<span id="cb44-37"><a href="ref.html#cb44-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-38"><a href="ref.html#cb44-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we generate the entries object, which we call younglings</span></span>
+<span id="cb44-39"><a href="ref.html#cb44-39" aria-hidden="true" tabindex="-1"></a><span class="do">## We start by just taking the 18-24 year old compartments</span></span>
+<span id="cb44-40"><a href="ref.html#cb44-40" aria-hidden="true" tabindex="-1"></a>younglings <span class="ot">&lt;-</span> states[,<span class="dv">1</span>,,,]</span>
+<span id="cb44-41"><a href="ref.html#cb44-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-42"><a href="ref.html#cb44-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we go through each compartment by iterating through sex and income</span></span>
+<span id="cb44-43"><a href="ref.html#cb44-43" aria-hidden="true" tabindex="-1"></a><span class="do">## And we flip the current smokers and current e-smokers cells</span></span>
+<span id="cb44-44"><a href="ref.html#cb44-44" aria-hidden="true" tabindex="-1"></a><span class="do">## And we flip the former smokers and former e-smoker cells</span></span>
+<span id="cb44-45"><a href="ref.html#cb44-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Note that we do not flip any of the dual use or current-former-dual-use-history cells</span></span>
+<span id="cb44-46"><a href="ref.html#cb44-46" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>){</span>
+<span id="cb44-47"><a href="ref.html#cb44-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>){</span>
+<span id="cb44-48"><a href="ref.html#cb44-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-49"><a href="ref.html#cb44-49" aria-hidden="true" tabindex="-1"></a>    e_cig <span class="ot">&lt;-</span> younglings[sex,<span class="dv">1</span>,<span class="dv">2</span>,income] </span>
+<span id="cb44-50"><a href="ref.html#cb44-50" aria-hidden="true" tabindex="-1"></a>    cig <span class="ot">&lt;-</span> younglings[sex,<span class="dv">2</span>,<span class="dv">1</span>,income]</span>
+<span id="cb44-51"><a href="ref.html#cb44-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-52"><a href="ref.html#cb44-52" aria-hidden="true" tabindex="-1"></a>    younglings[sex,<span class="dv">1</span>,<span class="dv">2</span>,income] <span class="ot">&lt;-</span> cig</span>
+<span id="cb44-53"><a href="ref.html#cb44-53" aria-hidden="true" tabindex="-1"></a>    younglings[sex,<span class="dv">2</span>,<span class="dv">1</span>,income] <span class="ot">&lt;-</span> e_cig</span>
+<span id="cb44-54"><a href="ref.html#cb44-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-55"><a href="ref.html#cb44-55" aria-hidden="true" tabindex="-1"></a>    e_cig_former <span class="ot">&lt;-</span> younglings[sex,<span class="dv">1</span>,<span class="dv">3</span>,income]</span>
+<span id="cb44-56"><a href="ref.html#cb44-56" aria-hidden="true" tabindex="-1"></a>    cig_former <span class="ot">&lt;-</span> younglings[sex,<span class="dv">3</span>,<span class="dv">1</span>,income]</span>
+<span id="cb44-57"><a href="ref.html#cb44-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-58"><a href="ref.html#cb44-58" aria-hidden="true" tabindex="-1"></a>    younglings[sex,<span class="dv">1</span>,<span class="dv">3</span>,income] <span class="ot">&lt;-</span> cig_former</span>
+<span id="cb44-59"><a href="ref.html#cb44-59" aria-hidden="true" tabindex="-1"></a>    younglings[sex,<span class="dv">3</span>,<span class="dv">1</span>,income] <span class="ot">&lt;-</span> e_cig_former</span>
+<span id="cb44-60"><a href="ref.html#cb44-60" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-61"><a href="ref.html#cb44-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-62"><a href="ref.html#cb44-62" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-63"><a href="ref.html#cb44-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-64"><a href="ref.html#cb44-64" aria-hidden="true" tabindex="-1"></a><span class="do">## We divide by 7 because entries represent a single year whereas the 18-24 age group covers 7</span></span>
+<span id="cb44-65"><a href="ref.html#cb44-65" aria-hidden="true" tabindex="-1"></a>younglings <span class="ot">&lt;-</span> younglings<span class="sc">/</span><span class="dv">7</span></span>
+<span id="cb44-66"><a href="ref.html#cb44-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-67"><a href="ref.html#cb44-67" aria-hidden="true" tabindex="-1"></a><span class="do">## As with before, we prep the object for parallelization</span></span>
+<span id="cb44-68"><a href="ref.html#cb44-68" aria-hidden="true" tabindex="-1"></a>younglings_never_male <span class="ot">&lt;-</span> younglings[<span class="dv">1</span>,<span class="dv">1</span>,,]</span>
+<span id="cb44-69"><a href="ref.html#cb44-69" aria-hidden="true" tabindex="-1"></a>younglings_current_male <span class="ot">&lt;-</span> younglings[<span class="dv">1</span>,<span class="dv">2</span>,,]</span>
+<span id="cb44-70"><a href="ref.html#cb44-70" aria-hidden="true" tabindex="-1"></a>younglings_former_male <span class="ot">&lt;-</span> younglings[<span class="dv">1</span>,<span class="dv">3</span>,,]</span>
+<span id="cb44-71"><a href="ref.html#cb44-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-72"><a href="ref.html#cb44-72" aria-hidden="true" tabindex="-1"></a>younglings_never_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_male)</span>
+<span id="cb44-73"><a href="ref.html#cb44-73" aria-hidden="true" tabindex="-1"></a>younglings_current_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_male)</span>
+<span id="cb44-74"><a href="ref.html#cb44-74" aria-hidden="true" tabindex="-1"></a>younglings_former_male <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_male)</span>
+<span id="cb44-75"><a href="ref.html#cb44-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-76"><a href="ref.html#cb44-76" aria-hidden="true" tabindex="-1"></a>younglings_never_female <span class="ot">&lt;-</span> younglings[<span class="dv">2</span>,<span class="dv">1</span>,,]</span>
+<span id="cb44-77"><a href="ref.html#cb44-77" aria-hidden="true" tabindex="-1"></a>younglings_current_female <span class="ot">&lt;-</span> younglings[<span class="dv">2</span>,<span class="dv">2</span>,,]</span>
+<span id="cb44-78"><a href="ref.html#cb44-78" aria-hidden="true" tabindex="-1"></a>younglings_former_female <span class="ot">&lt;-</span> younglings[<span class="dv">2</span>,<span class="dv">3</span>,,]</span>
+<span id="cb44-79"><a href="ref.html#cb44-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-80"><a href="ref.html#cb44-80" aria-hidden="true" tabindex="-1"></a>younglings_never_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never_female)</span>
+<span id="cb44-81"><a href="ref.html#cb44-81" aria-hidden="true" tabindex="-1"></a>younglings_current_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current_female)</span>
+<span id="cb44-82"><a href="ref.html#cb44-82" aria-hidden="true" tabindex="-1"></a>younglings_former_female <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former_female)</span>
+<span id="cb44-83"><a href="ref.html#cb44-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-84"><a href="ref.html#cb44-84" aria-hidden="true" tabindex="-1"></a>younglings_never <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb44-85"><a href="ref.html#cb44-85" aria-hidden="true" tabindex="-1"></a>younglings_never[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_never_male</span>
+<span id="cb44-86"><a href="ref.html#cb44-86" aria-hidden="true" tabindex="-1"></a>younglings_never[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_never_female</span>
+<span id="cb44-87"><a href="ref.html#cb44-87" aria-hidden="true" tabindex="-1"></a>younglings_never <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_never)</span>
+<span id="cb44-88"><a href="ref.html#cb44-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-89"><a href="ref.html#cb44-89" aria-hidden="true" tabindex="-1"></a>younglings_current <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb44-90"><a href="ref.html#cb44-90" aria-hidden="true" tabindex="-1"></a>younglings_current[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_current_male</span>
+<span id="cb44-91"><a href="ref.html#cb44-91" aria-hidden="true" tabindex="-1"></a>younglings_current[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_current_female</span>
+<span id="cb44-92"><a href="ref.html#cb44-92" aria-hidden="true" tabindex="-1"></a>younglings_current <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_current)</span>
+<span id="cb44-93"><a href="ref.html#cb44-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-94"><a href="ref.html#cb44-94" aria-hidden="true" tabindex="-1"></a>younglings_former <span class="ot">&lt;-</span> <span class="fu">toArray</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">13</span>))</span>
+<span id="cb44-95"><a href="ref.html#cb44-95" aria-hidden="true" tabindex="-1"></a>younglings_former[<span class="dv">1</span>,,] <span class="ot">&lt;-</span> younglings_former_male</span>
+<span id="cb44-96"><a href="ref.html#cb44-96" aria-hidden="true" tabindex="-1"></a>younglings_former[<span class="dv">2</span>,,] <span class="ot">&lt;-</span> younglings_former_female</span>
+<span id="cb44-97"><a href="ref.html#cb44-97" aria-hidden="true" tabindex="-1"></a>younglings_former <span class="ot">&lt;-</span> <span class="fu">toVector</span>(younglings_former)</span>
+<span id="cb44-98"><a href="ref.html#cb44-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-99"><a href="ref.html#cb44-99" aria-hidden="true" tabindex="-1"></a>youngling_mult_never <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb44-100"><a href="ref.html#cb44-100" aria-hidden="true" tabindex="-1"></a>youngling_mult_current <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb44-101"><a href="ref.html#cb44-101" aria-hidden="true" tabindex="-1"></a>youngling_mult_former <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+</div>
+<div id="load-appropraite-parameters" class="section level3" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Load Appropraite Parameters</h3>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="ref.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the parameter set name to load in</span></span>
+<span id="cb45-2"><a href="ref.html#cb45-2" aria-hidden="true" tabindex="-1"></a>parameter_set_number <span class="ot">&lt;-</span> <span class="st">&quot;One&quot;</span></span>
+<span id="cb45-3"><a href="ref.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the parameter set</span></span>
+<span id="cb45-4"><a href="ref.html#cb45-4" aria-hidden="true" tabindex="-1"></a>parameter_set <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb45-5"><a href="ref.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the calibrated parameters from the prior chapter</span></span>
+<span id="cb45-6"><a href="ref.html#cb45-6" aria-hidden="true" tabindex="-1"></a>calibrated_parameters <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Calibration_Variables_Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
+</div>
+<div id="actually-run-the-model" class="section level3" number="8.1.4">
+<h3><span class="header-section-number">8.1.4</span> Actually Run the Model</h3>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="ref.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We initialize the results</span></span>
+<span id="cb46-2"><a href="ref.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We initialize full results and sub-results so that we may look at results based on initial cigarette use</span></span>
+<span id="cb46-3"><a href="ref.html#cb46-3" aria-hidden="true" tabindex="-1"></a>full_results <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb46-4"><a href="ref.html#cb46-4" aria-hidden="true" tabindex="-1"></a>full_results_never <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb46-5"><a href="ref.html#cb46-5" aria-hidden="true" tabindex="-1"></a>full_results_current <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb46-6"><a href="ref.html#cb46-6" aria-hidden="true" tabindex="-1"></a>full_results_former <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb46-7"><a href="ref.html#cb46-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="ref.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="do">## We loop through each parameter set</span></span>
+<span id="cb46-9"><a href="ref.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sim_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameter_set)){</span>
+<span id="cb46-10"><a href="ref.html#cb46-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-11"><a href="ref.html#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(sim_number)</span>
+<span id="cb46-12"><a href="ref.html#cb46-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-13"><a href="ref.html#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Extract the parameters</span></span>
+<span id="cb46-14"><a href="ref.html#cb46-14" aria-hidden="true" tabindex="-1"></a>  parameters <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(parameter_set[sim_number,])</span>
+<span id="cb46-15"><a href="ref.html#cb46-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-16"><a href="ref.html#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Extract the calibraters</span></span>
+<span id="cb46-17"><a href="ref.html#cb46-17" aria-hidden="true" tabindex="-1"></a>  calibraters <span class="ot">&lt;-</span> calibrated_parameters[sim_number,]</span>
+<span id="cb46-18"><a href="ref.html#cb46-18" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>growth_rates[<span class="dv">1</span>]</span>
+<span id="cb46-19"><a href="ref.html#cb46-19" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>initiation_mods[<span class="dv">1</span>]</span>
+<span id="cb46-20"><a href="ref.html#cb46-20" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>cessation_mods[<span class="dv">1</span>]</span>
+<span id="cb46-21"><a href="ref.html#cb46-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-22"><a href="ref.html#cb46-22" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Set the model time-span</span></span>
+<span id="cb46-23"><a href="ref.html#cb46-23" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb46-24"><a href="ref.html#cb46-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-25"><a href="ref.html#cb46-25" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-26"><a href="ref.html#cb46-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb46-27"><a href="ref.html#cb46-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-28"><a href="ref.html#cb46-28" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb46-29"><a href="ref.html#cb46-29" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb46-30"><a href="ref.html#cb46-30" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb46-31"><a href="ref.html#cb46-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-32"><a href="ref.html#cb46-32" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb46-33"><a href="ref.html#cb46-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-34"><a href="ref.html#cb46-34" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb46-35"><a href="ref.html#cb46-35" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb46-36"><a href="ref.html#cb46-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb46-37"><a href="ref.html#cb46-37" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex,younglings_never,youngling_mult_never, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb46-38"><a href="ref.html#cb46-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-39"><a href="ref.html#cb46-39" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-40"><a href="ref.html#cb46-40" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb46-41"><a href="ref.html#cb46-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-42"><a href="ref.html#cb46-42" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb46-43"><a href="ref.html#cb46-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb46-44"><a href="ref.html#cb46-44" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-45"><a href="ref.html#cb46-45" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-46"><a href="ref.html#cb46-46" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb46-47"><a href="ref.html#cb46-47" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-48"><a href="ref.html#cb46-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-49"><a href="ref.html#cb46-49" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb46-50"><a href="ref.html#cb46-50" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb46-51"><a href="ref.html#cb46-51" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb46-52"><a href="ref.html#cb46-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-53"><a href="ref.html#cb46-53" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb46-54"><a href="ref.html#cb46-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-55"><a href="ref.html#cb46-55" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb46-56"><a href="ref.html#cb46-56" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb46-57"><a href="ref.html#cb46-57" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb46-58"><a href="ref.html#cb46-58" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_current,youngling_mult_current, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb46-59"><a href="ref.html#cb46-59" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-60"><a href="ref.html#cb46-60" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-61"><a href="ref.html#cb46-61" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb46-62"><a href="ref.html#cb46-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-63"><a href="ref.html#cb46-63" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb46-64"><a href="ref.html#cb46-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb46-65"><a href="ref.html#cb46-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-66"><a href="ref.html#cb46-66" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-67"><a href="ref.html#cb46-67" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb46-68"><a href="ref.html#cb46-68" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-69"><a href="ref.html#cb46-69" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-70"><a href="ref.html#cb46-70" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb46-71"><a href="ref.html#cb46-71" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb46-72"><a href="ref.html#cb46-72" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb46-73"><a href="ref.html#cb46-73" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-74"><a href="ref.html#cb46-74" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb46-75"><a href="ref.html#cb46-75" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-76"><a href="ref.html#cb46-76" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb46-77"><a href="ref.html#cb46-77" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb46-78"><a href="ref.html#cb46-78" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb46-79"><a href="ref.html#cb46-79" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_former,youngling_mult_former, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb46-80"><a href="ref.html#cb46-80" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-81"><a href="ref.html#cb46-81" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-82"><a href="ref.html#cb46-82" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb46-83"><a href="ref.html#cb46-83" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-84"><a href="ref.html#cb46-84" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb46-85"><a href="ref.html#cb46-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb46-86"><a href="ref.html#cb46-86" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-87"><a href="ref.html#cb46-87" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we merge the results of all three</span></span>
+<span id="cb46-88"><a href="ref.html#cb46-88" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb46-89"><a href="ref.html#cb46-89" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We divide the time column by three because we added the three columns together</span></span>
+<span id="cb46-90"><a href="ref.html#cb46-90" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb46-91"><a href="ref.html#cb46-91" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-92"><a href="ref.html#cb46-92" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We convert the objects into data frames and get ready to store them</span></span>
+<span id="cb46-93"><a href="ref.html#cb46-93" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb46-94"><a href="ref.html#cb46-94" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-95"><a href="ref.html#cb46-95" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-96"><a href="ref.html#cb46-96" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb46-97"><a href="ref.html#cb46-97" aria-hidden="true" tabindex="-1"></a>  never_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-98"><a href="ref.html#cb46-98" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-99"><a href="ref.html#cb46-99" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb46-100"><a href="ref.html#cb46-100" aria-hidden="true" tabindex="-1"></a>  current_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-101"><a href="ref.html#cb46-101" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-102"><a href="ref.html#cb46-102" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb46-103"><a href="ref.html#cb46-103" aria-hidden="true" tabindex="-1"></a>  former_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-104"><a href="ref.html#cb46-104" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-105"><a href="ref.html#cb46-105" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we add the results of this iteration to the full set of results</span></span>
+<span id="cb46-106"><a href="ref.html#cb46-106" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(full_results)){</span>
+<span id="cb46-107"><a href="ref.html#cb46-107" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-108"><a href="ref.html#cb46-108" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb46-109"><a href="ref.html#cb46-109" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb46-110"><a href="ref.html#cb46-110" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb46-111"><a href="ref.html#cb46-111" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb46-112"><a href="ref.html#cb46-112" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-113"><a href="ref.html#cb46-113" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb46-114"><a href="ref.html#cb46-114" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results, result)</span>
+<span id="cb46-115"><a href="ref.html#cb46-115" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_never, never_result)</span>
+<span id="cb46-116"><a href="ref.html#cb46-116" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_current, current_result)</span>
+<span id="cb46-117"><a href="ref.html#cb46-117" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_former, former_result)</span>
+<span id="cb46-118"><a href="ref.html#cb46-118" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-119"><a href="ref.html#cb46-119" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-120"><a href="ref.html#cb46-120" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-121"><a href="ref.html#cb46-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-122"><a href="ref.html#cb46-122" aria-hidden="true" tabindex="-1"></a><span class="do">## Last, we save our results</span></span>
+<span id="cb46-123"><a href="ref.html#cb46-123" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb46-124"><a href="ref.html#cb46-124" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_never, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Never_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb46-125"><a href="ref.html#cb46-125" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_current, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Current_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb46-126"><a href="ref.html#cb46-126" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_former, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Former_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
+</div>
+</div>
+<div id="run-high-income-scenario-analysis" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Run High-Income Scenario Analysis</h2>
+<p>In order to determine the population attributable fraction of income on cigarette use prevalence, we run the model and assign income relative risks for cigarette and e-cigarette transitions to be the relative risk of being in the &gt;$100k, stable compartment. By doing so, we expose everyone to the most protective income status and see how this impacts cigarette use. We may understand this model as attempting to capture the impact of providing everyone the most protective income status (i.e. best case scenario for income level impacting cigarette use).</p>
+<p>Since our model applies RRs which have the multiplied RRs across each strata, we will need to loop through and modify the RRs for each strata-combination accordingly.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="ref.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the number of levels for each strata</span></span>
+<span id="cb47-2"><a href="ref.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We will need this for modifying RRs</span></span>
+<span id="cb47-3"><a href="ref.html#cb47-3" aria-hidden="true" tabindex="-1"></a>sex_types <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb47-4"><a href="ref.html#cb47-4" aria-hidden="true" tabindex="-1"></a>age_types <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb47-5"><a href="ref.html#cb47-5" aria-hidden="true" tabindex="-1"></a>cigarette_types <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb47-6"><a href="ref.html#cb47-6" aria-hidden="true" tabindex="-1"></a>e_cigarette_types <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb47-7"><a href="ref.html#cb47-7" aria-hidden="true" tabindex="-1"></a>income_types <span class="ot">&lt;-</span> <span class="dv">13</span></span>
+<span id="cb47-8"><a href="ref.html#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="ref.html#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Need to load the income and income change relative risks to appropriately modify overall RRs for each transition</span></span>
+<span id="cb47-10"><a href="ref.html#cb47-10" aria-hidden="true" tabindex="-1"></a>income_RRs <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Income_RRs_Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb47-11"><a href="ref.html#cb47-11" aria-hidden="true" tabindex="-1"></a>income_change_RRs <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Income_Change_RRs_Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb47-12"><a href="ref.html#cb47-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-13"><a href="ref.html#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Helper objects for applying RRs appropriately</span></span>
+<span id="cb47-14"><a href="ref.html#cb47-14" aria-hidden="true" tabindex="-1"></a>income_5_cat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb47-15"><a href="ref.html#cb47-15" aria-hidden="true" tabindex="-1"></a>income_change_3_cat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb47-16"><a href="ref.html#cb47-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-17"><a href="ref.html#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Initialize objects to store the results</span></span>
+<span id="cb47-18"><a href="ref.html#cb47-18" aria-hidden="true" tabindex="-1"></a>full_results <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb47-19"><a href="ref.html#cb47-19" aria-hidden="true" tabindex="-1"></a>full_results_never <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb47-20"><a href="ref.html#cb47-20" aria-hidden="true" tabindex="-1"></a>full_results_current <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb47-21"><a href="ref.html#cb47-21" aria-hidden="true" tabindex="-1"></a>full_results_former <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb47-22"><a href="ref.html#cb47-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-23"><a href="ref.html#cb47-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-24"><a href="ref.html#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sim_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameter_set)){</span>
+<span id="cb47-25"><a href="ref.html#cb47-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-26"><a href="ref.html#cb47-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-27"><a href="ref.html#cb47-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Select the correct paramters</span></span>
+<span id="cb47-28"><a href="ref.html#cb47-28" aria-hidden="true" tabindex="-1"></a>  parameters <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(parameter_set[sim_number,])</span>
+<span id="cb47-29"><a href="ref.html#cb47-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-30"><a href="ref.html#cb47-30" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Select the correct calibraters</span></span>
+<span id="cb47-31"><a href="ref.html#cb47-31" aria-hidden="true" tabindex="-1"></a>  calibraters <span class="ot">&lt;-</span> calibrated_parameters[sim_number,]</span>
+<span id="cb47-32"><a href="ref.html#cb47-32" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>growth_rates[<span class="dv">1</span>]</span>
+<span id="cb47-33"><a href="ref.html#cb47-33" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>initiation_mods[<span class="dv">1</span>]</span>
+<span id="cb47-34"><a href="ref.html#cb47-34" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>cessation_mods[<span class="dv">1</span>]</span>
+<span id="cb47-35"><a href="ref.html#cb47-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-36"><a href="ref.html#cb47-36" aria-hidden="true" tabindex="-1"></a>  <span class="do">## NExt we need to extract the income RRs for modifying overall RRs</span></span>
+<span id="cb47-37"><a href="ref.html#cb47-37" aria-hidden="true" tabindex="-1"></a>  income_RR <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(income_RRs[sim_number,])</span>
+<span id="cb47-38"><a href="ref.html#cb47-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-39"><a href="ref.html#cb47-39" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb47-40"><a href="ref.html#cb47-40" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb47-41"><a href="ref.html#cb47-41" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>]</span>
+<span id="cb47-42"><a href="ref.html#cb47-42" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">16</span><span class="sc">:</span><span class="dv">20</span>]</span>
+<span id="cb47-43"><a href="ref.html#cb47-43" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">21</span><span class="sc">:</span><span class="dv">25</span>]</span>
+<span id="cb47-44"><a href="ref.html#cb47-44" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">26</span><span class="sc">:</span><span class="dv">30</span>]</span>
+<span id="cb47-45"><a href="ref.html#cb47-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-46"><a href="ref.html#cb47-46" aria-hidden="true" tabindex="-1"></a>  <span class="do">## And we need to extract the income change RRs for modigying overall RRs</span></span>
+<span id="cb47-47"><a href="ref.html#cb47-47" aria-hidden="true" tabindex="-1"></a>  income_change_RR <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(income_change_RRs[sim_number,])</span>
+<span id="cb47-48"><a href="ref.html#cb47-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-49"><a href="ref.html#cb47-49" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb47-50"><a href="ref.html#cb47-50" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb47-51"><a href="ref.html#cb47-51" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>]</span>
+<span id="cb47-52"><a href="ref.html#cb47-52" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>]</span>
+<span id="cb47-53"><a href="ref.html#cb47-53" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">13</span><span class="sc">:</span><span class="dv">15</span>]</span>
+<span id="cb47-54"><a href="ref.html#cb47-54" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">16</span><span class="sc">:</span><span class="dv">18</span>]</span>
+<span id="cb47-55"><a href="ref.html#cb47-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-56"><a href="ref.html#cb47-56" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We extract the parameters that we need to modify</span></span>
+<span id="cb47-57"><a href="ref.html#cb47-57" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">170</span><span class="sc">:</span><span class="dv">637</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-58"><a href="ref.html#cb47-58" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">638</span><span class="sc">:</span><span class="dv">1105</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-59"><a href="ref.html#cb47-59" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">1106</span><span class="sc">:</span><span class="dv">1573</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-60"><a href="ref.html#cb47-60" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-61"><a href="ref.html#cb47-61" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">1574</span><span class="sc">:</span><span class="dv">2041</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-62"><a href="ref.html#cb47-62" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">2042</span><span class="sc">:</span><span class="dv">2509</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-63"><a href="ref.html#cb47-63" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">2510</span><span class="sc">:</span><span class="dv">2977</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-64"><a href="ref.html#cb47-64" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb47-65"><a href="ref.html#cb47-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-66"><a href="ref.html#cb47-66" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we will modigy the cigarette transition RRs</span></span>
+<span id="cb47-67"><a href="ref.html#cb47-67" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We loop through each combination of the other 4 strata to do so</span></span>
+<span id="cb47-68"><a href="ref.html#cb47-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sex_types){</span>
+<span id="cb47-69"><a href="ref.html#cb47-69" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>age_types){</span>
+<span id="cb47-70"><a href="ref.html#cb47-70" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(e_cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>e_cigarette_types){</span>
+<span id="cb47-71"><a href="ref.html#cb47-71" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>income_types){</span>
+<span id="cb47-72"><a href="ref.html#cb47-72" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-73"><a href="ref.html#cb47-73" aria-hidden="true" tabindex="-1"></a>          <span class="do">## For each transition, we divide the full transition RR by the income and income change specific RRs</span></span>
+<span id="cb47-74"><a href="ref.html#cb47-74" aria-hidden="true" tabindex="-1"></a>          <span class="do">## We then multiply by the hi income RR (ie rr_cigarette_initiation_income_point_estimates_sample[5])</span></span>
+<span id="cb47-75"><a href="ref.html#cb47-75" aria-hidden="true" tabindex="-1"></a>          <span class="do">## We don&#39;t multiply for the income change because we are assigning to the referent group where RR = 1</span></span>
+<span id="cb47-76"><a href="ref.html#cb47-76" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_initiation[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_initiation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_initiation[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_initiation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_initiation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-77"><a href="ref.html#cb47-77" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_cessation[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_cessation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_cessation[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_cessation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_cessation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-78"><a href="ref.html#cb47-78" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_reinstatement[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_reinstatement_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_reinstatement[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_reinstatement_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_reinstatement_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-79"><a href="ref.html#cb47-79" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-80"><a href="ref.html#cb47-80" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-81"><a href="ref.html#cb47-81" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb47-82"><a href="ref.html#cb47-82" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb47-83"><a href="ref.html#cb47-83" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb47-84"><a href="ref.html#cb47-84" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-85"><a href="ref.html#cb47-85" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-86"><a href="ref.html#cb47-86" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We repeat this process for e-cigarette use as well.</span></span>
+<span id="cb47-87"><a href="ref.html#cb47-87" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sex_types){</span>
+<span id="cb47-88"><a href="ref.html#cb47-88" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>age_types){</span>
+<span id="cb47-89"><a href="ref.html#cb47-89" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>cigarette_types){</span>
+<span id="cb47-90"><a href="ref.html#cb47-90" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>income_types){</span>
+<span id="cb47-91"><a href="ref.html#cb47-91" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb47-92"><a href="ref.html#cb47-92" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-93"><a href="ref.html#cb47-93" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_initiation[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_initiation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_initiation[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_initiation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_initiation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-94"><a href="ref.html#cb47-94" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_cessation[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_cessation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_cessation[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_cessation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_cessation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-95"><a href="ref.html#cb47-95" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_reinstatement[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_reinstatement_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_reinstatement[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_reinstatement_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_reinstatement_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-96"><a href="ref.html#cb47-96" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-97"><a href="ref.html#cb47-97" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-98"><a href="ref.html#cb47-98" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb47-99"><a href="ref.html#cb47-99" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb47-100"><a href="ref.html#cb47-100" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb47-101"><a href="ref.html#cb47-101" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-102"><a href="ref.html#cb47-102" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-103"><a href="ref.html#cb47-103" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We then reassign the values back into the parameter set</span></span>
+<span id="cb47-104"><a href="ref.html#cb47-104" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Now we are ready to run the model as before</span></span>
+<span id="cb47-105"><a href="ref.html#cb47-105" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">170</span><span class="sc">:</span><span class="dv">637</span>] <span class="ot">&lt;-</span>  rr_cigarette_initiation</span>
+<span id="cb47-106"><a href="ref.html#cb47-106" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">638</span><span class="sc">:</span><span class="dv">1105</span>] <span class="ot">&lt;-</span>  rr_cigarette_cessation</span>
+<span id="cb47-107"><a href="ref.html#cb47-107" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">1106</span><span class="sc">:</span><span class="dv">1573</span>] <span class="ot">&lt;-</span>  rr_cigarette_reinstatement</span>
+<span id="cb47-108"><a href="ref.html#cb47-108" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">1574</span><span class="sc">:</span><span class="dv">2041</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_initiation</span>
+<span id="cb47-109"><a href="ref.html#cb47-109" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">2042</span><span class="sc">:</span><span class="dv">2509</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_cessation</span>
+<span id="cb47-110"><a href="ref.html#cb47-110" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">2510</span><span class="sc">:</span><span class="dv">2977</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_reinstatement</span>
+<span id="cb47-111"><a href="ref.html#cb47-111" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-112"><a href="ref.html#cb47-112" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb47-113"><a href="ref.html#cb47-113" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-114"><a href="ref.html#cb47-114" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-115"><a href="ref.html#cb47-115" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb47-116"><a href="ref.html#cb47-116" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-117"><a href="ref.html#cb47-117" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb47-118"><a href="ref.html#cb47-118" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb47-119"><a href="ref.html#cb47-119" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb47-120"><a href="ref.html#cb47-120" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-121"><a href="ref.html#cb47-121" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb47-122"><a href="ref.html#cb47-122" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-123"><a href="ref.html#cb47-123" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb47-124"><a href="ref.html#cb47-124" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb47-125"><a href="ref.html#cb47-125" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb47-126"><a href="ref.html#cb47-126" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex,younglings_never,youngling_mult_never, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb47-127"><a href="ref.html#cb47-127" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-128"><a href="ref.html#cb47-128" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-129"><a href="ref.html#cb47-129" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb47-130"><a href="ref.html#cb47-130" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-131"><a href="ref.html#cb47-131" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb47-132"><a href="ref.html#cb47-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb47-133"><a href="ref.html#cb47-133" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-134"><a href="ref.html#cb47-134" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-135"><a href="ref.html#cb47-135" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb47-136"><a href="ref.html#cb47-136" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-137"><a href="ref.html#cb47-137" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-138"><a href="ref.html#cb47-138" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb47-139"><a href="ref.html#cb47-139" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb47-140"><a href="ref.html#cb47-140" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb47-141"><a href="ref.html#cb47-141" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-142"><a href="ref.html#cb47-142" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb47-143"><a href="ref.html#cb47-143" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-144"><a href="ref.html#cb47-144" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb47-145"><a href="ref.html#cb47-145" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb47-146"><a href="ref.html#cb47-146" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb47-147"><a href="ref.html#cb47-147" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_current,youngling_mult_current, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb47-148"><a href="ref.html#cb47-148" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-149"><a href="ref.html#cb47-149" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-150"><a href="ref.html#cb47-150" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb47-151"><a href="ref.html#cb47-151" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-152"><a href="ref.html#cb47-152" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb47-153"><a href="ref.html#cb47-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb47-154"><a href="ref.html#cb47-154" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-155"><a href="ref.html#cb47-155" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-156"><a href="ref.html#cb47-156" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb47-157"><a href="ref.html#cb47-157" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-158"><a href="ref.html#cb47-158" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-159"><a href="ref.html#cb47-159" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb47-160"><a href="ref.html#cb47-160" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb47-161"><a href="ref.html#cb47-161" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb47-162"><a href="ref.html#cb47-162" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-163"><a href="ref.html#cb47-163" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb47-164"><a href="ref.html#cb47-164" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-165"><a href="ref.html#cb47-165" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb47-166"><a href="ref.html#cb47-166" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb47-167"><a href="ref.html#cb47-167" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb47-168"><a href="ref.html#cb47-168" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,model_sex, younglings_former,youngling_mult_former, growth_rate, initiation_mod, cessation_mod))</span>
+<span id="cb47-169"><a href="ref.html#cb47-169" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-170"><a href="ref.html#cb47-170" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-171"><a href="ref.html#cb47-171" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb47-172"><a href="ref.html#cb47-172" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-173"><a href="ref.html#cb47-173" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb47-174"><a href="ref.html#cb47-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb47-175"><a href="ref.html#cb47-175" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-176"><a href="ref.html#cb47-176" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb47-177"><a href="ref.html#cb47-177" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb47-178"><a href="ref.html#cb47-178" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-179"><a href="ref.html#cb47-179" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb47-180"><a href="ref.html#cb47-180" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-181"><a href="ref.html#cb47-181" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-182"><a href="ref.html#cb47-182" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb47-183"><a href="ref.html#cb47-183" aria-hidden="true" tabindex="-1"></a>  never_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-184"><a href="ref.html#cb47-184" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-185"><a href="ref.html#cb47-185" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb47-186"><a href="ref.html#cb47-186" aria-hidden="true" tabindex="-1"></a>  current_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-187"><a href="ref.html#cb47-187" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-188"><a href="ref.html#cb47-188" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb47-189"><a href="ref.html#cb47-189" aria-hidden="true" tabindex="-1"></a>  former_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-190"><a href="ref.html#cb47-190" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-191"><a href="ref.html#cb47-191" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(full_results)){</span>
+<span id="cb47-192"><a href="ref.html#cb47-192" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-193"><a href="ref.html#cb47-193" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb47-194"><a href="ref.html#cb47-194" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb47-195"><a href="ref.html#cb47-195" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb47-196"><a href="ref.html#cb47-196" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb47-197"><a href="ref.html#cb47-197" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-198"><a href="ref.html#cb47-198" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb47-199"><a href="ref.html#cb47-199" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results, result)</span>
+<span id="cb47-200"><a href="ref.html#cb47-200" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_never, never_result)</span>
+<span id="cb47-201"><a href="ref.html#cb47-201" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_current, current_result)</span>
+<span id="cb47-202"><a href="ref.html#cb47-202" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_former, former_result)</span>
+<span id="cb47-203"><a href="ref.html#cb47-203" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-204"><a href="ref.html#cb47-204" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-205"><a href="ref.html#cb47-205" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-206"><a href="ref.html#cb47-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-207"><a href="ref.html#cb47-207" aria-hidden="true" tabindex="-1"></a><span class="do">## Output the results</span></span>
+<span id="cb47-208"><a href="ref.html#cb47-208" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb47-209"><a href="ref.html#cb47-209" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_never, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Never_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb47-210"><a href="ref.html#cb47-210" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_current, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Current_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb47-211"><a href="ref.html#cb47-211" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_former, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Former_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
 
 </div>
-
-
-
-
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="calibration.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="calibration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="results.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
