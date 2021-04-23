@@ -24,7 +24,7 @@
 <meta name="author" content="Charles Marks" />
 
 
-<meta name="date" content="2021-04-16" />
+<meta name="date" content="2021-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,14 +51,6 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<link href="libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
-<script src="libs/dygraphs-1.1.1/dygraph-combined.js"></script>
-<script src="libs/dygraphs-1.1.1/shapes.js"></script>
-<script src="libs/moment-2.8.4/moment.js"></script>
-<script src="libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
-<script src="libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
-<script src="libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 
 <style type="text/css">
@@ -221,16 +213,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>9</b> Results</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="results.html"><a href="results.html#load-data-we-need"><i class="fa fa-check"></i><b>9.1</b> Load Data We Need</a></li>
-<li class="chapter" data-level="9.2" data-path="results.html"><a href="results.html#calibration-confirmation"><i class="fa fa-check"></i><b>9.2</b> Calibration Confirmation</a>
+<li class="chapter" data-level="9.1" data-path="results.html"><a href="results.html#calibration-confirmation"><i class="fa fa-check"></i><b>9.1</b> Calibration Confirmation</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="results.html"><a href="results.html#population-growth"><i class="fa fa-check"></i><b>9.2.1</b> Population Growth</a></li>
-<li class="chapter" data-level="9.2.2" data-path="results.html"><a href="results.html#cigarette-use"><i class="fa fa-check"></i><b>9.2.2</b> Cigarette Use</a></li>
+<li class="chapter" data-level="9.1.1" data-path="results.html"><a href="results.html#population-growth"><i class="fa fa-check"></i><b>9.1.1</b> Population Growth</a></li>
+<li class="chapter" data-level="9.1.2" data-path="results.html"><a href="results.html#current-cigarette-use"><i class="fa fa-check"></i><b>9.1.2</b> Current Cigarette Use</a></li>
+<li class="chapter" data-level="9.1.3" data-path="results.html"><a href="results.html#former-cigarette-use"><i class="fa fa-check"></i><b>9.1.3</b> Former Cigarette Use</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="results.html"><a href="results.html#hi-income-scenario"><i class="fa fa-check"></i><b>9.3</b> Hi-Income Scenario</a>
+<li class="chapter" data-level="9.2" data-path="results.html"><a href="results.html#scenario-analysis-results"><i class="fa fa-check"></i><b>9.2</b> Scenario Analysis Results</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="results.html"><a href="results.html#cigarette-use-prevalence"><i class="fa fa-check"></i><b>9.3.1</b> Cigarette Use Prevalence</a></li>
-<li class="chapter" data-level="9.3.2" data-path="results.html"><a href="results.html#population-attributable-fraction"><i class="fa fa-check"></i><b>9.3.2</b> Population Attributable Fraction</a></li>
+<li class="chapter" data-level="9.2.1" data-path="results.html"><a href="results.html#cigarette-prevalence"><i class="fa fa-check"></i><b>9.2.1</b> Cigarette Prevalence</a></li>
+<li class="chapter" data-level="9.2.2" data-path="results.html"><a href="results.html#population-attributable-fraction"><i class="fa fa-check"></i><b>9.2.2</b> Population Attributable Fraction</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -253,33 +245,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="results" class="section level1" number="9">
 <h1><span class="header-section-number">Chapter 9</span> Results</h1>
 <p>Now that we have run the model and our primary scenario analyses, we want to look at the results.</p>
-<div id="load-data-we-need" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Load Data We Need</h2>
-</div>
-<div id="calibration-confirmation" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> Calibration Confirmation</h2>
+<div id="calibration-confirmation" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Calibration Confirmation</h2>
 <p>First, we want to make sure that our calibrations worked properly. We calibrated to ensure our model accurately reflected on population growth and changes in cigarette use prevalence. The plots below display the modeled data versus actual historical data to confirm calibrations.</p>
-<div id="population-growth" class="section level3" number="9.2.1">
-<h3><span class="header-section-number">9.2.1</span> Population Growth</h3>
-<div id="htmlwidget-0401ff38c68873279a0e" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0401ff38c68873279a0e">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60},"y":[]},"labels":["time","Population Change From Prior Year","actual_change"],"legend":"auto","retainDateWindow":false,"ylabel":"% Change in Population Size From Previous Year","customBars":true,"series":{"Population Change From Prior Year":{"axis":"y"},"actual_change":{"axis":"y"}}},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[0,1,2,3,4,5,6,7,8,9,10],[[null,null,null],[0.654541441860959,0.65990782951777,0.666715091198298],[0.617771015265249,0.620686329091012,0.625412732668883],[0.579198622391504,0.580848697718321,0.582900738260257],[0.539865981583065,0.540591069903558,0.541339284699381],[0.499999999964834,0.500000000021496,0.500000000071356],[0.458444370596691,0.459131200097803,0.459672892318459],[0.416778951135562,0.418054150914622,0.418934143723244],[0.375057011652415,0.376819681452667,0.37809557084486],[0.333305646974411,0.335453001249792,0.336983066861881],[0.291546947500519,0.293980538544998,0.29570385740072]],[[0.728,0.728,0.728],[0.731,0.731,0.731],[0.72,0.72,0.72],[0.63,0.63,0.63],[0.522,0.522,0.522],[0.474,0.474,0.474],[null,null,null],[null,null,null],[null,null,null],[null,null,null],[null,null,null]]]},"evals":[],"jsHooks":[]}</script>
+<div id="population-growth" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Population Growth</h3>
+<p>We calibrated the model population change to the actual population change from 2014-2015 (~0.7%) and from 2018-2019 (~0.5%). These calibration data points are highlighted by green dots. The actual, real world population change for the years in-between are indicated by the blue dots. The red dots show (and corresponding confidence intervals) display the annual population change for the model simulations. US annual population change was extracted from the <a href="https://datacommons.org/place/country/USA?utm_medium=explore&amp;mprop=count&amp;popt=Person&amp;hl=en">World Bank</a></p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
-<div id="cigarette-use" class="section level3" number="9.2.2">
-<h3><span class="header-section-number">9.2.2</span> Cigarette Use</h3>
-<div id="htmlwidget-3a8927a4cb16cf1df8b4" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3a8927a4cb16cf1df8b4">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60},"y":[]},"title":"Modeled Cigarette Prevalence Comparted to Historical Data","labels":["time","Primary","actual_ever"],"legend":"auto","retainDateWindow":false,"ylabel":"Cigarette Use Prevalence (%)","customBars":true,"series":{"Primary":{"axis":"y"},"actual_ever":{"axis":"y"}}},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[0,1,2,3,4,5,6,7,8,9,10],[[17.0036173432526,17.0036173432526,17.0036173432526],[15.5118450046089,15.6652074228087,15.8022640371938],[14.7248309289862,14.8829705063202,15.0317447207254],[14.3018772010635,14.4163366470125,14.5288354161564],[14.0879664280566,14.1449376751588,14.203459819849],[13.9999999998713,14.0000000000069,14.0000000001375],[13.8818186190603,13.9388824095011,13.9899645474537],[13.8233858477887,13.934791374862,14.0293714731772],[13.8085879602103,13.9701227537348,14.1005453907079],[13.8255378948804,14.0327390757327,14.1916758338323],[13.8657497226321,14.1144336006899,14.2955396589685]],[[17,17,17],[15.1,15.1,15.1],[15.1,15.1,15.1],[14,14,14],[13.7,13.7,13.7],[14,14,14],[null,null,null],[null,null,null],[null,null,null],[null,null,null],[null,null,null]]]},"evals":[],"jsHooks":[]}</script>
+<div id="current-cigarette-use" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Current Cigarette Use</h3>
+<p>We then want to see the simulated cigarette prevalence over time alongside the actual values (to ensure the model is performing well). We calibrated the model to the 2019 cigarette prevalence of 2019 (14%) and we initiated the model at the 2014 cigarette use prevalence (17%) – these data points (along with confidence intervals) are presented in green. We also display the cigarette prevalence for the years in between in blue. The simulated values from the model are presented in red. The actual cigarette prevalences and their confidence intervals were extracted from the annual CDC MMWR tobacco product use reports.</p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+</div>
+<div id="former-cigarette-use" class="section level3" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Former Cigarette Use</h3>
+<p>Finally, we calibrated the model to the former cigarette use rate in 2019 (20.9%) and initiated the model at the former smoker level in 2014 (20.9%). While estimates nor confidence intervals for the former smoker prevalence in the US are generally not published by the CDC or in the literature, <a href="https://www.ncbi.nlm.nih.gov/books/NBK555598/">data from SAMHSA</a> indicates that the former smoker prevalence has remained roughly the same over this time period. As such we only present the calibration data points alongside the actual former smoker rates.</p>
+<p>NB: It is a bit interesting that the cigarette use prevalence has declined while the former smoker prevalence has remained relatively static. This appears to be explained by the sudden decline in youth smoking, as the smoking prevalence for 18-24 years olds plummeted from around 17% in 2014 to 8% in 2019. This provides some indication that the declines in prevalence have been explained by an injection of never smokers into the population, as opposed to substantial increases in the former smoker population.</p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 </div>
-<div id="hi-income-scenario" class="section level2" number="9.3">
-<h2><span class="header-section-number">9.3</span> Hi-Income Scenario</h2>
-<div id="cigarette-use-prevalence" class="section level3" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> Cigarette Use Prevalence</h3>
-<div id="htmlwidget-43f691f27ea5a16d925e" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-43f691f27ea5a16d925e">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60},"y":[]},"title":"Cigarette Prevalence in High-Income Scenario","labels":["time","Primary","High Income Scenario","actual_ever"],"legend":"auto","retainDateWindow":false,"ylabel":"Cigarette Use Prevalence (%)","customBars":true,"series":{"Primary":{"axis":"y"},"High Income Scenario":{"axis":"y"},"actual_ever":{"axis":"y"}}},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[0,1,2,3,4,5,6,7,8,9,10],[[17.0036173432526,17.0036173432526,17.0036173432526],[15.5118450046089,15.6652074228087,15.8022640371938],[14.7248309289862,14.8829705063202,15.0317447207254],[14.3018772010635,14.4163366470125,14.5288354161564],[14.0879664280566,14.1449376751588,14.203459819849],[13.9999999998713,14.0000000000069,14.0000000001375],[13.8818186190603,13.9388824095011,13.9899645474537],[13.8233858477887,13.934791374862,14.0293714731772],[13.8085879602103,13.9701227537348,14.1005453907079],[13.8255378948804,14.0327390757327,14.1916758338323],[13.8657497226321,14.1144336006899,14.2955396589685]],[[17.0036173432526,17.0036173432526,17.0036173432526],[13.1774294222988,14.3685435786621,15.0896831741344],[10.6933979487549,12.5452469636177,13.7177693867739],[9.06559210023441,11.2631909774164,12.7140256201576],[7.98565396702622,10.3443570754859,11.9608535981167],[7.26057296928819,9.67272077283128,11.3811597536391],[6.76683140159691,9.17137245494539,10.9520280006284],[6.42013445696532,8.78814401986687,10.6242488247165],[6.1362107323954,8.48837686987408,10.3527468213547],[5.92880124676853,8.24785799175235,10.1201669600416],[5.77481534030885,8.04974208326501,9.9151059782409]],[[17,17,17],[15.1,15.1,15.1],[15.1,15.1,15.1],[14,14,14],[13.7,13.7,13.7],[14,14,14],[null,null,null],[null,null,null],[null,null,null],[null,null,null],[null,null,null]]]},"evals":[],"jsHooks":[]}</script>
+<div id="scenario-analysis-results" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Scenario Analysis Results</h2>
+<p>Our primary comparison scenario is running the model and assigning every person the relative risk protectivity of being in the highest income group. This represents the scenario in which every person is exposed to the most protective income exposure. This allows us to calculate a population attributable fraction for the contribution of income level on cigarette prevalence.</p>
+<div id="cigarette-prevalence" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Cigarette Prevalence</h3>
+<p>First we want to display the annual cigarette prevalence for the standard model simulation versus the high income scenario. This will inform us the direction of the impact of income.</p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
-<div id="population-attributable-fraction" class="section level3" number="9.3.2">
-<h3><span class="header-section-number">9.3.2</span> Population Attributable Fraction</h3>
-<p><img src="Final-Book_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<div id="population-attributable-fraction" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Population Attributable Fraction</h3>
+<p>Next, we want to calculate the population attributable fraction of income on cigarette-years. We calculate the PAF for 1, 5, and 10 years after baseline. As well, it is of interest to better understand the contribution of income to different smoking transitions. So we also display the PAF specific to never smokers at t=0, current smokers at t=0, and former smokers at t=0. Entries into the model (emerging adults) are included in the PAF where they start (i.e., if someone enters the model at t = 2 as a never smoker, than their transitions in the future are incorporated into the never smoker PAF). As we can see, income has a far greater attributable effect on initiation (i.e., never smokers transitioning to current smoking) than either other transition.</p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 
 </div>
 </div>

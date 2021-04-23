@@ -58,10 +58,10 @@ load-appropraite-parameters
 actually-run-the-model
 run-high-income-scenario-analysis
 results
-load-data-we-need
 calibration-confirmation
 population-growth
-cigarette-use
-hi-income-scenario
-cigarette-use-prevalence
+current-cigarette-use
+former-cigarette-use
+scenario-analysis-results
+cigarette-prevalence
 population-attributable-fraction
