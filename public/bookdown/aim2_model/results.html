@@ -24,7 +24,7 @@
 <meta name="author" content="Charles Marks" />
 
 
-<meta name="date" content="2021-04-22" />
+<meta name="date" content="2021-04-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -255,14 +255,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="current-cigarette-use" class="section level3" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Current Cigarette Use</h3>
-<p>We then want to see the simulated cigarette prevalence over time alongside the actual values (to ensure the model is performing well). We calibrated the model to the 2019 cigarette prevalence of 2019 (14%) and we initiated the model at the 2014 cigarette use prevalence (17%) – these data points (along with confidence intervals) are presented in green. We also display the cigarette prevalence for the years in between in blue. The simulated values from the model are presented in red. The actual cigarette prevalences and their confidence intervals were extracted from the annual CDC MMWR tobacco product use reports.</p>
+<p>We then want to see the simulated cigarette prevalence over time alongside the actual values (to ensure the model is performing well). We did not calibrate the model to cigarette use data, but instead have opted to only include model simulations that match observed population trends. Thus, first, we plot the cigarette prevalence for all simulations and compare to the actual historical cigarette use prevalence (taken from CDC MMWRs).</p>
 <p><img src="Final-Book_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p>Then, we want to remove simulations that don’t fit historical trends. Given model performance, it was determined that basing the decision on simulation inclusion would be based on the cigarette prevalence in 2018 and 2019. In 2018, the estimate for cigarette prevalence dropped to almost 13.7% though the estimate for 2019 was slightly higher at 14.0%. As such, we took the CDC confidence intervals for these estimates and expanded them slightly (given the offset of the estimates the continuous nature of most of the changes in the model projections, this was deemed appropriate). Thus we only included simulations whose 2018 and 2019 cigarette prevalences was within 1% of the actual cigarette prevalence.</p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 <div id="former-cigarette-use" class="section level3" number="9.1.3">
 <h3><span class="header-section-number">9.1.3</span> Former Cigarette Use</h3>
-<p>Finally, we calibrated the model to the former cigarette use rate in 2019 (20.9%) and initiated the model at the former smoker level in 2014 (20.9%). While estimates nor confidence intervals for the former smoker prevalence in the US are generally not published by the CDC or in the literature, <a href="https://www.ncbi.nlm.nih.gov/books/NBK555598/">data from SAMHSA</a> indicates that the former smoker prevalence has remained roughly the same over this time period. As such we only present the calibration data points alongside the actual former smoker rates.</p>
+<p>Finally, it is of interest to see if the simulations appropriately captured former cigarette use. Estimates of former cigarette use are less available, but some data from SAMHSA indicates that over the historical period of interest (2014-2019) that the former cigarette use prevalence has remained relatively stable at around 20.9%. Here we plot the data to confirm the values do not veer too far away from this.</p>
 <p>NB: It is a bit interesting that the cigarette use prevalence has declined while the former smoker prevalence has remained relatively static. This appears to be explained by the sudden decline in youth smoking, as the smoking prevalence for 18-24 years olds plummeted from around 17% in 2014 to 8% in 2019. This provides some indication that the declines in prevalence have been explained by an injection of never smokers into the population, as opposed to substantial increases in the former smoker population.</p>
-<p><img src="Final-Book_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
 </div>
 </div>
 <div id="scenario-analysis-results" class="section level2" number="9.2">
@@ -271,12 +273,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="cigarette-prevalence" class="section level3" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Cigarette Prevalence</h3>
 <p>First we want to display the annual cigarette prevalence for the standard model simulation versus the high income scenario. This will inform us the direction of the impact of income.</p>
-<p><img src="Final-Book_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
 </div>
 <div id="population-attributable-fraction" class="section level3" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Population Attributable Fraction</h3>
 <p>Next, we want to calculate the population attributable fraction of income on cigarette-years. We calculate the PAF for 1, 5, and 10 years after baseline. As well, it is of interest to better understand the contribution of income to different smoking transitions. So we also display the PAF specific to never smokers at t=0, current smokers at t=0, and former smokers at t=0. Entries into the model (emerging adults) are included in the PAF where they start (i.e., if someone enters the model at t = 2 as a never smoker, than their transitions in the future are incorporated into the never smoker PAF). As we can see, income has a far greater attributable effect on initiation (i.e., never smokers transitioning to current smoking) than either other transition.</p>
-<p><img src="Final-Book_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p>However, PAFs represent a relative reduction in cigarette-years. While the PAF for Never Smokers is incredibly high, we would presume that Never Smokers at the start contribute the fewest number of cigarette years total. As such, we also want to explore the number of total cigarette years at t = 10 for the model and the high-income scenarios. Here we can see that while income explains less of the cigarette use of current smokers at the start than either never or former, that the high-income scenario results in a greater crude reduction in cigarette years among the current smoker subsample than either of the others.</p>
+<p><img src="Final-Book_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 
 </div>
 </div>

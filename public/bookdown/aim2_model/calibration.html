@@ -24,7 +24,7 @@
 <meta name="author" content="Charles Marks" />
 
 
-<meta name="date" content="2021-04-22" />
+<meta name="date" content="2021-04-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -298,8 +298,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb41-17"><a href="calibration.html#cb41-17" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb41-18"><a href="calibration.html#cb41-18" aria-hidden="true" tabindex="-1"></a>  pop_growth_2015_target <span class="ot">&lt;-</span> <span class="fl">0.00731</span></span>
 <span id="cb41-19"><a href="calibration.html#cb41-19" aria-hidden="true" tabindex="-1"></a>  pop_growth_2019_target <span class="ot">&lt;-</span> <span class="fl">0.00474</span></span>
-<span id="cb41-20"><a href="calibration.html#cb41-20" aria-hidden="true" tabindex="-1"></a>  ever_cig_prev_2019_target <span class="ot">&lt;-</span> .<span class="dv">349</span></span>
-<span id="cb41-21"><a href="calibration.html#cb41-21" aria-hidden="true" tabindex="-1"></a>  cig_prev_2019_target <span class="ot">&lt;-</span> <span class="fl">0.14</span></span>
+<span id="cb41-20"><a href="calibration.html#cb41-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">#ever_cig_prev_2019_target &lt;- .349</span></span>
+<span id="cb41-21"><a href="calibration.html#cb41-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cig_prev_2019_target &lt;- 0.14</span></span>
 <span id="cb41-22"><a href="calibration.html#cb41-22" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb41-23"><a href="calibration.html#cb41-23" aria-hidden="true" tabindex="-1"></a>  <span class="do">## For troubleshooting can be helpful</span></span>
 <span id="cb41-24"><a href="calibration.html#cb41-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x)</span>
@@ -307,9 +307,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb41-26"><a href="calibration.html#cb41-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The x array contains the calibrated parameters</span></span>
 <span id="cb41-27"><a href="calibration.html#cb41-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Assign them to appropraite variables</span></span>
 <span id="cb41-28"><a href="calibration.html#cb41-28" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
-<span id="cb41-29"><a href="calibration.html#cb41-29" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> x[<span class="dv">2</span>]</span>
-<span id="cb41-30"><a href="calibration.html#cb41-30" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> x[<span class="dv">3</span>]</span>
-<span id="cb41-31"><a href="calibration.html#cb41-31" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mult <span class="ot">&lt;-</span> x[<span class="dv">4</span>]</span>
+<span id="cb41-29"><a href="calibration.html#cb41-29" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb41-30"><a href="calibration.html#cb41-30" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb41-31"><a href="calibration.html#cb41-31" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mult <span class="ot">&lt;-</span> x[<span class="dv">2</span>]</span>
 <span id="cb41-32"><a href="calibration.html#cb41-32" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb41-33"><a href="calibration.html#cb41-33" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
 <span id="cb41-34"><a href="calibration.html#cb41-34" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Define the states for the parallelization and for model entries</span></span>
@@ -544,21 +544,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb41-263"><a href="calibration.html#cb41-263" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Ever Smoker Prevalence is: &quot;</span>, <span class="fu">round</span>(ever_cig_prev_actual,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>, <span class="st">&quot;%&quot;</span>,<span class="at">sep =</span><span class="st">&quot;&quot;</span>))</span>
 <span id="cb41-264"><a href="calibration.html#cb41-264" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb41-265"><a href="calibration.html#cb41-265" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We define our least squares formula</span></span>
-<span id="cb41-266"><a href="calibration.html#cb41-266" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>((pop_growth_actual <span class="sc">-</span> pop_growth_2019_target)<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb41-267"><a href="calibration.html#cb41-267" aria-hidden="true" tabindex="-1"></a>               (cig_prev_actual <span class="sc">-</span> cig_prev_2019_target)<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb41-268"><a href="calibration.html#cb41-268" aria-hidden="true" tabindex="-1"></a>               (ever_cig_prev_actual <span class="sc">-</span> ever_cig_prev_2019_target)<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb41-269"><a href="calibration.html#cb41-269" aria-hidden="true" tabindex="-1"></a>               (pop_growth_2015_actual <span class="sc">-</span> pop_growth_2015_target)<span class="sc">^</span><span class="dv">2</span>) </span>
-<span id="cb41-270"><a href="calibration.html#cb41-270" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb41-271"><a href="calibration.html#cb41-271" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We return the formula</span></span>
-<span id="cb41-272"><a href="calibration.html#cb41-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(formula)</span>
-<span id="cb41-273"><a href="calibration.html#cb41-273" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb41-274"><a href="calibration.html#cb41-274" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb41-266"><a href="calibration.html#cb41-266" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">c</span>((pop_growth_actual <span class="sc">-</span> pop_growth_2019_target),</span>
+<span id="cb41-267"><a href="calibration.html#cb41-267" aria-hidden="true" tabindex="-1"></a>               (pop_growth_2015_actual <span class="sc">-</span> pop_growth_2015_target)) </span>
+<span id="cb41-268"><a href="calibration.html#cb41-268" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-269"><a href="calibration.html#cb41-269" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We return the formula</span></span>
+<span id="cb41-270"><a href="calibration.html#cb41-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(formula)</span>
+<span id="cb41-271"><a href="calibration.html#cb41-271" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-272"><a href="calibration.html#cb41-272" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="run-the-calibration" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Run the Calibration</h2>
 <p>Finally, we run the calibration and save the results.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="calibration.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define which parameter set we want to extract</span></span>
-<span id="cb42-2"><a href="calibration.html#cb42-2" aria-hidden="true" tabindex="-1"></a>parameter_set_number <span class="ot">&lt;-</span> <span class="st">&quot;One&quot;</span></span>
+<span id="cb42-2"><a href="calibration.html#cb42-2" aria-hidden="true" tabindex="-1"></a>parameter_set_number <span class="ot">&lt;-</span> <span class="st">&quot;Two&quot;</span></span>
 <span id="cb42-3"><a href="calibration.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the appropraite parameter set</span></span>
 <span id="cb42-4"><a href="calibration.html#cb42-4" aria-hidden="true" tabindex="-1"></a>parameter_set <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
 <span id="cb42-5"><a href="calibration.html#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -568,8 +566,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb42-9"><a href="calibration.html#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Create the vectors where we will save our results</span></span>
 <span id="cb42-10"><a href="calibration.html#cb42-10" aria-hidden="true" tabindex="-1"></a>growth_rates <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
 <span id="cb42-11"><a href="calibration.html#cb42-11" aria-hidden="true" tabindex="-1"></a>carrying_capacity_mods <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb42-12"><a href="calibration.html#cb42-12" aria-hidden="true" tabindex="-1"></a>initiation_mods <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb42-13"><a href="calibration.html#cb42-13" aria-hidden="true" tabindex="-1"></a>cessation_mods <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb42-12"><a href="calibration.html#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="co">#initiation_mods &lt;- c()</span></span>
+<span id="cb42-13"><a href="calibration.html#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="co">#cessation_mods &lt;- c()</span></span>
 <span id="cb42-14"><a href="calibration.html#cb42-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-15"><a href="calibration.html#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Loop through each parameter set</span></span>
 <span id="cb42-16"><a href="calibration.html#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(sim_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameter_set)){</span>
@@ -579,13 +577,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb42-20"><a href="calibration.html#cb42-20" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb42-21"><a href="calibration.html#cb42-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Define the initial state for our three calibrated parameters</span></span>
 <span id="cb42-22"><a href="calibration.html#cb42-22" aria-hidden="true" tabindex="-1"></a>  <span class="do">## The population growth is initialized to 4.63 because this value doesn&#39;t change much and is fairly static</span></span>
-<span id="cb42-23"><a href="calibration.html#cb42-23" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="dv">1</span>,<span class="dv">1</span>,<span class="fl">1.56</span>)</span>
+<span id="cb42-23"><a href="calibration.html#cb42-23" aria-hidden="true" tabindex="-1"></a>  x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">13</span>,<span class="fl">1.56</span>)</span>
 <span id="cb42-24"><a href="calibration.html#cb42-24" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb42-25"><a href="calibration.html#cb42-25" aria-hidden="true" tabindex="-1"></a>  <span class="do">## we also want to set lower and upper bounds for these variables</span></span>
 <span id="cb42-26"><a href="calibration.html#cb42-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This tells the algorithms what values are permitted</span></span>
 <span id="cb42-27"><a href="calibration.html#cb42-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">## For example, we can&#39;t have negative initiation rates </span></span>
-<span id="cb42-28"><a href="calibration.html#cb42-28" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>)</span>
-<span id="cb42-29"><a href="calibration.html#cb42-29" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">1</span>,.<span class="dv">1</span>,<span class="fl">1.1</span>)</span>
+<span id="cb42-28"><a href="calibration.html#cb42-28" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>,<span class="dv">2</span>)</span>
+<span id="cb42-29"><a href="calibration.html#cb42-29" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span>
 <span id="cb42-30"><a href="calibration.html#cb42-30" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb42-31"><a href="calibration.html#cb42-31" aria-hidden="true" tabindex="-1"></a>  <span class="do">## at this stage we can run the calibration function</span></span>
 <span id="cb42-32"><a href="calibration.html#cb42-32" aria-hidden="true" tabindex="-1"></a>  calibration_results <span class="ot">&lt;-</span> <span class="fu">nls.lm</span>(x0, </span>
@@ -594,13 +592,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb42-35"><a href="calibration.html#cb42-35" aria-hidden="true" tabindex="-1"></a>                                <span class="at">fn =</span> calib_function,</span>
 <span id="cb42-36"><a href="calibration.html#cb42-36" aria-hidden="true" tabindex="-1"></a>                                <span class="at">parameters =</span> parameters,</span>
 <span id="cb42-37"><a href="calibration.html#cb42-37" aria-hidden="true" tabindex="-1"></a>                                <span class="at">states =</span> states,</span>
-<span id="cb42-38"><a href="calibration.html#cb42-38" aria-hidden="true" tabindex="-1"></a>                                <span class="at">control =</span> <span class="fu">nls.lm.control</span>(<span class="at">nprint=</span><span class="dv">1</span>,<span class="at">maxiter =</span> <span class="dv">5</span>))</span>
+<span id="cb42-38"><a href="calibration.html#cb42-38" aria-hidden="true" tabindex="-1"></a>                                <span class="at">control =</span> <span class="fu">nls.lm.control</span>(<span class="at">nprint=</span><span class="dv">1</span>,<span class="at">maxiter =</span> <span class="dv">3</span>))</span>
 <span id="cb42-39"><a href="calibration.html#cb42-39" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb42-40"><a href="calibration.html#cb42-40" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally we save our results</span></span>
 <span id="cb42-41"><a href="calibration.html#cb42-41" aria-hidden="true" tabindex="-1"></a>  growth_rates <span class="ot">&lt;-</span> <span class="fu">c</span>(growth_rates, calibration_results<span class="sc">$</span>par[<span class="dv">1</span>])</span>
-<span id="cb42-42"><a href="calibration.html#cb42-42" aria-hidden="true" tabindex="-1"></a>  initiation_mods <span class="ot">&lt;-</span> <span class="fu">c</span>(initiation_mods, calibration_results<span class="sc">$</span>par[<span class="dv">2</span>])</span>
-<span id="cb42-43"><a href="calibration.html#cb42-43" aria-hidden="true" tabindex="-1"></a>  cessation_mods <span class="ot">&lt;-</span> <span class="fu">c</span>(cessation_mods, calibration_results<span class="sc">$</span>par[<span class="dv">3</span>])</span>
-<span id="cb42-44"><a href="calibration.html#cb42-44" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mods <span class="ot">&lt;-</span> <span class="fu">c</span>(carrying_capacity_mods, calibration_results<span class="sc">$</span>par[<span class="dv">4</span>])</span>
+<span id="cb42-42"><a href="calibration.html#cb42-42" aria-hidden="true" tabindex="-1"></a> <span class="co"># initiation_mods &lt;- c(initiation_mods, calibration_results$par[2])</span></span>
+<span id="cb42-43"><a href="calibration.html#cb42-43" aria-hidden="true" tabindex="-1"></a><span class="co">#  cessation_mods &lt;- c(cessation_mods, calibration_results$par[3])</span></span>
+<span id="cb42-44"><a href="calibration.html#cb42-44" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mods <span class="ot">&lt;-</span> <span class="fu">c</span>(carrying_capacity_mods, calibration_results<span class="sc">$</span>par[<span class="dv">2</span>])</span>
 <span id="cb42-45"><a href="calibration.html#cb42-45" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb42-46"><a href="calibration.html#cb42-46" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb42-47"><a href="calibration.html#cb42-47" aria-hidden="true" tabindex="-1"></a></span>
@@ -608,8 +606,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb42-49"><a href="calibration.html#cb42-49" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">0</span>, <span class="at">nrow =</span> <span class="fu">length</span>(growth_rates)))</span>
 <span id="cb42-50"><a href="calibration.html#cb42-50" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>growth_rates <span class="ot">&lt;-</span> growth_rates</span>
 <span id="cb42-51"><a href="calibration.html#cb42-51" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>carrying_capacity_mods <span class="ot">&lt;-</span> carrying_capacity_mods</span>
-<span id="cb42-52"><a href="calibration.html#cb42-52" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>initiation_mods <span class="ot">&lt;-</span> initiation_mods</span>
-<span id="cb42-53"><a href="calibration.html#cb42-53" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>cessation_mods <span class="ot">&lt;-</span> cessation_mods</span>
+<span id="cb42-52"><a href="calibration.html#cb42-52" aria-hidden="true" tabindex="-1"></a><span class="co">#df$initiation_mods &lt;- initiation_mods</span></span>
+<span id="cb42-53"><a href="calibration.html#cb42-53" aria-hidden="true" tabindex="-1"></a><span class="co">#df$cessation_mods &lt;- cessation_mods</span></span>
 <span id="cb42-54"><a href="calibration.html#cb42-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-55"><a href="calibration.html#cb42-55" aria-hidden="true" tabindex="-1"></a><span class="do">## We output the results</span></span>
 <span id="cb42-56"><a href="calibration.html#cb42-56" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df,<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Calibration_Variables_Parameter_Set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>

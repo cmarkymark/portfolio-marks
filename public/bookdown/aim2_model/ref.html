@@ -24,7 +24,7 @@
 <meta name="author" content="Charles Marks" />
 
 
-<meta name="date" content="2021-04-22" />
+<meta name="date" content="2021-04-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -368,11 +368,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="load-appropraite-parameters" class="section level3" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Load Appropraite Parameters</h3>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="ref.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the parameter set name to load in</span></span>
-<span id="cb45-2"><a href="ref.html#cb45-2" aria-hidden="true" tabindex="-1"></a>parameter_set_number <span class="ot">&lt;-</span> <span class="st">&quot;One&quot;</span></span>
+<span id="cb45-2"><a href="ref.html#cb45-2" aria-hidden="true" tabindex="-1"></a>parameter_set_number <span class="ot">&lt;-</span> <span class="st">&quot;Two&quot;</span></span>
 <span id="cb45-3"><a href="ref.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the parameter set</span></span>
 <span id="cb45-4"><a href="ref.html#cb45-4" aria-hidden="true" tabindex="-1"></a>parameter_set <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="at">header =</span> T)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
 <span id="cb45-5"><a href="ref.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Load the calibrated parameters from the prior chapter</span></span>
-<span id="cb45-6"><a href="ref.html#cb45-6" aria-hidden="true" tabindex="-1"></a>calibrated_parameters <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste</span>(<span class="st">&quot;Data/Parameter_Sets/Calibration_Variables_Parameter_Set_&quot;</span>,parameter_set_number,<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<span id="cb45-6"><a href="ref.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="do">##calibrated_parameters &lt;- read.csv(paste(&quot;Data/Parameter_Sets/Calibration_Variables_Parameter_Set_&quot;,parameter_set_number,&quot;.csv&quot;,sep=&quot;&quot;))</span></span></code></pre></div>
 </div>
 <div id="actually-run-the-model" class="section level3" number="8.1.4">
 <h3><span class="header-section-number">8.1.4</span> Actually Run the Model</h3>
@@ -392,138 +392,143 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb46-14"><a href="ref.html#cb46-14" aria-hidden="true" tabindex="-1"></a>  parameters <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(parameter_set[sim_number,])</span>
 <span id="cb46-15"><a href="ref.html#cb46-15" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb46-16"><a href="ref.html#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Extract the calibraters</span></span>
-<span id="cb46-17"><a href="ref.html#cb46-17" aria-hidden="true" tabindex="-1"></a>  calibraters <span class="ot">&lt;-</span> calibrated_parameters[sim_number,]</span>
-<span id="cb46-18"><a href="ref.html#cb46-18" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>growth_rates[<span class="dv">1</span>]</span>
-<span id="cb46-19"><a href="ref.html#cb46-19" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mult <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>carrying_capacity_mods[<span class="dv">1</span>]</span>
-<span id="cb46-20"><a href="ref.html#cb46-20" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>initiation_mods[<span class="dv">1</span>]</span>
-<span id="cb46-21"><a href="ref.html#cb46-21" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>cessation_mods[<span class="dv">1</span>]</span>
+<span id="cb46-17"><a href="ref.html#cb46-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calibraters &lt;- calibrated_parameters[sim_number,]</span></span>
+<span id="cb46-18"><a href="ref.html#cb46-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># growth_rate &lt;- calibraters$growth_rates[1]</span></span>
+<span id="cb46-19"><a href="ref.html#cb46-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># carrying_capacity_mult &lt;- calibraters$carrying_capacity_mods[1]</span></span>
+<span id="cb46-20"><a href="ref.html#cb46-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># initiation_mod &lt;- calibraters$initiation_mods[1]</span></span>
+<span id="cb46-21"><a href="ref.html#cb46-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cessation_mod &lt;- calibraters$cessation_mods[1]</span></span>
 <span id="cb46-22"><a href="ref.html#cb46-22" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-23"><a href="ref.html#cb46-23" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Set the model time-span</span></span>
-<span id="cb46-24"><a href="ref.html#cb46-24" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb46-25"><a href="ref.html#cb46-25" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-26"><a href="ref.html#cb46-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb46-27"><a href="ref.html#cb46-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
-<span id="cb46-28"><a href="ref.html#cb46-28" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb46-29"><a href="ref.html#cb46-29" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb46-30"><a href="ref.html#cb46-30" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
-<span id="cb46-31"><a href="ref.html#cb46-31" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb46-32"><a href="ref.html#cb46-32" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-33"><a href="ref.html#cb46-33" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb46-34"><a href="ref.html#cb46-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-35"><a href="ref.html#cb46-35" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
-<span id="cb46-36"><a href="ref.html#cb46-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
-<span id="cb46-37"><a href="ref.html#cb46-37" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
-<span id="cb46-38"><a href="ref.html#cb46-38" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
-<span id="cb46-39"><a href="ref.html#cb46-39" aria-hidden="true" tabindex="-1"></a>                           model_sex,</span>
-<span id="cb46-40"><a href="ref.html#cb46-40" aria-hidden="true" tabindex="-1"></a>                           younglings_never,</span>
-<span id="cb46-41"><a href="ref.html#cb46-41" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_never, </span>
-<span id="cb46-42"><a href="ref.html#cb46-42" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
-<span id="cb46-43"><a href="ref.html#cb46-43" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
-<span id="cb46-44"><a href="ref.html#cb46-44" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
-<span id="cb46-45"><a href="ref.html#cb46-45" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_never[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
-<span id="cb46-46"><a href="ref.html#cb46-46" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-47"><a href="ref.html#cb46-47" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb46-48"><a href="ref.html#cb46-48" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb46-49"><a href="ref.html#cb46-49" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-50"><a href="ref.html#cb46-50" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb46-51"><a href="ref.html#cb46-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
-<span id="cb46-52"><a href="ref.html#cb46-52" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-53"><a href="ref.html#cb46-53" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb46-54"><a href="ref.html#cb46-54" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
-<span id="cb46-55"><a href="ref.html#cb46-55" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb46-56"><a href="ref.html#cb46-56" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-57"><a href="ref.html#cb46-57" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb46-58"><a href="ref.html#cb46-58" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
-<span id="cb46-59"><a href="ref.html#cb46-59" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb46-60"><a href="ref.html#cb46-60" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-61"><a href="ref.html#cb46-61" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb46-62"><a href="ref.html#cb46-62" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-63"><a href="ref.html#cb46-63" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
-<span id="cb46-64"><a href="ref.html#cb46-64" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
-<span id="cb46-65"><a href="ref.html#cb46-65" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
-<span id="cb46-66"><a href="ref.html#cb46-66" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
-<span id="cb46-67"><a href="ref.html#cb46-67" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
-<span id="cb46-68"><a href="ref.html#cb46-68" aria-hidden="true" tabindex="-1"></a>                           younglings_current,</span>
-<span id="cb46-69"><a href="ref.html#cb46-69" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_current,</span>
-<span id="cb46-70"><a href="ref.html#cb46-70" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
-<span id="cb46-71"><a href="ref.html#cb46-71" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
-<span id="cb46-72"><a href="ref.html#cb46-72" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
-<span id="cb46-73"><a href="ref.html#cb46-73" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_current[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
-<span id="cb46-74"><a href="ref.html#cb46-74" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-75"><a href="ref.html#cb46-75" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb46-76"><a href="ref.html#cb46-76" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb46-77"><a href="ref.html#cb46-77" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-78"><a href="ref.html#cb46-78" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb46-79"><a href="ref.html#cb46-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
-<span id="cb46-80"><a href="ref.html#cb46-80" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-81"><a href="ref.html#cb46-81" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb46-82"><a href="ref.html#cb46-82" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
-<span id="cb46-83"><a href="ref.html#cb46-83" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb46-84"><a href="ref.html#cb46-84" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-85"><a href="ref.html#cb46-85" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb46-86"><a href="ref.html#cb46-86" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
-<span id="cb46-87"><a href="ref.html#cb46-87" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb46-88"><a href="ref.html#cb46-88" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-89"><a href="ref.html#cb46-89" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb46-90"><a href="ref.html#cb46-90" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-91"><a href="ref.html#cb46-91" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
-<span id="cb46-92"><a href="ref.html#cb46-92" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
-<span id="cb46-93"><a href="ref.html#cb46-93" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
-<span id="cb46-94"><a href="ref.html#cb46-94" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
-<span id="cb46-95"><a href="ref.html#cb46-95" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
-<span id="cb46-96"><a href="ref.html#cb46-96" aria-hidden="true" tabindex="-1"></a>                           younglings_former,</span>
-<span id="cb46-97"><a href="ref.html#cb46-97" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_former, </span>
-<span id="cb46-98"><a href="ref.html#cb46-98" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
-<span id="cb46-99"><a href="ref.html#cb46-99" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
-<span id="cb46-100"><a href="ref.html#cb46-100" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
-<span id="cb46-101"><a href="ref.html#cb46-101" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_former[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
-<span id="cb46-102"><a href="ref.html#cb46-102" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-103"><a href="ref.html#cb46-103" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb46-104"><a href="ref.html#cb46-104" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb46-105"><a href="ref.html#cb46-105" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-106"><a href="ref.html#cb46-106" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb46-107"><a href="ref.html#cb46-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
-<span id="cb46-108"><a href="ref.html#cb46-108" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-109"><a href="ref.html#cb46-109" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we merge the results of all three</span></span>
-<span id="cb46-110"><a href="ref.html#cb46-110" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
-<span id="cb46-111"><a href="ref.html#cb46-111" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We divide the time column by three because we added the three columns together</span></span>
-<span id="cb46-112"><a href="ref.html#cb46-112" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb46-23"><a href="ref.html#cb46-23" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> <span class="fl">13.11</span></span>
+<span id="cb46-24"><a href="ref.html#cb46-24" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mult <span class="ot">&lt;-</span> <span class="fl">1.59</span></span>
+<span id="cb46-25"><a href="ref.html#cb46-25" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb46-26"><a href="ref.html#cb46-26" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb46-27"><a href="ref.html#cb46-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-28"><a href="ref.html#cb46-28" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Set the model time-span</span></span>
+<span id="cb46-29"><a href="ref.html#cb46-29" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb46-30"><a href="ref.html#cb46-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-31"><a href="ref.html#cb46-31" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-32"><a href="ref.html#cb46-32" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb46-33"><a href="ref.html#cb46-33" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-34"><a href="ref.html#cb46-34" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb46-35"><a href="ref.html#cb46-35" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb46-36"><a href="ref.html#cb46-36" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb46-37"><a href="ref.html#cb46-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-38"><a href="ref.html#cb46-38" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb46-39"><a href="ref.html#cb46-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-40"><a href="ref.html#cb46-40" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb46-41"><a href="ref.html#cb46-41" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb46-42"><a href="ref.html#cb46-42" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb46-43"><a href="ref.html#cb46-43" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
+<span id="cb46-44"><a href="ref.html#cb46-44" aria-hidden="true" tabindex="-1"></a>                           model_sex,</span>
+<span id="cb46-45"><a href="ref.html#cb46-45" aria-hidden="true" tabindex="-1"></a>                           younglings_never,</span>
+<span id="cb46-46"><a href="ref.html#cb46-46" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_never, </span>
+<span id="cb46-47"><a href="ref.html#cb46-47" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
+<span id="cb46-48"><a href="ref.html#cb46-48" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
+<span id="cb46-49"><a href="ref.html#cb46-49" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
+<span id="cb46-50"><a href="ref.html#cb46-50" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_never[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
+<span id="cb46-51"><a href="ref.html#cb46-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-52"><a href="ref.html#cb46-52" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-53"><a href="ref.html#cb46-53" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb46-54"><a href="ref.html#cb46-54" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-55"><a href="ref.html#cb46-55" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb46-56"><a href="ref.html#cb46-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb46-57"><a href="ref.html#cb46-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-58"><a href="ref.html#cb46-58" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-59"><a href="ref.html#cb46-59" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb46-60"><a href="ref.html#cb46-60" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-61"><a href="ref.html#cb46-61" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-62"><a href="ref.html#cb46-62" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb46-63"><a href="ref.html#cb46-63" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb46-64"><a href="ref.html#cb46-64" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb46-65"><a href="ref.html#cb46-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-66"><a href="ref.html#cb46-66" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb46-67"><a href="ref.html#cb46-67" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-68"><a href="ref.html#cb46-68" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb46-69"><a href="ref.html#cb46-69" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb46-70"><a href="ref.html#cb46-70" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb46-71"><a href="ref.html#cb46-71" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
+<span id="cb46-72"><a href="ref.html#cb46-72" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
+<span id="cb46-73"><a href="ref.html#cb46-73" aria-hidden="true" tabindex="-1"></a>                           younglings_current,</span>
+<span id="cb46-74"><a href="ref.html#cb46-74" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_current,</span>
+<span id="cb46-75"><a href="ref.html#cb46-75" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
+<span id="cb46-76"><a href="ref.html#cb46-76" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
+<span id="cb46-77"><a href="ref.html#cb46-77" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
+<span id="cb46-78"><a href="ref.html#cb46-78" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_current[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
+<span id="cb46-79"><a href="ref.html#cb46-79" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-80"><a href="ref.html#cb46-80" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-81"><a href="ref.html#cb46-81" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb46-82"><a href="ref.html#cb46-82" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-83"><a href="ref.html#cb46-83" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb46-84"><a href="ref.html#cb46-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb46-85"><a href="ref.html#cb46-85" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-86"><a href="ref.html#cb46-86" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-87"><a href="ref.html#cb46-87" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb46-88"><a href="ref.html#cb46-88" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb46-89"><a href="ref.html#cb46-89" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-90"><a href="ref.html#cb46-90" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb46-91"><a href="ref.html#cb46-91" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb46-92"><a href="ref.html#cb46-92" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb46-93"><a href="ref.html#cb46-93" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-94"><a href="ref.html#cb46-94" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb46-95"><a href="ref.html#cb46-95" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-96"><a href="ref.html#cb46-96" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb46-97"><a href="ref.html#cb46-97" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb46-98"><a href="ref.html#cb46-98" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb46-99"><a href="ref.html#cb46-99" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
+<span id="cb46-100"><a href="ref.html#cb46-100" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
+<span id="cb46-101"><a href="ref.html#cb46-101" aria-hidden="true" tabindex="-1"></a>                           younglings_former,</span>
+<span id="cb46-102"><a href="ref.html#cb46-102" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_former, </span>
+<span id="cb46-103"><a href="ref.html#cb46-103" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
+<span id="cb46-104"><a href="ref.html#cb46-104" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
+<span id="cb46-105"><a href="ref.html#cb46-105" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
+<span id="cb46-106"><a href="ref.html#cb46-106" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_former[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
+<span id="cb46-107"><a href="ref.html#cb46-107" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-108"><a href="ref.html#cb46-108" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-109"><a href="ref.html#cb46-109" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb46-110"><a href="ref.html#cb46-110" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-111"><a href="ref.html#cb46-111" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb46-112"><a href="ref.html#cb46-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
 <span id="cb46-113"><a href="ref.html#cb46-113" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-114"><a href="ref.html#cb46-114" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We convert the objects into data frames and get ready to store them</span></span>
-<span id="cb46-115"><a href="ref.html#cb46-115" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
-<span id="cb46-116"><a href="ref.html#cb46-116" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb46-117"><a href="ref.html#cb46-117" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-118"><a href="ref.html#cb46-118" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
-<span id="cb46-119"><a href="ref.html#cb46-119" aria-hidden="true" tabindex="-1"></a>  never_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb46-120"><a href="ref.html#cb46-120" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-121"><a href="ref.html#cb46-121" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
-<span id="cb46-122"><a href="ref.html#cb46-122" aria-hidden="true" tabindex="-1"></a>  current_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb46-123"><a href="ref.html#cb46-123" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-124"><a href="ref.html#cb46-124" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
-<span id="cb46-125"><a href="ref.html#cb46-125" aria-hidden="true" tabindex="-1"></a>  former_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb46-126"><a href="ref.html#cb46-126" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-127"><a href="ref.html#cb46-127" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we add the results of this iteration to the full set of results</span></span>
-<span id="cb46-128"><a href="ref.html#cb46-128" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(full_results)){</span>
-<span id="cb46-129"><a href="ref.html#cb46-129" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-130"><a href="ref.html#cb46-130" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
-<span id="cb46-131"><a href="ref.html#cb46-131" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
-<span id="cb46-132"><a href="ref.html#cb46-132" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
-<span id="cb46-133"><a href="ref.html#cb46-133" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb46-114"><a href="ref.html#cb46-114" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we merge the results of all three</span></span>
+<span id="cb46-115"><a href="ref.html#cb46-115" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb46-116"><a href="ref.html#cb46-116" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We divide the time column by three because we added the three columns together</span></span>
+<span id="cb46-117"><a href="ref.html#cb46-117" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb46-118"><a href="ref.html#cb46-118" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-119"><a href="ref.html#cb46-119" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We convert the objects into data frames and get ready to store them</span></span>
+<span id="cb46-120"><a href="ref.html#cb46-120" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb46-121"><a href="ref.html#cb46-121" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-122"><a href="ref.html#cb46-122" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-123"><a href="ref.html#cb46-123" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb46-124"><a href="ref.html#cb46-124" aria-hidden="true" tabindex="-1"></a>  never_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-125"><a href="ref.html#cb46-125" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-126"><a href="ref.html#cb46-126" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb46-127"><a href="ref.html#cb46-127" aria-hidden="true" tabindex="-1"></a>  current_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-128"><a href="ref.html#cb46-128" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-129"><a href="ref.html#cb46-129" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb46-130"><a href="ref.html#cb46-130" aria-hidden="true" tabindex="-1"></a>  former_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb46-131"><a href="ref.html#cb46-131" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-132"><a href="ref.html#cb46-132" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Finally, we add the results of this iteration to the full set of results</span></span>
+<span id="cb46-133"><a href="ref.html#cb46-133" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(full_results)){</span>
 <span id="cb46-134"><a href="ref.html#cb46-134" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb46-135"><a href="ref.html#cb46-135" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb46-136"><a href="ref.html#cb46-136" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results, result)</span>
-<span id="cb46-137"><a href="ref.html#cb46-137" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_never, never_result)</span>
-<span id="cb46-138"><a href="ref.html#cb46-138" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_current, current_result)</span>
-<span id="cb46-139"><a href="ref.html#cb46-139" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_former, former_result)</span>
-<span id="cb46-140"><a href="ref.html#cb46-140" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb46-141"><a href="ref.html#cb46-141" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb46-142"><a href="ref.html#cb46-142" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb46-143"><a href="ref.html#cb46-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-144"><a href="ref.html#cb46-144" aria-hidden="true" tabindex="-1"></a><span class="do">## Last, we save our results</span></span>
-<span id="cb46-145"><a href="ref.html#cb46-145" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
-<span id="cb46-146"><a href="ref.html#cb46-146" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_never, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Never_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
-<span id="cb46-147"><a href="ref.html#cb46-147" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_current, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Current_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
-<span id="cb46-148"><a href="ref.html#cb46-148" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_former, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Former_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<span id="cb46-135"><a href="ref.html#cb46-135" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb46-136"><a href="ref.html#cb46-136" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb46-137"><a href="ref.html#cb46-137" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb46-138"><a href="ref.html#cb46-138" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb46-139"><a href="ref.html#cb46-139" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-140"><a href="ref.html#cb46-140" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb46-141"><a href="ref.html#cb46-141" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results, result)</span>
+<span id="cb46-142"><a href="ref.html#cb46-142" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_never, never_result)</span>
+<span id="cb46-143"><a href="ref.html#cb46-143" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_current, current_result)</span>
+<span id="cb46-144"><a href="ref.html#cb46-144" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_former, former_result)</span>
+<span id="cb46-145"><a href="ref.html#cb46-145" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-146"><a href="ref.html#cb46-146" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-147"><a href="ref.html#cb46-147" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-148"><a href="ref.html#cb46-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-149"><a href="ref.html#cb46-149" aria-hidden="true" tabindex="-1"></a><span class="do">## Last, we save our results</span></span>
+<span id="cb46-150"><a href="ref.html#cb46-150" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb46-151"><a href="ref.html#cb46-151" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_never, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Never_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb46-152"><a href="ref.html#cb46-152" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_current, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Current_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb46-153"><a href="ref.html#cb46-153" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_former, <span class="fu">paste</span>(<span class="st">&quot;Results/Baseline_Model_Former_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="run-high-income-scenario-analysis" class="section level2" number="8.2">
@@ -560,208 +565,213 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb47-28"><a href="ref.html#cb47-28" aria-hidden="true" tabindex="-1"></a>  parameters <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(parameter_set[sim_number,])</span>
 <span id="cb47-29"><a href="ref.html#cb47-29" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb47-30"><a href="ref.html#cb47-30" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Select the correct calibraters</span></span>
-<span id="cb47-31"><a href="ref.html#cb47-31" aria-hidden="true" tabindex="-1"></a>  calibraters <span class="ot">&lt;-</span> calibrated_parameters[sim_number,]</span>
-<span id="cb47-32"><a href="ref.html#cb47-32" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>growth_rates[<span class="dv">1</span>]</span>
-<span id="cb47-33"><a href="ref.html#cb47-33" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>initiation_mods[<span class="dv">1</span>]</span>
-<span id="cb47-34"><a href="ref.html#cb47-34" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> calibraters<span class="sc">$</span>cessation_mods[<span class="dv">1</span>]</span>
+<span id="cb47-31"><a href="ref.html#cb47-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calibraters &lt;- calibrated_parameters[sim_number,]</span></span>
+<span id="cb47-32"><a href="ref.html#cb47-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># growth_rate &lt;- calibraters$growth_rates[1]</span></span>
+<span id="cb47-33"><a href="ref.html#cb47-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># initiation_mod &lt;- calibraters$initiation_mods[1]</span></span>
+<span id="cb47-34"><a href="ref.html#cb47-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cessation_mod &lt;- calibraters$cessation_mods[1]</span></span>
 <span id="cb47-35"><a href="ref.html#cb47-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-36"><a href="ref.html#cb47-36" aria-hidden="true" tabindex="-1"></a>  <span class="do">## NExt we need to extract the income RRs for modifying overall RRs</span></span>
-<span id="cb47-37"><a href="ref.html#cb47-37" aria-hidden="true" tabindex="-1"></a>  income_RR <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(income_RRs[sim_number,])</span>
-<span id="cb47-38"><a href="ref.html#cb47-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-39"><a href="ref.html#cb47-39" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb47-40"><a href="ref.html#cb47-40" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb47-41"><a href="ref.html#cb47-41" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>]</span>
-<span id="cb47-42"><a href="ref.html#cb47-42" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">16</span><span class="sc">:</span><span class="dv">20</span>]</span>
-<span id="cb47-43"><a href="ref.html#cb47-43" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">21</span><span class="sc">:</span><span class="dv">25</span>]</span>
-<span id="cb47-44"><a href="ref.html#cb47-44" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">26</span><span class="sc">:</span><span class="dv">30</span>]</span>
-<span id="cb47-45"><a href="ref.html#cb47-45" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-46"><a href="ref.html#cb47-46" aria-hidden="true" tabindex="-1"></a>  <span class="do">## And we need to extract the income change RRs for modigying overall RRs</span></span>
-<span id="cb47-47"><a href="ref.html#cb47-47" aria-hidden="true" tabindex="-1"></a>  income_change_RR <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(income_change_RRs[sim_number,])</span>
-<span id="cb47-48"><a href="ref.html#cb47-48" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-49"><a href="ref.html#cb47-49" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb47-50"><a href="ref.html#cb47-50" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
-<span id="cb47-51"><a href="ref.html#cb47-51" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>]</span>
-<span id="cb47-52"><a href="ref.html#cb47-52" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>]</span>
-<span id="cb47-53"><a href="ref.html#cb47-53" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">13</span><span class="sc">:</span><span class="dv">15</span>]</span>
-<span id="cb47-54"><a href="ref.html#cb47-54" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">16</span><span class="sc">:</span><span class="dv">18</span>]</span>
-<span id="cb47-55"><a href="ref.html#cb47-55" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-56"><a href="ref.html#cb47-56" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We extract the parameters that we need to modify</span></span>
-<span id="cb47-57"><a href="ref.html#cb47-57" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">170</span><span class="sc">:</span><span class="dv">637</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
-<span id="cb47-58"><a href="ref.html#cb47-58" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">638</span><span class="sc">:</span><span class="dv">1105</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
-<span id="cb47-59"><a href="ref.html#cb47-59" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">1106</span><span class="sc">:</span><span class="dv">1573</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-36"><a href="ref.html#cb47-36" aria-hidden="true" tabindex="-1"></a>  growth_rate <span class="ot">&lt;-</span> <span class="fl">13.11</span></span>
+<span id="cb47-37"><a href="ref.html#cb47-37" aria-hidden="true" tabindex="-1"></a>  carrying_capacity_mult <span class="ot">&lt;-</span> <span class="fl">1.59</span></span>
+<span id="cb47-38"><a href="ref.html#cb47-38" aria-hidden="true" tabindex="-1"></a>  initiation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb47-39"><a href="ref.html#cb47-39" aria-hidden="true" tabindex="-1"></a>  cessation_mod <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb47-40"><a href="ref.html#cb47-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-41"><a href="ref.html#cb47-41" aria-hidden="true" tabindex="-1"></a>  <span class="do">## NExt we need to extract the income RRs for modifying overall RRs</span></span>
+<span id="cb47-42"><a href="ref.html#cb47-42" aria-hidden="true" tabindex="-1"></a>  income_RR <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(income_RRs[sim_number,])</span>
+<span id="cb47-43"><a href="ref.html#cb47-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-44"><a href="ref.html#cb47-44" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb47-45"><a href="ref.html#cb47-45" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb47-46"><a href="ref.html#cb47-46" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>]</span>
+<span id="cb47-47"><a href="ref.html#cb47-47" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">16</span><span class="sc">:</span><span class="dv">20</span>]</span>
+<span id="cb47-48"><a href="ref.html#cb47-48" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">21</span><span class="sc">:</span><span class="dv">25</span>]</span>
+<span id="cb47-49"><a href="ref.html#cb47-49" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement_income_point_estimates_sample <span class="ot">&lt;-</span> income_RR[<span class="dv">26</span><span class="sc">:</span><span class="dv">30</span>]</span>
+<span id="cb47-50"><a href="ref.html#cb47-50" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-51"><a href="ref.html#cb47-51" aria-hidden="true" tabindex="-1"></a>  <span class="do">## And we need to extract the income change RRs for modigying overall RRs</span></span>
+<span id="cb47-52"><a href="ref.html#cb47-52" aria-hidden="true" tabindex="-1"></a>  income_change_RR <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(income_change_RRs[sim_number,])</span>
+<span id="cb47-53"><a href="ref.html#cb47-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-54"><a href="ref.html#cb47-54" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb47-55"><a href="ref.html#cb47-55" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb47-56"><a href="ref.html#cb47-56" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>]</span>
+<span id="cb47-57"><a href="ref.html#cb47-57" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>]</span>
+<span id="cb47-58"><a href="ref.html#cb47-58" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">13</span><span class="sc">:</span><span class="dv">15</span>]</span>
+<span id="cb47-59"><a href="ref.html#cb47-59" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement_income_change_point_estimates_sample <span class="ot">&lt;-</span> income_change_RR[<span class="dv">16</span><span class="sc">:</span><span class="dv">18</span>]</span>
 <span id="cb47-60"><a href="ref.html#cb47-60" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-61"><a href="ref.html#cb47-61" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">1574</span><span class="sc">:</span><span class="dv">2041</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
-<span id="cb47-62"><a href="ref.html#cb47-62" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">2042</span><span class="sc">:</span><span class="dv">2509</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
-<span id="cb47-63"><a href="ref.html#cb47-63" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">2510</span><span class="sc">:</span><span class="dv">2977</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
-<span id="cb47-64"><a href="ref.html#cb47-64" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb47-61"><a href="ref.html#cb47-61" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We extract the parameters that we need to modify</span></span>
+<span id="cb47-62"><a href="ref.html#cb47-62" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_initiation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">170</span><span class="sc">:</span><span class="dv">637</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-63"><a href="ref.html#cb47-63" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_cessation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">638</span><span class="sc">:</span><span class="dv">1105</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-64"><a href="ref.html#cb47-64" aria-hidden="true" tabindex="-1"></a>  rr_cigarette_reinstatement <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">1106</span><span class="sc">:</span><span class="dv">1573</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
 <span id="cb47-65"><a href="ref.html#cb47-65" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-66"><a href="ref.html#cb47-66" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we will modigy the cigarette transition RRs</span></span>
-<span id="cb47-67"><a href="ref.html#cb47-67" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We loop through each combination of the other 4 strata to do so</span></span>
-<span id="cb47-68"><a href="ref.html#cb47-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sex_types){</span>
-<span id="cb47-69"><a href="ref.html#cb47-69" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>age_types){</span>
-<span id="cb47-70"><a href="ref.html#cb47-70" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(e_cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>e_cigarette_types){</span>
-<span id="cb47-71"><a href="ref.html#cb47-71" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>income_types){</span>
-<span id="cb47-72"><a href="ref.html#cb47-72" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb47-73"><a href="ref.html#cb47-73" aria-hidden="true" tabindex="-1"></a>          <span class="do">## For each transition, we divide the full transition RR by the income and income change specific RRs</span></span>
-<span id="cb47-74"><a href="ref.html#cb47-74" aria-hidden="true" tabindex="-1"></a>          <span class="do">## We then multiply by the hi income RR (ie rr_cigarette_initiation_income_point_estimates_sample[5])</span></span>
-<span id="cb47-75"><a href="ref.html#cb47-75" aria-hidden="true" tabindex="-1"></a>          <span class="do">## We don&#39;t multiply for the income change because we are assigning to the referent group where RR = 1</span></span>
-<span id="cb47-76"><a href="ref.html#cb47-76" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_initiation[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_initiation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_initiation[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_initiation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_initiation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
-<span id="cb47-77"><a href="ref.html#cb47-77" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_cessation[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_cessation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_cessation[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_cessation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_cessation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
-<span id="cb47-78"><a href="ref.html#cb47-78" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_reinstatement[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_reinstatement_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_reinstatement[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_reinstatement_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_reinstatement_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
-<span id="cb47-79"><a href="ref.html#cb47-79" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb47-80"><a href="ref.html#cb47-80" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb47-81"><a href="ref.html#cb47-81" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb47-82"><a href="ref.html#cb47-82" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb47-83"><a href="ref.html#cb47-83" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb47-84"><a href="ref.html#cb47-84" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-85"><a href="ref.html#cb47-85" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-86"><a href="ref.html#cb47-86" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We repeat this process for e-cigarette use as well.</span></span>
-<span id="cb47-87"><a href="ref.html#cb47-87" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sex_types){</span>
-<span id="cb47-88"><a href="ref.html#cb47-88" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>age_types){</span>
-<span id="cb47-89"><a href="ref.html#cb47-89" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>cigarette_types){</span>
-<span id="cb47-90"><a href="ref.html#cb47-90" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>income_types){</span>
-<span id="cb47-91"><a href="ref.html#cb47-91" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb47-92"><a href="ref.html#cb47-92" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb47-93"><a href="ref.html#cb47-93" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_initiation[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_initiation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_initiation[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_initiation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_initiation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
-<span id="cb47-94"><a href="ref.html#cb47-94" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_cessation[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_cessation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_cessation[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_cessation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_cessation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
-<span id="cb47-95"><a href="ref.html#cb47-95" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_reinstatement[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_reinstatement_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_reinstatement[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_reinstatement_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_reinstatement_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
-<span id="cb47-96"><a href="ref.html#cb47-96" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-66"><a href="ref.html#cb47-66" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_initiation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">1574</span><span class="sc">:</span><span class="dv">2041</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-67"><a href="ref.html#cb47-67" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_cessation <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">2042</span><span class="sc">:</span><span class="dv">2509</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-68"><a href="ref.html#cb47-68" aria-hidden="true" tabindex="-1"></a>  rr_e_cigarette_reinstatement <span class="ot">&lt;-</span> <span class="fu">toArray</span>(parameters[<span class="dv">2510</span><span class="sc">:</span><span class="dv">2977</span>], <span class="at">dim =</span> <span class="fu">c</span>(sex_types,age_types,e_cigarette_types,income_types))</span>
+<span id="cb47-69"><a href="ref.html#cb47-69" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb47-70"><a href="ref.html#cb47-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-71"><a href="ref.html#cb47-71" aria-hidden="true" tabindex="-1"></a>  <span class="do">## First we will modigy the cigarette transition RRs</span></span>
+<span id="cb47-72"><a href="ref.html#cb47-72" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We loop through each combination of the other 4 strata to do so</span></span>
+<span id="cb47-73"><a href="ref.html#cb47-73" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sex_types){</span>
+<span id="cb47-74"><a href="ref.html#cb47-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>age_types){</span>
+<span id="cb47-75"><a href="ref.html#cb47-75" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(e_cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>e_cigarette_types){</span>
+<span id="cb47-76"><a href="ref.html#cb47-76" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>income_types){</span>
+<span id="cb47-77"><a href="ref.html#cb47-77" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-78"><a href="ref.html#cb47-78" aria-hidden="true" tabindex="-1"></a>          <span class="do">## For each transition, we divide the full transition RR by the income and income change specific RRs</span></span>
+<span id="cb47-79"><a href="ref.html#cb47-79" aria-hidden="true" tabindex="-1"></a>          <span class="do">## We then multiply by the hi income RR (ie rr_cigarette_initiation_income_point_estimates_sample[5])</span></span>
+<span id="cb47-80"><a href="ref.html#cb47-80" aria-hidden="true" tabindex="-1"></a>          <span class="do">## We don&#39;t multiply for the income change because we are assigning to the referent group where RR = 1</span></span>
+<span id="cb47-81"><a href="ref.html#cb47-81" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_initiation[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_initiation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_initiation[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_initiation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_initiation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-82"><a href="ref.html#cb47-82" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_cessation[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_cessation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_cessation[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_cessation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_cessation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-83"><a href="ref.html#cb47-83" aria-hidden="true" tabindex="-1"></a>          rr_cigarette_reinstatement[sex,age,e_cig,income] <span class="ot">&lt;-</span> rr_cigarette_reinstatement_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_cigarette_reinstatement[sex,age,e_cig,income]<span class="sc">/</span>(rr_cigarette_reinstatement_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_cigarette_reinstatement_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-84"><a href="ref.html#cb47-84" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-85"><a href="ref.html#cb47-85" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-86"><a href="ref.html#cb47-86" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb47-87"><a href="ref.html#cb47-87" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb47-88"><a href="ref.html#cb47-88" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb47-89"><a href="ref.html#cb47-89" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-90"><a href="ref.html#cb47-90" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-91"><a href="ref.html#cb47-91" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We repeat this process for e-cigarette use as well.</span></span>
+<span id="cb47-92"><a href="ref.html#cb47-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sex <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sex_types){</span>
+<span id="cb47-93"><a href="ref.html#cb47-93" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(age <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>age_types){</span>
+<span id="cb47-94"><a href="ref.html#cb47-94" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(cig <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>cigarette_types){</span>
+<span id="cb47-95"><a href="ref.html#cb47-95" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(income <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>income_types){</span>
+<span id="cb47-96"><a href="ref.html#cb47-96" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb47-97"><a href="ref.html#cb47-97" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb47-98"><a href="ref.html#cb47-98" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb47-99"><a href="ref.html#cb47-99" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb47-100"><a href="ref.html#cb47-100" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb47-101"><a href="ref.html#cb47-101" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-102"><a href="ref.html#cb47-102" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-103"><a href="ref.html#cb47-103" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We then reassign the values back into the parameter set</span></span>
-<span id="cb47-104"><a href="ref.html#cb47-104" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Now we are ready to run the model as before</span></span>
-<span id="cb47-105"><a href="ref.html#cb47-105" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">170</span><span class="sc">:</span><span class="dv">637</span>] <span class="ot">&lt;-</span>  rr_cigarette_initiation</span>
-<span id="cb47-106"><a href="ref.html#cb47-106" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">638</span><span class="sc">:</span><span class="dv">1105</span>] <span class="ot">&lt;-</span>  rr_cigarette_cessation</span>
-<span id="cb47-107"><a href="ref.html#cb47-107" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">1106</span><span class="sc">:</span><span class="dv">1573</span>] <span class="ot">&lt;-</span>  rr_cigarette_reinstatement</span>
-<span id="cb47-108"><a href="ref.html#cb47-108" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">1574</span><span class="sc">:</span><span class="dv">2041</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_initiation</span>
-<span id="cb47-109"><a href="ref.html#cb47-109" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">2042</span><span class="sc">:</span><span class="dv">2509</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_cessation</span>
-<span id="cb47-110"><a href="ref.html#cb47-110" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">2510</span><span class="sc">:</span><span class="dv">2977</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_reinstatement</span>
-<span id="cb47-111"><a href="ref.html#cb47-111" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-112"><a href="ref.html#cb47-112" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb47-113"><a href="ref.html#cb47-113" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-114"><a href="ref.html#cb47-114" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb47-115"><a href="ref.html#cb47-115" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
-<span id="cb47-116"><a href="ref.html#cb47-116" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb47-117"><a href="ref.html#cb47-117" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb47-118"><a href="ref.html#cb47-118" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
-<span id="cb47-119"><a href="ref.html#cb47-119" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb47-120"><a href="ref.html#cb47-120" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-121"><a href="ref.html#cb47-121" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb47-122"><a href="ref.html#cb47-122" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-123"><a href="ref.html#cb47-123" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
-<span id="cb47-124"><a href="ref.html#cb47-124" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
-<span id="cb47-125"><a href="ref.html#cb47-125" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
-<span id="cb47-126"><a href="ref.html#cb47-126" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
-<span id="cb47-127"><a href="ref.html#cb47-127" aria-hidden="true" tabindex="-1"></a>                           model_sex,</span>
-<span id="cb47-128"><a href="ref.html#cb47-128" aria-hidden="true" tabindex="-1"></a>                           younglings_never,</span>
-<span id="cb47-129"><a href="ref.html#cb47-129" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_never, </span>
-<span id="cb47-130"><a href="ref.html#cb47-130" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
-<span id="cb47-131"><a href="ref.html#cb47-131" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
-<span id="cb47-132"><a href="ref.html#cb47-132" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
-<span id="cb47-133"><a href="ref.html#cb47-133" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_never[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
-<span id="cb47-134"><a href="ref.html#cb47-134" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-135"><a href="ref.html#cb47-135" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-136"><a href="ref.html#cb47-136" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb47-137"><a href="ref.html#cb47-137" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-138"><a href="ref.html#cb47-138" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb47-139"><a href="ref.html#cb47-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
-<span id="cb47-140"><a href="ref.html#cb47-140" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-141"><a href="ref.html#cb47-141" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb47-142"><a href="ref.html#cb47-142" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
-<span id="cb47-143"><a href="ref.html#cb47-143" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb47-144"><a href="ref.html#cb47-144" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-145"><a href="ref.html#cb47-145" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb47-146"><a href="ref.html#cb47-146" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
-<span id="cb47-147"><a href="ref.html#cb47-147" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb47-148"><a href="ref.html#cb47-148" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-149"><a href="ref.html#cb47-149" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb47-150"><a href="ref.html#cb47-150" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-151"><a href="ref.html#cb47-151" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
-<span id="cb47-152"><a href="ref.html#cb47-152" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
-<span id="cb47-153"><a href="ref.html#cb47-153" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
-<span id="cb47-154"><a href="ref.html#cb47-154" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
-<span id="cb47-155"><a href="ref.html#cb47-155" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
-<span id="cb47-156"><a href="ref.html#cb47-156" aria-hidden="true" tabindex="-1"></a>                           younglings_current,</span>
-<span id="cb47-157"><a href="ref.html#cb47-157" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_current, </span>
-<span id="cb47-158"><a href="ref.html#cb47-158" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
-<span id="cb47-159"><a href="ref.html#cb47-159" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
-<span id="cb47-160"><a href="ref.html#cb47-160" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
-<span id="cb47-161"><a href="ref.html#cb47-161" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_current[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
-<span id="cb47-162"><a href="ref.html#cb47-162" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-163"><a href="ref.html#cb47-163" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-164"><a href="ref.html#cb47-164" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb47-165"><a href="ref.html#cb47-165" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-166"><a href="ref.html#cb47-166" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb47-167"><a href="ref.html#cb47-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
-<span id="cb47-168"><a href="ref.html#cb47-168" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-169"><a href="ref.html#cb47-169" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb47-170"><a href="ref.html#cb47-170" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
-<span id="cb47-171"><a href="ref.html#cb47-171" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
-<span id="cb47-172"><a href="ref.html#cb47-172" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-173"><a href="ref.html#cb47-173" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb47-174"><a href="ref.html#cb47-174" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
-<span id="cb47-175"><a href="ref.html#cb47-175" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
-<span id="cb47-176"><a href="ref.html#cb47-176" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-177"><a href="ref.html#cb47-177" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
-<span id="cb47-178"><a href="ref.html#cb47-178" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-179"><a href="ref.html#cb47-179" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
-<span id="cb47-180"><a href="ref.html#cb47-180" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
-<span id="cb47-181"><a href="ref.html#cb47-181" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
-<span id="cb47-182"><a href="ref.html#cb47-182" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
-<span id="cb47-183"><a href="ref.html#cb47-183" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
-<span id="cb47-184"><a href="ref.html#cb47-184" aria-hidden="true" tabindex="-1"></a>                           younglings_former,</span>
-<span id="cb47-185"><a href="ref.html#cb47-185" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_former, </span>
-<span id="cb47-186"><a href="ref.html#cb47-186" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
-<span id="cb47-187"><a href="ref.html#cb47-187" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
-<span id="cb47-188"><a href="ref.html#cb47-188" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
-<span id="cb47-189"><a href="ref.html#cb47-189" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_former[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
-<span id="cb47-190"><a href="ref.html#cb47-190" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-191"><a href="ref.html#cb47-191" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-192"><a href="ref.html#cb47-192" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
-<span id="cb47-193"><a href="ref.html#cb47-193" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-194"><a href="ref.html#cb47-194" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb47-195"><a href="ref.html#cb47-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
-<span id="cb47-196"><a href="ref.html#cb47-196" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-197"><a href="ref.html#cb47-197" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
-<span id="cb47-198"><a href="ref.html#cb47-198" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
-<span id="cb47-199"><a href="ref.html#cb47-199" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-200"><a href="ref.html#cb47-200" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
-<span id="cb47-201"><a href="ref.html#cb47-201" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb47-202"><a href="ref.html#cb47-202" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-203"><a href="ref.html#cb47-203" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
-<span id="cb47-204"><a href="ref.html#cb47-204" aria-hidden="true" tabindex="-1"></a>  never_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb47-205"><a href="ref.html#cb47-205" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-206"><a href="ref.html#cb47-206" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
-<span id="cb47-207"><a href="ref.html#cb47-207" aria-hidden="true" tabindex="-1"></a>  current_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb47-208"><a href="ref.html#cb47-208" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-209"><a href="ref.html#cb47-209" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
-<span id="cb47-210"><a href="ref.html#cb47-210" aria-hidden="true" tabindex="-1"></a>  former_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
-<span id="cb47-211"><a href="ref.html#cb47-211" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-212"><a href="ref.html#cb47-212" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(full_results)){</span>
-<span id="cb47-213"><a href="ref.html#cb47-213" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-214"><a href="ref.html#cb47-214" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
-<span id="cb47-215"><a href="ref.html#cb47-215" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
-<span id="cb47-216"><a href="ref.html#cb47-216" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
-<span id="cb47-217"><a href="ref.html#cb47-217" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb47-98"><a href="ref.html#cb47-98" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_initiation[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_initiation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_initiation[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_initiation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_initiation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-99"><a href="ref.html#cb47-99" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_cessation[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_cessation_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_cessation[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_cessation_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_cessation_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-100"><a href="ref.html#cb47-100" aria-hidden="true" tabindex="-1"></a>          rr_e_cigarette_reinstatement[sex,age,cig,income] <span class="ot">&lt;-</span> rr_e_cigarette_reinstatement_income_point_estimates_sample[<span class="dv">5</span>]<span class="sc">*</span>(rr_e_cigarette_reinstatement[sex,age,cig,income]<span class="sc">/</span>(rr_e_cigarette_reinstatement_income_point_estimates_sample[income_5_cat[income]]<span class="sc">*</span>rr_e_cigarette_reinstatement_income_change_point_estimates_sample[income_change_3_cat[income]]))</span>
+<span id="cb47-101"><a href="ref.html#cb47-101" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-102"><a href="ref.html#cb47-102" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb47-103"><a href="ref.html#cb47-103" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb47-104"><a href="ref.html#cb47-104" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb47-105"><a href="ref.html#cb47-105" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb47-106"><a href="ref.html#cb47-106" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-107"><a href="ref.html#cb47-107" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-108"><a href="ref.html#cb47-108" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We then reassign the values back into the parameter set</span></span>
+<span id="cb47-109"><a href="ref.html#cb47-109" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Now we are ready to run the model as before</span></span>
+<span id="cb47-110"><a href="ref.html#cb47-110" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">170</span><span class="sc">:</span><span class="dv">637</span>] <span class="ot">&lt;-</span>  rr_cigarette_initiation</span>
+<span id="cb47-111"><a href="ref.html#cb47-111" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">638</span><span class="sc">:</span><span class="dv">1105</span>] <span class="ot">&lt;-</span>  rr_cigarette_cessation</span>
+<span id="cb47-112"><a href="ref.html#cb47-112" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">1106</span><span class="sc">:</span><span class="dv">1573</span>] <span class="ot">&lt;-</span>  rr_cigarette_reinstatement</span>
+<span id="cb47-113"><a href="ref.html#cb47-113" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">1574</span><span class="sc">:</span><span class="dv">2041</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_initiation</span>
+<span id="cb47-114"><a href="ref.html#cb47-114" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">2042</span><span class="sc">:</span><span class="dv">2509</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_cessation</span>
+<span id="cb47-115"><a href="ref.html#cb47-115" aria-hidden="true" tabindex="-1"></a>  parameters[<span class="dv">2510</span><span class="sc">:</span><span class="dv">2977</span>] <span class="ot">&lt;-</span>  rr_e_cigarette_reinstatement</span>
+<span id="cb47-116"><a href="ref.html#cb47-116" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-117"><a href="ref.html#cb47-117" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb47-118"><a href="ref.html#cb47-118" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-119"><a href="ref.html#cb47-119" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-120"><a href="ref.html#cb47-120" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Need to run the model</span></span>
+<span id="cb47-121"><a href="ref.html#cb47-121" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-122"><a href="ref.html#cb47-122" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb47-123"><a href="ref.html#cb47-123" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb47-124"><a href="ref.html#cb47-124" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb47-125"><a href="ref.html#cb47-125" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-126"><a href="ref.html#cb47-126" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb47-127"><a href="ref.html#cb47-127" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-128"><a href="ref.html#cb47-128" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_never[[model_sex]]), </span>
+<span id="cb47-129"><a href="ref.html#cb47-129" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb47-130"><a href="ref.html#cb47-130" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb47-131"><a href="ref.html#cb47-131" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
+<span id="cb47-132"><a href="ref.html#cb47-132" aria-hidden="true" tabindex="-1"></a>                           model_sex,</span>
+<span id="cb47-133"><a href="ref.html#cb47-133" aria-hidden="true" tabindex="-1"></a>                           younglings_never,</span>
+<span id="cb47-134"><a href="ref.html#cb47-134" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_never, </span>
+<span id="cb47-135"><a href="ref.html#cb47-135" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
+<span id="cb47-136"><a href="ref.html#cb47-136" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
+<span id="cb47-137"><a href="ref.html#cb47-137" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
+<span id="cb47-138"><a href="ref.html#cb47-138" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_never[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
+<span id="cb47-139"><a href="ref.html#cb47-139" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-140"><a href="ref.html#cb47-140" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-141"><a href="ref.html#cb47-141" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb47-142"><a href="ref.html#cb47-142" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-143"><a href="ref.html#cb47-143" aria-hidden="true" tabindex="-1"></a>  never_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> never_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb47-144"><a href="ref.html#cb47-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb47-145"><a href="ref.html#cb47-145" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-146"><a href="ref.html#cb47-146" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-147"><a href="ref.html#cb47-147" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Current Smokers</span></span>
+<span id="cb47-148"><a href="ref.html#cb47-148" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-149"><a href="ref.html#cb47-149" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-150"><a href="ref.html#cb47-150" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb47-151"><a href="ref.html#cb47-151" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb47-152"><a href="ref.html#cb47-152" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb47-153"><a href="ref.html#cb47-153" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-154"><a href="ref.html#cb47-154" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb47-155"><a href="ref.html#cb47-155" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-156"><a href="ref.html#cb47-156" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_current[[model_sex]]), </span>
+<span id="cb47-157"><a href="ref.html#cb47-157" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb47-158"><a href="ref.html#cb47-158" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb47-159"><a href="ref.html#cb47-159" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
+<span id="cb47-160"><a href="ref.html#cb47-160" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
+<span id="cb47-161"><a href="ref.html#cb47-161" aria-hidden="true" tabindex="-1"></a>                           younglings_current,</span>
+<span id="cb47-162"><a href="ref.html#cb47-162" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_current, </span>
+<span id="cb47-163"><a href="ref.html#cb47-163" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
+<span id="cb47-164"><a href="ref.html#cb47-164" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
+<span id="cb47-165"><a href="ref.html#cb47-165" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
+<span id="cb47-166"><a href="ref.html#cb47-166" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_current[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
+<span id="cb47-167"><a href="ref.html#cb47-167" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-168"><a href="ref.html#cb47-168" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-169"><a href="ref.html#cb47-169" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb47-170"><a href="ref.html#cb47-170" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-171"><a href="ref.html#cb47-171" aria-hidden="true" tabindex="-1"></a>  current_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> current_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb47-172"><a href="ref.html#cb47-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb47-173"><a href="ref.html#cb47-173" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-174"><a href="ref.html#cb47-174" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-175"><a href="ref.html#cb47-175" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Former Smokers</span></span>
+<span id="cb47-176"><a href="ref.html#cb47-176" aria-hidden="true" tabindex="-1"></a>  <span class="do">##</span></span>
+<span id="cb47-177"><a href="ref.html#cb47-177" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-178"><a href="ref.html#cb47-178" aria-hidden="true" tabindex="-1"></a>  start2 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb47-179"><a href="ref.html#cb47-179" aria-hidden="true" tabindex="-1"></a>  cl <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">2</span>)</span>
+<span id="cb47-180"><a href="ref.html#cb47-180" aria-hidden="true" tabindex="-1"></a>  doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(cl)</span>
+<span id="cb47-181"><a href="ref.html#cb47-181" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-182"><a href="ref.html#cb47-182" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> foreach<span class="sc">::</span><span class="fu">foreach</span>(<span class="at">model_sex =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">.combine=</span><span class="st">&quot;+&quot;</span>) <span class="sc">%dopar%</span> {</span>
+<span id="cb47-183"><a href="ref.html#cb47-183" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-184"><a href="ref.html#cb47-184" aria-hidden="true" tabindex="-1"></a>    deSolve<span class="sc">::</span><span class="fu">ode</span>(<span class="at">y =</span> <span class="fu">toVector</span>(states_by_sex_former[[model_sex]]), </span>
+<span id="cb47-185"><a href="ref.html#cb47-185" aria-hidden="true" tabindex="-1"></a>                 <span class="at">times =</span> t, </span>
+<span id="cb47-186"><a href="ref.html#cb47-186" aria-hidden="true" tabindex="-1"></a>                 <span class="at">func =</span> ODE_function, </span>
+<span id="cb47-187"><a href="ref.html#cb47-187" aria-hidden="true" tabindex="-1"></a>                 <span class="at">parms =</span> <span class="fu">c</span>(parameters,</span>
+<span id="cb47-188"><a href="ref.html#cb47-188" aria-hidden="true" tabindex="-1"></a>                           model_sex, </span>
+<span id="cb47-189"><a href="ref.html#cb47-189" aria-hidden="true" tabindex="-1"></a>                           younglings_former,</span>
+<span id="cb47-190"><a href="ref.html#cb47-190" aria-hidden="true" tabindex="-1"></a>                           youngling_mult_former, </span>
+<span id="cb47-191"><a href="ref.html#cb47-191" aria-hidden="true" tabindex="-1"></a>                           growth_rate, </span>
+<span id="cb47-192"><a href="ref.html#cb47-192" aria-hidden="true" tabindex="-1"></a>                           initiation_mod, </span>
+<span id="cb47-193"><a href="ref.html#cb47-193" aria-hidden="true" tabindex="-1"></a>                           cessation_mod,</span>
+<span id="cb47-194"><a href="ref.html#cb47-194" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">sum</span>(<span class="fu">toVector</span>(states_by_sex_former[[model_sex]])<span class="sc">*</span>carrying_capacity_mult)))</span>
+<span id="cb47-195"><a href="ref.html#cb47-195" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-196"><a href="ref.html#cb47-196" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-197"><a href="ref.html#cb47-197" aria-hidden="true" tabindex="-1"></a>  parallel<span class="sc">::</span><span class="fu">stopCluster</span>(cl)</span>
+<span id="cb47-198"><a href="ref.html#cb47-198" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-199"><a href="ref.html#cb47-199" aria-hidden="true" tabindex="-1"></a>  former_result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> former_result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb47-200"><a href="ref.html#cb47-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">Sys.time</span>() <span class="sc">-</span> start2)</span>
+<span id="cb47-201"><a href="ref.html#cb47-201" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-202"><a href="ref.html#cb47-202" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> never_result <span class="sc">+</span> current_result <span class="sc">+</span> former_result</span>
+<span id="cb47-203"><a href="ref.html#cb47-203" aria-hidden="true" tabindex="-1"></a>  result[,<span class="dv">1</span>] <span class="ot">&lt;-</span> result[,<span class="dv">1</span>]<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb47-204"><a href="ref.html#cb47-204" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-205"><a href="ref.html#cb47-205" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb47-206"><a href="ref.html#cb47-206" aria-hidden="true" tabindex="-1"></a>  result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-207"><a href="ref.html#cb47-207" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-208"><a href="ref.html#cb47-208" aria-hidden="true" tabindex="-1"></a>  never_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb47-209"><a href="ref.html#cb47-209" aria-hidden="true" tabindex="-1"></a>  never_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-210"><a href="ref.html#cb47-210" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-211"><a href="ref.html#cb47-211" aria-hidden="true" tabindex="-1"></a>  current_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb47-212"><a href="ref.html#cb47-212" aria-hidden="true" tabindex="-1"></a>  current_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-213"><a href="ref.html#cb47-213" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-214"><a href="ref.html#cb47-214" aria-hidden="true" tabindex="-1"></a>  former_result <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb47-215"><a href="ref.html#cb47-215" aria-hidden="true" tabindex="-1"></a>  former_result<span class="sc">$</span>simulation_number <span class="ot">&lt;-</span> sim_number</span>
+<span id="cb47-216"><a href="ref.html#cb47-216" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-217"><a href="ref.html#cb47-217" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(full_results)){</span>
 <span id="cb47-218"><a href="ref.html#cb47-218" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb47-219"><a href="ref.html#cb47-219" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb47-220"><a href="ref.html#cb47-220" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results, result)</span>
-<span id="cb47-221"><a href="ref.html#cb47-221" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_never, never_result)</span>
-<span id="cb47-222"><a href="ref.html#cb47-222" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_current, current_result)</span>
-<span id="cb47-223"><a href="ref.html#cb47-223" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_former, former_result)</span>
-<span id="cb47-224"><a href="ref.html#cb47-224" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb47-225"><a href="ref.html#cb47-225" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb47-226"><a href="ref.html#cb47-226" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb47-227"><a href="ref.html#cb47-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-228"><a href="ref.html#cb47-228" aria-hidden="true" tabindex="-1"></a><span class="do">## Output the results</span></span>
-<span id="cb47-229"><a href="ref.html#cb47-229" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
-<span id="cb47-230"><a href="ref.html#cb47-230" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_never, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Never_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
-<span id="cb47-231"><a href="ref.html#cb47-231" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_current, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Current_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
-<span id="cb47-232"><a href="ref.html#cb47-232" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_former, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Former_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<span id="cb47-219"><a href="ref.html#cb47-219" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(result)</span>
+<span id="cb47-220"><a href="ref.html#cb47-220" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(never_result)</span>
+<span id="cb47-221"><a href="ref.html#cb47-221" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(current_result)</span>
+<span id="cb47-222"><a href="ref.html#cb47-222" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(former_result)</span>
+<span id="cb47-223"><a href="ref.html#cb47-223" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb47-224"><a href="ref.html#cb47-224" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb47-225"><a href="ref.html#cb47-225" aria-hidden="true" tabindex="-1"></a>    full_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results, result)</span>
+<span id="cb47-226"><a href="ref.html#cb47-226" aria-hidden="true" tabindex="-1"></a>    full_results_never <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_never, never_result)</span>
+<span id="cb47-227"><a href="ref.html#cb47-227" aria-hidden="true" tabindex="-1"></a>    full_results_current <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_current, current_result)</span>
+<span id="cb47-228"><a href="ref.html#cb47-228" aria-hidden="true" tabindex="-1"></a>    full_results_former <span class="ot">&lt;-</span> <span class="fu">rbind</span>(full_results_former, former_result)</span>
+<span id="cb47-229"><a href="ref.html#cb47-229" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb47-230"><a href="ref.html#cb47-230" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-231"><a href="ref.html#cb47-231" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-232"><a href="ref.html#cb47-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-233"><a href="ref.html#cb47-233" aria-hidden="true" tabindex="-1"></a><span class="do">## Output the results</span></span>
+<span id="cb47-234"><a href="ref.html#cb47-234" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb47-235"><a href="ref.html#cb47-235" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_never, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Never_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb47-236"><a href="ref.html#cb47-236" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_current, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Current_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb47-237"><a href="ref.html#cb47-237" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(full_results_former, <span class="fu">paste</span>(<span class="st">&quot;Results/Scenario_#2_Former_High_Income_RRs_Results_parameter_set_&quot;</span>,<span class="fu">as.character</span>(parameter_set_number),<span class="st">&quot;.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span></code></pre></div>
 
 </div>
 </div>
