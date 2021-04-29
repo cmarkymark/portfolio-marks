@@ -52,6 +52,8 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+**Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Accepted @ Drug Alcohol and Dependence 
+
 **Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Ciccarone, D., Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. In Press @ The Lancet Public Health (4/6/21)
 
 **Marks, C**, Carrasco, G., Carrasco-Hernandez, R., Johnson, D., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction of opioid use-related epidemics in the United States: a narrative review and cross-disciplinary call to action. Translational Research, 2021 DOI [10.1016/j.trsl.2021.03.018](https://doi.org/10.1016/j.trsl.2021.03.018)
@@ -78,7 +80,7 @@ Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Co
 
 **Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, The Trauma-Informed Theory of Behavior. Under Review @ Stress & Health
 
-**Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Under Review @ Drug Alcohol and Dependence
+
 
 Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Addiction. Manuscript under review.
 
