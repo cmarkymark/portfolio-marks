@@ -13,7 +13,7 @@ const Landing = ({landing}) => {
   and communities the resources and autonomy to address such harms is the best way to empower folx to live healthful lives.
     <br/>
       <br/>
-    <img class="image" src="Pics/myface.jpg" alt=""/>
+  <!--  <img class="image" src="Pics/myface.jpg" alt=""/> -->
     </div>
    
   );
