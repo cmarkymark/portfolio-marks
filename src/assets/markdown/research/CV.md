@@ -52,6 +52,8 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: A Cross Sectional Analysis Identifying Similarities and Differences Across Three North American Settings.  In Press. The BMJ Open
+
 **Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, Articulating The Trauma-Informed Theory of Individual Health Behavior. In Press. 2021. Stress & Health
 
 **Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Accepted @ Drug Alcohol and Dependence 
@@ -73,10 +75,6 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 **Marks, C.**, Zúñiga, M.L., [Identifying Key Subpopulations Among HIV+ Latinos Receiving Care in San Diego-Tijuana & Assessing CAM Utilization and ARV Adherence: A Latent Class Analysis](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Frontiers_CAM_Manuscript.pdf). Frontiers in Public Health. 2019 DOI: [10.3389/fpubh.2019.00179](https://doi.org/10.3389/fpubh.2019.00179)
 
 ## Papers In Production and Under Review
-
-
-
-**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: Identifying Similarities and Differences Across Three North American Settings.  Under Review @ The BMJ Open
 
 Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Compliance Behaviors among Young Cannabis Users in Mexico, Under Review @ The Journal of Cannabis Research
 
@@ -134,6 +132,7 @@ Teaching evaluations from this course are available [here](Teaching_Evaluations/
 
 **March 2019** Guest Lecture: Mediation Analysis in R, SDSU-UCSD IRSU JDP (SDSU SW-881)
 Teaching Evaluations for this guest lecture are available [here](Teaching_Evaluations/Spring_2019_SDSU_Mediation_Analysis_Guest_Lecture.pdf)
+g
 
 ## Peer-Review History
 
