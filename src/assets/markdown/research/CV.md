@@ -1,8 +1,7 @@
 <!--- Résumé --->
 
-## Charles Marks, MPH
+## Charles Marks, PhD, MPH
 
-I (they/them) am a doctoral candidate in the Interdisciplinary Research on Substance Use Joint Doctoral Program at San Diego State University and University of California, San Diego.  I apply a naturalist, critical social lens to addressing issues of health equity.  With a mathematics background, I also seek to apply data science, statistics, and mathematical modeling methods.
 
 ## Education
 
@@ -18,13 +17,15 @@ Thesis : [Substance Criminalization, Mass Incarceration, & Disenfranchisement](P
 
 ### San Diego State University & University of California San Diego '21, PhD
 
-Current doctoral candidate in the [Joint Doctoral Program in Interdisciplinary Research on Substance Use @ SDSU-UCSD](https://chhs.sdsu.edu/irsu/). 
+Graduated from the [Joint Doctoral Program in Interdisciplinary Research on Substance Use @ SDSU-UCSD](https://chhs.sdsu.edu/irsu/). 
 
 Advisor: Dan Werb
 
 Dissertation Topic: Applying a Trauma-Informed Lens to Address Tobacco-Related Health Disparities
 
 Dissertation Committee Members: Dan Werb, Natasha Martin, Laramie Smith, Maria Luisa Zuniga, Jennifer Pearson, Salvador Espinosa
+
+Dissertation Defended on June 23, 2021
 
 ## Job Appointments
 
@@ -52,13 +53,13 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
-**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: A Cross Sectional Analysis Identifying Similarities and Differences Across Three North American Settings.  In Press. The BMJ Open
+**Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: A Cross Sectional Analysis Identifying Similarities and Differences Across Three North American Settings.  2021. BMJ Open. DOI [10.1136/bmjopen-2020-046957](https://doi.org/10.1136/bmjopen-2020-046957)
 
-**Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, Articulating The Trauma-Informed Theory of Individual Health Behavior. In Press. 2021. Stress & Health
+**Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, Articulating The Trauma-Informed Theory of Individual Health Behavior. 2021. Stress & Health. DOI [10.1002/smi.3068](https://doi.org/10.1002/smi.3068)
 
-**Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. Accepted @ Drug Alcohol and Dependence 
+**Marks, C**, Bouck, Z, Jain, S, Sun, X, Strathdee, SA, Vickerman, P, DeBeck, K, Milloy, MJ, Hayashi, K, Werb, D, The Impact of Recent Homelessness on the Provision of Injection Drug Use Initiation Assistance Among Persons Who Inject Drugs in Tijuana, Mexico and Vancouver, Canada. 2021. Drug Alcohol and Dependence. DOI [10.1016/j.drugalcdep.2021.108829](https://doi.org/10.1016/j.drugalcdep.2021.108829) 
 
-**Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Ciccarone, D., Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. In Press @ The Lancet Public Health (4/6/21)
+**Marks, C**, Abramovitz, A, Donnelly, CA, Ciccarone, D, Carrasco-Escobar, G, Carrasco-Hernandez, R, Ciccarone, D., Gonzalez-Izquierdo, Martin, NK, Strathdee, SA, Smith, DM, Borquez, A., Identifying Counties at risk of High Overdose Mortality Burden Throughout the Emerging Fentanyl Epidemic in the United States: A Predictive Statistical Modeling Study. 2021. The Lancet Public Health DOI [10.1016/S2468-2667(21)00080-3](https://doi.org/10.1016/S2468-2667(21)00080-3)
 
 **Marks, C**, Carrasco, G., Carrasco-Hernandez, R., Johnson, D., Ciccarone, D., Strathdee, S., Smith, D., Borquez, A., Methodological approaches for the prediction of opioid use-related epidemics in the United States: a narrative review and cross-disciplinary call to action. Translational Research, 2021 DOI [10.1016/j.trsl.2021.03.018](https://doi.org/10.1016/j.trsl.2021.03.018)
 
@@ -77,7 +78,6 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 ## Papers In Production and Under Review
 
 Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Compliance Behaviors among Young Cannabis Users in Mexico, Under Review @ The Journal of Cannabis Research
-
 
 Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Addiction. Manuscript under review.
 
