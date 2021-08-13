@@ -136,6 +136,8 @@ g
 
 ## Peer-Review History
 
+I am a member of the editorial board of the International Journal of Drug Policy
+
 <div>
   <a class="embedly-card" data-card-controls="0" href="https://publons.com/author/3293322/widget/embed/">Charles Marks' Publons Overview</a>
   <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
