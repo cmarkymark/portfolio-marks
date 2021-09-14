@@ -1,6 +1,6 @@
 <!--- Résumé --->
 
-## Charles Marks, PhD, MPH
+## Charles Marks, PhD, MPH (they/them)
 
 
 ## Education
