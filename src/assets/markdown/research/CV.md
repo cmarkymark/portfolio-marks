@@ -53,6 +53,8 @@ Doctoral researcher on the EMERGENS, bulding statistical models aimed at predict
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Accepted at Drug and Alcohol Review (9/13/21)
+
 **Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: A Cross Sectional Analysis Identifying Similarities and Differences Across Three North American Settings.  2021. BMJ Open. DOI [10.1136/bmjopen-2020-046957](https://doi.org/10.1136/bmjopen-2020-046957)
 
 **Marks, C**, Pearson, JL, Zuniga, ML, Martin, NK, Werb, D, Smith, LR, Articulating The Trauma-Informed Theory of Individual Health Behavior. 2021. Stress & Health. DOI [10.1002/smi.3068](https://doi.org/10.1002/smi.3068)
@@ -79,7 +81,6 @@ Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine lear
 
 Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Compliance Behaviors among Young Cannabis Users in Mexico, Under Review @ The Journal of Cannabis Research
 
-Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Addiction. Manuscript under review.
 
 ## Conference Procedings
 
@@ -138,22 +139,14 @@ g
 
 I am a member of the editorial board of the International Journal of Drug Policy
 
-<div>
-  <a class="embedly-card" data-card-controls="0" href="https://publons.com/author/3293322/widget/embed/">Charles Marks' Publons Overview</a>
-  <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
- </div>
-
 I have reviewed for the following journals and conferences:
 
-International Journal of Drug Policy
-
-International Journal of STD & AIDS
-
-Harm Reduction Journal
-
-IEEE International Conference on Intelligent Transportation Systems
-
-American Medical Informatics Association Annual Symposium
+- Lancet Public Health
+- International Journal of Drug Policy
+- International Journal of STD & AIDS
+- Harm Reduction Journal
+- IEEE International Conference on Intelligent Transportation Systems
+- American Medical Informatics Association Annual Symposium
 
 
 
