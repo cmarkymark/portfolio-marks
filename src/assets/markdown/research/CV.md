@@ -29,25 +29,37 @@ Dissertation Defended on June 23, 2021
 
 ## Job Appointments
 
-### Toiyabe Indian Health Project: Family Services Intern (2016 - 2017)
+### Postdoctoral Scholar: University of Nevada, Reno, Community Health Sciences (2021 - Current)
 
-Worked in the department of Family Services doing data analysis and general program assistance.
+Joined the department of Community Health Sciences at the University of Nevada, Reno as a post-doctoral scholar. 
 
-### Researcher: [PRIMER](https://primerstudy.com/our-team/) (2017 - Current)
+### Postdoctoral Scholar: [EMERGENS](emergens-project.com) (2019 - Current)
+
+Initially began as a doctoral researcher on the EMERGENS, bulding statistical models aimed at predicting counties within the United States at highest risk of experiencing a synthetic opioid (ie fentanyl) outbreak. Transitioned to a postdoctoral scholar position upon PhD graduation in 2021. Postdoc position split between UCSD and UNR.
+
+### Researcher: [PRIMER](https://primerstudy.com/our-team/) (2017 - 2021)
 
 Doctoral researcher on the PRIMER study.  Responsibilities have included data analysis, manuscript production, and general assistance with other project tasks (website editing, grant assistance).
-
-### Data Analyst: [SAFE-D](https://www.vtti.vt.edu/utc/safe-d/index.php/projects/big-data-visualization-and-spatiotemporal-modeling-of-aggressive-driving/) (2018 - 2019)
-
-Project goal is to identify aggressive driving from unlabeled real-world driving data.  Utilized both unsupervised and supervised machine learning techniques to classify and label large datasets and developed tools for visualizing this data.  All analyses conducted in R on top of a PostGreSQL server.
 
 ### Instructor: SDSU School of Social Work (2019 - 2020)
 
 Primary responsibility as teaching assistant in the fall of 2019 and instructor of record in the Spring of 2020.  The course is Computer Applications in Social Work, a masters level course for social works students to learn statistical methods and the prepartion of original research using secondary data.
 
-### Researcher: [EMERGENS](emergens-project.com) (2019 - Current)
+### Data Analyst: [SAFE-D](https://www.vtti.vt.edu/utc/safe-d/index.php/projects/big-data-visualization-and-spatiotemporal-modeling-of-aggressive-driving/) (2018 - 2019)
 
-Doctoral researcher on the EMERGENS, bulding statistical models aimed at predicting counties within the United States at highest risk of experiencing a synthetic opioid (ie fentanyl) outbreak.
+Project goal is to identify aggressive driving from unlabeled real-world driving data.  Utilized both unsupervised and supervised machine learning techniques to classify and label large datasets and developed tools for visualizing this data.  All analyses conducted in R on top of a PostGreSQL server.
+
+
+### Toiyabe Indian Health Project: Family Services Intern (2016 - 2017)
+
+Worked in the department of Family Services doing data analysis and general program assistance.
+
+
+
+
+
+
+
 
 ## Peer-Reviewed Publications
 
@@ -141,12 +153,12 @@ I am a member of the editorial board of the International Journal of Drug Policy
 
 I have reviewed for the following journals and conferences:
 
-- Lancet Public Health
-- International Journal of Drug Policy
-- International Journal of STD & AIDS
-- Harm Reduction Journal
-- IEEE International Conference on Intelligent Transportation Systems
-- American Medical Informatics Association Annual Symposium
+Lancet Public Health
+International Journal of Drug Policy
+International Journal of STD & AIDS
+Harm Reduction Journal
+IEEE International Conference on Intelligent Transportation Systems
+American Medical Informatics Association Annual Symposium
 
 
 
