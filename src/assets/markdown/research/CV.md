@@ -154,10 +154,15 @@ I am a member of the editorial board of the International Journal of Drug Policy
 I have reviewed for the following journals and conferences:
 
 Lancet Public Health
+
 International Journal of Drug Policy
+
 International Journal of STD & AIDS
+
 Harm Reduction Journal
+
 IEEE International Conference on Intelligent Transportation Systems
+
 American Medical Informatics Association Annual Symposium
 
 
