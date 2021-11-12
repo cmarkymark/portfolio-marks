@@ -55,12 +55,6 @@ Project goal is to identify aggressive driving from unlabeled real-world driving
 Worked in the department of Family Services doing data analysis and general program assistance.
 
 
-
-
-
-
-
-
 ## Peer-Reviewed Publications
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
@@ -90,10 +84,6 @@ Cummins, K., **Marks, C.**, [Farewell to Bright-Line: A Guide to Reporting Quant
 Baxter, S., **Marks, C.**, Kuo, T., Ohno-Machado, L., Weinreb, R., [Machine learning-based predictive modeling of surgical intervention in glaucoma using systemic data from electronic health records](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Ophthalmology_Baxter_2019.pdf). American Journal of Ophtalmology. 2019 [DOI: 10.1016/j.ajo.2019.07.005](https://doi.org/10.1016/j.ajo.2019.07.005)
 
 **Marks, C.**, Zúñiga, M.L., [Identifying Key Subpopulations Among HIV+ Latinos Receiving Care in San Diego-Tijuana & Assessing CAM Utilization and ARV Adherence: A Latent Class Analysis](https://charliemarks.com/Publications/Peer%20Reviewed%20Manuscripts/Frontiers_CAM_Manuscript.pdf). Frontiers in Public Health. 2019 DOI: [10.3389/fpubh.2019.00179](https://doi.org/10.3389/fpubh.2019.00179)
-
-## Papers In Production and Under Review
-
-Espinosa, S., **Marks, C.**, Fondevila, G, Exploiring the Motivations for Non-Compliance Behaviors among Young Cannabis Users in Mexico, Under Review @ The Journal of Cannabis Research
 
 
 ## Conference Procedings
@@ -162,6 +152,8 @@ International Journal of Drug Policy
 International Journal of STD & AIDS
 
 Harm Reduction Journal
+
+Drug and Alcohol Dependence
 
 IEEE International Conference on Intelligent Transportation Systems
 
