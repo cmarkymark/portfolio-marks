@@ -65,6 +65,8 @@ Worked in the department of Family Services doing data analysis and general prog
 
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=13NE9E0AAAAJ)
 
+Espinosa, S., **Marks, C.**, Fondevila, G. (2021) Identifying Archetypal Cannabis Consumers to Inform Drug Policy Design: A Q-sort Assessment of Young Adults’ Attitudes in Mexico City’s Metropolitan Area, 2021 Accepted at the Journal of Cannabis Research (11/12/21)
+
 Meyers-Pantele, S. A., Jain, S., Sun, X., **Marks, C.**, DeBeck, K., Hayashi, K., Strathdee, S., & Werb, D. (2021) Gender and the first-time provision of injection initiation assistance among people who inject drugs across two distinct North American contexts: Tijuana, Mexico and Vancouver, Canada. Accepted at Drug and Alcohol Review (9/13/21)
 
 **Marks, C.**, Meyers, S., Jain, S., Sun, X., Hayashi, K., Gonzalez-Zuniga, P., Strathdee, S., Garfein, R., Milloy, M-J, DeBeck, K., Cummins, K., Werb, D. The Involvement of People Who Inject Drugs in Injection Initiation Events: A Cross Sectional Analysis Identifying Similarities and Differences Across Three North American Settings.  2021. BMJ Open. DOI [10.1136/bmjopen-2020-046957](https://doi.org/10.1136/bmjopen-2020-046957)
