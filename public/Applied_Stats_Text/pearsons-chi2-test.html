@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Pearson’s \(\chi^2\) Test | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Pearson’s \(\chi^2\) Test | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Pearson’s \(\chi^2\) Test | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="comparing-two-groups-w-independent-samples-t-test.html"/>
+<link rel="next" href="covariance-and-correlation.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pearsons-chi2-test" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</h1>
+<p>The <span class="math inline">\(\chi^2\)</span> (“chi”-squared, pronounced like the last syllable of sky) test allows us to assess if observed differences in the behavior of categorical data is explained by random chance or represents a meaningful pattern. This method was developed by Karl Pearson and introduced in 1900 - it is a foundational method in modern statistics.</p>
+<div id="expectations-v.-observations" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Expectations v. Observations</h2>
+<p>Given two categorical variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, it often of interest to ask if these two variables are associated with one another. However, categorical data can be challenging to work with because we cannot map the values of categorical data onto some distribution. The <span class="math inline">\(\chi^2\)</span> test was developed to give us a way to map observed patterns in the data between categorical variables onto a theoretical distribution, thus allowing us to conduct a signifance test.</p>
+<p>The goal with the <span class="math inline">\(\chi^2\)</span> Test of Independence is to determine if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are related to one another (i.e., if they are dependent on one another)? For example, we might want to know if income level (measured categorically) is related to current smoking status. Since both variables are categorical, we do not have a good way of mapping the behavior of either variable on to a theoretical distribution.</p>
+<p>But, we can define how we expect the distribution of values of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> within our sample to be if they are not related to one another (i.e., if they are independent of one another). Let’s use an example to display how we can define the expected behavior of two categorical variables if we assume they are independent of one another.</p>
+<div id="income-level-and-smoking-status" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Income Level and Smoking Status</h3>
+<p>Let’s say we have recruited 400 people into a study examining the relationship of income and smoking status. We have measured annual income categorically (&lt;$20k, $20-50k, &gt;$50k) and smoking status categorically (not a current smoker, current smoker). Looking at the sample, we see that 100 people reported an income &lt;$20k, 200 people reported an income $20-50k, and 100 people reported an income &gt;$50k. Further, we see that 100 people reported currently smoking and the other 300 reported not currently smoking. We can start by generating a cross-tabulation we will use as a framework to build our analysis on, like so:</p>
+<p><img src="Images/Chi-table1.PNG" /></p>
+<p>The total row and column display the total number of people that fall into each category. The total value in the bottom right thus displays the total number of people in our study. Within the dotted lines represents the number of people who reported each combination of income and smoking. For example, the empty cell in the top left corner represents the number of people who reported an annual income below $20k and who reported not currently smoking.</p>
+<p>Before we examine the observed disitribution of our data, we can actually map how we expect the variables to be distributed assuming that income and cigarette smoking are not related. Well, if we assume that these two variables are independent (hint: sounds like a null hypothesis), then we would expect the values of both variables would be evenly distributed across both groups. We are able to calculate the expected value in each cell using the equation, <span class="math inline">\(\frac{n_{row}*n_{column}}{n}\)</span>, where <span class="math inline">\(n_{row}\)</span> is the total number of participants in that given row, <span class="math inline">\(n_{column}\)</span> is the total number in that given column, and <span class="math inline">\(n\)</span> is the total number of participants. Let’s calculate the top-left cell below:</p>
+<p><img src="Images/Chi-table2.PNG" /></p>
+<p>Here we can see that <span class="math inline">\(n_{row} = 100\)</span>, <span class="math inline">\(n_{column} = 300\)</span>, and <span class="math inline">\(n = 400\)</span>. Thus, the expected number of people reporting income less than $20k who don’t currently smoke is: <span class="math inline">\(\frac{300*100}{400} = 75\)</span>. We will place the expected value in parentheses in the cell like so:</p>
+<p><img src="Images/Chi-table3.PNG" /></p>
+<p>We can repeat this process for each cell, resulting in the following table of expected values:</p>
+<p><img src="Images/Chi-table4.PNG" /></p>
+<p>Here, we are assuming that the distribution of income is the same among people who don’t currently smoke and those who currently do. Likewise, under our assumption, we are expecting that distribution of current smoking to be the same across each income level (in this case, 75% not current smoking and 25% current smoking).</p>
+<p>This represents the <strong>expected</strong> distribution of our two variables under the assumption that they are independent. Once we have established expected values, we can fill in the actual <strong>observed</strong> values within our sample. The following table now includes the values (not in parentheses) of what we observed in our sample:</p>
+<p><img src="Images/Chi-table5.PNG" /></p>
+<p>We can see, right away, that our observations differ from our expected values. We can see that a greater proportion of people making less than $20k currently smoke than expected and a smaller proportion of those making more than $50k than expected. We need a way to quantify this difference.</p>
+<p>The difference between our expected values <span class="math inline">\(E_{row,column}\)</span> and observed values <span class="math inline">\(O_{row,column}\)</span> within each cell can be understood to represent our signal. This difference represents how different our observed data is from what we expected under our assumption that the two variables are independent. We could try to sum up all of these differences, like so:</p>
+<p><span class="math display">\[\sum{(O_{row,column} - E_{row,column})}\]</span></p>
+<p>This would be the sum of the difference between the expected and observed value in each cell. Interestingly though, this will always equal 0, so it is not a very useful metric. Let’s do the calculation by hand to display that it equals 0, for our example table above:</p>
+<p><span class="math display">\[
+\begin{align}
+&amp; (50 - 75) + (50 - 25) + (160 - 150) + (40 - 50) + (90 - 75) + (10 - 25)\\ 
+= &amp;-25 + 25 + 10 + (-10) + 15 + (-15)\\
+= &amp;0 + 0 + 0\\ 
+= &amp;0
+\end{align}
+\]</span>
+This is a similar issue we face when we try to calculate standard deviation <span class="math inline">\(s\)</span> for a normally distributed variable and why we have to calculate the variance <span class="math inline">\(s^2\)</span> first. Importantly, if you take the square of any value (positive or negative), the result will be positive. So if you take the sum of several squares, your result will only be 0 if your data perfectly matches your expected values. We can define this new sum like so:</p>
+<p><span class="math display">\[\sum{(O_{row,column} - E_{row,column})^2}\]</span></p>
+<p>Now, when we take this sum, we get a meaningful value, like so:</p>
+<p><span class="math display">\[
+\begin{align}
+&amp; (50 - 75)^2 + (50 - 25)^2 + (160 - 150)^2 + (40 - 50)^2 + (90 - 75)^2 + (10 - 25)^2\\ 
+= &amp;-25^2 + 25^2 + 10^2+ (-10)^2 + 15^2 + (-15)^2\\
+= &amp;625 + 625 + 100 + 100 + 225 + 225\\ 
+= &amp;1900
+\end{align}
+\]</span></p>
+<p>This is much better and still represents the strength of our signal (i.e., difference between observed and expected values)! However, we can notice that the size of this value is also dependent on the size of our study sample. We could have sampled twice as many people with an identical proportional distribution of observed results and the strength of the signal would appear much larger, even though the proportional distribution across groups is the same.</p>
+<p>As such, it is important that we take a step to standardize our calculation of the strength of our signal. We do this by dividing the difference between each observed and expected value by the expected value. Now, instead of representing the crude difference between observed and expected values, each term represents the difference between observed and expected values <strong>relative to the expected value</strong>. We can define this mathematically like so:</p>
+<p><span class="math display">\[\chi^2 = \sum{
+\frac{(O_{row,column} - E_{row,column})^2}{E_{row,column}}}\]</span></p>
+<p>In this instance, we are able to calculate:</p>
+<p><span class="math display">\[
+\begin{align}
+\chi^2 = &amp; \frac{(50 - 75)^2}{75} + \frac{(50 - 25)^2}{25} + \frac{(160 - 150)^2}{150} + \frac{(40 - 50)^2}{50} + \frac{(90 - 75)^2}{75} + \frac{(10 - 25)^2}{25}\\ 
+\chi^2 = &amp;625/75 + 625/25 + 100/150 + 100/50 + 225/75 + 225/25\\ 
+\chi^2 = &amp;48
+\end{align}
+\]</span></p>
+<p>We have now calculated a standardized value representing the strength of our signal under the assumption that no signal exists. It turns out that this value corresponds to a <span class="math inline">\(\chi^2\)</span> distribution with <span class="math inline">\((rows - 1)*(columns - 1) = (3-1)*(2-1) = 2*1 = 2\)</span> degrees of freedom. This is very cool, because it allows us to use this metric to assess the probability of our observed data under our assumption that our two variables are not related to one another. But, this should immediately beg the question: what is a <span class="math inline">\(\chi^2\)</span> distribution?</p>
+</div>
+</div>
+<div id="the-chi2-distribution" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> The <span class="math inline">\(\chi^2\)</span> Distribution</h2>
+<p>Earlier, we learned about how the normal distribution arises from how we understand certain natural phenomenon to randomly occur. A normally distributed variable is one where the mean value is the most likely value to observe, where values closer to the mean are more likely than values further from the mean, and where values less than the mean are equally as likely to occur as those greater than the mean. The standard normal distribution (<span class="math inline">\(Z\)</span>-distribution) is depicted like so:</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="pearsons-chi2-test.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb293-2"><a href="pearsons-chi2-test.html#cb293-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span>
+<span id="cb293-3"><a href="pearsons-chi2-test.html#cb293-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb293-4"><a href="pearsons-chi2-test.html#cb293-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s now define our normal function using the dnorm() function, where the mean value is 0 and the standard deviation is also 1</span></span>
+<span id="cb293-5"><a href="pearsons-chi2-test.html#cb293-5" aria-hidden="true" tabindex="-1"></a>y_normal <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb293-6"><a href="pearsons-chi2-test.html#cb293-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb293-7"><a href="pearsons-chi2-test.html#cb293-7" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb293-8"><a href="pearsons-chi2-test.html#cb293-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_normal, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<p>Interestingly, if we square the values of the <span class="math inline">\(Z\)</span>-distribution, we get the resultant distribution. By squaring the distribution, I mean that we take any point (<span class="math inline">\(x\)</span>,<span class="math inline">\(y\)</span>) in the <span class="math inline">\(Z\)</span>-distribution and we map it onto the point (<span class="math inline">\(x^2\)</span>,<span class="math inline">\(y^2\)</span>):</p>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="pearsons-chi2-test.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb294-2"><a href="pearsons-chi2-test.html#cb294-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">01</span>)</span>
+<span id="cb294-3"><a href="pearsons-chi2-test.html#cb294-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb294-4"><a href="pearsons-chi2-test.html#cb294-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Now Let&#39;s generate our chi-distribution </span></span>
+<span id="cb294-5"><a href="pearsons-chi2-test.html#cb294-5" aria-hidden="true" tabindex="-1"></a>chi_y <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x,<span class="dv">1</span>)</span>
+<span id="cb294-6"><a href="pearsons-chi2-test.html#cb294-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb294-7"><a href="pearsons-chi2-test.html#cb294-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Now let us plot this</span></span>
+<span id="cb294-8"><a href="pearsons-chi2-test.html#cb294-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,chi_y, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<p>We refer to this distribution as the <span class="math inline">\(\chi^2\)</span> distribution with 1 degree of freedom, or <span class="math inline">\(\chi_1^2\)</span>. It is less intuitive than the normal distribution, because instead of directly describing a natural phenomenon, it is describing the behavior of a normally distributed variable. We can understand that a random variable can be explained by a <span class="math inline">\(\chi^2\)</span>-distribution if the variable is constructed from the square of a normally distributed variable.</p>
+<p>Let’s examine the distribution more closely. We can see that a value of 0 is the most likely and that values greater than 0 rapidly become much more rare. Since <span class="math inline">\(\chi_1^2\)</span> is the square of the <span class="math inline">\(Z\)</span>-distribution, negative values are not possible (squared numbers are always positive).</p>
+<p>By definition, ~68% of observations of a variable assumed to follow the <span class="math inline">\(Z\)</span>-distribution will fall between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> (i.e., one standard deviation of the mean). We can plot that like so:</p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="pearsons-chi2-test.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb295-2"><a href="pearsons-chi2-test.html#cb295-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">01</span>)</span>
+<span id="cb295-3"><a href="pearsons-chi2-test.html#cb295-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-4"><a href="pearsons-chi2-test.html#cb295-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s now define our normal function using the dnorm() function, where the mean value is 0 and the standard deviation is also 1</span></span>
+<span id="cb295-5"><a href="pearsons-chi2-test.html#cb295-5" aria-hidden="true" tabindex="-1"></a>y_normal <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb295-6"><a href="pearsons-chi2-test.html#cb295-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-7"><a href="pearsons-chi2-test.html#cb295-7" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb295-8"><a href="pearsons-chi2-test.html#cb295-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_normal, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb295-9"><a href="pearsons-chi2-test.html#cb295-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-10"><a href="pearsons-chi2-test.html#cb295-10" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb295-11"><a href="pearsons-chi2-test.html#cb295-11" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb295-12"><a href="pearsons-chi2-test.html#cb295-12" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,x[x<span class="sc">&gt;=-</span><span class="dv">1</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">1</span>],<span class="dv">1</span>)</span>
+<span id="cb295-13"><a href="pearsons-chi2-test.html#cb295-13" aria-hidden="true" tabindex="-1"></a>index_low <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb295-14"><a href="pearsons-chi2-test.html#cb295-14" aria-hidden="true" tabindex="-1"></a>index_high <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb295-15"><a href="pearsons-chi2-test.html#cb295-15" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y_normal[index_low<span class="sc">:</span>index_high],<span class="dv">0</span>)</span>
+<span id="cb295-16"><a href="pearsons-chi2-test.html#cb295-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb295-17"><a href="pearsons-chi2-test.html#cb295-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb295-18"><a href="pearsons-chi2-test.html#cb295-18" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="pearsons-chi2-test.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we take the integral of our curve using the AUC function in the MESS library</span></span>
+<span id="cb296-2"><a href="pearsons-chi2-test.html#cb296-2" aria-hidden="true" tabindex="-1"></a><span class="do">## AUC stands for &quot;Area Under the Curve&quot;</span></span>
+<span id="cb296-3"><a href="pearsons-chi2-test.html#cb296-3" aria-hidden="true" tabindex="-1"></a>AUC <span class="ot">&lt;-</span> MESS<span class="sc">::</span><span class="fu">auc</span>(poly_x,poly_y)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="pearsons-chi2-test.html#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will round the result to two decimal for ease of reading</span></span>
+<span id="cb298-2"><a href="pearsons-chi2-test.html#cb298-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Taking integrals of lines is an imperfect art so R doesn&#39;t get exactly 1</span></span>
+<span id="cb298-3"><a href="pearsons-chi2-test.html#cb298-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(AUC,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.68</code></pre>
+<p>When we square a value between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, it will result in a value between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. Both <span class="math inline">\(-1^2\)</span> and <span class="math inline">\(1^2\)</span> are equal to <span class="math inline">\(1\)</span>. All values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> will, when squared, result in a positive number even closer to <span class="math inline">\(0\)</span>. Thus, since the <span class="math inline">\(\chi_1^2\)</span> distribution is just the <span class="math inline">\(Z\)</span>-distribution squared, we can understand that ~68% of observations on a variable explained by the <span class="math inline">\(\chi_1^2\)</span> distribution will fall between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. We can plot this like so:</p>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="pearsons-chi2-test.html#cb300-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, 0 to 2. We will do by a tiny increment because we can&#39;t do area under the curve for infinity</span></span>
+<span id="cb300-2"><a href="pearsons-chi2-test.html#cb300-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> .<span class="dv">00001</span>)</span>
+<span id="cb300-3"><a href="pearsons-chi2-test.html#cb300-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb300-4"><a href="pearsons-chi2-test.html#cb300-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We will sample our chi-squared distribution</span></span>
+<span id="cb300-5"><a href="pearsons-chi2-test.html#cb300-5" aria-hidden="true" tabindex="-1"></a>y_chi <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x, <span class="at">df =</span> <span class="dv">1</span>)</span>
+<span id="cb300-6"><a href="pearsons-chi2-test.html#cb300-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb300-7"><a href="pearsons-chi2-test.html#cb300-7" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the distribution</span></span>
+<span id="cb300-8"><a href="pearsons-chi2-test.html#cb300-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_chi, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>))</span>
+<span id="cb300-9"><a href="pearsons-chi2-test.html#cb300-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb300-10"><a href="pearsons-chi2-test.html#cb300-10" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is less than or equal to 1</span></span>
+<span id="cb300-11"><a href="pearsons-chi2-test.html#cb300-11" aria-hidden="true" tabindex="-1"></a><span class="do">## The following four lines of code do this</span></span>
+<span id="cb300-12"><a href="pearsons-chi2-test.html#cb300-12" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">00001</span>,x[x<span class="sc">&gt;=</span>.<span class="dv">00001</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">1</span>],<span class="dv">1</span>)</span>
+<span id="cb300-13"><a href="pearsons-chi2-test.html#cb300-13" aria-hidden="true" tabindex="-1"></a>index_low <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> .<span class="dv">00001</span>)</span>
+<span id="cb300-14"><a href="pearsons-chi2-test.html#cb300-14" aria-hidden="true" tabindex="-1"></a>index_high <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb300-15"><a href="pearsons-chi2-test.html#cb300-15" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y_chi[index_low<span class="sc">:</span>index_high],<span class="dv">0</span>)</span>
+<span id="cb300-16"><a href="pearsons-chi2-test.html#cb300-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb300-17"><a href="pearsons-chi2-test.html#cb300-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb300-18"><a href="pearsons-chi2-test.html#cb300-18" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="pearsons-chi2-test.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we take the integral of our curve using the AUC function in the MESS library</span></span>
+<span id="cb301-2"><a href="pearsons-chi2-test.html#cb301-2" aria-hidden="true" tabindex="-1"></a><span class="do">## AUC stands for &quot;Area Under the Curve&quot;</span></span>
+<span id="cb301-3"><a href="pearsons-chi2-test.html#cb301-3" aria-hidden="true" tabindex="-1"></a>AUC <span class="ot">&lt;-</span> MESS<span class="sc">::</span><span class="fu">auc</span>(poly_x,poly_y)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="pearsons-chi2-test.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will round the result to two decimal for ease of reading</span></span>
+<span id="cb303-2"><a href="pearsons-chi2-test.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Taking integrals of lines is an imperfect art so R doesn&#39;t get exactly 1</span></span>
+<span id="cb303-3"><a href="pearsons-chi2-test.html#cb303-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(AUC,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.68</code></pre>
+<p>As we can see, the area under the curve for the <span class="math inline">\(Z\)</span>-distribution between -1 and 1 is the same as that for <span class="math inline">\(\chi_1^2\)</span> between 0 and 1. We can do this for any such set of analogous intervals because of how the <span class="math inline">\(\chi_1^2\)</span>-distribution is created by squaring the <span class="math inline">\(Z\)</span>-distribution.</p>
+<div id="the-chi_k2-distribution-with-k-degrees-of-freedom" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</h3>
+<p>If we have a variable <span class="math inline">\(X\)</span> that is assumed to follow the standard normal <span class="math inline">\(Z\)</span>-distribution, then we can understand that <span class="math inline">\(X^2\)</span> follows the <span class="math inline">\(\chi_1^2\)</span> distribution. However, this is only one example of a <span class="math inline">\(\chi^2\)</span> distribution. We can define the broader family of such distributions as follows:</p>
+<p>Let us say we have <span class="math inline">\(k\)</span> variables <span class="math inline">\(X_1, X_2,\dots,X_k\)</span> that each are independent and follow the standard normal <span class="math inline">\(Z\)</span>-distribution. Let us calculate a new variable <span class="math inline">\(Y\)</span> by taking the sum of their squares, like so:</p>
+<p><span class="math display">\[Y = \sum_{i=1}^{k}X_i^2\]</span>
+<span class="math inline">\(Y\)</span> is, then, understood to be distributed according to <span class="math inline">\(\chi_k^2\)</span>, or the <span class="math inline">\(\chi^2\)</span> distribution with <span class="math inline">\(k\)</span> degrees of freedom. Let’s plot several forms of <span class="math inline">\(\chi^2\)</span> distribution with different numbers of degrees of freedom like so:</p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="pearsons-chi2-test.html#cb305-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">001</span>)</span>
+<span id="cb305-2"><a href="pearsons-chi2-test.html#cb305-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb305-3"><a href="pearsons-chi2-test.html#cb305-3" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x,<span class="dv">1</span>)</span>
+<span id="cb305-4"><a href="pearsons-chi2-test.html#cb305-4" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x,<span class="dv">2</span>)</span>
+<span id="cb305-5"><a href="pearsons-chi2-test.html#cb305-5" aria-hidden="true" tabindex="-1"></a>y3 <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x,<span class="dv">3</span>)</span>
+<span id="cb305-6"><a href="pearsons-chi2-test.html#cb305-6" aria-hidden="true" tabindex="-1"></a>y4 <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x,<span class="dv">4</span>)</span>
+<span id="cb305-7"><a href="pearsons-chi2-test.html#cb305-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb305-8"><a href="pearsons-chi2-test.html#cb305-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">xlab =</span> <span class="st">&quot;X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb305-9"><a href="pearsons-chi2-test.html#cb305-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y2, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb305-10"><a href="pearsons-chi2-test.html#cb305-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y3, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb305-11"><a href="pearsons-chi2-test.html#cb305-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y4, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p>You’ll notice that as the number of degrees of freedom increases, that the shape of the curve shifts rather drastically. At an intuitive level, while we can understand that values close to 0 are more likely for one standard normal variable <span class="math inline">\(X\)</span>, the likelihood of the value of every single one of our <span class="math inline">\(k\)</span> variables <span class="math inline">\(X_i\)</span> being close to 0 is less likely. Additionally, the more values we sum together, the larger our resultant value will be.</p>
+<p>The important thing to takeaway is that <span class="math inline">\(\chi_k^2\)</span> describes the probability distribution of a variable <span class="math inline">\(Y\)</span> defined as the sum of <span class="math inline">\(k\)</span> independent squares. Which leads us back to our example…</p>
+</div>
+</div>
+<div id="the-chi2-test-of-independence" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> The <span class="math inline">\(\chi^2\)</span> Test of Independence</h2>
+<p>Earlier, we discussed how when we want to test if two categorical variables are related to one another, we can generate a cross-tabulation which allows us to calculate:</p>
+<p><span class="math display">\[\chi^2 = \sum{
+\frac{(O_{row,column} - E_{row,column})^2}{E_{row,column}}}\]</span></p>
+<p>Woah! That is a sum of squares! It is generally quite easy to identify a sum of squares formula because we have a sum (<span class="math inline">\(\sum\)</span>) of squared values (<span class="math inline">\((O_{row,column} - E_{row,column})^2\)</span>).</p>
+<p>Importantly, the <span class="math inline">\(\chi_k^2\)</span> distribution describes the the sum of squares of <span class="math inline">\(k\)</span> <strong>normally distributed</strong> variables. Well, let us consider the term <span class="math inline">\((O_{row,column} - E_{row,column})\)</span>. If our two variables are independent (in our example, if smoking and income are independent), then: the most likely value is 0 (i.e., that the observed count equals the expected count); values closer to 0 appear more likely than values closer than 0; and values less than 0 seem equally as probable as values greater than 0. At a glance, assuming the two variables are independent, it appears that these differences follow a normal distribution.</p>
+<p>What this means is that this value we have calculated corresponds to a specific <span class="math inline">\(\chi^2\)</span> distribution! This will allow us to test the probability of our observed data and calculate a <span class="math inline">\(p\)</span>-value. But, before we can do so we must determine the correct number of degrees of freedom to define our <span class="math inline">\(\chi_k^2\)</span> distribution.</p>
+<p>As we can see in our equation, we are summing together squares for each row X column combination. That means that we are summing together <span class="math inline">\(n_{row} * n_{column}\)</span> squares, which in the case of our example is 3*2 = 6. Instinctively, we might guess that we want to map this calculated value onto <span class="math inline">\(\chi_6^2\)</span>, or the <span class="math inline">\(\chi^2\)</span> distribution with 6 degrees of freedom BUT, the <span class="math inline">\(\chi_k^2\)</span> distribution is in relation to <span class="math inline">\(k\)</span> <strong>independent</strong> normally distributed variables.</p>
+<p>We can understand, however, that the series of differences we are summing are not totally independent. If we observe more people in one cell of our table then we can understand that this influences how many people remain to be distributed across the other cells of the table. Let us go through our example table from before to display what is meant by this. Let us begin with the cells of the table being empty, like so:</p>
+<p><img src="Images/Chi-table1.PNG" /></p>
+<p>Let us start by inserting the observed number of people reporting an income of less than $20k and who report not currently smoking. Looking at our prior tables, we know that this value is 50:</p>
+<p><img src="Images/Chi-table6.PNG" /></p>
+<p>Interestingly, we will now notice that we actually have enough information in our table to identify how many people making less than $20k smoke. That’s because we know that there are 100 people making less than $20k and there only remains one more smoking category through which to distribute them. We can see that the 50 remaining people who make less than $20k must be current smokers. I shall now include this value in the table. I write it in red because we do not need to actually analyze the data to establish this value - we already have enough information (in other words, this value is not independent of our observation in the first cell):</p>
+<p><img src="Images/Chi-table7.PNG" /></p>
+<p>Now, we do not have enough information to automatically fill in additional cells. So, we check our data and see how many people reported an income between $20k and $50k and report not current smoking. We see that there are 160 such people in our sample, so we fill that into our table:</p>
+<p><img src="Images/Chi-table8.PNG" /></p>
+<p>With this piece of information added to the table, we see that we can now automatically fill in the values for $20-50k current smokers (<span class="math inline">\(200 - 160 = 40\)</span>) and for &gt;$50k not current smokers (<span class="math inline">\(300 - (150 + 60) = 90\)</span>), like so:</p>
+<p><img src="Images/Chi-table9.PNG" /></p>
+<p>With these cells filled in, we can see that we can also fill in the value for the bottom right cell by the same process. This final cell can be calculated in many ways, but since its the finall cell we can see that we currently have allocated <span class="math inline">\(50 + 50 + 160 + 40 + 90 = 390\)</span> participants throughout the table. Since our whole sample has <span class="math inline">\(400\)</span> people we can see that the final cell has <span class="math inline">\(400 - 390 = 10\)</span> participants in it, like so:</p>
+<p><img src="Images/Chi-table10.PNG" /></p>
+<p>Interesting, while we have 6 cells total, we see that only 2 of the values are able to vary freely. Meaning that once we fill in 2 of our 6 cells, we know the values of the remaining 4 cells. Thus, we can see that we only have 2 degrees of freedom to measure our signal. As such, we will compare our test statistic <span class="math inline">\(\chi^2 = \sum{\frac{(O_{row,column} - E_{row,column})^2}{E_{row,column}}}\)</span> to <span class="math inline">\(\chi_2^2\)</span> (aka the <span class="math inline">\(\chi^2\)</span> distribution with 2 degrees of freedom).</p>
+<p>We can easily calculate the appropriate number of degrees of freedom by calculating <span class="math inline">\((rows - 1)*(columns - 1)\)</span>, where <span class="math inline">\(rows\)</span> is the number of rows in our table and <span class="math inline">\(columns\)</span> is the number of columns in our table. In this example we can see this would equal <span class="math inline">\((3 - 1)*(2 - 1) = 2*1 = 2\)</span>.</p>
+<p>Finally, recall before we calculated our test statistic as:</p>
+<p><span class="math display">\[
+\begin{align}
+\chi^2 = &amp; \frac{(50 - 75)^2}{75} + \frac{(50 - 25)^2}{25} + \frac{(160 - 150)^2}{150} + \frac{(40 - 50)^2}{50} + \frac{(90 - 75)^2}{75} + \frac{(10 - 25)^2}{25}\\ 
+\chi^2 = &amp;625/75 + 625/25 + 100/150 + 100/50 + 225/75 + 225/25\\ 
+\chi^2 = &amp;48
+\end{align}
+\]</span>
+So, now the final step of our test is to compare our test statistic (<span class="math inline">\(\chi^2 = 48\)</span>) to the <span class="math inline">\(\chi^2\)</span>-distribution with 2 degrees of freedom, or <span class="math inline">\(\chi_2^2\)</span>. Specifically, we want to know what is the probability of observing a value of 48 or a more extreme value, assuming the null hypothesis is true (that our two variables are independent). This can be depicted in probability language like so:</p>
+<p><span class="math display">\[P(\chi^2 \geq 48 | \chi_2^2)\]</span>
+We can make this calculation by calculating the area under the curve like so. In order to aid in the visualization of this calculation, the graph I present is very zoomed in so that we can visually see the area being drawn:</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="pearsons-chi2-test.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, 0 to 60 - we are making the scale go to 60 since our test statistic is 48</span></span>
+<span id="cb306-2"><a href="pearsons-chi2-test.html#cb306-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">60</span>, <span class="at">by =</span> .<span class="dv">01</span>)</span>
+<span id="cb306-3"><a href="pearsons-chi2-test.html#cb306-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb306-4"><a href="pearsons-chi2-test.html#cb306-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We will sample our chi-squared distribution</span></span>
+<span id="cb306-5"><a href="pearsons-chi2-test.html#cb306-5" aria-hidden="true" tabindex="-1"></a>y_chi <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x, <span class="at">df =</span> <span class="dv">1</span>)</span>
+<span id="cb306-6"><a href="pearsons-chi2-test.html#cb306-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb306-7"><a href="pearsons-chi2-test.html#cb306-7" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the distribution</span></span>
+<span id="cb306-8"><a href="pearsons-chi2-test.html#cb306-8" aria-hidden="true" tabindex="-1"></a><span class="do">## We are zooming in very close to the x-axis because the height of the curve</span></span>
+<span id="cb306-9"><a href="pearsons-chi2-test.html#cb306-9" aria-hidden="true" tabindex="-1"></a><span class="do">## at chi^2 = 48 is very close to 0</span></span>
+<span id="cb306-10"><a href="pearsons-chi2-test.html#cb306-10" aria-hidden="true" tabindex="-1"></a><span class="do">## By zooming, we can see the area under the curve we are calculating the area of</span></span>
+<span id="cb306-11"><a href="pearsons-chi2-test.html#cb306-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_chi, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">0000000001</span>))</span>
+<span id="cb306-12"><a href="pearsons-chi2-test.html#cb306-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb306-13"><a href="pearsons-chi2-test.html#cb306-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Now we will shade in the area under the curve greater than 48</span></span>
+<span id="cb306-14"><a href="pearsons-chi2-test.html#cb306-14" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">48</span>,x[x<span class="sc">&gt;=</span><span class="dv">48</span>],<span class="dv">60</span>)</span>
+<span id="cb306-15"><a href="pearsons-chi2-test.html#cb306-15" aria-hidden="true" tabindex="-1"></a>index_low <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">48</span>)</span>
+<span id="cb306-16"><a href="pearsons-chi2-test.html#cb306-16" aria-hidden="true" tabindex="-1"></a>index_high <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">60</span>)</span>
+<span id="cb306-17"><a href="pearsons-chi2-test.html#cb306-17" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y_chi[index_low<span class="sc">:</span>index_high],<span class="dv">0</span>)</span>
+<span id="cb306-18"><a href="pearsons-chi2-test.html#cb306-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb306-19"><a href="pearsons-chi2-test.html#cb306-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb306-20"><a href="pearsons-chi2-test.html#cb306-20" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="pearsons-chi2-test.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we take the integral of our curve using the AUC function in the MESS library</span></span>
+<span id="cb307-2"><a href="pearsons-chi2-test.html#cb307-2" aria-hidden="true" tabindex="-1"></a><span class="do">## AUC stands for &quot;Area Under the Curve&quot;</span></span>
+<span id="cb307-3"><a href="pearsons-chi2-test.html#cb307-3" aria-hidden="true" tabindex="-1"></a>AUC <span class="ot">&lt;-</span> MESS<span class="sc">::</span><span class="fu">auc</span>(poly_x,poly_y)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="pearsons-chi2-test.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We can print out our AUC calculation - our p-value</span></span>
+<span id="cb309-2"><a href="pearsons-chi2-test.html#cb309-2" aria-hidden="true" tabindex="-1"></a>AUC</span></code></pre></div>
+<pre><code>## [1] 4.247269e-12</code></pre>
+<p>In this case we see that <span class="math inline">\(P(\chi^2 \geq 48 | \chi_2^2) \approx 4.25e(-12)\)</span>. The <span class="math inline">\(e(-12)\)</span> tells us to place a decimal point and 12 leading zeros before the value, so <span class="math inline">\(4.25e(-12) = 0.000000000000425\)</span>. Typically, when we have a value this small, it is convential to simply write <span class="math inline">\(&lt; 0.001\)</span>. In this case, <span class="math inline">\(P(\chi^2 \geq 48 | \chi_2^2) &lt; 0.001\)</span>.</p>
+<div id="formally-defining-the-test" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Formally Defining the Test</h3>
+<p>Generally, we can define the <span class="math inline">\(\chi^2\)</span> Test of Independence like so. Given two categorical variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we want to assess if these two variables are related to one another. We start by assuming that they are not (i.e., we assume they are independent). Our null and alternate hypotheses can be defined like so:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent of one another. (Knowing the value of one variable does not help you predict the value of the other)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are dependent on one another.</li>
+</ul>
+<p>We can then create a table representing the cross-tabulation of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> (this table is a visual aid for conducting the test). Each row of the table represents a level of <span class="math inline">\(X\)</span> and each column of the table represents a level of <span class="math inline">\(Y\)</span>. Thus, the number of rows is equal to the number of levels of <span class="math inline">\(X\)</span> and the number of columns is equal to the number of levels of <span class="math inline">\(Y\)</span>.</p>
+<p>Under our null hypothesis, we assume that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not related. Under this assumption, we thus can expect values of each variable to be evenly distributed. For each combination of a level <span class="math inline">\(x\)</span> from <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> from <span class="math inline">\(Y\)</span>, we can calculate the expected number of people reporting both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, as follows:</p>
+<p><span class="math display">\[E_{x,y} = \frac{n_x*n_y}{n}\]</span></p>
+<p>Where <span class="math inline">\(n_x\)</span> represents the total number of participants reporting level <span class="math inline">\(x\)</span> from <span class="math inline">\(X\)</span> and <span class="math inline">\(n_y\)</span> represents the number reporting level <span class="math inline">\(y\)</span> from <span class="math inline">\(Y\)</span>.</p>
+<p>After calculating the expected values for each cell <span class="math inline">\(E_{x,y}\)</span>, we can compare them to the observed value for that combination of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, denoted as <span class="math inline">\(O_{x,y}\)</span>. With these values established, we can now calculate our <span class="math inline">\(\chi^2\)</span> test statistic like so:</p>
+<p><span class="math display">\[\chi^2 = \sum{
+\frac{(O_{x,y} - E_{x,y})^2}{E_{x,y}}}\]</span></p>
+<p>Now, we want to compare our test statistic to the appropriate <span class="math inline">\(\chi_k^2\)</span> distribution. If we let <span class="math inline">\(levels(X)\)</span> and <span class="math inline">\(levels(Y)\)</span> represent the number of categories each of our variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> has, then we can calculate that <span class="math inline">\(k = (levels(X) - 1)*(levels(Y)-1)\)</span>. <span class="math inline">\(levels(X)\)</span> is equivalent to the number of rows in our table (<span class="math inline">\(rows\)</span>) and <span class="math inline">\(levels(Y)\)</span> is equivalent to the number of columns in our table, so we can understand the <span class="math inline">\(k = (rows - 1)*(columns - 1)\)</span>.</p>
+<p>So, the final step is to ask how probable our observed test statistic <strong>or a more extreme value</strong> under our null hypothesis. The behavior of our test statistic under the null hypothesis is assumed to follow the <span class="math inline">\(\chi_k^2\)</span> distribution. So, this allows us to ask what the probability of observing our test statistic <span class="math inline">\(\chi^2\)</span> or a greater value (i.e., <span class="math inline">\(\geq \chi^2\)</span>), assuming that our test statistic is assumed to follow the <span class="math inline">\(\chi_k^2\)</span>-distribution, or:</p>
+<p><span class="math display">\[P(\geq \chi^2 | \chi_k^2)\]</span></p>
+<p>This represents our <span class="math inline">\(p\)</span>-value. A value closer to 0 indicates that our observed data is more unlikely under our null hypothesis. Assuming a standard significance brightline of <span class="math inline">\(\alpha = 0.05\)</span>, if <span class="math inline">\(p &lt; \alpha\)</span>, we consider our result to be <strong>significant</strong> and this represents evidence that our null hypothesis may be incorrect. Under such circumstances, we may choose to reject the null hypothesis that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent in favor of the alternative that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are dependent on one another.</p>
+<p>To summarize the steps, given two categorical variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>First, we calculate the expected value of each combination of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, <span class="math inline">\(E_{x,y}\)</span></li>
+<li>Second, we calculate the observed value for each combination of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> in our data, <span class="math inline">\(O_{x,y}\)</span></li>
+<li>Third, we calculate our test statistic <span class="math inline">\(\chi^2 = \sum{\frac{(O_{x,y} - E_{x,y})^2}{E_{x,y}}}\)</span></li>
+<li>Fourth, we calculate the number of degrees of freedom <span class="math inline">\(k = (levels(X) - 1)*(levels(Y) - 1)\)</span></li>
+<li>Finally, we compare our test statistic to the <span class="math inline">\(\chi_k^2\)</span>-distribution to calculate our <span class="math inline">\(p\)</span>-value.</li>
+</ol>
+<p>The table is a visual tool for conducting the test. When computing a <span class="math inline">\(\chi^2\)</span> test by hand, the table is a useful way of conducting it.</p>
+</div>
+<div id="what-are-the-assumptions-of-the-chi2-test-of-independence" class="section level3" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</h3>
+<p>Given two variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the <span class="math inline">\(chi^2\)</span> Test of Independence can be used to assess the relation of these variables if:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are both categorical.</li>
+<li>The levels of each variable <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are mutually exclusive. In other words, each participant must belong to <strong>one and only one</strong> level of both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</li>
+<li>Each observation is independent - in other words, our data comes from a random sample of independent observations.</li>
+<li>The value of <span class="math inline">\(E_{x,y}\)</span> should be 5 or greater in at least 80% of table cells and <span class="math inline">\(E_{x,y}\)</span> must be at least 1 for every cell.</li>
+</ol>
+<p>When the final assumption is not met, the test statistic is not well described by the corresponding <span class="math inline">\(\chi_k^2\)</span> distribution, leading to biased results.</p>
+<p>Checking the assumptions can be done by 1) examining <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> to confirm that they are categorical and that levels are mutually exclusive and 2) generating the table of expected and observed values, as was done at the beginning of this text.</p>
+</div>
+<div id="running-the-chi2-test-in-r" class="section level3" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> Running the <span class="math inline">\(\chi^2\)</span> Test in R</h3>
+<p>In order to run the rest in R, we must generate a table with our observed values. Let us use the example table above to display:</p>
+<p><img src="Images/Chi-table10.PNG" /></p>
+<p>We will generate the table like so:</p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="pearsons-chi2-test.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we will define each row </span></span>
+<span id="cb311-2"><a href="pearsons-chi2-test.html#cb311-2" aria-hidden="true" tabindex="-1"></a>row1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">50</span>)</span>
+<span id="cb311-3"><a href="pearsons-chi2-test.html#cb311-3" aria-hidden="true" tabindex="-1"></a>row2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">40</span>)</span>
+<span id="cb311-4"><a href="pearsons-chi2-test.html#cb311-4" aria-hidden="true" tabindex="-1"></a>row3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">10</span>)</span>
+<span id="cb311-5"><a href="pearsons-chi2-test.html#cb311-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb311-6"><a href="pearsons-chi2-test.html#cb311-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Next, we will use the matrix() function to create our table</span></span>
+<span id="cb311-7"><a href="pearsons-chi2-test.html#cb311-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The matrix function creates an object like a data.frame, but it is a bit simpler</span></span>
+<span id="cb311-8"><a href="pearsons-chi2-test.html#cb311-8" aria-hidden="true" tabindex="-1"></a>matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(row1,row2,row3), <span class="co"># First argument is a vector containing each row</span></span>
+<span id="cb311-9"><a href="pearsons-chi2-test.html#cb311-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">ncol =</span> <span class="dv">2</span>,          <span class="co"># Second argument is stating how many columns the table has</span></span>
+<span id="cb311-10"><a href="pearsons-chi2-test.html#cb311-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">byrow =</span> <span class="cn">TRUE</span>)      <span class="co"># Third argument specifies we are filling table by Row</span></span>
+<span id="cb311-11"><a href="pearsons-chi2-test.html#cb311-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb311-12"><a href="pearsons-chi2-test.html#cb311-12" aria-hidden="true" tabindex="-1"></a><span class="do">## We can then define row names and column names</span></span>
+<span id="cb311-13"><a href="pearsons-chi2-test.html#cb311-13" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matrix) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;&lt;$20k&quot;</span>,<span class="st">&quot;$20-50k&quot;</span>,<span class="st">&quot;&gt;$50k&quot;</span>)</span>
+<span id="cb311-14"><a href="pearsons-chi2-test.html#cb311-14" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(matrix) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Not Current Smoker&quot;</span>,<span class="st">&quot;Current Smoker&quot;</span>)</span>
+<span id="cb311-15"><a href="pearsons-chi2-test.html#cb311-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb311-16"><a href="pearsons-chi2-test.html#cb311-16" aria-hidden="true" tabindex="-1"></a><span class="do">## We can then convert our matrix into a table object, which needs to happen to run the test</span></span>
+<span id="cb311-17"><a href="pearsons-chi2-test.html#cb311-17" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">as.table</span>(matrix)</span>
+<span id="cb311-18"><a href="pearsons-chi2-test.html#cb311-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb311-19"><a href="pearsons-chi2-test.html#cb311-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s peak at our table really quickly</span></span>
+<span id="cb311-20"><a href="pearsons-chi2-test.html#cb311-20" aria-hidden="true" tabindex="-1"></a>table</span></code></pre></div>
+<pre><code>##         Not Current Smoker Current Smoker
+## &lt;$20k                   50             50
+## $20-50k                160             40
+## &gt;$50k                   90             10</code></pre>
+<p>Now that we have generated our table, we can run the <span class="math inline">\(\chi^2\)</span> test:</p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="pearsons-chi2-test.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Perform the test</span></span>
+<span id="cb313-2"><a href="pearsons-chi2-test.html#cb313-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(table)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  table
+## X-squared = 48, df = 2, p-value = 3.775e-11</code></pre>
+<p>Like in our example by hand, our test statistic is <span class="math inline">\(\chi^2 = 48\)</span>, we have 2 degrees of freedom, and our <span class="math inline">\(p\)</span>-value is &lt;0.001. The <span class="math inline">\(p\)</span>-value is not identical to what we calculated prior, and this is due to differences in how area under the curve was calculated.</p>
+<p>Often, the <span class="math inline">\(\chi^2\)</span> test will be run “behind the scenes.” For example, the <span class="math inline">\(tableone\)</span> package will automatically run the test when generating a table with categorical variables.</p>
+</div>
+</div>
+<div id="other-variations-of-the-chi2-test" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</h2>
+<p>In this text, we have discussed the <span class="math inline">\(\chi^2\)</span> Test of Independence. There are two other common variations of the <span class="math inline">\(\chi^2\)</span> test that use the same general approach: the Goodness of Fit Test; and the Homogeneity Test. Here we shall go over the Goodness of Fit test.</p>
+<div id="goodness-of-fit-test" class="section level3" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Goodness of Fit Test</h3>
+<p>The goodness of fit test when we want to assess if the distribution of a single categorical variable <span class="math inline">\(X\)</span> matches a pre-defined distribution. For example, let’s say <span class="math inline">\(X\)</span> is a three-category variable capturing if someone is right-handed, left-handed, or ambidextruous. Well, let us say that multiple studies have established that approximately 85% of people are right-handed, 13% are left-handed, and 2% are ambidextruous. Let us say we recruit a sample, we can ask if our sample matches this distribution.</p>
+<p>Our statistical hypotheses are:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: The distribution of <span class="math inline">\(X\)</span> <strong>fits</strong> the predetermined distribution</li>
+<li><span class="math inline">\(H_A\)</span>: The distribution of <span class="math inline">\(X\)</span> <strong>does not fit</strong> the distribution.</li>
+</ul>
+<p>We still start by calculating expected values, but now only have one variable <span class="math inline">\(X\)</span>. The expected value <span class="math inline">\(E_x\)</span> is equal to the number of people in our sample <span class="math inline">\(n\)</span> times the population proportion for level <span class="math inline">\(x\)</span>. So, if we have a sample of 200 people and we know that 85% of people are right-handed, then we can expect that <span class="math inline">\(E_{right-handed} = 200*0.85 = 170\)</span>.</p>
+<p>Like with before, we calculate our <span class="math inline">\(\chi^2\)</span> value by comparing the expected values <span class="math inline">\(E_x\)</span> with the observed values <span class="math inline">\(O_x\)</span>:</p>
+<p><span class="math display">\[\chi^2 = \sum{
+\frac{(O_{x} - E_{x})^2}{E_{x}}}\]</span></p>
+<p>This test statistic is understood to have <span class="math inline">\(k = levels(X) - 1\)</span> degrees of freedom and we compare the test statistic to the <span class="math inline">\(\chi_k^2\)</span> distribution.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comparing-two-groups-w-independent-samples-t-test.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="covariance-and-correlation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Working with Datasets in R | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Working with Datasets in R | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Working with Datasets in R | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="functions.html"/>
+<link rel="next" href="mathematical-notation-probability-distributions.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="working-with-datasets-in-r" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Working with Datasets in R</h1>
+<p>R provides us a powerful interface through which we can manipulate and work with our data. While it is important that we understand different statistical principles so that we may undertake rigorous quantitative work, a large portion of time will be spent loading data, cleaning data, and preparing data for analyses. In fact, it is not uncommon for 90% or more of the code you write for an analysis to be dedicated to just getting the data ready for the analysis itself. As such, to be effective applied statisticians, it is important we be comfortable working with and manipulating datasets.</p>
+<div id="loading-a-dataset-into-r" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Loading a Dataset into R</h2>
+<p>One of the most common formats for a dataset to be in is a .csv file. CSV stands for “comma-separated values.” You are likely familiar with CSVs, as they are a standard formatting option for spreadsheet data (i.e., Microsoft Excel, Google Sheets). We can use the <span class="math inline">\(read.csv()\)</span> function in R to read a .csv file, like so:</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="working-with-datasets-in-r.html#cb144-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;filename.csv&quot;</span>, <span class="at">header =</span> T)</span></code></pre></div>
+<p>In the above line of code, we read the a file called “filename.csv” and saved it into the object we’ve called “data.” We use the argument <span class="math inline">\(header = T\)</span> to tell R that the first row of the csv contains the names of each of the columns (i.e., the names of our variables), as opposed to containing data.</p>
+<p>In order to read the file, you must have the “Current Working Directory” set to the folder containing the file. You see, R treats each folder on your computer like a room - R hangs out in the room that you tell it to. So, if you want R to read in “filename.csv,” you need to make sure that R is in the correct room (folder). You can check what your working directory is using the <span class="math inline">\(getwd()\)</span> function:</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="working-with-datasets-in-r.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/Charl/OneDrive/Documents/Intro to Applied Stats with R&quot;</code></pre>
+<p>Now, if R is in the wrong folder, you need to tell it to go to the correct folder. You could use the <span class="math inline">\(setwd(dir = ...)\)</span> function, but RStudio has a nice way to do this without typing code. On the bottom right hand corner of your RStudio window is the File Explorer. You can click your way to the correct folder such that you can see your file, like so:</p>
+<p><img src="Images/setwd.PNG" /></p>
+<p>Once, here, you then click the “More” dropdown and select “Set as Working Directory,” like so:</p>
+<p><img src="Images/Setwd2.PNG" /></p>
+<p>Now you are in the correct directory and can load your file in.</p>
+<div id="loading-other-formats-of-data" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Loading Other Formats of Data</h3>
+<p>Now, .csvs are not the only type of file format your data may take. There are .RDS (R specific objects), .xlsx (Excel), .sas7bdat (SAS), .sav (SPSS) files, among many others. While I cannot provide an exhaustive list, I wanted to provide some libraries and functions that may be useful to you depending on where your file came from. The <span class="math inline">\(foreign\)</span> and <span class="math inline">\(readxl\)</span> libraries are particularly useful. Here are some examples for how you can read in various file types:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="working-with-datasets-in-r.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading an RDS file</span></span>
+<span id="cb147-2"><a href="working-with-datasets-in-r.html#cb147-2" aria-hidden="true" tabindex="-1"></a>dataRDS <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;filename.rds&quot;</span>)</span>
+<span id="cb147-3"><a href="working-with-datasets-in-r.html#cb147-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-4"><a href="working-with-datasets-in-r.html#cb147-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading an Excel file</span></span>
+<span id="cb147-5"><a href="working-with-datasets-in-r.html#cb147-5" aria-hidden="true" tabindex="-1"></a><span class="do">## You will need the &quot;readxl&quot; library</span></span>
+<span id="cb147-6"><a href="working-with-datasets-in-r.html#cb147-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb147-7"><a href="working-with-datasets-in-r.html#cb147-7" aria-hidden="true" tabindex="-1"></a>dataXL <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;filename.xlsx&quot;</span>)</span>
+<span id="cb147-8"><a href="working-with-datasets-in-r.html#cb147-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-9"><a href="working-with-datasets-in-r.html#cb147-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading an SPSS file</span></span>
+<span id="cb147-10"><a href="working-with-datasets-in-r.html#cb147-10" aria-hidden="true" tabindex="-1"></a><span class="do">## You will need the &quot;foreign&quot; library</span></span>
+<span id="cb147-11"><a href="working-with-datasets-in-r.html#cb147-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb147-12"><a href="working-with-datasets-in-r.html#cb147-12" aria-hidden="true" tabindex="-1"></a>dataSPSS <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;filename.sav&quot;</span>)</span>
+<span id="cb147-13"><a href="working-with-datasets-in-r.html#cb147-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-14"><a href="working-with-datasets-in-r.html#cb147-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Reading SAS file</span></span>
+<span id="cb147-15"><a href="working-with-datasets-in-r.html#cb147-15" aria-hidden="true" tabindex="-1"></a><span class="do">## You will need the &quot;haven&quot; library</span></span>
+<span id="cb147-16"><a href="working-with-datasets-in-r.html#cb147-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb147-17"><a href="working-with-datasets-in-r.html#cb147-17" aria-hidden="true" tabindex="-1"></a>dataSAS <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">&quot;filename.sas7bdat&quot;</span>)</span></code></pre></div>
+<p>If you look at the documentation, you will see that both the <span class="math inline">\(foreign\)</span> and <span class="math inline">\(haven\)</span> libraries provide many functions for loading various data types. If you ever have a file type that you can not figure out how to load into R, you should search something like “Load [insert file type] into R.” There is very likely a Stack Overflow forum post that will explain to you how to do it. While R does not have the same type of official documentation as proprietary software like SPSS or SAS, R does have a broad community of users who share and discuss how to use R effectively. Google is your friend :)</p>
+</div>
+</div>
+<div id="exploring-the-data" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Exploring the Data</h2>
+<p>Once the dataset is loaded into R, R treats it as a data.frame object. It is important that we know how to use R to look at the data. Often, one of the hardest parts of running a statistical analysis is making sure that our data is in the correct format. Usually, when we receive a dataset it is not perfectly formatted for our intended purposes.</p>
+<p>We are going to use data from the BRFSS survey from the state of New York to display how we can use R to work with data. You can download the dataset here if you’d like to follow along:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="working-with-datasets-in-r.html#cb148-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/ny_2016_brfss.csv&quot;</span>, <span class="at">header =</span> T)</span></code></pre></div>
+<div id="keep-your-codebook-handy" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Keep Your Codebook Handy</h3>
+<p>Before we look at the data, it is crucial that you have the codebook for your data on hand. The codebook is a form of documentation that accompanies data which explains what each variable in the dataset is and how it was calculated. Typically, if you download a dataset from a public source or receive a dataset as part of a study, there is a codebook which accompanies it. However, in some cases (particularly on smaller research projects), there is no codebook - in such cases, getting a copy of the survey questionaire is necessary so that you can match up variables in the dataset with the questions that were asked on the survey.</p>
+<p><strong><em>A codebook tells you what is in your dataset. You need to have it handy whenever you work with a given dataset.</em></strong> The codebook for the 2016 BRFSS study is available <a href="https://www.cdc.gov/brfss/annual_data/2016/pdf/codebook16_llcp.pdf">here</a></p>
+</div>
+<div id="the-environment-pane" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> The Environment pane</h3>
+<p>The first thing we will notice when we load the dataset is that the environment pane in the top right corner of RStudio will update to include it, seeing something like:</p>
+<p><img src="Images/envi_pane.PNG" /></p>
+<p>From this information, we can see that our dataset is made up of 34,190 observations (rows) and 375 variables. If you click the right arrow next to the name of the data.frame, then it will expand and show the first several variables and some values.</p>
+<p><img src="Images/envi_pane2.PNG" /></p>
+<p>We can also see in this example the letters “int” before many of the variables. This is RStudio tellings you that each of theses variables is an integer type of data. You might also see “num” for numeric, “char” for character (like written text), or “factor” for categorical data.</p>
+<p>Finally, if you click on the name of the data.frame directly, it will execute the <span class="math inline">\(View()\)</span> function and open the data.frame in a spreadsheet style view, which looks like:</p>
+<p><img src="Images/View_pane.PNG" /></p>
+<p>There are buttons and filters you can use to explore the data, much like how you would be able to if you opened the file in Excel. This view can be useful for looking at the data, but we typically do not do any of our analytic work via this View. Sometimes, it can be useful to open this View to confirm that some operation executed correctly or to try to identify specific instances of missing data.</p>
+</div>
+<div id="functions-for-exploring-and-cleaning-data" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Functions for Exploring and Cleaning Data</h3>
+<p>When you first load a dataset, there are many functions which can be useful to know. The first is the <span class="math inline">\(head()\)</span> function. This function tells R to print out the first several rows of the data.frame, like so:</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="working-with-datasets-in-r.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##   X X_STATE X_GEOSTR PRECALL SECSCRFL REPNUM REPDEPTH FMONTH    IDATE IMONTH
+## 1 1      36      201       1       NA 120006        3     12 12052016     12
+## 2 2      36      206       1       NA  30046       13      3  3142016      3
+## 3 3      36      201       1       NA  10025       15      1  2172016      2
+## 4 4      36      201       1       NA  50098       12      5  5152016      5
+## 5 5      36      212       1       NA 100019        6     10 11092016     11
+## 6 6      36      201       1       NA  80006       30      8  8052016      8
+##   IDAY IYEAR DISPCODE      SEQNO      X_PSU NATTMPTS NRECSEL  NRECSTR PVTRESD1
+## 1    5  2016     1200 2016000012 2016000012        1   58621 19463347       NA
+## 2   14  2016     1200 2016000013 2016000013        3   15440  1202936       NA
+## 3   17  2016     1200 2016000014 2016000014        7   58621 19463347       NA
+## 4   15  2016     1200 2016000015 2016000015        2   58621 19463347       NA
+## 5    9  2016     1200 2016000016 2016000016        5  135028  1660029       NA
+## 6    5  2016     1200 2016000017 2016000017        1   58621 19463347       NA
+##   COLGHOUS STATERES LADULT NUMADULT CADULT PVTRESD3 CCLGHOUS CSTATE1 RSPSTAT1
+## 1       NA       NA     NA       NA      1        1       NA       2       36
+## 2       NA       NA     NA       NA      2        1       NA       2       36
+## 3       NA       NA     NA       NA      1        1       NA       2       36
+## 4       NA       NA     NA       NA      1        1       NA       2       36
+## 5       NA       NA     NA       NA      2        1       NA       2       36
+## 6       NA       NA     NA       NA      1        1       NA       2       36
+##   LANDLINE HHADULT GENHLTH PHYSHLTH MENTHLTH POORHLTH HLTHPLN1 PERSDOC2 MEDCOST
+## 1        2       1       1       88       88       NA        1        3       2
+## 2        2       5       4        5       20        2        1        2       2
+## 3        1       3       3        3       30       10        1        1       1
+## 4        2       1       4       30       12       30        2        1       1
+## 5        2       2       2       88       88       NA        1        2       2
+## 6        2       3       2        1       20       88        1        3       1
+##   CHECKUP1 EXERANY2 SLEPTIM1 CVDINFR4 CVDCRHD4 CVDSTRK3 ASTHMA3 ASTHNOW
+## 1        2        1        6        2        2        2       2      NA
+## 2        3        2        6        2        2        2       2      NA
+## 3        1        1        5        2        2        2       2      NA
+## 4        2        1        6        2        2        2       2      NA
+## 5        2        1        7        2        2        2       2      NA
+## 6        2        1        7        2        2        2       1       2
+##   CHCSCNCR CHCOCNCR CHCCOPD1 HAVARTH3 ADDEPEV2 CHCKIDNY DIABETE3 DIABAGE2
+## 1        2        2        2        2        2        2        3       NA
+## 2        2        2        2        2        1        2        3       NA
+## 3        2        2        2        2        1        2        3       NA
+## 4        2        2        2        2        1        2        3       NA
+## 5        2        2        2        2        2        2        3       NA
+## 6        2        2        2        2        1        2        3       NA
+##   LASTDEN3 RMVTETH3 SEX AGE HISPANC3 MRACE1 ORACE3 MARITAL EDUCA RENTHOM1
+## 1        1        8   1  33        5     10     NA       5     6        2
+## 2        1        8   2  20        5   1088     NA       5     5        2
+## 3        4        8   1  47        5   1088     NA       5     6        3
+## 4        1        8   1  22        5   1088     NA       5     4        2
+## 5        1        8   2  36        5   1088     NA       1     5        2
+## 6        2        8   1  26        5   1088     NA       6     6        2
+##   CTYCODE1 ZIPCODE1 NUMHHOL2 NUMPHON2 CPDEMO1 VETERAN3 EMPLOY1 CHILDREN INCOME2
+## 1       NA      DSU       NA       NA      NA        2       1       88       8
+## 2       NA      DSU       NA       NA      NA        2       6       88      77
+## 3       NA      DSU       NA       NA      NA        1       1       88       8
+## 4       NA      DSU       NA       NA      NA        2       4       88       3
+## 5       NA      DSU       NA       NA      NA        2       1        3       6
+## 6       NA      DSU       NA       NA      NA        2       1       88      77
+##   INTERNET WEIGHT2 HEIGHT3 PREGNANT DEAF BLIND DECIDE DIFFWALK DIFFDRES
+## 1        1      NA      NA       NA    2     2      2        2        2
+## 2        1      NA      NA        2    2     2      2        2        2
+## 3        1      NA      NA       NA    2     2      1        2        2
+## 4        1      NA      NA       NA    2     2      2        2        2
+## 5        1      NA      NA        2    2     2      2        2        2
+## 6        1      NA      NA       NA    2     2      7        2        2
+##   DIFFALON SMOKE100 SMOKDAY2 STOPSMK2 LASTSMK2 USENOW3 ECIGARET ECIGNOW ALCDAY5
+## 1        2        1        1        2       NA       3        1       3     103
+## 2        1        2       NA       NA       NA       3        1       3     203
+## 3        2        2       NA       NA       NA       3        2      NA     102
+## 4        2        1        3       NA        5       3        1       2     888
+## 5        2        1        3       NA        5       3        1       1     888
+## 6        2        1        3       NA        4       3        1       3     215
+##   AVEDRNK2 DRNK3GE5 MAXDRNKS FLUSHOT6 FLSHTMY2 PNEUVAC3 TETANUS FALL12MN
+## 1        7       12       10        2       NA        2       3       NA
+## 2        2       88        3        2       NA        1       3       NA
+## 3        2       88        3        1   102015        2       2        2
+## 4       NA       NA       NA        1    22016        1       4       NA
+## 5       NA       NA       NA        2       NA        7       3       NA
+## 6        1        4        7        1    22016        7       7       NA
+##   FALLINJ2 SEATBELT DRNKDRI2 HADMAM HOWLONG HADPAP2 LASTPAP2 HPVTEST HPLSTTST
+## 1       NA        4       88     NA      NA      NA       NA      NA       NA
+## 2       NA        1       88      2      NA       2       NA       2       NA
+## 3       88        1       88     NA      NA      NA       NA      NA       NA
+## 4       NA        1       NA     NA      NA      NA       NA      NA       NA
+## 5       NA        1       NA      1       1       1        1       1        1
+## 6       NA        2       88     NA      NA      NA       NA      NA       NA
+##   HADHYST2 PCPSAAD2 PCPSADI1 PCPSARE1 PSATEST1 PSATIME PCPSARS1 BLDSTOOL
+## 1       NA       NA       NA       NA       NA      NA       NA       NA
+## 2        2       NA       NA       NA       NA      NA       NA       NA
+## 3       NA        1        1        1        1       1        5       NA
+## 4       NA       NA       NA       NA       NA      NA       NA       NA
+## 5        2       NA       NA       NA       NA      NA       NA       NA
+## 6       NA       NA       NA       NA       NA      NA       NA       NA
+##   LSTBLDS3 HADSIGM3 HADSGCO1 LASTSIG3 HIVTST6 HIVTSTD3 HIVRISK4 PDIABTST
+## 1       NA       NA       NA       NA       1    62016        1       NA
+## 2       NA       NA       NA       NA       2       NA        2       NA
+## 3       NA       NA       NA       NA       1   772015       NA       NA
+## 4       NA       NA       NA       NA       2       NA        2       NA
+## 5       NA       NA       NA       NA       1    12008        2       NA
+## 6       NA       NA       NA       NA       7       NA        1       NA
+##   PREDIAB1 CAREGIV1 CRGVREL1 CRGVLNG1 CRGVHRS1 CRGVPRB2 CRGVPERS CRGVHOUS
+## 1       NA       NA       NA       NA       NA       NA       NA       NA
+## 2       NA       NA       NA       NA       NA       NA       NA       NA
+## 3       NA       NA       NA       NA       NA       NA       NA       NA
+## 4       NA       NA       NA       NA       NA       NA       NA       NA
+## 5       NA       NA       NA       NA       NA       NA       NA       NA
+## 6       NA       NA       NA       NA       NA       NA       NA       NA
+##   CRGVMST2 CRGVEXPT CIMEMLOS CDHOUSE CDASSIST CDHELP CDSOCIAL CDDISCUS SSBSUGR2
+## 1       NA       NA       NA      NA       NA     NA       NA       NA       NA
+## 2       NA       NA       NA      NA       NA     NA       NA       NA       NA
+## 3       NA       NA       NA      NA       NA     NA       NA       NA       NA
+## 4       NA       NA       NA      NA       NA     NA       NA       NA       NA
+## 5       NA       NA       NA      NA       NA     NA       NA       NA       NA
+## 6       NA       NA       NA      NA       NA     NA       NA       NA       NA
+##   SSBFRUT2 TYPEWORK TYPEINDS SXORIENT TRNSGNDR RCSBIRTH RCSGENDR RCHISLA1
+## 1       NA      DSU      DSU       NA       NA      DSU       NA      DSU
+## 2       NA      DSU      DSU       NA       NA      DSU       NA      DSU
+## 3       NA      DSU      DSU       NA       NA      DSU       NA      DSU
+## 4       NA      DSU      DSU       NA       NA      DSU       NA      DSU
+## 5       NA      DSU      DSU       NA       NA      DSU       NA      DSU
+## 6       NA      DSU      DSU       NA       NA      DSU       NA      DSU
+##   RCSRACE1 RCSBRAC2 RCSRLTN2 CASTHDX2 CASTHNO2 QLACTLM2 USEEQUIP QSTVER QSTLANG
+## 1      DSU       NA       NA       NA       NA       NA       NA     20       1
+## 2      DSU       NA       NA       NA       NA       NA       NA     20       1
+## 3      DSU       NA       NA       NA       NA       NA       NA     20       1
+## 4      DSU       NA       NA       NA       NA       NA       NA     20       1
+## 5      DSU       NA       NA       NA       NA       NA       NA     20       1
+## 6      DSU       NA       NA       NA       NA       NA       NA     20       1
+##   X_MSACODE MSCODE X_STSTR   X_STRWT X_RAW     X_WT2 X_RAWRAKE X_WT2RAKE
+## 1       DSU     NA  362019 332.02004    NA 332.02004         1 332.02004
+## 2       DSU     NA  362069  77.91039    NA  77.91039         1  77.91039
+## 3       DSU     NA  362019 332.02004    NA 332.02004         1 332.02004
+## 4       DSU     NA  362019 332.02004    NA 332.02004         1 332.02004
+## 5       DSU     NA  362129  12.29396    NA  12.29396         1  12.29396
+## 6       DSU     NA  362019 332.02004    NA 332.02004         1 332.02004
+##   X_REGION X_IMPSEX X_IMPAGE X_IMPRACE X_IMPNPH X_IMPCTY X_IMPEDUC X_IMPMRTL
+## 1       NA        1       33         1       NA       NA         6         5
+## 2       NA        2       20         1       NA       NA         5         5
+## 3       NA        1       47         1       NA       NA         6         5
+## 4       NA        1       22         1       NA       NA         4         5
+## 5       NA        2       36         1       NA       NA         5         1
+## 6       NA        1       26         1       NA       NA         6         6
+##   X_IMPHOME O_STATE X_CHISPNC X_CRACE1 X_CPRACE X_IMPCAGE X_IMPCRAC X_IMPCSEX
+## 1         2       1        NA       NA       NA        NA        NA        NA
+## 2         2       2        NA       NA       NA        NA        NA        NA
+## 3         3       4        NA       NA       NA        NA        NA        NA
+## 4         2       4        NA       NA       NA        NA        NA        NA
+## 5         2       4        NA       NA       NA        NA        NA        NA
+## 6         2       5        NA       NA       NA        NA        NA        NA
+##   X_RAWCH X_WT2CH X_CLCM1V2 X_CLCM2V2 X_CLCM3V2 X_CLCM4V2 X_CLCM5V2 X_CLCWTV2
+## 1      NA      NA        NA        NA        NA        NA        NA        NA
+## 2      NA      NA        NA        NA        NA        NA        NA        NA
+## 3      NA      NA        NA        NA        NA        NA        NA        NA
+## 4      NA      NA        NA        NA        NA        NA        NA        NA
+## 5      NA      NA        NA        NA        NA        NA        NA        NA
+## 6      NA      NA        NA        NA        NA        NA        NA        NA
+##   X_DUALUSE X_DUALCOR  X_LLCPWT2 X_LLCPM01 X_LLCPM02 X_LLCPM03 X_LLCPM04
+## 1         9        NA 1503.22419         2         1         4         2
+## 2         9        NA  437.50684         8         1         3         2
+## 3         2 0.3749592 1797.50648         4         1         4         2
+## 4         9        NA 1941.69415         1         1         2         2
+## 5         9        NA   72.34833        10         1         3         1
+## 6         9        NA 1941.69415         2         1         4         2
+##   X_LLCPM05 X_LLCPM06 X_LLCPM07 X_LLCPM08 X_LLCPM09 X_LLCPM10 X_LLCPM11
+## 1         2         1         1         1         5        26         9
+## 2         2         6         1         1        17       100        34
+## 3         2         1         5         3         4        21         7
+## 4         2         1         1         1         4        18         7
+## 5         2         6         5         1        22       135        44
+## 6         2         1         1         1         4        19         7
+##   X_LLCPM12 X_LLCPM13 X_LLCPM14 X_LLCPM15 X_LLCPM16   X_LLCPWT X_LCM01V1
+## 1        15        14        30        82        27 1544.12591        NA
+## 2        50        29        68       173        58  778.14863        NA
+## 3        11        11        19        64        21 1097.60766        NA
+## 4        11        11        19        61        21 1770.86414        NA
+## 5        57        26        61       160        52   40.91907        NA
+## 6        11        11        19        62        21 1105.47228        NA
+##   X_LCM02V1 X_LCM03V1 X_LCM04V1 X_LCM05V1 X_LCM06V1 X_LCM07V1 X_LCM08V1
+## 1        NA        NA        NA        NA        NA        NA        NA
+## 2        NA        NA        NA        NA        NA        NA        NA
+## 3        NA        NA        NA        NA        NA        NA        NA
+## 4        NA        NA        NA        NA        NA        NA        NA
+## 5        NA        NA        NA        NA        NA        NA        NA
+## 6        NA        NA        NA        NA        NA        NA        NA
+##   X_LCPWTV1 X_LCM01V2 X_LCM02V2 X_LCM03V2 X_LCM04V2 X_LCM05V2 X_LCM06V2
+## 1        NA        NA        NA        NA        NA        NA        NA
+## 2        NA        NA        NA        NA        NA        NA        NA
+## 3        NA        NA        NA        NA        NA        NA        NA
+## 4        NA        NA        NA        NA        NA        NA        NA
+## 5        NA        NA        NA        NA        NA        NA        NA
+## 6        NA        NA        NA        NA        NA        NA        NA
+##   X_LCM07V2 X_LCM08V2 X_LCPWTV2 X_LCM01V3 X_LCM02V3 X_LCM03V3 X_LCM04V3
+## 1        NA        NA        NA        NA        NA        NA        NA
+## 2        NA        NA        NA        NA        NA        NA        NA
+## 3        NA        NA        NA        NA        NA        NA        NA
+## 4        NA        NA        NA        NA        NA        NA        NA
+## 5        NA        NA        NA        NA        NA        NA        NA
+## 6        NA        NA        NA        NA        NA        NA        NA
+##   X_LCM05V3 X_LCM06V3 X_LCM07V3 X_LCM08V3 X_LCPWTV3 X_RFHLTH X_PHYS14D
+## 1        NA        NA        NA        NA        NA        1         1
+## 2        NA        NA        NA        NA        NA        2         2
+## 3        NA        NA        NA        NA        NA        1         2
+## 4        NA        NA        NA        NA        NA        2         3
+## 5        NA        NA        NA        NA        NA        1         1
+## 6        NA        NA        NA        NA        NA        1         2
+##   X_MENT14D X_HCVU651 X_TOTINDA X_MICHD X_LTASTH1 X_CASTHM1 X_ASTHMS1 X_DRDXAR1
+## 1         1         1         1       2         1         1         3         2
+## 2         3         1         2       2         1         1         3         2
+## 3         3         1         1       2         1         1         3         2
+## 4         2         2         1       2         1         1         3         2
+## 5         1         1         1       2         1         1         3         2
+## 6         3         1         1       2         2         1         2         2
+##   X_EXTETH2 X_ALTETH2 X_DENVST2 X_MRACE1 X_M_RACE X_HISPANC X_RACE X_RACEG21
+## 1         1        NA         1        1       10         2      1         1
+## 2         1        NA         1        1       10         2      1         1
+## 3         1        NA         2        1       10         2      1         1
+## 4         1        NA         1        1       10         2      1         1
+## 5         1        NA         1        1       10         2      1         1
+## 6         1        NA         2        1       10         2      1         1
+##   X_RACEGR3 X_RACE_G1 X_AGEG5YR X_AGE65YR X_AGE80 X_AGE_G HTIN4 HTM4 WTKG3
+## 1         1         1         3         1      33       2    NA   NA    NA
+## 2         1         1         1         1      20       1    NA   NA    NA
+## 3         1         1         6         1      47       4    NA   NA    NA
+## 4         1         1         1         1      22       1    NA   NA    NA
+## 5         1         1         4         1      36       3    NA   NA    NA
+## 6         1         1         2         1      26       2    NA   NA    NA
+##   X_BMI5 X_BMI5CAT X_RFBMI5 X_CHLDCNT X_EDUCAG X_INCOMG X_SMOKER3 X_RFSMOK3
+## 1     NA         2        1         1        4        5         1         2
+## 2     NA         2        1         1        3        9         4         1
+## 3     NA         2        1         1        4        5         4         1
+## 4     NA         3        2         1        2        2         3         1
+## 5     NA         2        1         4        3        4         3         1
+## 6     NA         2        1         1        4        9         3         1
+##   X_ECIGSTS X_CURECIG DRNKANY5 DROCDY3_ X_RFBING5 X_DRNKWEK X_RFDRHV5 X_FLSHOT6
+## 1         3         1        1       43         2      2100         2        NA
+## 2         3         1        1       10         1       140         1        NA
+## 3         4         1        1       29         1       400         1        NA
+## 4         2         2        2        0         1         0         1        NA
+## 5         1         2        2        0         1         0         1        NA
+## 6         3         1        1       50         2       350         1        NA
+##   X_PNEUMO2 X_RFSEAT2 X_RFSEAT3 X_DRNKDRV X_RFMAM2Y X_MAM5021 X_RFPAP33
+## 1        NA         2         2         2        NA        NA        NA
+## 2        NA         1         1         2        NA        NA        NA
+## 3        NA         1         1         2        NA        NA        NA
+## 4        NA         1         1         9        NA        NA        NA
+## 5        NA         1         1         9        NA        NA         1
+## 6        NA         1         2         2        NA        NA        NA
+##   X_RFPSA21 X_RFBLDS3 X_COL10YR X_HFOB3YR X_FS5YR X_FOBTFS X_CRCREC X_AIDTST3
+## 1        NA        NA        NA        NA      NA       NA       NA         1
+## 2        NA        NA        NA        NA      NA       NA       NA         2
+## 3         1        NA        NA        NA      NA       NA       NA         1
+## 4        NA        NA        NA        NA      NA       NA       NA         2
+## 5        NA        NA        NA        NA      NA       NA       NA         1
+## 6        NA        NA        NA        NA      NA       NA       NA         9
+##   MEDICARE HLTHCVR1 STRSRENT STRSMEAL BPHIGH4 BPMEDS FALOLDRE FALREDUC EVERWALK
+## 1       NA       NA       NA       NA      NA     NA       NA       NA       NA
+## 2       NA       NA       NA       NA      NA     NA       NA       NA       NA
+## 3       NA       NA       NA       NA      NA     NA       NA       NA       NA
+## 4       NA       NA       NA       NA      NA     NA       NA       NA       NA
+## 5       NA       NA       NA       NA      NA     NA       NA       NA       NA
+## 6       NA       NA       NA       NA      NA     NA       NA       NA       NA
+##   EVERBIKE HEALTHCL1 HLTHPREG PREGEVER BRTHCNTL3 TYPCNTRL2 CLRCTREC EATFRUIT
+## 1       NA        NA       NA       NA        NA        NA       NA       NA
+## 2       NA        NA       NA       NA        NA        NA       NA       NA
+## 3       NA        NA       NA       NA        NA        NA       NA       NA
+## 4       NA        NA       NA       NA        NA        NA       NA       NA
+## 5       NA        NA       NA       NA        NA        NA       NA       NA
+## 6       NA        NA       NA       NA        NA        NA       NA       NA
+##   EATVEGET SEXHIST HSCNDMS HCVHEAR HCVTEST HCVLASTT HCVINPTR HCVINPTO HCVINPTA
+## 1       NA      NA      NA      NA      NA       NA       NA       NA       NA
+## 2       NA      NA      NA      NA      NA       NA       NA       NA       NA
+## 3       NA      NA      NA      NA      NA       NA       NA       NA       NA
+## 4       NA      NA      NA      NA      NA       NA       NA       NA       NA
+## 5       NA      NA      NA      NA      NA       NA       NA       NA       NA
+## 6       NA      NA      NA      NA      NA       NA       NA       NA       NA
+##   HCVPRIMR HCVPRIMO HCVPRIMA HCVTESTB ACEDEPRS ACEDRINK ACEDRUGS ACEPRISN
+## 1       NA       NA       NA       NA       NA       NA       NA       NA
+## 2       NA       NA       NA       NA       NA       NA       NA       NA
+## 3       NA       NA       NA       NA       NA       NA       NA       NA
+## 4       NA       NA       NA       NA       NA       NA       NA       NA
+## 5       NA       NA       NA       NA       NA       NA       NA       NA
+## 6       NA       NA       NA       NA       NA       NA       NA       NA
+##   ACEDIVRC ACEPUNCH ACEHURT ACESWEAR ACETOUCH ACETTHEM ACEHVSEX STRSYMP1
+## 1       NA       NA      NA       NA       NA       NA       NA       NA
+## 2       NA       NA      NA       NA       NA       NA       NA       NA
+## 3       NA       NA      NA       NA       NA       NA       NA       NA
+## 4       NA       NA      NA       NA       NA       NA       NA       NA
+## 5       NA       NA      NA       NA       NA       NA       NA       NA
+## 6       NA       NA      NA       NA       NA       NA       NA       NA
+##   STRSYMP2 STRSYMP3 STRSYMP5 STRSYMP6 FIRSTAID2 CMGENER CMDETECT CMBATTER
+## 1       NA       NA       NA       NA        NA      NA       NA       NA
+## 2       NA       NA       NA       NA        NA      NA       NA       NA
+## 3       NA       NA       NA       NA        NA      NA       NA       NA
+## 4       NA       NA       NA       NA        NA      NA       NA       NA
+## 5       NA       NA       NA       NA        NA      NA       NA       NA
+## 6       NA       NA       NA       NA        NA      NA       NA       NA
+##   CAREGIVB CIMEMLSB CDDISCSB REGION DSRIPREG PPS_1 PPS_3 PPS_8 PPS_9 PPS_14
+## 1       NA       NA       NA      2      102    NA    NA    NA    NA     NA
+## 2       NA       NA       NA      1      104    NA    NA    NA    NA     NA
+## 3       NA       NA       NA      2      102    NA    NA    NA    NA     NA
+## 4       NA       NA       NA      2      102    NA    NA    NA    NA     NA
+## 5       NA       NA       NA      1      106    NA    NA    NA    NA     NA
+## 6       NA       NA       NA      2      102    NA    NA    NA    NA     NA
+##   PPS_16 PPS_19 PPS_20 PPS_21 PPS_22 PPS_23 PPS_25 PPS_27 PPS_32 PPS_33 PPS_34
+## 1     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA
+## 2     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA
+## 3     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA
+## 4     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA
+## 5     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA
+## 6     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA     NA
+##   PPS_36 PPS_39 PPS_40 PPS_43 PPS_44 PPS_45 PPS_46 PPS_48 PPS_52 X_CTYWGT
+## 1     NA     NA     NA     NA     NA     NA     NA     NA     NA       NA
+## 2     NA     NA     NA     NA     NA     NA     NA     NA     NA       NA
+## 3     NA     NA     NA     NA     NA     NA     NA     NA     NA       NA
+## 4     NA     NA     NA     NA     NA     NA     NA     NA     NA       NA
+## 5     NA     NA     NA     NA     NA     NA     NA     NA     NA       NA
+## 6     NA     NA     NA     NA     NA     NA     NA     NA     NA       NA</code></pre>
+<p>You’ll notice that we are currently working with a lot of data. 375 variables is way more than we need for our analysis, so, I want to narrow the dataset down to just the variables we need (this is where having the codebook nearby is useful!).</p>
+<p>For my study I need the following data: age, sex, educational attainment, lifetime cigarette smoking, and lifetime diagnosis of heart disease. In the BRFSS it turns out they have two separate variables for heart disease, one related to myocardial infarction (CVDINFR4) and angina (CVDCRHD4), so I want both of those. I can narrow down my dataset like so:</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="working-with-datasets-in-r.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First, I look in the codebook and I find the names of the variables I want</span></span>
+<span id="cb151-2"><a href="working-with-datasets-in-r.html#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="do">## I am going to save the variable names into a vector like so</span></span>
+<span id="cb151-3"><a href="working-with-datasets-in-r.html#cb151-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-4"><a href="working-with-datasets-in-r.html#cb151-4" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;SEX&quot;</span>,<span class="st">&quot;AGE&quot;</span>,<span class="st">&quot;EDUCA&quot;</span>,<span class="st">&quot;SMOKE100&quot;</span>,<span class="st">&quot;CVDINFR4&quot;</span>,<span class="st">&quot;CVDCRHD4&quot;</span>)</span>
+<span id="cb151-5"><a href="working-with-datasets-in-r.html#cb151-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-6"><a href="working-with-datasets-in-r.html#cb151-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Next, we simply subset our dataset using these variable names</span></span>
+<span id="cb151-7"><a href="working-with-datasets-in-r.html#cb151-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following line of code tells R to only include the columns of the dataset that contain the specified variable names</span></span>
+<span id="cb151-8"><a href="working-with-datasets-in-r.html#cb151-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[,variables]</span>
+<span id="cb151-9"><a href="working-with-datasets-in-r.html#cb151-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-10"><a href="working-with-datasets-in-r.html#cb151-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Now we can run the head() function to confirm that it work</span></span>
+<span id="cb151-11"><a href="working-with-datasets-in-r.html#cb151-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##   SEX AGE EDUCA SMOKE100 CVDINFR4 CVDCRHD4
+## 1   1  33     6        1        2        2
+## 2   2  20     5        2        2        2
+## 3   1  47     6        2        2        2
+## 4   1  22     4        1        2        2
+## 5   2  36     5        1        2        2
+## 6   1  26     6        1        2        2</code></pre>
+<p>Cool! 6 variables is much easier to work with than 375. However, all of the values for the variables are numbers!!! What on earth does 1 mean for SMOKE100? For that matter, what is SMOKE100??? So, this is where the codebook is truly necessary. It appears that many of these variables are categorical, but the dataset only contains the numeric values for the categories. So, now we need to use the codebook and assign that actual category levels. For example, for the sex variable we see the values 1 and 2…it seems intuitive that these may correspond to “Male” and “Female,” but without the codebook we have no way of knowing which!</p>
+<p>Let’s start by opening the codebook up and looking at the EDUCA variable. Now, to find it I am just going to use the Ctrl+F command and type in EDUCA to find it. Here is a photo of the entry:</p>
+<p><img src="Images/educa.PNG" /></p>
+<p>First we can see that the specific question is “What is the highest grade or year of school you completed?” Then we can see what each numeric value maps onto. A value of 1 means “Never attended school or only kindergarten,” a value of 2 means “Grades 1 through 8 (Elementary)” and so on.</p>
+<p>Now, we are going to use the <span class="math inline">\(factor()\)</span> function like we learned in the last class to turn the numeric value into a categorical one, like so:</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="working-with-datasets-in-r.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Factor Educational Attainment</span></span>
+<span id="cb153-2"><a href="working-with-datasets-in-r.html#cb153-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>EDUCA <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>EDUCA,</span>
+<span id="cb153-3"><a href="working-with-datasets-in-r.html#cb153-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>),</span>
+<span id="cb153-4"><a href="working-with-datasets-in-r.html#cb153-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Never attended school or only kindergarten&quot;</span>,</span>
+<span id="cb153-5"><a href="working-with-datasets-in-r.html#cb153-5" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Grades 1 through 8&quot;</span>,</span>
+<span id="cb153-6"><a href="working-with-datasets-in-r.html#cb153-6" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Grades 9 through 11&quot;</span>,</span>
+<span id="cb153-7"><a href="working-with-datasets-in-r.html#cb153-7" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Grade 12 or GED&quot;</span>,</span>
+<span id="cb153-8"><a href="working-with-datasets-in-r.html#cb153-8" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;College 1 year to 3 years&quot;</span>,</span>
+<span id="cb153-9"><a href="working-with-datasets-in-r.html#cb153-9" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;College 4 years or more&quot;</span>,</span>
+<span id="cb153-10"><a href="working-with-datasets-in-r.html#cb153-10" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;Refused to Answer&quot;</span>))</span></code></pre></div>
+<p>Now, we can repeat this process with each of the categorical variables like so:</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="working-with-datasets-in-r.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Factor SEX</span></span>
+<span id="cb154-2"><a href="working-with-datasets-in-r.html#cb154-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>SEX <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>SEX, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">9</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>,<span class="st">&quot;Female&quot;</span>,<span class="st">&quot;Refused&quot;</span>))</span>
+<span id="cb154-3"><a href="working-with-datasets-in-r.html#cb154-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-4"><a href="working-with-datasets-in-r.html#cb154-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Factor Smoke 100 - Have you smoked at least 100 cigarettes in your entire life?</span></span>
+<span id="cb154-5"><a href="working-with-datasets-in-r.html#cb154-5" aria-hidden="true" tabindex="-1"></a><span class="do">## I decided to write out the full question here, because the variable name does not make it obvious</span></span>
+<span id="cb154-6"><a href="working-with-datasets-in-r.html#cb154-6" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>SMOKE100 <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>SMOKE100, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">9</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,</span>
+<span id="cb154-7"><a href="working-with-datasets-in-r.html#cb154-7" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;No&quot;</span>, </span>
+<span id="cb154-8"><a href="working-with-datasets-in-r.html#cb154-8" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;Don&#39;t Know&quot;</span>,</span>
+<span id="cb154-9"><a href="working-with-datasets-in-r.html#cb154-9" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;Refused&quot;</span>))</span>
+<span id="cb154-10"><a href="working-with-datasets-in-r.html#cb154-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-11"><a href="working-with-datasets-in-r.html#cb154-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Factor CVDINF4 - &quot;Has a doctor, nurse, or other health professional ever told you</span></span>
+<span id="cb154-12"><a href="working-with-datasets-in-r.html#cb154-12" aria-hidden="true" tabindex="-1"></a><span class="do">## that you had a heart attack, also called a myocardial infarction?&quot;</span></span>
+<span id="cb154-13"><a href="working-with-datasets-in-r.html#cb154-13" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>CVDINFR4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>CVDINFR4, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">9</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,</span>
+<span id="cb154-14"><a href="working-with-datasets-in-r.html#cb154-14" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb154-15"><a href="working-with-datasets-in-r.html#cb154-15" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;Don&#39;t Know/Not Sure&quot;</span>,</span>
+<span id="cb154-16"><a href="working-with-datasets-in-r.html#cb154-16" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;Refused&quot;</span>))</span>
+<span id="cb154-17"><a href="working-with-datasets-in-r.html#cb154-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb154-18"><a href="working-with-datasets-in-r.html#cb154-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Factor CVDCRHD4 - &quot;Has a doctor, nurse, or other health professional ever told you</span></span>
+<span id="cb154-19"><a href="working-with-datasets-in-r.html#cb154-19" aria-hidden="true" tabindex="-1"></a><span class="do">## that you had angina or coronary heart disease?</span></span>
+<span id="cb154-20"><a href="working-with-datasets-in-r.html#cb154-20" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">NOTE</span><span class="do">: This next line of code is almost identical to the one above</span></span>
+<span id="cb154-21"><a href="working-with-datasets-in-r.html#cb154-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Copy-pasting will save you lots of time BUT, you need to make sure you change the parts that are different</span></span>
+<span id="cb154-22"><a href="working-with-datasets-in-r.html#cb154-22" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>CVDCRHD4 <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>CVDCRHD4, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">9</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>,</span>
+<span id="cb154-23"><a href="working-with-datasets-in-r.html#cb154-23" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;No&quot;</span>,</span>
+<span id="cb154-24"><a href="working-with-datasets-in-r.html#cb154-24" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;Don&#39;t Know/Not Sure&quot;</span>,</span>
+<span id="cb154-25"><a href="working-with-datasets-in-r.html#cb154-25" aria-hidden="true" tabindex="-1"></a>                                                                       <span class="st">&quot;Refused&quot;</span>))</span></code></pre></div>
+<p>What’s nice with R is that now that you wrote these functions you don’t have to write them again. Every time you load your dataset, you can also run these lines of codes to prepare your dataset for analysis. This is also good because you never have to edit your raw data file. <strong>Never edit the raw datafile you got for analysis</strong>. R lets you modify the data after you’ve loaded it, so that you can work with your dataset without editing the raw file.</p>
+<p>So, let’s try and run the <span class="math inline">\(head()\)</span> function again and see how our data looks now:</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="working-with-datasets-in-r.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##      SEX AGE                     EDUCA SMOKE100 CVDINFR4 CVDCRHD4
+## 1   Male  33   College 4 years or more      Yes       No       No
+## 2 Female  20 College 1 year to 3 years       No       No       No
+## 3   Male  47   College 4 years or more       No       No       No
+## 4   Male  22           Grade 12 or GED      Yes       No       No
+## 5 Female  36 College 1 year to 3 years      Yes       No       No
+## 6   Male  26   College 4 years or more      Yes       No       No</code></pre>
+<p>That’s much better! However, we have a lot of NOs over there in the CVDINFR4 column. It would be weird if they were all NOs, so we want a way that lets us see the variable breakdown (i.e., How many YES responses and how many NO responses). This is where we can use the <span class="math inline">\(summary()\)</span> function, like so:</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="working-with-datasets-in-r.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>CVDINFR4)</span></code></pre></div>
+<pre><code>##                 Yes                  No Don&#39;t Know/Not Sure             Refused 
+##                2021               32020                 130                  19</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="working-with-datasets-in-r.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>CVDCRHD4)</span></code></pre></div>
+<pre><code>##                 Yes                  No Don&#39;t Know/Not Sure             Refused 
+##                2127               31853                 186                  24</code></pre>
+<p>Nice! So now we can see how many Yes, No responses to each question, as well as how many people didn’t know or refused to answer. We can also run the <span class="math inline">\(summary()\)</span> function on the entire dataset and it will show us a similar overview for each variable. Notice how the computer seems to recognize that age is a numeric variable and, instead of providing frequencies, it instead provides us with Mean, Median and the Interquartile Range.</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="working-with-datasets-in-r.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
+<pre><code>##       SEX             AGE       
+##  Male   :15057   Min.   : 7.00  
+##  Female :19131   1st Qu.:41.00  
+##  Refused:    2   Median :57.00  
+##                  Mean   :54.52  
+##                  3rd Qu.:68.00  
+##                  Max.   :99.00  
+##                                 
+##                                         EDUCA             SMOKE100    
+##  Never attended school or only kindergarten:   40   Yes       :15177  
+##  Grades 1 through 8                        :  923   No        :17126  
+##  Grades 9 through 11                       : 1989   Don&#39;t Know:   80  
+##  Grade 12 or GED                           : 9952   Refused   :   28  
+##  College 1 year to 3 years                 : 8815   NA&#39;s      : 1779  
+##  College 4 years or more                   :12303                     
+##  Refused to Answer                         :  168                     
+##                 CVDINFR4                    CVDCRHD4    
+##  Yes                : 2021   Yes                : 2127  
+##  No                 :32020   No                 :31853  
+##  Don&#39;t Know/Not Sure:  130   Don&#39;t Know/Not Sure:  186  
+##  Refused            :   19   Refused            :   24  
+##                                                         
+##                                                         
+## </code></pre>
+<p>So, for my research, I want to know the association between educational attainment and heart disease. But, it appears that many people did not respond to the education and heart disease questions. While we will learn other ways to impute missing data, for right now I want to show you how to simply remove them from your data set. This is why it is important to not ever edit your raw data file. It would be bad if you actually deleted an entry from your dataset. In R, we can always go back to the top of the file and reload the dataset if we think we made a mistake.</p>
+<p>So, let’s start by removing all the people in the dataset who refused to answer the educational attainment question. There are many ways to approach removing a variable, but I’ll show you one I like to use. With coding, there are usually multiple ways to accomplish a given task.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="working-with-datasets-in-r.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s remove all rows in the data set where EDUCA == &quot;Refused to Answer&quot;</span></span>
+<span id="cb163-2"><a href="working-with-datasets-in-r.html#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We do this with conditional brackets by telling the computer</span></span>
+<span id="cb163-3"><a href="working-with-datasets-in-r.html#cb163-3" aria-hidden="true" tabindex="-1"></a><span class="do">## to only include rows in data where EDUCA does not equal (!=) &quot;Refused to Answer&quot;</span></span>
+<span id="cb163-4"><a href="working-with-datasets-in-r.html#cb163-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[data<span class="sc">$</span>EDUCA <span class="sc">!=</span> <span class="st">&quot;Refused to Answer&quot;</span>,]</span>
+<span id="cb163-5"><a href="working-with-datasets-in-r.html#cb163-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-6"><a href="working-with-datasets-in-r.html#cb163-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Notice how in the brackets we put a comma</span></span>
+<span id="cb163-7"><a href="working-with-datasets-in-r.html#cb163-7" aria-hidden="true" tabindex="-1"></a><span class="do">## That is because data is a data.frame, meaning it is two-dimensional</span></span>
+<span id="cb163-8"><a href="working-with-datasets-in-r.html#cb163-8" aria-hidden="true" tabindex="-1"></a><span class="do">## So, we must provide both a row number and a column number</span></span>
+<span id="cb163-9"><a href="working-with-datasets-in-r.html#cb163-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Here, we have left the column number blank, letting it know we want ALL the columns</span></span>
+<span id="cb163-10"><a href="working-with-datasets-in-r.html#cb163-10" aria-hidden="true" tabindex="-1"></a><span class="do">## For row, we have told it to only include rows where data$EDUCA does not equal &quot;Refused to Answer&quot;</span></span>
+<span id="cb163-11"><a href="working-with-datasets-in-r.html#cb163-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-12"><a href="working-with-datasets-in-r.html#cb163-12" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">NOTE</span><span class="do">: If you are getting an error, check to make sure that you have (or don&#39;t have) the comma</span></span>
+<span id="cb163-13"><a href="working-with-datasets-in-r.html#cb163-13" aria-hidden="true" tabindex="-1"></a><span class="do">## That is a really common error to get</span></span>
+<span id="cb163-14"><a href="working-with-datasets-in-r.html#cb163-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-15"><a href="working-with-datasets-in-r.html#cb163-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Now let&#39;s look at our data!</span></span>
+<span id="cb163-16"><a href="working-with-datasets-in-r.html#cb163-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>EDUCA)</span></code></pre></div>
+<pre><code>## Never attended school or only kindergarten 
+##                                         40 
+##                         Grades 1 through 8 
+##                                        923 
+##                        Grades 9 through 11 
+##                                       1989 
+##                            Grade 12 or GED 
+##                                       9952 
+##                  College 1 year to 3 years 
+##                                       8815 
+##                    College 4 years or more 
+##                                      12303 
+##                          Refused to Answer 
+##                                          0</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="working-with-datasets-in-r.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="do">## As we can see, we got rid of all the observations we didn&#39;t want BUT</span></span>
+<span id="cb165-2"><a href="working-with-datasets-in-r.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We also do not want the level &quot;Refused to Answer&quot; to appear in our dataset anymore</span></span>
+<span id="cb165-3"><a href="working-with-datasets-in-r.html#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="do">## That could mess things up when we eventually run some analyses</span></span>
+<span id="cb165-4"><a href="working-with-datasets-in-r.html#cb165-4" aria-hidden="true" tabindex="-1"></a><span class="do">## So, we will use the droplevels() function like so</span></span>
+<span id="cb165-5"><a href="working-with-datasets-in-r.html#cb165-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-6"><a href="working-with-datasets-in-r.html#cb165-6" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>EDUCA <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(data<span class="sc">$</span>EDUCA)</span>
+<span id="cb165-7"><a href="working-with-datasets-in-r.html#cb165-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The function tells the computer to get rid of levels if they don&#39;t appear in the vector</span></span>
+<span id="cb165-8"><a href="working-with-datasets-in-r.html#cb165-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-9"><a href="working-with-datasets-in-r.html#cb165-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-10"><a href="working-with-datasets-in-r.html#cb165-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Now let&#39;s look at our data again</span></span>
+<span id="cb165-11"><a href="working-with-datasets-in-r.html#cb165-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>EDUCA)</span></code></pre></div>
+<pre><code>## Never attended school or only kindergarten 
+##                                         40 
+##                         Grades 1 through 8 
+##                                        923 
+##                        Grades 9 through 11 
+##                                       1989 
+##                            Grade 12 or GED 
+##                                       9952 
+##                  College 1 year to 3 years 
+##                                       8815 
+##                    College 4 years or more 
+##                                      12303</code></pre>
+<p>So now we can repeat the process for our two heart disease variables. Notice that there are actually two levels we want to get rid of “Don’t Know/Not Sure” and “Refused,” so it is slightly different than above.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="working-with-datasets-in-r.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="do">## I will show you two similar but slightly different ways to remove these two levels</span></span>
+<span id="cb167-2"><a href="working-with-datasets-in-r.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="do">## First, we can write two separate lines of code, one for each level like so</span></span>
+<span id="cb167-3"><a href="working-with-datasets-in-r.html#cb167-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[data<span class="sc">$</span>CVDINFR4 <span class="sc">!=</span> <span class="st">&quot;Don&#39;t Know/Not Sure&quot;</span>,]</span>
+<span id="cb167-4"><a href="working-with-datasets-in-r.html#cb167-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[data<span class="sc">$</span>CVDINFR4 <span class="sc">!=</span> <span class="st">&quot;Refused&quot;</span>,]</span>
+<span id="cb167-5"><a href="working-with-datasets-in-r.html#cb167-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-6"><a href="working-with-datasets-in-r.html#cb167-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Print out summary to confirm</span></span>
+<span id="cb167-7"><a href="working-with-datasets-in-r.html#cb167-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>CVDINFR4)</span></code></pre></div>
+<pre><code>##                 Yes                  No Don&#39;t Know/Not Sure             Refused 
+##                2010               31869                   0                   0</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="working-with-datasets-in-r.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Perfect, now let&#39;s just drop those levels</span></span>
+<span id="cb169-2"><a href="working-with-datasets-in-r.html#cb169-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>CVDINFR4 <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(data<span class="sc">$</span>CVDINFR4)</span>
+<span id="cb169-3"><a href="working-with-datasets-in-r.html#cb169-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-4"><a href="working-with-datasets-in-r.html#cb169-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-5"><a href="working-with-datasets-in-r.html#cb169-5" aria-hidden="true" tabindex="-1"></a><span class="do">## We can also do this in a single line using the &amp; operator like so</span></span>
+<span id="cb169-6"><a href="working-with-datasets-in-r.html#cb169-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[data<span class="sc">$</span>CVDCRHD4 <span class="sc">!=</span> <span class="st">&quot;Don&#39;t Know/Not Sure&quot;</span> <span class="sc">&amp;</span> data<span class="sc">$</span>CVDCRHD4 <span class="sc">!=</span> <span class="st">&quot;Refused&quot;</span>,]</span>
+<span id="cb169-7"><a href="working-with-datasets-in-r.html#cb169-7" aria-hidden="true" tabindex="-1"></a><span class="do">## With the &amp; we are telling the computer to include rows </span></span>
+<span id="cb169-8"><a href="working-with-datasets-in-r.html#cb169-8" aria-hidden="true" tabindex="-1"></a><span class="do">## only if CVDCRHD4 doesn&#39;t equal &quot;Don&#39;t Know/NOt Sure&quot; AND doesn&#39;t equal &quot;Refused&quot;</span></span>
+<span id="cb169-9"><a href="working-with-datasets-in-r.html#cb169-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb169-10"><a href="working-with-datasets-in-r.html#cb169-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Print out summary to confirm</span></span>
+<span id="cb169-11"><a href="working-with-datasets-in-r.html#cb169-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>CVDCRHD4)</span></code></pre></div>
+<pre><code>##                 Yes                  No Don&#39;t Know/Not Sure             Refused 
+##                2107               31589                   0                   0</code></pre>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="working-with-datasets-in-r.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="do">## And then drop those levels</span></span>
+<span id="cb171-2"><a href="working-with-datasets-in-r.html#cb171-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>CVDCRHD4 <span class="ot">&lt;-</span> <span class="fu">droplevels</span>(data<span class="sc">$</span>CVDCRHD4)</span></code></pre></div>
+<p>Amazing, we have cleaned up some of our data! The last thing I want to do before we run our analysis is to create a new heart disease variable. I want my new variable, which I will call “any_heart_disease,” to be YES if either of the two heart disease variables are YES and be NO if both are NO. We are going to use a for-loop and if-else statements to do this. Like I said before, there are often many ways to do this. Understanding for-loops and if-else statements will be really useful for you as you continue your statistical coding journey!</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="working-with-datasets-in-r.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First, I am going to create the new column in our dataset</span></span>
+<span id="cb172-2"><a href="working-with-datasets-in-r.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="do">## I am going to assign NA as the value for this column</span></span>
+<span id="cb172-3"><a href="working-with-datasets-in-r.html#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="do">## We will fill in the values with our for-loop</span></span>
+<span id="cb172-4"><a href="working-with-datasets-in-r.html#cb172-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>any_heart_disease <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb172-5"><a href="working-with-datasets-in-r.html#cb172-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb172-6"><a href="working-with-datasets-in-r.html#cb172-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s look at our dataset real quick to confirm</span></span>
+<span id="cb172-7"><a href="working-with-datasets-in-r.html#cb172-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##      SEX AGE                     EDUCA SMOKE100 CVDINFR4 CVDCRHD4
+## 1   Male  33   College 4 years or more      Yes       No       No
+## 2 Female  20 College 1 year to 3 years       No       No       No
+## 3   Male  47   College 4 years or more       No       No       No
+## 4   Male  22           Grade 12 or GED      Yes       No       No
+## 5 Female  36 College 1 year to 3 years      Yes       No       No
+## 6   Male  26   College 4 years or more      Yes       No       No
+##   any_heart_disease
+## 1                NA
+## 2                NA
+## 3                NA
+## 4                NA
+## 5                NA
+## 6                NA</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="working-with-datasets-in-r.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Now, I am going to use a for-loop to fill in each value</span></span>
+<span id="cb174-2"><a href="working-with-datasets-in-r.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We start by calling the for function like so</span></span>
+<span id="cb174-3"><a href="working-with-datasets-in-r.html#cb174-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-4"><a href="working-with-datasets-in-r.html#cb174-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-5"><a href="working-with-datasets-in-r.html#cb174-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(row_number <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data)){</span>
+<span id="cb174-6"><a href="working-with-datasets-in-r.html#cb174-6" aria-hidden="true" tabindex="-1"></a>  <span class="do">## let&#39;s break this down</span></span>
+<span id="cb174-7"><a href="working-with-datasets-in-r.html#cb174-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">## this line can be translated as </span></span>
+<span id="cb174-8"><a href="working-with-datasets-in-r.html#cb174-8" aria-hidden="true" tabindex="-1"></a>  <span class="do">## &quot;For each number, saved as row_number, inbetween 1 and the number of rows in our data.frame, do the following...&quot;</span></span>
+<span id="cb174-9"><a href="working-with-datasets-in-r.html#cb174-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Inside the brackets we then write the code we want to repeat</span></span>
+<span id="cb174-10"><a href="working-with-datasets-in-r.html#cb174-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This allows us to tell the computer to repeat an operation for each row</span></span>
+<span id="cb174-11"><a href="working-with-datasets-in-r.html#cb174-11" aria-hidden="true" tabindex="-1"></a>  <span class="do">## so, we can treat row_number as a counter that keeps track of what row in the data frame we are on</span></span>
+<span id="cb174-12"><a href="working-with-datasets-in-r.html#cb174-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb174-13"><a href="working-with-datasets-in-r.html#cb174-13" aria-hidden="true" tabindex="-1"></a>  <span class="do">## So, we want to check if either of our two heart disease variables are &quot;Yes&quot;</span></span>
+<span id="cb174-14"><a href="working-with-datasets-in-r.html#cb174-14" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Let&#39;s grab them like so:</span></span>
+<span id="cb174-15"><a href="working-with-datasets-in-r.html#cb174-15" aria-hidden="true" tabindex="-1"></a>  infarction <span class="ot">&lt;-</span> data<span class="sc">$</span>CVDINFR4[row_number]</span>
+<span id="cb174-16"><a href="working-with-datasets-in-r.html#cb174-16" aria-hidden="true" tabindex="-1"></a>  <span class="do">## By writing [row_number] we are telling the computer to get the value at the current row we are working with</span></span>
+<span id="cb174-17"><a href="working-with-datasets-in-r.html#cb174-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb174-18"><a href="working-with-datasets-in-r.html#cb174-18" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We can do this with the other variable as well</span></span>
+<span id="cb174-19"><a href="working-with-datasets-in-r.html#cb174-19" aria-hidden="true" tabindex="-1"></a>  angina <span class="ot">&lt;-</span> data<span class="sc">$</span>CVDCRHD4[row_number]</span>
+<span id="cb174-20"><a href="working-with-datasets-in-r.html#cb174-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb174-21"><a href="working-with-datasets-in-r.html#cb174-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Perfect, we have our two values.</span></span>
+<span id="cb174-22"><a href="working-with-datasets-in-r.html#cb174-22" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Now, IF either value is equal to &quot;Yes&quot; we want to assign &quot;Yes&quot; to any_heart_disease</span></span>
+<span id="cb174-23"><a href="working-with-datasets-in-r.html#cb174-23" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ELSE we will assign &quot;No&quot;</span></span>
+<span id="cb174-24"><a href="working-with-datasets-in-r.html#cb174-24" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Which is exactly how an IF-ELSE statement works!</span></span>
+<span id="cb174-25"><a href="working-with-datasets-in-r.html#cb174-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb174-26"><a href="working-with-datasets-in-r.html#cb174-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(infarction <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span> <span class="sc">|</span> angina <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>){ </span>
+<span id="cb174-27"><a href="working-with-datasets-in-r.html#cb174-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## The above line can be translated:</span></span>
+<span id="cb174-28"><a href="working-with-datasets-in-r.html#cb174-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## &quot;If infarctiohn equals Yes or angina equals Yes, do the following:</span></span>
+<span id="cb174-29"><a href="working-with-datasets-in-r.html#cb174-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb174-30"><a href="working-with-datasets-in-r.html#cb174-30" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Now we want to assign &quot;Yes&quot; to any_heart_disease</span></span>
+<span id="cb174-31"><a href="working-with-datasets-in-r.html#cb174-31" aria-hidden="true" tabindex="-1"></a>    <span class="do">## However, we are going to just give it a number for now</span></span>
+<span id="cb174-32"><a href="working-with-datasets-in-r.html#cb174-32" aria-hidden="true" tabindex="-1"></a>    <span class="do">## It is nice to have 1 =  Yes and 0 = No</span></span>
+<span id="cb174-33"><a href="working-with-datasets-in-r.html#cb174-33" aria-hidden="true" tabindex="-1"></a>    <span class="do">## So, we will do the following:</span></span>
+<span id="cb174-34"><a href="working-with-datasets-in-r.html#cb174-34" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>any_heart_disease[row_number] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb174-35"><a href="working-with-datasets-in-r.html#cb174-35" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Don&#39;t forget the brackets with &quot;row_number&quot;</span></span>
+<span id="cb174-36"><a href="working-with-datasets-in-r.html#cb174-36" aria-hidden="true" tabindex="-1"></a>    <span class="do">## If you did data$any_heart_disease &lt;- 1, then you would assign that value to every single row!!!</span></span>
+<span id="cb174-37"><a href="working-with-datasets-in-r.html#cb174-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb174-38"><a href="working-with-datasets-in-r.html#cb174-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb174-39"><a href="working-with-datasets-in-r.html#cb174-39" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Next we write our else statement</span></span>
+<span id="cb174-40"><a href="working-with-datasets-in-r.html#cb174-40" aria-hidden="true" tabindex="-1"></a>    <span class="do">## The computer will only run the ELSE if the IF statement was false</span></span>
+<span id="cb174-41"><a href="working-with-datasets-in-r.html#cb174-41" aria-hidden="true" tabindex="-1"></a>    <span class="do">## In this case it will only run ELSE if neither of the variables equal &quot;Yes&quot;</span></span>
+<span id="cb174-42"><a href="working-with-datasets-in-r.html#cb174-42" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span>{</span>
+<span id="cb174-43"><a href="working-with-datasets-in-r.html#cb174-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb174-44"><a href="working-with-datasets-in-r.html#cb174-44" aria-hidden="true" tabindex="-1"></a>    <span class="do">## So we want to assign 0 to the final value</span></span>
+<span id="cb174-45"><a href="working-with-datasets-in-r.html#cb174-45" aria-hidden="true" tabindex="-1"></a>    data<span class="sc">$</span>any_heart_disease[row_number] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb174-46"><a href="working-with-datasets-in-r.html#cb174-46" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb174-47"><a href="working-with-datasets-in-r.html#cb174-47" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb174-48"><a href="working-with-datasets-in-r.html#cb174-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-49"><a href="working-with-datasets-in-r.html#cb174-49" aria-hidden="true" tabindex="-1"></a><span class="do">## And then the last to do is make it categorical with the factor variable</span></span>
+<span id="cb174-50"><a href="working-with-datasets-in-r.html#cb174-50" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>any_heart_disease <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>any_heart_disease, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Yes&quot;</span>))</span>
+<span id="cb174-51"><a href="working-with-datasets-in-r.html#cb174-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-52"><a href="working-with-datasets-in-r.html#cb174-52" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s run the summary function to make sure everything looks good!</span></span>
+<span id="cb174-53"><a href="working-with-datasets-in-r.html#cb174-53" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
+<pre><code>##       SEX             AGE       
+##  Male   :14806   Min.   : 7.00  
+##  Female :18888   1st Qu.:41.00  
+##  Refused:    2   Median :57.00  
+##                  Mean   :54.49  
+##                  3rd Qu.:68.00  
+##                  Max.   :99.00  
+##                                         EDUCA             SMOKE100    
+##  Never attended school or only kindergarten:   37   Yes       :14947  
+##  Grades 1 through 8                        :  893   No        :16926  
+##  Grades 9 through 11                       : 1945   Don&#39;t Know:   75  
+##  Grade 12 or GED                           : 9837   Refused   :   26  
+##  College 1 year to 3 years                 : 8741   NA&#39;s      : 1722  
+##  College 4 years or more                   :12243                     
+##  CVDINFR4    CVDCRHD4    any_heart_disease
+##  Yes: 1942   Yes: 2107   No :30707        
+##  No :31754   No :31589   Yes: 2989        
+##                                           
+##                                           
+##                                           
+## </code></pre>
+<p>Whenever you create a new variable, it is good to check to make sure everything looks good. I just ran the summary function and I noticed that 1,942 people reported infarction and 2,107 reported angina/coronary heart disease. As such, no more than 1,942 + 2,107 = 4,049 people could possible have had any heart disease, but at least 2,107 must have. Our new variable shows that 2,989 people had heart disease, which is in the range we would expect. This is a good sign that we created our variable correctly.</p>
+<p>Now we are ready to run our analyses! But, that is for another day!</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mathematical-notation-probability-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

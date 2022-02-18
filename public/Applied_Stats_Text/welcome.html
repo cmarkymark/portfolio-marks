@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Welcome to R | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Welcome to R | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Welcome to R | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="functions.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="welcome" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Welcome to R</h1>
+<div id="in-this-chapter" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> In This Chapter</h2>
+<p>In this chapter, we are going to go over some of the basics of the R programming language. R is a very powerful language for undertaking statistical and computational tasks, but it certainly can be intimidating trying to learn how to use it. And that is totally ok! There may be moments in this class where you are confused, unsure, stressed, incredibly frustrated with your teacher, or a combination of all of these - not to worry! R is a language and learning a new language can be challenging. This text was designed to expose you to the language and to provide you lots of opportunities to practice using it as well! In fact, don’t worry too much about memorizing what you see here, you can always open this chapter back up and find the information…when you run your analyses for your research, no one is going to ask you if you were able to do it all from memory.</p>
+</div>
+<div id="downloading-r-and-rstudio" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Downloading R and RStudio</h2>
+<p>Before getting started, you will need to have R and RStudio downloaded on your computer. R is a language we can use to communicate with the computer and RStudio is software that helps us use R. This text is designed to help you learn how to use R via RStudio. You will first need to download R and then download RStudio. You can find detailed instructions for downloading R and RStudio by clicking <a href="https://rstudio-education.github.io/hopr/starting.html">here</a>.</p>
+</div>
+<div id="so-waitwhat-is-r" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> So, Wait…What is R?</h2>
+<p>To put it simply, R is a language that you can use to communicate with your computer. By writing sentences in R, you can tell the computer to undertake specific tasks. So, for example, you might want the computer to add or multiply or divide two numbers together. It turns out math expressions can be written in R quite similar to how we are accustomed to. Here you can see code run in R (in this book, the code is displayed in gray boxes and the computers responses follow):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="welcome.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">121</span> <span class="sc">+</span> <span class="dv">27</span></span></code></pre></div>
+<pre><code>## [1] 148</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="welcome.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">121</span><span class="sc">*</span><span class="dv">27</span></span></code></pre></div>
+<pre><code>## [1] 3267</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="welcome.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">121</span><span class="sc">/</span><span class="dv">27</span></span></code></pre></div>
+<pre><code>## [1] 4.481481</code></pre>
+<p>It turns out computers are really good and really fast at doing math! However, it is important to know that computers cannot do everything…for example, I cannot tell a computer to “Do my homework!” or to “Clean my room!” Unfortunately, those are things you are still going to have to do yourself.</p>
+<p>So, as we are learning to code in R, really, we are actually learning how to communicate with our computer. <strong>Computers interpret you very literally, so if the computer isn’t doing what you want it means that something is wrong with what you’ve told the computer</strong></p>
+<p>So, the question is…</p>
+</div>
+<div id="what-can-we-tell-the-computer-to-do-with-r" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> What can we tell the computer to do with R?</h2>
+<div id="arithmetic" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Arithmetic</h3>
+<p>As shown above, arithmetic (addition, subtraction, multiplication, etc) is one of the primary things that R can do. We have some important operators, which you are probably already familiar with:</p>
+<ul>
+<li><span class="math inline">\(+\)</span>, for addition</li>
+<li><span class="math inline">\(-\)</span>, for subtraction</li>
+<li><span class="math inline">\(*\)</span>, for multiplication</li>
+<li><span class="math inline">\(/\)</span>, for division</li>
+<li>^, for exponents</li>
+<li><span class="math inline">\(()\)</span>, to place an expression within parentheses</li>
+</ul>
+<p>There are a couple of other arithmetic operators (such as modulo division), but it is something we can add when the time is right.</p>
+<p>R follows the PEMDAS order of operations, so it is important that we use parentheses to make sure we are telling the computer exactly what we want. PEMDAS tells us the order of operations when executing mathematical expressions, executing terms in the following order:</p>
+<ul>
+<li>P is for parentheses, we start by executing arithmetic within each set of parentheses</li>
+<li>E is for exponents</li>
+<li>M is for multiplication</li>
+<li>D is for division</li>
+<li>A is for addition</li>
+<li>S is for subtraction</li>
+</ul>
+<p>So, we could understand that <span class="math inline">\(2 + 3/5\)</span> is different from <span class="math inline">\((2 + 3)/5\)</span>. In the former, we only have division and addition. We do the division first to get <span class="math inline">\(2 + 3/5 = 2 + 0.6\)</span> and then we do the addition to get <span class="math inline">\(2 + 0.6 = 2.6\)</span>. In the latter, we must execute the term inside the parentheses first, such that <span class="math inline">\((2 + 3)/5 = 5/5\)</span>. Now the only operator remaining is division and we calculate that <span class="math inline">\(5/5 = 1\)</span>.</p>
+<p>We can see this in action in R:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="welcome.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">/</span><span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] 2.6</code></pre>
+<p>is not the same as</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="welcome.html#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span>)<span class="sc">/</span><span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Perhaps we want to know what 25 raised to the power of 2 + 3 is. We might (wrongly) try:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="welcome.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 628</code></pre>
+<p>However, we know it should be equal to 25 raised to the power of 5 (because 2 + 3 = 5), which equals:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="welcome.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">^</span><span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] 9765625</code></pre>
+<p>So, it looks like parentheses are quite important. The computer cannot guess what it thinks we meant, it just reads what we told it to do. To get it right, we can use parentheses and tell the computer:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="welcome.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">^</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 9765625</code></pre>
+</div>
+</div>
+<div id="saving-values" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Saving Values</h2>
+<p>When we run an operation, it can be very useful to save that information so that we can use it again later. With R, you can ask the computer to save information by assigning it a name. You do this by typing the name of the variable, write an arrow (&lt;-) and then the value you want to save. For example, maybe I want to record my grade on each test in my class. We had three tests and I got a 92 on the first one, a 61 on the second, and 96 on the third. I could save them like so:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="welcome.html#cb17-1" aria-hidden="true" tabindex="-1"></a>test1 <span class="ot">&lt;-</span> <span class="dv">92</span></span>
+<span id="cb17-2"><a href="welcome.html#cb17-2" aria-hidden="true" tabindex="-1"></a>test2 <span class="ot">&lt;-</span> <span class="dv">61</span></span>
+<span id="cb17-3"><a href="welcome.html#cb17-3" aria-hidden="true" tabindex="-1"></a>test3 <span class="ot">&lt;-</span> <span class="dv">96</span></span></code></pre></div>
+<p>What is very useful now is that I can type the variable names now instead of the numbers. For example, if I want to calculate my average score I could add together all three test scores and then divide by three like so:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="welcome.html#cb18-1" aria-hidden="true" tabindex="-1"></a>average_score <span class="ot">&lt;-</span> (test1 <span class="sc">+</span> test2 <span class="sc">+</span> test3)<span class="sc">/</span><span class="dv">3</span></span></code></pre></div>
+<p>I saved the average score in the variable that I decided to name “average_score.” Now if I want to view the average score, I can simply type and the computer will tell me the value stored in that variable:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="welcome.html#cb19-1" aria-hidden="true" tabindex="-1"></a>average_score</span></code></pre></div>
+<pre><code>## [1] 83</code></pre>
+</div>
+<div id="types-of-data" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Types of Data</h2>
+<p>Here, we see that computers are really good at working with numbers, and R provides a nice language for asking a computer to work with numbers. However, there are several important basic data types to know in R:</p>
+<ul>
+<li>numeric (i.e., numbers)</li>
+<li>character (i.e., text)</li>
+<li>logical (i.e., TRUE/FALSE)</li>
+<li>and, factor (more on this later)</li>
+</ul>
+<div id="numeric-data" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Numeric Data</h3>
+<p>Numeric data is any data that is stored such that computer recognizes it as a number. As we have displayed above, numeric data is created by typing out numbers. Numeric data can be integers or have decimal points, they can be negative or positive. Here I will create some numeric data to display:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="welcome.html#cb21-1" aria-hidden="true" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb21-2"><a href="welcome.html#cb21-2" aria-hidden="true" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fl">12.75</span></span>
+<span id="cb21-3"><a href="welcome.html#cb21-3" aria-hidden="true" tabindex="-1"></a>n3 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">22.1</span></span>
+<span id="cb21-4"><a href="welcome.html#cb21-4" aria-hidden="true" tabindex="-1"></a>n4 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb21-5"><a href="welcome.html#cb21-5" aria-hidden="true" tabindex="-1"></a>n5 <span class="ot">&lt;-</span> <span class="dv">92</span><span class="sc">/</span>(<span class="dv">3</span><span class="sc">^</span><span class="dv">4</span>)</span></code></pre></div>
+</div>
+<div id="character-data" class="section level3" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Character Data</h3>
+<p>Character data is essentially just text. Perhaps we want to store the name of participants in a study, this can be useful if we have to follow-up with them – we don’t want to forget their names, that would be rude! We indicate that we are providing the computer character data by surrounding it in "" quotation marks, like so:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="welcome.html#cb22-1" aria-hidden="true" tabindex="-1"></a>participant1 <span class="ot">&lt;-</span> <span class="st">&quot;Gabriella&quot;</span></span>
+<span id="cb22-2"><a href="welcome.html#cb22-2" aria-hidden="true" tabindex="-1"></a>participant2 <span class="ot">&lt;-</span> <span class="st">&quot;David&quot;</span></span>
+<span id="cb22-3"><a href="welcome.html#cb22-3" aria-hidden="true" tabindex="-1"></a>participant3 <span class="ot">&lt;-</span> <span class="st">&quot;Remi&quot;</span></span>
+<span id="cb22-4"><a href="welcome.html#cb22-4" aria-hidden="true" tabindex="-1"></a>participant4 <span class="ot">&lt;-</span> <span class="st">&quot;Surya&quot;</span></span>
+<span id="cb22-5"><a href="welcome.html#cb22-5" aria-hidden="true" tabindex="-1"></a>participant5 <span class="ot">&lt;-</span> <span class="st">&quot;Mr. Kitty&quot;</span></span></code></pre></div>
+<p>Interestingly, we can save numbers as characters, for example, I could do something like:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="welcome.html#cb23-1" aria-hidden="true" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="st">&quot;33&quot;</span></span>
+<span id="cb23-2"><a href="welcome.html#cb23-2" aria-hidden="true" tabindex="-1"></a>var2 <span class="ot">&lt;-</span> <span class="st">&quot;10&quot;</span></span></code></pre></div>
+<p>If I do this, the computer will recognize var1 and var2 as characters, <strong>not as numbers</strong>. If I tried to add them together, the computer would tell me that you can’t add together character data.</p>
+</div>
+<div id="logical-data" class="section level3" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> Logical Data</h3>
+<p>Next, we have logical data. We use logical data when something can either be True or False. As such, logical values can either be equal to TRUE (or T) and FALSE (or F). R recognizes logical data like so:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="welcome.html#cb24-1" aria-hidden="true" tabindex="-1"></a>log1 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb24-2"><a href="welcome.html#cb24-2" aria-hidden="true" tabindex="-1"></a>log2 <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb24-3"><a href="welcome.html#cb24-3" aria-hidden="true" tabindex="-1"></a>log3 <span class="ot">&lt;-</span> T</span>
+<span id="cb24-4"><a href="welcome.html#cb24-4" aria-hidden="true" tabindex="-1"></a>log4 <span class="ot">&lt;-</span> F</span></code></pre></div>
+<p>The computer recognizes TRUE and T to be the same thing and FALSE and F to be the same thing. You can use either one. Logical data is different from character data because it’s not just the word “TRUE” or the word “FALSE”…our computer actually understands the concepts of TRUE and FALSE in a very similar way that we do.</p>
+<div id="logical-operators" class="section level4" number="2.6.3.1">
+<h4><span class="header-section-number">2.6.3.1</span> Logical Operators</h4>
+<p>It is important that we learn a few important logical operators. You are probably familiar with some of these from math class:</p>
+<ul>
+<li><span class="math inline">\(&gt;\)</span>, greater than</li>
+<li><span class="math inline">\(&gt;=\)</span>, greater than or equal to</li>
+<li><span class="math inline">\(&lt;\)</span>, less than</li>
+<li><span class="math inline">\(&lt;=\)</span>, less than or equal to</li>
+<li><span class="math inline">\(==\)</span>, equal to</li>
+<li><span class="math inline">\(!=\)</span>, not equal to</li>
+<li><span class="math inline">\(|\)</span>, OR</li>
+<li><span class="math inline">\(\&amp;\)</span>, AND</li>
+</ul>
+<p>When we use these operators, we are asking the computer a question. For example, if we type “5 &gt; 3,” we are asking the computer, “Is 5 greater than 3?” and the computer can either tell us TRUE or FALSE. We can see what the computer says:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="welcome.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>If we invert it, and ask the computer if 3 is greater than 5 we see that the computer is able to tell us that this is FALSE:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="welcome.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">5</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>Some of these operators will make more sense once we are working with a bit more data. Here you can see a few examples of these operators and the computers response. You can look at these to try to get a better sense of how these operators work:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="welcome.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&lt;</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="welcome.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">&lt;</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="welcome.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">&lt;=</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="welcome.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">==</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="welcome.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">!=</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="welcome.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> <span class="sc">!=</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>The AND and OR operators are specifically intersting cases, but they are quite important, especially later when we are cleaning our datasets. AND is supplied two logicals, if they are both TRUE, then the computer will respond TRUE. OR is similar, it is supplied two logicals and if one of them is TRUE then the computer will respond TRUE. For example:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="welcome.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">TRUE</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="welcome.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="welcome.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="welcome.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">|</span> <span class="cn">TRUE</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>These might not seem useful this way. Perhaps I want to know if I passed both tests for a class. On Test 1 I got a 75 and on Test 2 I got a 61. My teacher told me I need at least a 60 on each test to pass. The following code checks if I passed:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="welcome.html#cb49-1" aria-hidden="true" tabindex="-1"></a>test1 <span class="ot">&lt;-</span> <span class="dv">75</span></span>
+<span id="cb49-2"><a href="welcome.html#cb49-2" aria-hidden="true" tabindex="-1"></a>test2 <span class="ot">&lt;-</span> <span class="dv">61</span></span>
+<span id="cb49-3"><a href="welcome.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="welcome.html#cb49-4" aria-hidden="true" tabindex="-1"></a>(test1 <span class="sc">&gt;=</span> <span class="dv">60</span>) <span class="sc">&amp;</span> (test2 <span class="sc">&gt;=</span> <span class="dv">60</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Here we can see that we strung together several logical operators. Within the parentheses I ask the computer to check if the score of test 1 was greater than or equal to 60 and if the score of test 2 was greater than or equal to 60. With the <span class="math inline">\(\&amp;\)</span> I then asked the computer to check if both were true (i.e., if it was true that I passed both tests). Turns out I did, which is quite a relief!!</p>
+</div>
+</div>
+</div>
+<div id="a-quick-check-in" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> A Quick Check-In</h2>
+<p>This might have been a lot of information already! If your brain is feeling a bit frazzled, don’t worry, that is pretty understandable. So far, we’ve gone over some of the things we can tell the computer to do using R…but we are learning how to use R so we can do statistics and usually we don’t just save a couple of numbers and add them together. Usually our advisor or PI or whoever gives us a dataset and then asks us to run some t-tests or regressions or something far scarier. So the next thing we need to learn is how to store larger quantities of data in R – hint, this is what makes R super cool!!!</p>
+</div>
+<div id="storing-larger-quantities-of-data" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Storing Larger Quantities of Data</h2>
+<p>Most of us are really used to working with Excel spreadsheets. A lot of times, when we get a dataset from a study, it is in a spreadsheet format. Spreadsheets have rows and columns…usually, each row represents a participant in our study and each column represents a piece of information about that participant. In R, we have two types of objects that mimic a spreadsheet.</p>
+<div id="vectors" class="section level3" number="2.8.1">
+<h3><span class="header-section-number">2.8.1</span> Vectors</h3>
+<p>The first is called a vector. It is equivalent to either a single row or a single column in a spreadsheet. For example, we can make a vector that represents a row. Maybe I did a study where I asked participants for their name, their age, if they drink alcohol (TRUE/FALSE), and how many drinks they have each week. I could create a vector which represents this person in R. I use the “c()” syntax to create a vector like so:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="welcome.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;Charlie&quot;</span>,<span class="dv">29</span>,<span class="cn">TRUE</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Charlie&quot; &quot;29&quot;      &quot;TRUE&quot;    &quot;4&quot;</code></pre>
+<p>Just like with our other data types, we can save a vector like so:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="welcome.html#cb53-1" aria-hidden="true" tabindex="-1"></a>vector_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Charlie&quot;</span>,<span class="dv">29</span>,<span class="cn">TRUE</span>,<span class="dv">4</span>)</span></code></pre></div>
+<p>As you can see, this vector has four pieces of data in it. You’ll notice that it contains different types of data: the first is a character, the second and fourth are numeric, and the third is logical. Now, you can access different elements in the vector by using bracket notation. For example, if I want to pull out the first element I can write:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="welcome.html#cb54-1" aria-hidden="true" tabindex="-1"></a>vector_1[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;Charlie&quot;</code></pre>
+<p>Similarly I could do the same with the other elements by writing:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="welcome.html#cb56-1" aria-hidden="true" tabindex="-1"></a>vector_1[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;29&quot;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="welcome.html#cb58-1" aria-hidden="true" tabindex="-1"></a>vector_1[<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot;</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="welcome.html#cb60-1" aria-hidden="true" tabindex="-1"></a>vector_1[<span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;4&quot;</code></pre>
+<p>Now this next example might seem a bit silly, but I could even put a numeric value into a variable and use that to pull out an element, for example:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="welcome.html#cb62-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb62-2"><a href="welcome.html#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="welcome.html#cb62-3" aria-hidden="true" tabindex="-1"></a>vector_1[num]</span></code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot;</code></pre>
+<p>As you can see, because the variable “num” was assigned the value three, when I ran “vector_1[num]” it pulled out the third element of the vector.</p>
+<p>We can also use vectors as if it is a column of a spreadsheet. For example, let’s say I am a teacher and my 5 students had three exams. I stored their grades in a vector for each test, like so:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="welcome.html#cb64-1" aria-hidden="true" tabindex="-1"></a>test_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99</span>, <span class="dv">82</span>, <span class="dv">33</span>, <span class="dv">100</span>, <span class="dv">68</span>)</span>
+<span id="cb64-2"><a href="welcome.html#cb64-2" aria-hidden="true" tabindex="-1"></a>test_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">54</span>, <span class="dv">65</span>, <span class="dv">78</span>, <span class="dv">99</span>)</span>
+<span id="cb64-3"><a href="welcome.html#cb64-3" aria-hidden="true" tabindex="-1"></a>test_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">89</span>, <span class="dv">91</span>, <span class="dv">90</span>, <span class="dv">87</span>)</span></code></pre></div>
+<p>If we think of these as columns, we can see that student 1 got a 99 on the first test, a 44 on the second test, and an 82 on the third test. Then student 2 got an 82 on the first, a 54 on the second, and an 89 on the third.</p>
+<p>So, earlier, we calculated the average grade for three tests for one student. But now we have five students. We could do each student by hand, but imagine a teacher with 100 students! It would take a lot of time to calculate the average score of each test by hand. Well, this is something that R is really good at. You can actually do math on vectors. For example, I can use R to tell the computer to calculate the average for each student by doing the following:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="welcome.html#cb65-1" aria-hidden="true" tabindex="-1"></a>average_scores <span class="ot">&lt;-</span> (test_1 <span class="sc">+</span> test_2 <span class="sc">+</span> test_3)<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb65-2"><a href="welcome.html#cb65-2" aria-hidden="true" tabindex="-1"></a>average_scores</span></code></pre></div>
+<pre><code>## [1] 75.00000 75.00000 63.00000 89.33333 84.66667</code></pre>
+<p>So, why did that work??? When you tell the computer to add together two vectors, it adds together the first element of each vector to make a new first element. Then it adds together the second element of each vector to make a new second element. Let’s look at a couple examples to understand this better:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="welcome.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 2 4 6</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="welcome.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 1 4 9</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="welcome.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 0 0 0</code></pre>
+<p>This is incredibly useful when we are building a dataset. Perhaps we have an index where there are 10 questions and the final score is the sum of all the answers. You can just add together the vectors representing each question and get the final score!! Don’t worry, there will be examples of that later on!</p>
+<p>Also notice how in that example we divided the vector by 3 to get the average score. You can also do vector arithmetic with a single number. That number is just applied to every element in the vector. For example:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="welcome.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<pre><code>## [1] 2 3 4</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="welcome.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 2 4 6</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="welcome.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">/</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 0.3333333 0.6666667 1.0000000</code></pre>
+<p>At this point, it is totally understandable if your brain is just like “ENOUGH!” Like I said earlier, don’t worry about memorizing this. There are practice exercises you can do for homework where you can play with this and get more familiar. Coding is kind of like riding a bicycle - a lot of times it only makes sense after you do it for yourself and practice until it feels natural!</p>
+</div>
+<div id="data-frames" class="section level3" number="2.8.2">
+<h3><span class="header-section-number">2.8.2</span> Data Frames</h3>
+<p>The second object is called the data frame. This is the most important object that you will use as a statistician. It is pretty much just an Excel spreadsheet. Just like a spreadsheet it has columns and rows. Each column has a name that tells what is in that column. For example, you can have a data frame where the first column contains participants age (you might call this column “Age”), the second column their gender, the third… and so on and so on. Just like with a spreadsheet, each row represents an obseervation of our data.</p>
+<p>Often times, we will just load a data frame object from a file, like a .csv or an Excel worksheet (or even from a SAS, SPSS, or Stata file). There are ways to create your own data frame too. Here we are going to create our own data frame, but, for the most part you will just be loading a file with your data already in it (you will get to do this a lot in future chapters).</p>
+<div id="create-a-data-frame" class="section level4" number="2.8.2.1">
+<h4><span class="header-section-number">2.8.2.1</span> Create a Data Frame</h4>
+<p>Here I am going to create a data frame representing a class of 5 students who each took 3 tests. Each test was scored out of 100. So first, I am going to create a vector for each column in our data frame.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="welcome.html#cb79-1" aria-hidden="true" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Amy&quot;</span>,<span class="st">&quot;Bart&quot;</span>,<span class="st">&quot;Cathy&quot;</span>,<span class="st">&quot;Delilah&quot;</span>,<span class="st">&quot;Edwina&quot;</span>)</span>
+<span id="cb79-2"><a href="welcome.html#cb79-2" aria-hidden="true" tabindex="-1"></a>test1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>,<span class="dv">77</span>,<span class="dv">100</span>,<span class="dv">78</span>,<span class="dv">58</span>)</span>
+<span id="cb79-3"><a href="welcome.html#cb79-3" aria-hidden="true" tabindex="-1"></a>test2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">100</span>,<span class="dv">98</span>,<span class="dv">64</span>,<span class="dv">61</span>)</span>
+<span id="cb79-4"><a href="welcome.html#cb79-4" aria-hidden="true" tabindex="-1"></a>test3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">91</span>,<span class="dv">99</span>,<span class="dv">81</span>,<span class="dv">59</span>)</span></code></pre></div>
+<p>Next, we are going to create our data frame by using the “data.frame()” syntax. This is similar to the “c()” syntax for creating a vector. Technically, these are called <strong>functions</strong>, which we will cover in more detail in the following chapter. We create the data frame like so:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="welcome.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(students, test1, test2, test3)</span></code></pre></div>
+<pre><code>##   students test1 test2 test3
+## 1      Amy    82    99    80
+## 2     Bart    77   100    91
+## 3    Cathy   100    98    99
+## 4  Delilah    78    64    81
+## 5   Edwina    58    61    59</code></pre>
+<p>As you can see, this looks really similar to a spreadsheet in Excel! We can see that each row represents an observation (in this case, a student), and each column represents a piece of information about each participant (their name, test scores). Let’s play around with this data frame to see how data frames work. First, we are going to save the data frame like so:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="welcome.html#cb82-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(students, test1, test2, test3)</span></code></pre></div>
+</div>
+<div id="working-with-a-data-frame" class="section level4" number="2.8.2.2">
+<h4><span class="header-section-number">2.8.2.2</span> Working With a Data Frame</h4>
+<p>So, now that we have saved the data frame, we first need to learn how to access information in the data frame. One way to do this is very similar to how we can access information in a vector. In a vector, we can access the 5th element of the vector by typing “vector_name[5].” We use the brackets and the 5 to tell the computer to get the 5th element out of the vector. However, data frames have two-dimensions, rows and columns. So we can use the bracket syntax to access elements of a data frame, but we have to supply two pieces of information: the row number and the column number. If we want to access the element in the 1st row and 2nd column (82) then we would type the following:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="welcome.html#cb83-1" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">1</span>,<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 82</code></pre>
+<p>Similarly, we can access an entire row (let’s say we want the third row), by only supplying the row number. To do this, we would type the following:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="welcome.html#cb85-1" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">3</span>,]</span></code></pre></div>
+<pre><code>##   students test1 test2 test3
+## 3    Cathy   100    98    99</code></pre>
+<p>Now notice that we still included the comma. If you leave out the comma and just type “df[3],” the computer will throw an error because it won’t understand what you are asking for. Similarly, you can access a column (let’s say the 4th column) by typing:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="welcome.html#cb87-1" aria-hidden="true" tabindex="-1"></a>df[,<span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## [1] 80 91 99 81 59</code></pre>
+<p>You can also access mutliple columns or multiple rows by providing a vector with the row/column numbers you want. Let’s say you want the three columns representing the test scores (2 - 4). Well you can tell the computer the following:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="welcome.html#cb89-1" aria-hidden="true" tabindex="-1"></a>df[,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)]</span></code></pre></div>
+<pre><code>##   test1 test2 test3
+## 1    82    99    80
+## 2    77   100    91
+## 3   100    98    99
+## 4    78    64    81
+## 5    58    61    59</code></pre>
+<p>As you can see, typing it in this way, the computer returns the 2nd, 3rd, and 4th columns back to you. This may come in handy later on when we are cleaning up our data sets – I have worked with some datasets that have thousands of columns and sometimes we only need like 15. It can be nice to subset our data frame to only have those columns. If say we wanted to de-identify our class roster and just have test scores, we could do the following:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="welcome.html#cb91-1" aria-hidden="true" tabindex="-1"></a>deidentified_df <span class="ot">&lt;-</span> df[,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)]</span></code></pre></div>
+<p>By doing this, we now have a data frame without student names. Sometimes our datasets have sensitive information and it can be good to know how to remove it.</p>
+<p>There is another useful way to do this as well. You can also tell the computer to remove rows or columns. In the previous example, we told the computer to give us our data frame “df,” but only with the 2nd, 3rd, and 4th columns. We could also do this via subtraction by telling the computer to give us “df” with the 1st column removed, like so:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="welcome.html#cb92-1" aria-hidden="true" tabindex="-1"></a>df[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span></code></pre></div>
+<pre><code>##   test1 test2 test3
+## 1    82    99    80
+## 2    77   100    91
+## 3   100    98    99
+## 4    78    64    81
+## 5    58    61    59</code></pre>
+<p>In this case, “df[,-c(1)]” and “df[,c(2,3,4)]” actually do the same exact thing. Something really important to know is that, often times, there are many many many different ways to tell the computer to do the same thing. What is important is that you do one of the right ways – if someone else does something different than you, that doesn’t mean one of you is right and one of you is wrong. The important thing is that the computer does what you want it to do.</p>
+</div>
+<div id="using-the-operator" class="section level4" number="2.8.2.3">
+<h4><span class="header-section-number">2.8.2.3</span> Using the $ Operator</h4>
+<p>Ok, so this whole “[row,column]” syntax seems a bit much, right? Like why do the columns all have names if we are just going to be typing in the numbers inside the brackets???</p>
+<p>Well, good news! R makes it really easy to communicate with the computer about which columns you want to work with. For example, as we can see, in our data frame “df” we have four columns whose names are “students,” “test1,” “test2,” and “test3.” We can access these columns by using the $ operator. We simply type “df$” followed by the name of our variable. What is really cool, since we are using RStudio, is that RStudio will usually show you a dropdown with all your variable names! As you type more letters, the dropdown will narrow. So, for example, we can access each column in our data frame as follows:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="welcome.html#cb94-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>students</span></code></pre></div>
+<pre><code>## [1] Amy     Bart    Cathy   Delilah Edwina 
+## Levels: Amy Bart Cathy Delilah Edwina</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="welcome.html#cb96-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>test1</span></code></pre></div>
+<pre><code>## [1]  82  77 100  78  58</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="welcome.html#cb98-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>test2</span></code></pre></div>
+<pre><code>## [1]  99 100  98  64  61</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="welcome.html#cb100-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>test3</span></code></pre></div>
+<pre><code>## [1] 80 91 99 81 59</code></pre>
+<p>What is really cool is that each column can be treated just like a vector! So, since I am a teacher, I need to calculate the average score for each student in the class. We have done this a few times already! So, just like in our vectors example, we can get the average for each student as follows:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="welcome.html#cb102-1" aria-hidden="true" tabindex="-1"></a>(df<span class="sc">$</span>test1 <span class="sc">+</span> df<span class="sc">$</span>test2 <span class="sc">+</span> df<span class="sc">$</span>test3)<span class="sc">/</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 87.00000 89.33333 99.00000 74.33333 59.33333</code></pre>
+<p>But here is where working with R to talk to your computer is pretty cool. Instead of just calculating the average scores, I can actually add them to my data frame by creating a new column! All I have to do is:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="welcome.html#cb104-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_grade <span class="ot">&lt;-</span> (df<span class="sc">$</span>test1 <span class="sc">+</span> df<span class="sc">$</span>test2 <span class="sc">+</span> df<span class="sc">$</span>test3)<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb104-2"><a href="welcome.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="welcome.html#cb104-3" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   students test1 test2 test3 final_grade
+## 1      Amy    82    99    80    87.00000
+## 2     Bart    77   100    91    89.33333
+## 3    Cathy   100    98    99    99.00000
+## 4  Delilah    78    64    81    74.33333
+## 5   Edwina    58    61    59    59.33333</code></pre>
+<p>Here, we have created a new column called “final_grade” and we have assigned the average score of the three tests as its value! That’s pretty darn useful!</p>
+</div>
+<div id="creating-categorical-data-aka-factors" class="section level4" number="2.8.2.4">
+<h4><span class="header-section-number">2.8.2.4</span> Creating Categorical Data (AKA Factors)</h4>
+<p>However, as a teacher, I need to assign every student with a letter grade (A,B,C,D,F). I could do this by hand, but again, we want a really easy way to do this – imagine if our dataset had 1,000 students in it!!! It would be awful to do that by hand.</p>
+<p>In R, we refer to categorical data as “factors.” And we use the “factor()” syntax in order do this. These next few snippets of code might be confusing, don’t worry at all! The best way to get familiar is to see it and then apply it!</p>
+<p>In fact, let’s go over a little trick that can help with reading and writing code in R. We can actually write <strong>comments</strong> into our code. Comments are just plain text that the computer does not try to read – it’s just there to help you understand what is happening in the code. That is because sometimes code isn’t easy to translate back into English.</p>
+<p>In order to write a comment, we simply write a “#” and then whatever comes after it on the same line is a comment. We can do that like so:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="welcome.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This is a comment.</span></span>
+<span id="cb106-2"><a href="welcome.html#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-3"><a href="welcome.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="co"># So is this</span></span>
+<span id="cb106-4"><a href="welcome.html#cb106-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-5"><a href="welcome.html#cb106-5" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb106-6"><a href="welcome.html#cb106-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is a fancy comment #</span></span>
+<span id="cb106-7"><a href="welcome.html#cb106-7" aria-hidden="true" tabindex="-1"></a><span class="do">###########################</span></span>
+<span id="cb106-8"><a href="welcome.html#cb106-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-9"><a href="welcome.html#cb106-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Don&#39;t worry about the different colors</span></span>
+<span id="cb106-10"><a href="welcome.html#cb106-10" aria-hidden="true" tabindex="-1"></a><span class="do">## R sometimes will try to color code things</span></span>
+<span id="cb106-11"><a href="welcome.html#cb106-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Sometimes it helps a lot</span></span>
+<span id="cb106-12"><a href="welcome.html#cb106-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Sometimes it does not /\(o0)/\</span></span></code></pre></div>
+<p>Previously, we made a new column called “final_grade.” It is good practice to use comments to tell whoever is reading the code why you wrote that line of code. For example, we can update the code to read:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="welcome.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a new variable called final_grade</span></span>
+<span id="cb107-2"><a href="welcome.html#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="do">## It is the average score of each of the three tests</span></span>
+<span id="cb107-3"><a href="welcome.html#cb107-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_grade <span class="ot">&lt;-</span> (df<span class="sc">$</span>test1 <span class="sc">+</span> df<span class="sc">$</span>test2 <span class="sc">+</span> df<span class="sc">$</span>test3)<span class="sc">/</span><span class="dv">3</span></span></code></pre></div>
+<p>Ok ok! Now that we learned how to do that, let’s get back to our goal of making a new column with the letter grade for each student. There are multiple steps - don’t worry about memorizing them, you can always just come back to this code if you cannot remember.</p>
+<p>The first step is that we are going to create a new column. We just want to assign it a name (“final_letter_grade”) but we do not want to put any data in it yet. In R, when an object does not have data assigned to it, the value is called “NA.” “NA” pretty much means “there is nothing here.” So, we can create the new column like so:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="welcome.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create new variable called final_letter_grade</span></span>
+<span id="cb108-2"><a href="welcome.html#cb108-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb108-3"><a href="welcome.html#cb108-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-4"><a href="welcome.html#cb108-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Print out the df object so we can view our new variable</span></span>
+<span id="cb108-5"><a href="welcome.html#cb108-5" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   students test1 test2 test3 final_grade final_letter_grade
+## 1      Amy    82    99    80    87.00000                 NA
+## 2     Bart    77   100    91    89.33333                 NA
+## 3    Cathy   100    98    99    99.00000                 NA
+## 4  Delilah    78    64    81    74.33333                 NA
+## 5   Edwina    58    61    59    59.33333                 NA</code></pre>
+<p>So, as we can see, we have created a new column and it is empty. R uses “NA” to display that the entries are empty.</p>
+<p>Next, we are going to introduce some new syntax. We will use the comments to help understand what it is saying. It is totally okay if it is confusing at first. Essentially, we want to tell the computer that if the final grade is greater than or equal to 90, that the final grade should be an “A.” However, we also want to maintain that the grades are ordered (i.e., an “A” is higher than a “B” is higher than a “C” is…). This is why factors are useful.</p>
+<p>We are first going to start by assigning “final_letter_grade” a number. In fact, the way I am going to do it, to maintain order, is to assign F to the number 0, D = 1, C = 2, B = 3, A = 4. This will help us tell the computer that not only do the grades have character names (“A,”“B,”…), but that these letters have a numerical relationship with each other.</p>
+<p>So, let us just start with the people who got 90 or higher. We want to assign any student with a final_grade greater than or equal to 90 and final_letter_grade numerical value of 4 (because that’s the value we are going to match with A later on). We can do this like so:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="welcome.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Here we assign all students with a final grade &gt;= 90</span></span>
+<span id="cb110-2"><a href="welcome.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="do">## With a final_letter_grade of 4 (which corresponds with an A)</span></span>
+<span id="cb110-3"><a href="welcome.html#cb110-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade[df<span class="sc">$</span>final_grade <span class="sc">&gt;=</span> <span class="dv">90</span>] <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb110-4"><a href="welcome.html#cb110-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-5"><a href="welcome.html#cb110-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Print the df to see the result</span></span>
+<span id="cb110-6"><a href="welcome.html#cb110-6" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   students test1 test2 test3 final_grade final_letter_grade
+## 1      Amy    82    99    80    87.00000                 NA
+## 2     Bart    77   100    91    89.33333                 NA
+## 3    Cathy   100    98    99    99.00000                  4
+## 4  Delilah    78    64    81    74.33333                 NA
+## 5   Edwina    58    61    59    59.33333                 NA</code></pre>
+<p>Ok ok ok…what is that all about? We can see from the table that that line of code only affected Cathy. We see that she was the only student whose final_grade was greater than or equal to 90. As such, we correctly assigned her a final_letter_grade of 4!</p>
+<p>So, how exactly did that weird line of code make that happen? The above line of code has three parts. The first is “df$final_letter_grade.” Here we are telling the computer that we want to assign a value to the final_letter_grade variable. The second part is “[df$final_grade &gt;= 90].” Here we are telling the computer that we only want to change final_letter_grade for the students whose final_grade was 90% or higher. The final part is “&lt;- 4” which is just telling the computer that for the students who had a final grade greater than or equal to 90, assign their final_letter_grade value to be 4.</p>
+<p>As we can see, since Cathy was the only student with a final_grade in the 90s, she was the only student assigned the value 4.</p>
+<p>We can then repeat this for each grade value.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="welcome.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Here we assign all students with a final grade in the 80s</span></span>
+<span id="cb112-2"><a href="welcome.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="do">## With a final_letter_grade of 3 (which corresponds with a B)</span></span>
+<span id="cb112-3"><a href="welcome.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="do">## We use the &amp; operator to provide two restrictions</span></span>
+<span id="cb112-4"><a href="welcome.html#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="do">## The lower bound that the grade must be greater than or equal to 80</span></span>
+<span id="cb112-5"><a href="welcome.html#cb112-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Adn the upper bound that the grade must be less than 90</span></span>
+<span id="cb112-6"><a href="welcome.html#cb112-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade[df<span class="sc">$</span>final_grade <span class="sc">&gt;=</span> <span class="dv">80</span> <span class="sc">&amp;</span> df<span class="sc">$</span>final_grade <span class="sc">&lt;</span> <span class="dv">90</span>] <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb112-7"><a href="welcome.html#cb112-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-8"><a href="welcome.html#cb112-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Here we assign all students with a final grade in the 70s</span></span>
+<span id="cb112-9"><a href="welcome.html#cb112-9" aria-hidden="true" tabindex="-1"></a><span class="do">## With a final_letter_grade of 2 (which corresponds with a C)</span></span>
+<span id="cb112-10"><a href="welcome.html#cb112-10" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade[df<span class="sc">$</span>final_grade <span class="sc">&gt;=</span> <span class="dv">70</span> <span class="sc">&amp;</span> df<span class="sc">$</span>final_grade <span class="sc">&lt;</span> <span class="dv">80</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb112-11"><a href="welcome.html#cb112-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-12"><a href="welcome.html#cb112-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Here we assign all students with a final grade in the 60s</span></span>
+<span id="cb112-13"><a href="welcome.html#cb112-13" aria-hidden="true" tabindex="-1"></a><span class="do">## With a final_letter_grade of 1 (which corresponds with a D)</span></span>
+<span id="cb112-14"><a href="welcome.html#cb112-14" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade[df<span class="sc">$</span>final_grade <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span> df<span class="sc">$</span>final_grade <span class="sc">&lt;</span> <span class="dv">70</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb112-15"><a href="welcome.html#cb112-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-16"><a href="welcome.html#cb112-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Here we assign all students with a final grade &lt; 60</span></span>
+<span id="cb112-17"><a href="welcome.html#cb112-17" aria-hidden="true" tabindex="-1"></a><span class="do">## With a final_letter_grade of 0 (which corresponds with an F)</span></span>
+<span id="cb112-18"><a href="welcome.html#cb112-18" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade[df<span class="sc">$</span>final_grade <span class="sc">&lt;</span> <span class="dv">60</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb112-19"><a href="welcome.html#cb112-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-20"><a href="welcome.html#cb112-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Then lets print out the data frame to see if it worked</span></span>
+<span id="cb112-21"><a href="welcome.html#cb112-21" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   students test1 test2 test3 final_grade final_letter_grade
+## 1      Amy    82    99    80    87.00000                  3
+## 2     Bart    77   100    91    89.33333                  3
+## 3    Cathy   100    98    99    99.00000                  4
+## 4  Delilah    78    64    81    74.33333                  2
+## 5   Edwina    58    61    59    59.33333                  0</code></pre>
+<p>As you can see we were able to correctly assign the right numerical value to each student! We used our <span class="math inline">\(\&amp;\)</span> logical operator to tell the computer we wanted to capture grades within two values. For example, we could tell the computer to find final_grades corresponding to a “B” by looking for final_grades greater than or equal to 80 AND less than 90. If we just said greater than 80 without including less than 90, we would have accidentally changed Cathy’s grade.</p>
+<p>Now there is one final step! We want to assign the numerical values (0,1,2,3,4) to the correct letter grades such that (F = 0, D = 1, C = 2, B = 3, D = 4).</p>
+<p>To do this we are going to use the <strong>factor()</strong> function. As we will discuss in more detail in the following chapter, a function takes <strong>arguments</strong>. An argument is just a piece of data that the function uses to complete its given task. Arguments are separated by commons and sometimes they have names that we have to type. In this case, the factor function receives 3 arguments: 1) a vector of data (in this case, the column of our data frame); 2) the numeric levels of the data (i.e., 0,1,2,3,4); and 3) the labels for each level (i.e., F, D, C, B, A). With this information, the factor function will tell the computer to convert our final_letter_grade column into an ordered, categorical variable. We do this like so:</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="welcome.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will convert the final_letter_grade variable into a categorical variable</span></span>
+<span id="cb114-2"><a href="welcome.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="do">## By applying the factor function to it</span></span>
+<span id="cb114-3"><a href="welcome.html#cb114-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>final_letter_grade <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>final_letter_grade, </span>
+<span id="cb114-4"><a href="welcome.html#cb114-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="do">## Here we include a vector with the numerical values</span></span>
+<span id="cb114-5"><a href="welcome.html#cb114-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;D&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>)) <span class="do">## Here we include a vector with the names of each level</span></span>
+<span id="cb114-6"><a href="welcome.html#cb114-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-7"><a href="welcome.html#cb114-7" aria-hidden="true" tabindex="-1"></a><span class="do">## We can then print the data frame to confirm the code worked</span></span>
+<span id="cb114-8"><a href="welcome.html#cb114-8" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   students test1 test2 test3 final_grade final_letter_grade
+## 1      Amy    82    99    80    87.00000                  B
+## 2     Bart    77   100    91    89.33333                  B
+## 3    Cathy   100    98    99    99.00000                  A
+## 4  Delilah    78    64    81    74.33333                  C
+## 5   Edwina    58    61    59    59.33333                  F</code></pre>
+<p>Tada! We have just made an ordered categorical variable! That is super cool! Don’t worry if you didn’t quite follow or if your head hurts - we are going to get lots of practice throughout this class working with categorical data!</p>
+</div>
+<div id="creating-a-logical-variable" class="section level4" number="2.8.2.5">
+<h4><span class="header-section-number">2.8.2.5</span> Creating a Logical Variable</h4>
+<p>So, we are just about done with this introduction. I want to show you a couple additional things we can now do with our factor. We might want to create a simple logical (TRUE/FALSE) variable indicating whether students passed or failed the class. We are going to call this variable “passed,” where a TRUE value means they passed and FALSE value means they did not. We can do this like so:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="welcome.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we create the variable</span></span>
+<span id="cb116-2"><a href="welcome.html#cb116-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>passed <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb116-3"><a href="welcome.html#cb116-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-4"><a href="welcome.html#cb116-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we assign anyone with an &quot;F&quot; grade a passed value of FALSE</span></span>
+<span id="cb116-5"><a href="welcome.html#cb116-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Be careful, you need the quotation marks around the F, otherwise the computer will think you mean FALSE</span></span>
+<span id="cb116-6"><a href="welcome.html#cb116-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>passed[df<span class="sc">$</span>final_letter_grade <span class="sc">==</span> <span class="st">&quot;F&quot;</span>] <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb116-7"><a href="welcome.html#cb116-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-8"><a href="welcome.html#cb116-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally we assign anyone who did not get an &quot;F&quot; grade a passed value of TRUE</span></span>
+<span id="cb116-9"><a href="welcome.html#cb116-9" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>passed[df<span class="sc">$</span>final_letter_grade <span class="sc">!=</span> <span class="st">&quot;F&quot;</span>] <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb116-10"><a href="welcome.html#cb116-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-11"><a href="welcome.html#cb116-11" aria-hidden="true" tabindex="-1"></a><span class="do">## We can look at our data frame to confirm that we got it correct</span></span>
+<span id="cb116-12"><a href="welcome.html#cb116-12" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   students test1 test2 test3 final_grade final_letter_grade passed
+## 1      Amy    82    99    80    87.00000                  B   TRUE
+## 2     Bart    77   100    91    89.33333                  B   TRUE
+## 3    Cathy   100    98    99    99.00000                  A   TRUE
+## 4  Delilah    78    64    81    74.33333                  C   TRUE
+## 5   Edwina    58    61    59    59.33333                  F  FALSE</code></pre>
+<p>As you can see, we now have a single variable which indicates if students passed or did not pass the class. We could certainly just use the “final_letter_grade” variable to figure out who passed and who didn’t, but sometimes it is useful to take a categorical variable with many values and condense it down to a dichotomous variable. This may come up later when we learn to implement something like logistic regression!</p>
+</div>
+<div id="using-the-summary-function" class="section level4" number="2.8.2.6">
+<h4><span class="header-section-number">2.8.2.6</span> Using the “summary()” function</h4>
+<p>Before we wrap up, I just want to show you the <strong>summary()</strong> function. In R, you can pretty much put anything in the summary() function and the computer will tell you some information about that object. Sometimes this information is useful, sometimes it is not. For example, we can run summary() on our data frame like so:</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="welcome.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)</span></code></pre></div>
+<pre><code>##     students     test1         test2           test3     final_grade   
+##  Amy    :1   Min.   : 58   Min.   : 61.0   Min.   :59   Min.   :59.33  
+##  Bart   :1   1st Qu.: 77   1st Qu.: 64.0   1st Qu.:80   1st Qu.:74.33  
+##  Cathy  :1   Median : 78   Median : 98.0   Median :81   Median :87.00  
+##  Delilah:1   Mean   : 79   Mean   : 84.4   Mean   :82   Mean   :81.80  
+##  Edwina :1   3rd Qu.: 82   3rd Qu.: 99.0   3rd Qu.:91   3rd Qu.:89.33  
+##              Max.   :100   Max.   :100.0   Max.   :99   Max.   :99.00  
+##  final_letter_grade   passed       
+##  F:1                Mode :logical  
+##  D:0                FALSE:1        
+##  C:1                TRUE :4        
+##  B:2                               
+##  A:1                               
+## </code></pre>
+<p>As we can see, this gives us some useful information about each column in the data frame. We can see that the average (mean) score of the first test was 79, we can see that 2 students got a B in the class, and we can see that 4 students passed.</p>
+<p>Sometimes when data frames have a lot of columns, it is really messy to just run the summary function on the whole data frame. let’s say you just want to see the final letter grades for the class. You can use the summary function just on this column by telling the computer:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="welcome.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df<span class="sc">$</span>final_letter_grade)</span></code></pre></div>
+<pre><code>## F D C B A 
+## 1 0 1 2 1</code></pre>
+<p>As you can see, this tells us that 1 student got an F, 1 got a C, 2 got Bs, and 1 got an A. This can be particularly useful when you have a lot of observations and you want to summarize your data. For example, you might do a study and want to share the descriptive statistics about your sample. Maybe you want to know how many people in your study identified as “Male,” how many identified as “Female,” and how many identified as “Gender Non-Conforming.” The summary function can provide an easy way to access this information!</p>
+</div>
+</div>
+</div>
+<div id="nice-job-everyone" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Nice Job Everyone</h2>
+<p>Ok!!! That was quite literally so much information. Great job! :)</p>
+<p>If you are feeling overwhelmed or confused, do not worry at all. Part of learning to code is practicing. And that is why this book is also intended to give you lots of opportunities to practice!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

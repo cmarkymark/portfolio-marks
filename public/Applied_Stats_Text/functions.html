@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Functions and Libraries | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Functions and Libraries | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Functions and Libraries | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="welcome.html"/>
+<link rel="next" href="working-with-datasets-in-r.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Functions and Libraries</h1>
+<p>In the first chapter, we got our first introduction to R. We learned how we can use R to communicate with our computer and ask it to do things that we would rather not do ourselves. Some these instructions are pretty intuitive to us - for example, telling the computer to add a few numbers together is pretty straightforward. However, sometimes we want the computer to do some pretty complicated tasks that require many steps. Many statistical techniques are quite involved and require many computational steps for the computer to undertake - and, yes, someone has to write out these computational steps (HINT: don’t worry, that someone is usually not you!). Even just making a summary table of all your variables of interest can involve many steps. If a variable is continuous you need to take the mean and standard deviation, if it is categorical you need to calculate frequencies and proportions. And maybe, while we are at it, we want to stratify our descriptive statistics based on exposure group (control versus exposed), so we also would like to run the appropriate statistical tests (t-tests, ANOVA, chi-squared) and report the p-values.</p>
+<p>The task I have just described is quite important in public health research. When we write a paper, it is very important that the reader knows who our study sample is as well as key differences between groups of interest within our sample. This information is so important, in fact, that it is typically the first table (TABLE ONE!) of human subjects research papers. Even though descriptive statistics and t-tests aren’t the most complicated thing to do (if you so desired, you could run them by hand), the computer requires many many instructions to complete this task. For each variable you want descriptives for, the computer has to identify the type of variable (continuous, categorical, etc), then has to calculate means &amp; standard deviations or frequencies &amp; proportions, and, then, if applicable, run appropriate statistical tests. Then after the computer does all of this, it needs to format the information in a way that we can easily read and work with it.</p>
+<p>If you’re thinking to yourself, “that sounds like it takes a lot of code to do!!!” I would tell you that “you are quite correct!” The good news is that R has a feature that makes communicating complicated tasks to the computer quite simple and that many people have dedicated a lot of time to writing the code to do these complicated tasks for you already! The important thing though is to learn how this works and how to use them effectively for yourself!</p>
+<p>In this chapter we will talk about <strong>functions</strong>, <strong>packages</strong>, and your <strong>library</strong>. A function is simply a collection of lines of code that are stored so that, instead of needing to rewrite all of the code every time you want to use it, you can just “call” the function with a single line of code and the computer will actually run all of the lines of code! A library is a collection of functions…in a way its a cookbook that you can load into R and then use the functions to complete given tasks. Don’t worry if this is confusing, it will make sense soon!</p>
+<div id="okay-waitwhats-a-function" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Okay, wait…What’s a function?</h2>
+<p>You’ve already seen a few functions from the first chapter. Whether it was running <span class="math inline">\(c(1,2,3)\)</span> or <span class="math inline">\(summary(vector)\)</span> or <span class="math inline">\(data.frame(vector1,vector2,vector3)\)</span>, each of these were functions. You can usually recognize functions in R because they have two main parts: the first is a name (such as “c” or “summary”) and the second part is a set of parentheses containing arguments. The name is actually associated with some code that isn’t visible to you (unless you do some digging). When you run <span class="math inline">\(summary(vector)\)</span>, the computer doesn’t just read “summary” and think to itself, “well, I think my user wants the mean and median of the numbers in this vector.” In fact, there are many lines of code associated with the “summary” function that the computer runs in the background.</p>
+<div id="a-real-world-example-of-a-function-buying-a-cake" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> A Real World Example of a Function: Buying a Cake</h3>
+<p>To display what a function is, let’s look at a real world example. It is my partner’s birthday in a few days and I am not a very good baker. I go to this bakery that I hear has the very best cakes. In this analogy, I am the coder and the bakery is the computer. So I walk into the bakery and I say to the baker:</p>
+<blockquote>
+<p>Please make me a cake, esteemed and talented baker!</p>
+</blockquote>
+<p>This would sort of like if there was a <span class="math inline">\(bake\_cake()\)</span> function in R and I told the computer-baker:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="functions.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bake_cake</span>()</span></code></pre></div>
+<p>And the baker responds:</p>
+<blockquote>
+<p>Can do! It will be ready in a few hours.</p>
+</blockquote>
+<p>You see, all I had to do was tell the baker to make the cake. It turns out the baker already has the recipe for making cake. That recipe is sort of like R code - it would be pretty frustrating to have to explain to the baker how to make the cake just like it would be frustrating to have to write every line of code for a complicated task.</p>
+<p>So, I go to the cafe next door and work on some other projects while the cake is being compiled…I mean while the cake is being baked! When I return to the bakery, the baker hands me a beautiful, albeit incredibly plain cake - just a rectangular cake with white frosting. Now I look at the cake and my first instinct is to be frustrated because, well, this is a birthday cake and a plain white cake isn’t going to cut it. But I realize this is my fault, I didn’t tell the baker what kind of cake I wanted (remember, if the computer doesn’t do what you wanted, then it means you didn’t tell it the right thing!)</p>
+<p>So, I say to the baker:</p>
+<blockquote>
+<p>Wow that is a beautiful cake! Turns out I actually need another cake. This time could you make it a circle, with light pink frosting, dark pink roses around the rim, and in dark pink could you please write “Happy Birthday, Angel!”</p>
+</blockquote>
+<p>Now, in R I could communicate this to the computer-baker in R by saying:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="functions.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bake_cake</span>(<span class="at">shape =</span> <span class="st">&quot;Circle&quot;</span>,</span>
+<span id="cb123-2"><a href="functions.html#cb123-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">frosting_color =</span> <span class="st">&quot;Light Pink&quot;</span>,</span>
+<span id="cb123-3"><a href="functions.html#cb123-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">roses =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb123-4"><a href="functions.html#cb123-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">rose_color =</span> <span class="st">&quot;Dark Pink&quot;</span>,</span>
+<span id="cb123-5"><a href="functions.html#cb123-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">message =</span> <span class="st">&quot;Happy Birthday, Angel!&quot;</span>,</span>
+<span id="cb123-6"><a href="functions.html#cb123-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">message_color =</span> <span class="st">&quot;Dark Pink&quot;</span>)</span></code></pre></div>
+<p>In this example, we used <strong>arguments</strong> to provide more information to the computer to complete the function for us. Arguments are built into a function - so when someone makes a function, they decide what arguments a function can take in. Whoever made the <span class="math inline">\(bake\_cake\)</span> function made sure to include arguments (i.e., shape, roses, rose_color, etc) that would allow us to specify what kind of cake we want.</p>
+<p>So I go back to the cafe after making my order and when I return, lo and behold, before me is the cake that I wanted!</p>
+<p>First, I apologize if this example made it seem like you could use R to tell your computer to make a cake – that was misleading of me and I apologize. Your computer cannot make a cake. More importantly, though, this interaction displays the power of functions in R. Applying statistical concepts often involves running very complicated sequences of tasks - while it is important that we understand how they work, it is far too complicated (and also not a good use of time) to try to write code out for every single step of these procedures.</p>
+<p>As such, we can use specific functions to undertake complicated tasks with easy to write code. Each function has a unique set of arguments that we can also apply in order to provide information to the computer to complete the task as we desire it!</p>
+</div>
+<div id="picking-functions-in-r-the-read.csv-function" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Picking Functions in R: The read.csv() function</h3>
+<div id="finding-functions" class="section level4" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> Finding Functions</h4>
+<p>When we want to complete a task using R, there are a couple of important questions to ask. The first is: “Is there a function already built that can do this task?” If you have completed this task before, then you just need to find the function from last time you used it. If not, then it’s time to use Dr. Google (alternatives include flipping through the index of an R coding book or asking your statistics teacher!). For example, maybe your PI gave you a .csv file containing the dataset you want to work with and you want to know if you could load the dataset using R so you can work with it! You type into Google:</p>
+<blockquote>
+<p>How do I load a csv file in R?</p>
+</blockquote>
+<p>Using this search you find many, many articles with tutorials on how to do so. After clicking a few, you discover that the <span class="math inline">\(read.csv()\)</span> function appears to be the perfect function for undertaking this task.</p>
+</div>
+<div id="figuring-out-how-the-function-works" class="section level4" number="3.1.2.2">
+<h4><span class="header-section-number">3.1.2.2</span> Figuring Out How the Function Works</h4>
+<p>So, a really cool thing about R is that every function has a documentation file. This is a file which tells you all about the function. It tells you what the function is for, it tells you what arguments the functions can take, it tells you which arguments are required and which are optional, and it tells you what information the computer will return to you at the end. You usually can find the documentation file by typing something like “read.csv() documentation” into Google. However! We are using RStudio so you can find this information without going online.</p>
+<p>In the bottom right corner of RStudio (unless you changed your settings), there is a pane that has 5 tabs: Files, Plots, Packages, Help, and Viewer. You can view documentation files in the Help tab. So, click on the Help button – there is a little icon of a house, click on that too!. The view in this pane should look like this:</p>
+<p><img src="Images/Help_Pane_Home.PNG" /></p>
+<p>In the top right, there is a text entry with a magnifying glass. You can type in the name of the function you want to learn about here. In this case, “read.csv.” RStudio may try to create a drop down list based on what you type. Either click on the option for “read.csv” or finish typing “read.csv” and hit enter. The Help pane will take you the documentation file, which looks like:</p>
+<p><img src="Images/Help_Pane_readcsv.PNG" /></p>
+<p>Hmm, this page has multiple functions on it, but we can see that the one we wanted is the second in the list. Let’s just take a look at the function we want and try to decipher what it is saying:</p>
+<p><img src="Images/Help_Pane_readcsv_close.PNG" /></p>
+<p>This provides us an overview of the arguments that the read.csv function can accept. First, we can see that there is only one REQUIRED argument, the one called file. How do we know that it is required? Because it does not have an <span class="math inline">\(=\)</span> after it. The function is basically saying, “I need you to tell me what file you want me to read, because I can’t even guess what you want!” All of the other arguments are optional. You can tell because the function assigns a default value for each one. For example, if you ran the function without specifying a value for the “header” argument, then the computer will assume that header = TRUE because that is how the function was written. We can see that all of the arguments besides “file” are optional.</p>
+<p>But, it isn’t totally clear what these arguments actually mean! So, how do we find out? We just scroll down a little bit and see that we have descriptions of every single argument! How nice! For this function, there are three really important ones to know, pictured here:</p>
+<p><img src="Images/Help_Pane_readcsv_arguments.PNG" /></p>
+<p>We can see the following important information:</p>
+<ul>
+<li>the “file” argument refers to “the name of the file which the data are to be read from”</li>
+<li>the “header” argument indicates to the computer whether or not the first row of the CSV has column names or not
+<ul>
+<li>the computer will assume that the first row has column names if you do not specify because the default is header = TRUE</li>
+</ul></li>
+<li>the “sep” argument indicates to the computer what character separates data within the file
+<ul>
+<li>a CSV file stands for Comma-Separated Values, so it makes sense that the sep argument defaults to a comma</li>
+</ul></li>
+</ul>
+<p>You might be seeing that really long description of the “file” argument and wondering what on earth all of that is about. It is trying to tell you that you need to make sure the file you want to read is somewhere that the computer can find. So, earlier I had you download a CSV file and save it in a place that makes sense. Your computer has a default location it assumes when you start working in R. You can find it by typing the following code:</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="functions.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/Charl/OneDrive/Documents/Intro to Applied Stats with R&quot;</code></pre>
+<p>Basically, your computer is full of folders and different locations where files can be saved. You can think of each folder as a room – and your computer can only be in one room at a time (this sort of sounds like computers are conscious…maybe they are?). When we type in <span class="math inline">\(getwd()\)</span>, we are basically just finding out what room (i.e., folder) our computer is currently in. We call this room the “Working Directory” - it’s not super important to remember the name, but that’s what the “wd” in “getwd” stands for. So now, we want to set the working directory of the computer to correspond to the location where you saved the csv file I had you download. In order to find the correct folder, we are going to look in the pane in the bottom right again. This time, instead of clicking the “Help” tab, we are going to click the “Files” tab, which will give you a display that looks like this:</p>
+<p><img src="Images/Files_Pane.PNG" /></p>
+<p>Now we are going to navigate by clicking on the appropriate folders to the folder (aka the room) where the CSV is. Just because our display is showing the folder we want does not mean that the computer knows this is the room it is supposed to be in. To tell the computer that this is the right place, click on the “More” button with the drop down arrow and select the option “Set As Working Directory,” like so:</p>
+<p><img src="Images/Files_Pane_SETWD.PNG" /></p>
+<p>Now that we are in the correct directory, we can actually load the dataset by using the <span class="math inline">\(read.csv()\)</span>, like so:</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="functions.html#cb126-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;dataset.csv&quot;</span>)</span>
+<span id="cb126-2"><a href="functions.html#cb126-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-3"><a href="functions.html#cb126-3" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<p>We can take a look and we can see that we now have a data frame object called df and it contains the data from the CSV file! We did not modify any of the optional arguments because it was not necessary to do so!</p>
+</div>
+</div>
+</div>
+<div id="breather-time" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Breather Time</h2>
+<p>Ok. That was a lot of info. If you’re just reading through, this is definitely a good spot to take a little breather, drink some water, stretch it out. We covered a bunch of stuff: what a function is, how to use functions, how to navigate the help pane in RStudio, and how to navigate folders and set the correct working directory!</p>
+<p>Especially if this is new for you, this might be pretty overwhelming. The good thing is that, when we use R for statistics work, loading data files is almost always the very first step so you will get lots of practice with this.</p>
+<p>Now, not every data file is going to be in CSV format. You might have an .xlsx file or a SAS file or an SPSS file or something else altogether. A quick Google search will usually tell you how to load these files, but, for simplicity, in the copy pasta file at the end of this chapter, I have included functions for loading common types of data files with R!</p>
+</div>
+<div id="looking-under-the-hood-writing-our-own-function" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Looking Under the Hood: Writing Our Own Function</h2>
+<p>Now that we have a grasp on what a function is and how it works, let’s actually write our own function. Don’t worry! Writing your own functions isn’t common, but, you might just find as you get better at coding in R that writing your own functions will come in handy!</p>
+<p>As discussed before, functions allow us to tell the computer to do a series of complicated tasks with only one line of code. For example, the <span class="math inline">\(read.csv()\)</span> function has a lot to it - the computer has to open the file, read each piece of data, convert it into a data frame, and then save it. All we had to do, though, was write just one line of code. That’s because somebody else wrote all those other lines of code – they’re just invisible to us.</p>
+<p>So, to understand better how this works, we are going to write our own function and then use it. We are going to write a function that converts Fahrenheit to Celsius. There is a simple equation for converting a Fahrenheit temperature into celsius: <span class="math inline">\(Celsius = (Fahrenheit - 32)*(5/9)\)</span>. I’m going to call my temperature converter “fahrenheit_celsius_converter.” I can create the function like so:</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="functions.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will name our new function fahrenheit_celsius_converter</span></span>
+<span id="cb127-2"><a href="functions.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="do">## here we are saying our function will have one required argument called temp</span></span>
+<span id="cb127-3"><a href="functions.html#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="do">## temp is required because we did not assign it a value with the = sign</span></span>
+<span id="cb127-4"><a href="functions.html#cb127-4" aria-hidden="true" tabindex="-1"></a>fahrenheit_celsius_converter <span class="ot">&lt;-</span> <span class="cf">function</span>(temp){ </span>
+<span id="cb127-5"><a href="functions.html#cb127-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb127-6"><a href="functions.html#cb127-6" aria-hidden="true" tabindex="-1"></a>  <span class="do">## we generate our new temperature value using the formula to convert fahrenheit to celsius</span></span>
+<span id="cb127-7"><a href="functions.html#cb127-7" aria-hidden="true" tabindex="-1"></a>  new_temp <span class="ot">&lt;-</span> (temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span>(<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>)</span>
+<span id="cb127-8"><a href="functions.html#cb127-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb127-9"><a href="functions.html#cb127-9" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We then &quot;return&quot; the new temperature we have calculated</span></span>
+<span id="cb127-10"><a href="functions.html#cb127-10" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We use the return function to tell the computer this is the value we want it to spit out, so to speak</span></span>
+<span id="cb127-11"><a href="functions.html#cb127-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(new_temp)</span>
+<span id="cb127-12"><a href="functions.html#cb127-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb127-13"><a href="functions.html#cb127-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>So, now we can see from the above code that we have made a function and it converts a fahrenheit temperature to a celsius temperature. I have used lots of comments to help make sure that a reader can understand what the function does. Let’s quickly test out the function to make sure it works. Some well known values are that freezing in Fahrenheit is 32 and freezing in Celsius is 0 and boiling in Fahrenheit is 212 and in Celsius is 100:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="functions.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fahrenheit_celsius_converter</span>(<span class="dv">32</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="functions.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fahrenheit_celsius_converter</span>(<span class="dv">212</span>)</span></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<p>Super cool! Now we no longer need to have that formula memorized (thank goodenss, right?!)! We can just use our function and the computer will go fetch the correct code!</p>
+<p>Now let’s add a little bit more complexity to our code! Just for fun (isn’t this fun :)?) I am even going to throw in a few functions that you haven’t seen before. Don’t worry a bit! This is just to help get you a little more exposure to some cool tools at your disposal. I want to create an argument for this function that, instead of printing out a numeric value, will print out a sentence stating “X degrees Fahrenheit is the same a Y degrees Celsius.” Here’s what that function looks like (there is more than one way to do this):</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="functions.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Here we define our function</span></span>
+<span id="cb132-2"><a href="functions.html#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We have two arguments</span></span>
+<span id="cb132-3"><a href="functions.html#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="do">## The first, temp, is required and is the temperature (in Fahrenheit) being fed into the function</span></span>
+<span id="cb132-4"><a href="functions.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="do">## The second, text, is optional. Its default value is false.</span></span>
+<span id="cb132-5"><a href="functions.html#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="do">## When text is set equal to TRUE, the function will print out the text version of our conversion</span></span>
+<span id="cb132-6"><a href="functions.html#cb132-6" aria-hidden="true" tabindex="-1"></a>fahrenheit_celsius_converter <span class="ot">&lt;-</span> <span class="cf">function</span>(temp, <span class="at">text =</span> <span class="cn">FALSE</span>){ </span>
+<span id="cb132-7"><a href="functions.html#cb132-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb132-8"><a href="functions.html#cb132-8" aria-hidden="true" tabindex="-1"></a>  <span class="do">## we generate our new temperature value using the formula to convert fahrenheit to celsius</span></span>
+<span id="cb132-9"><a href="functions.html#cb132-9" aria-hidden="true" tabindex="-1"></a>  new_temp <span class="ot">&lt;-</span> (temp <span class="sc">-</span> <span class="dv">32</span>)<span class="sc">*</span>(<span class="dv">5</span><span class="sc">/</span><span class="dv">9</span>)</span>
+<span id="cb132-10"><a href="functions.html#cb132-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb132-11"><a href="functions.html#cb132-11" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Introducing the if statement</span></span>
+<span id="cb132-12"><a href="functions.html#cb132-12" aria-hidden="true" tabindex="-1"></a>  <span class="do">## We can use the if statement to tell the computer to do different things based on different parameters</span></span>
+<span id="cb132-13"><a href="functions.html#cb132-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(text <span class="sc">==</span> <span class="cn">FALSE</span>){</span>
+<span id="cb132-14"><a href="functions.html#cb132-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-15"><a href="functions.html#cb132-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Here we are saying that if the text argument is FALSE, just return the converted value</span></span>
+<span id="cb132-16"><a href="functions.html#cb132-16" aria-hidden="true" tabindex="-1"></a>    <span class="do">## This is the same as our original function</span></span>
+<span id="cb132-17"><a href="functions.html#cb132-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(new_temp)</span>
+<span id="cb132-18"><a href="functions.html#cb132-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-19"><a href="functions.html#cb132-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb132-20"><a href="functions.html#cb132-20" aria-hidden="true" tabindex="-1"></a>  <span class="do">## What is cool about an if statement is that you can follow it with an ELSE IF statement</span></span>
+<span id="cb132-21"><a href="functions.html#cb132-21" aria-hidden="true" tabindex="-1"></a>  <span class="do">## This just tells the computer that if the first if statement wasn&#39;t true, to try to do this one instead</span></span>
+<span id="cb132-22"><a href="functions.html#cb132-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span>(text <span class="sc">==</span> <span class="cn">TRUE</span>){</span>
+<span id="cb132-23"><a href="functions.html#cb132-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-24"><a href="functions.html#cb132-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">## So here, we want to print &quot;X degrees Fahrenheit is the same a Y degrees Celsius&quot;</span></span>
+<span id="cb132-25"><a href="functions.html#cb132-25" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Where X = temp and Y = new_temp</span></span>
+<span id="cb132-26"><a href="functions.html#cb132-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-27"><a href="functions.html#cb132-27" aria-hidden="true" tabindex="-1"></a>    <span class="do">## First, temp and new_temp are numeric, but we want them to be character types (because we are printing text!)</span></span>
+<span id="cb132-28"><a href="functions.html#cb132-28" aria-hidden="true" tabindex="-1"></a>    <span class="do">## We can use the as.character() function to make this conversion like so</span></span>
+<span id="cb132-29"><a href="functions.html#cb132-29" aria-hidden="true" tabindex="-1"></a>    temp <span class="ot">&lt;-</span> <span class="fu">as.character</span>(temp)</span>
+<span id="cb132-30"><a href="functions.html#cb132-30" aria-hidden="true" tabindex="-1"></a>    new_temp <span class="ot">&lt;-</span> <span class="fu">as.character</span>(new_temp)</span>
+<span id="cb132-31"><a href="functions.html#cb132-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-32"><a href="functions.html#cb132-32" aria-hidden="true" tabindex="-1"></a>    <span class="do">## So, now I will introduce you to the paste function</span></span>
+<span id="cb132-33"><a href="functions.html#cb132-33" aria-hidden="true" tabindex="-1"></a>    <span class="do">## The paste function lets you stick together character objects to make one longer object</span></span>
+<span id="cb132-34"><a href="functions.html#cb132-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-35"><a href="functions.html#cb132-35" aria-hidden="true" tabindex="-1"></a>    output <span class="ot">&lt;-</span> <span class="fu">paste</span>(temp, <span class="st">&quot;degrees Fahrenheit is the same as&quot;</span>, new_temp,<span class="st">&quot;degrees Celsius&quot;</span>, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb132-36"><a href="functions.html#cb132-36" aria-hidden="true" tabindex="-1"></a>    <span class="do">## notice the term sep = &quot; &quot;</span></span>
+<span id="cb132-37"><a href="functions.html#cb132-37" aria-hidden="true" tabindex="-1"></a>    <span class="do">## I am telling the computer to stick together these four pieces of text and to put a space (&quot; &quot;) in between each one</span></span>
+<span id="cb132-38"><a href="functions.html#cb132-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-39"><a href="functions.html#cb132-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(output)</span>
+<span id="cb132-40"><a href="functions.html#cb132-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-41"><a href="functions.html#cb132-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb132-42"><a href="functions.html#cb132-42" aria-hidden="true" tabindex="-1"></a>  <span class="do">## now, there is always the possibility that someone decided to do something silly like set text = 42</span></span>
+<span id="cb132-43"><a href="functions.html#cb132-43" aria-hidden="true" tabindex="-1"></a>  <span class="do">## there are some other ways to catch this but one way is to use one more ELSE statement</span></span>
+<span id="cb132-44"><a href="functions.html#cb132-44" aria-hidden="true" tabindex="-1"></a>  <span class="do">## in this case we don&#39;t need to use an IF because there isn&#39;t anything specific that matters, logically </span></span>
+<span id="cb132-45"><a href="functions.html#cb132-45" aria-hidden="true" tabindex="-1"></a>  <span class="do">## if we have gotten to this else statement it means something is wrong</span></span>
+<span id="cb132-46"><a href="functions.html#cb132-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>{</span>
+<span id="cb132-47"><a href="functions.html#cb132-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-48"><a href="functions.html#cb132-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">&quot;The text argument needs to equal TRUE or FALSE -- please try again!&quot;</span>)</span>
+<span id="cb132-49"><a href="functions.html#cb132-49" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb132-50"><a href="functions.html#cb132-50" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb132-51"><a href="functions.html#cb132-51" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Now, don’t worry one bit if some of that just went straight over your head. I showed you this so you can see that even really simple tasks can get a bit complicated really easily. You’ll also notice that I wrote a lot of comments alongside the code. I encourage you to <strong>always comment your code thoroughly</strong>. It’s not just because someone else might read your code, but let me tell you, if you don’t look at your code for a few weeks, when you come back it might look like gibberish. Commenting your code is a great way to make sure you don’t forget what on earth you did!</p>
+<p>And isn’t it nice that now we don’t have to type all of that out ourselves. Check out how easy it is to use this function with just one line of code:</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="functions.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fahrenheit_celsius_converter</span>(<span class="dv">32</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="functions.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fahrenheit_celsius_converter</span>(<span class="dv">32</span>, <span class="at">text =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;32 degrees Fahrenheit is the same as 0 degrees Celsius&quot;</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="functions.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fahrenheit_celsius_converter</span>(<span class="dv">32</span>, <span class="at">text =</span> <span class="dv">12</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;The text argument needs to equal TRUE or FALSE -- please try again!&quot;</code></pre>
+<p>Alright alright alright, thanks for bearing with me! I promise that my intentions are good and that knowing how to make a temperature converting function will help you as a statistician!! The main takeaway is that functions provide us with an easy way to apply very complicated tasks. In later chapters we will learn how to use various functions that allow us to run different methods like regression - you don’t have to know how all the machinery on the inside of the function works, but it is important to understand how to use functions and to understand how they function so you can apply them correctly!</p>
+</div>
+<div id="so-whats-a-library" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> So What’s A Library?</h2>
+<p>So far, we have already used some cool functions like <span class="math inline">\(c()\)</span>, <span class="math inline">\(summary()\)</span>, and <span class="math inline">\(data.frame()\)</span>. These functions are “built in” to R, so to speak. Our <strong>library</strong> is the set of functions that we have loaded into our R session! When you open R, certain functions are already pre-loaded into our library. These are functions that are generally considered so integral to using R that it made sense to have them ready to go when you start working.</p>
+<div id="how-do-i-see-what-is-in-my-library" class="section level3" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> How do I see what is in my library?</h3>
+<p>Great question! In order to see what you have loaded in your library, you can start by running the <span class="math inline">\(sessionInfo()\)</span> function like so:</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="functions.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 3.6.1 (2019-07-05)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 19042)
+## 
+## Matrix products: default
+## 
+## locale:
+## [1] LC_COLLATE=English_United States.1252 
+## [2] LC_CTYPE=English_United States.1252   
+## [3] LC_MONETARY=English_United States.1252
+## [4] LC_NUMERIC=C                          
+## [5] LC_TIME=English_United States.1252    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## loaded via a namespace (and not attached):
+##  [1] bookdown_0.21   digest_0.6.27   R6_2.5.1        jsonlite_1.7.2 
+##  [5] magrittr_2.0.1  evaluate_0.14   stringi_1.5.3   rlang_0.4.12   
+##  [9] rstudioapi_0.13 jquerylib_0.1.4 bslib_0.3.1     rmarkdown_2.11 
+## [13] tools_3.6.1     stringr_1.4.0   xfun_0.26       yaml_2.2.1     
+## [17] fastmap_1.1.0   compiler_3.6.1  htmltools_0.5.2 knitr_1.30     
+## [21] sass_0.4.0</code></pre>
+<p>We have a few headers of interest: “attached base package” and “other attached packages.” We see here this word <strong>package</strong>. A package is simply a set of functions that can be loaded into your library. Packages are designed and written by people – each package usually has some set of specific, unifying functionality that can help you in some way. For example, the <span class="math inline">\(stats\)</span> package contains functions that allow you to easily run regression models and the <span class="math inline">\(ggplot2\)</span> package contains functions which can help you plot data.</p>
+<p>An easier way to see which packages you have in your R session is to click on the “Packages” tab in the bottom right pane like so:</p>
+<p><img src="Images/Packages_pane.PNG" /></p>
+<p>Here we see a list of A LOT of packages. These are all of the packages currently downloaded onto my computer. If the checkbox next to a package is marked, that means the package has been loaded into my library. If it isn’t marked it means that the package is not loaded. In order to use a package, we must load it into our R session. We don’t load all of the packages we have at once because that would overload our computer. I won’t get into how R works, but the computer doesn’t like it when we load lots of information in R (don’t worry, for most of our statistics projects, this is not a concern!).</p>
+<p>There are two ways to load a package into our library. The most common is to use the <span class="math inline">\(library()\)</span> function. We simply add the name of the package we want to load and it will load the package into our library. Let’s say I want to load the <span class="math inline">\(tidyverse\)</span> package. I would do that like so:</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="functions.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Now, you see the computer gave us a bunch of warnings. That can look a little bit concerning, but I would like to point out two different kinds of message the computer will give you. A <strong>warning</strong> is a message that the computer provides that basically says “Hey, I did what you asked me to do, but here is something you should be aware of!” An <strong>error</strong> message is when the computer fails to do what you’ve asked - when the computer throws an error, that means it tried to do something and it crashed.</p>
+<p>Anyway! The other way to load a package into your library is to just scroll down to it in the packages pane and just click on the checkbox!</p>
+<div id="what-if-i-want-a-new-package-that-isnt-on-my-computer" class="section level4" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> What if I want a new package that isn’t on my computer?</h4>
+<p>When you first start using R, you won’t have very many packages on your computer. You have to download them. Packages are basically just expansion packs for R. Sometimes it can feel overwhelming figuring out what packages to use and, honestly, there are many many ways to complete the same task. Googling and asking other statisticians which packages to download is an important way to find new packages.</p>
+<p>Now, usually packages correspond with a task you are interested in. For example, if you want to run a mixed effects regression model, the <span class="math inline">\(lme4\)</span> package was designed exactly for that purpose! If you want to run a mediation analysis, one option is the <span class="math inline">\(mediation\)</span> package. How do I know this - a bit of Googling, a bit of asking around, reading academic manuscripts methods sections, reading the supplemental code attached to a manuscript, reading statistics textbooks, watching YouTube statistics tutorials, and, <strong>perhaps most importantly, by reading Q&amp;As on Stack Overflow</strong>. Stack Overflow is a forum where people can ask questions and the public can respond. You will likely find your answers to your R questions on Stack Overflow (or Reddit, actually), unless you are doing some real niche stuff!</p>
+<p>I actually would like to share with you one of my absolute favorite packages: <span class="math inline">\(tableone\)</span>. We are going to be using this package a lot! This package is for building descriptive tables of your study sample. It is called tableone because Table One in a human subjects research paper is typically the table describing the study sample. I would say this is the most important table in your entire study! If you don’t know who is in your study, then, umm, how do you know what you’re studying???</p>
+<p>So, it turns out that the tabelone package isn’t automatically built in to R. We have to download it. We have two options. The first is the click and point way. In the “Packages” pane, click on the “Install” button, like so:</p>
+<p><img src="Images/Packages_pane_install.PNG" /></p>
+<p>You can then start to type in the name of the package we want, “tableone,” in the appropriate box, like so. Notice how it will provide you a dropdown of available packages. These are packages that have been registered so that the computer knows to find them:</p>
+<p><img src="Images/Install_Package.PNG" /></p>
+<p>Type in the full name of the package you want or click on it when you see it. Then you will click the “Install” button like so:</p>
+<p><img src="Images/Install_Tableone.PNG" /></p>
+<p>Et voila! You have downloaded the package. You can also install the package by running the <span class="math inline">\(install.packages()\)</span> function like so:</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="functions.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tableone&quot;</span>)</span></code></pre></div>
+<p>Usually, when you install, you will get a lot of messages. At the end, you want to see the message “The downloaded source packages are in….” If you get an ERROR message, that means your computer failed to download the package.</p>
+<p>Now that we have downloaded the package, we can simply add it to our library by typing in:</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="functions.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tableone)</span></code></pre></div>
+<p>So, that’s pretty darn cool! The cool thing about R is that all the expansion packs are free!!!</p>
+</div>
+</div>
+</div>
+<div id="quick-word-of-caution" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Quick word of caution</h2>
+<p>R is awesome, in part because it is free. It is an open source software which means that anyone can write packages for R and register them. That doesn’t mean that they are inherently untrustworthy, but it does mean we need to develop a spidey-sense for when a package might be suspect. You know how on Wikipedia, sometimes there is a message that says something like “This article doesn’t appear to have sources” - well, it is important to be able to always ask if a package is a good one for what you want to do. The nice thing about R is that there is a huge community of users online that discuss these things. Some packages are so commonly applied that the statistics community has come to trust in them. Code was written by people and people make mistakes…remember, the computer just does what you tell it to do, if you tell it the wrong thing then it’ll do the wrong thing. The takeaway of me telling you this is that when you use a new package, do a little vetting. Ask your stats professor, ask the internet, read up about it!</p>
+<p>One hint I will give you (and let me tell you this is not a rule by any means) is to look at the documentation files for the package you are considering to use! The more useful this file is, the more likely this is a good package. If you open a documentation file and it barely tells you anything – run!</p>
+</div>
+<div id="in-conclusion" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> In Conclusion</h2>
+<p>Functions are an important part of coding in R. Nearly all statistical algorithms will be run by calling functions. Understanding what a function is and how they operate will help you better understand what is happening when you use them. While you won’t necessarily ever need to write your own functions, being able to do so will also empower you to take on complicated quantitative approaches as you become a more advanced statistician!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="welcome.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="working-with-datasets-in-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

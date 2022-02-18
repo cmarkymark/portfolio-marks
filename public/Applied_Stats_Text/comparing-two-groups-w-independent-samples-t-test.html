@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Comparing Two Groups w/ Independent Samples T-test | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Comparing Two Groups w/ Independent Samples T-test | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Comparing Two Groups w/ Independent Samples T-test | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descriptive-statistics-table-one.html"/>
+<link rel="next" href="pearsons-chi2-test.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="comparing-two-groups-w-independent-samples-t-test" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Comparing Two Groups w/ Independent Samples T-test</h1>
+<p>A common objective we have in our reserach work is to compare groups of people. For example, we might wish to know: if PhD students are more anxious than undergrad students; if men are more likely to binge drink than women; or, if students in different school districts have different performance on standardized tests. The <span class="math inline">\(t\)</span>-test is one such test we can use, when the data calls for it!</p>
+<p>Let us say we have a random sample that we have split into two groups, <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>. We have measured a numeric variable <span class="math inline">\(X\)</span>, which we assume is normally distributed. For example, <span class="math inline">\(G_1\)</span> might represent men and <span class="math inline">\(G_2\)</span> might represent women and <span class="math inline">\(X\)</span> might be systolic blood pressure. We are curious if group membership <span class="math inline">\((G_1 vs G_2)\)</span> is associated with different values of <span class="math inline">\(X\)</span>.</p>
+<p>One way we can frame this as a scientific question is to ask if: “The mean value of <span class="math inline">\(X\)</span> is different between groups <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>.” Let’s define <span class="math inline">\(\mu_{G1}\)</span> as the <strong>population</strong>-level mean of <span class="math inline">\(X\)</span> for <span class="math inline">\(G_1\)</span>, and <span class="math inline">\(\mu_{G2}\)</span> as that for <span class="math inline">\(G_2\)</span>.
+What we are essentially trying to ask is, does <span class="math inline">\(\mu_{G1} = \mu_{G2}\)</span>?</p>
+<div id="statistical-hypotheses-of-the-independent-samples-t-test" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Statistical Hypotheses of the Independent Samples T-Test</h2>
+<p>The null and alternate hypothesis of the t-test are typically presented as:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_{G1} = \mu_{G2}\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\mu_{G1} \neq \mu_{G2}\)</span></li>
+</ul>
+<p>Importantly, <span class="math inline">\(\mu_{G1} = \mu_{G2}\)</span> is the same as <span class="math inline">\(\mu_{G1} - \mu_{G2} = 0\)</span>. Therefore, we can also consider the null and alternate hypothesis as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_{G1} - \mu_{G1} = 0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\mu_{G1} - \mu_{G1} \neq 0\)</span></li>
+</ul>
+<p>So, the independent sample t-test will attempt to assess the probability of our observed data assuming that <span class="math inline">\(H_0\)</span> is true.</p>
+</div>
+<div id="logic-of-the-t-test" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Logic of the t-test</h2>
+<p>Before we learn how to run a t-test, we need to think through what our null hypothesis means and what it might mean to reject it. When we run a statistical test, we assume that our null hypothesis is true. If we assume that the null is true and that <span class="math inline">\(\mu_{G1} - \mu_{G2} = 0\)</span> at the population-level then it follows that if we were to sample a set of people from <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> and looked at the difference in their group means of <span class="math inline">\(X\)</span>, that 0 is the most likely value. While we use <span class="math inline">\(\mu_{G_1}\)</span> and <span class="math inline">\(\mu_{G_2}\)</span> to represent the population-level mean, we use <span class="math inline">\(\bar{x}_{G1}\)</span> and <span class="math inline">\(\bar{x}_{G2}\)</span> to represent the mean values of our sample groups.</p>
+<p>However, we know that sampling pretty much never results in a perfect representation of the populations, so it is actually fairly likely that the difference in sample group means (<span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span>) won’t equal 0. This shouldn’t worry us too much, it is fairly likely that if the null is true then it would make sense if <span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span> was a value pretty close to 0 (whether positive or negative). In fact, if the null hypothesis is true, then we would assume that values of <span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span> further from 0 would be less likely than values closer to 0 and that negative and positive values are equally likely. Hmm…that actually sounds a lot like the normal distribution doesn’t it?</p>
+<ol style="list-style-type: decimal">
+<li>0 is the most likely value</li>
+<li>values closer to 0 are more likely than values further from 0</li>
+<li>positive and negative values appear equally as likely to occur (i.e. symmetry)</li>
+</ol>
+<p>But…</p>
+</div>
+<div id="introducing-the-students-t-distribution" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Introducing the Student’s t-Distribution</h2>
+<p>A normal distribution is defined by a mean value <span class="math inline">\(\mu\)</span> and a standard deviation <span class="math inline">\(\sigma\)</span>. Unfortunately, even if we know we have measured a normally distributed variable <span class="math inline">\(X\)</span>, we may not know the population-level standard deviation of <span class="math inline">\(X\)</span>. This is fairly common in epidemiologic research, because we often don’t have population-level data about the groups we are researching (such as people who inject drugs, or undergraduate students who vape, or people who access syringe exchanges).</p>
+<p>The <span class="math inline">\(t\)</span>-distribution is a variation of the standard normal distribution (<span class="math inline">\(Z\)</span>-distribution), to be used when the standard deviation of the population is unknown. As we discussed before, any normal distribution (<span class="math inline">\(N(\mu,\sigma)\)</span>) can be transformed to the <span class="math inline">\(Z\)</span>-distribution (<span class="math inline">\(N(0,1)\)</span>). Similarly, we may understand the <span class="math inline">\(t\)</span>-distribution as a standardized distribution. The <span class="math inline">\(t\)</span>-distribution is intended to be a more conservative version of the <span class="math inline">\(Z\)</span>-distribution, where we assume a wider variability in observations. Essentially, the less information we know, the less certain we are that observations will be near the mean.</p>
+<p>We define the <span class="math inline">\(t\)</span>-distribution as a function of the number of degrees of freedom we have available to measure the variability in our data:</p>
+<blockquote>
+<p><strong>Degrees of freedom</strong> refer to the number of parameters that are able to “vary freely,” given some assumed outcome. For example, let us say you have have 100 participants and you know that their mean average is 60 years old. Well, there are countless possibilities for how 100 participants age could average out to 60 (e.g., everyone could be 60 years old, half could be 59 and half could be 61, etc etc). In other words, we can see that people’s ages can “vary freely” while still maintaining an average age of 60 years old. But, let us imagine we know the exact age of 99 of the 100 individuals. The average age of the population is 60 years of age. Can the age of the final person “vary freely?” No! There is actually only one value that could take the first 99 values and get the average to 60 years of age. For example, if the average age of the first 99 people is 60 years of age, then the age of the final person must be 60 years of age. If they were older, then the average would move above 60, and vice versa if they were younger. As such to calculate a mean, we must “spend” one degree of freedom.</p>
+</blockquote>
+<p>A normal distribution is defined by a mean value <span class="math inline">\(\mu\)</span> and a standard deviation <span class="math inline">\(\sigma\)</span>. If we have <span class="math inline">\(n\)</span> observations and measure sample-mean <span class="math inline">\(\bar{x}\)</span> and standard deviation <span class="math inline">\(s\)</span>, as discussed above, we must spend one degree of freedom to calculate <span class="math inline">\(\bar{x}\)</span>. This means that we have <span class="math inline">\(n - 1\)</span> degrees of freedom to calculate <span class="math inline">\(s\)</span>. The fewer observations we have (i.e., the smaller that <span class="math inline">\(n\)</span> is), the less information we have to estimate the variation of our observed variable <span class="math inline">\(X\)</span>.</p>
+<p>As such, the <span class="math inline">\(t\)</span>-distribution is intended to capture uncertainty in the measurement of the standard deviation from a small sample. The fewer degrees of freedom (i.e., the smaller our sample), the less certain that our measured standard deviation <span class="math inline">\(s\)</span> represents our population-level standard deviation <span class="math inline">\(\sigma\)</span>. To capture this, the <span class="math inline">\(t\)</span>-distribution is “shorter” and “wider” than the normal distribution. Essentially, under the <span class="math inline">\(t\)</span>-distribution, values farther from 0 are more likely than under the <span class="math inline">\(Z\)</span>-distribution. As we collect more data (i.e., as <span class="math inline">\(n\)</span> gets larger), the <span class="math inline">\(t\)</span>-distribution’s shapes approaches that of the <span class="math inline">\(Z\)</span>-distribution.</p>
+<p>To picture what this means, let’s plot some distributions. First we are going to plot the <span class="math inline">\(Z\)</span>-distribution along with <span class="math inline">\(t(1)\)</span>, the <span class="math inline">\(t\)</span>-distribution with one degree of freedom:</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb271-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span>
+<span id="cb271-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s now define our normal function using the dnorm() function, where the mean value is 0 and the standard deviation is also 1</span></span>
+<span id="cb271-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-5" aria-hidden="true" tabindex="-1"></a>y_normal <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb271-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s also define our t-distribution with 1 degree of freedom on the same scale using the dt() function</span></span>
+<span id="cb271-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-8" aria-hidden="true" tabindex="-1"></a>y_df1 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">1</span>)</span>
+<span id="cb271-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb271-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-12" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb271-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_normal, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb271-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-14" aria-hidden="true" tabindex="-1"></a><span class="do">## And we will also plot the t-distribution in red</span></span>
+<span id="cb271-15"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb271-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y_df1, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-115-1.png" width="672" /></p>
+<p>As we can see, the <span class="math inline">\(t\)</span>-distribution is very similar to the normal distribution…it is just shorter and wider. Remember, we discussed in a previous chapter that the height of a curve for a given value of <span class="math inline">\(X\)</span> represents the probability of observing that value. In the case of the <span class="math inline">\(t\)</span>-distribution above, it is clear that it is less likely to observe a value of 0 than the normal distribution, but more likely to observe extreme values (along both tails) than the normal distribution. This is the conservative adjustment made to the distribution to account for our lack of information to determine the variability of the data.</p>
+<p>Now, as the number of observations <span class="math inline">\(n\)</span> increases, the <span class="math inline">\(t\)</span>-distribution begins to look a lot like the normal distribution. In fact, a common rule of thumb is that if <span class="math inline">\(n \geq 30\)</span> then we can actually just assume that the <span class="math inline">\(t\)</span>-distribution is the same as the normal distribution. Let’s look at some <span class="math inline">\(t\)</span>-distributions plotted along side the normal distribution to see how, as the number of degrees of freedom increase, the <span class="math inline">\(t\)</span>-distribution starts to look a lot like the normal distribution.</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb272-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span>
+<span id="cb272-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb272-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s now define our normal function using the dnorm() function, where the mean value is 0 and the standard deviation is also 1</span></span>
+<span id="cb272-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-5" aria-hidden="true" tabindex="-1"></a>y_normal <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb272-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb272-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Then let&#39;s generate t-distributions with degrees of freedom equal to 1, 3, 5, and 10</span></span>
+<span id="cb272-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-8" aria-hidden="true" tabindex="-1"></a>y_df1 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">1</span>)</span>
+<span id="cb272-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-9" aria-hidden="true" tabindex="-1"></a>y_df3 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">3</span>)</span>
+<span id="cb272-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-10" aria-hidden="true" tabindex="-1"></a>y_df5 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">5</span>)</span>
+<span id="cb272-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-11" aria-hidden="true" tabindex="-1"></a>y_df10 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb272-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb272-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-13" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb272-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_normal, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb272-15"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb272-16"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-16" aria-hidden="true" tabindex="-1"></a><span class="do">## And plot the additional t-distributions as well</span></span>
+<span id="cb272-17"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-17" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y_df10, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb272-18"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-18" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y_df5,  <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>)</span>
+<span id="cb272-19"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-19" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y_df3, <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb272-20"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb272-20" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y_df1, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
+<p>So, our null hypothesis is that <span class="math inline">\(\mu_{G1} - \mu_{G2} = 0\)</span>. As we articulated before, if our null hypothesis is true, <span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span> appears to behave like a normally distributed variable. BUT since we do not know the population-level standard deviation, we want to be more cautious. As such, we assume that <span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span> follows a <span class="math inline">\(t\)</span>-distribution, which has wider tails. If we let <span class="math inline">\(n_{G1}\)</span> represent the number of people in <span class="math inline">\(G_1\)</span> and if we let <span class="math inline">\(n_{G2}\)</span> represent the number of people in <span class="math inline">\(G_2\)</span>, then we use a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\((n_{G1} - 1) + (n_{G2} - 1) =n_{G1} + n_{G2} - 2\)</span> degrees of freedom. This is because we have <span class="math inline">\((n_{G1} - 1)\)</span> degrees of freedom to calculate the variability of <span class="math inline">\(X\)</span> among <span class="math inline">\(G_1\)</span>, and <span class="math inline">\((n_{G2} - 1)\)</span> to calculate that among <span class="math inline">\(G_2\)</span>.</p>
+</div>
+<div id="mapping-the-signal-onto-the-t-distribution" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> Mapping The Signal Onto The t-Distribution</h2>
+<p>So, we want to know how probable our data is under the null hypothesis that <span class="math inline">\(\mu_{G1} = \mu_{G2}\)</span>. Our signal is the difference in mean value of <span class="math inline">\(X\)</span> across our two groups, or: <span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span>. Since the most likely value of our signal, assuming the null is true, is 0, we can understand that its corresponding distribution is centered around 0 (just like the <span class="math inline">\(Z\)</span>-distribution). However, we must scale our signal by the noise in the data - in other words, we must standardize the signal to correspond to the appropriate <span class="math inline">\(t\)</span>-distribution, which is a variation of the <span class="math inline">\(Z\)</span>-distribution whose standard deviation is 1.</p>
+<div id="calculating-the-standard-error-of-the-mean" class="section level3" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> Calculating the Standard Error of the Mean</h3>
+<p>(Content Warning: This next section gets pretty math-y. If you are having a hard time following the equations, that is perfectly fine. As long as we have computers, we will never need to do these calculations by hand. And if we ever enter a world without computers anymore, I have a feeling statistics will be the least of our concerns. <strong>BUT</strong>, this is a central aspect of the <span class="math inline">\(t\)</span>-test and it is good to try your best to follow and understand. You may notice that the logic behind this is exactly the same as what we did when we ran a <span class="math inline">\(Z\)</span>-test in prior weeks)</p>
+<p>To standardize our signal, we will divide it by the standard error of the mean of our observed values of <span class="math inline">\(X\)</span>. While you will generally not need to make these calculations, it is important to understand how it is calculated. The standard error is an estimation of the population-level standard deviation, which gets more precise (or smaller) as the sample size (<span class="math inline">\(n\)</span>) gets larger. The typical equation for the standard error is:</p>
+<p><span class="math display">\[SE = \frac{s}{\sqrt{n}}\]</span></p>
+<p>But, because we are comparing two groups, we actually use a slight variation on this equation:</p>
+<p><span class="math display">\[SE = \frac{s}{\sqrt{n_{G1} + n_{G2}}}\]</span></p>
+<p><span class="math inline">\(s\)</span> is the sample standard deviation. It is derived from the measured variance <span class="math inline">\(s^2\)</span>, which represents the average distance of each <span class="math inline">\(n\)</span> observations of <span class="math inline">\(X\)</span> from the mean value <span class="math inline">\(\bar{x}\)</span>:</p>
+<p><span class="math display">\[s^2 = \frac{1}{n-1}*\sum_{i=1}^{n}(x_i - \bar{x})\]</span>
+However, in the independent samples <span class="math inline">\(t\)</span>-test, we are comparing two groups <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>. As we shall discuss, one assumption of the <span class="math inline">\(t\)</span>-test is that the population-level variance of variable <span class="math inline">\(X\)</span> is the same (or very similar) for both groups. This allows us to calculate the pooled variance of <span class="math inline">\(X\)</span> within both <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span> like so:</p>
+<p><span class="math display">\[s^2 = \frac{(n_{G1} - 1)*s^2_{G1} + (n_{G2} - 1)*s^2_{G2}}{n_G1 + n_G2 - 2}\]</span></p>
+<p>Where <span class="math inline">\(s^2_{G1}\)</span> is the sample variance of <span class="math inline">\(X\)</span> for <span class="math inline">\(G_1\)</span> and <span class="math inline">\(s^2_{G2}\)</span> is that for <span class="math inline">\(G_2\)</span>. To get the sample standard deviation, we simply take the square root like so:</p>
+<p><span class="math display">\[s = \sqrt{s^2} = \sqrt{\frac{(n_{G1} - 1)*s^2_{G1} + (n_{G2} - 1)*s^2_{G2}}{n_G1 + n_G2 - 2}}\]</span></p>
+<p>Remember how we mentioned that for this test we have <span class="math inline">\(n_G1 + n_G2 - 2\)</span> degrees of freedom to estimate the variability in our data? You will notice that number is prominantly displayed in our equation above.</p>
+<p>From here we can calculate our standard error, which was:</p>
+<p><span class="math display">\[SE = \frac{s}{\sqrt{n_{G1} + n_{G2}}}\]</span>
+As we can see, there are a lot of steps to calculating the standard error of the mean:</p>
+<ol style="list-style-type: decimal">
+<li>We must calculate the variance of <span class="math inline">\(X\)</span> within both <span class="math inline">\(G_1\)</span>, <span class="math inline">\(s^2_{G1}\)</span>, and <span class="math inline">\(G_2\)</span>, <span class="math inline">\(s^2_{G2}\)</span>.</li>
+<li>We must calculate the pooled variance, <span class="math inline">\(s^2\)</span>.</li>
+<li>Calculate the standard deviation <span class="math inline">\(s\)</span> by taking the square root of the pooled variance.</li>
+<li>Calculate the standard error: <span class="math inline">\(SE = \frac{s}{\sqrt{n_{G1} + n_{G2}}}\)</span></li>
+</ol>
+</div>
+<div id="calculating-our-test-statistic-t" class="section level3" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> Calculating our test statistic, t</h3>
+<p>So, we went through all of that mathematically intensive trouble to standardize <span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span> so that we can test our null hypothesis. Let’s formalize this standardized value. The t-statistic is defined as follows:</p>
+<p><span class="math display">\[t = \frac{\bar{x}_{G1} - \bar{x}_{G2}}{SE}\]</span></p>
+<p>Often, the equation for calculating <span class="math inline">\(t\)</span> has the formula for the standard error written out and reads:</p>
+<p><span class="math display">\[t = \frac{\bar{x}_{G1} - \bar{x}_{G2}}{s*\sqrt{\frac{1}{n_{G1}} + \frac{1}{n_{G2}}}}\]</span>
+By calculating <span class="math inline">\(t\)</span>, we have taken our signal (<span class="math inline">\(\bar{x}_{G1} - \bar{x}_{G2}\)</span>) and standardized it to a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n_{G1} + n_{G2} - 2\)</span> degrees of freedom! We can now map this value onto this distribution and make our area under the curve calculations.</p>
+<p>Let’s pretend that, in this hypothetical study, we had sampled 100 people in <span class="math inline">\(G_1\)</span> and 100 people <span class="math inline">\(G_2\)</span>. It turns out that <span class="math inline">\(\bar{x}_G1 = 21\)</span> and <span class="math inline">\(\bar{x}_G2 = 22\)</span> and we calculated a pooled standard deviation of 3. Thus, we can calculate:</p>
+<p><span class="math display">\[t = \frac{21-22}{3 * \sqrt{\frac{1}{100} + \frac{1}{100}}} \approx -2.36\]</span></p>
+<p>Now, to test the likelihood of observing this signal in our data (or a signal more extreme) assuming that the null hypothesis is true, we can start by mapping our calculated <span class="math inline">\(t = -2.36\)</span> on a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(100 + 100 - 2 = 198\)</span> degrees of freedom, like so:</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb273-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span>
+<span id="cb273-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-4" aria-hidden="true" tabindex="-1"></a><span class="do">## t-distribution with 198 df</span></span>
+<span id="cb273-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-5" aria-hidden="true" tabindex="-1"></a>y_df198 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">198</span>)</span>
+<span id="cb273-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-7" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the distribution data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb273-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_df198, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb273-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-10" aria-hidden="true" tabindex="-1"></a><span class="do">## And we will also plot the the t-value as a dotted vertical line</span></span>
+<span id="cb273-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-12" aria-hidden="true" tabindex="-1"></a>xt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.36</span>,<span class="sc">-</span><span class="fl">2.36</span>)</span>
+<span id="cb273-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-13" aria-hidden="true" tabindex="-1"></a>yt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb273-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb273-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(xt,yt, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<p>Typically, when we run a <span class="math inline">\(t\)</span>-test, we will run a two-tailed <span class="math inline">\(t\)</span>-test. This means that we will check the probability of observing any signal more extreme than <span class="math inline">\(t = -2.36\)</span>. This will include all values less than -2.36 and all values greater than 2.36, like so:</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb274-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">01</span>)</span>
+<span id="cb274-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s define our t-distribution with 10 degrees of freedom</span></span>
+<span id="cb274-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-5" aria-hidden="true" tabindex="-1"></a>y_df198 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">198</span>)</span>
+<span id="cb274-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Filling in the plot we want all the values of X less than or equal to -1.2 and X more than or equal to 1.2</span></span>
+<span id="cb274-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-8" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> x[x <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">2.35</span>]</span>
+<span id="cb274-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-9" aria-hidden="true" tabindex="-1"></a>pos_x <span class="ot">&lt;-</span> x[x <span class="sc">&gt;=</span> <span class="fl">2.36</span>]</span>
+<span id="cb274-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we want to get the values of y_df10 that correspond to these areas</span></span>
+<span id="cb274-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-12" aria-hidden="true" tabindex="-1"></a><span class="do">## See if you can figure out why this works, don&#39;t worry, being able to do this is not INTEGRAL to becoming a statistician (sorry)</span></span>
+<span id="cb274-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-13" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> y_df198[<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(neg_x)]</span>
+<span id="cb274-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-14" aria-hidden="true" tabindex="-1"></a>pos_y <span class="ot">&lt;-</span> y_df198[(<span class="fu">length</span>(y_df198)<span class="sc">-</span><span class="fu">length</span>(pos_x)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y_df198)]</span>
+<span id="cb274-15"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-16"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-16" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb274-17"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_df198, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb274-18"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-19"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-19" aria-hidden="true" tabindex="-1"></a><span class="do">## The polygon function has some weird behavior so I add</span></span>
+<span id="cb274-20"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-20" aria-hidden="true" tabindex="-1"></a><span class="do">## these lines of codes to help it understand I want it to</span></span>
+<span id="cb274-21"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-21" aria-hidden="true" tabindex="-1"></a><span class="do">## draw the area under the curve below the distribution, not above it</span></span>
+<span id="cb274-22"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-22" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(neg_x, <span class="sc">-</span><span class="fl">2.36</span>)</span>
+<span id="cb274-23"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-23" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(neg_y, <span class="dv">0</span>)</span>
+<span id="cb274-24"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-24" aria-hidden="true" tabindex="-1"></a>pos_x <span class="ot">&lt;-</span> <span class="fu">c</span>(pos_x, <span class="fl">2.36</span>)</span>
+<span id="cb274-25"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-25" aria-hidden="true" tabindex="-1"></a>pos_y <span class="ot">&lt;-</span> <span class="fu">c</span>(pos_y, <span class="dv">0</span>)</span>
+<span id="cb274-26"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-27"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we can plot the area</span></span>
+<span id="cb274-28"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-28" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y, <span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb274-29"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb274-29" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(pos_x,pos_y, <span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<p>Now, we can calculate our <span class="math inline">\(p\)</span>-value by taking the area under curve of these regions:</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="do">## So now we want to take the integral of both of these sections and add them together</span></span>
+<span id="cb275-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb275-2" aria-hidden="true" tabindex="-1"></a>AUC <span class="ot">&lt;-</span> MESS<span class="sc">::</span><span class="fu">auc</span>(neg_x,neg_y) <span class="sc">+</span> MESS<span class="sc">::</span><span class="fu">auc</span>(pos_x,pos_y)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will round the result to two decimal for ease of reading</span></span>
+<span id="cb277-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Taking integrals of lines is an imperfect art so R doesn&#39;t get exactly 1</span></span>
+<span id="cb277-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb277-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(AUC,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0192</code></pre>
+<p>Our <span class="math inline">\(p\)</span>-value is 0.0192, indicating that we think there is only a 1.92% chance of observing the signal within our data (or a signal more extreme) assuming that the null hypothesis is true. Assuming a standard <span class="math inline">\(\alpha\)</span> threshold of 0.05, we would consider this result as <strong>signficant</strong> evidence that our null hypothesis, that <span class="math inline">\(\mu_{G1} = \mu{G2}\)</span>, may be incorrect.</p>
+</div>
+<div id="two-tailed-versus-one-tailed-t-test" class="section level3" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> Two-Tailed Versus One-Tailed T-Test</h3>
+<p>We refer to this as a two-tailed t-test because, as you can see in the image, we look at extreme values in both tails of the distribution. Generally, we do a two-tailed test when we want to know if the mean values are different. But, there are some cases where we assume that the effect can only occur in one direction.</p>
+<p>For example, let us say we have a study where we want to know if people who got a treatment had a greater reduction in blood pressure than people who did not receive the treatment. We assume that the treatment can only help people. Let’s say <span class="math inline">\(\mu_C\)</span> represents the average reduction among the control group and <span class="math inline">\(\mu_T\)</span> that among the treatment. Instead of the alternate hypothesis being that <span class="math inline">\(\mu_T \neq \mu_C\)</span>, we instead make it more specific to be that <span class="math inline">\(\mu_T &gt; \mu_C\)</span> (i.e., that the reduction in the treatment group is greater than that of the control group).</p>
+<p>So, now, let us say we ran a t-test to test this and got <span class="math inline">\(t = 2.3\)</span>. We now only calculate the area under the curve for the positive tail, like so:</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s create our x-axis, ranging from -5 to 5, with increments of 0.1</span></span>
+<span id="cb279-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span>
+<span id="cb279-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s define our t-distribution with 10 degrees of freedom</span></span>
+<span id="cb279-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-5" aria-hidden="true" tabindex="-1"></a>y_df198 <span class="ot">&lt;-</span> <span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">198</span>)</span>
+<span id="cb279-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Filling in the plot we want all the values of X less than or equal to -1.2 and X more than or equal to 1.2</span></span>
+<span id="cb279-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-8" aria-hidden="true" tabindex="-1"></a>pos_x <span class="ot">&lt;-</span> x[x <span class="sc">&gt;=</span> <span class="fl">2.3</span>]</span>
+<span id="cb279-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we want to get the values of y_df10 that correspond to these areas</span></span>
+<span id="cb279-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-11" aria-hidden="true" tabindex="-1"></a>pos_y <span class="ot">&lt;-</span> y_df198[(<span class="fu">length</span>(y_df198)<span class="sc">-</span><span class="fu">length</span>(pos_x)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y_df198)]</span>
+<span id="cb279-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-13" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb279-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y_df198, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb279-15"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-16"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-16" aria-hidden="true" tabindex="-1"></a><span class="do">## The polygon function has some weird behavior so I add</span></span>
+<span id="cb279-17"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-17" aria-hidden="true" tabindex="-1"></a><span class="do">## these lines of codes to help it understand I want it to</span></span>
+<span id="cb279-18"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-18" aria-hidden="true" tabindex="-1"></a><span class="do">## draw the area under the curve below the distribution, not above it</span></span>
+<span id="cb279-19"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-19" aria-hidden="true" tabindex="-1"></a>pos_x <span class="ot">&lt;-</span> <span class="fu">c</span>(pos_x, <span class="fl">2.3</span>)</span>
+<span id="cb279-20"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-20" aria-hidden="true" tabindex="-1"></a>pos_y <span class="ot">&lt;-</span> <span class="fu">c</span>(pos_y, <span class="dv">0</span>)</span>
+<span id="cb279-21"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-22"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we can plot the area</span></span>
+<span id="cb279-23"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb279-23" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(pos_x,pos_y, <span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="do">## So now we want to take the integral of both of these sections and add them together</span></span>
+<span id="cb280-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb280-2" aria-hidden="true" tabindex="-1"></a>AUC <span class="ot">&lt;-</span> MESS<span class="sc">::</span><span class="fu">auc</span>(pos_x,pos_y)</span>
+<span id="cb280-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb280-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb280-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb280-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We will round the result to two decimal for ease of reading</span></span>
+<span id="cb280-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb280-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Taking integrals of lines is an imperfect art so R doesn&#39;t get exactly 1</span></span>
+<span id="cb280-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb280-6" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(AUC,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0113</code></pre>
+<p>We see that our <span class="math inline">\(p\)</span>-value is 0.0113!</p>
+</div>
+</div>
+<div id="three-variations-of-the-t-test" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> Three Variations of the <span class="math inline">\(t\)</span>-test</h2>
+<div id="independent-samples-t-test" class="section level3" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> Independent Samples t-test</h3>
+<p>Here we have defined the independent samples <span class="math inline">\(t\)</span>-test. Given two groups, <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>, we can compare the mean value of a random normally distributed variable <span class="math inline">\(X\)</span> by calculating:</p>
+<p><span class="math display">\[t = \frac{\bar{x}_{G1} - \bar{x}_{G2}}{s*\sqrt{\frac{1}{n_{G1}} + \frac{1}{n_{G2}}}}\]</span>
+and the by comparing this value <span class="math inline">\(t\)</span> to a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n_{G1} + n_{G2} - 2\)</span> degrees of freedom. A p-value is computed by taking the area under the curve for all values more extreme than the observed test statistic <span class="math inline">\(t\)</span>.</p>
+<p>In this case, our hypotheses are as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_{G1} = \mu_{G2}\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\mu_{G1} \neq \mu_{G2}\)</span></li>
+</ul>
+<p>A <strong>significant</strong> finding indicates that our observed data is very unlikely, if the null hypothesis is assumed. Thus, this supplies us with evidence that the null hypothesis is incorrect.</p>
+</div>
+<div id="one-sample-t-test" class="section level3" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> One Sample <span class="math inline">\(t\)</span>-test</h3>
+<p>A variation of the <span class="math inline">\(t\)</span>-test is the one sample <span class="math inline">\(t\)</span>-test. This is done when we wish to compare the mean value of a normally distributed variable <span class="math inline">\(X\)</span> of a group <span class="math inline">\(G\)</span> to a specific value.</p>
+<p>For example, perhaps I sell flour in 1-pound bags and it is too time costly to weigh every single bag one-at-a-time. So, I developed a quick method of filling each bag with 1-pound of flour without measuring. To test if my method works, I decide to see if the mean weight of 100 bags of flour equals 1 pound. So our hypotheses are as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = 1\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\mu \neq 1\)</span></li>
+</ul>
+<p>where <span class="math inline">\(\mu\)</span> is the average weight of a bag of flower. To run the 1-sample <span class="math inline">\(t\)</span>-test, we calculate the mean of our 100 bags <span class="math inline">\(\bar{x}\)</span> and the standard deviation of observations <span class="math inline">\(s\)</span> and we calculate <span class="math inline">\(t\)</span> as follows:</p>
+<p><span class="math display">\[t = \frac{\bar{x} - 1}{s*\sqrt{\frac{1}{n}}}\]</span></p>
+<p>we then calculate our <span class="math inline">\(p\)</span>-value by comparing <span class="math inline">\(t\)</span> to a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n - 1\)</span> degrees of freedom (which, in this case, is 99).</p>
+</div>
+<div id="paired-samples-t-test" class="section level3" number="8.5.3">
+<h3><span class="header-section-number">8.5.3</span> Paired Samples <span class="math inline">\(t\)</span>-test</h3>
+<p>One important variation of the <span class="math inline">\(t\)</span>-test is the paired samples <span class="math inline">\(t\)</span>-test. This is done when we take the same measurement from the sample at two separate time points and we wish to assess if the mean value has changed or remained the same. This can be a good way to assess if an intervention has changed the participants performance on a knowledge-based task.</p>
+<p>So, for each participant we measure a variable at two time points. For a participant, we want to measure the difference in their score from time 1 <span class="math inline">\(x_1\)</span> and time 2 <span class="math inline">\(x_2\)</span>. We define this difference as <span class="math inline">\(d = x_1 - x_2\)</span>. We then calculate the mean value of <span class="math inline">\(d\)</span> for all participants <span class="math inline">\(\bar{d}\)</span> and the standard deviation of <span class="math inline">\(d\)</span>, <span class="math inline">\(s_d\)</span>. Our null and alternate hypotheses are as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\bar{d} = 0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\bar{d} \neq 0\)</span></li>
+</ul>
+<p>We can then calculate our <span class="math inline">\(t\)</span> test statistic as follows:</p>
+<p><span class="math display">\[t = \frac{\bar{d}}{s_d*\sqrt{\frac{1}{n}}}\]</span></p>
+<p>We then calculate our <span class="math inline">\(p\)</span>-value by comparing <span class="math inline">\(t\)</span> to a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(n-1\)</span> degrees of freedom.</p>
+</div>
+</div>
+<div id="what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test" class="section level2" number="8.6">
+<h2><span class="header-section-number">8.6</span> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</h2>
+<p>Prior to running a <span class="math inline">\(t\)</span>-test, we must ensure that our data is appropriate for doing so. This means we need to know what assumptions must be met by our data and we need to be able to check if they hold. Let us say that we have some variable <span class="math inline">\(X\)</span>:</p>
+<div id="assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale" class="section level3" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</h3>
+<p>Our variable <span class="math inline">\(X\)</span> must be measured measured on an ordinal or continuous scale. Generally, this assumption is straightforward - you cannot run a t-test when your variable of interest is categorical. Running the <span class="math inline">\(summary()\)</span> function in R is a good starting place, but typically this assumption can be checked by looking at the dataset visually.</p>
+</div>
+<div id="assumption-2-data-must-be-drawn-from-a-random-sample" class="section level3" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> Assumption #2: Data Must Be Drawn From a Random Sample</h3>
+<p>The effectiveness of the <span class="math inline">\(t\)</span>-test is dependent on administering an effective random sample of the groups of interest. In research methods courses, we will often discuss the risk of sampling bias. If there is bias within our sampling procedure, than the <span class="math inline">\(t\)</span>-test may simply detect this bias. For example, perhaps you want to compare the mean value of <span class="math inline">\(X\)</span> of a sample of men and women. Perhaps, inadvertantly, you were more likely to sample men with higher values of <span class="math inline">\(X\)</span> compared to men with lower values of <span class="math inline">\(X\)</span>. The <span class="math inline">\(t\)</span>-test cannot decipher if variation in the data is a result of actual population differences or if the variation is the result of sampling bias. It is crucial to reflect on whether or not this assumption has been met.</p>
+<div id="assumption-2.5-groups-must-be-independent" class="section level4" number="8.6.2.1">
+<h4><span class="header-section-number">8.6.2.1</span> Assumption #2.5: Groups Must Be Independent</h4>
+<p>When we run an independent samples <span class="math inline">\(t\)</span>-test, the two groups must be independent of one another, meaning they must represent distinct populations. This basically means that someone cannot qualify to be in both groups, as that would indicate certain individuals may represent both groups. For example, we might want to compare the running speed of baseball and basketball players – but if someone plays both baseball and basketball, they are actually representative of both populations. If such a person were included in the study, they would qualify to be in both groups and would violate the assumption of indpendence. Typically, this assumption is checked by examining the inclusion criteria for each group being compared and ensuring that, by definition, they are independent.</p>
+</div>
+</div>
+<div id="assumption-3-normality-of-observations-of-x" class="section level3" number="8.6.3">
+<h3><span class="header-section-number">8.6.3</span> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></h3>
+<p>The mean value of <span class="math inline">\(X\)</span> for each group being studied should be normally distributed. The larger our overall sample size, the “weaker” this assumption becomes and, as the sample size grows, the t-test is more <strong>robust</strong> to violations of the assumption of normality. In statistics, you will often see the word <strong>robust</strong> – if a method is <strong>robust</strong>, it means that it still works well despite certain violations in our underlying assumptions about the data’s distribution.</p>
+<p>So, it is important that we know how to check if a variable is normally distributed in our groups. I will generate two normally distributed variables and plot them in to display how we can check this.</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s generate data for two hypothetical groups</span></span>
+<span id="cb282-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="do">## In our study, we recruited 100 men and 100 women</span></span>
+<span id="cb282-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s use R to generate some random data</span></span>
+<span id="cb282-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We use the rnorm() function to randomly sample values from a normal distribution</span></span>
+<span id="cb282-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-5" aria-hidden="true" tabindex="-1"></a><span class="do">## We do this once for men and once for women</span></span>
+<span id="cb282-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-6" aria-hidden="true" tabindex="-1"></a><span class="do">## I have arbitrarily chosen a mean and standard variation</span></span>
+<span id="cb282-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Typically, this information is simply contained in a dataset</span></span>
+<span id="cb282-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-8" aria-hidden="true" tabindex="-1"></a>male_systolic <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb282-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-9" aria-hidden="true" tabindex="-1"></a>female_systolic <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">115</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb282-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-11" aria-hidden="true" tabindex="-1"></a><span class="do">## First, we need to generate density functions for both variables using the density() function</span></span>
+<span id="cb282-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-13" aria-hidden="true" tabindex="-1"></a>male_density <span class="ot">&lt;-</span> <span class="fu">density</span>(male_systolic)</span>
+<span id="cb282-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-14" aria-hidden="true" tabindex="-1"></a>female_density <span class="ot">&lt;-</span> <span class="fu">density</span>(female_systolic)</span>
+<span id="cb282-15"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-16"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-16" aria-hidden="true" tabindex="-1"></a><span class="do">## So now I want to plot the distributions of each of these groups</span></span>
+<span id="cb282-17"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-17" aria-hidden="true" tabindex="-1"></a><span class="do">## First I create my x-axis, which should contain all of the values in the dataset</span></span>
+<span id="cb282-18"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-18" aria-hidden="true" tabindex="-1"></a><span class="do">## So we need to calculate the minimum and maximum ends of the x-axis</span></span>
+<span id="cb282-19"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-20"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-20" aria-hidden="true" tabindex="-1"></a><span class="do">## First we calculate the minimum value of all measurements </span></span>
+<span id="cb282-21"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-21" aria-hidden="true" tabindex="-1"></a>minimum_x <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">c</span>(male_density<span class="sc">$</span>x,female_density<span class="sc">$</span>x))</span>
+<span id="cb282-22"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-23"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we calculate the maximum value of all measurements</span></span>
+<span id="cb282-24"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-24" aria-hidden="true" tabindex="-1"></a>maximum_x <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">c</span>(male_density<span class="sc">$</span>x,female_density<span class="sc">$</span>x))</span>
+<span id="cb282-25"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-26"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we do the same thing with the y-axis</span></span>
+<span id="cb282-27"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-27" aria-hidden="true" tabindex="-1"></a>minimum_y <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="do">## The minimum value of the y-axis, by default should be 0</span></span>
+<span id="cb282-28"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-28" aria-hidden="true" tabindex="-1"></a>maximum_y <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">c</span>(male_density<span class="sc">$</span>y,female_density<span class="sc">$</span>y))</span>
+<span id="cb282-29"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-30"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Now we can plot both the distributions on one graph</span></span>
+<span id="cb282-31"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-31" aria-hidden="true" tabindex="-1"></a><span class="do">## We will plot the male distribution in green</span></span>
+<span id="cb282-32"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-32" aria-hidden="true" tabindex="-1"></a><span class="do">## And the female distribution in blue</span></span>
+<span id="cb282-33"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-34"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-34" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(male_density, <span class="do">## plot the male function</span></span>
+<span id="cb282-35"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-35" aria-hidden="true" tabindex="-1"></a>     <span class="at">type=</span><span class="st">&quot;l&quot;</span>,  <span class="do">## plot it as a line</span></span>
+<span id="cb282-36"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-36" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;green&quot;</span>,  <span class="do">## plot it in the color green</span></span>
+<span id="cb282-37"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(minimum_x, maximum_x), <span class="do">## set the x-axis boundaries</span></span>
+<span id="cb282-38"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(minimum_y, maximum_y)) <span class="do">## set the y-axis boundaries</span></span>
+<span id="cb282-39"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-40"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we print the female density function</span></span>
+<span id="cb282-41"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb282-41" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(female_density, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<p>As we can see, the variables don’t perfectly follow the standard normal distribution, but we never expect the distribution of data from a sample to perfectly match up.</p>
+<p>Another, simpler way, to plot the distribution of our data is using the <span class="math inline">\(hist()\)</span> function to generate a histogram, like so:</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We will first generate a histogram of our male group</span></span>
+<span id="cb283-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(male_systolic)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we will generate a histogram of our female group</span></span>
+<span id="cb284-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(female_systolic)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-122-2.png" width="672" /></p>
+<p>This was a bit quicker to code than the previous way. We can still see a similar pattern in our data, though it isn’t quite clear if this suffices.</p>
+<p>So far, this is a very qualitative way of determing if the variables follow the normal distribution. We can actually run the Shapiro-Wilk test to determine if the data is normally distributed. The Shaprio-Wilk test attempts to measure how closely the data follows the normal distribution (the null hypothesis being that the data is normally distributed). If the result is significant, then we reject the null and assume that the data is non-normal, violating our assumption.</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We can do this with the shapiro.test function</span></span>
+<span id="cb285-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We do this for both of our groups</span></span>
+<span id="cb285-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb285-3" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(male_systolic)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  male_systolic
+## W = 0.99102, p-value = 0.7464</code></pre>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(female_systolic)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  female_systolic
+## W = 0.99138, p-value = 0.7749</code></pre>
+<p>Voila! It appears that the result is non-signficant and thus we feel comfortable moving forward assuming that our variables are normally distributed across each group.</p>
+</div>
+<div id="assumption-4-homogeneity-of-variance" class="section level3" number="8.6.4">
+<h3><span class="header-section-number">8.6.4</span> Assumption #4: Homogeneity of Variance</h3>
+<p>The independent sample <span class="math inline">\(t\)</span>-test assumes that the variance of the two groups is the same. We have assumed that the values are normally distributed and normal distributions are defined by a central tendency and a standard deviation. Essentially, this assumption is just that the standard deviation of both variables is roughly the same. We can use the Levene Test to determine if the variance of <span class="math inline">\(X\)</span> for both groups is the same.</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We are going to use the leveneTest in the &quot;car&quot; package</span></span>
+<span id="cb289-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="do">## This function assumes our data is structured as a data.frame with a separate variable for our grouping vairbale (gender) and our vvalue X (systolic_BP)</span></span>
+<span id="cb289-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We want a data frame with two columns</span></span>
+<span id="cb289-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Often, your data will already be in a data.frame</span></span>
+<span id="cb289-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-6" aria-hidden="true" tabindex="-1"></a><span class="do">## For practical purposes I am generating a new data.frame here</span></span>
+<span id="cb289-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-7" aria-hidden="true" tabindex="-1"></a><span class="do">## One column for gender, one column with the bp values</span></span>
+<span id="cb289-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-8" aria-hidden="true" tabindex="-1"></a><span class="do">## we want BPs corresponding to women in the sample to be assigned the gender value &quot;Female&quot;, and same with men in the sample and &quot;Male&quot;</span></span>
+<span id="cb289-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-10" aria-hidden="true" tabindex="-1"></a><span class="do">## First we create a vector that contains the words &quot;Male&quot; and &quot;Female&quot;</span></span>
+<span id="cb289-11"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-11" aria-hidden="true" tabindex="-1"></a><span class="do">## This will be the gender column of our data frame</span></span>
+<span id="cb289-12"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-12" aria-hidden="true" tabindex="-1"></a><span class="do">## We simply create a vector with the word male the same number of times as men in teh sample, and then repeat that for women inthe sample.</span></span>
+<span id="cb289-13"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-13" aria-hidden="true" tabindex="-1"></a><span class="do">## We do that with the rep() function, which creates a vector by repeating the first argument n times.</span></span>
+<span id="cb289-14"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-14" aria-hidden="true" tabindex="-1"></a><span class="do">## We set n = length(male_systolic), which gives us the number of blood pressure observations in our sample</span></span>
+<span id="cb289-15"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-15" aria-hidden="true" tabindex="-1"></a>gender_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Male&quot;</span>,<span class="fu">length</span>(male_systolic)),</span>
+<span id="cb289-16"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-16" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">rep</span>(<span class="st">&quot;Female&quot;</span>,<span class="fu">length</span>(female_systolic)))</span>
+<span id="cb289-17"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-18"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-18" aria-hidden="true" tabindex="-1"></a><span class="do">## We then create a vector of blood pressure values by merging the vectors containing results of men and then women</span></span>
+<span id="cb289-19"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-19" aria-hidden="true" tabindex="-1"></a><span class="do">## We do men first because that is how we created our gender_values variable</span></span>
+<span id="cb289-20"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-20" aria-hidden="true" tabindex="-1"></a>bp_values <span class="ot">&lt;-</span> <span class="fu">c</span>(male_systolic, female_systolic)</span>
+<span id="cb289-21"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-22"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally, we create our dataframe using the cbind function and the data.frame function</span></span>
+<span id="cb289-23"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-23" aria-hidden="true" tabindex="-1"></a><span class="do">## cbind stands for &quot;column bind&quot; and just tells the computer to merge the vectors as columns.</span></span>
+<span id="cb289-24"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-24" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(gender_values, bp_values))</span>
+<span id="cb289-25"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-26"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Usually when we do this, the computer picks weird names for the variables</span></span>
+<span id="cb289-27"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-27" aria-hidden="true" tabindex="-1"></a><span class="do">## We can set the names ourselves</span></span>
+<span id="cb289-28"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-28" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Gender&quot;</span>,<span class="st">&quot;Systolic_BP&quot;</span>)</span>
+<span id="cb289-29"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-30"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-30" aria-hidden="true" tabindex="-1"></a><span class="do">## As well, the computer always guesses the kind of variable each column is supposed to be and sometimes the computer is wrontg</span></span>
+<span id="cb289-31"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-31" aria-hidden="true" tabindex="-1"></a><span class="do">## So we can tell the computer how to read the variable</span></span>
+<span id="cb289-32"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-32" aria-hidden="true" tabindex="-1"></a><span class="do">## In this case we use the as.numeric() function to tell the computer that this variable should be read as numeric</span></span>
+<span id="cb289-33"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-33" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Systolic_BP <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>Systolic_BP)</span>
+<span id="cb289-34"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-35"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-35" aria-hidden="true" tabindex="-1"></a><span class="do">## And finally, we can run the test!</span></span>
+<span id="cb289-36"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-36" aria-hidden="true" tabindex="-1"></a><span class="do">## We use the ~ formula notation that you will see more throughout this course</span></span>
+<span id="cb289-37"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Generally, formulas are in the form of Y ~ X1 + X2 + ... + XN</span></span>
+<span id="cb289-38"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-38" aria-hidden="true" tabindex="-1"></a><span class="do">## We usually read this as saying Y is regressed on X1, X2, .., and XN</span></span>
+<span id="cb289-39"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-39" aria-hidden="true" tabindex="-1"></a><span class="do">## However, don&#39;t worry too much about that right now, we can use the leveneTest in the car package to test for homogeneity of variance of our variables</span></span>
+<span id="cb289-40"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb289-40" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">leveneTest</span>(Systolic_BP <span class="sc">~</span> Gender, <span class="at">data =</span> df)</span></code></pre></div>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
+##        Df F value Pr(&gt;F)
+## group   1  0.0231 0.8793
+##       198</code></pre>
+<p>As we can see, the p-value is quite high (<span class="math inline">\(Pr(&gt;F)\)</span>), so we don’t have any reason to believe the variances of the two variables are not homogenous (note, this doesn’t mean that they are homogenous, just that we feel safe assuming that it is so!)</p>
+</div>
+</div>
+<div id="last-but-not-least---how-do-we-run-a-t-test-in-r" class="section level2" number="8.7">
+<h2><span class="header-section-number">8.7</span> Last But Not Least - How Do We Run A t-Test in R</h2>
+<p>Running a t-test in R is quite simple. Given a normally distributed variable <span class="math inline">\(X\)</span> measured among two groups <span class="math inline">\(G_1\)</span> and <span class="math inline">\(G_2\)</span>, we need to create two vectors. The first vector contains all values of <span class="math inline">\(X\)</span> for <span class="math inline">\(G_1\)</span> and the second vector contains all values of <span class="math inline">\(X\)</span> for <span class="math inline">\(G_2\)</span>. We then supply them to the <span class="math inline">\(t.test()\)</span> function as arguments. We shall use the systolic blood pressure data frame we generated when running the levene test above.</p>
+<p>As such, we shall create a vector with all the blood pressure observations of men and those women and then supply them to <span class="math inline">\(t.test()\)</span> to run the <span class="math inline">\(t\)</span>-test.</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Vector for men in the sample</span></span>
+<span id="cb291-2"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-2" aria-hidden="true" tabindex="-1"></a>men <span class="ot">&lt;-</span> df<span class="sc">$</span>Systolic_BP[df<span class="sc">$</span>Gender <span class="sc">==</span> <span class="st">&quot;Male&quot;</span>]</span>
+<span id="cb291-3"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Vector for women in the sample</span></span>
+<span id="cb291-4"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-4" aria-hidden="true" tabindex="-1"></a>women <span class="ot">&lt;-</span> df<span class="sc">$</span>Systolic_BP[df<span class="sc">$</span>Gender <span class="sc">==</span> <span class="st">&quot;Female&quot;</span>]</span>
+<span id="cb291-5"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb291-6"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Now we shall run the t-test</span></span>
+<span id="cb291-7"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-7" aria-hidden="true" tabindex="-1"></a><span class="do">## I am setting var.equal to be TRUE because the function</span></span>
+<span id="cb291-8"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Will attempt to introduce corrections if it senses the variations</span></span>
+<span id="cb291-9"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Of the two groups is different.</span></span>
+<span id="cb291-10"><a href="comparing-two-groups-w-independent-samples-t-test.html#cb291-10" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(men, women, <span class="at">var.equal =</span> T)</span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  men and women
+## t = 18.152, df = 198, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   81.34567 101.17433
+## sample estimates:
+## mean of x mean of y 
+##    146.13     54.87</code></pre>
+<p>Voila! We have run a <span class="math inline">\(t\)</span>-test. That was much easier than learning about the <span class="math inline">\(t\)</span>-test. We can see that the function calculated that <span class="math inline">\(t = 18.787\)</span> with 198 degrees of freedom. This resulted in a <span class="math inline">\(p\)</span>-value less than &lt;0.001.</p>
+<p>The <span class="math inline">\(t\)</span>-test function can be used to specify other elements such as if you want to run a one-tailed or two-tailed test, a one sample t-test, a paired t-test, among many other options.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descriptive-statistics-table-one.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pearsons-chi2-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

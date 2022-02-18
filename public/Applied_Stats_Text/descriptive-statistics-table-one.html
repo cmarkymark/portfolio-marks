@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Descriptive Statistics: Table One | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Descriptive Statistics: Table One | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Descriptive Statistics: Table One | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"/>
+<link rel="next" href="comparing-two-groups-w-independent-samples-t-test.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="descriptive-statistics-table-one" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Descriptive Statistics: Table One</h1>
+<p>One of the most powerful parts of quantitative research methods is that we can take data from a sample (i.e., those recruited into a study) and we can attempt to make inferences about the broader population. This is the heart of what we refer to as inferential statistics. While much of this has come up in prior chapters, let’s go over a few quick terms.</p>
+<div id="sample-versus-population" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Sample Versus Population</h2>
+<p>Our study <strong>sample</strong> is the set of people who are recruited into our study. See, we cannot recruit every person out there. Let’s say we want to do a study of adults in the US…that is hundreds of millions of people. We cannot include everyone in our study. We can even think smaller, say we want to ask questions about people who use cocaine in the US…that is still millions of people!</p>
+<p>Generally, when a sample is recruited for a study, the intention is to capture a specific <strong>population</strong>. A <strong>population</strong> is a set of people who we would like to ask a research question about, but that (in all likelihood) we cannot recruit in its entirety.</p>
+<p>For example, let’s say we are interested in whether or not income level is associated with increased readiness to quit smoking cigarettes among older adults (45+) who smoke in the United States. Our <strong>population</strong> in this study is adults, 45 years of age and older, who smoke cigarettes, living in the United States.</p>
+</div>
+<div id="inclusion-criteria" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Inclusion Criteria</h2>
+<p>Our goal is then to recruit a study <strong>sample</strong> that is representative of this broader <strong>population</strong>. Studies do this by defining a set of <strong>inclusion criteria</strong> which drives overall recruitment. In our example, we have several clear inclusion criteria:</p>
+<ol style="list-style-type: decimal">
+<li>Must be 45 years of age or older</li>
+<li>Must live in the United States</li>
+<li>Must currently smoke cigarettes</li>
+</ol>
+<p>When we are writing a research paper, it is always important to discuss what the inclusion criteria were for a study, because that tells us the study’s population of interest.</p>
+</div>
+<div id="the-sample-does-not-always-match-the-population" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> The Sample Does Not Always Match the Population</h2>
+<p>Here’s the thing - just because a study recruited a sample with the intention of being representative of a population, that does not mean the recruitment goes perfectly (hint: it never does). Let’s say we get the data for our example study, we have recruited 1,000 people who smoke cigarettes aged 45 and older who live in the US. It turns out, though, that 950 of the people recruited are non-Hispanic White.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> As we can see, while we did recruit a sample that met our inclusion criteria, it turns out that we have over-sampled non-Hispanic White people (i.e., non-Hispanic White people do not represent 95% of all people who smoke aged 45+ in the US). This doesn’t mean our data is invalid, but it forces us to re-evaluate what population our study sample actually represents. This will change how we discuss the conclusions of our paper - especially if we believe that race plays an important role in the process under study.</p>
+<p>Now, usually by the time we receive the data to do analyses, the recruitment is done and we simply have to make do with what data we have. While the inclusion criteria can tell us what the intended study population was, it is our job as statisticians to determine what the actual study population is, based on the characteristics of the study sample. This is where <strong>descriptive statistics</strong> come into play. As the name implies, <strong>descriptive statistics</strong> represent a set of techniques we can use to describe our study sample.</p>
+<p><strong>The most important statistical task to take at the beginning of any human subjects study is to describe who your sample is!</strong> If we fail to do this, then we have no idea what population our results might actually pertain to. Describing our study sample well is one of the most crucial tasks we have in undertaking applications of inferential statistics.</p>
+<p>So…umm…how do we go about doing that then?</p>
+</div>
+<div id="introducing-table-one" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Introducing: Table One!</h2>
+<p>In almost every human subjects study, the first table is the table which describes your study sample. It is where you see statistics such as the average age of participants, the gender breakdown, educational attainment, among other variables of interest in your study. While there is no rule that this has to be the first table, Table One is a necessity in every single human subjects research paper. You can see in the photo below a picture of Table One from one of my own studies…this is a type of table we see frequently:</p>
+<p><img src="Images/PRIMER_Table.PNG" /></p>
+<p>In this table, we actually see that the descriptives are stratified by city and by homelessness status. It is fairly common that Table One is stratified by a key variable (e.g., treatment versus control, exposure status, etc). As we learn how to make Table One, we will also discuss how to choose when to stratify our table and how to do so easily in R!</p>
+</div>
+<div id="rewind-a-bit-what-exactly-are-descriptive-statistics" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Rewind a Bit: What Exactly are Descriptive Statistics</h2>
+<p>So, before we talk about putting together Table One, we need to discuss what descriptive statistics are and what tools we have to extract them. At its simplest, descriptive statistics represent a wide range of tools that allow us to numerically reflect on who our sample is. Generally, when the term “descriptives” (often short-hand for “descriptive statistics”) is used, what we actually mean is a univariate summary of the variables of interest in our study, which we will discuss in detail below. However, the line between descriptive and inferential statistics is often a bit more blurry - tests of association between multiple variables and more complicated tests (such as regression) also contain descriptive information about the sample, though we typically do not refer to these as descriptive because they also provide inferential information.</p>
+</div>
+<div id="primary-types-of-descriptives-seen-in-table-one" class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> Primary Types of Descriptives Seen in Table One</h2>
+<p>Table One generally presents univariate summaries of each variable of interest. Often, we are taught about 4 primary types of variables: nominal, ordinal, discrete, and continuous. Nominal variables are categorical and where the different categories do not have a rank-ordering (e.g., gender, which school you attended, your name, etc). Ordinal variables are categorical and where the different categories have a natural ordering (e.g., letter grades on a test, sizes of drinks at Starbucks). Discrete variables are numeric and can be represented by a whole number - these generally measure things that cannot be sub-divided. For example, if someone asks you how many pets you have, the answer must be a whole value…someone can’t have 2.23 pets. Continuous variables are numeric and can generally take on any fractional or decimal value. The line between these can sometimes be blurry. For example, we could ask someone how old they are and use it as a discrete variable (“I am 29 years old”) or we can use it as a continuous variable (“I am exactly 29.7234 years old”).</p>
+<p>For generating Table One, we can simply start by just distinguishing between categorical variables and numeric variables.</p>
+<div id="descriptive-statistics-for-categorical-data" class="section level3" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> Descriptive Statistics for Categorical Data</h3>
+<p>For a categorical variable (whether ordinal or nominal), we generally calculate the <strong>frequency</strong> and <strong>proportion</strong> of the different levels of that variable. For example, let’s say we have a variable where we asked 20 participants which color of the rainbow was their favorite and the responses were like so:</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="descriptive-statistics-table-one.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Here are the responses from the twenty participants</span></span>
+<span id="cb235-2"><a href="descriptive-statistics-table-one.html#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="do">## I have written them out like so, just so it is easy to confirm our results</span></span>
+<span id="cb235-3"><a href="descriptive-statistics-table-one.html#cb235-3" aria-hidden="true" tabindex="-1"></a>fave_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Red&quot;</span>,<span class="st">&quot;Red&quot;</span>,</span>
+<span id="cb235-4"><a href="descriptive-statistics-table-one.html#cb235-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Orange&quot;</span>,</span>
+<span id="cb235-5"><a href="descriptive-statistics-table-one.html#cb235-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Yellow&quot;</span>,<span class="st">&quot;Yellow&quot;</span>,<span class="st">&quot;Yellow&quot;</span>,</span>
+<span id="cb235-6"><a href="descriptive-statistics-table-one.html#cb235-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Green&quot;</span>,<span class="st">&quot;Green&quot;</span>,<span class="st">&quot;Green&quot;</span>,<span class="st">&quot;Green&quot;</span>,</span>
+<span id="cb235-7"><a href="descriptive-statistics-table-one.html#cb235-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Blue&quot;</span>,</span>
+<span id="cb235-8"><a href="descriptive-statistics-table-one.html#cb235-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Indigo&quot;</span>,<span class="st">&quot;Indigo&quot;</span>,<span class="st">&quot;Indigo&quot;</span>,<span class="st">&quot;Indigo&quot;</span>,<span class="st">&quot;Indigo&quot;</span>,</span>
+<span id="cb235-9"><a href="descriptive-statistics-table-one.html#cb235-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;Purple&quot;</span>,<span class="st">&quot;Purple&quot;</span>,<span class="st">&quot;Purple&quot;</span>,<span class="st">&quot;Purple&quot;</span>)</span>
+<span id="cb235-10"><a href="descriptive-statistics-table-one.html#cb235-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb235-11"><a href="descriptive-statistics-table-one.html#cb235-11" aria-hidden="true" tabindex="-1"></a><span class="do">## R won&#39;t recognize this vector as a categorical variable just yet</span></span>
+<span id="cb235-12"><a href="descriptive-statistics-table-one.html#cb235-12" aria-hidden="true" tabindex="-1"></a><span class="do">## We can use the factor() function to tell it is categorical</span></span>
+<span id="cb235-13"><a href="descriptive-statistics-table-one.html#cb235-13" aria-hidden="true" tabindex="-1"></a>fave_colors <span class="ot">&lt;-</span> <span class="fu">factor</span>(fave_colors)</span></code></pre></div>
+<div id="frequency" class="section level4" number="7.6.1.1">
+<h4><span class="header-section-number">7.6.1.1</span> Frequency</h4>
+<p>The <strong>frequency</strong> is the number of people who responded with each of the different levels. There are many ways to extract this information in R, but a common one is to use the summary() function</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="descriptive-statistics-table-one.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fave_colors)</span></code></pre></div>
+<pre><code>##   Blue  Green Indigo Orange Purple    Red Yellow 
+##      1      4      5      1      4      2      3</code></pre>
+<p>Here we can see the frequency of each level of our variable!</p>
+</div>
+<div id="proportion" class="section level4" number="7.6.1.2">
+<h4><span class="header-section-number">7.6.1.2</span> Proportion</h4>
+<p>Of interest as well is the <strong>proportion</strong> each category was elected – this is simply the percentage of respondents who cose that categorical level. For example, we see that 5 people listed Indigo as their favorite color. Since there were 20 total participants, we can calculate <span class="math inline">\(5/20 = 0.25 = 25\%\)</span>. But that is pretty painstaking. There are many ways to calculate this in R. Here is one such way:</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="descriptive-statistics-table-one.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The proportion for each level equals the (number of responses for that level)/(total number of responses)</span></span>
+<span id="cb238-2"><a href="descriptive-statistics-table-one.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="do">## The cool thing is that &quot;summary(fave_colors)&quot; contains the number of responses for each level</span></span>
+<span id="cb238-3"><a href="descriptive-statistics-table-one.html#cb238-3" aria-hidden="true" tabindex="-1"></a><span class="do">## So we can actually just divide &quot;summary(fave_colors)&quot; by the total number of participants</span></span>
+<span id="cb238-4"><a href="descriptive-statistics-table-one.html#cb238-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We can get the total number of participants with the &quot;length()&quot; function, like so:</span></span>
+<span id="cb238-5"><a href="descriptive-statistics-table-one.html#cb238-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb238-6"><a href="descriptive-statistics-table-one.html#cb238-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fave_colors)<span class="sc">/</span><span class="fu">length</span>(fave_colors)</span></code></pre></div>
+<pre><code>##   Blue  Green Indigo Orange Purple    Red Yellow 
+##   0.05   0.20   0.25   0.05   0.20   0.10   0.15</code></pre>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="descriptive-statistics-table-one.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The length function can be used on a vector and just returns the number of elements in the vector</span></span>
+<span id="cb240-2"><a href="descriptive-statistics-table-one.html#cb240-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb240-3"><a href="descriptive-statistics-table-one.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Now this gave us the decimal form of the proportion. You can translate each value into a percentage by multipling the whole thing by 100</span></span>
+<span id="cb240-4"><a href="descriptive-statistics-table-one.html#cb240-4" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span><span class="fu">summary</span>(fave_colors)<span class="sc">/</span><span class="fu">length</span>(fave_colors)</span></code></pre></div>
+<pre><code>##   Blue  Green Indigo Orange Purple    Red Yellow 
+##      5     20     25      5     20     10     15</code></pre>
+<p>Here we can see that 5% responded with Blue, 20% Green, et cetera et cetera. Now, somebody might think its funny if you put this in Table One starting with the color Blue…I am not going to re-arrange here, but when we make our table, it would be good to order the variables in their natural order (Red, Orange, Yellow, Green, Blue, Indigo, Violet). We want to make things as easy as possible on our reader.</p>
+</div>
+</div>
+<div id="descriptive-statistics-for-numeric-data" class="section level3" number="7.6.2">
+<h3><span class="header-section-number">7.6.2</span> Descriptive Statistics for Numeric Data</h3>
+<p>For a numeric variable, we generally calculate a measure of <strong>central tendency</strong> and a measure of <strong>dispersion</strong>.</p>
+<div id="central-tendency" class="section level4" number="7.6.2.1">
+<h4><span class="header-section-number">7.6.2.1</span> Central Tendency</h4>
+<p>In lay terms, we can understand <strong>central tendency</strong> as being the average of a variable. There are three types of averages we can consider:</p>
+<ul>
+<li><strong>Mean</strong> average, which is the sum of all participants responses divided by the number of responses</li>
+<li><strong>Median</strong> average, which is the middle value of all participants responses sorted from lowest to highest</li>
+<li>and <strong>Mode</strong> average, which is the most common response to the question</li>
+</ul>
+<p>Generally, we are most interested in the mean and the median averages. However, the mode can be particularly important to calculate if the data is very zero-heavy. Though, even then we tend not to explicitly refer to calculating the mode.</p>
+<p>It is quite simple to calculate the mean and median in R using the <span class="math inline">\(mean()\)</span> and <span class="math inline">\(median()\)</span> functions.</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="descriptive-statistics-table-one.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s say we have a vector of values</span></span>
+<span id="cb242-2"><a href="descriptive-statistics-table-one.html#cb242-2" aria-hidden="true" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,</span>
+<span id="cb242-3"><a href="descriptive-statistics-table-one.html#cb242-3" aria-hidden="true" tabindex="-1"></a>            <span class="dv">3</span>,<span class="dv">3</span>,</span>
+<span id="cb242-4"><a href="descriptive-statistics-table-one.html#cb242-4" aria-hidden="true" tabindex="-1"></a>            <span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,</span>
+<span id="cb242-5"><a href="descriptive-statistics-table-one.html#cb242-5" aria-hidden="true" tabindex="-1"></a>            <span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,</span>
+<span id="cb242-6"><a href="descriptive-statistics-table-one.html#cb242-6" aria-hidden="true" tabindex="-1"></a>            <span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,</span>
+<span id="cb242-7"><a href="descriptive-statistics-table-one.html#cb242-7" aria-hidden="true" tabindex="-1"></a>            <span class="dv">7</span>,<span class="dv">7</span>,</span>
+<span id="cb242-8"><a href="descriptive-statistics-table-one.html#cb242-8" aria-hidden="true" tabindex="-1"></a>            <span class="dv">8</span>)</span>
+<span id="cb242-9"><a href="descriptive-statistics-table-one.html#cb242-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-10"><a href="descriptive-statistics-table-one.html#cb242-10" aria-hidden="true" tabindex="-1"></a><span class="do">## If we want to calculate the mean, we can simply write:</span></span>
+<span id="cb242-11"><a href="descriptive-statistics-table-one.html#cb242-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-12"><a href="descriptive-statistics-table-one.html#cb242-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(values)</span></code></pre></div>
+<pre><code>## [1] 4.941176</code></pre>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="descriptive-statistics-table-one.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Likewise, if we want the median, we can just type</span></span>
+<span id="cb244-2"><a href="descriptive-statistics-table-one.html#cb244-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb244-3"><a href="descriptive-statistics-table-one.html#cb244-3" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(values)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+</div>
+<div id="dispersion" class="section level4" number="7.6.2.2">
+<h4><span class="header-section-number">7.6.2.2</span> Dispersion</h4>
+<p>Now, along with central tendency, it is important to also calculate the <strong>dispersion</strong> of the variable. Dispersion is simply how “spread out” the values of the responses are. Perhaps we have two studies where we ask people how old they are:</p>
+<ul>
+<li>In the first study, oddly, every person reports that they are 37 years old. We may understand that there is actually no dispersion.</li>
+<li>In the second study, while the mean age is 37, the age range is from 27 to 47 years old, displaying that the age of participants is dispersed more broadly around the mean value</li>
+</ul>
+<p>How we calculate dispersion is dependent on the assumed distribution of the variable. If a variable is normally distributed, we can capture two measures of dispersion called <strong>variance</strong> and <strong>standard deviation</strong>. We refer to population-level <strong>variance</strong> as <span class="math inline">\(\sigma^2\)</span> and <strong>standard deviation</strong> as <span class="math inline">\(\sigma\)</span>. When we calculate sample-level variance and standard deviation, we refer to them as <span class="math inline">\(s^2\)</span> and <span class="math inline">\(s\)</span>. As discussed before, the normal distribution is defined by a mean value and the standard deviation.</p>
+<p>Let’s say we have a <span class="math inline">\(n\)</span> observations of a variable <span class="math inline">\(X = \{x_1, x_2,\dots,x_n\}\)</span> we assume is normally distributed. Let <span class="math inline">\(\bar{x}\)</span> be the mean value of <span class="math inline">\(X\)</span>. In order to estimate the normal distribution a variable follows, we can calculate the variance as follows:</p>
+<p><span class="math display">\[\sigma^2 = \sum_{i = 1}^{n} \frac{(x_i - \bar{x})}{n - 1}\]</span>
+As we can see, variance is a measure of how far from the mean each observation is. The farther values are from the mean, the greater the variance. Dividing by <span class="math inline">\(n-1\)</span> is known as Bessel’s correction. By making the denominator smaller (as opposed to <span class="math inline">\(n\)</span>), we are increasing the estimated variance. This is to make a more conservative estimate of the variance.</p>
+<p>In order to calculate the standard deviation, we simply take the square root, like so:</p>
+<p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\sum_{i = 1}^{n} \frac{(x_i - \bar{x})}{n - 1}}\]</span>
+It is good to know how these are calculated and to understand what they capture, but these metrics can be calculated in R using the <span class="math inline">\(var()\)</span> and <span class="math inline">\(sd()\)</span> functions, like so:</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="descriptive-statistics-table-one.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="do">## variance of a set of observations</span></span>
+<span id="cb246-2"><a href="descriptive-statistics-table-one.html#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(values)</span></code></pre></div>
+<pre><code>## [1] 2.933824</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="descriptive-statistics-table-one.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="do">## standard deviation</span></span>
+<span id="cb248-2"><a href="descriptive-statistics-table-one.html#cb248-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(values)</span></code></pre></div>
+<pre><code>## [1] 1.712841</code></pre>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="descriptive-statistics-table-one.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="do">## As well, we noted that standard deviation is the square root of variance</span></span>
+<span id="cb250-2"><a href="descriptive-statistics-table-one.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="do">## so we can actually check if that&#39;s true like so</span></span>
+<span id="cb250-3"><a href="descriptive-statistics-table-one.html#cb250-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(values) <span class="sc">==</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(values))</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>As we cannot always be sure of the underlying distribution of a variable, it can be useful to also reflect on the range of the data (i.e., minimum and maximum values) as well as <strong>percentile</strong> distribution. Many of you are likely familiar with the idea of <strong>percentiles</strong> from standardized testing. If you get a score in the 90th percentile, that essentially means your score is higher than 90% of other test takers but that it is lower than 10%. One useful measure of dispersion is the interquartile range (IQR) - this is a measure of the “middle 50%” of the observations. The IQR is the difference between the 75th percentile and the 25th percentile. We can get this information by using the summary function on a numeric variable like so:</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="descriptive-statistics-table-one.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(values)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.000   4.000   5.000   4.941   6.000   8.000</code></pre>
+<p>“1st Qu.” represents the 25th percentile and “3rd Qu.” represents the 75th percentile. The IQR is then defined as difference between “3rd Qu.” and “1st Qu.” which in this case is 2. As we can see, the summary function also provides us with the minimum and maximum values (i.e., the range) of the observations as well! There are a couple of other ways to calculate IQR. The first is to use the <span class="math inline">\(IQR()\)</span> function, like so:</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="descriptive-statistics-table-one.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(values)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Which, we see gives us 2. The other is more generalizable. Sometimes, for reasons, we may want to look at different percentile values. Perhaps the 95% Interval, from the 2.5th to the 97.5th percentiles are of interest to us. We can use the <span class="math inline">\(quantile()\)</span>, like so:</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="descriptive-statistics-table-one.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First, define a vector of the percentiles you want to identify</span></span>
+<span id="cb256-2"><a href="descriptive-statistics-table-one.html#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="do">## They should be in decimal form, so if you want the 2.5th percentile you would write 0.025</span></span>
+<span id="cb256-3"><a href="descriptive-statistics-table-one.html#cb256-3" aria-hidden="true" tabindex="-1"></a>percs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)</span>
+<span id="cb256-4"><a href="descriptive-statistics-table-one.html#cb256-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb256-5"><a href="descriptive-statistics-table-one.html#cb256-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Then you run the quantile() function, feeding the variable and the percentiles in as arguments</span></span>
+<span id="cb256-6"><a href="descriptive-statistics-table-one.html#cb256-6" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(values, percs)</span></code></pre></div>
+<pre><code>##  2.5% 97.5% 
+##   1.8   7.6</code></pre>
+<p>This gives you the quantile range and you can customize it to extract any percentiles that you wish. Since we had so few observations, the quantile function estimated the underlying distribution of the variable and then calculated these percentile values from the identifying distribution.</p>
+</div>
+</div>
+</div>
+<div id="creating-table-one" class="section level2" number="7.7">
+<h2><span class="header-section-number">7.7</span> Creating Table One</h2>
+<p>Now that we have gone over the types of univariate descriptive statistics that are commonly found in Table One, we need to actually create Table One. Sometimes, Table One is really easy to make by hand. Maybe you have 5 variables you care about (let’s say, Age, Gender, Race, Educational Attainment, and Lifetime Number of Cigarettes Smoked). It wouldn’t be too hard to just do that by hand! But, sometimes, Table One can get out of hand. Check out this descriptive table from a manuscript I wrote:</p>
+<p><img src="Images/cam_table_one.jpg" /></p>
+<p>That is a giant table! Fortunately, I didn’t have to generate it entirely by hand. I could use the power of my computer to help me along the way!</p>
+<div id="the-tableone-package" class="section level3" number="7.7.1">
+<h3><span class="header-section-number">7.7.1</span> The tableone package</h3>
+<p>To do this we are going to download and use the <span class="math inline">\(tableone\)</span> package in R. It was designed to help us generate our descriptive statistics table.</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="descriptive-statistics-table-one.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Uncomment this line of code in order to install the library</span></span>
+<span id="cb258-2"><a href="descriptive-statistics-table-one.html#cb258-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;tableone&quot;)</span></span>
+<span id="cb258-3"><a href="descriptive-statistics-table-one.html#cb258-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb258-4"><a href="descriptive-statistics-table-one.html#cb258-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we will load tableone into our library</span></span>
+<span id="cb258-5"><a href="descriptive-statistics-table-one.html#cb258-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tableone)</span></code></pre></div>
+<p>The tableone package was designed to help us make our table one, even if it is quite complicated!</p>
+<p>To display how to use it, we are going to use a dataset already built into R - the <span class="math inline">\(mtcars\)</span> dataset.</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="descriptive-statistics-table-one.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="do">## R has some practice datasets built in</span></span>
+<span id="cb259-2"><a href="descriptive-statistics-table-one.html#cb259-2" aria-hidden="true" tabindex="-1"></a><span class="do">## The mtcars dataset has data on 32 models of cars</span></span>
+<span id="cb259-3"><a href="descriptive-statistics-table-one.html#cb259-3" aria-hidden="true" tabindex="-1"></a><span class="do">## It has variables like miles per gallon (mpg), how many cylinders the car has (cyl), among others</span></span>
+<span id="cb259-4"><a href="descriptive-statistics-table-one.html#cb259-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb259-5"><a href="descriptive-statistics-table-one.html#cb259-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb259-6"><a href="descriptive-statistics-table-one.html#cb259-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Let us peak at the data really quickly</span></span>
+<span id="cb259-7"><a href="descriptive-statistics-table-one.html#cb259-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<p>Okay, so I know that a lot of information I care about can be accessed using the summary() function, like so:</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="descriptive-statistics-table-one.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
+<pre><code>##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000</code></pre>
+<p>In theory, I could use this to populate my table one, but I want R to just make my table one for me! To do so, we are going to use the <span class="math inline">\(createTableOne()\)</span> function, like so:</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="descriptive-statistics-table-one.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="do">## first we will create a vector of the variables we want to include in our table</span></span>
+<span id="cb263-2"><a href="descriptive-statistics-table-one.html#cb263-2" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="co"># miles per gallon</span></span>
+<span id="cb263-3"><a href="descriptive-statistics-table-one.html#cb263-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;cyl&quot;</span>, <span class="co"># number of cylinders in engine (4,6,8)</span></span>
+<span id="cb263-4"><a href="descriptive-statistics-table-one.html#cb263-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;am&quot;</span>,  <span class="co"># transmission (0 = automatic 1 = manual)</span></span>
+<span id="cb263-5"><a href="descriptive-statistics-table-one.html#cb263-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;hp&quot;</span>)  <span class="co"># Gross Horsepower</span></span>
+<span id="cb263-6"><a href="descriptive-statistics-table-one.html#cb263-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-7"><a href="descriptive-statistics-table-one.html#cb263-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we want to specify any categorical data in our variables</span></span>
+<span id="cb263-8"><a href="descriptive-statistics-table-one.html#cb263-8" aria-hidden="true" tabindex="-1"></a>cat_variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>,<span class="st">&quot;am&quot;</span>)</span>
+<span id="cb263-9"><a href="descriptive-statistics-table-one.html#cb263-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-10"><a href="descriptive-statistics-table-one.html#cb263-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we create the table object</span></span>
+<span id="cb263-11"><a href="descriptive-statistics-table-one.html#cb263-11" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">CreateTableOne</span>(<span class="at">vars =</span> variables, </span>
+<span id="cb263-12"><a href="descriptive-statistics-table-one.html#cb263-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> data, </span>
+<span id="cb263-13"><a href="descriptive-statistics-table-one.html#cb263-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">factorVars =</span> cat_variables)</span>
+<span id="cb263-14"><a href="descriptive-statistics-table-one.html#cb263-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-15"><a href="descriptive-statistics-table-one.html#cb263-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally, we use the print function to print the table to the console\</span></span>
+<span id="cb263-16"><a href="descriptive-statistics-table-one.html#cb263-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(table,</span>
+<span id="cb263-17"><a href="descriptive-statistics-table-one.html#cb263-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">showAllLevels =</span> T)</span></code></pre></div>
+<pre><code>##                  
+##                   level Overall       
+##   n                         32        
+##   mpg (mean (SD))        20.09 (6.03) 
+##   cyl (%)         4         11 (34.4) 
+##                   6          7 (21.9) 
+##                   8         14 (43.8) 
+##   am (%)          0         19 (59.4) 
+##                   1         13 (40.6) 
+##   hp (mean (SD))        146.69 (68.56)</code></pre>
+<p>As we can see, this prints out the info we’d like to include in table one! That is super cool! Now, for my study, I am actually comparing the performance of cars with an automatic transmission versus a manual transmission. So I’d like two columns - one with the descriptives for cars with an automatic and one with the descriptives for cars with a manual. I can do that by modifying the code like so:</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="descriptive-statistics-table-one.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="do">## first we will create a vector of the variables we want to include in our table</span></span>
+<span id="cb265-2"><a href="descriptive-statistics-table-one.html#cb265-2" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="co"># miles per gallon</span></span>
+<span id="cb265-3"><a href="descriptive-statistics-table-one.html#cb265-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;cyl&quot;</span>, <span class="co"># number of cylinders in engine (4,6,8)</span></span>
+<span id="cb265-4"><a href="descriptive-statistics-table-one.html#cb265-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;am&quot;</span>,  <span class="co"># transmission (0 = automatic 1 = manual)</span></span>
+<span id="cb265-5"><a href="descriptive-statistics-table-one.html#cb265-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;hp&quot;</span>)  <span class="co"># Gross Horsepower</span></span>
+<span id="cb265-6"><a href="descriptive-statistics-table-one.html#cb265-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-7"><a href="descriptive-statistics-table-one.html#cb265-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we want to specify any categorical data in our variables</span></span>
+<span id="cb265-8"><a href="descriptive-statistics-table-one.html#cb265-8" aria-hidden="true" tabindex="-1"></a>cat_variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>,<span class="st">&quot;am&quot;</span>)</span>
+<span id="cb265-9"><a href="descriptive-statistics-table-one.html#cb265-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-10"><a href="descriptive-statistics-table-one.html#cb265-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we want to specify our stratification variables</span></span>
+<span id="cb265-11"><a href="descriptive-statistics-table-one.html#cb265-11" aria-hidden="true" tabindex="-1"></a>stratify <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;am&quot;</span>)</span>
+<span id="cb265-12"><a href="descriptive-statistics-table-one.html#cb265-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-13"><a href="descriptive-statistics-table-one.html#cb265-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we create the table object</span></span>
+<span id="cb265-14"><a href="descriptive-statistics-table-one.html#cb265-14" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">CreateTableOne</span>(<span class="at">vars =</span> variables, </span>
+<span id="cb265-15"><a href="descriptive-statistics-table-one.html#cb265-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> data, </span>
+<span id="cb265-16"><a href="descriptive-statistics-table-one.html#cb265-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">factorVars =</span> cat_variables,</span>
+<span id="cb265-17"><a href="descriptive-statistics-table-one.html#cb265-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">strata =</span> stratify)</span>
+<span id="cb265-18"><a href="descriptive-statistics-table-one.html#cb265-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb265-19"><a href="descriptive-statistics-table-one.html#cb265-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally, we use the print function to print the table to the console\</span></span>
+<span id="cb265-20"><a href="descriptive-statistics-table-one.html#cb265-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(table,</span>
+<span id="cb265-21"><a href="descriptive-statistics-table-one.html#cb265-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">showAllLevels =</span> T)</span></code></pre></div>
+<pre><code>##                  Stratified by am
+##                   level 0               1               p      test
+##   n                         19              13                     
+##   mpg (mean (SD))        17.15 (3.83)    24.39 (6.17)   &lt;0.001     
+##   cyl (%)         4          3 ( 15.8)       8 ( 61.5)   0.013     
+##                   6          4 ( 21.1)       3 ( 23.1)             
+##                   8         12 ( 63.2)       2 ( 15.4)             
+##   am (%)          0         19 (100.0)       0 (  0.0)  &lt;0.001     
+##                   1          0 (  0.0)      13 (100.0)             
+##   hp (mean (SD))        160.26 (53.91)  126.85 (84.06)   0.180</code></pre>
+<p>Beautiful! Now we have two columns, one for automatic transmission and one for manual. To neaten this up I am going to do a few things:</p>
+<ol style="list-style-type: decimal">
+<li>I am going to remove “am” from the table since it is what I am stratifying by.</li>
+<li>I am going to factor “am” so that it reads “Automatic” and “Manual”</li>
+<li>I am going to add a column that represents the whole sample</li>
+</ol>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="descriptive-statistics-table-one.html#cb267-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>am <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>am, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Automatic&quot;</span>,<span class="st">&quot;Manual&quot;</span>))</span>
+<span id="cb267-2"><a href="descriptive-statistics-table-one.html#cb267-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-3"><a href="descriptive-statistics-table-one.html#cb267-3" aria-hidden="true" tabindex="-1"></a><span class="do">## first we will create a vector of the variables we want to include in our table</span></span>
+<span id="cb267-4"><a href="descriptive-statistics-table-one.html#cb267-4" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="co"># miles per gallon</span></span>
+<span id="cb267-5"><a href="descriptive-statistics-table-one.html#cb267-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;cyl&quot;</span>, <span class="co"># number of cylinders in engine (4,6,8)</span></span>
+<span id="cb267-6"><a href="descriptive-statistics-table-one.html#cb267-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;hp&quot;</span>)  <span class="co"># Gross Horsepower</span></span>
+<span id="cb267-7"><a href="descriptive-statistics-table-one.html#cb267-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-8"><a href="descriptive-statistics-table-one.html#cb267-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we want to specify any categorical data in our variables</span></span>
+<span id="cb267-9"><a href="descriptive-statistics-table-one.html#cb267-9" aria-hidden="true" tabindex="-1"></a>cat_variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>)</span>
+<span id="cb267-10"><a href="descriptive-statistics-table-one.html#cb267-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-11"><a href="descriptive-statistics-table-one.html#cb267-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we want to specify our stratification variables</span></span>
+<span id="cb267-12"><a href="descriptive-statistics-table-one.html#cb267-12" aria-hidden="true" tabindex="-1"></a>stratify <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;am&quot;</span>)</span>
+<span id="cb267-13"><a href="descriptive-statistics-table-one.html#cb267-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-14"><a href="descriptive-statistics-table-one.html#cb267-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Next we create the table object</span></span>
+<span id="cb267-15"><a href="descriptive-statistics-table-one.html#cb267-15" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">CreateTableOne</span>(<span class="at">vars =</span> variables, </span>
+<span id="cb267-16"><a href="descriptive-statistics-table-one.html#cb267-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> data, </span>
+<span id="cb267-17"><a href="descriptive-statistics-table-one.html#cb267-17" aria-hidden="true" tabindex="-1"></a>                        <span class="at">factorVars =</span> cat_variables,</span>
+<span id="cb267-18"><a href="descriptive-statistics-table-one.html#cb267-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">strata =</span> stratify,</span>
+<span id="cb267-19"><a href="descriptive-statistics-table-one.html#cb267-19" aria-hidden="true" tabindex="-1"></a>                        <span class="at">addOverall =</span> T)</span>
+<span id="cb267-20"><a href="descriptive-statistics-table-one.html#cb267-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-21"><a href="descriptive-statistics-table-one.html#cb267-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally, we use the print function to print the table to the console\</span></span>
+<span id="cb267-22"><a href="descriptive-statistics-table-one.html#cb267-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(table,</span>
+<span id="cb267-23"><a href="descriptive-statistics-table-one.html#cb267-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">showAllLevels =</span> T)</span></code></pre></div>
+<pre><code>##                  Stratified by am
+##                   level Overall        Automatic      Manual         p     
+##   n                         32             19             13               
+##   mpg (mean (SD))        20.09 (6.03)   17.15 (3.83)   24.39 (6.17)  &lt;0.001
+##   cyl (%)         4         11 (34.4)       3 (15.8)       8 (61.5)   0.013
+##                   6          7 (21.9)       4 (21.1)       3 (23.1)        
+##                   8         14 (43.8)      12 (63.2)       2 (15.4)        
+##   hp (mean (SD))        146.69 (68.56) 160.26 (53.91) 126.85 (84.06)  0.180
+##                  Stratified by am
+##                   test
+##   n                   
+##   mpg (mean (SD))     
+##   cyl (%)             
+##                       
+##                       
+##   hp (mean (SD))</code></pre>
+<p>That is very cool! Now, we can see from the table above the Manual cars get more miles per gallon than Automatic ones. We even see a p-value indicating its a significant difference. The tableone package has actually run the appropriate comparison test (in this case, a t-test) to compare the two groups. We are going to talk more about these tests in a future lesson.</p>
+<p>Now, this is already great! You can create a table and copy in each value. But, it gets even better. We can actually write this table into a .csv file that we can open in Excel or Google Sheets, like so:</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="descriptive-statistics-table-one.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We are going to write the table to a .csv</span></span>
+<span id="cb269-2"><a href="descriptive-statistics-table-one.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="fu">print</span>(table, <span class="at">showAllLevels =</span> T),</span>
+<span id="cb269-3"><a href="descriptive-statistics-table-one.html#cb269-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">&quot;table1.csv&quot;</span>)</span></code></pre></div>
+<pre><code>##                  Stratified by am
+##                   level Overall        Automatic      Manual         p     
+##   n                         32             19             13               
+##   mpg (mean (SD))        20.09 (6.03)   17.15 (3.83)   24.39 (6.17)  &lt;0.001
+##   cyl (%)         4         11 (34.4)       3 (15.8)       8 (61.5)   0.013
+##                   6          7 (21.9)       4 (21.1)       3 (23.1)        
+##                   8         14 (43.8)      12 (63.2)       2 (15.4)        
+##   hp (mean (SD))        146.69 (68.56) 160.26 (53.91) 126.85 (84.06)  0.180
+##                  Stratified by am
+##                   test
+##   n                   
+##   mpg (mean (SD))     
+##   cyl (%)             
+##                       
+##                       
+##   hp (mean (SD))</code></pre>
+<p>Now we are able to open our table in Excel like so:</p>
+<p><img src="Images/tableone1.png" /></p>
+<p>Now, we can use Excel and make our table look nice. We didn’t have to format anything or change any of the values!</p>
+<p><img src="Images/tableone2.png" /></p>
+</div>
+</div>
+<div id="in-conclusion-2" class="section level2" number="7.8">
+<h2><span class="header-section-number">7.8</span> In Conclusion</h2>
+<p>Table One is the most important table in your manuscript. It allows us to identify who our study sample is so we can understand what population our results are generalizable too. By using the tableone package in R, we can make rather complex tables quite easily!</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>I provide this exact example, because it is common in many types of population survey that non-Hispanic White people are over-sampled<a href="descriptive-statistics-table-one.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="comparing-two-groups-w-independent-samples-t-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

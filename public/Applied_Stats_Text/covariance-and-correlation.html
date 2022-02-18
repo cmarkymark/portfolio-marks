@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Covariance and Correlation | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Covariance and Correlation | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Covariance and Correlation | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="pearsons-chi2-test.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="covariance-and-correlation" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Covariance and Correlation</h1>
+<p>In our statistical work, it is often of interest to us to assess the relationship between variables within our sample data. Let us say we have two <em>numeric</em>, normally distributed random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> which we have measured within our sample, it is often useful to understand how changes in the value of <span class="math inline">\(X\)</span> are associated with changes in the value of <span class="math inline">\(Y\)</span>, and vice versa. Capturing the covariance of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and the correlation of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> provide us two metrics by which we can measure the association between these two variables. In this text, we will discuss what covariance and correlation are, how they are calculated, what they can tell us, and how we can use R to invetigate them in our data.</p>
+<div id="covariance" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Covariance</h2>
+<p><strong>Covariance</strong> is a measure of how two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> vary together. For now, we will discuss measuring covariance between two <strong>numeric</strong> variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p>For example, let us say <span class="math inline">\(X\)</span> is age and <span class="math inline">\(Y\)</span> is height. We can understand that for adolescents (let’s say people aged 18 and younger), that as age (<span class="math inline">\(X\)</span>) increases, so does height (<span class="math inline">\(Y\)</span>). As age varies (i.e., as adolescents get older), their height varies in a corresponding pattern (i.e., older adolescents are taller than younger adolescents). Likewise, if we encounter a taller adolescent, it is fair to guess they are older than shorter adolescents. In this situation, we can understand that there is a <strong>positive covariance</strong> between age and height because increases in the value of one are associated with increases in the value of the other.</p>
+<p>However, let us say we are looking at <span class="math inline">\(X\)</span> is age and <span class="math inline">\(Y\)</span> is height amongst people aged 18 through 65. Assuming people typically stop growing in height by age 18, we can see that among adults, no relationship exists between age (<span class="math inline">\(X\)</span>) and height (<span class="math inline">\(Y\)</span>). Knowing how old someone is provides no information about how tall they are and, likewise, knowing how tall someone is provides no information about how old they are. In such a situation, we can understand the covariance of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is approximately 0!</p>
+<p>Let’s consider one last example. Again, let <span class="math inline">\(X\)</span> be age and <span class="math inline">\(Y\)</span> be height. Let’s imagine we are now looking at individuals aged 65 and older, elders. It turns out as people get into their golden years, they tend to get a bit shorter. In this case, as elders’ age increases, we notice that height decreases. Within this sample, older people tend to be shorter and shorter people tend to be older. In this situation, we can understand that there is a <strong>negative covariance</strong> between age and height because increases in the value of one are associated with decreases in the value of the other.</p>
+<div id="measuring-covariance" class="section level3" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Measuring Covariance</h3>
+<p>Mathematically, we refer to the covariance of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with the expression: <span class="math inline">\(cov(X,Y)\)</span>. Let us assume that we have a sample of <span class="math inline">\(n\)</span> individuals and we have measured <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> among all <span class="math inline">\(n\)</span> of these participants. If we let <span class="math inline">\(\bar{x}\)</span> equal the mean of our <span class="math inline">\(n\)</span> measures of <span class="math inline">\(X\)</span> and if we let <span class="math inline">\(\bar{y}\)</span> equal the mean of our <span class="math inline">\(n\)</span> measures of <span class="math inline">\(y\)</span>, then we can define covariance between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, mathematically like so:</p>
+<p><span class="math display">\[cov(X,Y) = \frac{\sum_{i=1}^n((x_i - \bar{x})*(y_i - \bar{y}))}{n-1}\]</span></p>
+<p>What is this equation measuring, precisely? For each participant, <span class="math inline">\(i\)</span>, we are calculating <span class="math inline">\((x_i - \bar{x})*(y_i - \bar{y})\)</span>, where <span class="math inline">\(x_i\)</span> is the value of <span class="math inline">\(X\)</span> of participant <span class="math inline">\(i\)</span> and <span class="math inline">\(y_i\)</span> is the value of <span class="math inline">\(Y\)</span> of participant <span class="math inline">\(i\)</span>. Well, <span class="math inline">\((x_i - \bar{x})\)</span> contains two important pieces of information: 1) how far from the mean value of <span class="math inline">\(X\)</span>, <span class="math inline">\(\bar{x}\)</span>, the <span class="math inline">\(i^{th}\)</span> participant is and 2) if the value of <span class="math inline">\(x_i\)</span> is less than or greater than the mean value. We receive this same types of information for <span class="math inline">\((y_i - \bar{y})\)</span>.</p>
+<div id="positive-covariance" class="section level4" number="10.1.1.1">
+<h4><span class="header-section-number">10.1.1.1</span> Positive Covariance</h4>
+<p>Before we discussed how <strong>positive covariance</strong> captures when two variables increase together - i.e., when greater values of <span class="math inline">\(X\)</span> are associated with greater values of <span class="math inline">\(Y\)</span> (and vice versa). We refer to it as <strong>positive</strong> because, when this is the case, the value of <span class="math inline">\(cov(X,Y) &gt; 0\)</span>. Why would that be so?</p>
+<p>Let us consider our example of age (<span class="math inline">\(X\)</span>) and height (<span class="math inline">\(Y\)</span>) among youth aged 0 through 18, where we intuitively understand that <span class="math inline">\(cov(X,Y) &gt; 0\)</span>. Let us say that the average age in our sample is <span class="math inline">\(\bar{x} = 9\)</span> years old and the average height is <span class="math inline">\(\bar{y} = 52\)</span> inches. Let us say that participant <span class="math inline">\(i\)</span> is 5 years old and 40 inches tall. We can then calculate for this participant:</p>
+<p><span class="math display">\[
+\begin{align}
+ &amp;(x_i - \bar{x})*(y_i - \bar{y}) \\
+= &amp; (5 - 9)*(40 - 52) \\
+= &amp; (-4)*(-12) \\
+= &amp; 36
+\end{align}
+\]</span></p>
+<p>Notice here, when we multiply two negative values, we get a positive value. This makes sense, we want to calculate a positive value when lower values of <span class="math inline">\(X\)</span> and are associated with lower value of <span class="math inline">\(Y\)</span>. We identify these values as negative, because they are both below their respective mean values.</p>
+<p>Likewise, we want to calculate a positive value when higher values of <span class="math inline">\(X\)</span> are associated with higher values of <span class="math inline">\(Y\)</span>. We sample someone else and they are 18 years old and they are 68 inches tall. For this participant we can then calculate:</p>
+<p><span class="math display">\[
+\begin{align}
+ &amp;(x_i - \bar{x})*(y_i - \bar{y}) \\
+= &amp; (18 - 9)*(68 - 52) \\
+= &amp; (9)*(16) \\
+= &amp; 144
+\end{align}
+\]</span></p>
+<p>Our equation for covariance is able to capture that people with above average age also tend to have above average height in our sample and that people with below average height also tend to have below average age.</p>
+<p><strong>Often, we primarily care if <span class="math inline">\(cov(X,Y)\)</span> is less than 0 (negative covariance), equal or close to 0 (no covariance), or greater than 0 (positive covariance)</strong>.</p>
+</div>
+<div id="negative-covariance" class="section level4" number="10.1.1.2">
+<h4><span class="header-section-number">10.1.1.2</span> Negative Covariance</h4>
+<p>Likewise, it is good to see how our equation for measuring covariance captures <strong>negative covariance</strong>. We discussed that negative covariance is when higher values of <span class="math inline">\(X\)</span> are associated with lower values of <span class="math inline">\(Y\)</span> and, thus, when higher values of <span class="math inline">\(Y\)</span> are associated with lower values of <span class="math inline">\(X\)</span>. We refer to it as negative, because in such cases <span class="math inline">\(cov(X,Y) &lt; 0\)</span>.</p>
+<p>Let us consider our example of age (<span class="math inline">\(X\)</span>) and height (<span class="math inline">\(Y\)</span>) among the elderly, where we intuitively understand that <span class="math inline">\(cov(X,Y) &lt; 0\)</span>. Let us say that the average age in our sample is <span class="math inline">\(\bar{x} = 75\)</span> years old and the average height is <span class="math inline">\(\bar{y} = 64\)</span> inches. Let us say that participant <span class="math inline">\(i\)</span> is 68 years old and 66 inches tall. We can then calculate for this participant:</p>
+<p><span class="math display">\[
+\begin{align}
+ &amp;(x_i - \bar{x})*(y_i - \bar{y}) \\
+= &amp; (68 - 75)*(68 - 64) \\
+= &amp; (-7)*(4) \\
+= &amp; -28
+\end{align}
+\]</span>
+In this instance, we get a negative value. This is because participant <span class="math inline">\(i\)</span> had below average age compared to the sample and above average height. This results in multiplying together one negative value and one positive value.</p>
+<p>Likewise, we could sample an older participant whose age is 92 and their height is 59 inches. We would then calculate:</p>
+<p><span class="math display">\[
+\begin{align}
+ &amp;(x_i - \bar{x})*(y_i - \bar{y}) \\
+= &amp; (92 - 75)*(59 - 64) \\
+= &amp; (18)*(-5) \\
+= &amp; -90
+\end{align}
+\]</span>
+Since this participant has above average age and below average height, the value calculated is negative.</p>
+<p>Thus, if this pattern emerges across the full sample, this will result in <span class="math inline">\(cov(X,Y) &lt; 0\)</span>. Of course, there are likely to be individuals who are both of above average age and height or both of below average age and height, resulting in a positive value. That is okay. Our measure of covariance is trying to capture a pattern in the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> - not every participant will fall perfectly into that pattern.</p>
+</div>
+</div>
+<div id="covariance-is-a-measure-of-association" class="section level3" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Covariance is a Measure of Association</h3>
+<p>In the examples provided, we can understand that there likely is a causal relationship between age and height. As children get older, they get taller. But we only know that this is causal because we have a specific understanding of how age influences height - we typically do not think of changes in height resulting in change in age. (Or, to be a bit of a philosophy troll - it is possible that our idea of age as a construct is cultural and it is totally possible, that, in another culture, height may be a more salient measure of the aging process then a measure of time…meaning that causality is extremely challenging to identify)</p>
+<p>Importantly, covariance is a measure of the association of two variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. Covariance does not identify <strong>why</strong> <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> vary together, it simply identifies that they do and to what extent.</p>
+</div>
+<div id="measuring-and-visualizing-covariance-in-r" class="section level3" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Measuring and Visualizing Covariance in R</h3>
+<p>Calculating the covariance between two variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> in R is easy, we can just use the <span class="math inline">\(cov()\)</span> function. We are going to use the <em>mtcars</em> data.frame that is included with R. It is a data.frame where each observation is a different car and we have a range of variables about each car, such as the miles per gallon it gets (mpg) and its horse power (hp). I would guess that cars with greater horsepower get fewer miles to the gallon - I imagine a powerful pickup truck gets worse gas milage than a small sedan. However, I’d like to confirm this in the data - my understanding is that there should be a negative covariance between a car’s miles per gallon and its horse power. I can calculate the covariance in R like so:</p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="covariance-and-correlation.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Take the covariance</span></span>
+<span id="cb315-2"><a href="covariance-and-correlation.html#cb315-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span></code></pre></div>
+<pre><code>## [1] -320.7321</code></pre>
+<p>As we see, we get a value of approximately -321, indicating a negative covariance between these two variables.</p>
+<div id="visualizing-covariance-with-scatterplots" class="section level4" number="10.1.3.1">
+<h4><span class="header-section-number">10.1.3.1</span> Visualizing Covariance with Scatterplots</h4>
+<p>-320.7321 is not easy to intuitively understand. Often, it is easier to understand covariance visually. To do so, we can use a scatterplot which plots values of our variable <span class="math inline">\(X\)</span> against our variable <span class="math inline">\(Y\)</span>. Each participant’s observations <span class="math inline">\((x_i,y_i)\)</span> are plotted on the graph.</p>
+<p>Here, we will introduce the <span class="math inline">\(ggplot2\)</span> package in R. This is a very powerful and useful package for generating visualizations in R. It can be a bit tricky, but we will learn how to use it through experience with it. Let us start by generating a basic scatter plot of miles per gallon (<span class="math inline">\(X\)</span>) and horsepower (<span class="math inline">\(Y\)</span>) by pairing the <span class="math inline">\(ggplot()\)</span> function with the <span class="math inline">\(geom_point()\)</span> function:</p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="covariance-and-correlation.html#cb317-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First we need to load the ggplot2 package</span></span>
+<span id="cb317-2"><a href="covariance-and-correlation.html#cb317-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb317-3"><a href="covariance-and-correlation.html#cb317-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb317-4"><a href="covariance-and-correlation.html#cb317-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Now we will create our visualization</span></span>
+<span id="cb317-5"><a href="covariance-and-correlation.html#cb317-5" aria-hidden="true" tabindex="-1"></a><span class="do">## The first argument is our data.frame</span></span>
+<span id="cb317-6"><a href="covariance-and-correlation.html#cb317-6" aria-hidden="true" tabindex="-1"></a><span class="do">## The second argument defines which variable is on the x-axis and which is on the y</span></span>
+<span id="cb317-7"><a href="covariance-and-correlation.html#cb317-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally, by writing &quot;+ geom_point()&quot; we are telling the computer to plot it as a scatterplot</span></span>
+<span id="cb317-8"><a href="covariance-and-correlation.html#cb317-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> hp)) <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p>As we can see, higher horse power values tend to have lower miles per gallon (and thus points are concentrated in the top left of the plot). We see that cars with higher miles per gallon tend to have lower horse power. This visually displays negative covariance. However, our plot does not look that nice. So I am going to use some additional features of the <span class="math inline">\(ggplot2\)</span> package to make the plot look nicer:</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="covariance-and-correlation.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="do">## We are going to use the labs function to set the name of the X-axis, Y-axis, and title</span></span>
+<span id="cb318-2"><a href="covariance-and-correlation.html#cb318-2" aria-hidden="true" tabindex="-1"></a><span class="do">## We are going to change the appearance using the theme_minimal() function</span></span>
+<span id="cb318-3"><a href="covariance-and-correlation.html#cb318-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb318-4"><a href="covariance-and-correlation.html#cb318-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> hp)) <span class="sc">+</span> </span>
+<span id="cb318-5"><a href="covariance-and-correlation.html#cb318-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb318-6"><a href="covariance-and-correlation.html#cb318-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb318-7"><a href="covariance-and-correlation.html#cb318-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>,</span>
+<span id="cb318-8"><a href="covariance-and-correlation.html#cb318-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb318-9"><a href="covariance-and-correlation.html#cb318-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between MPG and Horsepower&quot;</span></span>
+<span id="cb318-10"><a href="covariance-and-correlation.html#cb318-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb318-11"><a href="covariance-and-correlation.html#cb318-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
+<p>You can customize many aspects of your scatterplot. One that I want to point out is that ggplot2 has a series of theme functions that can be used to change the appearance. I am a fan of <span class="math inline">\(theme_minimal()\)</span> but there are many to explore, for example:</p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="covariance-and-correlation.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="do">## theme_classic() is a classic!</span></span>
+<span id="cb319-2"><a href="covariance-and-correlation.html#cb319-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> hp)) <span class="sc">+</span> </span>
+<span id="cb319-3"><a href="covariance-and-correlation.html#cb319-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb319-4"><a href="covariance-and-correlation.html#cb319-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb319-5"><a href="covariance-and-correlation.html#cb319-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>,</span>
+<span id="cb319-6"><a href="covariance-and-correlation.html#cb319-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb319-7"><a href="covariance-and-correlation.html#cb319-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between MPG and Horsepower&quot;</span></span>
+<span id="cb319-8"><a href="covariance-and-correlation.html#cb319-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb319-9"><a href="covariance-and-correlation.html#cb319-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="covariance-and-correlation.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Or we can load themes from the ggthemes library</span></span>
+<span id="cb320-2"><a href="covariance-and-correlation.html#cb320-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span></code></pre></div>
+<pre><code>## Warning: package &#39;ggthemes&#39; was built under R version 3.6.3</code></pre>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="covariance-and-correlation.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The solarized theme gives some fun flair!</span></span>
+<span id="cb322-2"><a href="covariance-and-correlation.html#cb322-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> hp)) <span class="sc">+</span> </span>
+<span id="cb322-3"><a href="covariance-and-correlation.html#cb322-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb322-4"><a href="covariance-and-correlation.html#cb322-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb322-5"><a href="covariance-and-correlation.html#cb322-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Miles Per Gallon&quot;</span>,</span>
+<span id="cb322-6"><a href="covariance-and-correlation.html#cb322-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb322-7"><a href="covariance-and-correlation.html#cb322-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between MPG and Horsepower&quot;</span></span>
+<span id="cb322-8"><a href="covariance-and-correlation.html#cb322-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb322-9"><a href="covariance-and-correlation.html#cb322-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-137-2.png" width="672" /></p>
+<p>The <span class="math inline">\(ggplot2\)</span> package will come in handy whenever we want to create plots because it allows us to customize many of the features in our plot. In practice, you will learn how to use <span class="math inline">\(ggplot2\)</span> by applying it in your work - there are many features and what you want to plot will shape which features you end up using.</p>
+<p>The important takeaway here is that scatterplots represent a powerful tool for visually inspecting the relationship between two variables and identifying covariance. Let’s plot an example to visually see an example of positive correlation. Below I will plot the relationship between the weight of the vehicle (in tons) and its horsepower. A heavier car likely needs more horsepower to drive and heavier cars (such as trucks) are often desired to have greater horsepower for tasks like towing:</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="covariance-and-correlation.html#cb323-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> hp)) <span class="sc">+</span> </span>
+<span id="cb323-2"><a href="covariance-and-correlation.html#cb323-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb323-3"><a href="covariance-and-correlation.html#cb323-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb323-4"><a href="covariance-and-correlation.html#cb323-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Weight (in tons)&quot;</span>,</span>
+<span id="cb323-5"><a href="covariance-and-correlation.html#cb323-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb323-6"><a href="covariance-and-correlation.html#cb323-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between Weight and Horsepower&quot;</span></span>
+<span id="cb323-7"><a href="covariance-and-correlation.html#cb323-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb323-8"><a href="covariance-and-correlation.html#cb323-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
+<p>Here we can see that lighter cars tend to have lower horsepower (concentrated in the bottom left). Heavier cars tend to have higher horsepower. Positive correlation can visually be identified by a trend in points from the bottom left corner to the top right corner.</p>
+<p>A scatterplot is also useful for indentifying no (or weak) covariance. In the following photo, there are three scatterplots, one displaying positive covariance, one displaying negative covariance, and the last displaying weak covariance:</p>
+<div class="figure">
+<img src="Images/covariance_pic.jpg" alt="" />
+<p class="caption"><a href="https://careerfoundry.com/en/blog/data-analytics/covariance-vs-correlation/" class="uri">https://careerfoundry.com/en/blog/data-analytics/covariance-vs-correlation/</a></p>
+</div>
+<p>With positive covariance we visually see a pattern where the data “travels” from the lower left to upper right. This pattern arises when greater values of <span class="math inline">\(X\)</span> are associated with greater values of <span class="math inline">\(Y\)</span>. With negative covariance, we visually see a pattern where the data “travels” from the upper left to the lower right. This pattern arises when greater values of <span class="math inline">\(X\)</span> are associated with smaller values of <span class="math inline">\(Y\)</span>. Finally, with weak covariance, we are unable to visually detect a pattern, indicating that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> behave independently of one another.</p>
+</div>
+<div id="covariance-matrix" class="section level4" number="10.1.3.2">
+<h4><span class="header-section-number">10.1.3.2</span> Covariance Matrix</h4>
+<p>Often though, we have a lot of variables in our dataset and we are interested in identifying pairings of variables that vary together. We can generate what is called a covariance matrix, a two-dimensional array where each row represents a variable and each column represents a variable. To do so, we simply use the <span class="math inline">\(cov()\)</span> function and supply our data.frame as the argument. This tells the computer to take the covariance of every pairing of variables in our data.frame. I use the <span class="math inline">\(round()\)</span> function to tell R to round all the values to one decimal, for the sake of visually looking at it!</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="covariance-and-correlation.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cov</span>(mtcars),<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##         mpg   cyl    disp     hp  drat    wt  qsec    vs    am  gear carb
+## mpg    36.3  -9.2  -633.1 -320.7   2.2  -5.1   4.5   2.0   1.8   2.1 -5.4
+## cyl    -9.2   3.2   199.7  101.9  -0.7   1.4  -1.9  -0.7  -0.5  -0.6  1.5
+## disp -633.1 199.7 15360.8 6721.2 -47.1 107.7 -96.1 -44.4 -36.6 -50.8 79.1
+## hp   -320.7 101.9  6721.2 4700.9 -16.5  44.2 -86.8 -25.0  -8.3  -6.4 83.0
+## drat    2.2  -0.7   -47.1  -16.5   0.3  -0.4   0.1   0.1   0.2   0.3 -0.1
+## wt     -5.1   1.4   107.7   44.2  -0.4   1.0  -0.3  -0.3  -0.3  -0.4  0.7
+## qsec    4.5  -1.9   -96.1  -86.8   0.1  -0.3   3.2   0.7  -0.2  -0.3 -1.9
+## vs      2.0  -0.7   -44.4  -25.0   0.1  -0.3   0.7   0.3   0.0   0.1 -0.5
+## am      1.8  -0.5   -36.6   -8.3   0.2  -0.3  -0.2   0.0   0.2   0.3  0.0
+## gear    2.1  -0.6   -50.8   -6.4   0.3  -0.4  -0.3   0.1   0.3   0.5  0.3
+## carb   -5.4   1.5    79.1   83.0  -0.1   0.7  -1.9  -0.5   0.0   0.3  2.6</code></pre>
+<p>As we can see, each row corresponds to a variable and each column corresponds to a variable. Each value represents the covariance of the two corresponding variables. You will notice that along the main diagnoal (starting from the top-left down to the bottom-right), that some entries display the covariance of a variable with itself. For example, the top-left entry the row is “mpg” and the column is “mpg.” We refer to this value as the variance <span class="math inline">\(\sigma^2\)</span>, which we have discussed in prior chapters.</p>
+</div>
+</div>
+</div>
+<div id="correlation" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Correlation</h2>
+<p>As we can see, though, the measurement of covariance is not easy to interpret and it is dependent on the scale of what we are measuring. For example, in the <span class="math inline">\(mtcars\)</span> dataset we measured the covariance between miles per gallon and horsepower and found that <span class="math inline">\(cov(mpg, hp) \approx -321\)</span>. However, if we had measured fuel efficiency in miles per liter, our measure of covariance would change because (even though miles per liter represents the same value as miles per gallon) miles per liter is measured on a different scale (per liter) than miles per gallon.</p>
+<p>Thus, it can be useful to have a <strong>standardized</strong> way to measure the association between two numeric variables. This is where we introduce the concept of <strong>correlation</strong>. <strong>Correlation</strong> is a standardized measure of covariance which measures the strength and direction of the association between two variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. At the population-level, we denote correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with <span class="math inline">\(\rho_{X,Y}\)</span> (the Greek letter “rho,” pronounded row) and it is equal to:</p>
+<p><span class="math display">\[\rho_{X,Y} = \frac{cov(X,Y)}{\sigma_X * \sigma_Y}\]</span>
+where <span class="math inline">\(\sigma_X\)</span> is the standard deviation of <span class="math inline">\(X\)</span> and <span class="math inline">\(\sigma_Y\)</span> is the standard deviation of <span class="math inline">\(Y\)</span>. Interestingly, by dividing the covariance by the product of <span class="math inline">\(\sigma_X\)</span> and <span class="math inline">\(\sigma_Y\)</span>, the correlation is always a value that falls between -1 and 1.</p>
+<div id="computing-the-correlation-coefficient-for-a-sample" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Computing the Correlation Coefficient for a Sample</h3>
+<p>Typically, we do not have the population estimates of covariance and standard deviation, so we need a formula by which we can calculate correlation from a sample. The most common form of correlation to take is called the Pearson correlation coefficient <span class="math inline">\(r_{X,Y}\)</span> and we can calculate it like so:</p>
+<p><span class="math display">\[r_{x,y} = \frac{\sum((x_i - \bar{x})*(y_i - \bar{y}))}{\sqrt{\sum(x_i - \bar{x})^2 * \sum(y_i - \bar{y})^2}}\]</span>
+This is the equivalent of taking the <span class="math inline">\(cov(x,y)\)</span> and dividing it by the product of measured standard deviations of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, <span class="math inline">\(s_X\)</span> and <span class="math inline">\(s_Y\)</span>.</p>
+</div>
+<div id="computing-the-coefficient-in-r" class="section level3" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Computing the Coefficient in R</h3>
+<p>That is another intimidating equation. The important thing to know is that the correlation takes the covariance of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and standardizes it by dividing it by the product of the standard deviation of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. This process of standardization comes up a lot, doesn’t it?!</p>
+<p>It is quite simple though to compute the correlation between two variables in R by using the <span class="math inline">\(cor()\)</span> function. Let’s now take the correlation of miles per gallon and horsepower in the mtcars package, like so:</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="covariance-and-correlation.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span></code></pre></div>
+<pre><code>## [1] -0.7761684</code></pre>
+<p>This results in a standardized value of -0.776. Because correlation can only range from -1 to 1, we can see that this represents a relatively strong negative correlation between <span class="math inline">\(mpg\)</span> and <span class="math inline">\(hp\)</span>! However, it is good to now discuss how to interpret the correlation coefficient.</p>
+</div>
+<div id="interpreting-the-correlation-coefficient" class="section level3" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Interpreting the Correlation Coefficient</h3>
+<p>Whereas covariance can result in any value from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>, correlation can result in a value from -1 to 1. If <span class="math inline">\(r_{X,Y} = 1\)</span>, this indicates a perfect positive linear relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. What is a perfect linear relationship? Well, remember in middle school we learned that a line can be defined using the equation <span class="math inline">\(y = mx + b\)</span>, where <span class="math inline">\(m\)</span> is the slope of the line and <span class="math inline">\(b\)</span> is where the line crosses the <span class="math inline">\(y\)</span>-intercept?</p>
+<p>When <span class="math inline">\(r_{X,Y} = 1\)</span>, this means that when we plot our scatterplot of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, that the points will fall perfectly on a line and that the slope of the line is positive (meaning that greater values of <span class="math inline">\(X\)</span> are associated with greater values of <span class="math inline">\(Y\)</span>). Let us plot some points to display this. I will generate two vectors that have a perfect linear correlation, like so:</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="covariance-and-correlation.html#cb328-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb328-2"><a href="covariance-and-correlation.html#cb328-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>)</span>
+<span id="cb328-3"><a href="covariance-and-correlation.html#cb328-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb328-4"><a href="covariance-and-correlation.html#cb328-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X,Y)</span>
+<span id="cb328-5"><a href="covariance-and-correlation.html#cb328-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb328-6"><a href="covariance-and-correlation.html#cb328-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span> </span>
+<span id="cb328-7"><a href="covariance-and-correlation.html#cb328-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb328-8"><a href="covariance-and-correlation.html#cb328-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb328-9"><a href="covariance-and-correlation.html#cb328-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;X&quot;</span>,</span>
+<span id="cb328-10"><a href="covariance-and-correlation.html#cb328-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Y&quot;</span>,</span>
+<span id="cb328-11"><a href="covariance-and-correlation.html#cb328-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between X and Y - rho = 1&quot;</span></span>
+<span id="cb328-12"><a href="covariance-and-correlation.html#cb328-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb328-13"><a href="covariance-and-correlation.html#cb328-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
+<p>Let’s just run our <span class="math inline">\(cor\)</span> function to confirm that <span class="math inline">\(r_{X,Y}\)</span> in fact is equal to 1.</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="covariance-and-correlation.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data<span class="sc">$</span>X, data<span class="sc">$</span>Y)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Likewise, when <span class="math inline">\(\rho = -1\)</span>, this means that there is a perfect negative linear relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. In such a situation, we can understand that there is a line <span class="math inline">\(y = mx + b\)</span> that perfectly explains the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and that the slope <span class="math inline">\(m\)</span> is negative. We can depict such an example like so:</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="covariance-and-correlation.html#cb331-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb331-2"><a href="covariance-and-correlation.html#cb331-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>)</span>
+<span id="cb331-3"><a href="covariance-and-correlation.html#cb331-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb331-4"><a href="covariance-and-correlation.html#cb331-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X,Y)</span>
+<span id="cb331-5"><a href="covariance-and-correlation.html#cb331-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb331-6"><a href="covariance-and-correlation.html#cb331-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span> </span>
+<span id="cb331-7"><a href="covariance-and-correlation.html#cb331-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb331-8"><a href="covariance-and-correlation.html#cb331-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb331-9"><a href="covariance-and-correlation.html#cb331-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;X&quot;</span>,</span>
+<span id="cb331-10"><a href="covariance-and-correlation.html#cb331-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Y&quot;</span>,</span>
+<span id="cb331-11"><a href="covariance-and-correlation.html#cb331-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between X and Y - rho = -1&quot;</span></span>
+<span id="cb331-12"><a href="covariance-and-correlation.html#cb331-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb331-13"><a href="covariance-and-correlation.html#cb331-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="covariance-and-correlation.html#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s print out the calculated correlation to confirm!</span></span>
+<span id="cb332-2"><a href="covariance-and-correlation.html#cb332-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data<span class="sc">$</span>X, data<span class="sc">$</span>Y)</span></code></pre></div>
+<pre><code>## [1] -1</code></pre>
+<p>In practice, we are likely to never observe a perfect correlation between two variables. In fact, if you ever do, it is worth asking if you made a mistake, because perfect correlations typically do not occur in social science research!</p>
+<div id="positive-correlation-0-r-1" class="section level4" number="10.2.3.1">
+<h4><span class="header-section-number">10.2.3.1</span> Positive Correlation (<span class="math inline">\(0 &lt; r &lt; 1\)</span>)</h4>
+<p>But, this means that it is important that we know how to interpret other values of <span class="math inline">\(r_{X,Y}\)</span>. When <span class="math inline">\(r_{X,Y}\)</span> is between 0 and 1, this means that greater values of <span class="math inline">\(X\)</span> are associated with greater values of <span class="math inline">\(Y\)</span>, but that they do not fall perfectly onto a given line. We can use a simple linear regression (using <span class="math inline">\(geom_smooth()\)</span>) to visualize this. It is important to note, however, that this is simply a visual aid and that linear regression is a distinct approach from calculating correaltion.</p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="covariance-and-correlation.html#cb334-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> hp)) <span class="sc">+</span> </span>
+<span id="cb334-2"><a href="covariance-and-correlation.html#cb334-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb334-3"><a href="covariance-and-correlation.html#cb334-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb334-4"><a href="covariance-and-correlation.html#cb334-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Weight (in tons)&quot;</span>,</span>
+<span id="cb334-5"><a href="covariance-and-correlation.html#cb334-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb334-6"><a href="covariance-and-correlation.html#cb334-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between Weight and Horsepower&quot;</span></span>
+<span id="cb334-7"><a href="covariance-and-correlation.html#cb334-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb334-8"><a href="covariance-and-correlation.html#cb334-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">se =</span> F)<span class="sc">+</span></span>
+<span id="cb334-9"><a href="covariance-and-correlation.html#cb334-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
+<p>As we can see, the relationship between weight and horsepower appears to be well-explained by the plotted line (in blue). We can see that the slope is positive because the line goes from the lower left to the upper right. However, we can also see that the points do not perfectly match up with the line, so our correlation is going to be between 0 and 1. Let’s check with the <span class="math inline">\(cor()\)</span> function:</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="covariance-and-correlation.html#cb336-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>hp)</span></code></pre></div>
+<pre><code>## [1] 0.6587479</code></pre>
+<p>Here we have calculated a value of about 0.66, indicating a strong positive correlation between weight and horsepower. We can intuitively understand that if points fell closer to the line, the value of <span class="math inline">\(r\)</span> would be closer to 1 and if points fell further from the line, the value of <span class="math inline">\(r\)</span> would be closer to 0.</p>
+<p>You can find many “rules” for interpreting correlation coefficients. Something like:</p>
+<ul>
+<li>&lt;0.3 indicates no correlation</li>
+<li>.3-.5 indicates low correlation</li>
+<li>.5-.7 indicates moderate correlation</li>
+<li>.7-1 indicates high correlation</li>
+</ul>
+<p>However, these are guidelines, not hard and fast rules. It can be good to keep them in mind, especially when a method (such as multiple regression) requires that variables be independent of one another. However, interpretation can be challenging and is dependent on the research context. When given methods rely on assessing correlation, we will discuss how correlation is to be interpreted.</p>
+<p>Importantly, the correlation coefficient does not measure the magnitude of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, but instead measures the existence of a linear dependency between the two variables.</p>
+<p>This is a good place to note that Pearson’s Correlation Coefficient requires several assumptions be met for it to perform well:</p>
+<ol style="list-style-type: decimal">
+<li>The relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is linear in nature</li>
+<li>There are no severe outliers in the data</li>
+<li><span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are normally distributed variables</li>
+</ol>
+</div>
+</div>
+<div id="what-if-the-correlation-between-two-variables-is-not-linear-in-nature" class="section level3" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> What if the Correlation Between Two Variables Is Not Linear in Nature</h3>
+<p>The Pearson correlation coefficient measures if there exists a linear dependency between two variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. By linear dependency, we just mean that there exists a line (<span class="math inline">\(y = mx + b\)</span>) that explains how <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> vary together. But, it is totally possible that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> vary based on a non-linear function.</p>
+<p>A non-linear function is a line that is not straight, but that describes a formulaic (mathematical) relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. For example, you could data that follows a quadratic function <span class="math inline">\(y = x^2\)</span>, which looks like:</p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="covariance-and-correlation.html#cb338-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
+<span id="cb338-2"><a href="covariance-and-correlation.html#cb338-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> X<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb338-3"><a href="covariance-and-correlation.html#cb338-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb338-4"><a href="covariance-and-correlation.html#cb338-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X,Y)</span>
+<span id="cb338-5"><a href="covariance-and-correlation.html#cb338-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb338-6"><a href="covariance-and-correlation.html#cb338-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span> </span>
+<span id="cb338-7"><a href="covariance-and-correlation.html#cb338-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb338-8"><a href="covariance-and-correlation.html#cb338-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb338-9"><a href="covariance-and-correlation.html#cb338-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;X&quot;</span>,</span>
+<span id="cb338-10"><a href="covariance-and-correlation.html#cb338-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Y&quot;</span>,</span>
+<span id="cb338-11"><a href="covariance-and-correlation.html#cb338-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between X and Y - y = x^2&quot;</span></span>
+<span id="cb338-12"><a href="covariance-and-correlation.html#cb338-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb338-13"><a href="covariance-and-correlation.html#cb338-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+<p>Or perhaps a logarithmic function, like so:</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="covariance-and-correlation.html#cb339-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
+<span id="cb339-2"><a href="covariance-and-correlation.html#cb339-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">log</span>(X)</span>
+<span id="cb339-3"><a href="covariance-and-correlation.html#cb339-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb339-4"><a href="covariance-and-correlation.html#cb339-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X,Y)</span>
+<span id="cb339-5"><a href="covariance-and-correlation.html#cb339-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb339-6"><a href="covariance-and-correlation.html#cb339-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span> </span>
+<span id="cb339-7"><a href="covariance-and-correlation.html#cb339-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb339-8"><a href="covariance-and-correlation.html#cb339-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb339-9"><a href="covariance-and-correlation.html#cb339-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;X&quot;</span>,</span>
+<span id="cb339-10"><a href="covariance-and-correlation.html#cb339-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Y&quot;</span>,</span>
+<span id="cb339-11"><a href="covariance-and-correlation.html#cb339-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between X and Y - y = ln(x)&quot;</span></span>
+<span id="cb339-12"><a href="covariance-and-correlation.html#cb339-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb339-13"><a href="covariance-and-correlation.html#cb339-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_solarized</span>()</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
+<p>In these example cases, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> vary <strong>perfectly</strong> according to non-linear functions, but, if we check their correlation score, we do not get 1. Let us look at both examples:</p>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="covariance-and-correlation.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s define a vector X from 0 to 10</span></span>
+<span id="cb340-2"><a href="covariance-and-correlation.html#cb340-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb340-3"><a href="covariance-and-correlation.html#cb340-3" aria-hidden="true" tabindex="-1"></a><span class="do">## And define y = x^2</span></span>
+<span id="cb340-4"><a href="covariance-and-correlation.html#cb340-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> X<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb340-5"><a href="covariance-and-correlation.html#cb340-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb340-6"><a href="covariance-and-correlation.html#cb340-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Check the correlation</span></span>
+<span id="cb340-7"><a href="covariance-and-correlation.html#cb340-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X,Y)</span></code></pre></div>
+<pre><code>## [1] 0.9631427</code></pre>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="covariance-and-correlation.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s define a vector X from 0 to 10</span></span>
+<span id="cb342-2"><a href="covariance-and-correlation.html#cb342-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb342-3"><a href="covariance-and-correlation.html#cb342-3" aria-hidden="true" tabindex="-1"></a><span class="do">## and define y = ln(x)</span></span>
+<span id="cb342-4"><a href="covariance-and-correlation.html#cb342-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">log</span>(X)</span>
+<span id="cb342-5"><a href="covariance-and-correlation.html#cb342-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb342-6"><a href="covariance-and-correlation.html#cb342-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X,Y)</span></code></pre></div>
+<pre><code>## [1] 0.9516624</code></pre>
+<p>Because our values of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> (in each case) are perfectly described by a non-linear function, we would want to articulate that this is a perfect correlation (with a score of 1). <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> vary together in perfect unison, defined by a non-linear function - however, Pearson’s correlation coefficient assesses how well some linear function fits to the data. In this case, we still got very high correlation scores, but our data is never going to perfectly match some function (linear or not).</p>
+<p>The important takeaway here is that Pearson’s correlation coefficient is not ideal for calculating correlation when the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is best described by a non-linear function. There are two common correlation calculations that can be used when it appears that there exists a non-linear relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<div id="spearmans-rank-correlation-coefficient" class="section level4" number="10.2.4.1">
+<h4><span class="header-section-number">10.2.4.1</span> Spearman’s Rank Correlation Coefficient</h4>
+<p>Spearman’s Rank Correlation Coefficient <span class="math inline">\(r_s\)</span> is a commonly constructed alternative to Pearson’s Correlation Coefficient. Instead of comparing the values of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> to one another, we instead compare the ranks of each variable <span class="math inline">\(R(X)\)</span> and <span class="math inline">\(R(Y)\)</span>. We are checking if changes in the rank of <span class="math inline">\(X\)</span> vary with changes in the rank of <span class="math inline">\(Y\)</span>. In simpler terms, a positive rank correlation would indicate that higher values of <span class="math inline">\(X\)</span> correspond with higher values of <span class="math inline">\(Y\)</span> and a negative rank correlation would indicate the higher values of <span class="math inline">\(X\)</span> correspond with lower values of <span class="math inline">\(Y\)</span>. It does not matter if the relationship is linear or non-linear - we are just assessing if the rank-ordering of <span class="math inline">\(X\)</span> is associated with the rank-ordering of <span class="math inline">\(Y\)</span>.</p>
+<p>To calculate <span class="math inline">\(R(X)\)</span>, each value in <span class="math inline">\(X\)</span> is assigned a value based on its ranking from smallest to largest. The smallest value is assigned 1, the 2nd smallest value is assigned 2 and so on. For example, if we had the following vector of numbers <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[X = \{4,12,0,-2,-5\}\]</span></p>
+<p>Then <span class="math inline">\(R(X)\)</span> would be equal to:</p>
+<p><span class="math display">\[R(X) = \{4,5,3,2,1\}\]</span></p>
+<p>As we can see, -5 is the smallest value in <span class="math inline">\(X\)</span> so we assign its value in <span class="math inline">\(R(X)\)</span> to be 1. 12 is the largest value in <span class="math inline">\(X\)</span>, so it ends up with the largest rank of 5.</p>
+<p>If there are multiple datapoints with the same value, then the average rank is taken. For example, lets look at the following vector:</p>
+<p><span class="math display">\[X = \{1,2,2,3,4\}\]</span></p>
+<p>Technically, the 2nd and 3rd entries are equal to one another. They are tied for the second lowest number, which corresponds to a ranking of 2. However, since there are two values, we want these two values to represent rank 2 and rank 3. To do so, we take the average, and assign them both a rank of 2.5. Then the next lowest value will be assigned a rank of 4, like so:</p>
+<p><span class="math display">\[R(X) = \{1,2.5,2.5,4,5\}\]</span></p>
+<p>All we will do now is apply Pearson’s Correlation on the rank variables. So, if we used the following equation to the Pearson coefficient of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>:</p>
+<p><span class="math display">\[r_{x,y} = \frac{\sum((x_i - \bar{x})*(y_i - \bar{y}))}{\sqrt{\sum(x_i - \bar{x})^2 * \sum(y_i - \bar{y})^2}}\]</span></p>
+<p>Then we simply use the following to assess the Spearman’s correlation:</p>
+<p><span class="math display">\[r_{R(x),R(y)} = \frac{\sum((R(x)_i - \bar{R(x)})*(R(y)_i - \bar{R(y)}))}{\sqrt{\sum(R(x)_i - \bar{R((x)})^2 * \sum(R(y)_i - \bar{R(y)})^2}}\]</span></p>
+<p>Now, a perfect Spearman correlation of 1 indicates that the rank-ordering of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are identical (i.e., the smallest value of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are from the same observation, the second smallest value of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are from the same observation, etc). If the Spearman correlation is -1, this indicates that the rank-ordering of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are perfect opposites (i.e., the smallest value of <span class="math inline">\(X\)</span> corresponds with the largest value of <span class="math inline">\(Y\)</span>, the second smallest value of <span class="math inline">\(X\)</span> corresponds with the second largest value of <span class="math inline">\(Y\)</span>, etc).</p>
+<p>We can easily calculate the Spearman coefficient in R using the same <span class="math inline">\(cor()\)</span> function. Here, we will run the Spearman correlation for data points following <span class="math inline">\(y = x^2\)</span>. This should result in <span class="math inline">\(r_s = 1\)</span>.</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="covariance-and-correlation.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s define a vector X from 0 to 10</span></span>
+<span id="cb344-2"><a href="covariance-and-correlation.html#cb344-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb344-3"><a href="covariance-and-correlation.html#cb344-3" aria-hidden="true" tabindex="-1"></a><span class="do">## And define y = x^2</span></span>
+<span id="cb344-4"><a href="covariance-and-correlation.html#cb344-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> X<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb344-5"><a href="covariance-and-correlation.html#cb344-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb344-6"><a href="covariance-and-correlation.html#cb344-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Check the correlation, using SPearman</span></span>
+<span id="cb344-7"><a href="covariance-and-correlation.html#cb344-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X,Y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>All we had to do was specify the argument <span class="math inline">\(method = &quot;spearman&quot;\)</span> and R knew what to do. The <span class="math inline">\(cor()\)</span> function defaults to the Pearson method, so it does not need to be specified.</p>
+</div>
+<div id="kendalls-rank-coefficient" class="section level4" number="10.2.4.2">
+<h4><span class="header-section-number">10.2.4.2</span> Kendall’s Rank Coefficient</h4>
+<p>Kendall’s Rank Coefficient takes a different approach to determining correlation. Let us say we have <span class="math inline">\(n\)</span> observations of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. We can define measurements from the <span class="math inline">\(i^{th}\)</span> observation with the pair <span class="math inline">\((x_i,y_i)\)</span>.</p>
+<p>Now, we are going to count how many concordant and discordant pairs there are in the data. Let’s take two pairs <span class="math inline">\((x_i,y_i)\)</span> and <span class="math inline">\((x_j,y_j)\)</span>. If 1) <span class="math inline">\(x_i &gt; x_j \space\&amp;\space y_i &gt; y_j\)</span> or 2) <span class="math inline">\(x_i &lt; x_j\space \&amp; \space y_i &lt; y_j\)</span>, then we consider the pair <strong>concordant</strong>. In this case, one pair has a greater <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> value than the other pair. A <strong>discordant</strong> pair this therefore any pair in which one has a greater <span class="math inline">\(x\)</span> value and the other has the greater <span class="math inline">\(y\)</span> value.</p>
+<p>Let’s let <span class="math inline">\(C\)</span> be the number of <strong>concordant</strong> pairs and <span class="math inline">\(D\)</span> be the number of <strong>discordant</strong> pairs. Let’s create two additional variables as well: 1) Let <span class="math inline">\(X_0\)</span> be the number of pairs where the <span class="math inline">\(x\)</span> values are equal (but <span class="math inline">\(y\)</span> values are not); 2) Let <span class="math inline">\(Y_0\)</span> be the number of pairs where the <span class="math inline">\(y\)</span> value is equal (but the <span class="math inline">\(x\)</span> value is not).</p>
+<p>We represent this version of Kendall’s rank coefficient with <span class="math inline">\(\tau_b\)</span> (the greek letter “tau,” pronounced the way you would say “Owwww!” when you stub your toe). The formula is as follows:</p>
+<p><span class="math display">\[\tau_b = \frac{C - D}{\sqrt{(C + D + X_0)*(C + D + Y_0)}}\]</span>
+Logically, we can see that the numerator is capturing the ratio of concordance to discordance. If every pairing is concordant, then all the observations are in perfect positive rank order. If every pairing is discordant, then all the observations are in perfect negative rank order. If we have the same amount of concordant and discordant observations, <span class="math inline">\(C-D = 0\)</span>, this indicates the data is pretty “jumbled together” and a pattern is not apparent.</p>
+<p>The equation is dividing by the total number of pairings, with an adjustment to account for ties.</p>
+<p>We can easily run this correlation in R using the <span class="math inline">\(cor()\)</span> function like so:</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="covariance-and-correlation.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s define a vector X from 0 to 10</span></span>
+<span id="cb346-2"><a href="covariance-and-correlation.html#cb346-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb346-3"><a href="covariance-and-correlation.html#cb346-3" aria-hidden="true" tabindex="-1"></a><span class="do">## And define y = x^2</span></span>
+<span id="cb346-4"><a href="covariance-and-correlation.html#cb346-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> X<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb346-5"><a href="covariance-and-correlation.html#cb346-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb346-6"><a href="covariance-and-correlation.html#cb346-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Check the correlation, using SPearman</span></span>
+<span id="cb346-7"><a href="covariance-and-correlation.html#cb346-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(X,Y, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
+</div>
+<div id="correlation-matrix" class="section level3" number="10.2.5">
+<h3><span class="header-section-number">10.2.5</span> Correlation Matrix</h3>
+<p>The last thing we will discuss in this text is the correlation matrix. Like the covariance matrix, we can generate a table that shows correlation between all the variables in our dataset. This can be incredibly useful when we are examining our data and trying to identify if we have any variables that are highly correlated.</p>
+<p>This is very important when we get into fitting regression models where variables need to be independent. We typically do not want to include two variables as predictors in a model if they have high correlation scores - as this indicates the sampled values are not independent. The <span class="math inline">\(cor()\)</span> function can be used by simply supplying it with a data.frame, like so:</p>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="covariance-and-correlation.html#cb348-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This will take the Pearson correlation</span></span>
+<span id="cb348-2"><a href="covariance-and-correlation.html#cb348-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)])</span></code></pre></div>
+<pre><code>##             mpg        cyl       disp         hp       drat
+## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.6811719
+## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.6999381
+## disp -0.8475514  0.9020329  1.0000000  0.7909486 -0.7102139
+## hp   -0.7761684  0.8324475  0.7909486  1.0000000 -0.4487591
+## drat  0.6811719 -0.6999381 -0.7102139 -0.4487591  1.0000000</code></pre>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="covariance-and-correlation.html#cb350-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Can also specify alt-correlations</span></span>
+<span id="cb350-2"><a href="covariance-and-correlation.html#cb350-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)], <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;kendall&quot;</span>))</span></code></pre></div>
+<pre><code>##             mpg        cyl       disp         hp       drat
+## mpg   1.0000000 -0.7953134 -0.7681311 -0.7428125  0.4645488
+## cyl  -0.7953134  1.0000000  0.8144263  0.7851865 -0.5513178
+## disp -0.7681311  0.8144263  1.0000000  0.6659987 -0.4989828
+## hp   -0.7428125  0.7851865  0.6659987  1.0000000 -0.3826269
+## drat  0.4645488 -0.5513178 -0.4989828 -0.3826269  1.0000000</code></pre>
+<p>As you’ll notice, the main diagonal of the matrix (top left to bottom right) all equal 1. This is because a variable is inherently perfectly correlated with itself. You can also see that the matrix is symmetric, as the same comparisons are made twice (one below the main diagonal and once above).</p>
+<p>However, this is not fun to read! I want something that will visually help me detect which variables are highly correlated with one another! We are going to use the <span class="math inline">\(corrplot\)</span> library to generate a Correlogram, like so:</p>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="covariance-and-correlation.html#cb352-1" aria-hidden="true" tabindex="-1"></a><span class="do">## load the library</span></span>
+<span id="cb352-2"><a href="covariance-and-correlation.html#cb352-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code></pre></div>
+<pre><code>## corrplot 0.90 loaded</code></pre>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="covariance-and-correlation.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="do">## save our correlation matrix</span></span>
+<span id="cb354-2"><a href="covariance-and-correlation.html#cb354-2" aria-hidden="true" tabindex="-1"></a>cormat <span class="ot">&lt;-</span> <span class="fu">cor</span>(mtcars[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)], <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;kendall&quot;</span>))</span>
+<span id="cb354-3"><a href="covariance-and-correlation.html#cb354-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb354-4"><a href="covariance-and-correlation.html#cb354-4" aria-hidden="true" tabindex="-1"></a><span class="do">## run the corrplot function on our matrix</span></span>
+<span id="cb354-5"><a href="covariance-and-correlation.html#cb354-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cormat)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-152-1.png" width="672" />
+Visually, this is much easier navigate. We can see that big blue circles represent positive correlation (approaching 1) and big red circles represent negative correlation (approaching -1). When circles are fainter, it means there is less correlation between the two variables (with no circle indicating no correlation). We can visually see many patterns in our data. For example: we can see that miles per gallon is negatively correlated with the number of cylinders the vehicle has; we can see that the number of cylinders is positively correlated with the amount of horsepower the vehicle has.</p>
+<p>This plot can be an incredibly useful tool for identifying correlation in your data. While in this example, I have run the function on some categorical data (i.e., cylinders), generally we run correlation on continuous data. Assessing correlation is important in and of itself, but will also be important when implementing other methods going forward!</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pearsons-chi2-test.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Scientific Research Questions and Null Hypothesis Significance Testing Framework | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Scientific Research Questions and Null Hypothesis Significance Testing Framework | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Scientific Research Questions and Null Hypothesis Significance Testing Framework | Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Charles Marks" />
+
+
+<meta name="date" content="2022-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mathematical-notation-probability-distributions.html"/>
+<link rel="next" href="descriptive-statistics-table-one.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>2</b> Welcome to R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#in-this-chapter"><i class="fa fa-check"></i><b>2.1</b> In This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="welcome.html"><a href="welcome.html#downloading-r-and-rstudio"><i class="fa fa-check"></i><b>2.2</b> Downloading R and RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="welcome.html"><a href="welcome.html#so-waitwhat-is-r"><i class="fa fa-check"></i><b>2.3</b> So, Wait…What is R?</a></li>
+<li class="chapter" data-level="2.4" data-path="welcome.html"><a href="welcome.html#what-can-we-tell-the-computer-to-do-with-r"><i class="fa fa-check"></i><b>2.4</b> What can we tell the computer to do with R?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="welcome.html"><a href="welcome.html#arithmetic"><i class="fa fa-check"></i><b>2.4.1</b> Arithmetic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="welcome.html"><a href="welcome.html#saving-values"><i class="fa fa-check"></i><b>2.5</b> Saving Values</a></li>
+<li class="chapter" data-level="2.6" data-path="welcome.html"><a href="welcome.html#types-of-data"><i class="fa fa-check"></i><b>2.6</b> Types of Data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="welcome.html"><a href="welcome.html#numeric-data"><i class="fa fa-check"></i><b>2.6.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="welcome.html"><a href="welcome.html#character-data"><i class="fa fa-check"></i><b>2.6.2</b> Character Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="welcome.html"><a href="welcome.html#logical-data"><i class="fa fa-check"></i><b>2.6.3</b> Logical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="welcome.html"><a href="welcome.html#a-quick-check-in"><i class="fa fa-check"></i><b>2.7</b> A Quick Check-In</a></li>
+<li class="chapter" data-level="2.8" data-path="welcome.html"><a href="welcome.html#storing-larger-quantities-of-data"><i class="fa fa-check"></i><b>2.8</b> Storing Larger Quantities of Data</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="welcome.html"><a href="welcome.html#vectors"><i class="fa fa-check"></i><b>2.8.1</b> Vectors</a></li>
+<li class="chapter" data-level="2.8.2" data-path="welcome.html"><a href="welcome.html#data-frames"><i class="fa fa-check"></i><b>2.8.2</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="welcome.html"><a href="welcome.html#nice-job-everyone"><i class="fa fa-check"></i><b>2.9</b> Nice Job Everyone</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Libraries</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#okay-waitwhats-a-function"><i class="fa fa-check"></i><b>3.1</b> Okay, wait…What’s a function?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#a-real-world-example-of-a-function-buying-a-cake"><i class="fa fa-check"></i><b>3.1.1</b> A Real World Example of a Function: Buying a Cake</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#picking-functions-in-r-the-read.csv-function"><i class="fa fa-check"></i><b>3.1.2</b> Picking Functions in R: The read.csv() function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#breather-time"><i class="fa fa-check"></i><b>3.2</b> Breather Time</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#looking-under-the-hood-writing-our-own-function"><i class="fa fa-check"></i><b>3.3</b> Looking Under the Hood: Writing Our Own Function</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#so-whats-a-library"><i class="fa fa-check"></i><b>3.4</b> So What’s A Library?</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#how-do-i-see-what-is-in-my-library"><i class="fa fa-check"></i><b>3.4.1</b> How do I see what is in my library?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#quick-word-of-caution"><i class="fa fa-check"></i><b>3.5</b> Quick word of caution</a></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#in-conclusion"><i class="fa fa-check"></i><b>3.6</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html"><i class="fa fa-check"></i><b>4</b> Working with Datasets in R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-a-dataset-into-r"><i class="fa fa-check"></i><b>4.1</b> Loading a Dataset into R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#loading-other-formats-of-data"><i class="fa fa-check"></i><b>4.1.1</b> Loading Other Formats of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#exploring-the-data"><i class="fa fa-check"></i><b>4.2</b> Exploring the Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#keep-your-codebook-handy"><i class="fa fa-check"></i><b>4.2.1</b> Keep Your Codebook Handy</a></li>
+<li class="chapter" data-level="4.2.2" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#the-environment-pane"><i class="fa fa-check"></i><b>4.2.2</b> The Environment pane</a></li>
+<li class="chapter" data-level="4.2.3" data-path="working-with-datasets-in-r.html"><a href="working-with-datasets-in-r.html#functions-for-exploring-and-cleaning-data"><i class="fa fa-check"></i><b>4.2.3</b> Functions for Exploring and Cleaning Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html"><i class="fa fa-check"></i><b>5</b> Mathematical Notation, Probability, &amp; Distributions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-identifying-the-signal-from-the-noise"><i class="fa fa-check"></i><b>5.1</b> Statistics: Identifying the Signal From the Noise</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-and-falsification"><i class="fa fa-check"></i><b>5.1.1</b> Statistics and Falsification</a></li>
+<li class="chapter" data-level="5.1.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#statistics-the-art-of-making-educated-guesses"><i class="fa fa-check"></i><b>5.1.2</b> Statistics: The Art of Making Educated Guesses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#intro-to-probability-and-the-normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Intro to Probability and the Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#defining-probablity-mathematically"><i class="fa fa-check"></i><b>5.2.1</b> Defining Probablity Mathematically</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="mathematical-notation-probability-distributions.html"><a href="mathematical-notation-probability-distributions.html#conclusion"><i class="fa fa-check"></i><b>5.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><i class="fa fa-check"></i><b>6</b> Scientific Research Questions and Null Hypothesis Significance Testing Framework</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#significance"><i class="fa fa-check"></i><b>6.2</b> “Significance”</a></li>
+<li class="chapter" data-level="6.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#an-important-distinction-scientific-versus-statistical-hypotheses"><i class="fa fa-check"></i><b>6.3</b> An Important Distinction: Scientific Versus Statistical Hypotheses</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#scientific-research-questions-scientific-hypotheses"><i class="fa fa-check"></i><b>6.3.1</b> Scientific Research Questions &amp; Scientific Hypotheses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#statistical-hypotheses-the-null-and-the-alternate"><i class="fa fa-check"></i><b>6.3.2</b> Statistical Hypotheses: The Null and the Alternate</a></li>
+<li class="chapter" data-level="6.3.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#answering-our-scientific-research-question-with-our-statistical-results"><i class="fa fa-check"></i><b>6.3.3</b> Answering Our Scientific Research Question with Our Statistical Results</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-look-at-history-to-understand-nhst"><i class="fa fa-check"></i><b>6.4</b> A Look At History To Understand NHST</a></li>
+<li class="chapter" data-level="6.5" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#falsifying-the-null-hypothesis-say-hello-to-the-p-value"><i class="fa fa-check"></i><b>6.5</b> Falsifying the Null Hypothesis: Say Hello to the P-Value!</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#a-p-value-is-not"><i class="fa fa-check"></i><b>6.5.1</b> A P-Value is Not…</a></li>
+<li class="chapter" data-level="6.5.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#lets-do-an-example-a-p-value-primer---big-babies"><i class="fa fa-check"></i><b>6.5.2</b> Let’s Do an Example: A P-Value Primer - Big Babies</a></li>
+<li class="chapter" data-level="6.5.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#general-steps-to-calculating-p-value"><i class="fa fa-check"></i><b>6.5.3</b> General Steps to Calculating P-Value</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#but-there-must-be-an-alternative"><i class="fa fa-check"></i><b>6.6</b> But, There Must Be an Alternative</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#visualizing-the-null-and-the-alternate-an-example"><i class="fa fa-check"></i><b>6.6.1</b> Visualizing the Null and the Alternate, an example</a></li>
+<li class="chapter" data-level="6.6.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#the-neyman-pearson-decision-matrix"><i class="fa fa-check"></i><b>6.6.2</b> The Neyman-Pearson Decision Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#putting-it-all-together-ish-null-hypothesis-significance-testing"><i class="fa fa-check"></i><b>6.7</b> Putting It All Together-ish: Null Hypothesis Significance Testing</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#so-nhst-isnt-a-good-idea"><i class="fa fa-check"></i><b>6.7.1</b> So, NHST Isn’t a Good Idea?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#misuse-of-nhst"><i class="fa fa-check"></i><b>6.7.2</b> Misuse of NHST</a></li>
+<li class="chapter" data-level="6.7.3" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#what-should-i-do"><i class="fa fa-check"></i><b>6.7.3</b> What Should I Do?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#wading-through-the-meta-uncertainty-of-statistics"><i class="fa fa-check"></i><b>6.7.4</b> Wading Through The Meta-Uncertainty of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#in-conclusion-1"><i class="fa fa-check"></i><b>6.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html"><i class="fa fa-check"></i><b>7</b> Descriptive Statistics: Table One</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#sample-versus-population"><i class="fa fa-check"></i><b>7.1</b> Sample Versus Population</a></li>
+<li class="chapter" data-level="7.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#inclusion-criteria"><i class="fa fa-check"></i><b>7.2</b> Inclusion Criteria</a></li>
+<li class="chapter" data-level="7.3" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-sample-does-not-always-match-the-population"><i class="fa fa-check"></i><b>7.3</b> The Sample Does Not Always Match the Population</a></li>
+<li class="chapter" data-level="7.4" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#introducing-table-one"><i class="fa fa-check"></i><b>7.4</b> Introducing: Table One!</a></li>
+<li class="chapter" data-level="7.5" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#rewind-a-bit-what-exactly-are-descriptive-statistics"><i class="fa fa-check"></i><b>7.5</b> Rewind a Bit: What Exactly are Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#primary-types-of-descriptives-seen-in-table-one"><i class="fa fa-check"></i><b>7.6</b> Primary Types of Descriptives Seen in Table One</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-categorical-data"><i class="fa fa-check"></i><b>7.6.1</b> Descriptive Statistics for Categorical Data</a></li>
+<li class="chapter" data-level="7.6.2" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#descriptive-statistics-for-numeric-data"><i class="fa fa-check"></i><b>7.6.2</b> Descriptive Statistics for Numeric Data</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#creating-table-one"><i class="fa fa-check"></i><b>7.7</b> Creating Table One</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#the-tableone-package"><i class="fa fa-check"></i><b>7.7.1</b> The tableone package</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="descriptive-statistics-table-one.html"><a href="descriptive-statistics-table-one.html#in-conclusion-2"><i class="fa fa-check"></i><b>7.8</b> In Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html"><i class="fa fa-check"></i><b>8</b> Comparing Two Groups w/ Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#statistical-hypotheses-of-the-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1</b> Statistical Hypotheses of the Independent Samples T-Test</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#logic-of-the-t-test"><i class="fa fa-check"></i><b>8.2</b> Logic of the t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#introducing-the-students-t-distribution"><i class="fa fa-check"></i><b>8.3</b> Introducing the Student’s t-Distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#mapping-the-signal-onto-the-t-distribution"><i class="fa fa-check"></i><b>8.4</b> Mapping The Signal Onto The t-Distribution</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-the-standard-error-of-the-mean"><i class="fa fa-check"></i><b>8.4.1</b> Calculating the Standard Error of the Mean</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#calculating-our-test-statistic-t"><i class="fa fa-check"></i><b>8.4.2</b> Calculating our test statistic, t</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#two-tailed-versus-one-tailed-t-test"><i class="fa fa-check"></i><b>8.4.3</b> Two-Tailed Versus One-Tailed T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#three-variations-of-the-t-test"><i class="fa fa-check"></i><b>8.5</b> Three Variations of the <span class="math inline">\(t\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#independent-samples-t-test"><i class="fa fa-check"></i><b>8.5.1</b> Independent Samples t-test</a></li>
+<li class="chapter" data-level="8.5.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>8.5.2</b> One Sample <span class="math inline">\(t\)</span>-test</a></li>
+<li class="chapter" data-level="8.5.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#paired-samples-t-test"><i class="fa fa-check"></i><b>8.5.3</b> Paired Samples <span class="math inline">\(t\)</span>-test</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#what-are-the-assumptions-we-make-prior-to-running-an-independent-samples-t-test"><i class="fa fa-check"></i><b>8.6</b> What Are the Assumptions We Make Prior to Running an Independent Samples T-test</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-1-our-variable-of-interest-x-must-be-measured-on-an-ordinal-or-continuous-scale"><i class="fa fa-check"></i><b>8.6.1</b> Assumption #1: Our Variable of Interest, <span class="math inline">\(X\)</span>, Must Be Measured on an Ordinal or Continuous Scale</a></li>
+<li class="chapter" data-level="8.6.2" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-2-data-must-be-drawn-from-a-random-sample"><i class="fa fa-check"></i><b>8.6.2</b> Assumption #2: Data Must Be Drawn From a Random Sample</a></li>
+<li class="chapter" data-level="8.6.3" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-3-normality-of-observations-of-x"><i class="fa fa-check"></i><b>8.6.3</b> Assumption #3: Normality of Observations of <span class="math inline">\(X\)</span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#assumption-4-homogeneity-of-variance"><i class="fa fa-check"></i><b>8.6.4</b> Assumption #4: Homogeneity of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="comparing-two-groups-w-independent-samples-t-test.html"><a href="comparing-two-groups-w-independent-samples-t-test.html#last-but-not-least---how-do-we-run-a-t-test-in-r"><i class="fa fa-check"></i><b>8.7</b> Last But Not Least - How Do We Run A t-Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html"><i class="fa fa-check"></i><b>9</b> Pearson’s <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#expectations-v.-observations"><i class="fa fa-check"></i><b>9.1</b> Expectations v. Observations</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#income-level-and-smoking-status"><i class="fa fa-check"></i><b>9.1.1</b> Income Level and Smoking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-distribution"><i class="fa fa-check"></i><b>9.2</b> The <span class="math inline">\(\chi^2\)</span> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi_k2-distribution-with-k-degrees-of-freedom"><i class="fa fa-check"></i><b>9.2.1</b> The <span class="math inline">\(\chi_k^2\)</span> Distribution with <span class="math inline">\(k\)</span> Degrees of Freedom</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3</b> The <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#formally-defining-the-test"><i class="fa fa-check"></i><b>9.3.1</b> Formally Defining the Test</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#what-are-the-assumptions-of-the-chi2-test-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> What are the assumptions of the <span class="math inline">\(\chi^2\)</span> Test of Independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#running-the-chi2-test-in-r"><i class="fa fa-check"></i><b>9.3.3</b> Running the <span class="math inline">\(\chi^2\)</span> Test in R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#other-variations-of-the-chi2-test"><i class="fa fa-check"></i><b>9.4</b> Other Variations of the <span class="math inline">\(\chi^2\)</span> Test</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="pearsons-chi2-test.html"><a href="pearsons-chi2-test.html#goodness-of-fit-test"><i class="fa fa-check"></i><b>9.4.1</b> Goodness of Fit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html"><i class="fa fa-check"></i><b>10</b> Covariance and Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance"><i class="fa fa-check"></i><b>10.1</b> Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-covariance"><i class="fa fa-check"></i><b>10.1.1</b> Measuring Covariance</a></li>
+<li class="chapter" data-level="10.1.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#covariance-is-a-measure-of-association"><i class="fa fa-check"></i><b>10.1.2</b> Covariance is a Measure of Association</a></li>
+<li class="chapter" data-level="10.1.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#measuring-and-visualizing-covariance-in-r"><i class="fa fa-check"></i><b>10.1.3</b> Measuring and Visualizing Covariance in R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation"><i class="fa fa-check"></i><b>10.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-correlation-coefficient-for-a-sample"><i class="fa fa-check"></i><b>10.2.1</b> Computing the Correlation Coefficient for a Sample</a></li>
+<li class="chapter" data-level="10.2.2" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#computing-the-coefficient-in-r"><i class="fa fa-check"></i><b>10.2.2</b> Computing the Coefficient in R</a></li>
+<li class="chapter" data-level="10.2.3" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#interpreting-the-correlation-coefficient"><i class="fa fa-check"></i><b>10.2.3</b> Interpreting the Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.2.4" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#what-if-the-correlation-between-two-variables-is-not-linear-in-nature"><i class="fa fa-check"></i><b>10.2.4</b> What if the Correlation Between Two Variables Is Not Linear in Nature</a></li>
+<li class="chapter" data-level="10.2.5" data-path="covariance-and-correlation.html"><a href="covariance-and-correlation.html#correlation-matrix"><i class="fa fa-check"></i><b>10.2.5</b> Correlation Matrix</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applied Statistics for the Ascendant Social Science Researcher: A Course Focused on Developing Skills, Building Confidence, and Not Being So Absolutely Confusing and Miserable</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="scientific-research-questions-and-null-hypothesis-significance-testing-framework" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Scientific Research Questions and Null Hypothesis Significance Testing Framework</h1>
+<div id="introduction" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>In the prior chapter, we discussed how statistics is an art of making probablistic guesses about the nature of phenomena that we observe. At its heart, inferential statistics techniques make an assumption that a signal does not exist and then ask how probable this assumption is once we observe some sample data.</p>
+<p>Before diving into learning these statistics techniques, it will be important that we discuss the null hypothesis significance testing (NHST) framework. While null hypothesis significance testing is not the only way to approach inferential statistics, it is the dominant framework and it is important that you understand how it operates. The NHST framework is not without criticism, including <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.00815/full">publicly by myself</a>. A big part of this chapter is to introduce null hypothesis testing to you as a necessity, but also to make clear that you should not be basing the quality nor validity of your quantitative research on <span class="math inline">\(p\)</span>-values alone.</p>
+<p>To approach this, in this chapter we will discuss some of the historical developments that have lead to NHST - specifically the works of Ronald Fisher versus that of Jerzy Neyman and Egon Pearson. Modern NHST is a sort of an amalgamation of the works of these two teams and, unfortunately, it is often applied in ways that have resulted in studies of poor scientific quality. You will not need to know the history of statistics in order be a successful applied statistician, BUT, understanding the principles of Fisher’s approach versus Neyman-Pearson’s will provide you context into what NHST is and what some of its flaws are.</p>
+</div>
+<div id="significance" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> “Significance”</h2>
+<p>Many of you (all of you?) are likely to recognize the importance of the word “significance.” Significance takes on a sacred quality - many of us have been taught to think of the term “significant” as indicating that your study has found something truly important worth sharing! Results that do not meet this standard are then considered inconsequential and thrown out, never to be looked at again.</p>
+<p>I really want to challenge you to not care too much about this word. As we will discuss, a result being “significant” does not inherently mean that it is meaningful, useful, or insightful. By the same token, a result being “not significant” does not mean the result is not meaningful, useful, or insightful. Part of the goal in this chapter is to understand what “significance” means and how to think about it in your own studies.</p>
+</div>
+<div id="an-important-distinction-scientific-versus-statistical-hypotheses" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> An Important Distinction: Scientific Versus Statistical Hypotheses</h2>
+<p>Prior to discussing the null hypothesis framework, I first want to draw the distinction between scientific research questions and hypotheses and statistical hypotheses. While inter-related, we must understand the distinction, else we fail to adequately answer our primary research goals when employing statistical techniques.</p>
+<div id="scientific-research-questions-scientific-hypotheses" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Scientific Research Questions &amp; Scientific Hypotheses</h3>
+<p>When we undertake a research study, we generally have a research question we are hoping to answer. The purpose of a scientific study is to answer your research question as best as possible. Research questions are presented in plain language, often at the end of the <em>Introduction</em> section of a manuscript. It is common to read a statement in research paper that reads something like:</p>
+<blockquote>
+<p>The primary objective of this research study is to address the following research question: among people who smoke cigarettes, is income level associated with likelihood of quitting cigarette use?</p>
+</blockquote>
+<p>Often times, a research question is followed by a hypothesis statement. To continue this example, the next sentence may read:</p>
+<blockquote>
+<p>We hypothesize that higher income levels will be associated with an elevated likelihood of reporting quitting cigarette use at 6-month follow-up.</p>
+</blockquote>
+<p>Assuming we are undertaking a quantitative study, we then take the data available to us and use statistical methods in an effort to best answer our research question. In this case, we need to identify a set of statistical methods that can be applied to answer our research question.</p>
+<p>The important thing in a research study is to answer our scientific research question and the results of our statistical tests must be understood as being in service to the mission to answer this question.</p>
+</div>
+<div id="statistical-hypotheses-the-null-and-the-alternate" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Statistical Hypotheses: The Null and the Alternate</h3>
+<p>We choose our statistical methods in order to answer our scientific research question. However, each inferential statistical method has its own set of hypotheses. The hypotheses that correspond to a statistical method always follow the same form, regardless of the scientific research question being asked. Further, making a decision about your statistical hypotheses is not the same as making a decision about your scientific hypotheses.</p>
+<p>Within the NHST framework, an inferential statistical method has one inherent hypothesis (the null) and a second that can also be specified (the alternate). We will discuss the purpose and origins of these hypotheses later on in the chapter:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: The null hypothesis, which states that any signal observed within a sample is the result of random chance (i.e., the signal does not exist at the population-level)</li>
+<li><span class="math inline">\(H_A\)</span>: The alternate hypothesis, which states that the observed signal is not the result of random chance and that the signal does exist at the population-level. Within the NHST framework, this is often presented as the negation of the null hypothesis.</li>
+</ul>
+<p>Remember, when we take a random sample of a population, there is going to be variance (or noise) within the data. Much of the variation in our sample is simply the result of random chance - it wouldn’t be weird to see variations in our sample data from what we may expect. So, statistical tests are designed to assess how confident we are in the signal we have observed, despite the noise within the data. The larger the signal and the smaller the noise, the more confident we are that we can reject the null hypothesis.</p>
+</div>
+<div id="answering-our-scientific-research-question-with-our-statistical-results" class="section level3" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Answering Our Scientific Research Question with Our Statistical Results</h3>
+<p>Often, when we write a quantitative research report, we string together multiple statistical tests, each with their own set of statistical hypotheses. We take the results of this set of statistical tests and we, as the authors, make an argument about how they answer our scientific research questions and reflect on the plausability of our initial scientific hypotheses.</p>
+<p>This was a rather long-winded way of saying that if you run a statistical test and find a “significant” result, your job as a researcher is not over. You must always seek to answer your primary research question and “significance” alone is not enough to do so.</p>
+</div>
+</div>
+<div id="a-look-at-history-to-understand-nhst" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> A Look At History To Understand NHST</h2>
+<p>Okay! Now that that is out of the way, we need to actually discuss the purpose of the null and alternate hypotheses and how we go about evaluating them. NHST is actually a weird mixture of the methods for statistical inference developed by Ronald Fisher and that developed by Jerzy Neyman and Egon Pearson. In fact, their approaches are not compatible and which approach is better has been a topic of debate for nearly a century now! Unfortunately, hypothesis testing is often taught as a series of steps and little time is spent reflecting on what NHST is and what its flaws are.</p>
+<p>In the following sections, we will discuss the system of statistical inference developed by Fisher and that by Neyman-Pearson. This will help us understand what NHST is and how to use it effectively. Unfortunately, as a social science researcher, you will often be expected to approach science in the “normal” and “customary” ways. For decades, NHST has been misapplied to the point that the “normal” use of NHST is quite often not scientifically rigorous. This has been argued to have resulted in the “replication crisis” in the social sciences.</p>
+<p>So, first we will discuss the system developed by Fisher, which focuses solely on falsification of the null hypothesis. Then we will discuss the system developed by Neyman-Pearson, which focuses on choosing between a main and alternate hypothesis. Finally, we will discuss how NHST has attempted to marry these two approaches and how this has resulted in a mishmash of ideas that are often misunderstood and misapplied. In a sense, we must know how to navigate NHST so that we can engage with and author quantitative research, but, I want to encourage you to be critical of these practices.</p>
+</div>
+<div id="falsifying-the-null-hypothesis-say-hello-to-the-p-value" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Falsifying the Null Hypothesis: Say Hello to the P-Value!</h2>
+<p>Ronald Fisher (1890 - 1962) was a statistician who formally developed the modern idea of falsifying the null hypothesis. Fisher and other statisticians were faced with a challenging philosophical question: how do you prove that something is true (or, how do you prove your scientific hypothesis is correct)? Well, it turned out that proving something is true, especially about human behavior, is basically impossible. There are too many people and too many sources of variability to ever really establish that some “fact” is true about large populations of people (nor is it clear that all people are ruled by some unifying set of constructs that explain humanness).</p>
+<p>Fisher’s approach was an elegant response to this conundrum. Instead of trying to prove something is true or false, we can actually assume that something is true and then make observations about the world through this assumption. Does what we are observing make sense with our assumption - or, how likely are our observations given our assumption?</p>
+<p>This is where the idea of the null hypothesis was born. If we want to try to show that some signal exists, Fisher’s method suggests that we assume that (<span class="math inline">\(H_0\)</span>) a signal does not exist. Then we observe data and ask how likely the observed data if we assume no signal exists, or:</p>
+<p><span class="math display">\[P(data|H_0)\]</span>
+In other words, what is the probability of observing our sample data, assuming that the null hypothesis is true that no signal exists. If this value approaches 0, we are suggesting that there is a very low probability we could observe our data if the null hypothesis were true. The closer to 0 this value becomes, the more confident we can feel that our assumption of <span class="math inline">\(H_0\)</span> is wrong. In otherwords, the closer to 0 this value becomes, the more confident we can feel that a signal actually exists at the population level.</p>
+<p>What does “probability of observing our sample data” mean, though? While we may assume that no signal exists at the population-level (<span class="math inline">\(H_0\)</span>), we know it is quite unlikely that we won’t observe any signal at all in our sample data. It turns out that when we assume <span class="math inline">\(H_0\)</span>, we are also assuming that our observations will follow specific patterns, otherwise known as theoretical probability distributions. For example, if I want to run a statistical test to compare anxiety between undergraduate students (<span class="math inline">\(\mu_{under}\)</span>) and PhD students (<span class="math inline">\(\mu_{PhD}\)</span>), I would start by assuming that <span class="math inline">\(H_0: \mu_{under} = \mu_{PhD}\)</span>. Now if I recruit 100 undergrads and 100 PhD students and calculate mean anxiety scores <span class="math inline">\(\bar{x}_{under}\)</span> and <span class="math inline">\(\bar{x}_{PhD}\)</span>, it seems fairly likely that these values will be slightly different…what we want to know is <strong>how likely</strong> is what we observe assuming <span class="math inline">\(H_0\)</span>.</p>
+<p>So, we calculate our signal, in this case we can consider the difference between anxiety scores for the two groups is our signal (i.e., <span class="math inline">\(\bar{x}_{under} - \bar{x}_{PhD}\)</span>). If the null hypothesis is true, it is fairly likely this value will be close to 0! In fact, 0 seems like the most likely value, but values close to 0 also seem fairly likely. Values farther from 0 seem much less likely. This sounds a lot like the definition of a normal distribution! Interesting! In this case, by assuming <span class="math inline">\(H_0\)</span>, that no signal exists, we are also making an assumption of how our observed variable will behave - in this case that the difference between group anxiety scores should follow a normal distribution.</p>
+<p>We can then use our signal (i.e., <span class="math inline">\(\bar{x}_{under} - \bar{x}_{PhD}\)</span>) and our noise (here, it may be the standard deviation of anxiety observations) to calculate a test statistic. A test statistic <span class="math inline">\(t\)</span> represents a value calculated from the <span class="math inline">\(signal\)</span> and <span class="math inline">\(noise\)</span> that corresponds to a standard probability distribution, <span class="math inline">\(T\)</span>. Once we calculate <span class="math inline">\(t\)</span>, we can then ask what the probability is of observing a value of <span class="math inline">\(t\)</span> or a greater value, by calculating the corresponding area under the curve from <span class="math inline">\(T\)</span>. We can denote this probability as:</p>
+<p><span class="math display">\[P(T\geq t|H_0)\]</span></p>
+<p>In other words, what is the probability of observing a test statistic <span class="math inline">\(t\)</span> from distribution <span class="math inline">\(T\)</span>, assuming that <span class="math inline">\(H_0\)</span> is true! In this case, <span class="math inline">\(t\)</span> is a standardized measure of the difference between the two groups’ mean anxiety scores and <span class="math inline">\(T\)</span> is the standard normal distribution.</p>
+<p>We call this value the <strong>p-value</strong>. The <strong>p-value</strong> represents the probability of observing a signal of a given strength or stronger, assuming that (<span class="math inline">\(H_0\)</span>) no signal actually exists. If the p-value is quite small, then that indicates to us that our assumption is probably wrong and that it is quite likely that a signal exists. Notice, this doesn’t prove that <span class="math inline">\(H_0\)</span> is false, it is just a way of reflecting that it is highly improbable. The term <strong>significant</strong> is then applied to p-values with values less than some pre-established threshold <span class="math inline">\(\alpha\)</span>. <span class="math inline">\(\alpha\)</span> is typically set to 0.05 in most research practices. Fisher importantly argued that “no isolated experiment, however significant in itself, can suffice for the experimental demonstration of any natural phenomenon.” In other words, a study with significant findings should not be viewed as sufficient alone to determine what is factual.</p>
+<div id="a-p-value-is-not" class="section level3" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> A P-Value is Not…</h3>
+<p>Now, if this description has been confusing, that’s ok. P-values are notoriously confusing and challenging to define in lay terms. As we learn about more statistical tests and how to apply them, we will learn how the p-value is calculated and how it is to be interpreted. The important thing to takeaway is that <strong>the p-value represent the probability of observing your data assuming the null hypothesis is true</strong>. The smaller a p-value, the less likely we think our data could have happened assuming the null hypothesis is true - as a result, since we a certain in our data (i.e., since its real and not theoretical/assumed), this forces us to question the validity of assuming the null hypothesis.</p>
+<p>Unfortunately, it is easy to misinterpret a p-value or misunderstand what it is. Cyril Pernet put together a <a href="https://dx.doi.org/10.12688%2Ff1000research.6963.3">nice list</a> of things that a p-value is not:</p>
+<ul>
+<li>A p-value is not a measure of the strength or magnitude of a signal (i.e., a small p-value does not mean the signal is strong or meaningful)</li>
+<li>A p-value does not reflect the probability of replicating the signal observed (i.e., getting a small p-value doesn’t mean replication studies are likely to get the same result)</li>
+<li>A small p-value is not evidence of any alternate hypothesis, it is only a reflection of the relationship between the data and the null</li>
+<li><strong>The p-value is not the probability that the null hypothesis is true</strong></li>
+</ul>
+<p>This last one is quite important because one of the biggest mistakes that researchers make is that they interpret the <span class="math inline">\(p\)</span>-value to represent how likely it is that the null hypothesis is true, or: <span class="math inline">\(P(H_0|data)\)</span>. As we have defined, though, the <span class="math inline">\(p\)</span>-value represents the probability of observing our data assuming that the null hypothesis is true, or: <span class="math inline">\(P(data|H_0)\)</span>.</p>
+<div id="an-interesting-note-about-this" class="section level4" number="6.5.1.1">
+<h4><span class="header-section-number">6.5.1.1</span> An Interesting Note About This</h4>
+<p>ow, this is a bit of a downer, because, as researchers we are actually far more interested in <span class="math inline">\(P(H_0|data)\)</span> than we are in the <span class="math inline">\(p\)</span>-value, <span class="math inline">\(P(data|H_0)\)</span>. There is a cool formula called Bayes’ Rule that tells us that <span class="math inline">\(P(H_0|data)\)</span> and <span class="math inline">\(P(data|H_0)\)</span> are proportional to one another. If one value goes up, so does the other and vice versa. As such, we may understand our <span class="math inline">\(p\)</span>-value (<span class="math inline">\(P(data|H_0)\)</span>) being a proxy for the value we actually care about, which is the probability of the hypothesis itself (<span class="math inline">\(P(H_0|data)\)</span>).</p>
+<p>So, this is quite interesting. As scientists, we want to know if our hypothesis is valid or not. But, the <span class="math inline">\(p\)</span>-value, one of the most prominent metrics in statistics, is about the probability of our data assuming our hypothesis is true. While these ideas are related, it is important to take note that, using Fisher’s approach we are actually not reflecting directly on the validity of our statistical hypothesis. We have a proxy measure (the <span class="math inline">\(p\)</span>-value) which we understand to be inter-related. This issue is the same for the Neyman-Pearson approach we will discuss later!</p>
+</div>
+</div>
+<div id="lets-do-an-example-a-p-value-primer---big-babies" class="section level3" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Let’s Do an Example: A P-Value Primer - Big Babies</h3>
+<p>Let’s now run through an example study to get a sense of the general process we undertake when we calculate a p-value.</p>
+<p>So, we are researching the birth weight of newborn babies in a small town. We had heard some rumors that babies born in this town are all really big! Doctors joke there must be something in the water. So, we want to know, are the babies born in this town actually bigger than normal babies. We happen to know that the weight of newborn babies is normally distributed, that the average weight of a newborn baby is <span class="math inline">\(\mu = 7.5\)</span> pounds, and that the standard deviation of birth weights is <span class="math inline">\(\sigma = 1.2\)</span> pounds.</p>
+<p>We start by setting our null hypothesis. Since the null is the assumption that no signal exists, the null would be that birth weights of babies in this small town are the same as babies generally. If we let <span class="math inline">\(\mu_{ST}\)</span> be the weight of newborn babies in this small town, then our null hypothesis would be:</p>
+<p><span class="math display">\[H_0: \mu_{ST} = \mu\]</span></p>
+<p>This is actually the same, mathematically, as saying that:</p>
+<p><span class="math display">\[H_0: \mu_{ST} - \mu = 0\]</span></p>
+<p>This is quite useful because the difference between the average baby weight in the small town and the average baby weight generally represents our signal. So, let’s say we got birth records from a sample of babies in this small town and we calculated that the average birth weight of the sample of babies is <span class="math inline">\(\bar{x}\)</span>. If we assume that <span class="math inline">\(H_0\)</span> is true, then it makes sense that the value of <span class="math inline">\(\bar{x} - \mu\)</span> would be normally distributed around the value 0. This is because if we take a random sample of babies from this small town and calculate their average weight <span class="math inline">\(\bar{x}\)</span> it is quite probable that <span class="math inline">\(\bar{x} \neq \mu\)</span> because there is always going to be random noise in the data, even if we are assuming that <span class="math inline">\(\mu_{ST} = \mu\)</span>. However, if <span class="math inline">\(H_0\)</span> is actually true, then we can understand that values of <span class="math inline">\(\bar{x} - \mu\)</span> close to 0 are more probable than values further from 0. Further, it seems likely that if <span class="math inline">\(H_0\)</span> were true, that <span class="math inline">\(\bar{x}\)</span> has the same probability of being less than <span class="math inline">\(\mu\)</span> as being greater than <span class="math inline">\(\mu\)</span>. In other words, it appears that <strong>if <span class="math inline">\(H_0\)</span> is true</strong>, that <span class="math inline">\(\bar{x} - \mu\)</span> is normally distributed around 0!</p>
+<p>Last week, we discussed the <span class="math inline">\(Z\)</span>-distribution (or the standard normal distribution). Further, we talked about how any normal distribution can be “standardized” by dividing the values by the standard deviation. We can actually transform our value <span class="math inline">\(\bar{x} - \mu\)</span> so that it corresponds to the <span class="math inline">\(Z\)</span>-distribution. We use the following equation to do so:</p>
+<p><span class="math display">\[z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}\]</span></p>
+<p>So, now we have this value <span class="math inline">\(z\)</span>. This is our test statistic. <span class="math inline">\(z\)</span> has several cool properties: 1) it captures the strength of the signal in the dataset, 2) it captures the noise in the dataset, and 3) it corresponds to a <span class="math inline">\(Z\)</span>-distribution which captures the behavior of the signal assuming that <span class="math inline">\(H_0\)</span> were true. Now, all we need to do is calculate <span class="math inline">\(P(Z &gt;=z | H_0)\)</span>.</p>
+<p>So, let’s throw some numbers in. We got the weight of <span class="math inline">\(n = 16\)</span> babies and found that their average weight <span class="math inline">\(\bar{x} = 8.1\)</span> pounds. So we can calculate <span class="math inline">\(z\)</span> as follows:</p>
+<p><span class="math display">\[z = \frac{8.1 - 7.5}{\frac{1.2}{\sqrt{16}}} = \frac{0.6}{0.3} = 2\]</span>
+So, now we can map the value <span class="math inline">\(z = 2\)</span> onto the <span class="math inline">\(z\)</span>-distribution like so:</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb212-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">by=</span>.<span class="dv">1</span>)</span>
+<span id="cb212-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb212-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb212-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb212-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb212-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb212-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb212-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
+<p>We are almost there! To calculate the p-value, we need to calculate the probability that our test-statistic has a magnitude of 2 or greater. There are two approaches when using a two-tailed distribution. A two-tailed test or a one-tailed test. In a two-tailed test, we simply care about any observation more extreme than our calculated value <span class="math inline">\(z\)</span>. Since <span class="math inline">\(z = 2\)</span>, this means any value greater than or equal to 2 or less than or equal to -2. In a normally distributed variable centerred around 0, 2 and -2 have the same probability of occurring. So, for the two tail test, we fill in the tails starting at -2 and 2:</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">01</span>)</span>
+<span id="cb213-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb213-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb213-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb213-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-7" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb213-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-8" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb213-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-9" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,x[x<span class="sc">&gt;=</span><span class="dv">2</span>])</span>
+<span id="cb213-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-10" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb213-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-11" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb213-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-13" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb213-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-14" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[x<span class="sc">&lt;=-</span><span class="dv">2</span>],<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb213-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-15" aria-hidden="true" tabindex="-1"></a>neg_index <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb213-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-16" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(y[<span class="dv">1</span><span class="sc">:</span>neg_index],<span class="dv">0</span>)</span>
+<span id="cb213-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb213-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb213-19"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-19" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb213-20"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb213-20" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<p>Our p-value is the area of the filled in sections of the curve, which we learned how to calculate last chapter, by using the auc function like so:</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(MESS<span class="sc">::</span><span class="fu">auc</span>(poly_x,poly_y) <span class="sc">+</span> MESS<span class="sc">::</span><span class="fu">auc</span>(neg_x,neg_y),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values
+
+## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<pre><code>## [1] 0.045</code></pre>
+<p>We see that we got a p-value of 0.045. If we were using <span class="math inline">\(\alpha = 0.05\)</span> then we can see that <span class="math inline">\(0.045 &lt; \alpha\)</span> and we would describe this finding as <strong>significant</strong>. In other words, we feel that it is quite improbable that we would observe babies of this average weight if there was no difference between babies in this small town and babies generally.</p>
+<p>However, we actually were more interested in whether or not babies in this small town were bigger than babies generally. Thus, values of <span class="math inline">\(z\)</span> less than 0 are not of interest because they correspond to values of <span class="math inline">\(\bar{x}\)</span> where the babies in the small town have a lower birthweight. So, we can run a one-tailed test where we only look at the positive end of the distribution. If we plot that it looks like so:</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">by =</span> .<span class="dv">01</span>)</span>
+<span id="cb217-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb217-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-4" aria-hidden="true" tabindex="-1"></a><span class="do">## We will now plot the normally distributed data as a line (type = &quot;l&quot;)</span></span>
+<span id="cb217-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb217-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-7" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb217-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-8" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb217-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-9" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,x[x<span class="sc">&gt;=</span><span class="dv">2</span>])</span>
+<span id="cb217-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-10" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb217-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-11" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb217-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb217-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb217-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb217-14" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p>And the p-value can be calculated by the same method, which, since the normal distribution is symmetrical, we would anticipate is half the value of our two-tailed test:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(MESS<span class="sc">::</span><span class="fu">auc</span>(poly_x,poly_y),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<pre><code>## [1] 0.023</code></pre>
+<p>And voila! We have done it! We have calculated our p-value. We would read this as saying that, assuming that our null hypothesis was true, there was a 2.3% chance we would have observed a mean baby weight of these 16 babies in this small town of 8.1 pounds or greater. If using an <span class="math inline">\(\alpha\)</span>-threshold of 0.05, we would describe this finding as significant.</p>
+<p>Now, our overall research question was about whether or not babies in this small town are, on average, larger than normal babies. Did we effectively answer that with this test? I would say we have found an important part of answering this question, but that our work is not complete. Yes, this provides evidence that it is probable that babies in this town don’t have the same average birth weight as babies generally - this is evidence of the claims that babies born in this town are larger than average. If this were a real study though, we would need to also argue that our finding is not influenced by sampling or measurement bias! I raise this point just to indicate that a significant finding alone doesn’t answer our research question, it just provides a piece of information we can use to answer our research question.</p>
+</div>
+<div id="general-steps-to-calculating-p-value" class="section level3" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> General Steps to Calculating P-Value</h3>
+<p>So, the general steps to calculating a p-value are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>We assume <span class="math inline">\(H_0\)</span> that no signal exists in the population</li>
+<li>The signal in the sample data is measured and identified</li>
+<li>This signal is converted into a test statistic which corresponds to a specific theoretical distribution</li>
+<li>The test statistic is compared to the distribution (area under the curve) in order to calculate the p-value</li>
+</ol>
+<p>Any time a p-value is calculated, these are the steps that are undertaken! Many of the statistical methods we employ were designed specifically because they allow this process to occur…if you are ever learning about a method and you think “why on earth are we doing this?” the answer is likely that this is how we can convert our sample signal into a test statistic that can be compared to a theoretical distribution.</p>
+</div>
+</div>
+<div id="but-there-must-be-an-alternative" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> But, There Must Be an Alternative</h2>
+<p>Fisher’s approach focuses on falsifying the null hypothesis via significance testing. The null hypothesis is assumed to be true - the goal is not to try to argue that the null hypothesis is actually true or actually false through Fisher’s approach. It is the researchers job to reflect on what the findings mean, how to interpret the results in relation to the over-arching scientific research question. Fisher’s approach takes a cautious approach to scientific discovery - we can’t really know what is true and what is false, but we can get a sense for what is probable! In this way, scientific knowledge can be built up over time by replicating studies and by comparing results across settings and samples. It is then the job of researchers to reflect on these results to make conclusions about the nature of various phenomena.</p>
+<p>However, there are many cases where simply reflecting on the probability of the data observed falls short of intended purposes. This is especially true in industry and corporate settings - perhaps a company wants to figure out if one manufacturing approach is better than another or if their new measurement tool is accurately calibrated. In such circumstances, simply ruminating on and reflecting upon the results of a series of tests is not practical. There are certain cases where a decision has to be made based on the information at hand!</p>
+<p>Enter two of Fisher’s contemporaries, Jerzy Neyman and Egon Pearson. Neyman and Pearson developed a competing system for statistical inference, which was informed by involvement in manufacturing (i.e., they were interested in using statistics to figure out if a batch of a product on a production line was abnormal). Instead of simply reflecting on the probability of the data, assuming a null hypothesis, the Neyman-Pearson approach involves deciding between the main hypothesis (that no detectable signal exists) and an alternate hypothesis (that a detectable signal exists). Instead of significance testing, we refer to this process as hypothesis testing.</p>
+<p>In the Neyman-Pearson approach, two hypotheses are specified:</p>
+<ul>
+<li><span class="math inline">\(H_M\)</span>: The main hypothesis, that no <strong>detectable</strong> signal exists</li>
+<li><span class="math inline">\(H_A\)</span>: The alternate hypothesis, that a <strong>detectable</strong> signal exists</li>
+</ul>
+<p>The goal of the Neyman-Pearson approach is to pick one of these two hypotheses. To make this selection, they use the same significance criterion as Fisher. The <span class="math inline">\(p\)</span>-value is calculated and if the <span class="math inline">\(p\)</span>-value is less than <span class="math inline">\(\alpha\)</span>, then the main hypothesis is rejected and the alternative hypothesis is accepted. If the <span class="math inline">\(p\)</span>-value is greater than <span class="math inline">\(\alpha\)</span> then the main hypothesis is accepted and the alternative hypothesis is rejected. This is different from Fisher’s approach - while Fisher’s approach advocates for identifying <strong>significant</strong> results, Fisher was also a proponent that a conclusion about the null hypothesis cannot be made based on the results of a single study.</p>
+<p>Choosing between the main and alternate hypothesis introduces a new concern - is the determination correct? If you reject the null, should you have? If you accept the null, should you have? While Fisher treated the p-value as a probability, Neyman-Pearson treat it as a decision rule. Since it is a probability, however, that means that if a decision is made there is a chance that the decision is wrong. The Neyman-Pearson approach has a strong appeal to any person - Fisher’s approach requires cautious (and often ambiguous) interpretation, whereas the Neyman-Pearson approach has the finality of making a clear decision. Unfortunately, applying this logic to individual research studies has resulted in overly-conclusive scientific reporting across the social sciences.</p>
+<p>Choosing between the main and the alternate hypothesis also introduces an important concept: effect sizes. If the null hypothesis states that no signal exists and the alternate states that one exists, then the effect size represents the magnitude and the direction (positive or negative) of the signal. However, as we have discussed, in the Fisherian approach, we generally assume that there will be a signal in our sample data - we are just trying to figure out if we think that the observed signal is consistent with the null hypothesis. That means that relatively small observed effect sizes are likely to support the acceptance of the null <strong>even if that small effect size</strong> is the true value (i.e., the null is false) - not all deviations from the null hypothesis are <strong>detectable</strong>.</p>
+<div id="visualizing-the-null-and-the-alternate-an-example" class="section level3" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> Visualizing the Null and the Alternate, an example</h3>
+<p>So, to better understand why this notion of <strong>detectability</strong> is important, let us take our babies example and visualize it. Remember, we had compared the mean weight of babies in this small town (rumored to produce giant babies) versus the mean weight of average babies. We measured the signal by subtracting the mean weight of small town babies by the mean weight of average babies and then we standardized the value to a <span class="math inline">\(z\)</span> value which is assumed (under the null hypothesis) to be described by the standard normal distribution (<span class="math inline">\(z\)</span>-distribution). We depict the standard normal distribution below:</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb221-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">by=</span>.<span class="dv">1</span>)</span>
+<span id="cb221-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb221-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb221-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb221-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb221-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb221-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p>In the Fisherian approach, we used <span class="math inline">\(\alpha = 0.05\)</span> as a threshold for determining significance. In the Neyman-Pearson approach, <span class="math inline">\(\alpha\)</span> is used to define the <strong>critical region</strong> of a hypothesis test. As we recall from our definition of the normal distribution, 95% of observations are expected to occur within 2 standard deviations of the mean OR that only 5% of observations are expected to occur outside of 2 standard deviations of the mean. For a normally distributed variable (such as <span class="math inline">\(z\)</span>), the critical regions defined by <span class="math inline">\(\alpha = 0.05\)</span> correspond to the two tails of the distribution outside of two standard deviations of the mean. Technically, for a <span class="math inline">\(z\)</span>-distribution, 95% of expected observations fall between -1.96 and 1.96 (not -2 and 2, as seems intuitive), which we can visualize like so:</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">by=</span>.<span class="dv">01</span>)</span>
+<span id="cb222-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb222-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;z&quot;</span>)</span>
+<span id="cb222-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-6" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb222-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb222-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-8" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.96</span>,x[x<span class="sc">&gt;=</span><span class="fl">1.96</span>])</span>
+<span id="cb222-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-9" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="fl">1.96</span>)</span>
+<span id="cb222-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-10" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb222-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-12" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb222-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-13" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[x <span class="sc">&lt;=</span> <span class="sc">-</span><span class="fl">1.96</span>],<span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb222-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-14" aria-hidden="true" tabindex="-1"></a>neg_index <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb222-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-15" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(y[<span class="dv">1</span><span class="sc">:</span>neg_index],<span class="dv">0</span>)</span>
+<span id="cb222-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb222-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb222-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-18" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb222-19"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb222-19" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p>In the Neyman-Pearson approach, any calculated value of <span class="math inline">\(z\)</span> that falls in the critical regions leads us to reject the null hypothesis and accept the alternate hypothesis. If <span class="math inline">\(z\)</span> does not fall in the critical regions, then Neyman-Pearson indicates that you should accept the main/null hypothesis. What this means that, for a <span class="math inline">\(z\)</span>-test, any value of <span class="math inline">\(z\)</span> which falls between -1.96 and 1.96 is taken as in support of the main hypothesis. As such, the Neyman-Pearson null hypothesis is actually a little bit different than the Fisher null hypothesis.</p>
+<p>The Fisher null hypothesis would be that <span class="math inline">\(H_0: z = 0\)</span> and we calculate a <span class="math inline">\(p\)</span>-value to determine how likely our data is under that assumption. Whereas, the Neyman-Pearson null hypothesis actually corresponds to <span class="math inline">\(H_0: z \in 0 \pm 1.96\)</span>. The <span class="math inline">\(\in\)</span> symbol is just read as saying “is in,” so we can read that as “<span class="math inline">\(z\)</span> is within the range of 0 plus or minus 1.96.” In the case of a <span class="math inline">\(z\)</span>-test, 1.96 represents the <strong>minimum detectable effect size</strong>. For all values of <span class="math inline">\(z\)</span> within this range (-1.96, 1.96) we will accept the main hypothesis. For all values of <span class="math inline">\(z\)</span> outside of this range, we will reject the main hypothesis. We are using the same <span class="math inline">\(p\)</span>-value criterion as Fisher to make our decision, but now instead of reflecting on the probability of the data, we are making a binary decision.</p>
+<p>What this then means is that the alternate hypothesis under Neyman-Pearson is that <span class="math inline">\(H_A: z \notin 0 \pm 1.96\)</span>. If we reject the main hypothesis and accept the alternative, what we are saying is that we think that our signal <span class="math inline">\(z\)</span> is actually described by a different distribution, specifically, a normal distribution whose mean is not centered around 0. There are actually an infinite number of potential alternative hypothesis distributions that could be observed (i.e., because there are an infinite number of continuous values which could be the mean). Here, we visualize some of the possible alternative distributions.</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">by=</span>.<span class="dv">01</span>)</span>
+<span id="cb223-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb223-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb223-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-4" aria-hidden="true" tabindex="-1"></a>y_neg1<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb223-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-5" aria-hidden="true" tabindex="-1"></a>y_neg2<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb223-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-6" aria-hidden="true" tabindex="-1"></a>y1<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">1</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb223-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-7" aria-hidden="true" tabindex="-1"></a>y2<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb223-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-8" aria-hidden="true" tabindex="-1"></a>y3<span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x,<span class="at">mean =</span> <span class="dv">3</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb223-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb223-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb223-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb223-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y_neg2, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb223-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-13" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg1, col = &quot;red&quot;)</span></span>
+<span id="cb223-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y1, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb223-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-15" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y2, col = &quot;green&quot;)</span></span>
+<span id="cb223-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb223-16" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y3, <span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p>This might be a bit overwhelming to look at, but that’s because there is literally an infinite number of potential alternative distributions. Let’s look at the green distribution only real quick:</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb224-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg2, col = &quot;red&quot;)</span></span>
+<span id="cb224-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg1, col = &quot;red&quot;)</span></span>
+<span id="cb224-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y1, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb224-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-6" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb224-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb224-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-8" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.96</span>,x[x<span class="sc">&gt;=</span><span class="fl">1.96</span>])</span>
+<span id="cb224-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-9" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="fl">1.96</span>)</span>
+<span id="cb224-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-10" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb224-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-12" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb224-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-13" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[x <span class="sc">&lt;=</span> <span class="sc">-</span><span class="fl">1.96</span>],<span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb224-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-14" aria-hidden="true" tabindex="-1"></a>neg_index <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb224-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-15" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(y[<span class="dv">1</span><span class="sc">:</span>neg_index],<span class="dv">0</span>)</span>
+<span id="cb224-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb224-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-18" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb224-19"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb224-19" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p>The green distribution represents an alternative to the null distribution. The green distribution indicates that the true standardized difference between the small town babies and the average baby is <span class="math inline">\(z = 1\)</span> (or <span class="math inline">\(H_A: z \in 1 \pm 1.96\)</span>. Just like with the standard distribution, we assume that if we calculated <span class="math inline">\(z\)</span> for a sample, that the probable values of <span class="math inline">\(z\)</span> would be normally distributed around 1. Here is the thing though, the probable values of this alternative overlap with a lot of the probable values of our null distribution. If the <strong>true</strong> alternate is an effect size of <span class="math inline">\(z = 1\)</span>, then we simply don’t have a lot of <strong>power</strong> to actually identify it. Power refers to our ability to reject the null/main hypothesis when it should be rejected. In the case above, we will only reject the null hypothesis if <span class="math inline">\(z\)</span> falls outside the -1.96 through 1.96 range. Which means that if the true signal is <span class="math inline">\(z = 1\)</span>, then we have little power to identify it. We can actually calculate the probability of correctly rejecting the null hypothesis when the alternate hypothesis is <span class="math inline">\(H_A: z \in 1 \pm 1.96\)</span> by taking the area of the alternate curve within the critical regions, like so:</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb225-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg2, col = &quot;red&quot;)</span></span>
+<span id="cb225-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg1, col = &quot;red&quot;)</span></span>
+<span id="cb225-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y1, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb225-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb225-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-6" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb225-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb225-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-8" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.96</span>,x[x<span class="sc">&gt;=</span><span class="fl">1.96</span>])</span>
+<span id="cb225-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-9" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="fl">1.96</span>)</span>
+<span id="cb225-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-10" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y1[index_val<span class="sc">:</span><span class="fu">length</span>(y1)])</span>
+<span id="cb225-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb225-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-12" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb225-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-13" aria-hidden="true" tabindex="-1"></a><span class="co">#neg_x &lt;- c(x[x &lt;= -1.96],-1.96)</span></span>
+<span id="cb225-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-14" aria-hidden="true" tabindex="-1"></a><span class="co">#neg_index &lt;- which(x == -1.96)</span></span>
+<span id="cb225-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-15" aria-hidden="true" tabindex="-1"></a><span class="co">#neg_y &lt;- c(y1[1:neg_index],0)</span></span>
+<span id="cb225-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb225-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb225-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb225-18" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co">#polygon(neg_x,neg_y,col = &quot;green&quot;)</span></span>
+<span id="cb226-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb226-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb226-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(MESS<span class="sc">::</span><span class="fu">auc</span>(poly_x,poly_y),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<pre><code>## [1] 0.168</code></pre>
+<p>What this tells us is that, if the real effect is <span class="math inline">\(z = 1\)</span>, that we will only correctly reject the null 16.8% of the time - or that our power = 0.168. That is really not good at all! It can be useful to plot this a different way, like so:</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb229-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-2" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg2, col = &quot;red&quot;)</span></span>
+<span id="cb229-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-3" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg1, col = &quot;red&quot;)</span></span>
+<span id="cb229-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y1, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb229-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb229-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-6" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb229-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb229-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-8" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.96</span>,x[x<span class="sc">&gt;=</span><span class="fl">1.96</span>])</span>
+<span id="cb229-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-9" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="fl">1.96</span>)</span>
+<span id="cb229-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-10" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb229-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb229-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-12" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb229-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-13" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[x <span class="sc">&lt;=</span> <span class="sc">-</span><span class="fl">1.96</span>],<span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb229-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-14" aria-hidden="true" tabindex="-1"></a>neg_index <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb229-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-15" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(y[<span class="dv">1</span><span class="sc">:</span>neg_index],<span class="dv">0</span>)</span>
+<span id="cb229-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb229-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-17" aria-hidden="true" tabindex="-1"></a><span class="do">## beta x </span></span>
+<span id="cb229-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-18" aria-hidden="true" tabindex="-1"></a>beta_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.96</span>, x[x <span class="sc">&gt;=</span> <span class="sc">-</span><span class="fl">1.96</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="fl">1.96</span>], <span class="fl">1.96</span>)</span>
+<span id="cb229-19"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-19" aria-hidden="true" tabindex="-1"></a>beta_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y1[neg_index<span class="sc">:</span>index_val],<span class="dv">0</span>)</span>
+<span id="cb229-20"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb229-21"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb229-22"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-22" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb229-23"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-23" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb229-24"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb229-24" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(beta_x,beta_y,<span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+<p>This shaded green region represents the values of <span class="math inline">\(z\)</span>, assuming this is real distribution of the signal, where we wrongly accept the null/main hypothesis. We refer to this region as <span class="math inline">\(\beta\)</span>. Since the area under a curve equals 1, we can see that <span class="math inline">\(\beta = 1 - power\)</span>. In this case, <span class="math inline">\(\beta = 1 - .168 = .832\)</span>. Now, since there are infinitely many possible alternative hypotheses, Neyman and Pearson needed a way to establish what a <strong>detectable</strong> alternative hypothesis is. One way is to make <span class="math inline">\(\alpha\)</span> less restrictive. So, instead of <span class="math inline">\(\alpha = 0.05\)</span>, we could set <span class="math inline">\(\alpha = 0.1\)</span>. This would result in the following adjustment to our previous plot:</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb230-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg2, col = &quot;red&quot;)</span></span>
+<span id="cb230-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-3" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg1, col = &quot;red&quot;)</span></span>
+<span id="cb230-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y1, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb230-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-6" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb230-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb230-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-8" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.65</span>,x[x<span class="sc">&gt;=</span><span class="fl">1.65</span>])</span>
+<span id="cb230-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-9" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="dv">65</span></span>
+<span id="cb230-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-10" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb230-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-12" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb230-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-13" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[x <span class="sc">&lt;=</span> <span class="sc">-</span><span class="fl">1.65</span>],<span class="sc">-</span><span class="fl">1.65</span>)</span>
+<span id="cb230-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-14" aria-hidden="true" tabindex="-1"></a>neg_index <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="fl">1.65</span>)</span>
+<span id="cb230-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-15" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(y[<span class="dv">1</span><span class="sc">:</span>neg_index],<span class="dv">0</span>)</span>
+<span id="cb230-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-17" aria-hidden="true" tabindex="-1"></a><span class="do">## beta x </span></span>
+<span id="cb230-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-18" aria-hidden="true" tabindex="-1"></a>beta_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.65</span>, x[x <span class="sc">&gt;=</span> <span class="sc">-</span><span class="fl">1.65</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="fl">1.65</span>], <span class="fl">1.65</span>)</span>
+<span id="cb230-19"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-19" aria-hidden="true" tabindex="-1"></a>beta_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y1[neg_index<span class="sc">:</span>(index_val<span class="dv">-1</span>)],<span class="dv">0</span>)</span>
+<span id="cb230-20"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-21"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb230-22"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-22" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb230-23"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-23" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb230-24"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb230-24" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(beta_x,beta_y,<span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+<p>As we can see, adjusting <span class="math inline">\(\alpha\)</span> caused the region of <span class="math inline">\(\beta\)</span> to change as well. That is because <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are intertwined - if you increase <span class="math inline">\(\alpha\)</span>, then <span class="math inline">\(\beta\)</span> will decrease and vice versa. <strong>BUT</strong>, this approach is not ideal. If you increase <span class="math inline">\(\alpha\)</span> then you are essentially making it more probable you will reject your null hypothesis. We set <span class="math inline">\(\alpha\)</span> to a low value of 0.05 so that we can be confident in our rejection. The higher <span class="math inline">\(\alpha\)</span> becomes, the riskier our rejections of the null hypothesis become (i.e., our chances of wrongly rejecting the null are now higher).</p>
+<p>So, Neyman-Pearson came up with a different idea. The issue is that their approach is not ideal for identifying relatively small signals. But, if we know the size of the signal we are looking for, then we can design our study to have enough power to identify that signal. So, Neyman-Pearson suggest defining an explicit alternate hypothesis in which the power to detect it is at least 80%, which is the equivalent to <span class="math inline">\(\beta = 0.2\)</span>. In the case, of our example, this would mean shifting the alternate hypothesis further to the right so that the shaded green region has an area of 0.2. This would correspond with a <span class="math inline">\(z\)</span>-value of approximately 2.2, which we can depict like so:</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Density&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb231-2"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-2" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg2, col = &quot;red&quot;)</span></span>
+<span id="cb231-3"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-3" aria-hidden="true" tabindex="-1"></a><span class="co">#lines(x, y_neg1, col = &quot;red&quot;)</span></span>
+<span id="cb231-4"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb231-5"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fl">2.8</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb231-6"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, y1, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb231-7"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb231-8"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-8" aria-hidden="true" tabindex="-1"></a><span class="do">## we want all values of x and y where x is greater than 68</span></span>
+<span id="cb231-9"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-9" aria-hidden="true" tabindex="-1"></a><span class="do">## The following three lines of code do this</span></span>
+<span id="cb231-10"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-10" aria-hidden="true" tabindex="-1"></a>poly_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.96</span>,x[x<span class="sc">&gt;=</span><span class="fl">1.96</span>])</span>
+<span id="cb231-11"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-11" aria-hidden="true" tabindex="-1"></a>index_val <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="fl">1.96</span>)</span>
+<span id="cb231-12"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-12" aria-hidden="true" tabindex="-1"></a>poly_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y[index_val<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb231-13"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb231-14"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-14" aria-hidden="true" tabindex="-1"></a><span class="do">## we need the negative values too</span></span>
+<span id="cb231-15"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-15" aria-hidden="true" tabindex="-1"></a>neg_x <span class="ot">&lt;-</span> <span class="fu">c</span>(x[x <span class="sc">&lt;=</span> <span class="sc">-</span><span class="fl">1.96</span>],<span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb231-16"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-16" aria-hidden="true" tabindex="-1"></a>neg_index <span class="ot">&lt;-</span> <span class="fu">which</span>(x <span class="sc">==</span> <span class="sc">-</span><span class="fl">1.96</span>)</span>
+<span id="cb231-17"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-17" aria-hidden="true" tabindex="-1"></a>neg_y <span class="ot">&lt;-</span> <span class="fu">c</span>(y[<span class="dv">1</span><span class="sc">:</span>neg_index],<span class="dv">0</span>)</span>
+<span id="cb231-18"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb231-19"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-19" aria-hidden="true" tabindex="-1"></a><span class="do">## beta x </span></span>
+<span id="cb231-20"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-20" aria-hidden="true" tabindex="-1"></a>beta_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.96</span>, x[x <span class="sc">&gt;=</span> <span class="sc">-</span><span class="fl">1.96</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="fl">1.96</span>], <span class="fl">1.96</span>)</span>
+<span id="cb231-21"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-21" aria-hidden="true" tabindex="-1"></a>beta_y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,y1[neg_index<span class="sc">:</span>index_val],<span class="dv">0</span>)</span>
+<span id="cb231-22"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb231-23"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Then we plot it</span></span>
+<span id="cb231-24"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-24" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(poly_x,poly_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb231-25"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-25" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(neg_x,neg_y,<span class="at">col =</span> <span class="st">&quot;slateblue1&quot;</span>)</span>
+<span id="cb231-26"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb231-26" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(beta_x,beta_y,<span class="at">col =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-Applied-Stats-with-R_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="scientific-research-questions-and-null-hypothesis-significance-testing-framework.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(MESS<span class="sc">::</span><span class="fu">auc</span>(beta_x, beta_y),<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties)): collapsing to unique
+## &#39;x&#39; values</code></pre>
+<pre><code>## [1] 0.2</code></pre>
+<p>So, in this case Neyman and Pearson would describe <span class="math inline">\(z = 2.8\)</span> as the <strong>expected effect size</strong>. The logic is that if the true effect size (i.e., the alternate hypothesis) is that <span class="math inline">\(z = 2.8\)</span>, using their approach, they will correctly reject the null/main and accept the alternate hypothesis 80% of the time! If the true value of <span class="math inline">\(z\)</span> is greater than 2.8, then this power will increase. What this means is, if the <strong>true</strong> signal you are trying to observe is closer to 0 than 2.8, you will have limited power to reject the null. For practical purposes, this would indicate that there isn’t strong justification to use the test because the goal is to correctly pick the null/main or the alternate. If you can’t successfully pick the alternate, then there is no point.</p>
+<p>We discussed before that you can improve power by increasing <span class="math inline">\(\alpha\)</span>. This is not ideal because it makes our rejections less conservative. We only want to reject the null hypothesis if we feel really confident we should. The other way to improve power is to sample more people for the study. We can see that if we look at the formula for calculating <span class="math inline">\(z\)</span> that it is built right in - the greater our sample size <span class="math inline">\(n\)</span>, the greater the magnitude of <span class="math inline">\(z\)</span>, and thus the greater power we have:</p>
+<p><span class="math display">\[z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}\]</span></p>
+<p><span class="math inline">\(n\)</span> represents the number of people in our study. As <span class="math inline">\(n\)</span> gets bigger, so does <span class="math inline">\(z\)</span>! This may be confusing because we have a fraction nested inside a fraction. So, if <span class="math inline">\(n\)</span> is bigger than the value of <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span> will get smaller. The smaller a denominator, the larger the value becomes. So if the denominator of the whole fraction gets smaller, than the magnitude of <span class="math inline">\(z\)</span> will go up! As we sample more people, the value of <span class="math inline">\(z\)</span> will shift further and further away from 0! That means that <span class="math inline">\(\beta\)</span> will decrease and, by definition, the power of our study will increase.</p>
+<p><strong>Power analyses</strong> are used to determine what size of <span class="math inline">\(n\)</span> needs to be recruited so that we can detect a given expected effect size with a power of at least 0.8. The power analysis for a given method is dependent on how the test statistic is calculated. In the case of <span class="math inline">\(z\)</span>, we want to know how many people we need so that <span class="math inline">\(z = 2.8\)</span>, which we established above is associated with a power of 0.8 for a <span class="math inline">\(z\)</span>-test. If we expect that babies in the small town have a mean weight <span class="math inline">\(\bar{x} = 8.1\)</span> pounds (our <strong>expected effect size</strong> is that babies in this small town are 0.6 pounds heavier at birth then the average baby, i.e., 8.1 - 7.5 = 0.6), recalling that the standard deviation of birth weight was <span class="math inline">\(\sigma = 1.2\)</span> and we want to calculate <span class="math inline">\(n\)</span> for <span class="math inline">\(z = 2.8\)</span>, then we can do the following:</p>
+<p><span class="math display">\[z = 2.8 = \frac{8.1 - 7.5}{\frac{1.2}{\sqrt{n}}}\]</span></p>
+<p>We can scramble the values around to find that:</p>
+<p><span class="math display">\[\sqrt{n} = \frac{1.2*2.8}{8.1 - 7.5} = \frac{2.64}{0.6} = 5.6\]</span></p>
+<p>Since this is the square root, we square 4.4 to get <span class="math inline">\(4.4^2 = 31.36\)</span>. We always round up in power analyses because we cannot recruit 31.36 persons - this tells us if we expect that babies in this small town have a birth weight of 8.1 pounds, we need to recruit at least 32 babies to have adequate power to identify that this is true!</p>
+</div>
+<div id="the-neyman-pearson-decision-matrix" class="section level3" number="6.6.2">
+<h3><span class="header-section-number">6.6.2</span> The Neyman-Pearson Decision Matrix</h3>
+<p>What is immediately clear is that Neyman-Pearson’s emphasis on making a decision has introduced a different type of complication to our idea of statistical inference. Fisher was not concerned with deciding if the null hypothesis was true or false - these statistical tests provide information on the probability of observations and it is the researchers job to contextualize the findings within the broader discourse of the research question. There is not a risk of being wrong in Fisher’s approach. In Neyman-Pearson, you must decide between the null and an alternative hypothesis. Even though we use <strong>expected effect size</strong> to make sure our study has enough power, the alternate hypothesis in Neyman-Pearson is typically just the opposite of the null.</p>
+<p>The Neyman-Pearson decision process is often depicted as a decision matrix, like so:</p>
+<p><img src="Images/decision_matrix.PNG" /></p>
+<p>Ideally, we correctly choose between the main/null and the alternative hypotheses. This is always the goal of this approach. Two types of errors can occur: a Type 1 Error, in which the null hypothesis is rejected when it should have been accepted; and a Type 2 Error, in which the null hypothesis is accepted when it should have been rejected.</p>
+<div id="type-1-error-alpha-and-long-term-success" class="section level4" number="6.6.2.1">
+<h4><span class="header-section-number">6.6.2.1</span> Type 1 Error, Alpha, and Long-Term Success</h4>
+<p>We can understand that the probability of making a Type 1 Error <strong>in the long run</strong> when the null is true is <span class="math inline">\(\alpha\)</span>. As displayed above, if our <span class="math inline">\(p\)</span>-value is less than 0.05, we reject the null - even in cases when the null should not be rejected. Our <span class="math inline">\(p\)</span>-value, as defined by Fisher, is the probability of observing our data assuming the null is true. Our critical regions which are defined by <span class="math inline">\(\alpha\)</span> represent observed signal which, in total, have a 5% chance of occurring assuming the null hypothesis is true. That means, if we run 100 experiments with a true null hypothesis, we would expect to make a Type 1 Error 5 out of 100 (5%) times.</p>
+<p>This concept is often misunderstood within the social sciences. Neyman and Pearson were concerned with identifying abnormalities in production. If a factory makes thousands of products, then their tests can be run over and over and over again. In other words, Neyman and Pearson were working in an environment where there was constant experimental replication. They were concerned with success in the long run. They wanted to make sure if they ran their test 1,000 times, that they maximized the number of times that they were correct.</p>
+<p>However, in the endeavor to build scientific knowledge, we may be lucky to have the opportunity to replicate a study <strong>even one time</strong>, especially outside the context of randomized control trials. And, often, the replications undertaken are not true replications - they may have different sampling and measurement strategies that make them different. As a result, sometimes researchers use Neyman-Pearson’s idea of a <span class="math inline">\(p\)</span>-value and <span class="math inline">\(\alpha\)</span> to measure how likely it is that the null hypothesis is false…this unfortunately is not an appropriate way to interpret the <span class="math inline">\(p\)</span>-value. When we explicitly accept the null hypothesis under Neyman-Pearson, we are thinking about our long-term success running and re-running (and re-running and re-running…) the same experiment. The misuse of the Neyman-Pearson decision matrix is often a result of researchers proclaiming that a single study can determine if the null or the alternate hypothesis is correct.</p>
+</div>
+<div id="type-2-error-beta-and-long-term-success" class="section level4" number="6.6.2.2">
+<h4><span class="header-section-number">6.6.2.2</span> Type 2 Error, Beta, and Long-Term Success</h4>
+<p>Likewise, the probability of making a Type 2 Error <strong>in the long run</strong> when the null is false is <span class="math inline">\(\beta\)</span>. If our <span class="math inline">\(p\)</span>-value is greater than <span class="math inline">\(\alpha\)</span>, then we accept the null - even if we should reject the null. While the <strong>true</strong> value of <span class="math inline">\(\beta\)</span> is dependent on the <strong>true</strong> (and unknown) signal, we calculate <span class="math inline">\(\beta\)</span> such that we can at least identify an expected effect size correctly 80% of the time or more. The idea here is that, if the null hypothesis is false and the alternative hypothesis is true and the true signal is at least the magnitude of the expected effect size, then if we run 100 experiments, we should correctly reject the null and accept the alternative 80% of the time (or more).</p>
+</div>
+<div id="thinking-long-term" class="section level4" number="6.6.2.3">
+<h4><span class="header-section-number">6.6.2.3</span> Thinking Long-Term</h4>
+<p>Under Neyman-Pearson’s framework, it appears that one of the best ways to identify if the null or the alternate hypothesis is true, is to replicate our study design many, many times. If the null is true, we would expect to reject the null only 5% of the time. If the null is false, we would expect to reject the null at least 80% of the time. If you only run one iteration of an experiment, you simply do not have enough information to identify if the null is true or not. Imagine flipping a coin one time, getting a heads, and declaring there is a 100% chance of flipping heads - that would be a poor conclusion! Unfortunately, many researchers will use the Neyman-Pearson decision approach for one study and then use that to declare that the null hypothesis is false. Repeating the study design and observing the decision multiple times is the best way to truly capture which hypothesis should be accepted.</p>
+</div>
+</div>
+</div>
+<div id="putting-it-all-together-ish-null-hypothesis-significance-testing" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Putting It All Together-ish: Null Hypothesis Significance Testing</h2>
+<p>Today, null hypothesis significance testing (NHST) is the primary framework used for statistical inference. NHST is often described as a mixture of the Fisher and Neyman-Pearson approaches, though it is not formally defined. To add to the potential confusion, for many statistical methods, applying Fisher and Neyman-Pearson lead to identical presentation of results. It is hard to explicitly define NHST because it isn’t a well-defined framework. It has arisen over several generations of statistical practice, as researchers have applied (and mis-applied) the approaches of Fisher and Neyman-Pearson.</p>
+<p>Generally, on the surface, NHST looks very similar to Neyman-Pearson. A null and alternate hypothesis is specified. A statistical test is run. If the corresponding <span class="math inline">\(p\)</span>-value is less than <span class="math inline">\(\alpha\)</span> then the researcher declares their results significant and rejects the null hypothesis. Otherwise, if the <span class="math inline">\(p\)</span>-value is greater than <span class="math inline">\(\alpha\)</span>, the result is deemed non-significant and the researcher opts to accept (or <strong>fail to reject</strong>) the null hypothesis. Often, “non-signfiicance” is misinterpreted as meaning that the result of a test has no value. As well, given concerns that a single study cannot be used as proof that the null is true, some researchers choose to “fail to reject” the null instead of accepting it based on non-significant results. However, in practice, most researchers tend to treat “acceptance” and “failure to reject” identically when it comes to answering their overall research question (i.e., they still treat the result as having no value in answering their scientific research question).</p>
+<p>As such, NHST has become a rather mechanical exercise. Data is fed into a statistical test. The result is either significant or not. If the result is significant then the null can be rejected. It is very common for researchers to then answer their over-arching scientific research question by asserting that they found a significant result. For example, let’s say a study asked, “Is there a relationship between childhood drug use and educational attainment?” It would be fairly normal, under NHST practices, to read the following conclusion, “We found a significant relationship between childhood drug use and educational attainment,” without any reflection about the nature of this relationship. Significance, derived from the <span class="math inline">\(p\)</span>-value, is a reflection of how likely our observed data is assuming the null hypothesis is true. <strong>Significance does not reflect on the likelihood of the null hypothesis nor does it reflect on the likelihood nor description of some alternative hypothesis.</strong> Therefore, it is not good statistical practice to use significance, alone, as an assertion that the null hypothesis is false or that some alternate hypothesis is true!</p>
+<div id="so-nhst-isnt-a-good-idea" class="section level3" number="6.7.1">
+<h3><span class="header-section-number">6.7.1</span> So, NHST Isn’t a Good Idea?</h3>
+<p>I realize I have introduced NHST in a pretty negative light. We have discussed the Fisher and Neyman-Pearson approaches because they both represent important frameworks for statistical inference. However, they are distinct and should be applied when it is appropriate to do so. The Fisherian approach is well-suited for research that is unlikely to be repeated (as is the case with most human subjects social science research). This is because Fisher’s approach does not attempt to decide whether the null hypothesis is true or false (as doing so with a single study is not well-founded), but instead focuses on how probable the null is given the observed data. Under Fisher’s approach, it is the researchers responsibility to take the results of statistical tests and their broad subject expertise to then answer their research question.</p>
+<p>Neyman-Pearson were more interested in decision-making in contexts where the same statistical test could be executed over and over again, such as in manufacturing (where every product produced may be subject to some test). Their notion of acceptance and rejection of the null hypothesis is based on long-term probabilities. If they run a test 100 times, their goal is maximize the number of times the test is correct. This often implies that there exists a need to decide if something is true or false. In much of scientific inquiry, there is no imperative to decide if some hypothesis is true or not - in fact, it is generally considered unwise to declare that anything is true, as there is always more data that may lead us to rethink our decision. In many applied settings, making a decision is important: should a patient receive treatment A or treatment B; is a batch of our product normal or abnormal? Neyman-Pearson’s approach is more appropriate in settings where a decision must be made, whereas Fisher’s approach is often better suited for open-ended scientific inquiry.</p>
+<p>I bring this up to say that it is your responsibility as a researcher to decide the best approach. Often, the statistical tests used under Fisher and Neyman-Pearson are the same. The primary difference is in the presentation of the results. Under Fisher, it is your responsibility to reflect on the probability of the data (the <span class="math inline">\(p\)</span>-value) in your effort to answer your scientific research question. There is no impetus to accept or reject the null hypothesis, the <span class="math inline">\(p\)</span>-value and other results of statistical tests simply represent evidence that can be used in litigating your research question. Under Neyman-Pearson, significance is used to make a decision based on the data observed. This is often not congruent with the goals of scientific inquiry. For example, under Neyman-Pearson we would treat a <span class="math inline">\(p\)</span>-value of 0.049 as “significant” but a <span class="math inline">\(p\)</span>-value of 0.051 as “not significant” even though we understand that they indicate almost the same exact probability of the sample data assuming the null is true! However, Neyman-Pearson also importantly introduced the concepts of power and effect size, which provides a way to reflect on what the alternative to the null may actually be!</p>
+</div>
+<div id="misuse-of-nhst" class="section level3" number="6.7.2">
+<h3><span class="header-section-number">6.7.2</span> Misuse of NHST</h3>
+<p>As I have alluded to, NHST is often poorly used. This is not intended to say that scientists are doing a bad job - instead, it is more a reflection of what kind of work is rewarded and how that has resulted in the proliferation of poor practices. The misapplication of NHST often is when researchers use NHST through the Neyman-Pearson framework when it is more appropriate to use Fisher’s. This occurs when researchers use a single study to declare a null hypothesis is false, when Neyman-Pearson fully intended their decision-making strategy to apply to long-run replications of the same test. This approach is far easier for both researchers and reviewers - the word “significant” becomes a signal that the research is important. As a result, researchers choose statistical tests with the goal of acheiving “significance” and reviewers and journals reward papers that find “significance.” Neyman-Pearson’s strategy is intuitive and <strong>conclusive</strong> - unfortunately, social science research rarely warrants conclusive declarations.</p>
+<p>As a result, NHST is often taught as a hunt for significance. The Neyman-Pearson decision matrix is often taught, but the Fisherian approach is ignored. There is widespread misunderstanding of what a <span class="math inline">\(p\)</span>-value is and, as a result, “significant” is often used as a word to justify the conclusion that the study has confirmed the authors scientific hypotheses. This is reinforced by the literature, where papers that approach significance testing in this way are rewarded and published. This indicates to other researchers and prospective researchers that this is best way to approach statistical inference.</p>
+<p>As such, we have discussed both Fisherian and Neyman-Pearson approaches. We have done so so that we are empowered to apply the correct one - often, a mixture of the two is warranted, but we need to be clear about why we are interpreting our results the way that we are. The goal is always to answer our scientific research questions - the results of our statistical tests represent pieces of evidence in the effort to answer our scientific research question.</p>
+</div>
+<div id="what-should-i-do" class="section level3" number="6.7.3">
+<h3><span class="header-section-number">6.7.3</span> What Should I Do?</h3>
+<p>Which framework you apply will be dependent on the nature of your research question and your data. For every study, you will need to ask what the most appropriate framework to use is. Often, a mixture of both frameworks is warranted, but it is important to explicitly understand which parts of each are appropriate. If your research is focused on a decision-making process, then Neyman-Pearson should be applied in full. If your research is focused on building scientific knowledge, then the Fisherian approach makes sense.</p>
+<p>Since this class is intended for human subjects social science researchers (such as epidemiologists), I will say that it is unlikely that Neyman-Pearson’s framework should be used alone (or at all, honestly). I generally recommend applying Fisher’s approach for interpreting <span class="math inline">\(p\)</span>-values in relation to the null hypothesis, while also incorporating Neyman-Pearson’s idea of measuring effect sizes. <strong>Let’s remember, the goal of our research endeavors is to answer our scientific research question.</strong> We are using the results of our statistical analyses as evidence for the answer that we land on at the end of the study - the results of our statistical analyses do not inherently answer our research question by themselves. We must do some translation.</p>
+<p>First, in studies aiming to build upon scientific knowledge, a single study should never be viewed as conclusive evidence of whether something is true or false. Fisher’s approach is well-suited for navigating the uncertainty of making conclusions, whereas the Neyman-Pearson approach often results in hard conclusions that are not fully supported by the data. In other words, most scientific research questions are not adequately answered by a “yes” or a “no,” by a “true” or by a “false” - using methods that make a “yes/no” decision do not seem warranted.</p>
+<p>Second, while Fisher was not concered with an alternate hypothesis, the alternate hypothesis is usually what is most interesting to us! If we want to know the relationship between two variables, the null hypothesis that there is no relationship is usually not interesting to us at all! So, it is important that we have a way to capture the potential alternative hypothesis. The best way to do this is by capturing the effect size of the relationship between two variables, as Neyman-Pearson do. An effect size is the magnitude and direction of a relationship between two variables within the <strong>sample</strong> - this effect size can be understood to be a best estimate of the <strong>population-level</strong> effect size if the null hypothesis is false. Just about every test, regardless of approaching it from the Fisher or Neyman-Pearson framework, measures effect size. Fisher is just concerned with whether or not the observed signal (effect size) is probable under the null hypothesis, whereas Neyman-Pearson were interested in asking if the measured signal is evidence of an alternate hypothesis. As such, Neyman-Pearson also introduced the concept of confidence intervals, which represent a range of probable values that this actual population-level effect may fall within, which usually is centered around the measured effect size. Effect sizes and confidence intervals represent a very useful set of metrics for providing an answer to our scientific research question.</p>
+<p>Now, these are my suggestions to you. You will likely encounter scientists who would not agree. You will likely encounter scientists who are not familiar with Fisher’s approach or Neyman-Pearson’s. You may submit a paper and have reviewers confused why you have approached statistical inference from the Fisherian approach when they are accustomed to the Neyman-Pearson. <strong>The important thing is that, no matter what, you feel comfortable justifying the decisions you have made.</strong></p>
+</div>
+<div id="wading-through-the-meta-uncertainty-of-statistics" class="section level3" number="6.7.4">
+<h3><span class="header-section-number">6.7.4</span> Wading Through The Meta-Uncertainty of Statistics</h3>
+<p>In this chapter we have introduced Fisherian, Neyman-Pearson, and NHST approaches to hypothesis testing. Further, we have reflected on how the NHST approach is limited and I have suggested that we apply Fisher’s approach with some Neyman-Pearson concepts (effect size and confidence intervals) thrown in. Throughout this text, we will approach statistical methods through such a lens.</p>
+<p>I want to note that a challenge in your research careers will be navigating working with colleagues and reviewers who are not familiar with the shortcomings of NHST. NHST is appealling because it can be taught in a very formulaic fashion - you plug numbers in, run the test, get the <span class="math inline">\(p\)</span>-value, and then make your decision. This is not meant as a criticism of any researcher, this is a result of statistics education and the widespread adoption of NHST within social science research.</p>
+<p>So, what this means is that you will likely have many instances when your understanding of NHST and statistics differs from your peers. You will need to get comfortable navigating such discussions - a big part of this will be in defending the choices that you think are best. It is likely that there will be cases where editors and reviewers ask you to edit your paper to be more in line with NHST, even if it doesn’t make sense. Undertaking research is often a negotiation - being comfortable understanding NHST and the Fisherian and Neyman-Pearson approaches will help you defend your choices and argue for appropriate statistical analyses.</p>
+</div>
+</div>
+<div id="in-conclusion-1" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> In Conclusion</h2>
+<p>The goal of any study is to answer your scientific research question. Two frameworks - the Fisherian and the Neyman-Pearson - have been developed to guide frequentist statistical practices. For the social scientist, the Fisherian approach combined with Neyman-Pearson concepts of effect size and confidence intervals represent an important strategy for scientific inquiry. The Neyman-Pearson decision matrix is generally warranted where replication is undertaken and where the primary goal is to inform decision-making. The misapplication of Neyman-Pearson’s decision approach has lead to many poor practices within the social sciences. By understanding both Fisher and Neyman-Pearson approaches, we can choose which option is best based on the goals and design of our study!</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mathematical-notation-probability-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="descriptive-statistics-table-one.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Intro to Applied Stats with R.pdf", "Intro to Applied Stats with R.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
